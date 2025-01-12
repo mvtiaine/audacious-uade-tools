@@ -4,7 +4,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 
 * Directories:
 
-- songdb/ - Scala CLI, SQL scripts and raw source TSVs to generate the final processed TSV files-
+- songdb/ - Scala CLI, SQL scripts and raw source TSVs to generate the final processed TSV files
 - tsv/ - the songdb TSV files used by audacious-uade. The files are "encoded" to almost binary format to optimize for size and fast in-memory songdb initialization
 - tsv/pretty/ - pretty printed / clear text versions of the TSV files. See "spec" below.
 - misc/ - misc bash scripts
