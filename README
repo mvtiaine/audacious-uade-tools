@@ -31,7 +31,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 - songdb/sources/modsanthology.tsv - module infos and songlengths for Mods Anthology
 - songdb/sources/unexotica.tsv - module infos and songlenghts for UnExotica
 - songdb/sources/wantedteam.tsv - module infos and songlengths for Wanted Team
-- songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git reoo
+- songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git repo
 
 Except for demozoo.tsv, the raw TSV source files are generated using the precalc binary+script https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/ from my local copy/mirror/snapshot of the various sites/sources.
 
