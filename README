@@ -64,6 +64,8 @@ feabaabf8a62	Mantronix~Tip	Blue House Productions~Rebels~Sonic Projects	Blue Hou
 [md5]<TAB>[authors]<TAB>[publishers]<TAB>[album]<TAB>[year]
 - multiple authors or publishers are separated by ~
 
+The TSV files use UTF-8 encoding.
+
 I reserve the right to change the format or location in Github of any of the TSV or other files at any time.
 
 * License
