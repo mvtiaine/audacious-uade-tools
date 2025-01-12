@@ -33,9 +33,9 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 - songdb/sources/wantedteam.tsv - module infos and songlengths for Wanted Team
 - songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git reoo
 
-Note that some additional required files not included in Github, specifically local mirror of some of the AMP and UnExotica web pages are needed to actually run the Scala songdb.sc script.
-
 Except for demozoo.tsv, the raw TSV source files are generated using the precalc binary+script https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/ from my local copy/mirror/snapshot of the various sites/sources.
+
+Note that some additional required files not included in Github, specifically local mirror of some of the AMP and UnExotica web pages are needed to actually run the Scala songdb.sc script. The script runs completely locally and does not download anything from internet.
 
 Here are example snippets and short spec for the pretty printed TSVs. Example parsing code can be found in songdb/scripts/pretty.sc
 
@@ -69,9 +69,9 @@ I reserve the right to change the format of any of the TSV files at any time.
 * License
 
 The Scala and SQL scripts are licensed unded GPL-2.0-or-later.
-For any applicable sui generis rights or copyrights I may have for the database files, they are provided under CC BY-NC-SA 4.0 license.
+For any applicable sui generis rights or copyrights I may have over the database files, they are provided under CC BY-NC-SA 4.0 license.
 
-The following sites are used as sources for generating the database:
+The following sites are used as sources for the database:
 - AMP - https://amp.dascene.net/
 - Modland - http://ftp.modland.com/
 - UnExotica - https://www.exotica.org.uk/wiki/UnExoticA
