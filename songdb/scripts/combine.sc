@@ -14,7 +14,7 @@ def combineMetadata(
     unexotica: Buffer[MetaData],
     demozoo: Buffer[MetaData]
 ) = {
-  val md5s = (amp.map(_.md5) ++ modland.map(_.md5) ++ unexotica.map(_.md5) ++ demozoo.map(_.md5)).toSet
+  val md5s = (amp.par.map(_.md5) ++ modland.par.map(_.md5) ++ unexotica.par.map(_.md5) ++ demozoo.par.map(_.md5)).toSet
 
   val ag = amp.groupBy(_.md5).par.mapValues(_.head)
   // canonize Falcon (PL) -> Falcon etc.

@@ -1,6 +1,4 @@
-Companion repo for https://github.com/mvtiaine/audacious-uade
-
-This repo contains Scala CLI scripts for generating songdb TSV files used by audacious-uade.
+This repo contains Scala CLI scripts for generating songdb TSV files used by audacious-uade (https://github.com/mvtiaine/audacious-uade).
 
 * Directories:
 
