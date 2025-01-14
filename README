@@ -27,7 +27,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 - songdb/sources/modland.tsv - module infos and songlengths for Modland
 - songdb/sources/modland_incoming.tsv - modules infos and songlengths for Modland incoming directory
 - songdb/sources/modsanthology.tsv - module infos and songlengths for Mods Anthology
-- songdb/sources/unexotica.tsv - module infos and songlenghts for UnExotica
+- songdb/sources/unexotica.tsv - module infos and songlengths for UnExotica
 - songdb/sources/wantedteam.tsv - module infos and songlengths for Wanted Team
 - songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git repo
 

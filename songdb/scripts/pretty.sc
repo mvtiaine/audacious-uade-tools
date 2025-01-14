@@ -103,13 +103,14 @@ def createPrettyMetaTsv(meta: Buffer[MetaData]) = {
 
 def parsePrettyMetaTsv(tsv: String) = {
   val infos = tsv.split('\n').par.map { i =>
-    val cols =i.split("\t", -1)
+    val cols = i.split("\t", -1)
     MetaData(
       md5 = cols(0),
       authors = if (!cols(1).isEmpty) cols(1).split(SEPARATOR).toBuffer else Buffer.empty,
       publishers = if (!cols(2).isEmpty) cols(2).split(SEPARATOR).toBuffer else Buffer.empty,
       album = cols(3),
-      year = if (!cols(4).isEmpty) cols(4).toInt else 0)
+      year = if (!cols(4).isEmpty) cols(4).toInt else 0
+    )
   }
   assert(infos.map(_.md5).distinct.size == infos.size)
   infos.toBuffer.sortBy(_.md5)
