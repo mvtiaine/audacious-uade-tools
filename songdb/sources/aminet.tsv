@@ -1179,6 +1179,7 @@
 085b45f03cf838808fd346628609341f	1	165574	player+silence	ft2play	FastTracker v2.00	10	706815	mods/tp96/Hate/PNX-HATE.XM
 085d90df02143527c909eba2b6194497	1	343417	player+silence	uade	Protracker	0	225936	mods/jorma/bassemul/Bass Emulsion.mod
 085e1d4798a1bb3b5b5151c2bd11da43	1	130704	player+silence	uade	Protracker	0	223932	mods/emax/FunkIt/FunkIt.mod
+08612f061cde2180e20cb19b493cec66	1	99820	player	protrekkr	ProTrekkr 2.x	6	15747	mus/edit/Protrekkr_AROS_i386/modules/unit5.ptk
 086355fe69de4225a9480431bf2b667a	1	203635	player	uade	Protracker compatible	0	265304	mods/misc/TheFinalHouse/mod.TheFinalHousemyx
 086627d9fade5808e553a0d60f910999	1	138369	player	uade	Noisetracker 2.x	0	40862	game/think/Stumpf19/Stumpfsinn/Data/Stumpf15.data
 0867d101fca5f1841e8c087dab425b7a	1	221659	player	uade	Protracker	0	341054	mods/alpma/innerhobbex/mod.innerspece n hobbex
@@ -2053,6 +2054,8 @@
 0e833db7d8c2a9b3e3b3a740e51ec33c	1	214718	player+silence	uade	OctaMED MMD1	0	483710	game/strat/TotalChaosAGAr6/TotalChaosAGAr7/Music/Mod.ChaosTheme100
 0e85bf7e8074b87538a75bc896405c83	1	279188	player+silence	st3play	Scream Tracker 3.2x (SB)	16	357480	mods/pete/BadReception/BADRCPT.S3M
 0e86c97b94bda04ad8dec9b1f2b2e9f7	1	198551	player	uade	OctaMED MMD1	0	95098	game/role/OMaze/omaze/data/OMaze.Tune
+0e880c6c8cd4ae47ec12edd93b3a41fb	1	125520	player	protrekkr	ProTrekkr 2.x	10	44652	mus/edit/Protrekkr_AROS_i386/modules/Primitive.ptk
+0e880c6c8cd4ae47ec12edd93b3a41fb	1	125520	player	protrekkr	ProTrekkr 2.x	10	44652	mus/edit/Protrekkr_aros/Protrekkr/modules/Primitive.ptk
 0e88e963214d354c48fc31dc0239143a	1	51320	player	uade	Protracker	0	14432	mods/pro/indistinguish/Mod.Indistinguishable
 0e88eeaefd6ebe06eb8c6b5933cdaffd	1	61568	player	uade	Protracker	0	23324	mods/facet/ChipCmp1/ChiptuneComp1.mod
 0e8a7a2ce442b690248c9db8de837d6a	1	516453	player+volume	uade	Protracker	0	268044	mods/sets/xtd-11/mod.expedition
@@ -2380,6 +2383,8 @@
 11171356d78b301f69c4551a0b5fdd57	1	15472	player	uade	Protracker	0	48222	mods/clawz/DeadEnd/DeadEnd.mod
 111a82281a989fbdbf6c25289220e904	1	101877	player	uade	Protracker	0	543944	mods/lead/LEAD-Bongo1/mod.Bongolitto - 1
 111b3d16c1d64db08b28b6a089209ef6	1	236988	player+silence	uade	Protracker compatible	0	185315	mods/rock/InAGaddaDaVida/InAGaddaDaVida.mod
+111d84a2f4e827b11096e135c3134909	1	180460	player	protrekkr	ProTrekkr 2.x	8	254595	mus/edit/Protrekkr_AROS_i386/modules/Factory of hybrid.ptk
+111d84a2f4e827b11096e135c3134909	1	180460	player	protrekkr	ProTrekkr 2.x	8	254595	mus/edit/Protrekkr_aros/Protrekkr/modules/Factory of hybrid.ptk
 1120154bea855d671a1338cf1a2423c8	1	201967	player	uade	OctaMED MMD1	0	41632	mods/med/FunWare/Matt Brown
 1120154bea855d671a1338cf1a2423c8	2	67255	player
 1120154bea855d671a1338cf1a2423c8	3	68963	player
@@ -2584,6 +2589,8 @@
 12c1d8f1e18d4db2f6faa797509b465e	1	153721	player	uade	Protracker	0	31738	mods/chip/Defy5Intro/mod.Defy5_Intro
 12c74f9afd1b287fd927ee546d651d64	1	308643	player+volume	st3play	Scream Tracker 3.2x (GUS)	16	296216	mods/rated/smeg_Scatterbu/smeg_bug.s3m
 12c7fa3b2b99e313b442b4a9f68a4024	1	161019	player	ft2play	slartibartfass/phx	8	30335	mods/misc/after/after the crash.XM
+12cfe56936a7c46fa9356f56381cdd3c	1	232540	player	protrekkr	ProTrekkr 2.x	11	1103598	mus/edit/Protrekkr_AROS_i386/modules/Jameson.ptk
+12cfe56936a7c46fa9356f56381cdd3c	1	232540	player	protrekkr	ProTrekkr 2.x	11	1103598	mus/edit/Protrekkr_aros/Protrekkr/modules/Jameson.ptk
 12cffbd29e53ef8d2838a0522ee9dd7e	1	416132	player	uade	Protracker	0	121390	game/demo/enzimas/Enzimas_Demo/Files/Scene1.Mod
 12d09653bc86771756335a88ee68bbd9	1	289739	player	uade	Protracker	0	76186	mods/rated/bb_bass-attack/mod.bass_attack
 12d6bb02b6cc11ae22656efb38a8a3a1	1	88816	player	uade	Protracker	0	39804	mods/blkha/1998_mods/mod.etwas
@@ -2757,6 +2764,8 @@
 141146d4395839adc435fc4b9678d7d0	1	113191	player	uade	Protracker	0	159296	mods/toady/DarkCastle/mod.DARKcastle
 1419214790774cdfdb728d20fb0d12c5	1	350770	player+silence	uade	OctaMED MMD1	0	455058	mods/jungl/Vertigo/Vertigo.med
 141936746eb83b98cebd4c54bef3cd80	1	311822	player	uade	Protracker	0	213428	mods/sbc/rebirth/mod.rebirth
+14195e5c8d3ee798e07e5d3a3baa93d6	1	217020	player	protrekkr	ProTrekkr 2.x	8	146176	mus/edit/Protrekkr_AROS_i386/modules/Dream Weaver.ptk
+14195e5c8d3ee798e07e5d3a3baa93d6	1	217020	player	protrekkr	ProTrekkr 2.x	8	146176	mus/edit/Protrekkr_aros/Protrekkr/modules/Dream Weaver.ptk
 141e1adf8ed169215c8a98a8971f43ed	1	250841	player+silence	uade	Protracker compatible	0	184826	mods/sets/2000ST01/GASOLINE.MOD
 141ea9609146e346c9f0127a437b9ee3	1	390709	player+silence	ft2play	DigiBooster Pro 2.19	14	483710	mods/vdo/vdo_crac/crackpop.xm
 1422125dd139525f5804045c65872fb5	1	168824	loop	uade	The YM2149 Player v1.52c	0	25000	mus/play/MYST_Data_6/YM2149/BlipBlop/YM.Beast_1
@@ -3110,6 +3119,8 @@
 16ba433c1ab3e4002cc32300a17566dd	1	46216	player	uade	Protracker	0	71926	game/misc/BabeAnoid_demo/BabeAnoid/music/mod.x-files 3
 16ba433c1ab3e4002cc32300a17566dd	1	46216	player	uade	Protracker	0	71926	game/misc/babeanoid/BabeAnoid2.0-FINAL/music/mod.x-files 3
 16bbbf95870a37c2fafa4a9607d5f0be	1	61568	player	uade	Protracker	0	22398	mods/misc/NonNOW95/mods/1995/11Now/MOD.SUNCALL.rel
+16bbe2610b0d014b0a650bad30cdce15	1	132600	player	protrekkr	ProTrekkr 2.x	7	238816	mus/edit/Protrekkr_AROS_i386/modules/space game.ptk
+16bbe2610b0d014b0a650bad30cdce15	1	132600	player	protrekkr	ProTrekkr 2.x	7	238816	mus/edit/Protrekkr_aros/Protrekkr/modules/space game.ptk
 16be94c91e621b4a408644b25fa39c50	1	177174	player+silence	uade	Protracker	0	104510	mods/misc/umowy/mod.Umowy
 16be9daedf85c6cf6aba4ac99b687f32	1	69306	loop	uade	The YM2149 Player v1.52c	0	5700	mus/play/MYST_Data_8/YM2149/Walker/YM.DeviousDesign
 16be9daedf85c6cf6aba4ac99b687f32	2	10721	silence
@@ -3462,6 +3473,7 @@
 191b8c5220267f1850233989f6f58f49	1	113072	loop	uade	The YM2149 Player v1.52c	0	2836	mus/play/MYST_Data_4/YM2149/Tao/YM.JeuTitle_Sid
 191beb1630c08dc945f38da665bdc1d1	1	325868	player	uade	Protracker	0	54702	mods/techn/juice-illblood/mod.illblood
 191eb7aedd86c1c7eec93a1cb4c6d414	1	362259	player	uade	OctaMED MMD0	0	69190	mods/mark/MoonCity/MoonCity
+1920f09b50558cee97e988fcc4c18fb3	1	176330	player+volume	protrekkr	ProTrekkr 1.x	9	94677	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Money.ptk
 192323ddfcd5b25e52d44faa6778805a	0	245321	player+volume	uade	Oktalyzer	0	411940	mods/techn/TrampBase/Ok.Tramping Base
 19249160f66ca593a2183aae266a1100	1	270408	player	uade	Protracker	0	312090	mods/demo/MST-Duskland/mod.Duskland
 19249160f66ca593a2183aae266a1100	2	0	nosound
@@ -3930,6 +3942,8 @@
 1bbe672128d4b3c892c1de09505e6474	1	319358	player	uade	Protracker	0	139702	mods/pop/SlowEncircleme/MOD.Slow_Encirclement
 1bc57fb377763b43bd561b56d0ab7ea8	0	0	error	uade	MusiclineEditor	0	8669	mus/misc/MODListV9style/_folkx.ml
 1bc9d6e6b8c2d444cf498061fcd21430	1	478000	player+silence	uade	Protracker	0	231232	mods/smg/dasnettz/mod.Das Nettz
+1bcb9f3c6e8572054ca2f141783141ad	1	157511	player+silence	protrekkr	ProTrekkr 2.x	8	64563	mus/edit/Protrekkr_AROS_i386/modules/Wonderland.ptk
+1bcb9f3c6e8572054ca2f141783141ad	1	157511	player+silence	protrekkr	ProTrekkr 2.x	8	64563	mus/edit/Protrekkr_aros/Protrekkr/modules/Wonderland.ptk
 1bcf68613c42b80183f726c0f3eb932e	1	159248	player+silence	uade	Protracker	0	617524	mods/cato/Sexy_SinnerII/SexySinnerII.mod
 1bcfe2f6801b9edf1b07d14e1e7e2e80	1	370471	player+silence	uade	Protracker	0	220492	mods/demo/MagicMelodies/mod.MagicMelodiesIII
 1bd1750aff53f2a5f66e8f507693a88f	1	161397	player	uade	Noisetracker 2.x	0	169182	mods/misc/Nonsense/MOD.Nonsense
@@ -4162,6 +4176,8 @@
 1d9aead6c897229b0e8a1843add52646	1	287816	player+volume	uade	OctaMED MMD3	0	1440710	mods/misc/LN3Water24/LN3Water24
 1d9f7841f4440e0e97c77368cbf079f8	1	302551	player	ft2play	FastTracker v2.00	4	1453587	mods/vdo/vdo_nosh/Noshitid.xm
 1da263be8592d1a6b26016e56da60f53	1	913663	loop	uade	The YM2149 Player v1.52c	0	4944	mus/play/MYST_Data_1/YM2149/Daglish/YM.3DGalax
+1dabc4ab3375af1ac55df58e991365bf	1	50540	player	protrekkr	ProTrekkr 2.x	7	82181	mus/edit/Protrekkr_AROS_i386/modules/Without performer.ptk
+1dabc4ab3375af1ac55df58e991365bf	1	50540	player	protrekkr	ProTrekkr 2.x	7	82181	mus/edit/Protrekkr_aros/Protrekkr/modules/Without performer.ptk
 1dabfb26631f0f7a6e263a9866d06cbf	1	176950	player	uade	OctaMED MMD1	0	229274	mods/med/JungleWalk/JungleWalk.mod
 1daee89ef869eb3fb1a923d8c40a7338	1	723	player	uade	OctaMED MMD0	0	6938	game/think/doublesquares/DoubleSquares/snd/end
 1daee89ef869eb3fb1a923d8c40a7338	1	723	player	uade	OctaMED MMD0	0	6938	misc/fish/fish-0702/DoubleSquares/snd/end
@@ -5822,6 +5838,8 @@
 28602ad0db787b6921efa40c700fae1d	1	218114	player+silence	uade	Protracker	0	169614	mods/techn/histfut/net/aminet/mod.histfut
 2860e9b8b3d1b175ec59d1e56ba6c045	1	210205	player+silence	uade	Noisetracker 1.x	0	93588	mods/rated/arcane/MOD.arcane
 28621711d9eb277113a5be1485002d5a	1	141262	player	uade	OctaMED MMD0	0	53212	mods/med/FunnySong/Funny Song.MED
+2863771a233be9069b0e54edab980059	1	243160	player	protrekkr	ProTrekkr 2.x	6	253307	mus/edit/Protrekkr_AROS_i386/modules/Sunday 1830.ptk
+2863771a233be9069b0e54edab980059	1	243160	player	protrekkr	ProTrekkr 2.x	6	253307	mus/edit/Protrekkr_aros/Protrekkr/modules/Sunday 1830.ptk
 286783d4cefd70eb674b8c525dc246ee	1	362285	player+silence	uade	Protracker	0	223568	mods/neuro/nd-dawnc/DawnCreation.mod
 28700461f744e1c03c94fb277930953c	1	300630	player	st3play	Scream Tracker 3.2x (SB)	16	335172	mods/tranc/sr_EternitySpe/sr-etrty.s3m
 28706cdd572feda81ba593b561bec824	1	564889	player+silence	uade	Protracker	0	378132	mods/pro/war/WAR.MOD
@@ -6130,6 +6148,8 @@
 2a2fdd14b1bac7339b4ef1be80621e68	1	206327	player	uade	Protracker	0	596330	mods/lead/LEAD-AieCyber/mod.Aiee!WorkThereBloodyCyber
 2a323b1ac85078a42fbdc64e2f838260	1	87789	player+silence	uade	Protracker	0	150990	mods/tranc/Trance124/Trance124.mod
 2a333182d7f9df0dc3afcbf661cf7b13	1	38520	player	uade	Noisetracker 2.x	0	33226	mods/demo/DottyFlowersSh/DottyFlowersSh.mod
+2a33aceff6c364461274c90726ce9d80	1	191980	player	protrekkr	ProTrekkr 2.x	12	49829	mus/edit/Protrekkr_AROS_i386/modules/devenirunpoulet.ptk
+2a33aceff6c364461274c90726ce9d80	1	191980	player	protrekkr	ProTrekkr 2.x	12	49829	mus/edit/Protrekkr_aros/Protrekkr/modules/devenirunpoulet.ptk
 2a3a0f9f289e9d1a20ca2a88523b72b7	1	345721	player	uade	Protracker	0	180148	mods/moods/hum_m157/DER WOLF IST TOT.mod
 2a3b2b7411738f1940b2d006fe19ff53	1	249896	player+silence	uade	Protracker	0	88762	mods/sets/1998ST02/Fantasy.mod
 2a3b2b7411738f1940b2d006fe19ff53	1	249896	player+silence	uade	Protracker	0	88762	mods/stame/fantasy/FANTASY.MOD
@@ -6853,6 +6873,7 @@
 2f650bdac55627015fd32c7f6b036a54	1	73082	player	uade	Protracker	0	14022	mus/edit/protracker23/Protracker/Modules/mod.c!s-freebased
 2f650bdac55627015fd32c7f6b036a54	1	73082	player	uade	Protracker	0	14022	mus/play/proplayer/Dev/ProPlayer/bin/Modules/Chip classix/mod.c!s-freebased
 2f65aac916306b5d8076c541679e13d4	1	211914	player	uade	OctaMED MMD0	0	157438	mods/mark/because/Because_Of_The_Nightlife
+2f69718dba8bdbadaee9142eb9144a97	1	60753	player+silence	protrekkr	ProTrekkr 1.x	8	357221	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Brass Tacks.ptk
 2f6d2e2e08e5da34cf71119f83195e1b	1	301393	player	uade	Tracker Packer 2 - 3	0	214258	demo/mag/IRS-EC46/Eurochart46/Modules/Mod1
 2f6d3c7f3dd79decc327e8e7ae5b79a6	1	221934	player+silence	uade	Protracker	0	200382	mods/rated/seadog/mod.seadog_medley
 2f6d89c8ad47788c9f1bd338f6e6c100	1	194170	player	uade	Protracker	0	81894	game/jump/SolidGold_Source/mods/Introduction.mod
@@ -6945,6 +6966,8 @@
 300469fb4a0b3545f1090c2ba7f0c97d	4	206890	player
 300469fb4a0b3545f1090c2ba7f0c97d	5	208719	player
 30058bc92dc95fe32950b3407d93e582	1	204365	player+silence	uade	Protracker	0	521568	mods/misc/A2-M4chn_1/m4chn/03/mod.Trance-probe 2009
+3006488e83d436c849d8f1031ce9c684	1	84560	player	protrekkr	ProTrekkr 2.x	8	485835	mus/edit/Protrekkr_AROS_i386/modules/amarillo.ptk
+3006488e83d436c849d8f1031ce9c684	1	84560	player	protrekkr	ProTrekkr 2.x	8	485835	mus/edit/Protrekkr_aros/Protrekkr/modules/amarillo.ptk
 3006e6b688758869155daa53444e006c	1	399921	player+silence	uade	Protracker	0	168858	mods/aweso/BudPeculiar/BudPeculiar.mod
 30088c869f95650bd261c852305a8a49	1	236931	player	uade	Protracker compatible	0	117814	mods/jogei/Just_Married/MOD.Just_Married!
 3008c8491a7d255a0feaba12595e2762	1	482885	player	st3play	Scream Tracker 3.00 (GUS)	8	391312	mods/8voic/s3m_2nd_skav/2ND_SKAV.S3M
@@ -7323,6 +7346,7 @@
 3256690c4cd5937825dfa299aeceda0a	0	59619	player	uade	CustomPlay	0	12928	mods/cust/Neuromancer/CUST.Neuromancer
 3256690c4cd5937825dfa299aeceda0a	1	29880	player
 32567ca9893c730adaa616c25e76df22	1	219489	player	uade	Protracker	0	99006	mods/sets/timezone/time_zone/MOD.DAYTIME
+325876c56bc6c0d92a119569337bf607	1	63500	player	protrekkr	ProTrekkr 1.x	4	127074	mus/edit/protrekkr/ProTrekkr-1.98k/modules/303 Test.ptk
 325adc472cc513def44968ef9adef41b	1	79241	player+silence	uade	Protracker	0	19000	mods/doh/FlukasRevenge/FlukasRevenge.mod
 3260f781818dde342f331e617fa9aee9	1	238197	player	uade	Protracker	0	119660	mods/synth/Dontcareanymor/Dontcareanymor.mod
 3261f512d55a459a3444befc464cbf60	1	228261	loop	uade	The YM2149 Player v1.52c	0	7868	mus/play/MYST_Data_8/YM2149/Tao/YM.RideTheSky
@@ -7881,7 +7905,6 @@
 36d0c4fe261eff7b8212bdf7c588fde9	1	379608	player+silence	ft2play	FastTracker v2.00	8	356660	mods/xm/nomad/nomad.xm
 36d5195d7273a5ce2fb8cb36612feb05	1	307321	player	uade	Protracker compatible	0	381994	mods/misc/jbrown/JBROWN.MOD
 36db60d12fa3d1ba59345cb447cdae7e	1	162738	player	ft2play	FastTracker v2.00	22	868111	mods/tp96/DreamRide/DRIDE.XM
-36dda267cbfc68779e00c4e29a7601ae	0	0	nosound	uade	PreTracker	0	80	misc/fish/fish-0282/PrintHandler/MountList
 36df294157aef39ddb4c6dd4e93dd42a	1	235484	player	uade	Protracker	0	285904	mods/techn/Beat-Phobia/Mod.Beat-Phobia
 36dfa08d9b822fd5c9adf8c42b7401db	1	137697	player+silence	st3play	Scream Tracker 3.2x (GUS)	12	344724	mods/melod/SpaceExpeditio/SpaceExpeditio.s3m
 36dfa08d9b822fd5c9adf8c42b7401db	2	15311	player
@@ -7961,6 +7984,8 @@
 375f57832fb4a11a39b60d15d2b92e01	1	120766	player	uade	Protracker	0	168974	mods/rock/BadBoogie/BadBoogie.mod
 3760376957115c23df2bfac39e134255	1	367833	player+silence	uade	Protracker	0	394510	mods/sets/CASM-songs/mod.casm.demosong2
 3764d09b4cd5aca51b24e3e14b86c203	1	266389	player	uade	OctaMED MMD1	0	179490	mags/hpool/hp03/HousePool_03/HP_03-Songs/MMD1.I_like_da_bass
+37657b636fc8e7717709183a313757f0	1	605760	player	protrekkr	ProTrekkr 2.x	8	871461	mus/edit/Protrekkr_AROS_i386/modules/our trip to syrius.ptk
+37657b636fc8e7717709183a313757f0	1	605760	player	protrekkr	ProTrekkr 2.x	8	871461	mus/edit/Protrekkr_aros/Protrekkr/modules/our trip to syrius.ptk
 3768b653c41d7ea9fef74a45070a45a5	1	263889	player+silence	uade	Protracker	0	305896	mods/misc/rNO-L009/ROZ-drug-x.mod
 376bb4758e68fcf488001ea78bfd8b20	1	110726	player+silence	st3play	Scream Tracker 3.01 (GUS)	16	79482	mods/8voic/s3m_randolf/randolf.s3m
 376d038bd18050baf380afb94666bce9	1	255900	player	uade	Protracker	0	203926	mods/doh/BarmansPrayer/BarmansPrayer.mod
@@ -8053,6 +8078,7 @@
 37ac5b7cb3ae58d492e8bb5c23bab4f8	1	327017	player+volume	ft2play	FastTracker v2.00	20	2949263	mods/xm/i-sclouds/After The Storm.xm
 37af13909189b59517584ced48589fae	1	76920	player	uade	Noisetracker 1.x	0	93260	mods/synth/Gainsmusic/Gainsmusic.mod
 37b028b06295b3c5357cc0fe6c90849d	1	272752	player+silence	uade	Protracker	0	342624	mods/sets/Aquafresh1/MOD.No Atmosphere
+37b4425b478066638aeeea329c8d4048	1	167016	player+silence	protrekkr	ProTrekkr 2.x	4	470484	mus/edit/Protrekkr_AROS_i386/modules/jiffypop23-Arrhenius.ptk
 37b6112469b117a3fcba73e219187151	1	257878	player+volume	uade	Protracker	0	126058	mods/sets/DOS-Themes/mod.dos-theme-2_fix
 37b8afe62ec42a47b1237b794193e785	1	126493	player	st3play	Scream Tracker 3.00 (GUS)	4	14176	mods/8voic/s3m_inspirat/inspirat.s3m
 37ba1303d29c0bfdc8822c7a03754944	1	75501	player+silence	uade	OctaMED MMD1	0	227508	mods/med/WhenSheTalks/med.When_she_talks
@@ -8516,6 +8542,7 @@
 3a8cf876738d089295982df9d8c8b6a1	1	279290	player	uade	Protracker	0	346048	mods/delor/TroubleWalking/TroubleWalking.mod
 3a953f2fc0e3a56b7d459c4f6b29a40d	1	89881	player	uade	Protracker	0	64544	game/2play/AlbatrosAntics/data/mus1.alb
 3a9594ad7a7c19ad15f940780692a6ab	0	171933	silence	uade	MusiclineEditor	0	12274	mods/essen/SpeciesOfTheMT/Ml.SpeciesOfTheMTechno
+3a96d81cac0500d7798b248b077fbd85	1	257800	player	protrekkr	ProTrekkr 2.x	8	308661	mus/edit/Protrekkr_AROS_i386/modules/block rockin_ beats.ptk
 3a9898732c6afa0646e352602963abad	1	119439	player	ft2play	FastTracker v2.00	8	228445	mods/xm/incinrtd/incinrtd.xm
 3aa19a6f4a6afe963c258dd194ce54ca	1	102520	player	uade	Protracker	0	91966	mods/sets/SCX-WOTW/mod.top or flop
 3aa4ee87838f2eb28ccad86e557ecc3d	1	178617	player	uade	OctaMED MMD3	0	84790	mods/synth/synthese/synthese
@@ -9216,6 +9243,7 @@
 3f6fb9e16602d3bbb75f9dc471a33908	1	390739	player+silence	uade	Protracker	0	485476	mods/sbc/pt_at1st/mod.at_first_sight
 3f7171bdb39a8ffae3f6761f0221c058	1	453246	player	uade	Protracker	0	143136	game/role/FE_Final/Mods/Madness.mod
 3f71986dc7690d2026a66f8b0d94f8ed	1	120416	player+silence	ft2play	FastTracker v2.00	16	147313	mags/obligem/obligement40/Obligement40/music/films.xm
+3f73588c2d2d22fccee2440687874295	1	215380	player	protrekkr	ProTrekkr 2.x	8	164575	mus/edit/Protrekkr_AROS_i386/modules/Yet another Freedom.ptk
 3f74ef032dd5601f043774d212c3e5ab	1	261245	player	uade	Protracker	0	123074	mods/rock/Neptune/Neptune.mod
 3f79c1d6f7272bfee2faca981fcc9d85	1	442130	loop	uade	The YM2149 Player v1.52c	0	4956	mus/play/MYST_Data_2/YM2149/Hippel/COSO/YM.ChrisHuelsbeckRemix
 3f7e84a2786c482b2c099ec0f1934070	1	437911	player+silence	it2play	Impulse Tracker 2.13	11	1877033	mods/wmr/judgeme/JUDGE_ME.IT
@@ -9513,6 +9541,7 @@
 413d1bac0e741244642e62f7291acc4a	0	266283	player+silence	libdigibooster3	DigiBooster Pro 2.21	16	477329	mods/moods/hum_m009/NIGHTFEAR.DBM
 413d8720fae2d7c07acd6708d111f2e7	1	18044	player	uade	Protracker	0	4000	mods/sets/leon_bli-mods/leon mods/no fun.mod
 413d91a013d77464657be26deb881e3d	1	211914	player	uade	OctaMED MMD0	0	137226	mods/mark/DreamDance/Dream_Dance
+413fdc7139a22211ba0ad8249931fdc3	1	37640	player	protrekkr	ProTrekkr 2.x	2	4237	mus/edit/Protrekkr_AROS_i386/modules/Comic Bakery Remix.ptk
 4144cee6fe5d1081ad771495c8645156	0	7816	player	uade	Amos Music Bank	0	4472	game/misc/feder/DATA/DATA33
 414521f2fe158b93d634ae885b6bae92	1	218022	player	uade	OctaMED MMD0	0	370026	mods/misc/CornFlakes/CornFlakes.mod
 4145603fd2d6fcb04c86bc62f9cc4fe4	1	244064	player	uade	OctaMED MMD0	0	94896	mods/mark/hun2/100Miles-2
@@ -10146,6 +10175,8 @@
 44bef9e90e254918ce7766bbf606799b	3	27569	player
 44bef9e90e254918ce7766bbf606799b	4	4600	silence
 44bef9e90e254918ce7766bbf606799b	5	51320	player
+44c3ca1111a9dcf034f8a77fee4ce6b6	1	30700	player	protrekkr	ProTrekkr 2.x	12	15522	mus/edit/Protrekkr_AROS_i386/modules/Elevator Zax.ptk
+44c3ca1111a9dcf034f8a77fee4ce6b6	1	30700	player	protrekkr	ProTrekkr 2.x	12	15522	mus/edit/Protrekkr_aros/Protrekkr/modules/Elevator Zax.ptk
 44cace85f4b31146add958fb02dbd93c	1	134531	player	uade	Noisetracker 2.x	0	68682	game/shoot/Stato/Files/LevelMusic_PARTY.MOD
 44cb61d5c7eb6e79d61e2d005a531bcb	1	257186	player	uade	Protracker	0	408260	mods/xceed/CyberMotion/mod.cyber motion
 44cb647629a462859a77a092bc6f1de8	1	84616	player	uade	Protracker	0	35072	mods/pro/brm_chip/mod.absent
@@ -10498,6 +10529,7 @@
 47b278339fbf9ec7a112e6a48f1f8eb1	1	213265	loop	uade	The YM2149 Player v1.52c	0	3036	mus/play/MYST_Data_2/YM2149/Hippel/MCoder/YM.Tangram_2
 47b326675eab8c4b4ec926e215e2ab7a	1	561249	player+silence	it2play	Impulse Tracker 2.14+	16	1821583	mods/blasa/bl_touch/BL_TOUCH.IT
 47b326675eab8c4b4ec926e215e2ab7a	1	561249	player+silence	it2play	Impulse Tracker 2.14+	16	1821583	mods/moods/hum_m104/blasa_touch.it
+47b3657888d9a93056467a1610619ad4	1	145900	player	protrekkr	ProTrekkr 2.x	6	13460	mus/edit/Protrekkr_AROS_i386/modules/delmapom.ptk
 47b86b8c0e2e21aca1bfda717b50d4b8	1	262049	player	uade	OctaMED MMD0	0	84774	mods/mark/rain/RainDancer
 47bb56dfee8a3dc9b0599da844f01f5e	1	337364	player+silence	uade	Protracker	0	426348	mods/techn/Sonic/mod.is it a sonic
 47bd092cee207f95d2938a4632069c0c	1	374630	player+silence	ft2play	MilkyTracker 1.02.00	4	322854	mods/crash/DreamBurn/Dream_Burner.xm
@@ -10628,6 +10660,7 @@
 48c5758f2806e006491884870cbd604a	0	325724	silence	uade	MusiclineEditor	0	20183	mods/essen/TouchFuture/Ml.TouchFuture
 48c9ac119c480462d5b18efaa3132718	0	71736	player	uade	ArtOfNoise (4ch)	0	8964	mus/edit/ArtOfNoise/ArtOfNoise/demomods/aon.Shadow Zone.stc
 48cf034ec3a555333abfdedba19d5541	1	118240	player+silence	uade	Protracker	0	245504	mods/evrim/Isnt_My_Day/mod.-This_Isn't_My_Day-
+48d5b0e7d6266720cb7ce970f595f383	1	39980	player	protrekkr	ProTrekkr 2.x	2	4237	mus/edit/Protrekkr_aros/Protrekkr/modules/Comic Bakery Remix.ptk
 48d6c3acea7836fc98852ee779d0c054	1	115321	player	uade	Protracker	0	171694	mods/sets/leon_bli-mods/leon mods/mim fluch.mod
 48db365fdfc45a4db4a71b00c86302d2	1	58231	player+silence	uade	OctaMED MMD3	0	629330	mods/misc/TaterTerrorCancel/TaterTerrorMenu
 48dfec558cdd6d414bd71ddc94320ffa	1	115290	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	243826	mods/piano/RedBuster/RedBuster.s3m
@@ -10883,6 +10916,8 @@
 4ae2e20e9ade7f7ae4c2b742029efd97	1	182144	player+silence	uade	Protracker	0	204582	mods/misc/slash_yo/Mod.Slash_Your_Girl
 4ae62b46b25ad784b48dee5e1a7a68a4	1	306655	player+silence	uade	Protracker	0	63856	mods/pro/LS-mods/Louise'sLastModules/Full/ToFear
 4ae8063c4e63f6662db0f760984177de	1	112769	player	uade	Protracker	0	74778	mods/sets/Jammin2_Mods/mod.Vectors
+4ae9b75e764e1e6c638c09cf866922a8	1	97380	player	protrekkr	ProTrekkr 2.x	8	17307	mus/edit/Protrekkr_AROS_i386/modules/Loop Influenza.ptk
+4ae9b75e764e1e6c638c09cf866922a8	1	97380	player	protrekkr	ProTrekkr 2.x	8	17307	mus/edit/Protrekkr_aros/Protrekkr/modules/Loop Influenza.ptk
 4aed03737a39a717ec461b5d2222490e	1	146045	player	uade	Protracker	0	153962	mods/toady/FatalMusic/mod.fatal music
 4aed3f425082f0087b43019b4d6ca2b1	1	151034	player+silence	st3play	Scream Tracker 3.2x (SB)	16	283776	mods/s3m/xmain/xmain.s3m
 4af6e9f9dd0395f3cd57295c6b63cfec	1	243060	player	uade	Protracker	0	208440	mods/cutc/ColombianRaid/ColombianRaid.mod
@@ -11304,6 +11339,8 @@
 4da71d3e1dc563da00b4137164c03ec8	1	423556	player+volume	uade	Protracker compatible	0	366690	mods/jungl/CBA_1999_01/CBA_DR‾1.MOD
 4da7c419e4cf1791b6a896f7cfd99e62	1	31800	loop	uade	The YM2149 Player v1.52c	0	964	mus/play/MYST_Data_6/YM2149/Crossley/YM.HuntForRedOct_GameOver
 4dabdb3c3fa75ed351236d3615eb2c77	1	186796	player	uade	Protracker	0	205936	mods/demo/ElectricChurch/mod.electric-church.hit
+4dada763eba63e1fd0cc2c97bc54700d	1	188834	player+silence	protrekkr	ProTrekkr 2.x	8	245378	mus/edit/Protrekkr_AROS_i386/modules/flight.ptk
+4dada763eba63e1fd0cc2c97bc54700d	1	188834	player+silence	protrekkr	ProTrekkr 2.x	8	245378	mus/edit/Protrekkr_aros/Protrekkr/modules/flight.ptk
 4db2c3735df3b28d1a79cf7df07d6d17	1	137083	player	uade	Protracker	0	119226	mods/atmos/Suburb/mod.Suburbia
 4db56d532bfe6bcfc6e108f1c6f0eff4	1	232366	silence	uade	The YM2149 Player v1.52c	0	4932	mus/play/MYST_Data_7/YM2149/Misc/YM.KarateKidII
 4db5d10b1042d29f88d6f89da505a565	1	320481	player+silence	ft2play	DigiBooster Pro 2.18	14	404098	mods/vdo/vdo_sine/sinelab.xm
@@ -11397,6 +11434,8 @@
 4e67e99a2fac345027f526241db1ff7c	1	341642	player	uade	OctaMED MMD3	0	1351352	mods/misc/np_chemg/np_ChemicalGraveyard.OSS
 4e685e4e843f67c6c42b74610be732c6	1	220313	player	uade	Protracker	0	191686	demo/sound/tmddata1/TMD_Data1/mod.tribal devil
 4e6a8f537974b649cd2cced8dad5313e	1	72831	player	ft2play	FastTracker v2.00	8	821661	mods/xm/traxjes8/FREEME.XM
+4e6aa736daed9b0e8b050bf51a4df793	1	61650	player+silence	protrekkr	ProTrekkr 2.x	8	357907	mus/edit/Protrekkr_AROS_i386/modules/Brass Tacks.ptk
+4e6aa736daed9b0e8b050bf51a4df793	1	61650	player+silence	protrekkr	ProTrekkr 2.x	8	357907	mus/edit/Protrekkr_aros/Protrekkr/modules/Brass Tacks.ptk
 4e712aa04430f5fbb4748b36b40363b6	1	30824	player	uade	Protracker	0	180972	mods/demo/BIZZNIZZ-Rips/BIZZNIZZ/2.mod
 4e732d3b1d8b31792c0fbb3d09eb2ef9	1	290562	player	ft2play	FastTracker v2.00	10	261711	mods/tranc/Bass/BASS.XM
 4e7aa2e48c6eea39006556f80115b2f3	1	122441	player+silence	uade	Protracker	0	564910	mods/evrim/MyBlueSky/mod.-My_Blue_Sky-
@@ -12291,6 +12330,7 @@
 54ad48bd0016b14360f8972d730115c2	1	192141	player	uade	Noisetracker 2.x	0	56646	game/shoot/ctm1a/Files/Scene2.Mod
 54b3d572781389f2e2a8e83877aa4020	1	442115	player+silence	ft2play	FastTracker v2.00	12	3741830	mods/misc/rNO-L034/Life.xm
 54b51622cc987d9faf7e9e453e097939	1	205423	player	uade	Protracker compatible	0	281230	mags/saku/htsaku34/framet/musiikki/taustamusiikki.mod
+54b6b44477a2a05a1a3e655fca973b60	1	141980	player	protrekkr	ProTrekkr 2.x	8	35197	mus/edit/Protrekkr_AROS_i386/modules/valot.ptk
 54bca52aa4184bd4affacad9fb306b5c	1	173252	player	uade	Protracker	0	57870	game/shoot/defendguin.i386-aros/defendguin.i386-aros/data/music/ants.mod
 54bca52aa4184bd4affacad9fb306b5c	1	173252	player	uade	Protracker	0	57870	game/shoot/defendguin/Defendguin/data/music/ants.mod
 54bca52aa4184bd4affacad9fb306b5c	1	173252	player	uade	Protracker	0	57870	mods/ncase/nc-ants/ANTS.MOD
@@ -12831,6 +12871,7 @@
 582fe76a92f0b8ef467672abdc08045a	1	236775	loop	uade	The YM2149 Player v1.52c	0	2552	mus/play/MYST_Data_2/YM2149/Hippel/MCoder/YM.AnCool_TCBTracker
 5830c948e549b736e073a33d0dbe1d5f	1	453206	player	uade	OctaMED MMD1	0	369884	game/demo/Gloom3demo/Gloom3demo/sfxs/med1
 5830c948e549b736e073a33d0dbe1d5f	1	453206	player	uade	OctaMED MMD1	0	369884	mods/jungl/radius-vis/visitor
+583318aca85614985777cba2c2b1a643	1	270786	player+silence	protrekkr	ProTrekkr 1.x	8	291378	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Round A Bout.ptk
 58343e1089733285ba28a14db69f4f78	1	2132483	volume	uade	Noisetracker 2.x	0	418832	mods/sidew/Beyond_Dreams/Beyond_Dreams
 5835e8cdaea94c6d0bef3759864121a4	1	116286	player	ft2play	FastTracker v2.00	8	211260	mods/xm/seven/Xm.Seven_Sins
 5836920853467d29196d973c25e5973c	0	62986	loop	uade	UADE	0	39184	mods/chip/CUST_Guldkorn/guldkorn/CUST.Guldkorn_Ingame
@@ -13144,6 +13185,7 @@
 5a8e15f6b2330e0e1aa0f7402d33eb24	2	99968	player
 5a8e3fd3cb2fb903143bc94e97bed095	1	134531	player	uade	Protracker	0	46442	mods/chip/Drakon_chip/PowerOfNoise.mod
 5a8fce90e52e305eb8887a0617a4d86b	1	94744	player	uade	Protracker	0	228848	mods/cato/InLivinColor/InLivinColor.mod
+5a933c90c45feaeba9759cfb483d2799	1	99820	player	protrekkr	ProTrekkr 2.x	6	16059	mus/edit/Protrekkr_aros/Protrekkr/modules/unit5.ptk
 5a99addffdfdd43b76a1096472195a6d	1	256141	player	uade	Protracker	0	226798	mods/aweso/SportsIllustra/SportsIllustra.mod
 5a9b077b7b9a018f813b6ac368b50b75	1	43725	player	uade	Protracker	0	175222	mods/dremr/Black_Queen2/BlackQueen2.mod
 5a9b707ebdfa44ccf4706c255eebe5ce	1	370972	player+silence	uade	Protracker	0	333794	mods/techn/DJNick-MODs_1990-1999/DJNick-MODs_1990-1999/Music/djnick - redemption - RMX.mod
@@ -13559,6 +13601,8 @@
 5d5630db145671fa13a6826ae6f1f169	1	202055	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	149434	mods/synth/pn_WayOfTheLea/pn-wotl.s3m
 5d5750949fb69d4c04857eb62fb440b2	1	111483	player	uade	Protracker	0	80774	mods/sets/MiscMods_e/mod.electrosonic
 5d5d7ebf7b2637822a23026458fe59a3	1	183017	player+silence	ft2play	FastTracker v2.00	14	2624471	mods/fby/KenShiro/KenShiro.xm
+5d5f0e1b6f59b06d5864966dff06fe27	1	89860	player	protrekkr	ProTrekkr 2.x	10	253199	mus/edit/Protrekkr_AROS_i386/modules/Gone tipsy.ptk
+5d5f0e1b6f59b06d5864966dff06fe27	1	89860	player	protrekkr	ProTrekkr 2.x	10	253199	mus/edit/Protrekkr_aros/Protrekkr/modules/Gone tipsy.ptk
 5d7064e881486244e5e25a1853047cce	1	30824	player	uade	Protracker	0	39144	mods/exprt/TechnoBeatB5/mod.techno-beat-box5
 5d71b729cbfe9a5773079abb91b9358b	1	149561	player	uade	Protracker	0	487964	mods/synth/Bongo-mix/mod.bongo-megamix
 5d72d0acbdf4a3334950126a1d286258	1	238482	player+silence	uade	Noisetracker 2.x	0	341540	mods/misc/911/911.mod
@@ -13836,6 +13880,8 @@
 5f48dcf3b78104a4fc1e027066a6d1e0	1	208156	player	uade	Protracker	0	155790	mods/misc/skyride/mod.skyriders-orig
 5f4aef2d390070094478b5e0b05c6727	1	240769	player	uade	Protracker	0	263268	mods/techn/Sheim/sheim.mod
 5f4bc7cb28d8c5b9c602b3198e52d04a	1	344435	player	uade	Protracker	0	140424	mods/atmos/DeathStar/DeathStar.mod
+5f4da733a60ab50b1ad7e2018eb3a5b7	1	197984	player+silence	protrekkr	ProTrekkr 2.x	14	75327	mus/edit/Protrekkr_AROS_i386/modules/Ordinary-Zero.ptk
+5f4da733a60ab50b1ad7e2018eb3a5b7	1	197984	player+silence	protrekkr	ProTrekkr 2.x	14	75327	mus/edit/Protrekkr_aros/Protrekkr/modules/Ordinary-Zero.ptk
 5f56144a5dc7975718260af7da7dc053	1	139434	player	uade	Protracker	0	90306	mods/panik/pnk-jgw/PNK!JGW.MOD
 5f5a4ebb8cc5bc7fedcf176dee470230	1	230161	player+silence	ft2play	FastTracker v2.00	26	2856064	mods/wmr/j2neptun/j2neptun.xm
 5f5ad399b15840c0b0662269ed8ad739	1	97417	player	uade	Noisetracker 2.x	0	91698	mods/sets/andimod/andimod/mod.strange_reaction
@@ -14930,6 +14976,8 @@
 66c3e6fd0da468ed8eca6cb517c8ba5f	1	132360	player	uade	Protracker	0	127946	mods/pro/SoundConquest/mod.sound conquest
 66c3f8b58d2c768c74fb19a9af710c62	1	490581	player	uade	Protracker	0	277620	mods/house/Agn-House/HOUSE.MOD
 66c48d0fbb6b334b17307d4d078d2fd2	1	104943	player	ft2play	FastTracker v2.00	8	642338	mods/mnc/alarm/ALARM.XM
+66c4b214acabb357ed0926537b00d2b5	1	271260	player	protrekkr	ProTrekkr 2.x	8	99229	mus/edit/Protrekkr_AROS_i386/modules/plastic elements.ptk
+66c4b214acabb357ed0926537b00d2b5	1	271260	player	protrekkr	ProTrekkr 2.x	8	99229	mus/edit/Protrekkr_aros/Protrekkr/modules/plastic elements.ptk
 66c4ed58e78983898737143e5b0d8120	1	321709	player	uade	Protracker	0	738384	mods/voice/Mindwaves/mod.mindwaves
 66c67108973c1e3e9c2a5715ce07dad7	1	51320	player	uade	Protracker	0	11140	mods/delor/ThermalSprings/ThermalSprings.mod
 66cb122511ae8d10123ddbea7dea8107	1	350122	player	uade	Protracker	0	162026	mods/pro/Etr_Furnace/mod.furnace
@@ -15496,6 +15544,7 @@
 6b234a0fc23cb7fa1078cb69ebc682ac	1	291969	player	uade	Protracker	0	184192	mods/techn/pt-ping/mod.ping_pong
 6b25d3ea1f6cb1ab4229f1dd3a636d33	1	192141	player	uade	Protracker	0	52206	mods/pro/teddyful/teddyful_remix
 6b29d8cff2ec50ef87c0e72f04dadb3d	1	385890	player+silence	ft2play	FastTracker v2.00	12	715074	mods/mvp/mvp_0024/FUNKY3.XM
+6b2b3f2930b1751e6ec9fdea0cc8c10d	1	53320	player	protrekkr	ProTrekkr 1.x	8	1117803	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Chemistry.ptk
 6b2bbfb876bcaec955d761e6927f2f61	1	141383	player	uade	Protracker	0	205608	game/think/TC4_68k/TC4/data/audio/Track-2-BGM.mod
 6b2c4660bdb3254e4504b6849a8a348d	1	242195	player+volume	uade	Protracker	0	256680	mods/clawz/Mylene/Mylene.mod
 6b2d016193e054f9d3db689bd32dc007	1	3035595	silence	uade	Noisetracker 2.x	0	543648	mods/pro/TURNmeON/2-TURN_ME_ON.mod
@@ -16185,6 +16234,8 @@
 6fc563319cff7392a39c617ba729286a	1	252283	player	uade	Protracker	0	151170	game/think/mirrormagic-2.0.2_mos/mirrormagic-2.0.2_mos/music/mod.loud_and_clear
 6fc563319cff7392a39c617ba729286a	1	252283	player	uade	Protracker	0	151170	mods/pop/loudandclear/mod.Loud+Clear
 6fca229b88cc14dfa46ee8265ee9511c	1	833429	player	uade	Noisetracker 2.x	0	1245540	demo/sound/InB-CP11/cosmic_pollution_11-inb/data/m
+6fca5eb35f997a87adc9d049d2144261	1	82480	player	protrekkr	ProTrekkr 2.x	8	21087	mus/edit/Protrekkr_AROS_i386/modules/aulral.ptk
+6fca5eb35f997a87adc9d049d2144261	1	82480	player	protrekkr	ProTrekkr 2.x	8	21087	mus/edit/Protrekkr_aros/Protrekkr/modules/aulral.ptk
 6fcb196973e4ff92e98934007f8a3c63	1	92272	player	uade	Protracker	0	17118	mods/pro/Devious_Tunes/dt/Mod.DT072
 6fced6f265be9bac2dc4e0c8fbe4abd5	1	339506	player+silence	uade	Protracker	0	353308	mods/techn/phd_noun/mod.nounder
 6fd067d02edb38617547700e04ddaceb	1	315359	player	uade	Protracker	0	251422	mods/techn/IronGhost/mod.IronGhost
@@ -16820,6 +16871,8 @@
 73419bf6fb3f2bbe429bc72a390d3ee0	1	202409	player	st3play	Scream Tracker 3.2x (SB)	16	594828	mods/rock/PureSpin/PureSpin.s3m
 7341ebacb25012316eebd6d4b5bc6ccc	1	256886	player+silence	st3play	Scream Tracker 3.2x (SB)	8	429223	mods/s3m/painkilr/painkilr.s3m
 7342016d927e788c4191b94ca3337cc1	1	138369	player	uade	Protracker	0	87828	mods/demo/DeathBox/DeathBox.mod
+73434e7aab7521a20a2672cf342c642a	1	155180	player	protrekkr	ProTrekkr 2.x	6	348747	mus/edit/Protrekkr_AROS_i386/modules/spinning.ptk
+73434e7aab7521a20a2672cf342c642a	1	155180	player	protrekkr	ProTrekkr 2.x	6	348747	mus/edit/Protrekkr_aros/Protrekkr/modules/spinning.ptk
 7343e38909add206078c1d4261f0f3b3	0	374989	player+silence	uade	Digital Sound Studio	0	277174	mods/funet/ZRIBinaryReali/zribin.mod
 7343fc8cf8b8d9ab23a8a10967b6bc89	1	111483	player	uade	Protracker	0	111402	mods/huezo/AamuSarastaa/ME-Aamu_sarastaa.mod
 734d55ada9c9131fff65bc5ea0035433	1	314539	player+silence	uade	OctaMED MMD1	0	277430	mods/jungl/SyranSlasher/MED.SyranSlasher
@@ -20373,6 +20426,8 @@
 8c46f7214f3e279c4ce02e4f11cbc1ab	1	97617	player	uade	Protracker	0	17206	demo/sound/MusicDisk01_CopperSky/data/f5.mod
 8c495cf5146c0484f7dd47b1643d6872	1	15472	player	uade	Protracker	0	137170	mods/misc/LearnSwedish/mod.Learning Swedish
 8c4964f415c3e7cf8e278e76181ab5d7	1	171645	player	uade	Protracker	0	113224	mags/obligem/obligement25/obligement25/datas/musiques/mod.musik
+8c49893c08de5150d3b20b7eb178008b	1	297580	player	protrekkr	ProTrekkr 2.x	10	405121	mus/edit/Protrekkr_AROS_i386/modules/love me daddy.ptk
+8c49893c08de5150d3b20b7eb178008b	1	297580	player	protrekkr	ProTrekkr 2.x	10	405121	mus/edit/Protrekkr_aros/Protrekkr/modules/love me daddy.ptk
 8c4fab314138aeae0e24b42ec69c4f57	1	76920	player	uade	Protracker	0	13730	mods/pro/Devious_Tunes/dt/Mod.DT192
 8c500fd252fcb4c83a6a0dd00821dd71	1	76920	player	uade	Protracker	0	15966	game/jump/Vampire-COTN_v1/Files/LevelMusic_magiccha.mod
 8c500fd252fcb4c83a6a0dd00821dd71	1	76920	player	uade	Protracker	0	15966	game/jump/Vampire-COTN_v1_HD/Game/Files/LevelMusic_magiccha.mod
@@ -20519,6 +20574,8 @@
 8d859a44c3ee74376dc37ef5c29ca642	1	201083	player	uade	Protracker	0	451784	mods/huezo/MistyMountains/Misty_Mountains.mod
 8d86266c1fb05200bed13ae4c0a5f53f	1	315138	player	uade	Protracker	0	890152	mods/sbc/dope/mod.dope
 8d890153627881c85aa0db05f95ba6f6	1	46216	player	uade	Noisetracker 2.x	0	69524	mods/demo/FLASH-DC-Rips/DC2/max-mix6.1.mod
+8d8a275cd6058efba960554a4eb05ba6	1	84700	player	protrekkr	ProTrekkr 2.x	5	125901	mus/edit/Protrekkr_AROS_i386/modules/303 Test.ptk
+8d8a275cd6058efba960554a4eb05ba6	1	84700	player	protrekkr	ProTrekkr 2.x	5	125901	mus/edit/Protrekkr_aros/Protrekkr/modules/303 Test.ptk
 8d8e770b8fcdb612555e766725cd6391	1	269745	player	uade	OctaMED MMD0	0	81460	mods/med/youdrivemewild/YOU_DRIVE_ME_WILD
 8d92b0824f9f80f8d5898cbaf94ab7d0	1	25821	player	uade	Protracker	0	111202	game/2play/Awaking/Awaking/Awaking.GameSound
 8d92b0824f9f80f8d5898cbaf94ab7d0	2	0	nosound
@@ -21327,6 +21384,8 @@
 9472d64ffb0269de9f3ae998f6411195	1	179163	loop	uade	The YM2149 Player v1.52c	0	4632	mus/play/MYST_Data_1/YM2149/Beben/YM.Phantasm
 9472d64ffb0269de9f3ae998f6411195	2	44022	silence
 9472d64ffb0269de9f3ae998f6411195	3	68492	loop
+9476e8dfadee196da87b7d8381f7c7d9	1	323226	player+silence	protrekkr	ProTrekkr 2.x	8	146404	mus/edit/Protrekkr_AROS_i386/modules/Vacation Climate.ptk
+9476e8dfadee196da87b7d8381f7c7d9	1	323226	player+silence	protrekkr	ProTrekkr 2.x	8	146404	mus/edit/Protrekkr_aros/Protrekkr/modules/Vacation Climate.ptk
 947917673d5c4f491960071b0f4e30ef	1	212143	player	ft2play	FastTracker v2.00	10	1101568	mods/ooze/OneOnThe/XM.One On The House
 947aa699afbeec5cf7a3139d01ac866f	1	46216	player	uade	Protracker	0	49054	mods/toady/ToadLeDragon/mod.toad le dragon
 947bc20ef94480e5ec69e34152991cd4	1	179321	player	uade	Noisetracker 2.x	0	62728	mods/demo/Hero1/Hero1.mod
@@ -21740,6 +21799,7 @@
 97e9fc5d318c4ac85a6c52af113e0fae	1	249189	player	st3play	Scream Tracker 3.2x (SB)	8	552610	mods/s3m/nation_3/nation-3.s3m
 97ea9bbf571eb7f8d1becdc254dfc4d6	1	320543	player	st3play	Scream Tracker 3.01 (SB)	8	259016	mods/8voic/ambi-cau/CAUTION.S3M
 97ea9bbf571eb7f8d1becdc254dfc4d6	2	22987	player
+97eca46825bf22519fb7b8667afbe7f7	1	191980	player	protrekkr	ProTrekkr 1.x	12	48935	mus/edit/protrekkr/ProTrekkr-1.98k/modules/devenirunpoulet.ptk
 97f5fe560d2a004d93c27119e7237bd4	1	7326	player+silence	uade	Noisetracker 2.x	0	2236	mus/edit/q2mod-morphos/src/freq.mod
 97f5fe560d2a004d93c27119e7237bd4	1	7326	player+silence	uade	Noisetracker 2.x	0	2236	mus/edit/q2mod/src/freq.mod
 97fbf05ab17e4f535d27fd31314078c4	1	92272	player	uade	Protracker	0	43300	mods/sets/rme-musipack2/mod.candyworld
@@ -21924,6 +21984,8 @@
 992a027bc4d64fb0c2b08b545a31a764	1	42453	silence
 992ad912198e99d2e1344fdfe258a977	1	130693	player	uade	Protracker	0	90470	mods/sets/OLD_Dexion/mod.Einsteinium 04
 99300021e1027e1857cc2fef1236aa07	1	180406	player	uade	Protracker	0	288845	mods/pro/dtb_bstorm3/BSTORM3.MOD
+99310aec31e2613728faa40337bd9e54	1	209558	player+silence	protrekkr	ProTrekkr 2.x	8	340157	mus/edit/Protrekkr_AROS_i386/modules/alterraid.ptk
+99310aec31e2613728faa40337bd9e54	1	209558	player+silence	protrekkr	ProTrekkr 2.x	8	340157	mus/edit/Protrekkr_aros/Protrekkr/modules/alterraid.ptk
 99320b4c490fb35d1b5a8210c0f753fd	1	191869	loop	uade	The YM2149 Player v1.52c	0	4884	mus/play/MYST_Data_9/YM2149/Whittaker/YM.Renegade3D
 993ce5bd1e65a6fad5c343f5b7115ebf	1	131271	player+silence	uade	OctaMED MMD1	0	120690	mods/misc/LoveBass/LoveBass.med
 993efe7216daabe6231cc8d11ca6666f	1	198531	player	uade	Protracker compatible	0	102396	mags/german/AmigaTimes2/AmigaTimes2/c/mod
@@ -23501,7 +23563,6 @@ a50082147283f0519aa61aea75baba85	1	377732	player	uade	Noisetracker 2.x	0	323368	
 a502f99d952044fe27ab6901231da1d0	1	307783	player	uade	OctaMED MMD1	0	696896	mods/techn/Amiga_Breaks_Vol.1/Danchi Life.med
 a5049a2f92a0d0fe585979f5e743f467	1	160211	player	uade	Protracker	0	163154	mods/tp96/BlasmundFling/Mod.SCL!_Blasmund-Fling
 a5061032405983b7aa31fa4982b732ac	1	255880	player	uade	Protracker	0	347844	mods/techn/TangoBeat/mod.=- tangobeat
-a50e632451d9f7fb707d2590c8081d35	0	347528	loop	uade	PreTracker	0	11714	demo/mag/JP18/JP18/Data/Music/0002.mus
 a50ec7dc462da4429c6765b07b3467c4	1	479847	player+volume	ft2play	FastTracker v2.00	18	611686	mods/tranc/g_GroovyBaby/g_baby.xm
 a5106493fbd8ee27523e9587ebeb407f	1	294521	player	uade	Protracker	0	106496	mods/sets/Sub4-Mods/MOD.Weird
 a510a12c42273a5b99ec626712a044d9	0	0	nosound	uade	PreTracker	0	32	mods/inst/st-a8/ST-A8/prt.chipnull120
@@ -23570,6 +23631,7 @@ a582b96bf49b03f28b9ae63bda4c577c	1	168691	player	uade	Protracker	0	149160	mods/a
 a5844c9b438ca3e1ae35dd892bc2686b	1	148597	player	uade	Protracker compatible	0	447326	mods/demo/sn3-4ch1/4chn/mod.knockout
 a586907c9a08a6486f7d041930b68a78	1	106918	loop	uade	The YM2149 Player v1.52c	0	1616	mus/play/MYST_Data_2/YM2149/Hippel/MCoder/YM.Lap_4
 a586b7590bfe0576039a1226077a5e0b	1	177191	player	uade	OctaMED MMD0	0	49660	mods/mark/prec/Precious-Things
+a587e0664f778641ac960b9dd0ab427b	1	217020	player	protrekkr	ProTrekkr 1.x	8	169240	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Dream Weaver.ptk
 a588697c1c8f869e1a87547bdda41513	1	156219	player+volume	uade	Protracker compatible	0	128396	mods/stun/restless/restless.mod
 a5886a3111383c0d28de591665eb4c0a	1	76003	silence	uade	The YM2149 Player v1.52c	0	3264	mus/play/MYST_Data_9/YM2149/Hippel/BIG/YM.SamanthaFoxStripPoker
 a5886a3111383c0d28de591665eb4c0a	2	11381	silence
@@ -24288,6 +24350,7 @@ aaafc15497b7d62403fa4e552bbb0d61	3	4959	silence
 aab0b43e17a4f4ef47813cd3ab6734d5	1	176447	player	uade	Protracker	0	85094	mods/demo/FairPlayTheme2/FairPlayTheme2.mod
 aab46cdebe1bce841ed8ff36d7d76f45	1	93719	player	uade	Protracker	0	175264	mods/rated/irreverence/mod.irreverence
 aabebe8ab06a638183d036f91768910c	1	1905298	player	uade	OctaMED MMD3	0	1471846	mods/misc/np_feub/np_FukEmUpButtercup.OSS
+aac065a024d5923119090a6637ba31da	1	275319	player+silence	protrekkr	ProTrekkr 1.x	8	315024	mus/edit/protrekkr/ProTrekkr-1.98k/modules/C-masters.ptk
 aac06fe4fb29cb5743eb732f32861dd5	1	177487	player+silence	uade	Protracker	0	503028	mods/techn/CrayfishParty/CrayfishParty.mod
 aac0fd5ca4343ff8793aa91b8a95ef96	1	153741	player	uade	Protracker	0	101798	mods/rated/Centurion/mod.centurion
 aac2978755ac28255370243a61990a05	1	41293	loop	uade	The YM2149 Player v1.52c	0	5892	mus/play/MYST_Data_6/YM2149/Gehrmann/YM.Extensor
@@ -24749,6 +24812,8 @@ ade48225c1890f565861a2c84b7a6b90	1	300900	player+volume	uade	OctaMED MMD0	0	1928
 ade50e60ffefffceb6fcdfe59b479bd8	1	315017	player	uade	Protracker compatible	0	145197	mods/funet/IntroMuzak/mod.IntroMuzak
 ade5cf0e3097772d0c462973eac2936d	1	179321	player	uade	Noisetracker 2.x	0	135900	demo/intro/Hum_mint/moods/data/mod.tramp
 ade5dc6c3a68d3910e6d29f93e104e15	1	497040	player+silence	uade	OctaMED MMD1	0	719886	mods/tranc/lns26_hardEp1/Snowblower.med
+ade616508d626869172fc43415b5d99b	1	61420	player	protrekkr	ProTrekkr 2.x	5	31042	mus/edit/Protrekkr_AROS_i386/modules/Lunch with the gods.ptk
+ade616508d626869172fc43415b5d99b	1	61420	player	protrekkr	ProTrekkr 2.x	5	31042	mus/edit/Protrekkr_aros/Protrekkr/modules/Lunch with the gods.ptk
 ade9c5a1b4ae0793acaa770b6cec5edf	1	226442	player	uade	Protracker	0	245992	mods/pro/raspberry/mod.raspberry jam
 adeaba39aebf4b1b3bfeff3cefb8a519	1	229255	player	uade	OctaMED MMD0	0	65792	mods/mark/ToBeWithYou/To Be With You
 adedcc5224e604c5c032c8bab674ed66	1	195711	loop	uade	CustomPlay	0	67480	mods/misc/RainbowWarrior/CUST.RainbowWarriors
@@ -25129,6 +25194,8 @@ b0d2281b7c45011297ec002036d27375	1	52265	player	uade	Protracker	0	185034	mods/me
 b0d4782574700f0c3f1d832c4678becd	1	84616	player	uade	Protracker	0	109464	mods/misc/flyhardr/MOD.EP-FLYHARDER
 b0d6b20457f4082490bfb7dcc3dc2cc3	1	250997	player	uade	Noisetracker 2.x	0	43380	game/misc/freeway/FREEWAY.MOD
 b0d6f79b6c83308947f390ae7850f2e7	1	316905	player+silence	uade	Protracker	0	297256	mods/sbc/pt_wrinkled/mod.wrinkled_surface
+b0daa84a3dfe3b3bb87f35a167390936	1	270470	player+volume	protrekkr	ProTrekkr 2.x	8	292571	mus/edit/Protrekkr_AROS_i386/modules/Round A Bout.ptk
+b0daa84a3dfe3b3bb87f35a167390936	1	270470	player+volume	protrekkr	ProTrekkr 2.x	8	292571	mus/edit/Protrekkr_aros/Protrekkr/modules/Round A Bout.ptk
 b0db8e6e05cd05b8845810d12a766dcc	1	7796	player	uade	Protracker	0	5652	demo/aga/SPO4-Music/Module/Lanch/mod.playing.with.phone
 b0e1a46c4fa21d44e8109b50cd7a4b09	1	260602	player+silence	uade	Protracker	0	364680	mods/tranc/Protracker_Modules/KAIN.MOD
 b0e327b360c36c9537d12fcbacbfb42d	1	320764	player	uade	Noisetracker 2.x	0	232410	mods/pro/Better_Days/BETRDAYS.MOD
@@ -25813,6 +25880,7 @@ b5a6db0cc360c6824d319e67ea48070c	1	264294	player+silence	st3play	Scream Tracker 
 b5a6db0cc360c6824d319e67ea48070c	1	264294	player+silence	st3play	Scream Tracker 3.01 (SB)	16	556352	mods/misc/C64_S3M/TALES04.S3M
 b5a6e19a0fc67c8c1fecb7e1c643139b	1	169093	player	uade	Protracker	0	104826	mods/funet/RoomofSilence/mod.RoomofSilence
 b5a803ee3273704d1f7c2133f73cc3fe	1	146045	player	uade	Noisetracker 1.x	0	109492	mods/sets/OLD_Rebels/mod.MD1-Nytoman1
+b5a93c4575beb1cf6949c2a129ca52da	1	232540	player	protrekkr	ProTrekkr 1.x	11	1102578	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Jameson.ptk
 b5aa0f240f37319ae3ec2909d3ffe7ac	1	240568	player	uade	OctaMED MMD1	0	98290	game/think/RubiCube/RubiCube/rubicube.song
 b5ae88f6edd87db247085a6b1ce51086	1	55520	player	uade	Protracker	0	14474	mods/chip/Wacky4/Wacky4.mod
 b5ae88f6edd87db247085a6b1ce51086	2	54515	player
@@ -26586,6 +26654,7 @@ bad08f56cc7f3889891d6aa2f5dba412	1	205725	player+silence	uade	Protracker	0	56736
 bad08f56cc7f3889891d6aa2f5dba412	1	205725	player+silence	uade	Protracker	0	56736	game/misc/MunchDude/pdh/data/music/Title.mod
 bad08f56cc7f3889891d6aa2f5dba412	1	205725	player+silence	uade	Protracker	0	56736	misc/os/aros-orca-m68k/aros-orca-1.0.3/HDF/aros-orca-user/Games/PacDudeHero/data/music/Title.mod
 bad4bdb270a7385885228c6b1391893c	1	275962	player+silence	st3play	Scream Tracker 3.2x (GUS)	10	322216	mods/s3m/bn_mirage/mirage.s3m
+bad4cdf82987dfc57630528d19a7cf92	1	154360	player	protrekkr	ProTrekkr 2.x	6	33886	mus/edit/Protrekkr_AROS_i386/modules/varso3.ptk
 bad8df47c97801293d965b0944ced629	1	326256	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	207688	mods/jungl/ZeOLiTePrOdUcT/zeolite.s3m
 bada0b4b00fe87819e94a8b3fc03816f	1	270207	player	uade	Tracker Packer 2 - 3	0	96688	demo/mag/EuroChart48/music/WszystkoOdNowa.TP3
 bada2ce5066d4d7e8cae8febf26b539d	1	109192	player	uade	OctaMED MMD1	0	115230	game/think/Robossy/robossy/daten/m/sm6
@@ -27147,6 +27216,7 @@ bebf1012a010be084ec2861a6e94a0bd	1	234540	player	uade	Protracker	0	112208	mags/h
 bebf1012a010be084ec2861a6e94a0bd	1	234540	player	uade	Protracker	0	112208	mods/airon/NewType/mod.a new type
 bebffcff26769e690827099afe4d85a0	1	631162	player+volume	uade	Protracker	0	894412	mods/wmr/7thheven/7thheven.mod
 bec048aec8654ec0b438d2996720cdd9	1	447740	player	uade	OctaMED MMD3	0	1211038	mods/8voic/NWomen/NordicWomen
+bec111017e3b07e9e32baf0ac5f05dd2	1	131800	player	protrekkr	ProTrekkr 2.x	8	360817	mus/edit/Protrekkr_AROS_i386/modules/Crickets.ptk
 bec1f8cd016d0340cf32e7ac8ec12aa8	1	197492	player+silence	it2play	Impulse Tracker 2.14+	16	566869	mods/blasa/bl_mono/BL_MONO.IT
 bec4811a1181613c4bb66f8077a3f601	1	201083	player	uade	Protracker compatible	0	136100	mods/sets/stepic02/SPACECIT.MOD
 bec59ed0d55924e5ff6f3feed5e38d38	1	207493	player	uade	Protracker	0	73698	mods/synth/DiscoIgnorance/DiscoIgnorance.mod
@@ -27179,6 +27249,8 @@ bef52af59f3c4076744db03de2184b1e	3	92644	silence
 bef52af59f3c4076744db03de2184b1e	4	13401	silence
 bef553c5e017380810b84d04a7cfa20a	1	122997	player	uade	Protracker	0	48746	mods/grogo/sdv5/sdv 5.mod
 bef6bdf84cf09922223239001bb0a8a1	0	342136	player+silence	libdigibooster3	DigiBooster Pro 2.18	10	1239219	mods/techn/af-subaquatic/subaquatic.DBM
+bf0089d69042caa0ad8d70994dba7015	1	172160	player	protrekkr	ProTrekkr 2.x	8	363252	mus/edit/Protrekkr_AROS_i386/modules/AcidTrance.ptk
+bf0089d69042caa0ad8d70994dba7015	1	172160	player	protrekkr	ProTrekkr 2.x	8	363252	mus/edit/Protrekkr_aros/Protrekkr/modules/AcidTrance.ptk
 bf0222a39d9d5362a762a20bf6ff6a3d	1	229219	player+silence	st3play	Scream Tracker 3.01 (SB)	16	111213	mods/8voic/s3m_sphinx/sphinx.s3m
 bf039883765b2a2353da845b883a57c5	1	209013	player+volume	st3play	Scream Tracker 3.2x (GUS)	15	653711	mods/synth/Solstice/Solstice.s3m
 bf03d3c5000abe464394332dacf36843	0	111574	silence	uade	MusiclineEditor	0	28992	mods/misc/Mline-tunes/Ml.TRW-Beat_it_up!
@@ -28297,6 +28369,8 @@ c6ad0fb8271504dc6afea8a3a9da6b73	1	384122	player	uade	Protracker	0	493134	mods/t
 c6b075829972b14c2ca0ca52eb836b58	0	312905	player+silence	uade	DIGI Booster V1.6	0	559426	mods/8voic/Religious/Religious.DIGI
 c6b19472817c7eb00d6d3494718d456b	1	284213	player	uade	Protracker	0	673564	mods/sets/Girl-glb/Genuine-Liquid-Beats/TheMusic/mod.ramtamtamtheremix
 c6b57df154dd90180138ec631bd80e8a	1	241450	player+silence	uade	Protracker	0	231678	mods/hardc/ShiftPit/shiftpit.mod
+c6b60bba9493052380f3fc19beab127a	1	274484	player+silence	protrekkr	ProTrekkr 2.x	8	315434	mus/edit/Protrekkr_AROS_i386/modules/C-masters.ptk
+c6b60bba9493052380f3fc19beab127a	1	274484	player+silence	protrekkr	ProTrekkr 2.x	8	315434	mus/edit/Protrekkr_aros/Protrekkr/modules/C-masters.ptk
 c6b7423a9f76adc5dc4e3972a773e4fa	1	126646	player+silence	uade	Protracker	0	33232	mods/jazzc/TheJuneletters/mod.the juneletterstory
 c6b89ab0086ec566afd45a6fa0181412	1	197545	player+silence	uade	Protracker	0	157808	mods/sbc/periods/mod.periods in symmetry
 c6b9949dfc9c5f032fc3a727958b8eb0	1	82044	player	uade	Protracker	0	11216	mods/chip/bloodysk/mod.bloody_sky
@@ -28591,6 +28665,8 @@ c8ed838b34fffdbb02ce0e1978538716	0	218911	loop	uade	UADE	0	173576	mods/sets/mod-
 c8f154629d33f3dd1220ffc222b60dd6	1	101877	player	uade	Noisetracker 2.x	0	61820	mods/house/Extradimension/Extradimensional.mod
 c8f3c30db685b1fd04c5d634e540cfaf	1	154050	player	ft2play	FastTracker v2.00	4	121458	mods/tp96/Fiesta/FIESTA.XM
 c8fb0335f6750b48a827d06cb6abb467	1	258331	player	uade	Protracker	0	351436	mods/tranc/Droidhd/mod.a droid in my head
+c8fe6c507a448521a704c73577075083	1	176620	player	protrekkr	ProTrekkr 2.x	9	95347	mus/edit/Protrekkr_AROS_i386/modules/Money.ptk
+c8fe6c507a448521a704c73577075083	1	176620	player	protrekkr	ProTrekkr 2.x	9	95347	mus/edit/Protrekkr_aros/Protrekkr/modules/Money.ptk
 c8fef32d3801f9f1223a143eb9c6bc16	1	255402	player	ft2play	FastTracker v2.00	32	1447022	mods/wmr/ct_etts/Ct_etts.xm
 c8ffe5cc17f1c922a3dc8d92aadee10d	1	172931	player	uade	Noisetracker 2.x	0	81150	mods/slow/ClearNightIi/ClearNightIi.mod
 c9014024adb726863c86abd770a4d475	1	155569	player	uade	Protracker	0	143626	mods/sets/ms2mods/mod.Magic_Nights
@@ -28922,6 +28998,8 @@ cb893bcbf56c251aa154e9d095f659c6	0	338869	player	libdigibooster3	DigiBooster Pro
 cb893bcbf56c251aa154e9d095f659c6	0	338869	player	libdigibooster3	DigiBooster Pro 2.21	8	150012	mods/moods/hum_m031/TRIP_To_hell.DBM
 cb899be999a6b2df7816633b47a1fc26	1	242701	loop	uade	The YM2149 Player v1.52c	0	6864	mus/play/MYST_Data_6/YM2149/BigAlec/YM.PrimeTime
 cb93edb15552855d747f84c3c1658e5b	1	293391	player+silence	ft2play	FastTracker v2.00	10	508837	mods/xm/herejony/herejony.xm
+cb965a2497b6a04800fb5c308f95f3b0	1	110060	player	protrekkr	ProTrekkr 2.x	8	122419	mus/edit/Protrekkr_AROS_i386/modules/Sudoku padawan.ptk
+cb965a2497b6a04800fb5c308f95f3b0	1	110060	player	protrekkr	ProTrekkr 2.x	8	122419	mus/edit/Protrekkr_aros/Protrekkr/modules/Sudoku padawan.ptk
 cb98d80f41e90d87e48788a674e9208d	1	198531	player	uade	Protracker	0	301528	mods/demo/Emphutured/Mod.Emphutured
 cb9a39be311f2bc9cef8c365b05c0c3c	1	155219	player+silence	ft2play	DigiBooster Pro 2.18	8	1447021	mods/misc/Seitig/seitig.XM
 cba07c42f96490dc583f7ebf7aaa1965	1	165657	player	uade	OctaMED MMD0	0	63282	mods/mark/jamassm/JamaicanSong_MIDI
@@ -29467,6 +29545,8 @@ cf5ff868fc3a92e787fb79e69e44cef0	1	179743	player	uade	Protracker	0	642368	mods/p
 cf6107a2802cbd0baa8ae3c349b21bd5	1	186357	loop	uade	The YM2149 Player v1.52c	0	8000	mus/play/MYST_Data_1/YM2149/Dunn/YM.PushOverDungeon
 cf64387f6cc4f01754d1d365749e3037	0	392006	player+volume	uade	FaceTheMusic	0	213680	mods/8voic/LifeIsASequenc/Life
 cf6994ac67e48181003b8506aa34e586	1	278526	player	uade	Protracker	0	367906	game/think/PixelArtist_68k/PixelArtist/data/audio/InGame1-BGM.mod
+cf6adc47248c2d43040574630ab40c87	1	53320	player	protrekkr	ProTrekkr 2.x	6	1118362	mus/edit/Protrekkr_AROS_i386/modules/Chemistry.ptk
+cf6adc47248c2d43040574630ab40c87	1	53320	player	protrekkr	ProTrekkr 2.x	6	1118362	mus/edit/Protrekkr_aros/Protrekkr/modules/Chemistry.ptk
 cf6e74864a9f0dff991c9bbdb921cd3f	0	83371	player	uade	CustomPlay	0	401164	mods/cust/BangkokKnights/CUST.BangkokKnights intro
 cf76fe3b96fd51849ea99354b7be77c2	1	348127	player+silence	st3play	Scream Tracker 3.01 (GUS)	16	494904	mods/8voic/s3m_flyforev/flyforev.s3m
 cf7a5a5c87a94949848ab86bcdda8623	1	211532	player	uade	OctaMED MMD3	0	369696	mods/misc/LN2TFBLoaderRemix/LN2TFBLoaderRemix
@@ -29645,6 +29725,8 @@ d10c26997c23f79b179172f656d59fc8	1	157834	player+silence	uade	Noisetracker 2.x	0
 d10c53bf1204088a9b6d1825a3d1c2e8	1	101737	player	uade	OctaMED MMD1	0	73452	mods/med/sta-free/freemix.med
 d114c4ff04741030867da7d6daa47a0f	1	198270	player	uade	Protracker	0	332090	mods/pro/haven/mod.welcome to haven
 d11602a1e29e7ab27e42801f20337418	1	644036	player+silence	uade	MED4 (4ch)	0	81664	mods/rated/Negligent/Negligent
+d116cdfda19dfe131dc86fe577c6cdcc	1	187540	player	protrekkr	ProTrekkr 2.x	16	480516	mus/edit/Protrekkr_AROS_i386/modules/warlock.ptk
+d116cdfda19dfe131dc86fe577c6cdcc	1	187540	player	protrekkr	ProTrekkr 2.x	16	480516	mus/edit/Protrekkr_aros/Protrekkr/modules/warlock.ptk
 d117f2050b2a8d9891046b6f63d8b96f	1	141785	player	uade	Protracker	0	315140	mods/emax/KleinerTest/KleinerTest.mod
 d118f0fb33912d33b0122bd500be9ffe	1	174648	player+silence	uade	Protracker	0	67688	mods/blkha/old_01/mod.bits
 d11a3153e1452e8f0d4b01f5f8f697a0	1	96535	player+volume	ft2play	FastTracker v2.00	12	541375	mods/xm/raverain/raverain.xm
@@ -29780,6 +29862,8 @@ d1ee5b27de94869c733b70b1796345dc	1	15472	player	uade	Protracker	0	48246	mods/del
 d1ef258531ab85902baa1fd11edd5a94	1	64120	player	uade	Noisetracker 2.x	0	42810	mods/slow/IllegalAliens/IllegalAliens.mod
 d1ef9caf66eeedeb872aac78b95cdd13	1	103743	player+silence	st3play	Scream Tracker 3.2x (SB)	16	248842	mods/s3m/sum_jizz/jizz.s3m
 d1f37337a7f12baf36a894b2143ee429	1	274746	player+silence	st3play	Scream Tracker 3.2x (GUS)	10	434576	mods/demo/FishpondHup/fishup.s3m
+d1f3bdf26de09c8a3a3011945c698b76	1	211357	player+silence	protrekkr	ProTrekkr 2.x	6	77528	mus/edit/Protrekkr_AROS_i386/modules/D.m.Turner Remix.ptk
+d1f3bdf26de09c8a3a3011945c698b76	1	211357	player+silence	protrekkr	ProTrekkr 2.x	6	77528	mus/edit/Protrekkr_aros/Protrekkr/modules/D.m.Turner Remix.ptk
 d1f92f941a5b0858343c309833087724	1	76920	player	uade	Protracker	0	12048	game/hint/RTCC.4.6/RTCC.4.6/b
 d1f92f941a5b0858343c309833087724	1	76920	player	uade	Protracker	0	12048	mods/chip/Mundgoria/MOD.Stuns Bump
 d1fc105fda707005ba018841fa97cfe8	1	352234	player	ft2play	FastTracker v2.00	16	901719	mods/techn/dsa_Mysterious/dsa_myst.xm
@@ -30408,6 +30492,8 @@ d68ae6788dd7dce975525d419537f48d	0	92272	player	uade	Amos Music Bank	0	18002	gam
 d68d553bf150a965b51fd383ee450fd0	1	84255	player	uade	OctaMED MMD1	0	42118	mods/rock/IH-Convent/IH-Convention.MED
 d68e0a2d1021f99bd2b1296ae78847bd	1	187604	player+silence	uade	OctaMED MMD1	0	90794	mods/house/Plastertracks/PlasterTracks.MED
 d6941fcf1561cbe8afc85e98ee01a062	1	163466	player	uade	Protracker	0	252674	game/think/Letris2011_AROS/Letris2011_AROS/music/Letris2011.mod
+d695cd6128fcd96e9577c6e8478ef614	1	378642	player+silence	protrekkr	ProTrekkr 2.x	8	412955	mus/edit/Protrekkr_AROS_i386/modules/trip to exp.ptk
+d695cd6128fcd96e9577c6e8478ef614	1	378642	player+silence	protrekkr	ProTrekkr 2.x	8	412955	mus/edit/Protrekkr_aros/Protrekkr/modules/trip to exp.ptk
 d696e2180fcb0c744c6c360b41fa53ce	1	61568	player	uade	Protracker	0	187858	mods/slow/SummerStory/mod.SummerStory
 d697c806455e0c29ffb2156a99b3dc94	1	165873	player+silence	uade	Protracker	0	59800	mods/demo/Introductorium/Introductorium.mod
 d69938856269b3699798c212eaf22519	1	439361	player	uade	Protracker	0	199870	mods/demo/VoyageMus/mod.overload
@@ -31490,6 +31576,7 @@ de3f36de86be98c53dc8386a18303ab6	1	244962	player+silence	uade	Protracker	0	29025
 de41469ff7f42710e224e2066bc13845	1	180699	player+silence	ft2play	FastTracker v2.00	16	409422	mods/xm/heyremix/HEYREMIX.XM
 de4452290a95908003ba56775709dccf	1	184445	player	uade	Protracker	0	81252	mods/sets/Firsties/mod.Rsigsc
 de47979ba14fbb4d23fc03fc3ef27884	1	195712	player+silence	ft2play	FastTracker v2.00	8	154889	mods/rated/fr_Baroque1/fr-barq1.xm
+de4849618f062b8c0a8dfb4de08518b5	1	103131	player+silence	protrekkr	ProTrekkr 1.x	13	96893	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Dragon.ptk
 de48e57728c272ab434a09bf5a7b00c4	1	385521	player+volume	uade	Protracker	0	217606	mods/rated/MusicLand2/MOD.Fatal_Attack-BRS
 de4d10164ef5e99b939932bf98379ab3	1	290563	player	uade	Protracker compatible	0	101780	mods/jogei/TheNinjaWindow/MOD.The_Ninja_Window
 de50e01307c2693cf505de6f06fd7911	1	227195	player+silence	uade	OctaMED MMD3	0	673736	mods/nkn/NKN_Earwig/the earwig.med
@@ -34068,6 +34155,8 @@ f01fc660e0e1f5c4ff723ae4ad33f9af	1	61910	player	uade	Protracker	0	115182	game/2p
 f02268d65171d13e46664e6cd3fc02c5	1	92272	player	uade	Protracker	0	150378	mods/piano/PianoEspen/mod.piano
 f023f450fb6dcad20c8c901f6003189c	1	237028	player+volume	uade	Protracker	0	244562	mods/pro/Follow_me_rx/R22-follow_me_remix.mod
 f0260706b862014242968a1cb3e254db	1	30824	player	uade	Protracker	0	26906	mods/misc/jagmods/WIN.MOD
+f02987ba537e86a5b7f668a3e404c4ed	1	233589	player+silence	protrekkr	ProTrekkr 2.x	6	127397	mus/edit/Protrekkr_AROS_i386/modules/robot-ballet.ptk
+f02987ba537e86a5b7f668a3e404c4ed	1	233589	player+silence	protrekkr	ProTrekkr 2.x	6	127397	mus/edit/Protrekkr_aros/Protrekkr/modules/robot-ballet.ptk
 f02c2e82fc17d5e53585976154af2da7	1	248646	player	uade	OctaMED MMD1	0	217596	mods/med/SOU_Visuals98/Visuals 1998
 f02ca6b0d483437091193156d7d21c93	1	332057	player	uade	Protracker	0	165025	mods/piano/whistler/whistler.st
 f034706473a30667c50e85a9082cbac4	0	160191	player	uade	TFMX Pro	0	7124	mods/misc/ASmartOne.JK/mdat.A_smart_one.JK
@@ -34111,6 +34200,8 @@ f06631bbb663d7bb071bf2943edc7ea3	2	135515	player
 f06b3744326ba0e57d48b70687e73d45	1	69224	player	uade	Protracker	0	15960	mods/chip/dolphin/MOD.MEGAFLIPP'O'FLOPP
 f06e7f276b7ad223bb0d9ea8efb4222d	1	339231	player	uade	Protracker	0	236734	mods/mryo/mixstyle/MIXSTYLE.MOD
 f07182ff1e7a947fbcc184815c4dfd05	1	46216	player	uade	Protracker	0	16872	mods/demo/spud2/mod.Spud2
+f07303079b3388520ae52de10289f09b	1	103155	player+silence	protrekkr	ProTrekkr 2.x	12	93970	mus/edit/Protrekkr_AROS_i386/modules/Dragon.ptk
+f07303079b3388520ae52de10289f09b	1	103155	player+silence	protrekkr	ProTrekkr 2.x	12	93970	mus/edit/Protrekkr_aros/Protrekkr/modules/Dragon.ptk
 f0790638874290f0502bf60e9b6889f1	1	122997	player	uade	Protracker	0	20144	mods/xceed/Escape/mod.escape
 f07927bf21d0fdf354f4bcbdd8e56cd8	1	204780	player	uade	Protracker	0	259266	mods/fox2/groovedoos/mod.groovedoos
 f07985958bf9de0340eb8b28da45b94d	1	265464	player+silence	uade	Soundtracker II (15 instr.)	0	63484	mods/demo/titan/MOD15.the game
@@ -34221,6 +34312,8 @@ f108e8fedf4d8fb1404946386082c89f	3	257688	player
 f108e8fedf4d8fb1404946386082c89f	4	256322	player
 f108e8fedf4d8fb1404946386082c89f	5	260160	player
 f10e197ba05907e62f6942c09278b711	1	103043	player	uade	Protracker	0	113868	mods/blkha/old_remixes/mod.new title rmix
+f11076b91d587cbbc952ec3e670bf132	1	272620	player	protrekkr	ProTrekkr 2.x	8	377295	mus/edit/Protrekkr_AROS_i386/modules/goa.ptk
+f11076b91d587cbbc952ec3e670bf132	1	272620	player	protrekkr	ProTrekkr 2.x	8	377295	mus/edit/Protrekkr_aros/Protrekkr/modules/goa.ptk
 f1133a8ea3be58edd1538435dcc470e4	1	135535	player	uade	Protracker	0	334182	mods/elbie/AcidicBlob/MOD.Acidic Blob
 f1157eae3d6167b2bc5123207f3d3f2d	1	235922	player+silence	uade	Protracker	0	163950	mods/ijont/022_stopthis/Stop_This_Feeling.mod
 f1161cf8a52af9556cd4c8f01fdc6c09	1	366861	player	uade	Noisetracker 2.x	0	94022	mods/rock/BackupBand/Mod.8a
@@ -35333,6 +35426,8 @@ f9bdc8104948fcca23f7ecaae380c7b6	1	168688	player	ft2play	Fasttracker	6	102040	ga
 f9bdfc8526bf054c59495eaacd71a0cf	1	374585	player+silence	uade	Protracker	0	503014	demo/aga/SPO98-Mod2/MUSIC/16/mod.sen wezyra
 f9bee092806ab69b0372a81577834d89	1	203076	loop	uade	Noisetracker 2.x	0	10408	mods/pro/Loopz/mod.loopz
 f9c08e44352b551a43c9c02ddcff78be	1	25720	player	uade	Protracker	0	7392	mods/pro/Devious_Tunes/dt/Mod.DT027
+f9c17154a36dfeeaa8866a464d480596	1	345580	player	protrekkr	ProTrekkr 2.x	8	247232	mus/edit/Protrekkr_AROS_i386/modules/Aquarium.ptk
+f9c17154a36dfeeaa8866a464d480596	1	345580	player	protrekkr	ProTrekkr 2.x	8	247232	mus/edit/Protrekkr_aros/Protrekkr/modules/Aquarium.ptk
 f9c8f149e73acd02c40527922b68a9e7	1	314555	player	st3play	Scream Tracker 3.2x (SB)	8	251896	mods/s3m/dsp_fire/et_fire.s3m
 f9c9a4426d115dff7ccc55e5dafc4cf1	1	186649	loop	uade	The YM2149 Player v1.52c	0	3208	mus/play/MYST_Data_4/YM2149/TheMind/YM.Zepellin
 f9cc28d228b2572ffc480aed3f83328e	1	22927	player	uade	OctaMED MMD1	0	5878	game/role/QuakerQuest/quakerquest/music.mod
@@ -35742,6 +35837,8 @@ fc6c1cbd24683770ca40987219d2d2ce	1	0	nosound	uade	OctaMED MMD1	0	54168	mods/tech
 fc76a42d86a558d98eedca791f7af937	0	297033	player	libdigibooster3	DigiBooster Pro 2.14	26	298472	demo/sound/PSL-Dolphinary/Dolphinary/modules/DBM.Pulsars
 fc775ac2ee73dfe68475e27d9bb0d8a0	1	48768	player	uade	Protracker	0	22568	mods/chip/YaBaDaBaDoo/YaBaDaBaDoo/mod.YaBaDaBaDooBoo
 fc79472d42034d96e942c7c9d99718b2	0	274511	player+silence	uade	IFF EMOD	0	537920	mods/misc/Whittaker/EMod.WhittakerRhapsody
+fc7eab98c0124709dd3b3ac6bfb70c29	1	88300	player	protrekkr	ProTrekkr 2.x	8	53138	mus/edit/Protrekkr_AROS_i386/modules/dne_wro3.ptk
+fc7eab98c0124709dd3b3ac6bfb70c29	1	88300	player	protrekkr	ProTrekkr 2.x	8	53138	mus/edit/Protrekkr_aros/Protrekkr/modules/dne_wro3.ptk
 fc7f232e0100703207063e8efcac7de8	1	293476	player	uade	Protracker	0	546766	mods/techn/MTS_Louder/MOD.LOUDER
 fc7f5b7d536ec16dfe686fc65773c838	0	107544	player	uade	Sonic Arranger	0	44210	mus/edit/SonicDemo/SonicArranger/Modules/TRSI
 fc892c90ac21f24b834783e29504808c	1	15472	player	uade	Protracker	0	2304	mods/chip/Drakon_chip/Little Shits/Little_shit_09.mod
@@ -35932,6 +36029,7 @@ fde46fa0097991135607dd7dbeccbedd	1	76920	player	uade	Protracker	0	68104	mods/evr
 fde5ccb30a6e0d6234951ea97da8554e	1	441169	player	uade	Protracker	0	160540	mods/airon/stalked/mod.stalked
 fde7123124c798fcf1c77970b3d4637a	1	331213	player	uade	Protracker	0	49496	game/actio/freedroid-1.0.2_mos/FreeDroid/sound/dreamfish-sanxion.mod
 fde7123124c798fcf1c77970b3d4637a	1	331213	player	uade	Protracker	0	49496	game/actio/freedroid-1.0.4-aros/freedroid-1.0.2/share/freedroid/sound/dreamfish-sanxion.mod
+fde9ec9860d1c90eec3fc244e55caf41	1	200849	player+silence	protrekkr	ProTrekkr 1.x	14	76472	mus/edit/protrekkr/ProTrekkr-1.98k/modules/Ordinary-Zero.ptk
 fdeaaca2a50b923c22fa87d66a8fd081	1	152441	player+silence	ft2play	slarti@cyberdude.com	8	77962	mods/misc/sbf_frut/FreeUsedTime.XM
 fdeede578772eb1521034c1220af389e	1	297280	player+silence	uade	Protracker	0	360210	mods/k4k/insomnia/MOD.Insomnia!
 fdf3d8433ee42f228bef75ac1d0d09d1	1	112769	player	uade	Protracker	0	438104	mods/techn/i_fuxx/mod.i_fuxx
