@@ -129,11 +129,10 @@ lazy val ampTsvs = Future(_try {
     best
   }.par.flatMap(m =>
     val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
-    if (path != "UnknownComposers") {
+    if (!m.extra_authors.isEmpty && !m.extra_authors.forall(a => a.isEmpty || a == "Unknown Composers")) {
       Some(MetaData(
         m.md5.take(12),
-        if (m.extra_authors.isEmpty || m.extra_authors.forall(_.isEmpty)) Buffer(path)
-        else m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
+        m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
         Buffer.empty,
         "",
         0
