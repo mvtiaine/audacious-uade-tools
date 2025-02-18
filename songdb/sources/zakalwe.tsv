@@ -2449,6 +2449,7 @@
 296526e1052c02690f307cc1b7dc01b5	0	27227	player	uade	Beathoven Synthesizer	0	22264	beathoven_synthesizer/bss.detonator_title
 2987dbdf874adf9db9cfea8e5201edb7	1	151410	player	uade	Protracker	0	42540	mod/Don_Adan_rips/MOD_QuikTheThunderRabbit/MOD.rabbit-ice world
 2989a2d48676d23b4fdcaea2b30d0077	0	20496	player	uade	AHX v2	0	1916	ahx/Andreas Spreen/look out for friday 2.ahx
+2998ae9fd4679f9015a292eec0eeb240	0	649366	player	libxmp	Module Protector noID	4	113738	mod_packer/moduleprotector/MP.GV04
 299c0a1c14b0bc0088090d48488b913c	1	21299	player	uade	Protracker	0	7700	mod/other/goto8o-nes_mes2.mod
 29a5198fad307856231de3cdf2a7813a	0	3777	player	uade	Sonix Music Driver	0	308	sonix/Alternate_Reality/SMUS.encg
 29b54fc50584e2e94cc8c28aa5195f45	1	51963	player	uade	Protracker	0	9186	mod/other/maniac-2_much_pressure_mix.mod
@@ -2969,6 +2970,7 @@
 327c435bb0a8808ddb66eb1c355bd39c	1	134209	player	uade	ProRunner 1.0	0	95948	mod_packer/prorunner/pru1/Ultimate_Pinball_Quest_The/prun.crystal
 327c435bb0a8808ddb66eb1c355bd39c	2	115160	player
 327c435bb0a8808ddb66eb1c355bd39c	3	107645	player
+327d7be5bea393b325353656004aad3d	0	161055	player	libxmp	Module Protector noID	4	195994	mod_packer/moduleprotector/MP.Arise-Drinks
 3286eba543046baa3a8b8b4f87e4e493	0	88354	player	uade	Quartet ST	0	5644	quartet_st/PompeyPiratesMenu/QTS.PompeyPiratesMenu 106
 32901430ae873952c2292dc53ed739de	0	140820	player	uade	TFMX Pro	0	4938	tfmx/Apidya-lousier-rip/MDAT.Apydia_5-Bosspanic
 32901430ae873952c2292dc53ed739de	1	241	player
@@ -3278,6 +3280,7 @@
 37ee52d7621b1fcdcf3d2809d9d11713	1	440386	player	uade	Jochen Hippel	0	50574	hip/BattleValley/SOG.BattleValley
 37ee52d7621b1fcdcf3d2809d9d11713	1	440386	player	uade	Jochen Hippel	0	50574	jochen_hippel/BattleValley/SOG.BattleValley
 37ee52d7621b1fcdcf3d2809d9d11713	2	327737	player
+37ef5fd547f5fba9525b6c6ef1c5a6e6	0	314411	player	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	89372	mod15/DOC-Soundtracker/mod.sll30.4
 37f0b667e0dddfafc0dcce6797a7d1e9	0	94222	player	uade	AHX v2	0	5278	ahx/Jerry/ninja spirits.ahx
 380a27847b0402e42f2b5a9500f5ef85	1	88463	player+silence	uade	Soundtracker II (15 instr.)	0	66044	mod15/DOC-Soundtracker/mod.sll1
 380e94fe7e7fb508d16125a140a830d1	0	170448	loop	uade	Future Player	0	21716	future_player/FP.Drums
@@ -5378,6 +5381,7 @@
 5ae419e51b9eafcb152a55a70afdc832	0	263757	player	uade	MED Packer	0	53052	med_packer/CaptainPlanet/MMDC.CaptainPlanet 5
 5aebcdc5d779d68cffb0eea442d42502	0	53525	loop	uade	Darius Zendeh Mod - type: >2<	0	14233	darius_zendeh/R-Type/DZ.HighScore
 5af1112b540359f1891ebbe93cd9fe34	0	73448	loop	uade	AHX v2	0	13453	ahx/m0d/streets of pie.ahx
+5af30dee8ebf84ddc3d01dde24d995f8	0	84354	player	libopenmpt	Startrekker	4	11234	mod/wotw/Intro_Number_013.mod
 5af30dee8ebf84ddc3d01dde24d995f8	1	84616	player	uade	AudioSculpture	0	11234	audio_sculpture/adsc.Supplex2
 5af5d781bcb33fb03e46317c1e36844b	0	321475	loop	uade	MusiclineEditor	0	84853	music_line_editor/Ziphoid/ML.Sweet'n'Sour
 5af5d781bcb33fb03e46317c1e36844b	1	321450	loop
@@ -10275,6 +10279,7 @@ b404790de88527363911e58e2a864bbb	0	99948	player	uade	SunTronic	0	8960	suntronic_
 b41431c2f2f636db4750299c3beb0373	0	63236	player	uade	Sonix Music Driver	0	2374	sonix/Rocket_Ranger/SMUS.SxDC
 b42b9eb2116d1f189c91f78d76ebc5d3	0	560670	player	uade	Titanics Packer	0	148160	mod_packer/titanics_packer/TITS_TitanTrax/TITS.dancefloor act
 b42f113ee9a8a1f9934d8d4da422b5f4	0	109915	error	uade	VSS	0	14698	voodoo_surpreme_synthesizer/VSS.Voo4
+b43325e2ab018a8aca6c22c05efd92fc	0	86688	player	libopenmpt	SoundTracker 2.0 / 2.1 / 2.2	4	29796	mod15/Don_Adan_rips/ST_Prehistorik/MOD.prehistorik1
 b438dd2b665905fec1dcb288c8626391	1	5244	player	uade	Noisetracker 1.x	0	2138	mod/other/dalezy-donkey_kong1.mod
 b4391978428b1865445198ba7f670e00	0	71776	player	uade	AHX v2	0	3543	ahx/Hooligan/ahx.t2_remake
 b43bae33f7b12790418e5b16f4b7282b	1	98039	player	uade	ProPacker 2.1 - 3.0	0	9608	mod_packer/propacker/pp21/earwig/PP21.Earwig-08
@@ -11908,6 +11913,7 @@ d0199b9014dfe33b6d55ccb7e584687a	0	45634	player	uade	Sonix Music Driver	0	2095	s
 d02690faa5428d947d5bc36d5f28dc15	0	201666	player	uade	Quartet ST	0	3472	quartet_st/Necromunda/QTS.SCI4
 d027e609632519a975645a5934ca51a3	0	107544	player	uade	Sonic Arranger	0	49856	sonic_arranger/SA.TRSI Intro 1 by Leffty
 d02de4531123a5e139b83a936063356f	1	28071	player	uade	Noisetracker 2.x	0	24166	mod_packer/ac1d/Space_Gun/Direct_from_Composer/mod.spacegun-jingle2
+d0347eaa91e86f6074d3be60686ca21e	0	134199	player	libopenmpt	Master Soundtracker 1.0	4	78756	mod/Gemini_Wing/unpacked/mod.gwfinish
 d03e8122df68997ac2d8bdc76c234d25	0	69023	player	uade	JamCracker	0	28250	jamcracker/JAM.Xag-Living_on_Video
 d04a495c3c01c46970472254d97596f1	1	115321	player	uade	Noisetracker 2.x	0	63384	mod/Star_Control_2/MOD.SHOFIX2
 d05531aa41cb5bc007c55d7fafed6b9e	0	164089	player	uade	AHX v2	0	11488	ahx/Atomic Sound/colours.ahx
@@ -14152,6 +14158,7 @@ fba7ccc839d07e64c3f6d2628e592d06	1	46216	player	uade	Protracker compatible	0	760
 fba7e6d2f907b60a85ceca0b3006312b	0	50959	player	uade	AHX v2	0	5231	ahx/Flapjack/tribute to xtd 01.ahx
 fbad21395d551301dcbdfbf81fdca564	0	159435	loop	uade	AHX v2	0	5910	ahx/Tony Vera Diaz/she lies.ahx
 fbc026bb61292db70acffd98a5b8fcde	0	59077	player	uade	Sonix Music Driver	0	5158	sonix/A-10_Tank_Killer/SNX.Losing
+fbc3c5e0d51b4427d095641bcf20fe6e	1	95837	player	ft2play	Fasttracker	4	109580	mod/deck_collection/lsd_bbs_intro.mod
 fbf578c0dd2a8af0613199dc1b8b85cc	1	18313	silence	uade	MON	0	189009	mon/new/LordOfTheRings/MON.LordOfTheRings-2
 fbf578c0dd2a8af0613199dc1b8b85cc	2	10349	silence
 fbf578c0dd2a8af0613199dc1b8b85cc	3	20282	silence

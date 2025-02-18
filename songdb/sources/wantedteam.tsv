@@ -251,6 +251,7 @@
 05630a0e9f86feb38420e938588a5cc5	0	1004	player	uade	Sierra AGI	0	131	examples/AGI_Manhunter1/AGI.ManhunterI 03
 05630a0e9f86feb38420e938588a5cc5	0	1004	player	uade	Sierra AGI	0	131	examples/AGI_Manhunter2/AGI.ManhunterII 004
 056637205316cda53a6eda95ec977d57	1	30503	player	uade	OctaMED MMD0	0	28578	rips/MED_Boppin/MED.Star Bop
+056dee95b66b1433aaab85510131d943	0	57514	player	libopenmpt	NoiseTracker	4	61194	examples/NT_GnomieByNight/MOD.danger in sky
 0582d685a12b9b8d46230f8cd98f35ab	0	783	player	uade	Sierra AGI	0	106	examples/AGI_Manhunter2/AGI.ManhunterII 120
 058e6faa5ba1b3ece8f0be59cc350ad7	1	96130	player	uade	Protracker	0	29970	rips/MOD_LUomoRagno1/MOD.sigur
 059f6efdefc8054ea3b57cda9e909e98	0	193949	player	uade	Benn Daglish SID	0	8352	examples/BDS_Terramex/BDS.Terramex
@@ -326,6 +327,7 @@
 0627dfdbc1f5e4b5045ec0ccc59ff46d	0	93860	player	uade	Quartet ST	0	3424	examples/QTS_KillingCloud/QTS.KillingCloud title
 06305a3b918fbf214389c9f1336079ac	0	281	player	uade	Sierra AGI	0	51	examples/AGI_Manhunter2/AGI.ManhunterII 172
 064c9ef17fe3a5cef28cf7d24b55c47c	0	74630	player	uade	Sonix Music Driver	0	7304	examples/SNX_RiseOfTheDragon/Rise Of The Dragon/SNX.bar 2
+065b2d6e9eea82f783e89435a5048148	0	15783	player+silence	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	76828	rips/ST_OperationWolf/MOD.wolf1 (title)
 065f4105d191f6e6e035be1059d4a0ca	0	2471	player	uade	Sonix Music Driver	0	478	examples/SMUS_Spot/Spot/SMUS.pole2
 0660931ea5bdb43c42d456cef23f1251	1	29960	player	uade	Dave Lowe New	0	238638	examples/DLN_BeneathASteelSky/DLN.BeneathASteelSky 03
 06643ecbae819fb5aa193501841f5064	1	46216	player	uade	Protracker	0	12634	rips/MOD_DylanDog/MOD.dylan sabba
@@ -626,6 +628,7 @@
 0c043c763309908f255c46add7b23d5a	3	23289	player
 0c043c763309908f255c46add7b23d5a	4	27187	player
 0c08c71e44649b9473b7f47c1b900d16	0	4108	player+silence	uade	SoundFX	0	19172	rips/SFX_BushBuck/SFX.BushBuck 10
+0c0d449c9411fd1d96201c95ede6f21f	0	24172	player	libopenmpt	Scream Tracker	4	132408	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 11
 0c11acdd5f96b0c2dc05c886400220ea	1	5244	player	uade	Soundtracker II (15 instr.)	0	24048	rips/ST_MusicExamples2/MOD.quit
 0c2fb4f5c6aa0f0019755baee345dab7	0	50275	player	uade	SoundPlayer	0	4479	examples/SJS_Lemmingsdemo/SJS.petergunn
 0c368085c98374e418906e028dfa1897	0	143171	player	uade	onEscapee	0	2289066	examples/ONE_onEscapee_2/ONE.Stage1 ctyview
@@ -870,6 +873,7 @@
 11e990a298a48febe0fe5fca888679d6	8	25539	player
 11e990a298a48febe0fe5fca888679d6	9	2773	player
 11ef2e7c36854c1eb891ac37d5b13e71	1	235645	player	uade	Soundtracker II (31 instr.)	0	72314	rips/MOD_DylanDog04/MOD.intro
+11f31c863e54b1b9bbfe9bd0aba5291f	0	190655	player	libopenmpt	NoiseTracker	4	94182	examples/NT_GnomieByNight/MOD.the happy hunt
 11f40d42f34ab2eee13c0cfbed323174	0	48165	player	uade	Cinemaware	0	3515	examples/CIN_Wings/Wings/CIN.Wings 04
 120bef9863fa8c073d6c166e55009745	1	75715	player	uade	Noisetracker 2.x	0	57012	rips/MOD_DylanDogAdv/MOD.trillo del diavolo
 121271fdf84772d79fd864cfb3e5ab74	0	1587	player	uade	Sonix Music Driver	0	408	examples/TINY_CarmenUSA/Carmen USA/TINY.CarmenUSA 12
@@ -1228,6 +1232,7 @@
 17f48f61275cf53c32c46f177addba62	0	62754	player	uade	Synth Pack	0	3552	examples/OSP_CenterBase/OSP.CenterBase Act04
 17f4f345620a7357c2dea7fe2df3c8a4	1	10402	player+silence	uade	Jochen Hippel ST	0	290	examples/HST_LeavinTeramis/HST.Leavin'Teramis die
 17f7e7eb3abaffb26e370689ac17783e	0	8057	player	uade	TFMX	0	4612	examples/MDAT_EinmalKanzlerSein/MDAT.EinmalKanzlerSein 70
+17fb382efe431d9cafae7a4eb15eefe0	0	32152	player	libopenmpt	NoiseTracker	4	87700	examples/NT_GnomieByNight/MOD.be with panda
 17fbee312cb559c756f3c26123049ed7	1	122916	player	uade	Jochen Hippel ST	0	1590	examples/HST_Amberstar/HST.Amberstar 04
 180921285031384c095ca8dda61d9222	1	15472	player	uade	Protracker	0	28950	rips/MOD_3DWorldSoccer/MOD.australia
 180a4527b0130f528b298f8670b23e0f	1	115321	player	uade	Protracker	0	37816	rips/MOD_TimeRunners04/MOD.cover1
@@ -2033,6 +2038,7 @@
 29d78fbb0509297670c25168ab4b5d4e	1	100913	player	uade	Noisetracker 1.x	0	81914	rips/MOD_WildWestWorld/MOD.western1
 29e0ce1bc448eb494c7b3e73ce0461a8	1	46216	player	uade	Protracker	0	12970	rips/MOD_Draggy&Croco/MOD.dragon26
 29e3d3a1f4af261604921d64b8d82e7a	0	245793	player	uade	Fashion Tracker	0	64576	examples/EX_Combine/EX.Combine 2
+29e6f24b1435777ef9296635a74ab76d	0	23005	player	libopenmpt	NoiseTracker	4	27740	examples/NT_GnomieByNight/MOD.wet eye
 29f0f061c1294f937d4b5657c937b2f8	1	146527	player	uade	Protracker	0	118452	rips/MOD_InTheDeadOfNight/MOD.finalenew
 2a00fc8961b27ce3ab6253646b564a60	0	6088	player	uade	Sierra AGI	0	501	examples/AGI_KingsQuest4/AGI.King'sQuestIV 57
 2a088b57c548a1a26343381144178cd6	0	7374	player	uade	Sonix Music Driver	0	552	examples/SMUS_Spot/Spot/SMUS.spotope7
@@ -2099,6 +2105,7 @@
 2aea3361d45a254de1ff3a8883d59b34	9	13025	silence
 2aeef24207ded6b48bef95c0d73fe28d	1	7696	player	uade	Jochen Hippel	0	16558	examples/SOG_LeavinTeramis/SOG.Leavin'Teramis 07
 2aff8ceff0b67e435424cf6b18476461	1	184445	player	uade	Protracker	0	87574	rips/MOD_InTheDeadOfNight/MOD.piano terra v2.4
+2b02d2e355b81bc515a1fb808159d5a4	0	66460	player	libopenmpt	NoiseTracker	4	166366	examples/NT_GnomieByNight/more than friends_missingsamp
 2b085be16f42ae43b1eea9e0620297e2	1	137766	player	uade	Jesper Olsen	0	35944	examples/JO_VibrantsMusicCol1/JO.LollyPop demo
 2b08bc7c15bd38a0c5a1f975a61503ab	1	30824	player	uade	Protracker	0	8506	rips/MOD_Draggy&Croco/MOD.dragon18
 2b08dc34673fbe63c59f3248964a266c	0	153580	player	uade	Synth Pack	0	8588	examples/OSP_Dyter07/OSP.Dyter07 HiScore
@@ -2159,6 +2166,7 @@
 2c39a894506059cc9a206dac2e727545	3	51320	player
 2c39a894506059cc9a206dac2e727545	4	61609	player
 2c39a894506059cc9a206dac2e727545	5	38601	player
+2c4952001910a602e7ce265f48a34b46	1	359	player	ft2play	Fasttracker	4	102360	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 17
 2c56d840758e71d098f080f43c07ca69	1	56424	player	uade	Noisetracker 1.x	0	92894	rips/MOD_ItalianNight1999/MOD.dangerous
 2c5807df44bdb34bb1444d8ecc72eb22	0	276313	loop	uade	CustomPlay	0	55584	customs/Exxon/CUST.Exxon
 2c58e2ea41f4fc75dffda2aa8c4abe92	1	111965	player	uade	Protracker	0	46460	rips/MOD_QuikTheThunderRabbit/MOD.rabbit-level3.jour
@@ -2590,6 +2598,7 @@
 33ecef7a88b200b41253b6601af1dacf	0	9665	player	uade	TFMX	0	4576	examples/MDAT_EinmalKanzlerSein/MDAT.EinmalKanzlerSein 74
 33ee5d135f394d4e8d536036339897ec	1	227869	player	uade	Jochen Hippel ST	0	4760	examples/HST_ChambersOfShaolin/HST.ChambersOfShaolin 9
 33ee5d135f394d4e8d536036339897ec	2	1929	player
+33fca4600fd166c0acd50c9c7ebc27e8	0	39580	player+silence	libopenmpt	NoiseTracker	4	206246	examples/NT_GnomieByNight/MOD.joyride
 34200dcb22d9e7b00c9e2ad2180039a6	0	10348	player	uade	G.M.C	0	3504	rips/GMC_TerrysBigAdventure/GMC.Terry'sBigAdventure bonus
 343e4278616cdad37afb0ce77b678616	0	16437	player	uade	SoundFX	0	23400	rips/SFX_BushBuck/SFX.BushBuck 07
 344aad86f79b9093eaaf799291030d1d	0	35687	player	uade	Quartet ST	0	928	examples/QTS_InsignificantDemo/QTS.ID 20
@@ -3147,6 +3156,7 @@
 3f576e63e699149388d7e2c71ce1b468	1	115321	player	uade	Protracker	0	28042	rips/MOD_TimeRunners22/MOD.secmus
 3f576e63e699149388d7e2c71ce1b468	1	115321	player	uade	Protracker	0	28042	rips/MOD_TimeRunners29/MOD.secmus
 3f62a45a9ef89dcf5922c8eec1985e27	1	157579	player	uade	Protracker	0	193484	rips/MOD_Beastlord/MOD.cleanversion2
+3f6a17930678e6ea321e0fa30af2922d	0	47928	player	libopenmpt	NoiseTracker	4	40532	examples/NT_GnomieByNight/MOD.magic dream
 3f77043d6265c3a20b91b818d18bdd7c	1	130693	player	uade	Protracker	0	28000	rips/MOD_Simulman09/MOD.mus4
 3f83e955860443563a31ef6e4d3b1e44	1	69224	player	uade	Pha Packer	0	55632	rips/PHA_BrianTheLion/PHA.BrianTheLion 01
 3f87a05270fed97c24048e26c378dfca	1	84616	player	uade	Protracker	0	122772	rips/MOD_BurnTime/MOD.wasserstelle
@@ -3620,6 +3630,7 @@
 49a65b2ef6e6c5f506883c1919e8775a	0	145944	player	uade	Synth Dream	0	4878	examples/SDR_MonsterBusiness/SDR.MonsterBusiness 2
 49a6886bba35e06d27e7e8c75c76f8c8	1	115321	player	uade	Protracker	0	26176	rips/MOD_Simulman07/MOD.paura
 49b1480b2521b1eca68afa785c687343	0	157498	player	uade	Mosh Packer	0	83744	examples/MOSH_EarwaxCollection1/MOSH.DistyTwister2
+49b674426617419dbf193475e7994676	0	211725	player+silence	libopenmpt	NoiseTracker	4	114398	examples/NT_GnomieByNight/MOD.she's my light
 49b76d2deacd68b46ef60a23906143cf	0	2572	player	uade	Sierra AGI	0	581	examples/AGI_BlackCauldron/AGI.BlackCauldron 02
 49b76d2deacd68b46ef60a23906143cf	0	2572	player	uade	Sierra AGI	0	581	examples/AGI_DonaldDucksPlayground/AGI.DonaldDucksPlayground 07
 49b76d2deacd68b46ef60a23906143cf	0	2572	player	uade	Sierra AGI	0	581	examples/AGI_KingsQuest2/AGI.King'sQuestII 23
@@ -3721,6 +3732,7 @@
 4acbd780970a731d602da93c147153da	1	184344	player	uade	Jochen Hippel	0	18066	examples/SOG_DragonFlight/SOG.DragonFlight fight
 4acbd780970a731d602da93c147153da	2	161316	player
 4ad1218ab539739e82021db6e4e0b42b	1	27238	loop	uade	The YM2149 Player v1.52c	0	16408	customs/MYST_Jess_1/YM.Not Soporific Lullaby
+4ad16942aff35677d154b608262e5f04	0	235668	player+silence	libxmp	Prorunner 2.0	4	156328	rips/PRU2_Overdrive/PRU2.Overdrive selector
 4ad6f67209755ceacfd7903b01faef5e	1	84516	player	uade	Jochen Hippel	0	18062	examples/SOG_DragonFlight/SOG.DragonFlight always
 4ad6f67209755ceacfd7903b01faef5e	2	92172	player
 4ad6f67209755ceacfd7903b01faef5e	3	46096	player
@@ -3889,6 +3901,7 @@
 4e74ad7bb6b91c04bf543cc6892ff918	2	5083	player
 4e74ad7bb6b91c04bf543cc6892ff918	3	7716	player
 4e74ad7bb6b91c04bf543cc6892ff918	4	44428	player
+4e756ff6f042f96030784a41b6e8f6db	0	55442	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	26292	rips/ST_CastleWarrior/MOD.to2
 4e7fe368e6a4124fa7f4b7486bd6edab	0	38420	player	uade	Fashion Tracker	0	60846	examples/EX_Astronuts22/EX.House mix
 4e84113f0bf2c35e314356010c11969d	0	2210	player	uade	Sierra AGI	0	96	examples/AGI_DonaldDucksPlayground/AGI.DonaldDucksPlayground 10
 4e8446b110c46eb0171b69c2bd38a63b	1	3958	player	uade	Soundtracker II (15 instr.)	0	9024	rips/ST_MicroproseSoccer/MOD.mps-j6
@@ -4257,6 +4270,7 @@
 57cb34a25d5f7b5d0881962c60535802	1	115321	player	uade	Protracker	0	35338	rips/MOD_TimeRunners08/MOD.cover
 57cb34a25d5f7b5d0881962c60535802	1	115321	player	uade	Protracker	0	35338	rips/MOD_TimeRunners09/MOD.cover
 57cf9ae4dab235f503c1d86a6d384ce9	0	4340	player	uade	Sonix Music Driver	0	596	examples/SNX_Stellar7/Stellar 7/SNX.jump
+57f45cb3887b428a335e4b256672e96e	0	23005	player	libopenmpt	NoiseTracker	4	58184	examples/NT_GnomieByNight/MOD.hysterical madness
 57f48f680837b1e87313f9807748f337	1	71816	player	uade	Noisetracker 1.x	0	89822	rips/MOD_ItalianNight1999/MOD.mappa3
 5802961545ae444a27519822f6aee6d1	0	19612	player	uade	Sonix Music Driver	0	814	examples/TINY_TheGamesWinterEdit/The Games - Winter Edition/TINY.Germany
 580fd704d80ae43f247660306555a5df	1	10368	player	uade	Protracker	0	36196	rips/MOD_NoiseFromHeaven3/MOD.nfh#3-loader
@@ -4326,6 +4340,7 @@
 589b3f29822156a1617fe5e19380638b	0	92172	player	uade	TFMX Pro	0	3724	examples/TFMX_BundesligaManHattrick/MDAT.Hattrick 3
 58a91a0fb12b7d03dc033ecb88099234	1	170077	player	uade	OctaMED MMD0	0	67248	rips/MED_SoulCrystal/MED.Rock Piano
 58ab67b960c5eb6280f4875714ff2c2a	0	74268	player	uade	Synth Dream	0	3764	examples/SDR_MonsterBusiness/SDR.MonsterBusiness 8
+58b3b14ec6bb2d95d57c947073e8c5da	0	35946	player	libopenmpt	NoiseTracker	4	24872	examples/NT_GnomieByNight/MOD.sailor's hornpipe
 58b4dfa7d3619cec2172bf9867e36d85	1	80758	player	uade	Noisetracker (M&K!)	0	104678	examples/NT_HisMastersNoise/mod.Opaque glasses
 58bdbe34a7923355428ccab0b4996782	1	15472	player	uade	Protracker	0	24770	rips/MOD_3DWorldSoccer/MOD.argentina
 58bea7380786f834b3294579817cd110	1	169150	player+silence	uade	Noisetracker 2.x	0	156578	rips/MOD_Robbo/MOD.ROBBO
@@ -4436,6 +4451,7 @@
 5b952cbccb5067a7d10c3093223b92e4	1	140921	player	uade	Protracker	0	90400	rips/MOD_Harlequin/MOD.ing1b
 5baad5578062f72e0f3277d1963bdd91	0	10087	player	uade	Sierra AGI	0	371	examples/AGI_KingsQuest4/AGI.King'sQuestIV 27
 5bb15d2da978dc00feec8870aefeeb66	0	223367	player	uade	Sonix Music Driver	0	8274	examples/SMUS_Harpsichord/Harpsichord/SMUS.K491
+5bb7f2fff1cb0d2925a3963f82f9e1f3	0	194541	player+silence	libopenmpt	NoiseTracker	4	85258	examples/NT_GnomieByNight/MOD.antikaries
 5bbf786e110a825cd25debda2fdfe35e	1	121409	player	uade	Noisetracker (M&K!)	0	138766	examples/NT_HisMastersNoise/mod.The funny farm
 5bc00f60eac9e1f886fda04e99a8c680	0	763	player	uade	TFMX Pro	0	1036	examples/TFMX_BundesligaManHattrick/MDAT.Hattrick 2
 5bed420908d3dee07c77642b00fd63e5	1	80758	player	uade	Pha Packer	0	52388	rips/PHA_BrianTheLion/PHA.BrianTheLion 22
@@ -4455,6 +4471,7 @@
 5c965a8cc2755763dad7f397b262cb78	1	184686	player	uade	Soundtracker II (31 instr.)	0	237810	rips/MOD_KillingGameShowpreview/MOD.t.k.g loader
 5c9ea78b0b5361164df01b47c96587e7	1	130693	player	uade	Protracker	0	62200	rips/MOD_Tex01/MOD.west
 5ca0e0920d820217269a5cee57d2db39	1	148860	loop	uade	MON	0	10520	rips/MON_Unreal/MON.Unreal ingame 1
+5ca7e5b4de413e69b69e7a2cb11b2816	0	11145	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	50948	rips/ST_OperationWolf/MOD.wolf66
 5cad7d2e792fe7c4658842926b63c5e2	0	101355	player	uade	Sonix Music Driver	0	7441	examples/SNX_A10TankKiller/A-10 Tank Killer/SNX.A10Theme
 5cc1bd45166afae8837d8ed1ad4ce4ed	1	303383	player	uade	Jochen Hippel ST	0	11416	examples/HST_LethalXcess/HST.LethalXcess 5
 5cc1bd45166afae8837d8ed1ad4ce4ed	2	53792	player
@@ -4548,6 +4565,7 @@
 5f8eef4c3dc5ab308eaf14d87aa99a62	6	823	player
 5f9635a1a7f15ebd7a0f28fa22011abe	0	21638	player+silence	uade	Paul Shields	0	17818	examples/PS_AirBall/PS.AirBall gameover
 5faad7e75aae7bffdff18d24c4414768	0	4018	player	uade	Sierra AGI	0	136	examples/AGI_KingsQuest2/AGI.King'sQuestII 20
+5fc0a4134bd64717a10fa0221edb7ff2	0	30058	player+silence	libopenmpt	NoiseTracker	4	19238	examples/NT_GnomieByNight/MOD.jungle jim
 5fcc72f345b6d6a21bcc4404bd96c02e	0	281	player	uade	Sierra AGI	0	51	examples/AGI_Manhunter2/AGI.ManhunterII 144
 5fd6852db3b069182ed5f21e8b13bdec	0	80256	player	uade	Sonix Music Driver	0	7693	examples/SNX_RiseOfTheDragon/Rise Of The Dragon/SNX.win game
 5fd9797b0f1bca8f633c4609070c7956	1	271363	loop	uade	MON	0	164400	rips/MIX_Rubicon/MON.Rubicon title
@@ -4665,6 +4683,7 @@
 61b2e21f3982e53c553e1348847e0aec	1	73464	player	uade	Protracker	0	91084	rips/MOD_Pankracy/MOD.intro
 61b410d351757f690c550c9af9817faf	0	16095	player	uade	Sierra AGI	0	246	examples/AGI_KingsQuest4/AGI.King'sQuestIV 64
 61b557bd36776ed98acc42b00ea2d83c	1	130693	player	uade	Protracker	0	17950	rips/MOD_TimeRunners10/MOD.st3
+61b58e6f222970cb74513e4674fe925b	0	15337	player	libopenmpt	NoiseTracker	4	184112	examples/NT_GnomieByNight/MOD.bull as a dog
 61d64773444c9adde5cda90314959234	0	60503	player	uade	Quartet ST	0	3568	examples/QTS_WrathOfTheDemon/QTS.WrathOfTheDemon 3
 61d746d9fa2766b803e58ac7766c3f6d	0	84496	player	uade	Paul Tonge	0	964	examples/PAT_Dogfight/PAT.menu
 61e7fb8d26b4c289350194b8d5eab630	1	163969	player	uade	Soundtracker II (15 instr.)	0	80400	rips/ST_Xenophobe/MOD.xen2
@@ -5086,6 +5105,7 @@
 6c15720dcfc1294c41d7d701ca56aece	0	238579	player	uade	Beathoven Synthesizer	0	254724	examples/BSS_CosmicBouncer/BSS.CosmicBouncer
 6c15720dcfc1294c41d7d701ca56aece	1	144015	player
 6c15720dcfc1294c41d7d701ca56aece	2	77302	player
+6c25c73d8b7166e58edb211ba7cb9f34	0	9559	player+silence	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	41348	rips/ST_OperationWolf/MOD.wolf31
 6c3ae239008e6aa6a59d9f0c5e476b85	0	81924	player	uade	TFMX Pro	0	6936	examples/TFMX_Oath/MDAT.Techno Prison (author)
 6c3ae239008e6aa6a59d9f0c5e476b85	1	51220	player
 6c3ae239008e6aa6a59d9f0c5e476b85	2	2712	player
@@ -5441,6 +5461,7 @@
 743549128353731b8b336ce1c2553b9a	1	62834	player	uade	Soundtracker II (31 instr.)	0	23206	rips/MOD_Tex07/MOD.duello
 7447514741270ea39aa2b55fbf9251f1	0	25620	player	uade	Blade Packer	0	1436	examples/UDS_SubStationSTE/UDS.SubStation mellan4
 745184eca87bf16644b64b983936695b	1	30824	player	uade	Protracker	0	12692	rips/MOD_Draggy&Croco/MOD.dragon3
+7459a875ba675ac3ec7563a942bae75a	0	44892	player	libopenmpt	Scream Tracker	4	127598	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 14
 745abb9781e7e504fedea0a85ec47303	0	21279	player	uade	Sonix Music Driver	0	1190	examples/SMUS_SpiritOfExcalibur/Spirit Of Excalibur/SMUS.BkBtl
 74631f4bfd83d8310e9a0e9b3a721cde	0	221	player	uade	Sierra AGI	0	50	examples/AGI_Manhunter2/AGI.ManhunterII 114
 7480cf6ff1a98e21a786433939060c62	0	1105	player	uade	Sierra AGI	0	91	examples/AGI_Manhunter2/AGI.ManhunterII 159
@@ -5517,6 +5538,7 @@
 76368cd787d2fb4bc46e3665ab43326f	0	68705	loop	uade	CustomPlay	0	29596	customs/SCUP_intro/CUST.SCUP intro
 763d475dc6e0d5182ee0d220ba353df0	0	30603	player	uade	Images Music System	0	26280	examples/IMS_HuntForRedOctober/IMS.sub-docking
 7641cdc54bc80b9c3ea65f0cd8810cd0	0	1064	player	uade	Sierra AGI	0	236	examples/AGI_SpaceQuest2/AGI.SpaceQuestII 32
+76467ad02a3b573b4e92d974858add49	0	333765	player	libxmp	Module Protector noID	4	166846	rips/MP_MadeInCroatia/MP.MadeInCroatia 1
 7656319aa3f76af1a782567820b601fe	0	158735	player+silence	uade	Titanics Packer	0	144102	examples/TITS_DeluxeView/TITS.DeluxeViewDemo
 76611c11655cea3a569489c11bf8280d	0	81763	player	uade	Benn Daglish	0	46870	examples/BD_FOFT/BD.FOFT musicbox 1
 76611c11655cea3a569489c11bf8280d	1	53772	player
@@ -5815,6 +5837,7 @@
 7c0eae20424e848a552ee0cb3d9519cb	0	30623	player	uade	NovoTrade Packer	0	20312	examples/NTP_Castlevania/NTP.bgm1
 7c1088a511461a3d555f6c8c05b2488f	1	168992	player	uade	Special FX ST	0	8406	examples/DODA_PushOver/DODA.PushOver toxcity
 7c1e723c067bf402ee529dea0a66a66b	1	76920	player	uade	Pha Packer	0	62698	rips/PHA_BrianTheLion/PHA.BrianTheLion 18
+7c206e876f0b936b7607cb757eb95244	0	22577	player	libopenmpt	Scream Tracker	4	49528	rips/MOD_Diabolik05/MOD.duello
 7c231ef136d362dadb06c7a39d98e338	1	34682	player	uade	Protracker	0	16728	rips/MOD_NoiseFromHeaven3/MOD.dcn_brainfood-#6
 7c29f1daa73ab7b7dbdb4764677fc56e	0	143099	player+silence	uade	G.M.C	0	79842	rips/GMC_Deuteros/GMC.Deuteros 1
 7c2a31d9c62154a7a85a4f7e0bf17b06	1	75614	player	uade	Jesper Olsen	0	47656	examples/JO_LollyPop/JO.LollyPop 14
@@ -6078,8 +6101,10 @@
 818a3aa1e0d70ba0873fdd684b031c9b	0	69867	player	uade	Mugician II	0	122767	examples/MUG2_Demosong/MUG2.7DEMOSNG1
 81ae6acc45f154e4b429908226501d2a	1	102520	player	uade	Protracker	0	26910	rips/MOD_DylanDog08/MOD.st3
 81b641316c9af33154bea71eb97fa916	1	47060	player	uade	Jesper Olsen	0	54664	examples/JO_GeorgGlaxo/JO.GeorgGlaxo title
+81d1c7c7b0097db114ed086848845d9a	0	49845	player	libopenmpt	NoiseTracker	4	50702	examples/NT_GnomieByNight/MOD.fantasy
 81dd8e7926931c4f6f19cb82b292c69f	0	3295	player	uade	Sonix Music Driver	0	508	examples/SNX_CarmenTime/Carmen Time/SNX.VILE3
 81f2ecd92b95800d9e11f84b67a8458a	1	92272	player	uade	Protracker	0	26664	rips/MOD_DylanDog03/MOD.St5
+81fdd4fc2d3d7e2ddee41f9c5cab1a30	0	24922	player	libopenmpt	NoiseTracker	4	70230	examples/NT_GnomieByNight/MOD.bengt-olof-goran
 821c4dc420721134fd679b4e41bba62a	0	46116	player	uade	Beathoven Synthesizer	0	57840	examples/BSS_Gluecksrad/BSS.Gluecksrad
 821c4dc420721134fd679b4e41bba62a	1	15854	player
 821c4dc420721134fd679b4e41bba62a	2	30965	player
@@ -6188,6 +6213,7 @@
 8382bdb31960425afab07a13141052e0	1	82044	player	uade	Protracker	0	26418	rips/MOD_DylanDog01/MOD.st2
 83b190ae8196ad181193a9f963cd6d6f	1	218183	player	uade	Jochen Hippel ST	0	10680	examples/HST_LethalXcess/HST.LethalXcess 3
 83b64db57db48031cdeeefea81852873	0	317549	player	uade	Jeroen Tel	0	211880	examples/JT_Unreal/JT.Unreal title
+83c8691ff8cf47e8b66e8357ccd5b068	1	122677	player	ft2play	Fasttracker	4	55812	rips/MOD_Diabolik06/MOD.diabolik
 83db8536c2960d0166fdc3a0bf054631	0	128020	player	uade	Magnetic Fields Packer	0	2178	examples/MFP_KidChaos/MFP.KidChaos Level 4-4
 83dcf635d943d267d969dc26b3082382	0	1406	player	uade	Sierra AGI	0	126	examples/AGI_SpaceQuest2/AGI.SpaceQuestII 06
 83e3f361a1cedc26c005073cb0f8d8b9	1	83062	player+silence	uade	Protracker	0	192642	rips/MOD_Plan9FromOuterSpace/MOD.plan9 intro
@@ -6634,6 +6660,7 @@
 8d9c19921b4fdddc42d2149b2d20a59d	0	602	player	uade	Quartet	0	59	examples/QPA_FruitMachine/QPA.holdkey
 8dafcd24f23f3bff912f942a259d3179	0	31909	player	uade	Sonix Music Driver	0	1978	examples/TINY_TheGamesWinterEdit/The Games - Winter Edition/TINY.WE downhill
 8db1fba2a92ffbe8a56a58f6e0cc80d6	0	61367	player	uade	PumaTracker	0	5140	examples/PUMA_Toki/PUMA.toki6.1
+8db4e65273caeb61a80b2f374d3ee570	0	37184	player	libopenmpt	NoiseTracker	4	66094	examples/NT_GnomieByNight/MOD.transvestit
 8dbf281689d255bb0717814b9f09488d	0	167988	player	uade	Sonix Music Driver	0	10228	examples/SMUS_TheFourSeasons/The Four Seasons/SMUS.Winter3
 8ddf4f102a04aa1d06286cf36a4e73c7	1	57730	player	uade	Protracker	0	38014	rips/MOD_Diabolik08/MOD.pst
 8ddf4f102a04aa1d06286cf36a4e73c7	1	57730	player	uade	Protracker	0	38014	rips/MOD_Diabolik10/MOD.pst
@@ -6797,6 +6824,7 @@
 90094bd0910247fef5cc6cbcaa19359f	0	29154	player+volume	uade	Paul Robotham	0	3351	examples/DAT_DawnPatrol/DawnPatrol stern.dat
 900aed5bfd7d95161e2c098083c131f8	0	131155	player	uade	PumaTracker	0	2642	examples/PUMA_TokiST/PUMA.stoki8
 9014f665039d57ba20b1ea49d7420fb5	0	1908	player	uade	Sonix Music Driver	0	338	examples/SMUS_Spot/Spot/SMUS.spot2up
+901b9e3d847aa4e4edcc5f234ccb5117	0	34532	player	libopenmpt	Scream Tracker	4	99736	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 04
 901bcdbd6cb26030328dbb4390ea73e4	1	7796	player	uade	Protracker	0	23562	rips/MOD_3DWorldSoccer/MOD.russia
 902ba69893fa15eccf36a7ea42b36420	1	115321	player	uade	Protracker	0	29882	rips/MOD_TimeRunners24/MOD.secmus
 9035b39f58f16f1ff440f74772f74b8e	0	44810	player	uade	Leggless Music Editor	0	57728	examples/LME_NinjaSpirit/LME.NinjaSpirit demo
@@ -7459,6 +7487,7 @@
 9f0ef7378fcb8f315037018d2fd8b044	0	122916	player	uade	Synth Pack	0	5516	examples/OSP_Dyter07/OSP.Dyter07 OnGame04
 9f2a32375f353e1232fef285100e444c	0	54937	player	uade	SoundFX	0	28292	examples/SFX_HistoryLine1914-1918/SFX.ongame2
 9f33749088c628b471c04d52f667f4b5	1	155770	player	uade	Protracker compatible	0	41508	rips/MOD_StarControl2/MOD.Druuge Music
+9f4280b96d37511dfee8b7397c4d59ad	0	7668	player	libopenmpt	NoiseTracker	4	47956	examples/NT_GnomieByNight/MOD.gokboet
 9f4626a3a28ac493fed37067e30126f3	1	9521	player+silence	uade	Protracker	0	72556	rips/MOD_1869AGA/MOD.ehrung
 9f4b4b573812a410fe1f2bd648c0a070	1	23691	player	uade	Protracker	0	17958	rips/MOD_LUomoRagno2/MOD.sip2
 9f51c26a8c41bae0531e61b2d680ecb2	0	10328	player	uade	Sierra AGI	0	181	examples/AGI_KingsQuest3/AGI.King'sQuestIII 27
@@ -7743,6 +7772,7 @@ a46439f013f13f51bf135c89f7a83a92	2	57730	player
 a4669c54b69af3d86ef252081297d7db	1	2813	player	uade	Noisetracker 2.x	0	9908	rips/MOD_StarControl2/MOD.HUMDITTY
 a46fc4d1ae6624f53d6a74fb543dc66f	1	185831	player+volume	uade	Noisetracker (M&K!)	0	80902	examples/NT_HisMastersNoise/mod.Chip
 a48b8270155a0f53ea10533eafddb16c	0	582	player	uade	Sierra AGI	0	86	examples/AGI_Manhunter2/AGI.ManhunterII 023
+a4983d7a432d324ce8261b019257f4ed	0	9997	player+silence	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	53948	rips/ST_OperationWolf/MOD.wolf1
 a4a07d44a473d740061ee392421aa4e7	1	119179	player	uade	Protracker	0	24250	rips/MOD_TimeRunners10/MOD.st2
 a4ad13c819c115628e677cb2123f593d	0	16718	player	uade	Sierra AGI	0	1256	examples/AGI_KingsQuest2/AGI.King'sQuestII 03
 a4ad13c819c115628e677cb2123f593d	0	16718	player	uade	Sierra AGI	0	1256	examples/AGI_SierraDemo3/AGI.DemoII 26
@@ -7777,6 +7807,7 @@ a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
 a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
 a5cf58790e6e482e25fed6cb3d0f74f8	1	115321	player	uade	Protracker	0	29882	rips/MOD_TimeRunners26/MOD.secmus
+a5d6e5e7deb9387b2f447cbb3ccdf6cf	0	15337	player	libopenmpt	NoiseTracker	4	80758	examples/NT_GnomieByNight/MOD.strulengok-19
 a5dbac5e21834f15c56e00555ddd30a9	1	38520	player	uade	Soundtracker II (15 instr.)	0	25196	rips/ST_Gilbert/MOD.g-bonuslevel
 a5f0da48c7c534371a22d42272f839bc	0	120	player	uade	Sierra AGI	0	50	examples/AGI_GoldRush/AGI.GoldRush 31
 a5ffdf4253a4ce8b518df16a554cbf33	1	324763	player	uade	CustomMade	0	13104	examples/CM_Critical/CM.Plague game
@@ -7803,6 +7834,7 @@ a6b3a7441e706af09a09e357b305ac14	1	204941	player	uade	Protracker	0	77992	rips/MO
 a6b3a7441e706af09a09e357b305ac14	1	204941	player	uade	Protracker	0	77992	rips/MOD_Diabolik09/MOD.theme1
 a6bc0cb9dbd5f3606fbd2b081afedef4	1	152797	player+silence	uade	Protracker	0	160170	rips/MOD_Utopia/MOD.utopia...
 a6de1819abf83915c6aa99c1ff6ada78	0	93076	player	uade	Sonix Music Driver	0	1415	examples/SNX_RiseOfTheDragon/Rise Of The Dragon/SNX.mayor
+a6e0dbac5f2d14a7e7dbec1e1fb73738	0	161429	player+silence	libopenmpt	NoiseTracker	4	98764	examples/NT_GnomieByNight/MOD.after midnight
 a6f1a82354a192c3bfc30ea897ad5bb1	1	51823	player	uade	Dave Lowe	0	81588	examples/DL_RailRoadTycoon/DL.RailRoadTycoon
 a6f1a82354a192c3bfc30ea897ad5bb1	2	40992	player
 a6f1a82354a192c3bfc30ea897ad5bb1	3	30744	player
@@ -7947,6 +7979,7 @@ a9cd9ae6d3b099b44e252620269010c1	2	1687	player
 a9cfd5e2608a2cc1e5158117ec494f7c	0	1004	player	uade	Sierra AGI	0	131	examples/AGI_SpaceQuest1/AGI.SpaceQuestI 46
 a9e10cf5582c7f89d741f4e0c66894b7	1	76920	player	uade	Protracker	0	26830	rips/MOD_DylanDog07/MOD.st2
 a9e1e936573f2615e4ffcb7674a7e89b	0	122273	player	uade	TFMX Pro	0	2772	examples/MDAT_Cyber/MDAT.CYBERSWT
+a9ffa6dcd72b269d5670f551442585be	0	236513	player+silence	libopenmpt	NoiseTracker	4	94506	examples/NT_GnomieByNight/MOD.broken nails
 aa043d052aa3cb3814a3736bce7b7389	0	183105	silence	uade	CustomPlay	0	51804	customs/PinkPanther/CUST.PinkPanther
 aa043d052aa3cb3814a3736bce7b7389	1	182632	loop
 aa043d052aa3cb3814a3736bce7b7389	2	5893	silence
@@ -8007,6 +8040,7 @@ aaa3a966f467bb566c23c0da2381f71c	1	61568	player	uade	Protracker	0	41630	rips/MOD
 aaa5ed22b3bcca48781d4583b0ec9f34	1	191766	player+silence	uade	Jochen Hippel ST	0	7378	examples/HST_QuizMaster/HST.QuizMaster
 aaa5ed22b3bcca48781d4583b0ec9f34	1	191766	player+silence	uade	Jochen Hippel ST	0	7378	examples/HST_STNews4_3/HST.ComicBakery
 aaa5ed22b3bcca48781d4583b0ec9f34	2	7440	player+silence
+aaa747066a79f89f424a662911bf843e	0	60205	player	libopenmpt	Scream Tracker	4	55812	rips/MOD_Diabolik05/MOD.diabolik
 aab06392374e7ffb9469c802bcda964c	1	97316	player	uade	Jochen Hippel	0	82956	examples/SOG_WingsOfDeath/SOG.WingsOfDeath outro
 aab06392374e7ffb9469c802bcda964c	2	1306	player
 aab886e63b9832c8e99019b0a3e651d7	0	105253	player	uade	SoundPlayer	0	11559	examples/SJS_Lemmings/SJS.lemming2
@@ -8149,6 +8183,7 @@ aea59b0a40c066f834403a2ff83b0306	0	92172	player	uade	TFMX Pro	0	2076	examples/TF
 aeabf43e94af656f6cbfbaea495ccece	1	184445	player	uade	Protracker	0	61728	rips/MOD_X-It/MOD.ingame4
 aec602309b1a44185a7c7bdc831a11c7	1	46216	player	uade	Protracker	0	39006	rips/MOD_VeStinuMagie/MOD.bad end
 aecd3ee12dccc986ab189466b3035809	1	166420	player	uade	Jochen Hippel	0	45106	examples/SOG_SevenGatesOfJambala/SOG.SevenGatesOfJambala 2
+aeda42d8231a7e6fc99e505526de5dc1	0	31952	player	libopenmpt	NoiseTracker	4	37928	examples/NT_GnomieByNight/MOD.skyflight
 aee4e584123a2c296599f3204fc72614	1	306656	player+silence	uade	Protracker	0	147202	rips/MOD_CiemnaStrona/MOD.cs7(intro)
 aeee32a85a110cc8ec3a904e01e58aa3	0	10268	player	uade	TFMX	0	4644	examples/MDAT_EinmalKanzlerSein/MDAT.EinmalKanzlerSein 88
 aef3d7dec29120828a2fa5618bf1d10f	0	3255	player	uade	Sonix Music Driver	0	388	examples/TINY_CarmenUSA/Carmen USA/TINY.CarmenUSA 18
@@ -8168,6 +8203,7 @@ af43f5e55580969393188906d6cd1897	0	49311	player	uade	Nick Pelling Packer	0	2322	
 af43f5e55580969393188906d6cd1897	0	49331	player	uade	Nick Pelling Packer	0	2322	examples/NPP_WingCommander/NPP.w.c.flyingtobattle
 af523976689b37f9ebf4fb28c5403414	1	153721	player	uade	Noisetracker 2.x	0	83342	rips/MOD_KidGloves2/MOD.ice island
 af559fdffe537e97637f84b2d28f088f	1	34682	player	uade	Noisetracker 1.x	0	42044	rips/MIX_Untouchables/MOD.nbridge (level 2)
+af60840815aa9eef43820a7a04417fa6	0	9559	player+silence	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	41348	rips/ST_OperationWolf/MOD.wolf3
 af873a6cfce3a7925061d653fbac1de7	1	30824	player	uade	Protracker	0	8118	rips/MOD_Draggy&Croco/MOD.dragon32
 af87cd6717a0dda87a8c2457a7eae178	1	99968	player	uade	Protracker	0	81230	rips/MOD_Simulman02/MOD.arena
 af927219df91e13410c59a50de5ab5f7	0	130612	player	uade	Quartet ST	0	7672	examples/QTS_Reflex/QTS.Reflex 3
@@ -8237,6 +8273,7 @@ b0e0e9c18ad1e00e078c0b44dcd0b4bb	2	30744	player
 b0e0e9c18ad1e00e078c0b44dcd0b4bb	3	46096	player
 b0e0e9c18ad1e00e078c0b44dcd0b4bb	4	15372	player
 b0ef6bd2557b47e1a8af5823e2f12753	1	29520	player+silence	uade	Protracker	0	72556	rips/MOD_1869AGA/MOD.suedamis
+b0f4ba8a61e9b9573647a44a019c1f26	0	181169	player	libopenmpt	NoiseTracker	4	114816	examples/NT_GnomieByNight/MOD.eargasm
 b0fbf4ab661ac39815833823e97ca223	0	11051	player	uade	Sierra AGI	0	196	examples/AGI_Manhunter2/AGI.ManhunterII 061
 b0ff41affa3fa05234e6342f9d730d29	0	30744	player	uade	Beathoven Synthesizer	0	31964	examples/BSS_Wetten,Dass/BSS.WettenDass..?
 b0ff41affa3fa05234e6342f9d730d29	1	11554	player
@@ -8351,6 +8388,7 @@ b41431c2f2f636db4750299c3beb0373	0	63236	player	uade	Sonix Music Driver	0	2374	e
 b41de54b17164c0e129e4733493de2a2	1	46096	player	uade	Jochen Hippel ST	0	5491	examples/HST_LapDance/HST.LAP 02
 b42b9eb2116d1f189c91f78d76ebc5d3	0	560670	player	uade	Titanics Packer	0	148160	examples/TITS_TitanTrax/TITS.dancefloor act
 b42d643128e372e429ff2d4b5ab1a88e	0	147130	player	uade	Magnetic Fields Packer	0	2678	examples/MFP_CrystalDragon/MFP.CrystalDragon ingame
+b43325e2ab018a8aca6c22c05efd92fc	0	86688	player	libopenmpt	SoundTracker 2.0 / 2.1 / 2.2	4	29796	rips/ST_Prehistorik/MOD.prehistorik1
 b43a4c135ffcfd2897aec4fa9b39aa35	1	69224	player	uade	Noisetracker 2.x	0	27072	rips/MOD_DylanDog16/MOD.mus04
 b43b956302268b4090fa1eb9235ad172	1	63477	player	uade	Pha Packer	0	63050	rips/PHA_BrianTheLion/PHA.BrianTheLion 38
 b43b956302268b4090fa1eb9235ad172	2	53872	player
@@ -9276,6 +9314,7 @@ c7700c99a3e32e5bef6f368041e22e02	2	15372	player
 c77df8cd65b8a0f6c7835c9ca7c37331	0	10649	player	uade	Sonix Music Driver	0	484	examples/TINY_TheGamesWinterEdit/The Games - Winter Edition/TINY.Austria
 c77ec9faed706fe7d266d890c504c50e	1	253087	player	uade	Protracker	0	142636	rips/MOD_Kretacz/MOD.kretacz theme
 c78368236e7b6514ae348e193fb0ea60	0	47100	player	uade	SoundFX	0	12332	examples/SFX_VenusTheFlytrap/SFX.Venus ingame 01
+c7989d057da0d3f248cdc4dc3ad0e477	0	66016	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	46460	rips/ST_DragonNinja/MOD.dragon6
 c7a67b8cde85d9991efe87b72e2e2abd	0	123057	player	uade	Quartet	0	6175	examples/QPA_RadioControlledRacer/QPA.RadioControlledRacer
 c7b45ffdd198314cbd99f1e39e51e121	0	6068	player	uade	Sierra AGI	0	281	examples/AGI_KingsQuest4/AGI.King'sQuestIV 05
 c7bfb6d6b68e2233169818f6fd90bd73	0	44810	player	uade	TFMX Pro	0	3784	examples/TFMX_CaribbeanDisaster/MDAT.Radikal
@@ -9526,6 +9565,7 @@ cc95edc2eb559dfd37f95e9ce4cec8fe	0	0	error	uade	Synth Dream	0	5408	examples/SDR_
 cc9742a9fd7e3edba429a3bcd82a5354	1	30824	player	uade	Protracker	0	35532	rips/MOD_DylanDog02/MOD.Iniziale
 cca1a482cf92ad777383f21b28ef4bc4	0	2873	player	uade	Sonix Music Driver	0	332	examples/SMUS_CaliforniaGames/California Games/SMUS.fnfr1
 cca97802df6b97eca75cf9d74003f092	1	5116	player+silence	uade	Protracker	0	8758	rips/MOD_Osiris/MOD.tornado
+cca9c3b837ad4dc1462537ae7e8b2f8e	0	74878	player+silence	libopenmpt	NoiseTracker	4	23580	examples/NT_GnomieByNight/MOD.brynolf2
 ccaef8ce7ef67b3a4928e4056936a3c6	0	127934	player+silence	uade	SoundFX	0	86714	examples/SFX_AnotherWorld/SFX.AnotherWorld intro
 ccb5d90f8fce45c466ba858a047be960	0	138831	player	uade	CustomPlay	0	94024	customs/Loom/CUST.Loom
 ccb5d90f8fce45c466ba858a047be960	1	90866	player
@@ -10057,6 +10097,7 @@ d94380635246521de8db980c952f5e4e	2	53772	player
 d94ac57224912f2c7a9abcf27215fe60	1	82228	loop	uade	MON	0	107318	rips/MIX_Rubicon/MON.Rubicon end
 d94ac57224912f2c7a9abcf27215fe60	2	7608	loop
 d94e3733cfcac8c6b62bfe76539d4876	0	73866	player	uade	SoundFX	0	36928	rips/SoundFX13Sets1/Mods/SFX.CORP8
+d953958a65dee45b679877d325c4db71	0	23005	player	libopenmpt	NoiseTracker	4	46492	examples/NT_GnomieByNight/MOD.heart of love
 d95c52fde37ba56f9f001c6e5d422fe0	1	3616	player	uade	Protracker compatible	0	3090	rips/MOD_StarControl2/MOD.Victory Ditty 23
 d9621220bfdcfccf8f212a86a3d94410	0	97202	loop	uade	CustomPlay	0	14640	customs/WinterChalleng/CUST.WinterChallenge Slalom
 d9667e1138d65b070c77495b328ff993	1	74690	player	uade	Protracker	0	26204	rips/MOD_TimeRunners06/MOD.st1
@@ -10267,6 +10308,7 @@ dd1be91a8e770d7ed82dc6a89b24fa8d	2	81924	player
 dd1be91a8e770d7ed82dc6a89b24fa8d	3	5164	player
 dd1be91a8e770d7ed82dc6a89b24fa8d	4	4580	silence
 dd258304d16a9e08c6cee601e1521112	0	0	error	uade	CustomPlay	0	49876	customs/JockyWilson/CUST.JockyWilsonsDarts
+dd2e1e6c5a114f351dc71f2ec902eef0	0	107359	player	libopenmpt	Scream Tracker	4	47912	rips/MOD_TimeRunners03/MOD.atm02
 dd33af9c967c4d1daba944d06c7f6076	0	122896	player	uade	Fashion Tracker	0	65966	examples/EX_Astronuts22/EX.Gmork v.04
 dd3ab1811edefe5caf9663164d7f2cc1	0	115220	player	uade	TFMX Pro	0	3144	examples/TFMX_KraftKetchup/MDAT.KraftKetchup
 dd5e8d7eb49d65d6cf16a6e776285fef	1	276497	player	uade	Hippel-COSO	0	28054	examples/SOC_Tangram/SOC.Tangram intro
@@ -10396,6 +10438,7 @@ e0dca6c4ad621e8750560757b55ff847	6	92172	player
 e0dca6c4ad621e8750560757b55ff847	7	102420	player
 e0dca6c4ad621e8750560757b55ff847	8	51220	player
 e0dca6c4ad621e8750560757b55ff847	9	46116	player
+e0ee5f4463bac099c0fa8607a7183362	0	153371	player	libopenmpt	NoiseTracker	4	70670	examples/NT_GnomieByNight/MOD.jenny's song
 e1044ae6982e06a602133fe217cbaa24	1	179349	player+silence	uade	Noisetracker (M&K!)	0	207038	examples/NT_HisMastersNoise/mod.Allergitestad2
 e10c7ac30bfdde6396b70451eea0ea5c	1	70530	player	uade	Pha Packer	0	49538	rips/PHA_BrianTheLion/PHA.BrianTheLion 07
 e112d4c8b99f8d8e1ccfbfe7ef7969de	1	55600	player	uade	Protracker	0	80564	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 08
@@ -10417,6 +10460,7 @@ e187c6c05e7f52cf6f39fe3a33e99a43	0	35848	player	uade	Sonix Music Driver	0	728	ex
 e18c7366eadcf2e171b39816918408f0	1	32793	player	uade	Jesper Olsen	0	32940	examples/JO_LollyPop/JO.LollyPop 30
 e1987bfe77b76f07a5ff9781fbfc2547	0	188182	player	uade	Rob Hubbard ST	0	3378	examples/RHO_GoldRunner/RHO.GoldRunner
 e19c7221bdecfd547c1a7407fa112eb2	1	76920	player	uade	Noisetracker 1.x	0	93918	rips/MOD_ItalianNight1999/MOD.realdisco
+e19ccfcfad6377ed607f5d8f1d78d79b	0	297998	player	libxmp	Module Protector noID	4	169876	rips/MP_MadeInCroatia/MP.MadeInCroatia 2
 e1a2604703d5f06ccaf1ae2de757d88c	1	269303	player	uade	CustomMade	0	33022	examples/CM_BattleSquadronDemo/CM.BattleSquadron preview
 e1a2604703d5f06ccaf1ae2de757d88c	2	5023	player
 e1a2604703d5f06ccaf1ae2de757d88c	3	3596	player
@@ -10582,6 +10626,7 @@ e565e956d58e42be9fc3dfacff145914	7	44830	player
 e565e956d58e42be9fc3dfacff145914	8	61468	player
 e565e956d58e42be9fc3dfacff145914	9	134430	player
 e56b9c4a520337d1757fb648ca1ac795	0	8660	player	uade	CustomPlay	0	31460	customs/MagicBytesInt2/CUST.MagicBytes intro2
+e5713921d19724b3a983612f8c4ee7ef	0	76386	player+silence	libopenmpt	NoiseTracker	4	41234	examples/NT_GnomieByNight/MOD.the little hero
 e59f16979bec5b37aa4494b014e7c3fb	1	115321	player	uade	Protracker	0	26178	rips/MOD_Diabolik03/MOD.st2
 e5a0a6dd92b802f50b4c1f1d76e410cc	0	87068	player	uade	Paul Shields	0	31358	examples/PS_Amnios/PS.Amnios highscore
 e5ae7e015468aebf1d9761e53b8a94e4	1	299729	player+volume	uade	Hippel-COSO	0	18078	examples/SOC_EnchantedLand/SOC.EnchantedLand 3
@@ -10716,6 +10761,7 @@ e8f20df7f06bcc2fdb59b0891cc0a60d	0	389145	player	uade	Paul Shields	0	51878	examp
 e8f382a452567bbd4d7094952c5812a8	1	23292	player+silence	uade	Protracker	0	72556	rips/MOD_1869AGA/MOD.gefahr
 e8f3bc11cfd1f7d74ad5cb12c5e350d4	1	107645	player	uade	Noisetracker (M&K!)	0	212816	examples/NT_HisMastersNoise/mod.Regn och rusk
 e8fbac7308588f13fc863983ec2dbd71	0	9082	player	uade	Sonix Music Driver	0	2686	examples/SNX_Stellar7/Stellar 7/SNX.level7
+e8ff0259b2e99137b2f617a3878b17d6	1	20701	player	ft2play	Fasttracker	4	89726	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 05
 e909e50005086b3e8e1ba12cf7f77da4	0	57188	player	uade	Sonix Music Driver	0	1770	examples/SMUS_WhoFramedRogerRabbit/Who Framed Roger Rabbit/SMUS.title1
 e911839b83e265c776b0cc5078616d7e	1	18576	silence	uade	Protracker	0	19216	rips/MOD_TimeRunners11/MOD.st1
 e911839b83e265c776b0cc5078616d7e	1	18576	silence	uade	Protracker	0	19216	rips/MOD_TimeRunners12/MOD.st1
@@ -11268,6 +11314,7 @@ f36a7e97de669c63be5e7c8342681f2d	0	24394	player	uade	Editeur Musical Sequentie	0
 f36c36f8ac906d3b20c718d461319d04	1	636139	loop	uade	The YM2149 Player v1.52c	0	19764	customs/MYST_Jess_1/YM.TraLaLi & TraLaLa
 f37ac4a9894628c42618bb522d782ae0	1	6795	silence	uade	Startrekker (4ch)	0	40160	rips/MOD_Lotus3/MOD.l3_gameover
 f386c7b60fe2d04f73de6e73117eed66	0	188968	loop	uade	CustomPlay	0	89236	customs/WCF_intro/CUST.WCF intro
+f3a760538a88367fe4fa6c69428befb9	0	3667	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	19848	rips/ST_DragonNinja/MOD.dragonx jingle
 f3a9b32de3fcfceb5c7103b5a5cbfd88	1	51320	player	uade	Soundtracker II (15 instr.)	0	36944	rips/ST_Gilbert/MOD.g-completion
 f3bf01b85491526279e8b1dbe0d41478	0	48246	player	uade	Kris Hatlelid	0	27180	examples/KH_GrandPrixCircuit/KH.GrandPrixCircuit 2
 f3c296ec2cc2e25be4c7c63ec8f620cd	0	38562	silence	uade	CustomPlay	0	29844	customs/Wizball/CUST.Wizball
@@ -11345,6 +11392,7 @@ f5b62012c9e6ae22dcc6cc32b31fa81e	1	104389	player	uade	Noisetracker 2.x	0	131736	
 f5cec452b90548b1287bcb6c3cff5ecc	0	2129	player	uade	Sonix Music Driver	0	262	examples/SMUS_CaliforniaGames/California Games/SMUS.jaws
 f5dc4bfb8956215667e448921ce6b26d	1	259236	player	uade	Jochen Hippel ST	0	30073	examples/HST_NinjaRemix/HST.NinjaRemix 3
 f5dc4bfb8956215667e448921ce6b26d	2	3858	player
+f5f629297dd63e1d44c97d35dc1ece14	0	35467	player	libopenmpt	NoiseTracker	4	39868	examples/NT_GnomieByNight/MOD.moorsoldaten mix
 f60df43a1ae213669d862eec19d9630c	0	94603	player	uade	Alcatraz Packer	0	4512	examples/ALP_Cedric/ALP.Cedric 2
 f623233d8f22c91f77fd9fcd8b35b68e	1	99968	player	uade	Startrekker (4ch)	0	42072	rips/MIX_SonShuShi/MOD.SonShuShi 06
 f624bcefee19ed797bf4dee7fa5c1ec2	1	61568	player	uade	Pha Packer	0	62748	rips/PHA_BrianTheLion/PHA.BrianTheLion 35
@@ -11681,6 +11729,7 @@ f796f1749ce8ada8db32913a92007461	1	75192	player	uade	Noisetracker 1.x	0	105312	r
 f7b176cba1542f36f75569c2e4a8b4df	0	337945	player	uade	Benn Daglish	0	282144	examples/BD_3DGalax/BD.3DGalax
 f7b176cba1542f36f75569c2e4a8b4df	1	42258	player
 f7b8f336882ec19291c7e15eb30b9ec9	0	67034	player	uade	CustomPlay	0	110516	customs/Vaxine/CUST.Vaxine
+f7bf5b35781e232b559e90549f5d3ad4	0	70734	player	libopenmpt	NoiseTracker	4	56204	examples/NT_GnomieByNight/MOD.moonlight shadow
 f7bf684015799784d5c745990e7be696	1	84616	player	uade	Noisetracker (M&K!)	0	138394	examples/NT_HisMastersNoise/mod.It's real
 f7ca72762bb5547a3172c6d2ad4736b5	0	253609	player	uade	Quartet	0	12701	examples/QPA_BurgerMan/QPA.BurgerMan theme
 f7db2301ba3fc912d9700e29fcd2e5f4	1	38520	player	uade	Protracker	0	52370	rips/MOD_Tex02/MOD.intro
@@ -11771,6 +11820,7 @@ fa2b53f49d545a6cc96a9a81b4d1b80e	2	2712	player
 fa2b53f49d545a6cc96a9a81b4d1b80e	3	1245	player
 fa2c0ed95ce8c8234733a564ae667715	1	230541	player	uade	Soundtracker II (15 instr.)	0	65652	rips/ST_SoundMachine2/MOD.dr (DEAR ROB)
 fa372f68c1715fc7988d45eeaa03beb2	1	179321	player	uade	Noisetracker 1.x	0	48638	rips/MOD_RayNorrish4/MOD.space harrier
+fa48e0f805b36bdc1833f6b82d22d936	0	69683	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	49158	rips/ST_DragonNinja/MOD.dragonf
 fa6417f321d20f9e8d9c0f4c5897a44e	1	143372	player	uade	Jochen Hippel	0	10392	examples/SOG_DragonFlight/SOG.DragonFlight town
 fa6417f321d20f9e8d9c0f4c5897a44e	2	199696	player
 fa6417f321d20f9e8d9c0f4c5897a44e	3	163868	player
