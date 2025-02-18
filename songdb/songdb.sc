@@ -145,7 +145,10 @@ lazy val ampTsvs = Future(_try {
 
 lazy val modlandTsvs = Future(_try {
   val entries = sources.modland.sortBy(_.md5).par.flatMap { e =>
-    val path = e.path.substring(e.path.indexOf("/") + 1, e.path.lastIndexOf("/"))
+    var path =
+      if (e.path.startsWith("Ad Lib/")) e.path.substring("Ad Lib/".length)
+      else e.path
+    path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     if (path != "- unknown" && path != "_unknown") {
       modland.parseModlandAuthorAlbum(path).map { case (authors, album) =>
         MetaData(
