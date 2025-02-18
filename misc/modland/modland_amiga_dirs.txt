@@ -32,7 +32,6 @@
 ^.{33}Digital Sonix And Chrome/
 ^.{33}Digital Sound Studio/
 ^.{33}Dirk Bialluch/
-^.{33}Dynamic Studio Professional/
 ^.{33}Dynamic Synthesizer/
 ^.{33}EarAche/
 ^.{33}Electronic Music System/
@@ -170,3 +169,41 @@
 ^.{33}Impulsetracker/
 ^.{33}Screamtracker 2/
 ^.{33}Screamtracker 3/
+# TODO grouppaa platformin mukaan
+^.{33}Ad Lib/Screamtracker 3 AdLib/
+^.{33}Astroidea XMF/
+^.{33}Asylum/
+^.{33}Composer 667/
+^.{33}Composer 669/
+^.{33}Composer 670 (CDFM)/
+^.{33}DSMI Compact/
+^.{33}Digital Sound And Music Interface/
+^.{33}Digital Sound Interface Kit RIFF/
+^.{33}Digital Symphony/
+^.{33}Digital Tracker DTM/
+^.{33}Digital Tracker MOD/
+^.{33}Digitrakker/
+^.{33}Disorder Tracker 2/
+^.{33}Dynamic Studio Professional/
+^.{33}Epic Megagames MASI/
+^.{33}Extreme Tracker/
+^.{33}FM Tracker/
+^.{33}Farandole Composer/
+^.{33}General DigiMusic/
+^.{33}Graoumf Tracker/
+^.{33}Graoumf Tracker 2/
+^.{33}Imago Orpheus/
+^.{33}MO3/
+^.{33}Mad Tracker 2/
+^.{33}Multitracker/
+^.{33}Octalyser/
+^.{33}OpenMPT MPTM/
+^.{33}Polytracker/
+^.{33}Ultratracker/
+^.{33}Unis 669/
+^.{33}Velvet Studio/
+^.{33}X-Tracker/
+^.{33}Funktracker/
+^.{33}Liquid Tracker/
+^.{33}Megatracker/
+^.{33}Real Tracker/
