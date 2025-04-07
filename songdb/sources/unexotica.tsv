@@ -78,7 +78,7 @@
 013889ff41eee52d7cca264f49b2f964	0	723	player	uade	Sierra AGI	0	86	Game/Unknown/Space_Quest_2/agi.ingame_38
 013f973703b555c0d542dfc400cc113e	1	146045	player	uade	Noisetracker 2.x	0	36666	Game/Leitch_Barry/Back_to_the_Future_Part_3/mod.level1
 013f973703b555c0d542dfc400cc113e	2	23168	player
-014726274445c8ea625c1d089e0de201	0	226022	loop	uade	Sonic(pc)all	0	31186	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber7mod.pc
+014726274445c8ea625c1d089e0de201	0	218906	player	uade	Sonic Arranger	0	31186	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber7mod.pc
 014862c9b0e064e070122efb6525093a	1	130693	player	uade	Protracker	0	69374	Game/Visserot_Fabrice/Puffys_Saga/mod.welcome
 0179f04de04afd1505af44663dcf7146	1	89519	player	uade	OctaMED MMD1	0	27260	Game/Knight_Mark/Out_to_Lunch/med.greece1
 017abb760b29d8ff945c9e5a9577f850	0	103003	player	uade	Ultimate-Soundtracker or compatible	0	73734	Game/Picq_Stephane/Crash_Garrett/mod.crashgarret2
@@ -221,7 +221,7 @@
 03aabf526026ff9c72c026d52d828828	0	65205	player	uade	CustomPlay	0	87580	Game/Unknown/Crazy_Cars_2/cust.Crazy_Cars_2
 03aabf526026ff9c72c026d52d828828	0	65205	player	uade	CustomPlay	0	87580	Game/Unknown/F40_Pursuit_Simulator/cust.F40_Pursuit_Simulator
 03b23fd3e982c0739ed1db67366ffc8a	1	10546	player+silence	uade	Startrekker (4ch)	0	17432	Game/The_Jester/Town_With_No_Name/mod.UPSTAIRSTUNE1
-03b338ac2053551b5612832e8eed2d8e	0	257864	loop	uade	Sonic(pc)all	0	12904	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber2mod.pc
+03b338ac2053551b5612832e8eed2d8e	0	142106	player	uade	Sonic Arranger	0	12904	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber2mod.pc
 03c190d08897175e5ebb33e04cb0440f	1	213240	player	uade	Protracker	0	35206	Game/Clarke_Mike/Bills_Tomato_Game/mod.btg-titletune
 03c785f3e93dc8b67429921bb929a071	1	98682	player	uade	Protracker	0	38800	Game/Veriere_Philippe/Quik_The_Thunder_Rabbit/mod.rabbit-level3.inter
 03c785f3e93dc8b67429921bb929a071	2	53872	player
@@ -624,8 +624,8 @@
 098551522467dcfd319b501aec0ed30f	2	23168	player
 098551522467dcfd319b501aec0ed30f	3	40171	player+volume
 098551522467dcfd319b501aec0ed30f	4	92272	player
-099894631f9d6a4063a4efbe58c2a618	0	73617	loop	uade	Sonic(pc)all	0	87570	Game/Steinwachs_Matthias/Ambermoon/sa.Intro_music
-099894631f9d6a4063a4efbe58c2a618	1	42012	loop
+099894631f9d6a4063a4efbe58c2a618	0	190654	player	uade	Sonic Arranger	0	87570	Game/Steinwachs_Matthias/Ambermoon/sa.Intro_music
+099894631f9d6a4063a4efbe58c2a618	1	38420	player
 099fa0be6f5727e376e802c0f95ec7aa	1	25720	player	uade	Protracker	0	173944	Game/Nathan_Matthew/Erben_der_Erde/mod.intro.xmi
 09a2502e67167761bec1a3cd82e5e758	0	321	player	uade	Sierra AGI	0	61	Game/Murry_Barry/Man_Hunter_1/agi.ingame_50
 09a2502e67167761bec1a3cd82e5e758	0	321	player	uade	Sierra AGI	0	61	Game/Murry_Barry/Man_Hunter_2/agi.ingame_053
@@ -2731,8 +2731,8 @@
 2b0f1c3db9c9d70713ee887a0e735591	1	283831	player	uade	Protracker	0	140804	Game/Brimble_Allister/Assassin/mod.assasin2
 2b13a91768c165cb22773783f5e5dcfc	0	13724	player	uade	Sonix Music Driver	0	2934	Game/Latarski_Dan/Stellar_7/snx.level6
 2b156f2d772d573aa172c795fdcd20ae	1	34291	player+silence	uade	Startrekker (4ch)	0	22438	Game/Iula_Gerardo/F1_GP_Circuits/mod.shop
-2b18fb2c5733d4fb79315ca64ddba1b8	0	49159	loop	uade	Sonic(pc)all	0	55446	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level3
-2b18fb2c5733d4fb79315ca64ddba1b8	1	47138	loop
+2b18fb2c5733d4fb79315ca64ddba1b8	0	138268	player	uade	Sonic Arranger	0	55446	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level3
+2b18fb2c5733d4fb79315ca64ddba1b8	1	46096	player
 2b1b8e3c81b7477bb13d09fca153e019	1	1949	player	uade	Sound Images	0	76738	Game/Williams_Tony/Blinkys_Scary_School/tw.sfx
 2b1b8e3c81b7477bb13d09fca153e019	2	381	player
 2b1b8e3c81b7477bb13d09fca153e019	3	2190	player
@@ -2887,7 +2887,7 @@
 2ced0db9b85c11d2be4bfa90144d8d3f	0	31407	player	uade	SoundFX	0	22676	Game/McMullan_and_Low/Venus_the_Flytrap/sfx.ingame_05
 2cfda6f485d6dc60a2bb3fac7228b90e	1	61568	player	uade	Soundtracker II (15 instr.)	0	24134	Game/Grignon_Jean-Marc/Chrono_Quest_2/mod.darta3
 2cfda6f485d6dc60a2bb3fac7228b90e	1	61568	player	uade	Soundtracker II (15 instr.)	0	24134	Game/Grignon_Jean-Marc/Explora_2/mod.darta3
-2d003b0c951d502f1a66416ed0e7f4ad	0	199511	loop	uade	Sonic(pc)all	0	24334	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber6mod.pc
+2d003b0c951d502f1a66416ed0e7f4ad	0	196421	player	uade	Sonic Arranger	0	24334	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber6mod.pc
 2d00921fe84223430b753375ac741a53	1	7736	player	uade	OctaMED MMD0	0	9100	Game/Parton_Andrew/Civilization/med.building
 2d02fc26e346d00217cc79d5608a18a1	0	3056	silence	uade	TFMX Pro	0	1060	Game/Stember_Rudolf/Software_Manager/Direct_from_Composer/mdat.Fx
 2d02fc26e346d00217cc79d5608a18a1	1	3119	silence
@@ -3026,7 +3026,7 @@
 2eed5227d6dbb54c456ef5173a678161	1	132932	loop	uade	MON	0	202302	Game/Deenen_Charles/Battle_Chess_2/mon.Chinese
 2ef3f34ef56e4fa58544de0ed971bf65	0	109393	player	uade	Peter Verswyvelen Packer	0	52354	Game/Dahlgren_Tomas/Ziriax/pvp.level 2
 2ef55b02b804b54f0e90c5e574412ca2	1	107645	player	uade	Protracker	0	68546	Game/Melzener_Axel/Jaktar_-_Der_Elfenstein/mod.beim_koenig
-2ef75149b5dc56e290cf0a844abcd88e	0	152692	loop	uade	Sonic(pc)all	0	24518	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber22.pc
+2ef75149b5dc56e290cf0a844abcd88e	0	146909	player	uade	Sonic Arranger	0	24518	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber22.pc
 2f0d25e5c1ae38a750805574d526d396	1	96130	player	uade	Noisetracker 2.x	0	40288	Game/Page_Jason/Master_Axe/mod.tourn2
 2f1ce22af0041f9c2145764a1da10438	0	297636	player	uade	Peter Verswyvelen Packer	0	114686	Game/Dahlgren_Tomas/Zarathrusta/pvp.Zarathrusta
 2f1e567198016cf9809fe6e3fb5ccf07	1	0	nosound	uade	Hippel-COSO	0	2208	Game/Hippel_Jochen/Amberstar/soc.Ode to Schnism
@@ -3438,9 +3438,9 @@
 36130b6bdf1895e55d706c623f777bb3	4	16015	player
 3616b8a09f9c788990b02a1eb1a6b16f	1	61568	player	uade	Noisetracker 2.x	0	23248	Game/Wilson_Mark/Bonanza_Bros/mod.bonanza ingame 1
 3623444afdd80c32fece14f110a0b936	1	148777	player	uade	ProRunner 1.0	0	182862	Game/Berthaud_Mathieu/Fears/prun.maquette2
-36264f2666ab42a9c3b3a9fbf22fa9c3	0	243573	loop	uade	Sonic(pc)all	0	84184	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_title(final)
-36264f2666ab42a9c3b3a9fbf22fa9c3	1	85801	loop
-36264f2666ab42a9c3b3a9fbf22fa9c3	2	236050	silence
+36264f2666ab42a9c3b3a9fbf22fa9c3	0	243241	player	uade	Sonic Arranger	0	84184	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_title(final)
+36264f2666ab42a9c3b3a9fbf22fa9c3	1	96030	player
+36264f2666ab42a9c3b3a9fbf22fa9c3	2	236066	player+silence
 36288b9cc8776d7a83f13b14f084d87c	1	161397	player	uade	Noisetracker 2.x	0	67078	Game/Leitch_Barry/Prophecy_-_Viking_Child/mod.prophecy8
 362d86ee537181f860885b1ef9805786	1	115321	player	uade	Noisetracker 2.x	0	27946	Game/Media_Sorcery/Simon_The_Sorcerer/mod.MOD.FROZEN
 363452aec1520e9d252e1acc4659b309	0	5465	player	uade	Sonix Music Driver	0	508	Game/Barker_Chris/Spirit_of_Excalibur/smus.EvilCstl
@@ -3648,7 +3648,7 @@
 39b4513ea2b2b18c8916be33e83d114b	1	11554	player
 39c0af29c892aaba335c8d1d6f57f23f	0	176668	player	uade	Beathoven Synthesizer	0	93132	Game/Lopatic_Thomas/Great_Giana_Sisters/bss.title
 39c3a480580a1d23e57d64d4644c516e	1	30824	player	uade	Protracker	0	49490	Game/Gaiba_Gian_Luca/Diabolik_06/mod.polizia
-39cfdea16d867798b716c3375e81eb54	0	123549	loop	uade	Sonic(pc)all	0	27366	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber8mod.pc
+39cfdea16d867798b716c3375e81eb54	0	118415	player	uade	Sonic Arranger	0	27366	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber8mod.pc
 39dbabd297527b4b444dc423c146347a	1	6510	player	uade	Protracker	0	50892	Game/Steinwachs_Matthias/No_Second_Prize/Direct_from_Composer/mod.jingle1
 39e0833f717eb2ab2e21ad25043eb357	0	59912	player+silence	uade	SoundFX	0	33532	Game/Ruttmann_Haiko/History_Line_1914-1918/sfx.OFRA
 39e39c4cfb11797d6ca7366207f55dfa	1	63960	player	uade	Protracker	0	60180	Game/Brimble_Allister/Assassin/mod.asshiscore
@@ -3962,7 +3962,7 @@
 3e6f4c632b410fa1987379bdddbed337	1	67315	player	uade	Protracker	0	33906	Game/Furniss_Matt/Rugby_-_The_World_Cup/mod.rugbyinter
 3e726ea24bee285dd4e419d10b230f04	1	147290	player	uade	P50A - P60A - P61A	0	80762	Game/Demsky_Martin/Strangers/p60.LEVEL00
 3e78cfd34f6a25249d4a56edd0c5c22a	0	2270	player	uade	Sierra AGI	0	161	Game/Goldstein_William/Kings_Quest_4/agi.ingame_61
-3e8216d620f5c6252435da418b5233b8	0	130751	loop	uade	Sonic(pc)all	0	39258	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber11mod.pc
+3e8216d620f5c6252435da418b5233b8	0	127699	player	uade	Sonic Arranger	0	39258	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber11mod.pc
 3e971bcb27ee0b66c3b5c3f9beb23bea	1	124822	player+silence	uade	Protracker	0	150858	Game/Lynne_Bjorn/Airline/Direct_from_Composer/mod.airline.memcut
 3ea409658d51f41f4ea9bc7595fc6cd0	1	53872	player	uade	Protracker	0	27202	Game/Gaiba_Gian_Luca/Time_Runners_08/mod.MUS4
 3ebe0f7670e9d2baf5003922bdeab5d3	1	41333	player	uade	Protracker	0	22594	Game/Williams_Scott/Pinkie/mod.rockboss
@@ -4017,8 +4017,8 @@
 3f25d6f21f1021f6a4b92b3ceb789161	7	10218	silence
 3f25d6f21f1021f6a4b92b3ceb789161	8	7817	silence
 3f25d6f21f1021f6a4b92b3ceb789161	9	7817	silence
-3f28bc20bccdf605fa7a77ece52f28d4	0	28680	loop	uade	Sonic(pc)all	0	20866	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber28.pc
-3f28bc20bccdf605fa7a77ece52f28d4	1	15194	loop
+3f28bc20bccdf605fa7a77ece52f28d4	0	26906	player	uade	Sonic Arranger	0	20866	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber28.pc
+3f28bc20bccdf605fa7a77ece52f28d4	1	9605	player
 3f2c0155e1a9bcda7d4940e52bb70d4c	1	51320	player	uade	Protracker	0	36074	Game/Tel_Jeroen/Bards_Tale_Const_Set/mod.btcs_level5
 3f2e342bb68bd82ef438729a0a36198d	1	69224	player	uade	Startrekker (4ch)	0	19226	Game/Martins_Julio/Son_Shu-Shi/mod.SonShuShi 04
 3f30ce6b64ab224e970aabf64f3f54cc	1	76920	player	uade	Noise Packer 3.0	0	34522	Game/Iveson_Martin/Blob/np3.b3np
@@ -4088,7 +4088,7 @@
 40183dfa9004db57d26df6f976d7adc2	0	132843	player+silence	uade	SoundFX	0	101440	Game/Ruttmann_Haiko/Pro_Tennis_Tour_2/sfx.MUSIC0
 4018c0dd46d21821c3943547ba17e67b	1	44910	player	uade	Protracker	0	12902	Game/Toni_Lorenzo/Dylan_Dog_The_Murderers/mod.dylan h0me
 401abc5f6cc29ce8752ba236785d8e14	1	116586	player	uade	Noise Packer 3.0	0	41182	Game/Iveson_Martin/Wonderdog/np3.scrap_yard
-4023d59f3b953ca109c2346606a825cc	0	147022	loop	uade	Sonic(pc)all	0	13136	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber1mod.pc
+4023d59f3b953ca109c2346606a825cc	0	140820	player	uade	Sonic Arranger	0	13136	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber1mod.pc
 403a5ca2fb7e15ce973630394c513531	1	61568	player	uade	Protracker	0	34186	Game/Tankard_Paul/Suburban_Commando/mod.subcom3
 40461856b9a442dd8b1da82f7ef1f906	0	9002	player	uade	TFMX	0	4496	Game/Magerkord_Dirk/Einmal_Kanzler_sein/mdat.ingame_43
 40465ee5d2069c6606231782c3e445c0	1	74750	player	uade	OctaMED MMD1	0	14616	Game/Dunn_Jonathan/Addams_Family/med.ingame_3
@@ -4892,7 +4892,7 @@
 4dcfbeba5869c1548080eb4939c9f74f	0	6504	player+silence	uade	Mugician	0	27123	Game/van_Vliet_Reinier/Winter_Camp/mug.level_5
 4dcfbeba5869c1548080eb4939c9f74f	1	6642	player+silence
 4de1a5dec32935d0fbcfd430129c63ad	1	115321	player	uade	Protracker	0	35338	Game/Gaiba_Gian_Luca/Time_Runners_10/mod.COVER
-4de1ace7d50e8cc2dd3578354f1dc93f	0	64780	loop	uade	Sonic(pc)all	0	39052	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber21.pc
+4de1ace7d50e8cc2dd3578354f1dc93f	0	134430	player	uade	Sonic Arranger	0	39052	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber21.pc
 4de21afc35e1bfddcf38ba7028b2b45d	0	76820	player	uade	Beathoven Synthesizer	0	51008	Game/Lopatic_Thomas/Preis_ist_Heiss/bss.Der_Preis_ist_Heiss
 4deb3159ebe96210df4c59aa871561a5	0	2069	player	uade	Sierra AGI	0	381	Game/Unknown/Space_Quest_2/agi.ingame_22
 4ded99eebf19282cbf2ccf53e60d2262	1	89720	player	uade	Startrekker (4ch)	0	14908	Game/Martins_Julio/Son_Shu-Shi/mod.SonShuShi 03
@@ -6040,7 +6040,7 @@
 5ef665ea1be3d5e5b7eb10100a0e4d4b	0	92192	player	uade	FutureComposer 1.3	0	23702	Game/Fernandes_David/Starush/fc13.ingame_2
 5f1530ea8a715c7bff44f4048dcec651	0	28774	player	uade	Sierra AGI	0	2321	Game/Goldstein_William/Kings_Quest_4/agi.title
 5f202cf8e88020df99cc95f6d51478a6	1	15472	player	uade	P50A - P60A - P61A	0	107588	Game/Vuori_Risto/Super_Stardust_CD32/p60.demo4-ii
-5f257a209f2a856cb1a5bbab10c04d3a	0	127642	loop	uade	Sonic(pc)all	0	28768	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber5mod.pc
+5f257a209f2a856cb1a5bbab10c04d3a	0	125468	player	uade	Sonic Arranger	0	28768	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber5mod.pc
 5f4135d994fb80136db5742b0abe7f45	1	0	nosound	uade	Noisetracker 2.x	0	20552	Game/Furniss_Matt/Klax/mod.klxspeech
 5f4135d994fb80136db5742b0abe7f45	2	2170	player
 5f4135d994fb80136db5742b0abe7f45	3	2170	player
@@ -7303,8 +7303,8 @@
 72c889d44c2f4c9236123e307a1cb38b	1	128121	player	uade	Protracker	0	44218	Game/Clarke_Mike/Last_Action_Hero/mod.lahingame6
 72c9444a781514d2e77120909a40dd41	0	1908	player	uade	Sierra AGI	0	406	Game/Unknown/Space_Quest_2/agi.ingame_25
 72cabe63eef78fa221f4ddc40b5f3864	1	98682	player	uade	Noise Packer 3.0	0	56442	Game/Iveson_Martin/Wonderdog/np3.planet_weird
-72cbdf939b1b22461267ef3d50ee0d44	0	179302	loop	uade	Sonic(pc)all	0	46998	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level4
-72cbdf939b1b22461267ef3d50ee0d44	1	77636	loop
+72cbdf939b1b22461267ef3d50ee0d44	0	179220	player	uade	Sonic Arranger	0	46998	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level4
+72cbdf939b1b22461267ef3d50ee0d44	1	76820	player
 72d8f3647adb505cef43da4260b06825	0	31407	player	uade	SoundFX	0	29940	Game/McMullan_and_Low/Venus_the_Flytrap/sfx.ingame_11
 72e0db65c72df90ba737bbf3e88af1b6	1	38420	player	uade	Special FX	0	36510	Game/Tinman_Keith/RoboCop_2/jd.hiscore
 72e0db65c72df90ba737bbf3e88af1b6	2	23068	player
@@ -7620,7 +7620,7 @@
 772545ed7aa18289176fb6bc0ac56b37	0	34077	loop	uade	UADE	0	65780	Game/Follin_Tim/Gauntlet_3/cust.MUS2
 7729271d628320affe280b8b5f6b298c	1	87510	player	uade	OctaMED MMD1	0	375056	Game/Unknown/Overkill/med.overkill
 7733a1da9fbddf0feedc2b138a847089	1	30824	player	uade	Noisetracker 2.x	0	44932	Game/Nyrup_Martin/Moochies/mod.moochieseffectanim
-77485910c3374c8af433f11c0798799e	0	73577	loop	uade	Sonic(pc)all	0	74558	Game/Lautensack_Frank/Dimos_Quest/sa.game_end
+77485910c3374c8af433f11c0798799e	0	72037	player	uade	Sonic Arranger	0	74558	Game/Lautensack_Frank/Dimos_Quest/sa.game_end
 7748cbd6eda1d43f8c253243396e29ff	0	34461	player	uade	Sierra AGI	0	1536	Game/Lowe_Al/Leisure_Suit_Larry_1/agi.ingame_24
 774a27015421c374a3159ada6ec8c426	1	92272	player	uade	Protracker	0	100350	Game/Knight_Mark/Wing_Commander/mod.wing.c.recroom
 7750a03510d6eb2ffef5e978e1236dc0	0	18547	player	uade	Sierra AGI	0	601	Game/Goldstein_William/Kings_Quest_4/Demo_Version/agi.demo_06
@@ -7787,7 +7787,7 @@
 79564862c8234a56e5886b640dbbca7c	1	141885	player	uade	OctaMED MMD1	0	41342	Game/Evans_Dean/One_Step_Beyond/med.ingame_2
 79575a63ce53500600e1e994d4c365df	0	160241	loop	uade	UADE	0	66060	Game/Follin_Tim/Gauntlet_3/cust.MUS4
 795a7842a8ae898e039f615636f654cf	1	138369	player	uade	Protracker	0	49552	Game/Williams_Scott/Pinkie/mod.world3boss
-795d39fa0695915e89f866ac8a030466	0	8893	loop	uade	Sonic(pc)all	0	11540	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.199
+795d39fa0695915e89f866ac8a030466	0	7696	player	uade	Sonic Arranger	0	11540	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.199
 7966cd37bc861dcbf60b58e76d8eb598	0	81924	player	uade	TFMX Pro	0	3844	Game/Huelsbeck_Chris/X-Out/mdat.ingame_4
 7966cd37bc861dcbf60b58e76d8eb598	1	15372	player
 7966cd37bc861dcbf60b58e76d8eb598	2	3054	player
@@ -8071,7 +8071,7 @@
 7d184d3a56988f901e841ccabe4a7984	1	99788	player	uade	Noisetracker 2.x	0	33146	Game/Simmonds_Matthew/Space_Gun/Direct_from_Composer/mod.spacegun-main1
 7d21d7ff85d74d686ca96862fe494094	0	122997	player	uade	Amos Music Bank	0	22544	Game/Szumiela_Marcin/Mentor/abk.module-2
 7d229dabf909b3d51875ce0efab3281d	1	261245	player	uade	Noisetracker 2.x	0	49988	Game/Sheeky_Mark/Overlander_PD/mod.OL-Tune1.mod
-7d238c66e8519a0f429e99a9fe694c44	0	15298	loop	uade	Sonic(pc)all	0	14072	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber24.pc
+7d238c66e8519a0f429e99a9fe694c44	0	13463	player	uade	Sonic Arranger	0	14072	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber24.pc
 7d2a13f1e18fd87f59b30747a8d28b68	0	23168	player	uade	Amos Music Bank	0	32068	Game/Wiktor_Tomasz/Tyran/abk.wiatr
 7d2bf607da17d0724caa47891ef1b0ea	1	102010	player+silence	uade	Protracker	0	90170	Game/Knight_Mark/Wing_Commander/mod.w.c.commanderoffice
 7d5419b6ca38831c33c86bee3007437c	0	151711	player	uade	Peter Verswyvelen Packer	0	61962	Game/Dahlgren_Tomas/Ziriax/pvp.title
@@ -9113,7 +9113,7 @@
 8b45f9d83b8164f2e0977cd74e131fc6	0	61327	player	uade	Images Music System	0	49742	Game/Myers_Jolyon/Hunt_for_Red_October_Movie/ims.chopper
 8b488615323e37e71817a25ce56f6916	1	15720	player+silence	uade	Noisetracker 2.x	0	23952	Game/Blaha_Christian/Donkey_Kong/mod.laddertune
 8b56f8797837e5442b416dd56ab5c4b2	0	11935	player	uade	Sonix Music Driver	0	326	Game/Haggard_Gregory/It_Came_From_The_Desert/Demo_Version/smus.GENERIC0
-8b5a6c7aed9d34157370440b7c3067ad	0	152501	loop	uade	Sonic(pc)all	0	60364	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.title
+8b5a6c7aed9d34157370440b7c3067ad	0	268841	player	uade	Sonic Arranger	0	60364	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.title
 8b5d9210aa365372404e682612384a43	1	15472	player	uade	Noise Packer 3.0	0	29880	Game/Iveson_Martin/Chuck_Rock_2-Son_of_Chuck/np3.Subgames
 8b5d9210aa365372404e682612384a43	1	15472	player	uade	Noise Packer 3.0	0	29880	Game/Iveson_Martin/Chuck_Rock_2_CD32/np3.Subgames
 8b636184e5a9885e636c7e698be06d93	0	64301	player	uade	Silmarils	0	13062	Game/Hautecloque_Fabrice/Boston_Bomb_Club/mok.BostonBombClub_ingame_1
@@ -9439,8 +9439,8 @@
 8f9b80fc9a4efcca328a018a27b955d4	0	46196	player	uade	Amos Music Bank	0	18748	Game/Szumiela_Marcin/Mentor/abk.wyspa
 8fae9ab81ed46eb2fd8fb76f64c3d3c9	1	171625	player	uade	Protracker	0	59540	Game/Phelan_Patrick/Lotus_3/mod.l3_cd5-miamiice
 8fb4596b52c5e1a9eaaa1b735578559b	1	102520	player	uade	Protracker	0	228326	Game/Iveson_Martin/Skeleton_Krew/mod.qqoo9o
-8fba39e38d91b31e8221e61538017afe	0	7601	loop	uade	Sonic(pc)all	0	53256	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber16neu.pc
-8fba39e38d91b31e8221e61538017afe	1	217034	loop
+8fba39e38d91b31e8221e61538017afe	0	7696	player	uade	Sonic Arranger	0	53256	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber16neu.pc
+8fba39e38d91b31e8221e61538017afe	1	213139	player
 8fc419f5d9ff329183b213c0a40f6517	0	182496	player	uade	Sonix Music Driver	0	9874	Demo/Brimble_Allister/Very_Best_of_Rob_Hubbard/smus.SABOTEUR2
 8fc4abd432b720e20cf5d7e410d3d5da	0	175563	player	uade	Jason C. Brooke	0	80230	Game/Brooke_Jason/Thunder_Blade/jcb.ingame
 8fc4abd432b720e20cf5d7e410d3d5da	1	27951	player
@@ -9812,7 +9812,7 @@
 93b462de08e92e6c41765d33502c0765	2	199716	player
 93b4f611206fa36d1faabc8ebcf55c99	0	1567	player	uade	Sonix Music Driver	0	408	Game/Unknown/Where_Wrld_Carmen_Sandiego/smus.Vile3
 93bbc0aa366482f15db51c2a664e69b7	0	22015	silence	uade	Andrew Parton	0	40019	Game/Parton_Andrew/B17_Flying_Fortress/bye.b17endga
-93be7aa1b9f035f6d7637180f9c4e720	0	127540	loop	uade	Sonic(pc)all	0	31884	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber14mod.pc
+93be7aa1b9f035f6d7637180f9c4e720	0	123861	player	uade	Sonic Arranger	0	31884	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber14mod.pc
 93c01ceb1a17442fb1584f87525ba1cd	0	58117	loop	uade	UADE	0	7116	Game/Phillips_Geoff/Spy_vs_Spy_3/cust.Spy_vs_Spy_-_Artic_Antics
 93c150cfeac48a2c11f3c9c6dda27ae8	1	137464	player	uade	Protracker	0	188514	Game/Collet_Steve/Trex_Warrior/mod.trexintro-mod
 93d1239edd4a038257d9b4ade19d7054	1	176769	player	uade	Protracker	0	62030	Game/Clarke_Phil/Huckleberry_Hound/mod.sea-world
@@ -9880,7 +9880,7 @@
 94e306c1fa99802eb0c469ab4a5caab8	8	12820	player
 94e306c1fa99802eb0c469ab4a5caab8	9	12820	player
 94e7374664726dfbdefd06f82f4b275d	1	50034	player	uade	Protracker	0	44690	Game/Nixon_Phillip/Oscar_CD32/mod.tune7
-94e92586321cca33c97ee09142cbf7de	0	104326	loop	uade	Sonic(pc)all	0	13352	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber26.pc
+94e92586321cca33c97ee09142cbf7de	0	105615	player	uade	Sonic Arranger	0	13352	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber26.pc
 94f689bfaa7bd06ae70630b68bf0b2cc	1	53872	player	uade	Soundtracker II (15 instr.)	0	49938	Demo/Brimble_Allister/Hubbard_Music_2/mod.commando hi
 94f689bfaa7bd06ae70630b68bf0b2cc	1	53872	player	uade	Soundtracker II (15 instr.)	0	49938	Demo/Brimble_Allister/Superwriter_Data_Disk/mod.commando hi
 94fa7defd4646dbefa6bd91ba8d2e2b6	1	82044	player	uade	Protracker	0	32392	Game/Nathan_Matthew/Erben_der_Erde/mod.orbtempl.xmi
@@ -9891,7 +9891,7 @@
 94ff374b5b4abb93ce1740c94126fc35	0	4018	player	uade	Sierra AGI	0	691	Game/Lowe_Margaret/Kings_Quest_3/agi.ingame_02
 94ff374b5b4abb93ce1740c94126fc35	0	4018	player	uade	Sierra AGI	0	691	Game/Murry_Barry/Man_Hunter_1/agi.ingame_15
 94ff374b5b4abb93ce1740c94126fc35	0	4018	player	uade	Sierra AGI	0	691	Game/Unknown/Black_Cauldron/agi.ingame_16
-9502987903cb4e56eb7f5322d0e82284	0	134732	loop	uade	Sonic(pc)all	0	15656	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber29.pc
+9502987903cb4e56eb7f5322d0e82284	0	130894	player	uade	Sonic Arranger	0	15656	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber29.pc
 9504c1128e1b12566c8883da6f5ec747	1	118536	player	uade	ProRunner 2.0	0	127752	Demo/Frick_Richard/Cream/prun.abs_cream
 950fdc7ef9da54533811f6d4100c1bb8	1	87168	player	uade	ProRunner 2.0	0	99038	Game/Gustafsson_Olof/Pinball_IllusionsCD32/pru2.menu
 9512d4a03b7d61d29dd9801b35011a05	0	1105	player	uade	Sierra AGI	0	156	Game/Elliot_James/Mixed-Up_Mother_Goose/agi.ingame_51
@@ -10232,7 +10232,7 @@
 9bde40f778d58125ee6a622b2b2ccb84	1	0	nosound	uade	Hippel-COSO	0	1708	Game/Hippel_Jochen/Amberstar/soc.Lullaby
 9bde40f778d58125ee6a622b2b2ccb84	1	76820	player	uade	Hippel-COSO	0	1708	Game/Hippel_Jochen/Amberstar/Older_hipc_versions/hipc.Lullaby
 9beeb82ca9def56f326881775a55b102	1	20355	player	uade	OctaMED MMD0	0	70808	Game/Gibbons_Dave/Fire_Force/med.FFDRUMS
-9bf2a1a4f495b2b411adf810c74c6912	0	155275	loop	uade	Sonic(pc)all	0	148798	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.xentrix
+9bf2a1a4f495b2b411adf810c74c6912	0	339231	player	uade	Sonic Arranger	0	148798	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.xentrix
 9c00a507fa5fdf6ed1ff98b13732f274	0	64082	player+silence	uade	Sean Conran	0	85604	Game/Conran_Sean/Count_Duckula/scr.title
 9c1ff865d457589b3c00bcb5f9fe10fe	1	71696	player	uade	Protracker	0	160166	Demo/Gray_Graham/Jesus_On_Es/mod.joes_00
 9c216fceb82fe015c3ae6c2c49d8c8eb	1	76920	player	uade	Startrekker (4ch)	0	33846	Game/Beben_Wally/Airmania/mod.klisjeboogie_
@@ -10669,7 +10669,7 @@ a3890fcafef40fe3d568250b12e4af60	1	71816	player	uade	Protracker	0	26906	Game/Gai
 a3901d785f09071757500c97ff151ed3	1	92272	player	uade	Noisetracker 2.x	0	52916	Game/Perini_Massimo/Dylan_Dog_Looking_Glass/mod.newscotlandyard3
 a39299a600d9af291bc4e43bb9b7c522	1	236228	player	uade	Jochen Hippel	0	76902	Game/Hippel_Jochen/Warp/Older_hip_versions/hip.title
 a39585c86c7a521ba28075a102f32396	0	157899	loop	uade	UADE	0	36868	Game/Hubbard_Rob/Indianapolis_500/cust.Indianapolis_500
-a3a08d75e53ec7cbf5a1ebcc8dfec8c8	0	150199	loop	uade	Sonic(pc)all	0	49666	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber16mod.pc
+a3a08d75e53ec7cbf5a1ebcc8dfec8c8	0	147873	player	uade	Sonic Arranger	0	49666	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber16mod.pc
 a3b1b231432398cd36d3003936098238	0	102747	player+silence	uade	SoundFX	0	42984	Game/Baudlot_Jean/Operation_Stealth/SFX.BOND10
 a3b38a797b319c5a6ee664302f01a25c	1	204724	player+silence	uade	Protracker	0	113684	Game/Barnabas_Andrew/Double_Dragon_3/mod.dd3-hiscore
 a3b8db1d25f458c2e5d8f2172bc26abd	1	299645	player	uade	Noisetracker 1.x	0	123518	Game/Nixon_Phillip/Turn_n_Burn/mod.no2
@@ -11152,8 +11152,8 @@ ab5323484852921140ac02ad1d08251e	1	51320	player	uade	Protracker	0	34406	Game/Nix
 ab578df9488e297c79cd339304b6231b	1	57730	player	uade	Protracker	0	59902	Game/Brimble_Allister/Terminator_2_Arcade/Direct_from_Composer/mod.t2hideout
 ab610fe6af18c05807d9c5f36496ea29	1	23168	player	uade	Protracker	0	27936	Game/Furniss_Matt/Soccer_Kid/mod.skbonus
 ab610fe6af18c05807d9c5f36496ea29	2	4440	player
-ab772995805db729cbd4cc5b3ec78053	0	102800	loop	uade	Sonic(pc)all	0	52206	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level2
-ab772995805db729cbd4cc5b3ec78053	1	42651	loop
+ab772995805db729cbd4cc5b3ec78053	0	117772	player	uade	Sonic Arranger	0	52206	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level2
+ab772995805db729cbd4cc5b3ec78053	1	43544	player
 ab83e7f56cec9010f0515e912ccbedba	1	51421	player	uade	Protracker	0	14280	Demo/Major/Ultimate_Stress/Original/mod.zip40
 ab90653390cecbaf245ba0bd162b13e8	1	44910	player	uade	Protracker	0	24690	Game/Wright_Tim/Agony/Unused/mod.agony(volcano load)
 ab92228b35d733279079c3f597ec5d21	1	48105	player	uade	OctaMED MMD0	0	16752	Game/Parton_Andrew/Civilization/med.evoltn
@@ -11483,7 +11483,7 @@ b0e0e9c18ad1e00e078c0b44dcd0b4bb	2	30744	player
 b0e0e9c18ad1e00e078c0b44dcd0b4bb	3	46096	player
 b0e0e9c18ad1e00e078c0b44dcd0b4bb	4	15372	player
 b0ef6bd2557b47e1a8af5823e2f12753	1	29520	player+silence	uade	Protracker	0	72556	Game/Seifert_Hannes/1869/AGA_Version/mod.suedamis
-b0f1ad99f724fe124fbf63b4f809f6ea	0	137096	loop	uade	Sonic(pc)all	0	26460	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber23.pc
+b0f1ad99f724fe124fbf63b4f809f6ea	0	134430	player	uade	Sonic Arranger	0	26460	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber23.pc
 b0fbf4ab661ac39815833823e97ca223	0	11051	player	uade	Sierra AGI	0	196	Game/Murry_Barry/Man_Hunter_2/agi.ingame_061
 b0fec3aedb46caca12a4f8fe9f92883d	0	0	nosound	uade	FWMP	0	11396	Game/Cooksey_Mark/Forgotten_Worlds/fw.jingle
 b0ff41affa3fa05234e6342f9d730d29	0	30744	player	uade	Beathoven Synthesizer	0	31964	Game/Lopatic_Thomas/Wetten_Dass/bss.Wetten_Dass
@@ -11573,7 +11573,7 @@ b209f123328ae16dad096e418e3a6c28	1	143493	player	uade	Noisetracker 2.x	0	116854	
 b212c75ee64477a4d2c110972cfb5338	1	143714	player	uade	OctaMED MMD0	0	67874	Game/Link_Chris/Soul_Crystal/MED.Secret_Chambers
 b21645e7020c94af95c492363f9bd8d4	1	84616	player	uade	Protracker	0	49270	Demo/Simon_Joerg/Velveteen/mod.microforce-intro0
 b2218211b9b596f707e68af537eccece	1	217741	player	uade	Noisetracker 2.x	0	70000	Game/Wright_Tim/Leander/mod.world three.2
-b22a99b7ed446a6d72f5c3dc282c2773	0	13334	loop	uade	Sonic(pc)all	0	9208	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber31.pc
+b22a99b7ed446a6d72f5c3dc282c2773	0	11554	player	uade	Sonic Arranger	0	9208	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber31.pc
 b22ee31fd2efd8c85cb1ff74c903e201	0	13061	player	uade	Sonix Music Driver	0	466	Game/Barker_Chris/Spirit_of_Excalibur/smus.GameLost
 b2308103f655d8e7f79e95d6189534ba	1	69224	player	uade	Pha Packer	0	54372	Game/Ede_Richard/Brian_The_Lion/pha.BrianTheLion 52
 b2321d608d3d5e52149061343e55b163	0	44733	player	libopenmpt	Startrekker	4	50704	Game/Joseph_Richard/Legend/mod.uptim8
@@ -11924,7 +11924,7 @@ b765196a4218618bfbca077468e18dee	1	153721	player	uade	Protracker	0	25102	Game/Ga
 b7661fe98585db6363ac3809ddb9a265	1	26258	player+volume	uade	P50A - P60A - P61A	0	129246	Game/Demsky_Martin/Strangers/p60.VIDEO01
 b770cf62047806ba742f03fbdbbddfc2	1	46830	player+volume	uade	P40A - P40B - P41A	0	24314	Game/Brimble_Allister/Colonization/p4x.Col7.mod
 b77eef4305ff36558aabb2577dc2c1b3	1	67054	player	uade	Protracker	0	46476	Game/Simmonds_Matthew/Fantastic_Dizzy/Direct_from_Composer/mod.f.a.dizzy-title
-b78353961f148ef7a5c2c2ad952d266a	0	176461	loop	uade	Sonic(pc)all	0	54076	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber25.pc
+b78353961f148ef7a5c2c2ad952d266a	0	174116	player	uade	Sonic Arranger	0	54076	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber25.pc
 b78a4cef2a30db639b93142c0d7e2e41	0	7736	player	uade	TFMX	0	4644	Game/Magerkord_Dirk/Einmal_Kanzler_sein/mdat.ingame_15
 b78e9bbdee46d2e56831a1947abef7a7	1	71816	player	uade	P40A - P40B - P41A	0	37454	Game/Brimble_Allister/Lion_King/p4x.level_1
 b79eac7e7e4bc6c5d76c4e623c47585c	0	61468	player	uade	Synth Pack	0	3096	Game/Obarski_Karsten/Centerbase/osp.act_1
@@ -12089,7 +12089,7 @@ b908701d541328b45d413c54dc897f4c	0	59483	loop	uade	CustomPlay	0	107108	Game/Faso
 b908701d541328b45d413c54dc897f4c	1	192070	loop
 b908701d541328b45d413c54dc897f4c	2	47467	loop
 b908701d541328b45d413c54dc897f4c	3	40304	loop
-b91154ce6d88dd59191445793f5dbc93	0	143761	loop	uade	Sonic(pc)all	0	40278	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber13mod.pc
+b91154ce6d88dd59191445793f5dbc93	0	130572	player	uade	Sonic Arranger	0	40278	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber13mod.pc
 b91509178b0a3ab5bd73ebcbc4f5744b	1	108998	player+silence	uade	Startrekker (4ch)	0	109286	Game/Perini_Massimo/Dylan_Dog_Looking_Glass/mod.m
 b9176afe58bba802c80f5248973fc8da	0	70591	player	uade	Art&Magic	0	57522	Game/Tel_Jeroen/Agony/aam.level_1_and_6
 b917947e88f8fcf527adaba27643e2f2	1	7615	player	uade	OctaMED MMD0	0	5674	Game/Cannon_Matthew/Parasol_Stars/med.parasol3
@@ -12446,7 +12446,7 @@ bfc665f18d72f03212ed3894891e0588	2	20496	player
 bfc697c06b2d8109855a0ebe8c4dd35e	1	23048	player	uade	Hippel-COSO	0	49048	Game/Hippel_Jochen/Prehistoric_Tale/Older_hip_hipc_versions/hipc.ingame_2
 bfc697c06b2d8109855a0ebe8c4dd35e	1	23048	player	uade	Hippel-COSO	0	49048	Game/Hippel_Jochen/Prehistoric_Tale/soc.ingame_1
 bfc697c06b2d8109855a0ebe8c4dd35e	2	138268	player
-bfca8abb99b9d651b87c6c9224ec7f9c	0	141710	loop	uade	Sonic(pc)all	0	45846	Game/Lautensack_Frank/Dimos_Quest/sa.title
+bfca8abb99b9d651b87c6c9224ec7f9c	0	103519	loop	uade	Sonic Arranger	0	45846	Game/Lautensack_Frank/Dimos_Quest/sa.title
 bfd0e4cf35a4b80415644dc774f49508	1	126835	player	uade	Startrekker (4ch)	0	128236	Demo/Collier_Kevin/Amazing_Tunes_2/mod.weapon 2
 bfec088506d10c97b25d6497a17c4cfe	0	823	player	uade	Sierra AGI	0	131	Game/Unknown/Kings_Quest_1/agi.ingame_19
 bfefeeb67f3cbf5b7d23b1a5e77992cf	0	17622	player	uade	Soundcontrol 3.0/3.2/4.0/	0	81906	Game/Tognazzi_Silvio/Penthouse_Hot_Numbers_Delux/sct.HNDINTRO
@@ -12455,8 +12455,8 @@ bfefeeb67f3cbf5b7d23b1a5e77992cf	2	74087	player
 bfefeeb67f3cbf5b7d23b1a5e77992cf	3	111503	player
 bff0cdeec78ec0e8942396217ec047f0	1	103686	player	uade	Protracker	0	14478	Game/Marshall_Brian/Street_Racer/mod.racer
 bffad8bb17bb64eb81fec3c3dc52e74e	1	174079	player+silence	uade	Protracker	0	206528	Game/Furniss_Matt/Soccer_Kid/CD32_Version/mod.kidcd32
-bffbd3e7adf40582b939867e989a53c0	0	152444	loop	uade	Sonic(pc)all	0	35898	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber27.pc
-bffbd3e7adf40582b939867e989a53c0	1	12214	loop
+bffbd3e7adf40582b939867e989a53c0	0	149782	player	uade	Sonic Arranger	0	35898	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber27.pc
+bffbd3e7adf40582b939867e989a53c0	1	1949	player
 bffebab15f5e61fe1503c22af40b6f0e	1	119179	player	uade	Protracker	0	39216	Game/Stenzhorn_Holger/Bomb_Mania/mod.bombmania
 c002c8a33921b24db6ed3f80484af367	1	197566	player	uade	Protracker	0	62722	Game/Clarke_Mike/Globdule/mod.globdulemoody2
 c009da88890bc58d426589d1da3ec7fd	0	237976	player	uade	ChipTracker	0	74004	Game/Brimble_Allister/Dojo_Dan/mod.ORIENTAL.CHIP
@@ -12900,7 +12900,7 @@ c83e2baf859dca0ec005982f45953d53	7	30784	player
 c83e2baf859dca0ec005982f45953d53	8	8540	player
 c83e2baf859dca0ec005982f45953d53	9	3838	player
 c84c62cfdda2a0903b162456aeabf37b	1	30824	player	uade	Protracker	0	74240	Game/Caprelli_Marco/Big_Red_Adventure/mod.fifty1.o
-c84e1bf9f9cabf4025998c04b2f9a544	0	216219	loop	uade	Sonic(pc)all	0	30332	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber4mod.pc
+c84e1bf9f9cabf4025998c04b2f9a544	0	144417	player	uade	Sonic Arranger	0	30332	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber4mod.pc
 c84f857a4e0fc496a2f0d0ea831c174a	1	48025	player	uade	Dave Lowe	0	54432	Game/Lowe_Dave/Darius/dl.title_and_ingame
 c84f857a4e0fc496a2f0d0ea831c174a	2	23068	player
 c84f857a4e0fc496a2f0d0ea831c174a	3	30724	player
@@ -13102,8 +13102,8 @@ cb02dc2e87d872835a717625656f2446	1	73255	player+silence	uade	Protracker	0	388370
 cb04dd72ab12b3428283294634d1016d	1	259236	player	uade	Hippel-COSO	0	25938	Game/Hippel_Jochen/Ninja_Remix/Older_hipc_versions/hipc.ingame_3
 cb04dd72ab12b3428283294634d1016d	1	259236	player	uade	Hippel-COSO	0	25938	Game/Hippel_Jochen/Ninja_Remix/soc.ingame_3
 cb11f05c6e29cff96e8d3058be9e08f2	0	25780	player	uade	Sierra AGI	0	1861	Game/Goldstein_William/Kings_Quest_4/agi.ingame_65
-cb166b81f2ead9bfc396334337547dc1	0	11613	loop	uade	Sonic(pc)all	0	8524	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber30.pc
-cb166b81f2ead9bfc396334337547dc1	1	11016	loop
+cb166b81f2ead9bfc396334337547dc1	0	8982	player	uade	Sonic Arranger	0	8524	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber30.pc
+cb166b81f2ead9bfc396334337547dc1	1	8982	player
 cb1be542fc5a8c302f6909ce06f5625d	1	8540	player	uade	Startrekker (4ch)	0	28684	Game/Weirich_Oliver/Catch_em/mod.catch'em.e2
 cb21bdce5454bc1306d595b95cb1b5b0	1	30824	player	uade	Protracker	0	51408	Game/Cummings_Adrian/Cyberpunks/mod.cpeow
 cb23856138c51ab7e57d1e8023446ab0	0	51484	loop	uade	CustomPlay	0	4332	Game/Beben_Wally/Winter_Olympiad_88/cust.slalom
@@ -13181,7 +13181,7 @@ cc592c6f96ee30b7c027d01e1936bdb8	3	71415	player
 cc592c6f96ee30b7c027d01e1936bdb8	4	3616	player
 cc592c6f96ee30b7c027d01e1936bdb8	5	0	nosound
 cc592c6f96ee30b7c027d01e1936bdb8	6	0	nosound
-cc6bbb97384d83154711a8dfe3e455ff	0	125113	loop	uade	Sonic(pc)all	0	77508	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.LAN
+cc6bbb97384d83154711a8dfe3e455ff	0	123844	loop	uade	Sonic Arranger	0	77508	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.LAN
 cc6db625be9334581c7b7a3fef13de10	1	119179	player	uade	Noise Packer 3.0	0	29034	Game/Iveson_Martin/Chuck_Rock_2-Son_of_Chuck/np3.Fruit_Mountain+Piste
 cc6db625be9334581c7b7a3fef13de10	1	119179	player	uade	Noise Packer 3.0	0	29034	Game/Iveson_Martin/Chuck_Rock_2_CD32/np3.Fruit_Mountain+Piste
 cc6fb652dffa3972d68172e154921ab6	1	138268	player	uade	Hippel-COSO	0	36654	Game/Hippel_Jochen/Chambers_of_Shaolin/Original_hip_hipc_versions/hipc.ingame
@@ -13517,8 +13517,8 @@ d117332183b4082f8eb969a6df360f28	6	428369	player
 d117332183b4082f8eb969a6df360f28	7	24474	player
 d117332183b4082f8eb969a6df360f28	8	28291	silence
 d117332183b4082f8eb969a6df360f28	9	38442	silence
-d120ee9279c67312082a247138a71f5d	0	129883	loop	uade	Sonic(pc)all	0	41554	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level1
-d120ee9279c67312082a247138a71f5d	1	58659	loop
+d120ee9279c67312082a247138a71f5d	0	128020	player	uade	Sonic Arranger	0	41554	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_level1
+d120ee9279c67312082a247138a71f5d	1	51220	player
 d12f0f96fcff78da23f00e6507866952	1	107645	player	uade	P50A - P60A - P61A	0	78446	Game/Nagy_Denes/Wendetta_2175/p60.rebec
 d13682aff4adb4efe7b0bde330d20503	0	103425	player	uade	Sonix Music Driver	0	3806	Demo/Brimble_Allister/Very_Best_of_Rob_Hubbard/smus.KNUCKLEBUSTERS
 d1376589e10c938add4de33734af4e8b	1	119179	player	uade	Protracker	0	111952	Game/Berglund_Ken/Sixth_Sense_Investigations/mod.6th.earthbck1
@@ -13846,7 +13846,7 @@ d6319a4e4a0cbf53b20afa8cb9be049a	1	224131	player	uade	Protracker	0	176716	Game/P
 d6319a4e4a0cbf53b20afa8cb9be049a	1	224131	player	uade	Protracker	0	176716	Game/Phelan_Patrick/Hero_Quest_2_CD32/mod.notthesame
 d638993dbe6234e871ace708aeea56e7	0	46076	player	uade	Pierre Adane Packer	0	3722	Game/Loriaux_Pierre-Eric/Pang/pap.ingame_07
 d63ca05fab9bdaf68f68e957e72c3708	1	22525	player	uade	Protracker	0	57714	Game/Knight_Mark/Wing_Commander/mod.w.c.medalceremony1
-d640be2900179ce330c07162ca8ad084	0	238323	loop	uade	Sonic(pc)all	0	128356	Game/Steinwachs_Matthias/Ambermoon/sa.Extro_music
+d640be2900179ce330c07162ca8ad084	0	232993	player	uade	Sonic Arranger	0	128356	Game/Steinwachs_Matthias/Ambermoon/sa.Extro_music
 d64409b43ff824cfe80f58150ae4fc6d	1	67315	player	uade	P50A - P60A - P61A	0	54526	Game/Vuori_Risto/Super_Stardust/p60.boss_3
 d648f8e3bed6267fc0f8cf62ee40059d	0	82245	player	uade	CustomPlay	0	256904	Game/Evans_Grant/Steve_Davis_World_Snooker/cust.Steve_Davis_World_Snooker
 d6575f662e56e3d4528e11772121cba6	0	10308	player	uade	TFMX	0	4940	Game/Magerkord_Dirk/Einmal_Kanzler_sein/mdat.ingame_89
@@ -14144,7 +14144,7 @@ db4ec42a15706bbbfa0699129be70278	6	13467	player+silence
 db4ec42a15706bbbfa0699129be70278	7	19867	player+silence
 db4f08022cf4e7557c597896b20ac28a	0	18812	player+silence	uade	Sonix Music Driver	0	376	Game/Barker_Chris/Spirit_of_Excalibur/smus.Stnheng
 db5021327d6cd71c3b240a8b8b0f793f	0	7676	player	libxmp	The Player 6.1a	4	53188	Game/Vuori_Risto/Super_Stardust_CD32/p60.button
-db5fce85bf8807e88dfc23e293f2da26	0	133382	loop	uade	Sonic(pc)all	0	24116	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber12mod.pc
+db5fce85bf8807e88dfc23e293f2da26	0	128663	player	uade	Sonic Arranger	0	24116	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber12mod.pc
 db700a5efba6826d97b6add78214c64a	1	533904	player	uade	P50A - P60A - P61A	0	143300	Game/Tomic_Vlado/Evils_Doom/p60.lost_miners
 db7f4dc04a921c8742886beea0c95773	1	160774	player	uade	Protracker	0	60956	Game/Haywood_Tim/Burning_Rubber/mod.usacarsel
 db842d7f83848f45f2a29e31d5953cc1	1	83285	player+volume	uade	Protracker	0	82546	Game/Gesqua_Raphael/Flashback/mod.flashback-options2
@@ -15097,7 +15097,7 @@ ebf04b2e2e2e39ccc73992c74afaad0e	1	20275	player	uade	Protracker	0	50118	Game/Kni
 ebf2234e383469756484b6962ced95ff	0	247802	player	uade	G.M.C	0	80430	Game/Fredriksson_Jimmy/Miami_Chase/gmc.hiscore
 ebfb5cb555126477bcd1936daf17ac07	1	161397	player	uade	Soundtracker II (15 instr.)	0	62270	Game/Brimble_Allister/Time_Soldier/mod.world-war
 ebfe26caeec0d5ee94a35891990a56f5	1	20596	player	uade	Noisetracker 2.x	0	27362	Game/Dunn_Jonathan/Darkman/mod.darkloader1
-ec0206f8faec577c344f998bbb8ff294	0	141953	loop	uade	Sonic(pc)all	0	16816	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber32.pc
+ec0206f8faec577c344f998bbb8ff294	0	134631	player	uade	Sonic Arranger	0	16816	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber32.pc
 ec0e0bdc6fa391b2a0a72f753f87e165	0	17562	player	uade	CustomPlay	0	180528	Game/Lowe_Dave/Starglider/cust.intro
 ec12088003d72b61c2ac3d1539e23007	1	291105	player	uade	Digital Illusions	0	214552	Game/Gustafsson_Olof/Pinball_FantasiesCD32/di.title
 ec12e6fd81fa373f7d3d9cf91c6fa9a3	1	61568	player	uade	Protracker	0	24000	Game/Burke_Danny/Body_Blows_AGA/mod.beat+
@@ -15122,7 +15122,7 @@ ecac8f4bb5276647ca3709ea67a1b423	0	20777	player	uade	Sierra AGI	0	991	Game/Golds
 ecc0d3526d00097c5bd2fa2696fed4fd	1	44910	player	uade	Noisetracker 2.x	0	24690	Game/Wright_Tim/Agony/mod.MOD.Loading_Mountain
 ecc49eea94f0d9d2e9516f33f421fe04	1	76277	player	uade	P40A - P40B - P41A	0	43052	Game/Brimble_Allister/Mortal_Kombat_2/p4x.ingame_2
 ecc6cb6e102d2649beb79e8c24dd6cb0	0	7471	player+silence	uade	SoundFX	0	19920	Game/Abromont_Claude/Bush_Buck/sfx.ingame_18
-ecc8a7d8b21a5267ca0a648c3e656714	0	521611	loop	uade	Sonic(pc)all	0	200232	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_musicmedley
+ecc8a7d8b21a5267ca0a648c3e656714	0	518432	player	uade	Sonic Arranger	0	200232	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_musicmedley
 ecdb51c2af924b34faf28eb144cab7a0	1	128121	player	uade	Protracker compatible	0	29474	Game/Martin_Jose/Risky_Woods/mod.Risky Woods - Cast
 ecdefa02fe066a75d00c9f42c9073e98	1	82687	player	uade	P40A - P40B - P41A	0	35150	Game/Brimble_Allister/Lost_Vikings/p4x.ingame5
 ece126a018aed5b5241123a86ddd445b	1	7796	player	uade	Protracker	0	25634	Game/Gaiba_Gian_Luca/Diabolik_02/mod.st6
@@ -15215,10 +15215,10 @@ edddb45c6973dcc1732100550a08a76b	1	56424	player	uade	Noisetracker 1.x	0	32752	Ga
 ede2a77dc64f0fcb4d6db86a0b5d7869	1	46216	player	uade	Protracker	0	111454	Game/Motte_Frederic/Paragliding/Direct_from_Composer/mod.paragliding-06
 ede2b58fc43f1d0457aec18458e1d381	0	3114	player	uade	Sierra AGI	0	336	Game/Murry_Barry/Man_Hunter_2/agi.ingame_029
 ede9280b0f845f8243d84badedeadfee	1	94222	player	uade	Noise Packer 3.0	0	20510	Game/Cicciarello_Fabio/Shadow_Fighter/np3.ingame_04
-edf3df20baa92770ce37f8d44826a146	0	182317	loop	uade	Sonic(pc)all	0	85484	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_title1
-edf3df20baa92770ce37f8d44826a146	1	72974	loop
-edf3df20baa92770ce37f8d44826a146	2	76727	loop
-edf3df20baa92770ce37f8d44826a146	3	33910	loop
+edf3df20baa92770ce37f8d44826a146	0	145944	player	uade	Sonic Arranger	0	85484	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.tm_title1
+edf3df20baa92770ce37f8d44826a146	1	92172	player
+edf3df20baa92770ce37f8d44826a146	2	76820	player
+edf3df20baa92770ce37f8d44826a146	3	1306	player
 edfcec07d4e15e27e5cf72621bede998	0	147994	player	uade	CustomPlay	0	204296	Game/Lowe_Dave/Conqueror/cust.Conqueror
 ee0ef554222d58c28614afb4cf136322	1	14065	player	uade	Noisetracker 2.x	0	30282	Game/Lynne_Bjorn/Alien_Breed_3D/mod.gameover
 ee2e1fd321e0cfd8ba1aa671420b09d7	1	107645	player	uade	Noisetracker 2.x	0	57012	Game/Perini_Massimo/Dylan_Dog_Looking_Glass/mod.cripta2
@@ -15278,7 +15278,7 @@ eecefb51986af8a29e48d51f78df34e2	4	69144	player
 eecefb51986af8a29e48d51f78df34e2	5	81944	player
 eecefb51986af8a29e48d51f78df34e2	6	46116	player
 eecefb51986af8a29e48d51f78df34e2	7	24977	player
-eed0f2ca1710fb4d1c4516a1b809c8bc	0	113268	loop	uade	Sonic(pc)all	0	21862	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber19mod.pc
+eed0f2ca1710fb4d1c4516a1b809c8bc	0	98823	player	uade	Sonic Arranger	0	21862	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber19mod.pc
 eed53d4e14c85dc8631ac2ae7d5493e9	0	48125	player	uade	Sierra AGI	0	1051	Game/Lowe_Margaret/Kings_Quest_3/agi.ingame_19
 eeede47ff718015c5c87f8fad0921bde	1	12179	player+volume	uade	P40A - P40B - P41A	0	13414	Game/Brimble_Allister/Colonization/p4x.Col32.mod
 eef3a9a7f8a30a7c04d45a0fbc42179d	1	102520	player	uade	Protracker	0	151872	Game/Kreiner_Tamas/Reunion/mod.talk
@@ -15561,7 +15561,7 @@ f2a72b22c2f143e0c55f2a826d5c3d09	2	19310	player
 f2a9cb608d7239ea35f0d4f9758241f7	1	57730	player	uade	Soundtracker II (15 instr.)	0	42140	Game/Unknown/Aventures_de_Moktar/mod.lagover
 f2abb24985397634a1d564b46040f3f8	0	153623	loop	uade	UADE	0	147800	Game/Bjerregaard_Johannes/Stormlord/Custom_Version/cust.title
 f2b68b892a497580d39080c659775f29	0	4280	player	uade	Sonix Music Driver	0	400	Game/Rettig_Tom/Where_Euro_Carmen_Sandiego/tiny.ingame_10
-f2bb5675cb428f60dcb27cf4fa10ade4	0	80277	loop	uade	Sonic(pc)all	0	38124	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber20mod.pc
+f2bb5675cb428f60dcb27cf4fa10ade4	0	128663	player	uade	Sonic Arranger	0	38124	Game/Steinwachs_Matthias/Ambermoon/Direct_from_Composer/sa.Amber20mod.pc
 f2c3c8e9582c84ef414ed2cc0673ad06	0	7575	player	uade	SoundMon 2.0	0	44092	Game/Brimble_Allister/Project-X/bp.PX1
 f2c3c8e9582c84ef414ed2cc0673ad06	0	7575	player	uade	SoundMon 2.0	0	44092	Game/Brimble_Allister/Project-X_RE/bp.PX1
 f2cfb9493d2cf6f3e1c8164404625821	1	279368	player+silence	uade	Startrekker (4ch)	0	150288	Game/Myers_Jolyon/Nam_1965-1975/mod.nam-theme
@@ -15771,15 +15771,15 @@ f6a07a2c4433e2d7e52feade0c4f6f0e	0	1507	player	uade	Magnetic Fields Packer	0	159
 f6ab36b34a0e7eb84e6da7b1c8051b72	0	114723	player+volume	uade	TFMX	0	9060	Game/Dragon_George/Abandoned_Places/mdat.temple
 f6ab36b34a0e7eb84e6da7b1c8051b72	1	85159	player
 f6ab36b34a0e7eb84e6da7b1c8051b72	2	71736	player
-f6bd13c53964710142aaf02143099aed	0	149963	loop	uade	Sonic(pc)all	0	38938	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.ingames
-f6bd13c53964710142aaf02143099aed	1	68539	loop
-f6bd13c53964710142aaf02143099aed	2	193691	loop
-f6bd13c53964710142aaf02143099aed	3	47118	loop
-f6bd13c53964710142aaf02143099aed	4	4528	silence
-f6bd13c53964710142aaf02143099aed	5	5239	silence
-f6bd13c53964710142aaf02143099aed	6	4981	silence
-f6bd13c53964710142aaf02143099aed	7	6870	silence
-f6bd13c53964710142aaf02143099aed	8	4563	silence
+f6bd13c53964710142aaf02143099aed	0	141624	player	uade	Sonic Arranger	0	38938	Game/Ruzicka_Nils/Marvin_Marvellous_Adventure/sa.ingames
+f6bd13c53964710142aaf02143099aed	1	31688	player
+f6bd13c53964710142aaf02143099aed	2	130572	player
+f6bd13c53964710142aaf02143099aed	3	42740	player
+f6bd13c53964710142aaf02143099aed	4	4514	player+silence
+f6bd13c53964710142aaf02143099aed	5	5252	player+silence
+f6bd13c53964710142aaf02143099aed	6	4822	player
+f6bd13c53964710142aaf02143099aed	7	6882	player+silence
+f6bd13c53964710142aaf02143099aed	8	3215	player
 f6bdb8ef21b1961a26e8851e0721d004	1	57730	player	uade	Protracker	0	16964	Game/Simmonds_Matthew/Fantastic_Dizzy/Direct_from_Composer/mod.f.a.dizzy-undersea
 f6c0a66b6b5295177785af1006c574b3	1	27006	player	uade	P50A - P60A - P61A	0	222096	Game/Demsky_Martin/Strangers/p60.ENDING
 f6c616e5d0e648ebca05daca2427cab3	0	507018	player	uade	Jeroen Tel	0	114462	Game/Bjerregaard_Johannes/Stormlord/Unused/jt.ingame
