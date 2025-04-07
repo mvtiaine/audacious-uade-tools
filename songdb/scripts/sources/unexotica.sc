@@ -7,6 +7,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.util.Using
 
@@ -75,7 +76,7 @@ lazy val metas = sources.unexotica.par.flatMap(e =>
   }).seq.sortBy(_._2).head // secondarily sort by path for consistency
 }).seq.toSeq
 
-def transformAuthor(author: String): String = {
+def transformAuthors(author: String): String = {
   val pseudonyms = Set(
     "Creative_Thought",
     "DJ_Braincrack",
@@ -119,10 +120,21 @@ def transformAlbum(meta: UnExoticaMeta, authorAlbum: Array[String]): String = {
   else title
 }
 
-def transformPublisher(meta: UnExoticaMeta): String = {
-  val publisher = meta.group.getOrElse(meta.publisher.getOrElse(meta.team.getOrElse(Right(List(""))))) match {
-    case Left(publisher) => publisher
-    case Right(publishers) => publishers.head
+def transformPublishers(meta: UnExoticaMeta): Buffer[String] = {
+  val publishers = Buffer.empty[String]
+
+  if (meta.group.isDefined) meta.group.get match {
+    case Left(group) => publishers.append(group)
+    case Right(groups) => publishers.appendAll(groups)
   }
-  publisher.trim
+  if (meta.publisher.isDefined) meta.publisher.get match {
+    case Left(publisher) => publishers.append(publisher)
+    case Right(publishers_) => publishers.appendAll(publishers_)
+  }
+  if (meta.team.isDefined) meta.team.get match {
+    case Left(team) => publishers.append(team)
+    case Right(teams) => publishers.appendAll(teams)
+  }
+
+  publishers.map(_.trim).filterNot(_ == "Public Domain").sorted.distinct
 }

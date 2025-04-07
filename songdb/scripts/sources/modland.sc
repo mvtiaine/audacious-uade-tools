@@ -24,14 +24,11 @@ def parseModlandAuthorAlbum(path: String): Option[(Seq[String], String)] = {
       }
     case 2 =>
       var author = tokens(0)
-      val token1 = tokens(1)
+      var token1 = tokens(1)
       if (COOPS.exists(token1.startsWith)) {
         authorCoop(author, token1, "")
       } else {
-        if (author == UNKNOWN) {
-          author = ""
-        }
-        if (token1.startsWith("not by")) {
+        if (author == UNKNOWN || token1.startsWith("not by")) {
             None
         } else {
             Some((Seq(author), token1))
@@ -43,10 +40,7 @@ def parseModlandAuthorAlbum(path: String): Option[(Seq[String], String)] = {
       if (COOPS.exists(token1.startsWith)) {
         authorCoop(author, token1, tokens(2))
       } else {
-        if (author == UNKNOWN) {
-          author = ""
-        }
-        if (token1 == "unnamed") {
+        if (author == UNKNOWN || token1 == "unnamed") {
           None
         } else {
           Some((Seq(author), s"${token1} (${tokens(2)})"))

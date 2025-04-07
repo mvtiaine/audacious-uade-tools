@@ -1,3 +1,11 @@
+2025-04-07
+- Implement metadata lookup from Mods Anthology and Wanted Team
+- Added ExoticA (old) to sources (including metadata)
+- Demozoo "leftovers" source now also includes mods from compressed files
+- Extract album metadata from AMP filenames
+- Improved metadata extraction heuristics/coverage
+- Update source data snapshots to 2025-04-02 or thereabouts
+
 2025-02-18
 - Update with libopenmpt and libxmp support
 

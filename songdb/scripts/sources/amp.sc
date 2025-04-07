@@ -46,6 +46,7 @@ case class AMPMeta (
   path: String,
   filesize: Int,
   extra_authors: List[String],
+  album: String,
 )
 
 lazy val amp_mods_by_id = amp_mods.groupBy(_.id)
@@ -64,7 +65,15 @@ lazy val metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par
         seenIds += id
         val e = amp_mods_by_id(id).head
         val extra_authors = authors.toList
-        Some(AMPMeta(e.md5, e.path, e.filesize, extra_authors))
+        val filename = e.path.split("/").last
+        var album =
+          if (filename.matches("^\\w+\\.\\([A-Z0-9].*\\)[A-Za-z0-9]+.*")) filename.split("\\.\\(").last
+            .replaceAll("\\).*","")
+            .replace("_"," ")
+            .trim
+          else ""
+        album = if (album.length > 1) album else ""
+        Some(AMPMeta(e.md5, e.path, e.filesize, extra_authors, album))
       } else None
     })
   } else Iterable.empty[AMPMeta]

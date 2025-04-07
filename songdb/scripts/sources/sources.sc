@@ -8,7 +8,18 @@ import scala.collection.parallel.CollectionConverters._
 import scala.util.Using
 
 enum Source:
-  case Modland, AMP, UnExotica, Mods_Anthology, Wanted_Team, Zakalwe, Aminet, Modland_Incoming, Demozoo_Leftovers
+  case
+    Modland,
+    AMP,
+    UnExotica,
+    Mods_Anthology,
+    Wanted_Team,
+    Zakalwe,
+    Aminet,
+    Modland_Incoming,
+    Demozoo_Leftovers,
+    OldExotica
+
 import Source._
 
 val tsvfiles = Buffer(
@@ -21,6 +32,7 @@ val tsvfiles = Buffer(
   ("aminet.tsv", Aminet),
   ("modland_incoming.tsv", Modland_Incoming),
   ("demozoo_leftovers.tsv", Demozoo_Leftovers),
+  ("oldexotica.tsv", OldExotica),
 );
 
 case class TsvEntry (
@@ -64,3 +76,5 @@ lazy val amp = readSourceDB(AMP)
 lazy val aminet = readSourceDB(Aminet)
 lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
 lazy val wantedteam = readSourceDB(Wanted_Team)
+lazy val oldexotica = readSourceDB(OldExotica)
+lazy val modsanthology = readSourceDB(Mods_Anthology)
