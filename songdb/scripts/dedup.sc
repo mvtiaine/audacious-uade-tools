@@ -7,6 +7,7 @@ import scala.collection.parallel.CollectionConverters._
 import md5._
 
 val REPEAT = "\u007F"
+val SORT = "\u0001"
 
 def dedup(entries: Iterable[Buffer[String]], file: String) = {
   import Ordering.Implicits._
@@ -33,7 +34,7 @@ def dedupidx(entries: Iterable[Buffer[String]], file: String, strict: Boolean = 
       }
     }
     (e._1, e._2.toSeq.sortBy(entries =>
-      entries.tail.mkString("###")
+      entries.tail.mkString(SORT)
     ).head)
   ).seq
   val res = Buffer.empty[Buffer[String]]

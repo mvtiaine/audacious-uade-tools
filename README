@@ -12,11 +12,14 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 - tsv/md5idx.tsv - index of MD5 hashes (48 bits) (not used for pretty printed TSVs)
 - tsv/modinfos.tsv - module file format and channel info
 - tsv/songlengths.tsv - subsong and songlengths info
-- tsv/amp.tsv - author metadata sourced from AMP
-- tsv/modland.tsv - author/album metadata sourced from Modland
-- tsv/unexotica.tsv - author/publisher/album/year metadata sourced from UnExotica
+- tsv/amp.tsv - author/album metadata sourced from AMP
 - tsv/demozoo.tsv - author/publisher/album/year metadata sourced from Demozoo
-- tsv/combined.tsv - AMP/Modland/UnExotica/Demozoo metadata merged to single TSV
+- tsv/modland.tsv - author/album metadata sourced from Modland
+- tsv/modsanthology.tsv - author/publisher/album/year metadata sourced from Mods Anthology
+- tsv/oldexotica.tsv - author/publisher/album/year metadata sourced from ExoticA (old)
+- tsv/unexotica.tsv - author/publisher/album/year metadata sourced from UnExoticA
+- tsv/wantedteam.tsv - author/publisher/album/year metadata sourced from Wanted Team
+- tsv/combined.tsv - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
 
 * Raw TSV source files:
 
@@ -27,13 +30,16 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 - songdb/sources/modland.tsv - module infos and songlengths for Modland
 - songdb/sources/modland_incoming.tsv - modules infos and songlengths for Modland incoming directory
 - songdb/sources/modsanthology.tsv - module infos and songlengths for Mods Anthology
-- songdb/sources/unexotica.tsv - module infos and songlengths for UnExotica
+- songdb/sources/oldexotica.tsv - module infos and songlengths for ExoticA (old)
+- songdb/sources/unexotica.tsv - module infos and songlengths for UnExoticA
 - songdb/sources/wantedteam.tsv - module infos and songlengths for Wanted Team
 - songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git repo
 
 Except for demozoo.tsv, the raw TSV source files are generated using the precalc binary+script https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/ from my local copy/mirror/snapshot of the various sites/sources.
 
-Note that some additional required files not included in Github, specifically local mirror of some of the AMP and UnExotica web pages are needed to actually run the Scala songdb.sc script. The script runs completely locally and does not download anything from internet.
+Note that some additional required files not included in Github, specifically local mirror of some of the AMP, ExoticA (old), UnExoticA and Wanted Team web pages + Mods Anthology txt files are needed to actually run the Scala songdb.sc script.
+Note also that only files playable by audacious-uade are included in the database.
+The script runs completely locally and does not download anything from internet.
 
 Here are example snippets and short spec for the pretty printed TSVs. Example parsing code can be found in songdb/scripts/pretty.sc
 
@@ -53,7 +59,7 @@ fffe869a7f8d	AHX v2
 ```
 [md5]<TAB>[format]<TAB>[channels]
 
-combined.tsv (and amp/modland/unexotica/demozoo.tsv)
+combined.tsv (and amp/demozoo/modland/modsanthology/oldexotica/unexotica/wantedteam.tsv)
 ```
 feaa9d2a4869	Scorpik	Alchemy	Toxic Ziemniak	1992
 feaba2f4c992	Jazz			
@@ -75,6 +81,7 @@ Sources used for the database:
 - AMP - https://amp.dascene.net/
 - Modland - http://ftp.modland.com/
 - UnExotica - https://www.exotica.org.uk/wiki/UnExoticA
+- ExoticA (old) - http://old.exotica.org.uk/
 - Demozoo - https://demozoo.org/
 - Mods Anthology - https://archive.org/details/cdrom-amiga-mods-anthology-1
 - Wanted Team - http://wt.exotica.org.uk/

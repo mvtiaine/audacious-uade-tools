@@ -3441,6 +3441,8 @@
 3477e44443b11f64c65f0bba031048c1	1	136440	player	uade	Protracker	0	168296	Mods-2/Modules/Authors.G-Q/Heatbeat/Sunset_Blues.mod
 347e8960fa72380a81408aa5ed7db3b1	1	7796	player	uade	Protracker	0	2582	Mods-3/Modules/Authors.R-Z/Rez/MS-DOS/Tiny03.mod
 347e8960fa72380a81408aa5ed7db3b1	1	7796	player	uade	Protracker	0	2582	Mods-3/Modules/Authors.R-Z/Rez/Tinytune-03.mod
+34804a736c6e33cfaad8d0c2c112179d	0	102420	player	uade	David Whittaker	0	41162	Mods-4/Modules/Synth/Whittakr/OLDW.Leviathan
+34804a736c6e33cfaad8d0c2c112179d	1	823	player
 348e664df4ca58b1023e55e75b725a7e	1	30824	player	uade	Protracker	0	18342	Mods-3/Modules/Authors.R-Z/Reflex/Tix07-Nemoniax.mod
 348e664df4ca58b1023e55e75b725a7e	2	30824	player
 348f424d643a9ad8eacd73763a391004	1	67034	player	st3play	Scream Tracker 3.2x (GUS)	8	18168	Mods-4/Modules/Misc/Compos/20mc/5_Whee_Gasm.S3M
@@ -4780,6 +4782,9 @@
 47cb01e164e273541202900af3ff427a	1	153721	player	uade	Soundtracker II (31 instr.)	0	97552	Mods-2/Modules/Authors.G-Q/Jesp_Kyd/Kawai_K1.mod
 47cd52bb4e013d12128c00225d462e00	1	38520	player	uade	Protracker	0	21174	Mods-4/Modules/Misc/ChipTune.A-F/Confettis.mod
 47ce7c89be90865b337a38cbeeb07939	1	50262	player+silence	uade	Protracker	0	18500	Mods-1/Modules/Authors.A-F/Dizzy/Fanaattinen_Tyhjyys.mod
+47cf777d0968c5afa568d355dd1a3286	0	42258	player	uade	David Whittaker	0	42644	Mods-4/Modules/Synth/Whittakr/OLDW.Bmx_Simulator
+47cf777d0968c5afa568d355dd1a3286	1	3657	player
+47cf777d0968c5afa568d355dd1a3286	2	3616	player
 47d51a034a6d0d84f7b189a738e72259	1	107645	player	uade	Noisetracker 1.x	0	77042	Mods-3/Modules/Groups/Dexion/MD2-Einstein-b1-remix.mod
 47d59e9a2ed72babf5f22e418e62ad32	1	69887	player	uade	Protracker	0	361694	Mods-2/Modules/Authors.G-Q/Pye/Naked_'95.mod
 47dc6228886cc5c33e42a570b324e839	1	30824	player	uade	Protracker	0	33032	Mods-3/Modules/Authors.R-Z/SLL/SLL-09.mod
@@ -6214,6 +6219,10 @@
 5d9979a75251c3dca901134b7efc6505	1	92272	player	uade	Protracker	0	31470	Mods-3/Modules/Authors.R-Z/Yannis/Bleep-5.mod
 5d9be7e2b97e4c36280e6f8ab3dff272	1	107403	player	uade	Protracker	0	484646	Mods-1/_Bonus!/Saturne.96/Music/Selected/Fil-246.mod
 5d9f15cf469ba623d0a064f53c496754	1	231365	player	uade	Protracker	0	207660	Mods-2/Modules/Authors.G-Q/Jam&Spoo/The_Transe.mod
+5da0cfbd9d85c8bec19f69d83df9bce1	0	249631	player	uade	David Whittaker	0	17422	Mods-4/Modules/Synth/Whittakr/OLDW.Return_to_Genesis
+5da0cfbd9d85c8bec19f69d83df9bce1	1	1808	player
+5da0cfbd9d85c8bec19f69d83df9bce1	2	11534	player
+5da0cfbd9d85c8bec19f69d83df9bce1	3	20496	player
 5da2b9305590835dd238beb277b1731e	1	399494	player	uade	Protracker	0	55954	Mods-3/Modules/Groups/Crypto/MD-Sunrise.mod
 5da85a0de6705cd43d7331bd19361cc0	1	244128	player+volume	uade	Protracker	0	121068	Mods-4/Modules/Misc/Misc_Old.L-R/Lazertron_III.mod
 5db820937de28a0f7417b6c7d950304e	1	161397	player	uade	Protracker	0	173670	Mods-2/Modules/Authors.G-Q/Nuke/Sunday_Best.mod
@@ -6678,6 +6687,9 @@
 65212f2f2a330dd87b482ba9578f4334	1	207493	player	uade	Protracker	0	110166	Mods-1/Modules/Authors.A-F/Clawz/Level-2.mod
 6527182ec7fe8df7148c35cabb5fe744	1	291958	player+silence	uade	Protracker	0	654502	Mods-3/Modules/Authors.R-Z/Scorpik/Fountain_of_Sighs.mod
 652f788ad4e9b31b55339a4d50810688	1	122583	player+silence	uade	Noisetracker 2.x	0	53478	Mods-4/Modules/Misc/Misc_Old.L-R/Parrain_Main_Theme.mod
+653a67fe991ae9bc1e5b6ab4f4adfaf2	0	145663	player	uade	Benn Daglish	0	69000	Mods-4/Modules/Synth/MTH/MTH.2
+653a67fe991ae9bc1e5b6ab4f4adfaf2	1	121349	player
+653a67fe991ae9bc1e5b6ab4f4adfaf2	2	230441	player
 653ce4b8964295ce08897d1c29de3786	1	46216	player	uade	Protracker	0	9306	Mods-2/Modules/Authors.G-Q/Moone/Funky-Commando.mod
 654016d66b7d04381326cb66bb2826ba	1	51903	player	uade	Protracker	0	181494	Mods-2/Modules/Authors.G-Q/Heatbeat/MS-DOS/Move_Ment_Al_Santa.mod
 654016d66b7d04381326cb66bb2826ba	1	51903	player	uade	Protracker	0	181494	Mods-2/Modules/Authors.G-Q/Heatbeat/Move_Ment_Al_Santa.mod
@@ -6877,6 +6889,7 @@
 68363afc74563c3081f060f35551b730	1	167063	player+silence	uade	Protracker	0	111568	Mods-3/Modules/Authors.R-Z/XTD/MS-DOS/Electrocution-2.mod
 6838818921df7128ccd365af7ac4654e	1	273321	player+silence	uade	Noisetracker 2.x	0	220826	Mods-3/Modules/Authors.R-Z/UncleTom/Occ_San_Geen.mod
 683c1329063c16f8518057720badea4a	1	295580	player+silence	uade	Protracker	0	230220	Mods-1/Modules/Authors.A-F/Chrylian/Riding_The_Rainbow.mod
+683da093382be2f70778eaf005bc65d0	0	0	error	uade	David Whittaker	0	27066	Mods-4/Modules/Synth/Whittakr/OLDW.Obliterator-Title
 683f79e027057aa4d9c6d1ba8c639712	1	228743	player+silence	ft2play	FastTracker v2.00	16	401392	Mods-1/Modules/Authors.A-F/Alexel/The_U-Neek_DimenSion.XM
 68445fc0397049dd5ac884da6d0ed86d	1	40047	player	uade	Protracker	0	240694	Mods-2/Modules/Authors.G-Q/Moone/Check_the_Flow.mod
 684706af57222692db327a6efeefecaf	1	230541	player	uade	Protracker	0	71344	Mods-2/Modules/Authors.G-Q/Gryzor/Electricity.mod
@@ -7024,6 +7037,9 @@
 6aaf2b0b3bd8613e938d2831f9d213a8	1	155328	player	uade	Protracker	0	181918	Mods-3/Modules/Authors.R-Z/Strobo/Scramble.mod
 6ab5a70f1ecaf54e9f0ed333cebbd752	1	181416	player+silence	uade	Protracker	0	124102	Mods-1/Modules/Authors.A-F/A_Brimbl/Batman.mod
 6ab791fa11102f60ebf9a7a8f35fb75d	1	172934	player+silence	uade	Protracker	0	187930	Mods-1/Modules/Authors.A-F/Doh/Smooth_Shadows.mod
+6ab93e34b551942eed31403f361b6328	0	143372	player	uade	David Whittaker	0	30828	Mods-4/Modules/Synth/Whittakr/OLDW.Pandora
+6ab93e34b551942eed31403f361b6328	1	33517	player
+6ab93e34b551942eed31403f361b6328	2	37254	player
 6aba6f8b8e6c820eca25a0fd522ee1e8	1	163567	player	uade	Protracker	0	362860	Mods-4/Modules/Misc/Compos/Asm94.4CH/Ragman.mod
 6abb5cf1c46dc37dd71bcf0f270a6260	1	190288	player+silence	st3play	Scream Tracker 3.2x (GUS)	12	271088	Mods-3/Modules/Groups/ForceTen/6_Anormal_Confusion.S3M
 6abb5cf1c46dc37dd71bcf0f270a6260	2	33557	player
@@ -10467,6 +10483,9 @@ a0481624a9e013107722061d5d5a870d	1	128425	player+silence	st3play	Scream Tracker 
 a049eeadd2d1d7dabf2f979560963e3a	1	268921	player	uade	Noisetracker 1.x	0	76492	Mods-4/Modules/Misc/Oldies/MS-DOS/Rallye_Master_II.mod
 a049eeadd2d1d7dabf2f979560963e3a	1	268921	player	uade	Noisetracker 1.x	0	76492	Mods-4/Modules/Misc/Oldies/Rallye_Master_II.mod
 a04aeba3c52fbec09a531e5f965da721	1	116285	player	st3play	Scream Tracker 3.2x (GUS)	16	125227	Mods-2/Modules/Authors.G-Q/Mystical/Aquarious.S3M
+a04e1f5e65921f2e4642617a361eeb2e	0	86425	player	uade	Benn Daglish	0	63528	Mods-4/Modules/Synth/MTH/MTH.1
+a04e1f5e65921f2e4642617a361eeb2e	1	102420	player
+a04e1f5e65921f2e4642617a361eeb2e	2	64984	player
 a051ffe30e40ae26c685914b4622a0d7	1	204720	player+silence	uade	Protracker	0	360774	Mods-1/Modules/Authors.A-F/Delorean/Love!me!who!me!.mod
 a05228d616517746b77e7d1870d0db97	1	113713	player	uade	Protracker	0	56966	Mods-3/Modules/Groups/Balance/Gatecrashing-4.mod
 a0530823b8a2f4eaa338aa0beb74800f	1	61568	player	uade	Protracker	0	25828	Mods-3/Modules/Groups/Neoplasi/Strange_Chip.mod
@@ -10640,6 +10659,9 @@ a28c68d95f1abea130b9eb774cb88535	5	61468	player
 a28c68d95f1abea130b9eb774cb88535	6	111382	player
 a28dbe3da0e88c7961b00065a5b79e31	1	102520	player	uade	Protracker	0	99304	Mods-1/Modules/Authors.A-F/A_Brimbl/MS-DOS/OD_Loading.mod
 a28dbe3da0e88c7961b00065a5b79e31	1	102520	player	uade	Protracker	0	99304	Mods-1/Modules/Authors.A-F/A_Brimbl/OverDrive_Loading.mod
+a28e359e73a4eb39d59ed6365e0fb86d	0	143372	player	uade	David Whittaker	0	42752	Mods-4/Modules/Synth/Whittakr/OLDW.Kickstart_II
+a28e359e73a4eb39d59ed6365e0fb86d	1	69144	player
+a28e359e73a4eb39d59ed6365e0fb86d	2	3235	player
 a2973b276818221d73f7288df474df89	1	64442	player	uade	Protracker	0	3996	Mods-1/Modules/Authors.A-F/Fabian/Short_but_Shocking!.mod
 a29de6a32c403dd13f5c78787018d6bf	1	21721	player	uade	Protracker	0	14014	Mods-1/Modules/Authors.A-F/4mat/Anarchy_Menu-05.mod
 a29de6a32c403dd13f5c78787018d6bf	1	21721	player	uade	Protracker	0	14014	Mods-1/Modules/Authors.A-F/4mat/MS-DOS/AMenu-05.mod
@@ -11324,6 +11346,9 @@ ad5743761a3fe29828784134116b929f	1	184949	silence	uade	Protracker	0	312274	Mods-
 ad60d5d3caa8b5dd3adda8340f54d800	1	66431	player	st3play	Scream Tracker 3.2x (GUS)	8	9234	Mods-2/Modules/Authors.G-Q/Khyron/Chip_to_my_Lew.S3M
 ad6ec819660d45969be969567adfcf59	1	160069	player+silence	uade	Protracker	0	183924	Mods-2/Modules/Authors.G-Q/Maf/Bao!_Bao!.mod
 ad7ec59d4ae03e474fc19106af72b81c	1	73946	player	uade	Protracker compatible	0	24938	Mods-2/Modules/Authors.G-Q/NHP&BKH/Bubble_Trip_OK.mod
+ad7fd1877d6ff1dabd403285207557e6	0	128020	player	uade	David Whittaker	0	61612	Mods-4/Modules/Synth/Whittakr/OLDW.Xenon-1
+ad7fd1877d6ff1dabd403285207557e6	1	51220	player
+ad7fd1877d6ff1dabd403285207557e6	2	96030	player
 ad80cb8f6e7a1947c06919f862ac282e	1	19993	player	uade	Protracker	0	3648	Mods-1/Modules/Authors.A-F/Dreamer/Sound_&_Light.mod
 ad81c7c5d7ace941d83c018d20d642ed	1	249205	player+silence	uade	Protracker	0	174550	Mods-3/Modules/Groups/ForceTen/1_Inside_Secrets.mod
 adac37ddc93ccdd1a586a7cefc96623d	1	492932	player	uade	Protracker	0	289338	Mods-3/Modules/Authors.R-Z/Typhoon/Avalon_Response.mod
@@ -12861,6 +12886,7 @@ c5e5a2e692e808c4d33c1908249c02f7	1	198531	player	uade	Protracker	0	102820	Mods-3
 c5eace4a611d06975746fa9f8134024b	1	234541	player+silence	uade	Protracker	0	49088	Mods-1/Modules/Authors.A-F/Dr_Aweso/Awakening.mod
 c5f0eb836cc135ee515d67eb74887471	1	201770	player+silence	uade	Protracker	0	111054	Mods-3/Modules/Authors.R-Z/Walkman/Walkman's_Disgust.mod
 c5f0f24fe9fdb15ba9683861ada4a5a9	0	128000	player	uade	SIDMon 2.0	0	5390	Mods-4/Modules/Synth/SidMon/SID2.DemoSong-1
+c5f2b037c66bfb8b506b329a37695d21	0	138268	player	uade	David Whittaker	0	63162	Mods-4/Modules/Synth/Whittakr/OLDW.Sidewinder
 c5f99b1587062ab09808404a5731346f	1	58052	player	uade	Protracker	0	12770	Mods-2/Modules/Authors.G-Q/Hollywoo/Free_4_All.mod
 c5fa18d13de40115202c63e2c3a6700b	1	80758	player	uade	Protracker	0	26216	Mods-3/Modules/Authors.R-Z/Throb/The_Lion_is_Dead.mod
 c5ff85bf6e930bad6cb8239b113d3e4e	1	146045	player	uade	Protracker	0	112980	Mods-3/Modules/Authors.R-Z/Taron/Arise_Piranhas_III.mod
@@ -14350,6 +14376,9 @@ ddc739d69f400bcc6a35680a7d5c63f0	3	46799	player
 ddc739d69f400bcc6a35680a7d5c63f0	4	58635	player
 ddc739d69f400bcc6a35680a7d5c63f0	5	37817	player
 ddc739d69f400bcc6a35680a7d5c63f0	6	56726	player
+ddcaa69fb6748ba350c8d6990af74122	0	223528	player	uade	David Whittaker	0	28332	Mods-4/Modules/Synth/Whittakr/OLDW.Obliterator-InGame
+ddcaa69fb6748ba350c8d6990af74122	1	27669	player
+ddcaa69fb6748ba350c8d6990af74122	2	92212	player
 dddadba36afe77dd2ffd1e7a721cd068	1	75011	player	uade	Protracker	0	175918	Mods-1/Modules/Authors.A-F/Alien/Full_Moon-Fx.mod
 dddbf46f09fd229faf2232012fe8cc31	1	138369	player	uade	Protracker	0	76592	Mods-2/Modules/Authors.G-Q/Pye/Gull's_Den.mod
 dddc9fa8864b79b3a6ef76c453a88cf1	1	28393	player	uade	Protracker	0	18312	Mods-3/Modules/Authors.R-Z/Virgill/1000-Newton.mod
@@ -14969,6 +14998,9 @@ e78abcf2a26dff181dba4f1466fbed03	1	171806	player	uade	Protracker	0	253560	Mods-4
 e794bf2e81641b531097e860465891d5	1	469432	player+silence	uade	Protracker	0	168094	Mods-4/Modules/Misc/Misc_Old.A-D/Cocktail.mod
 e7a6790d9c3081de1dd7733c871569f3	1	122997	player	uade	Protracker	0	79858	Mods-1/Modules/Authors.A-F/B_Bossie/Will_of_The_Wind.mod
 e7a9246650cb725b6ac0549af416e4ee	1	88334	player	uade	Protracker	0	167120	Mods-1/Modules/Authors.A-F/DSX/Warriors_of_Glory.mod
+e7b2df7b3b3d1a729b72cfb882482a0e	0	170506	player+volume	uade	David Whittaker	0	61418	Mods-4/Modules/Synth/Whittakr/OLDW.Tetris
+e7b2df7b3b3d1a729b72cfb882482a0e	1	22425	player
+e7b2df7b3b3d1a729b72cfb882482a0e	2	1225	player
 e7b3afe82a29b8f4178bd1b9193dfe06	1	31608	player	uade	Protracker	0	106412	Mods-3/Modules/Authors.R-Z/TJM/Pikku_Kakkonen.mod
 e7b9bda7be2b60be537944126bcf8b58	1	365876	player	uade	Protracker	0	225522	Mods-4/Modules/Misc/Misc.A-F/Chr$-7th_Generation.mod
 e7ba2d82c909f511488041c0ed7f3d2c	1	117913	player	uade	Protracker	0	30874	Mods-3/Modules/Authors.R-Z/Zoon/Pikouik.mod
@@ -15129,6 +15161,10 @@ ea5bbc799367cf1d1c039e5bed98b6b8	5	9421	silence
 ea5bbc799367cf1d1c039e5bed98b6b8	6	53242	loop
 ea5bbc799367cf1d1c039e5bed98b6b8	7	54267	loop
 ea5ced41040a4573f4e993d4333353a6	1	286848	player+silence	uade	Protracker	0	309468	Mods-1/Modules/Authors.A-F/Counterp/Darkside.mod
+ea5df69bd2654efd8d3db5356cd6c028	0	121610	player	uade	David Whittaker	0	47632	Mods-4/Modules/Synth/Whittakr/OLDW.Army_Moves
+ea5df69bd2654efd8d3db5356cd6c028	1	103706	player
+ea5df69bd2654efd8d3db5356cd6c028	2	924	player
+ea5df69bd2654efd8d3db5356cd6c028	3	3235	player
 ea5f3fab3597b19ea4f3af4e25a19839	1	143493	player	uade	Protracker	0	190302	Mods-1/Modules/Authors.A-F/Cash/Spasme.mod
 ea62dfe12572810819462f069b4a1085	1	30824	player	uade	Protracker	0	8658	Mods-3/Modules/Authors.R-Z/XTD/MS-DOS/Synthe-3.mod
 ea62dfe12572810819462f069b4a1085	1	30824	player	uade	Protracker	0	8658	Mods-3/Modules/Authors.R-Z/XTD/Syntherella-3.mod

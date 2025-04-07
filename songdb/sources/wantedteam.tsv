@@ -473,8 +473,8 @@
 0974b4aa567b10d739ddba870865962a	0	245793	player	uade	TFMX Pro	0	8116	examples/TFMX_GemX/MDAT.Gem'X title
 0974b4aa567b10d739ddba870865962a	1	70410	player
 0974b4aa567b10d739ddba870865962a	2	5144	player
-099894631f9d6a4063a4efbe58c2a618	0	73617	loop	uade	Sonic(pc)all	0	87570	examples/SA_AmberMoon/SA.AmberMoon intro
-099894631f9d6a4063a4efbe58c2a618	1	42012	loop
+099894631f9d6a4063a4efbe58c2a618	0	190654	player	uade	Sonic Arranger	0	87570	examples/SA_AmberMoon/SA.AmberMoon intro
+099894631f9d6a4063a4efbe58c2a618	1	38420	player
 09a2502e67167761bec1a3cd82e5e758	0	321	player	uade	Sierra AGI	0	61	examples/AGI_Manhunter1/AGI.ManhunterI 50
 09a2502e67167761bec1a3cd82e5e758	0	321	player	uade	Sierra AGI	0	61	examples/AGI_Manhunter2/AGI.ManhunterII 053
 09a2502e67167761bec1a3cd82e5e758	0	321	player	uade	Sierra AGI	0	61	examples/AGI_Manhunter2/AGI.ManhunterII 170
@@ -2114,8 +2114,8 @@
 2b17b7bab930f73adf9c108be0125660	1	143372	player	uade	Hippel-COSO	0	4162	examples/SOC_DragonFlight/SOC.town
 2b17b7bab930f73adf9c108be0125660	2	199716	player
 2b17b7bab930f73adf9c108be0125660	3	163868	player
-2b18fb2c5733d4fb79315ca64ddba1b8	0	49159	loop	uade	Sonic(pc)all	0	55446	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level3
-2b18fb2c5733d4fb79315ca64ddba1b8	1	47138	loop
+2b18fb2c5733d4fb79315ca64ddba1b8	0	138268	player	uade	Sonic Arranger	0	55446	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level3
+2b18fb2c5733d4fb79315ca64ddba1b8	1	46096	player
 2b1dac7fae5b9b7d067a5144b9ba0a6d	0	67215	player	uade	TFMX Pro	0	10416	examples/TFMX_Apidya/MDAT.Apidya world2
 2b1dac7fae5b9b7d067a5144b9ba0a6d	1	42258	player
 2b1dac7fae5b9b7d067a5144b9ba0a6d	2	2431	player
@@ -2166,7 +2166,7 @@
 2c39a894506059cc9a206dac2e727545	3	51320	player
 2c39a894506059cc9a206dac2e727545	4	61609	player
 2c39a894506059cc9a206dac2e727545	5	38601	player
-2c4952001910a602e7ce265f48a34b46	1	359	player	ft2play	Fasttracker	4	102360	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 17
+2c4952001910a602e7ce265f48a34b46	1	0	nosound	ft2play	Fasttracker	4	102360	rips/MOD_SkizzoDemo2/MOD.SkizzoDemo2 17
 2c56d840758e71d098f080f43c07ca69	1	56424	player	uade	Noisetracker 1.x	0	92894	rips/MOD_ItalianNight1999/MOD.dangerous
 2c5807df44bdb34bb1444d8ecc72eb22	0	276313	loop	uade	CustomPlay	0	55584	customs/Exxon/CUST.Exxon
 2c58e2ea41f4fc75dffda2aa8c4abe92	1	111965	player	uade	Protracker	0	46460	rips/MOD_QuikTheThunderRabbit/MOD.rabbit-level3.jour
@@ -2667,9 +2667,9 @@
 35e21e3d66180579326eb0782bf97de0	0	243442	player	uade	Quartet ST	0	11248	examples/QTS_Necromunda/QTS.PSY1
 36041296d200aaa032ca22482e21993f	0	6631	player	uade	Sierra AGI	0	221	examples/AGI_MixedUpMotherGoose/AGI.MixedUpMotherGoose 31
 3611ecf45e5bc10bf0b9e673b9c0723e	0	8962	player	uade	Sonix Music Driver	0	480	examples/TINY_TheGamesWinterEdit/The Games - Winter Edition/TINY.France
-36264f2666ab42a9c3b3a9fbf22fa9c3	0	243573	loop	uade	Sonic(pc)all	0	84184	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_final
-36264f2666ab42a9c3b3a9fbf22fa9c3	1	85801	loop
-36264f2666ab42a9c3b3a9fbf22fa9c3	2	236050	silence
+36264f2666ab42a9c3b3a9fbf22fa9c3	0	243241	player	uade	Sonic Arranger	0	84184	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_final
+36264f2666ab42a9c3b3a9fbf22fa9c3	1	96030	player
+36264f2666ab42a9c3b3a9fbf22fa9c3	2	236066	player+silence
 36288b9cc8776d7a83f13b14f084d87c	1	161397	player	uade	Noisetracker 2.x	0	67078	rips/MOD_VikingChild/MOD.prophecy8
 36288c71459f01684b51faef1b1307f4	0	87048	player	uade	Sonix Music Driver	0	2894	examples/TINY_TheGamesWinterEdit/The Games - Winter Edition/TINY.WE jazz
 362d86ee537181f860885b1ef9805786	1	115321	player	uade	Noisetracker 2.x	0	27946	rips/MOD_SimonTheSorcerer/MOD.FROZEN
@@ -4904,7 +4904,7 @@
 66e542ed1ae69e5a24d33442c8531eef	0	7113	player	uade	Sonix Music Driver	0	634	examples/SMUS_CaliforniaGames/California Games/SMUS.hp1
 66efd03ee48ed9dfa3b6c7ca0a0ed57a	0	158945	player	uade	Sean Conran	0	90592	examples/SCR_VideoKid/SCR.VideoKid title
 66efd03ee48ed9dfa3b6c7ca0a0ed57a	1	46658	player
-66f07821b38dfde4174713a2ac0df899	0	55256	loop	uade	Sonic(pc)all	0	40648	examples/SA_MarvinMarvellousdemo/SA.MarvinMarvellous preview
+66f07821b38dfde4174713a2ac0df899	0	53772	player	uade	Sonic Arranger	0	40648	examples/SA_MarvinMarvellousdemo/SA.MarvinMarvellous preview
 66f573d5f3294ace32d1b1e196717782	0	2371	player	uade	Sierra AGI	0	186	examples/AGI_KingsQuest2/AGI.King'sQuestII 24
 66f8f2d065134d85d5cdf31a6abd4d3d	0	135395	player	uade	CustomPlay	0	191936	customs/Zoom/CUST.Zoom intro
 670aeace9dc639b8156a39a37fe92889	0	125890	player	uade	Benn Daglish	0	115734	examples/BD_GaryLinekersHotShot/BD.GaryLineker'sHotShot
@@ -5379,8 +5379,8 @@
 72adaf9920fa042edab2d72c0b752a48	9	18486	player
 72be835fefb27b772102d4604ba326a3	0	16497	player	uade	SoundFX	0	20196	rips/SFX_BushBuck/SFX.BushBuck 12
 72c9444a781514d2e77120909a40dd41	0	1908	player	uade	Sierra AGI	0	406	examples/AGI_SpaceQuest2/AGI.SpaceQuestII 26
-72cbdf939b1b22461267ef3d50ee0d44	0	179302	loop	uade	Sonic(pc)all	0	46998	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level4
-72cbdf939b1b22461267ef3d50ee0d44	1	77636	loop
+72cbdf939b1b22461267ef3d50ee0d44	0	179220	player	uade	Sonic Arranger	0	46998	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level4
+72cbdf939b1b22461267ef3d50ee0d44	1	76820	player
 72d8f3647adb505cef43da4260b06825	0	31407	player	uade	SoundFX	0	29940	examples/SFX_VenusTheFlytrap/SFX.Venus ingame 09
 72e0db65c72df90ba737bbf3e88af1b6	1	38420	player	uade	Special FX	0	36510	examples/JD_Robocop2/JD.Robocop2 highscore
 72e0db65c72df90ba737bbf3e88af1b6	2	23068	player
@@ -5705,7 +5705,7 @@
 794fe811dde8672e65bedff4166761a3	0	321	player	uade	Sierra AGI	0	86	examples/AGI_SpaceQuest1/AGI.SpaceQuestI 34
 79562e430871e8454e46326a26b6dd87	1	213461	player	uade	Protracker	0	122772	rips/MOD_BurnTime/MOD.gameover
 7959d512c0600314c709df82124bac06	1	71816	player	uade	Protracker	0	38452	rips/MOD_DylanDog05/MOD.sfera
-795d39fa0695915e89f866ac8a030466	0	8893	loop	uade	Sonic(pc)all	0	11540	examples/SA_MarvinMarvellous/SA.MarvinMarvellous 199
+795d39fa0695915e89f866ac8a030466	0	7696	player	uade	Sonic Arranger	0	11540	examples/SA_MarvinMarvellous/SA.MarvinMarvellous 199
 79677355de0802770c9fcf86c9b14a56	1	291226	player	uade	Jochen Hippel ST	0	6170	examples/HST_InsectsInSpace/HST.InsectsInSpace
 79677355de0802770c9fcf86c9b14a56	2	24322	player+silence
 7978d873bd60d253da2a330b1c10c002	0	184786	player	uade	A.M.Composer 1.2	0	172768	examples/AMC_MagicJumper/AMC.MagicJumper title
@@ -6386,7 +6386,7 @@
 8604c796cd1a9da67ca92fdb88ac7e8d	1	76920	player	uade	Soundtracker II (31 instr.)	0	54500	rips/MOD_DylanDog02/MOD.Dann3
 861e334b4b93a213f38c93c9454c9e37	1	86365	player	uade	OctaMED MMD0	0	35126	rips/MED_SoulCrystal/MED.The Eremit's Tale
 863d3dbd90832e8e94518af926b60817	0	221591	loop	uade	CustomPlay	0	181472	customs/Corruption/CUST.Corruption
-86446970f2c13977b543c45d3c56f99f	0	341723	loop	uade	Sonic(pc)all	0	79504	examples/SA_Lionheartdemo/SA.Lionheart demo 2 & 4
+86446970f2c13977b543c45d3c56f99f	0	337985	player	uade	Sonic Arranger	0	79504	examples/SA_Lionheartdemo/SA.Lionheart demo 2 & 4
 864563b24f603d8e3d479753a9f80fd0	0	142106	player	uade	Sonic Arranger	0	6380	examples/SA_AmberMoon/SA.AmberMoon ingame 15
 866d60b4c1d6fada717bdfbb4863b1fd	0	29233	player+silence	uade	CustomPlay	0	162888	customs/Agony/CUST.Agony demo
 866fd25500245cdfb0f323a19427856a	1	198330	player	uade	OctaMED MMD0	0	65092	rips/MED_SoulCrystal/MED.Former Glory
@@ -6593,7 +6593,7 @@
 8b3f5548e8f3d2bef77b4b0bed04e3ab	0	43564	player	uade	Ultimate-Soundtracker or compatible	0	31566	rips/ST_OilImperium/MOD.action2
 8b45f9d83b8164f2e0977cd74e131fc6	0	61327	player	uade	Images Music System	0	49742	examples/IMS_HuntForRedOctober/IMS.chopper
 8b56f8797837e5442b416dd56ab5c4b2	0	11935	player	uade	Sonix Music Driver	0	326	examples/SMUS_ItCameFromTheDesert/It Came From The Desert Demo/SMUS.GENERIC0
-8b5a6c7aed9d34157370440b7c3067ad	0	152501	loop	uade	Sonic(pc)all	0	60364	examples/SA_MarvinMarvellous/SA.MarvinMarvellous title
+8b5a6c7aed9d34157370440b7c3067ad	0	268841	player	uade	Sonic Arranger	0	60364	examples/SA_MarvinMarvellous/SA.MarvinMarvellous title
 8b5f7ff7818ca4beb2ee7195cee00efc	0	47944	player	uade	Sonix Music Driver	0	6348	examples/SNX_RiseOfTheDragon/Rise Of The Dragon/SNX.Karyn's hall
 8b636184e5a9885e636c7e698be06d93	0	64301	player	uade	Silmarils	0	13062	examples/MOK_BostonBombClub/MOK.BostonBombClub_ingame 1
 8b636184e5a9885e636c7e698be06d93	1	62432	player
@@ -7369,7 +7369,7 @@
 9bd5e8dacd21d669347921984191c01e	0	212858	player	uade	Sonix Music Driver	0	13604	examples/SMUS_TheFourSeasons/The Four Seasons/SMUS.Winter1
 9bd8621f37bedd37082e1bf26ba58abd	0	221	player	uade	Sierra AGI	0	50	examples/AGI_Manhunter2/AGI.ManhunterII 116
 9bde40f778d58125ee6a622b2b2ccb84	1	0	nosound	uade	Hippel-COSO	0	1708	examples/SOC_Amberstar/SOC.Lullaby
-9bf2a1a4f495b2b411adf810c74c6912	0	155275	loop	uade	Sonic(pc)all	0	148798	examples/SA_MarvinMarvellous/SA.MarvinMarvellous xentrix
+9bf2a1a4f495b2b411adf810c74c6912	0	339231	player	uade	Sonic Arranger	0	148798	examples/SA_MarvinMarvellous/SA.MarvinMarvellous xentrix
 9c00a507fa5fdf6ed1ff98b13732f274	0	64082	player+silence	uade	Sean Conran	0	85604	examples/SCR_Duckula/SCR.Duckula
 9c0c3eeb502c905206cc1b522f9374fb	0	194318	player+silence	uade	Ultimate-Soundtracker or compatible	0	50440	rips/ST_MusicInvasion2/MOD.track one
 9c107b0b58b1651a3a5573fd72782a9a	0	56344	player	uade	Quartet ST	0	2176	examples/QTS_KillingCloud/QTS.KillingCloud dead
@@ -8062,8 +8062,8 @@ ab437a1611ff863465166beed11d0361	1	69224	player	uade	Protracker	0	43524	rips/MOD
 ab5add5174ad070fb0a8ce06d6dc4462	0	110277	player	uade	Quartet ST	0	5884	examples/QTS_DanDare3/QTS.DanDare3 title
 ab6359257a428d15cac8d99112e586ed	1	47643	player	uade	Noisetracker 2.x	0	21726	rips/MOD_DylanDog14/MOD.lotta
 ab72707804e902129fd8e626f3a40c91	0	78508	player	uade	CustomPlay	0	245320	customs/Vroom/CUST.Vroom
-ab772995805db729cbd4cc5b3ec78053	0	102800	loop	uade	Sonic(pc)all	0	52206	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level2
-ab772995805db729cbd4cc5b3ec78053	1	42651	loop
+ab772995805db729cbd4cc5b3ec78053	0	117772	player	uade	Sonic Arranger	0	52206	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level2
+ab772995805db729cbd4cc5b3ec78053	1	43544	player
 ab90653390cecbaf245ba0bd162b13e8	1	44910	player	uade	Protracker	0	24690	rips/MOD_Agonydemo/MOD.agony(volcano load)
 ab9faf0af6b88d1d6a6420da9578ab5d	1	115321	player	uade	Protracker	0	28042	rips/MOD_TimeRunners17/MOD.secmus
 aba63b8e80f193262f722d6ab46dcf59	0	17341	player	uade	TFMX	0	4756	examples/MDAT_EinmalKanzlerSein/MDAT.EinmalKanzlerSein 49
@@ -8792,7 +8792,7 @@ ba900381ce6c5ed5e55beb3a79c80efb	0	3878	player	uade	Sierra AGI	0	186	examples/AG
 ba900381ce6c5ed5e55beb3a79c80efb	0	3878	player	uade	Sierra AGI	0	186	examples/AGI_GoldRush/AGI.GoldRush 34
 ba925c24dedb8a3dbaa668c614f2c4fc	0	45553	player	uade	SoundPlayer	0	5415	examples/SJS_OhNoMoreLemmings/SJS.tune2
 ba98abf488978bea5dee9bc04b13e2c9	0	1265	player	uade	Sierra AGI	0	66	examples/AGI_Manhunter1/AGI.ManhunterI 70
-baa915e96063029a977baacac60a5b22	0	73577	loop	uade	Sonic(pc)all	0	74550	examples/SA_DimosQuest/SA.Dimo'sQuest 6
+baa915e96063029a977baacac60a5b22	0	72037	player	uade	Sonic Arranger	0	74550	examples/SA_DimosQuest/SA.Dimo'sQuest 6
 baae02ff00aef9cf72b46391de7c0507	0	482	player	uade	Sierra AGI	0	76	examples/AGI_LeisureSuitLarry1/AGI.LeisureSuitLarryI 18
 baae02ff00aef9cf72b46391de7c0507	0	482	player	uade	Sierra AGI	0	76	examples/AGI_LeisureSuitLarry1/AGI.LeisureSuitLarryI 21
 baafada2b1f9d99c7946b7299618cc6e	0	92071	player	uade	PumaTracker	0	6256	examples/PUMA_SnowBros/PUMA.arcade12
@@ -9024,7 +9024,7 @@ bfc22c373ebf12d26f097c2f0e52f2ac	0	622	player	uade	Sierra AGI	0	111	examples/AGI
 bfc697c06b2d8109855a0ebe8c4dd35e	1	23048	player	uade	Hippel-COSO	0	49048	examples/SOC_APrehistoricTale/SOC.APrehistoricTale 1
 bfc697c06b2d8109855a0ebe8c4dd35e	2	138268	player
 bfca2729b43adbc510034d3ae16d93e7	1	76920	player	uade	Protracker	0	46894	rips/MOD_Simulman01/MOD.cactus
-bfca8abb99b9d651b87c6c9224ec7f9c	0	141710	loop	uade	Sonic(pc)all	0	45846	examples/SA_DimosQuest/SA.Dimo'sQuest 2
+bfca8abb99b9d651b87c6c9224ec7f9c	0	103519	loop	uade	Sonic Arranger	0	45846	examples/SA_DimosQuest/SA.Dimo'sQuest 2
 bfcc2f2ccfb48ea2fe3648c9519a0006	0	326715	player+volume	uade	Sonix Music Driver	0	20218	examples/SMUS_Harpsichord/Harpsichord/SMUS.Chromatic1
 bfec088506d10c97b25d6497a17c4cfe	0	823	player	uade	Sierra AGI	0	131	examples/AGI_KingsQuest1/AGI.King'sQuestI 20
 bfec984443d5d6434b3fac20c4a59708	1	192736	player+silence	uade	Noisetracker (M&K!)	0	205342	examples/NT_HisMastersNoise/mod.Skreckeksempel
@@ -9553,7 +9553,7 @@ cc592c6f96ee30b7c027d01e1936bdb8	3	71415	player
 cc592c6f96ee30b7c027d01e1936bdb8	4	3616	player
 cc592c6f96ee30b7c027d01e1936bdb8	5	0	nosound
 cc592c6f96ee30b7c027d01e1936bdb8	6	0	nosound
-cc6bbb97384d83154711a8dfe3e455ff	0	125113	loop	uade	Sonic(pc)all	0	77508	examples/SA_MarvinMarvellous/SA.MarvinMarvellous LAN
+cc6bbb97384d83154711a8dfe3e455ff	0	123844	loop	uade	Sonic Arranger	0	77508	examples/SA_MarvinMarvellous/SA.MarvinMarvellous LAN
 cc7a4486b60973e332d19dcf4320efe8	0	140820	player	uade	TFMX Pro	0	4928	examples/TFMX_Apidya/MDAT.Apidya world5
 cc7a4486b60973e332d19dcf4320efe8	1	241	player
 cc7a4486b60973e332d19dcf4320efe8	2	2431	player
@@ -9750,8 +9750,8 @@ d117332183b4082f8eb969a6df360f28	7	24474	player
 d117332183b4082f8eb969a6df360f28	8	28291	silence
 d117332183b4082f8eb969a6df360f28	9	38442	silence
 d11b8c1b190a00d796c629729adbaa78	1	7796	player	uade	Soundtracker II (15 instr.)	0	12996	rips/ST_TimesOfLore/MOD.TimesOfLore ingame 8
-d120ee9279c67312082a247138a71f5d	0	129883	loop	uade	Sonic(pc)all	0	41554	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level1
-d120ee9279c67312082a247138a71f5d	1	58659	loop
+d120ee9279c67312082a247138a71f5d	0	128020	player	uade	Sonic Arranger	0	41554	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_level1
+d120ee9279c67312082a247138a71f5d	1	51220	player
 d123e1056d4ce895b7c0e26bdd38114e	1	107645	player	uade	Protracker	0	61354	rips/MOD_Kretacz/MOD.quadroscope
 d12affd1785ecdebc533286c7e066729	1	143493	player	uade	Soundtracker II (15 instr.)	0	84902	rips/ST_Classic/MOD.monty-hiscore
 d13e4c0b56555061486acf0fa31c6d1d	0	9665	player	uade	TFMX	0	4524	examples/MDAT_EinmalKanzlerSein/MDAT.EinmalKanzlerSein 04
@@ -10897,7 +10897,7 @@ ec94de268ca698526c8dee7331045192	0	117732	player	uade	MultiMedia Sound	0	113860	
 ecac8f4bb5276647ca3709ea67a1b423	0	20777	player	uade	Sierra AGI	0	991	examples/AGI_KingsQuest4/AGI.King'sQuestIV 85
 ecbd298fc60ba884d3c36b36fb73dbe6	1	53872	player	uade	Protracker	0	26750	rips/MOD_DylanDog05/MOD.st4
 ecc6cb6e102d2649beb79e8c24dd6cb0	0	7471	player+silence	uade	SoundFX	0	19920	rips/SFX_BushBuck/SFX.BushBuck 18
-ecc8a7d8b21a5267ca0a648c3e656714	0	521611	loop	uade	Sonic(pc)all	0	200232	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_medley
+ecc8a7d8b21a5267ca0a648c3e656714	0	518432	player	uade	Sonic Arranger	0	200232	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_medley
 ece67512a5797305ee5a210a9a3cc09e	0	77141	player	uade	TFMX Pro	0	7416	examples/TFMX_Patrician/MDAT.ongame1 (author)
 ece67512a5797305ee5a210a9a3cc09e	1	77141	player
 ece67512a5797305ee5a210a9a3cc09e	2	30704	player
@@ -10938,10 +10938,10 @@ edbd85ea8f28732117d125edfcd858dd	0	14427	player	uade	Sonic Arranger	0	29772	exam
 edc44b12cb247b365bc9705921b807ca	0	278426	player	uade	Sonic Arranger	0	61982	examples/SA_Lionheart/SA.Lionheart level 5
 edc44b12cb247b365bc9705921b807ca	1	2893	player
 ede2b58fc43f1d0457aec18458e1d381	0	3114	player	uade	Sierra AGI	0	336	examples/AGI_Manhunter2/AGI.ManhunterII 029
-edf3df20baa92770ce37f8d44826a146	0	182317	loop	uade	Sonic(pc)all	0	85484	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_title1
-edf3df20baa92770ce37f8d44826a146	1	72974	loop
-edf3df20baa92770ce37f8d44826a146	2	76727	loop
-edf3df20baa92770ce37f8d44826a146	3	33910	loop
+edf3df20baa92770ce37f8d44826a146	0	145944	player	uade	Sonic Arranger	0	85484	examples/SA_MarvinMarvellous/SA.MarvinMarvellous tm_title1
+edf3df20baa92770ce37f8d44826a146	1	92172	player
+edf3df20baa92770ce37f8d44826a146	2	76820	player
+edf3df20baa92770ce37f8d44826a146	3	1306	player
 edf41aa819878b7984ffa3dc07ca8ba1	1	69566	player	uade	Protracker	0	6428	rips/MOD_NoiseFromHeaven3/MOD.NinjaStyle
 edfcec07d4e15e27e5cf72621bede998	0	147994	player	uade	CustomPlay	0	204296	customs/Conqueror/CUST.Conqueror
 ee05f91fd82a855aed0f47ce2f5b0999	0	114256	player	uade	SoundFX	0	37392	rips/SoundFX13Sets2/Mods/SFX.BOND22
@@ -11415,15 +11415,15 @@ f68ca99e6b138e8fe7edfc451a524ac0	1	64120	player	uade	Protracker	0	27460	rips/MOD
 f6a07a2c4433e2d7e52feade0c4f6f0e	0	1507	player	uade	Magnetic Fields Packer	0	1594	examples/MFP_KidChaos/MFP.KidChaos-Results
 f6abd0539d807dd82a2fbda2eac79032	0	100350	player	uade	Quartet ST	0	7624	examples/QTS_DecadeDemo/QTS.DecadeDemo 23
 f6b039b42f59e12153760fded51e3f33	1	76920	player	uade	Protracker	0	29940	rips/MOD_Tex08/MOD.epilog
-f6bd13c53964710142aaf02143099aed	0	149963	loop	uade	Sonic(pc)all	0	38938	examples/SA_MarvinMarvellous/SA.MarvinMarvellous ingames
-f6bd13c53964710142aaf02143099aed	1	68539	loop
-f6bd13c53964710142aaf02143099aed	2	193691	loop
-f6bd13c53964710142aaf02143099aed	3	47118	loop
-f6bd13c53964710142aaf02143099aed	4	4528	silence
-f6bd13c53964710142aaf02143099aed	5	5239	silence
-f6bd13c53964710142aaf02143099aed	6	4981	silence
-f6bd13c53964710142aaf02143099aed	7	6870	silence
-f6bd13c53964710142aaf02143099aed	8	4563	silence
+f6bd13c53964710142aaf02143099aed	0	141624	player	uade	Sonic Arranger	0	38938	examples/SA_MarvinMarvellous/SA.MarvinMarvellous ingames
+f6bd13c53964710142aaf02143099aed	1	31688	player
+f6bd13c53964710142aaf02143099aed	2	130572	player
+f6bd13c53964710142aaf02143099aed	3	42740	player
+f6bd13c53964710142aaf02143099aed	4	4514	player+silence
+f6bd13c53964710142aaf02143099aed	5	5252	player+silence
+f6bd13c53964710142aaf02143099aed	6	4822	player
+f6bd13c53964710142aaf02143099aed	7	6882	player+silence
+f6bd13c53964710142aaf02143099aed	8	3215	player
 f6bfd35056105a9b53b73a94f465a977	1	338045	player	uade	Protracker	0	187036	rips/MOD_VeStinuMagie/MOD.ve stinu magie
 f6c616e5d0e648ebca05daca2427cab3	0	507018	player	uade	Jeroen Tel	0	114462	examples/JT_Stormlordbeta/JT.Stormlord ingame
 f6c616e5d0e648ebca05daca2427cab3	1	357256	player
@@ -11465,12 +11465,12 @@ f76db2cf3f82d949188b1a9c6e1db931	1	5244	player	uade	Soundtracker II (15 instr.)	
 f77a739d9257236070649c1dd4fe77bf	0	2371	player	uade	Sierra AGI	0	271	examples/AGI_KingsQuest1/AGI.King'sQuestI 10
 f78234e57126075367f57ec7e7be8e11	1	7796	player	uade	Soundtracker II (15 instr.)	0	29324	rips/ST_DragonSpirit/MOD.end 3
 f784b1784c488d9b3cedfbc46d3aa5c4	1	30824	player	uade	Protracker	0	20464	rips/MOD_Diabolik01/MOD.st4
-f784b87523c37af7552959dc802013ea	0	0	nosound	uade	Sonic(pc)all	0	128356	examples/SA_AmberMoon/SA.AmberMoon extro
+f784b87523c37af7552959dc802013ea	0	0	nosound	uade	Sonic Arranger	0	128356	examples/SA_AmberMoon/SA.AmberMoon extro
 f784b87523c37af7552959dc802013ea	1	0	nosound
-f784b87523c37af7552959dc802013ea	10	113384	loop
+f784b87523c37af7552959dc802013ea	10	0	nosound
 f784b87523c37af7552959dc802013ea	100	0	nosound
 f784b87523c37af7552959dc802013ea	101	0	nosound
-f784b87523c37af7552959dc802013ea	102	0	error
+f784b87523c37af7552959dc802013ea	102	0	nosound
 f784b87523c37af7552959dc802013ea	103	0	nosound
 f784b87523c37af7552959dc802013ea	104	0	nosound
 f784b87523c37af7552959dc802013ea	105	0	nosound
@@ -11491,14 +11491,14 @@ f784b87523c37af7552959dc802013ea	118	0	nosound
 f784b87523c37af7552959dc802013ea	119	0	nosound
 f784b87523c37af7552959dc802013ea	12	0	nosound
 f784b87523c37af7552959dc802013ea	120	0	nosound
-f784b87523c37af7552959dc802013ea	121	0	error
+f784b87523c37af7552959dc802013ea	121	0	nosound
 f784b87523c37af7552959dc802013ea	122	0	nosound
 f784b87523c37af7552959dc802013ea	123	0	nosound
 f784b87523c37af7552959dc802013ea	124	0	nosound
 f784b87523c37af7552959dc802013ea	125	0	nosound
 f784b87523c37af7552959dc802013ea	126	0	nosound
-f784b87523c37af7552959dc802013ea	127	0	nosound
-f784b87523c37af7552959dc802013ea	128	0	nosound
+f784b87523c37af7552959dc802013ea	127	46259	loop
+f784b87523c37af7552959dc802013ea	128	36491	loop
 f784b87523c37af7552959dc802013ea	129	0	nosound
 f784b87523c37af7552959dc802013ea	13	0	nosound
 f784b87523c37af7552959dc802013ea	130	0	nosound
@@ -11540,12 +11540,12 @@ f784b87523c37af7552959dc802013ea	162	0	nosound
 f784b87523c37af7552959dc802013ea	163	0	nosound
 f784b87523c37af7552959dc802013ea	164	0	nosound
 f784b87523c37af7552959dc802013ea	165	0	nosound
-f784b87523c37af7552959dc802013ea	166	112272	loop
+f784b87523c37af7552959dc802013ea	166	0	nosound
 f784b87523c37af7552959dc802013ea	167	0	nosound
 f784b87523c37af7552959dc802013ea	168	0	nosound
 f784b87523c37af7552959dc802013ea	169	0	nosound
 f784b87523c37af7552959dc802013ea	17	0	nosound
-f784b87523c37af7552959dc802013ea	170	128798	loop
+f784b87523c37af7552959dc802013ea	170	0	nosound
 f784b87523c37af7552959dc802013ea	171	0	nosound
 f784b87523c37af7552959dc802013ea	172	0	nosound
 f784b87523c37af7552959dc802013ea	173	0	nosound
@@ -11555,7 +11555,7 @@ f784b87523c37af7552959dc802013ea	176	0	nosound
 f784b87523c37af7552959dc802013ea	177	0	nosound
 f784b87523c37af7552959dc802013ea	178	0	nosound
 f784b87523c37af7552959dc802013ea	179	0	nosound
-f784b87523c37af7552959dc802013ea	18	75289	loop
+f784b87523c37af7552959dc802013ea	18	0	nosound
 f784b87523c37af7552959dc802013ea	180	0	nosound
 f784b87523c37af7552959dc802013ea	181	0	nosound
 f784b87523c37af7552959dc802013ea	182	0	nosound
@@ -11564,7 +11564,7 @@ f784b87523c37af7552959dc802013ea	184	0	nosound
 f784b87523c37af7552959dc802013ea	185	0	nosound
 f784b87523c37af7552959dc802013ea	186	0	nosound
 f784b87523c37af7552959dc802013ea	187	0	nosound
-f784b87523c37af7552959dc802013ea	188	141038	loop
+f784b87523c37af7552959dc802013ea	188	136158	player
 f784b87523c37af7552959dc802013ea	189	0	nosound
 f784b87523c37af7552959dc802013ea	19	0	nosound
 f784b87523c37af7552959dc802013ea	190	0	nosound
@@ -11577,7 +11577,7 @@ f784b87523c37af7552959dc802013ea	196	0	nosound
 f784b87523c37af7552959dc802013ea	197	0	nosound
 f784b87523c37af7552959dc802013ea	198	0	nosound
 f784b87523c37af7552959dc802013ea	199	0	nosound
-f784b87523c37af7552959dc802013ea	2	113384	loop
+f784b87523c37af7552959dc802013ea	2	0	nosound
 f784b87523c37af7552959dc802013ea	20	0	nosound
 f784b87523c37af7552959dc802013ea	200	0	nosound
 f784b87523c37af7552959dc802013ea	201	0	nosound
@@ -11640,7 +11640,7 @@ f784b87523c37af7552959dc802013ea	252	0	nosound
 f784b87523c37af7552959dc802013ea	253	0	nosound
 f784b87523c37af7552959dc802013ea	254	0	nosound
 f784b87523c37af7552959dc802013ea	255	0	nosound
-f784b87523c37af7552959dc802013ea	26	75289	loop
+f784b87523c37af7552959dc802013ea	26	0	nosound
 f784b87523c37af7552959dc802013ea	27	0	nosound
 f784b87523c37af7552959dc802013ea	28	0	nosound
 f784b87523c37af7552959dc802013ea	29	0	nosound
@@ -11653,25 +11653,25 @@ f784b87523c37af7552959dc802013ea	34	0	nosound
 f784b87523c37af7552959dc802013ea	35	0	nosound
 f784b87523c37af7552959dc802013ea	36	0	nosound
 f784b87523c37af7552959dc802013ea	37	0	nosound
-f784b87523c37af7552959dc802013ea	38	140532	loop
+f784b87523c37af7552959dc802013ea	38	0	nosound
 f784b87523c37af7552959dc802013ea	39	0	nosound
 f784b87523c37af7552959dc802013ea	4	0	nosound
-f784b87523c37af7552959dc802013ea	40	32229	loop
+f784b87523c37af7552959dc802013ea	40	0	nosound
 f784b87523c37af7552959dc802013ea	41	0	nosound
 f784b87523c37af7552959dc802013ea	42	0	nosound
-f784b87523c37af7552959dc802013ea	43	37434	loop
+f784b87523c37af7552959dc802013ea	43	34159	loop
 f784b87523c37af7552959dc802013ea	44	0	nosound
-f784b87523c37af7552959dc802013ea	45	44387	loop
-f784b87523c37af7552959dc802013ea	46	112872	loop
-f784b87523c37af7552959dc802013ea	47	43357	loop
+f784b87523c37af7552959dc802013ea	45	1118788	player
+f784b87523c37af7552959dc802013ea	46	24122	loop
+f784b87523c37af7552959dc802013ea	47	3239678	player
 f784b87523c37af7552959dc802013ea	48	0	nosound
 f784b87523c37af7552959dc802013ea	49	0	nosound
 f784b87523c37af7552959dc802013ea	5	0	nosound
-f784b87523c37af7552959dc802013ea	50	117597	loop
+f784b87523c37af7552959dc802013ea	50	0	nosound
 f784b87523c37af7552959dc802013ea	51	0	nosound
 f784b87523c37af7552959dc802013ea	52	0	nosound
 f784b87523c37af7552959dc802013ea	53	0	nosound
-f784b87523c37af7552959dc802013ea	54	113387	loop
+f784b87523c37af7552959dc802013ea	54	0	nosound
 f784b87523c37af7552959dc802013ea	55	0	nosound
 f784b87523c37af7552959dc802013ea	56	0	nosound
 f784b87523c37af7552959dc802013ea	57	0	nosound
@@ -11681,24 +11681,24 @@ f784b87523c37af7552959dc802013ea	6	0	nosound
 f784b87523c37af7552959dc802013ea	60	0	nosound
 f784b87523c37af7552959dc802013ea	61	0	nosound
 f784b87523c37af7552959dc802013ea	62	0	nosound
-f784b87523c37af7552959dc802013ea	63	0	nosound
-f784b87523c37af7552959dc802013ea	64	0	nosound
+f784b87523c37af7552959dc802013ea	63	79284	loop
+f784b87523c37af7552959dc802013ea	64	1830668	player
 f784b87523c37af7552959dc802013ea	65	0	nosound
 f784b87523c37af7552959dc802013ea	66	0	nosound
-f784b87523c37af7552959dc802013ea	67	0	nosound
+f784b87523c37af7552959dc802013ea	67	49403	loop
 f784b87523c37af7552959dc802013ea	68	0	nosound
 f784b87523c37af7552959dc802013ea	69	0	nosound
 f784b87523c37af7552959dc802013ea	7	0	nosound
 f784b87523c37af7552959dc802013ea	70	0	nosound
 f784b87523c37af7552959dc802013ea	71	0	nosound
-f784b87523c37af7552959dc802013ea	72	0	nosound
+f784b87523c37af7552959dc802013ea	72	1844171	player
 f784b87523c37af7552959dc802013ea	73	0	nosound
 f784b87523c37af7552959dc802013ea	74	0	nosound
-f784b87523c37af7552959dc802013ea	75	0	nosound
-f784b87523c37af7552959dc802013ea	76	0	nosound
+f784b87523c37af7552959dc802013ea	75	80275	loop
+f784b87523c37af7552959dc802013ea	76	2107185	player
 f784b87523c37af7552959dc802013ea	77	0	nosound
 f784b87523c37af7552959dc802013ea	78	0	nosound
-f784b87523c37af7552959dc802013ea	79	0	nosound
+f784b87523c37af7552959dc802013ea	79	48403	loop
 f784b87523c37af7552959dc802013ea	8	0	nosound
 f784b87523c37af7552959dc802013ea	80	0	nosound
 f784b87523c37af7552959dc802013ea	81	0	nosound
@@ -11715,11 +11715,11 @@ f784b87523c37af7552959dc802013ea	90	0	nosound
 f784b87523c37af7552959dc802013ea	91	0	nosound
 f784b87523c37af7552959dc802013ea	92	0	nosound
 f784b87523c37af7552959dc802013ea	93	0	nosound
-f784b87523c37af7552959dc802013ea	94	113390	loop
+f784b87523c37af7552959dc802013ea	94	0	nosound
 f784b87523c37af7552959dc802013ea	95	0	nosound
 f784b87523c37af7552959dc802013ea	96	0	nosound
 f784b87523c37af7552959dc802013ea	97	0	nosound
-f784b87523c37af7552959dc802013ea	98	117598	loop
+f784b87523c37af7552959dc802013ea	98	0	nosound
 f784b87523c37af7552959dc802013ea	99	0	nosound
 f78a5e969579228744bc2261d78fff6c	1	38420	player	uade	Special FX ST	0	6212	examples/DODA_PushOver/DODA.PushOver mechanic
 f78bd1c6bbc3f97cc2a8362d8dfb2ce5	1	69224	player	uade	Noisetracker 2.x	0	146398	rips/MOD_1000Miglia/MOD.millemiglia'29
