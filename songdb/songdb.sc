@@ -9,12 +9,15 @@
 //> using file scripts/pretty.sc
 //> using file scripts/combine.sc
 
-//> using file scripts/sources.sc
 //> using file scripts/songlengths.sc
-//> using file scripts/unexotica.sc
-//> using file scripts/amp.sc
-//> using file scripts/demozoo.sc
-//> using file scripts/modland.sc
+//> using file scripts/sources/sources.sc
+//> using file scripts/sources/unexotica.sc
+//> using file scripts/sources/amp.sc
+//> using file scripts/sources/demozoo.sc
+//> using file scripts/sources/modland.sc
+//> using file scripts/sources/oldexotica.sc
+//> using file scripts/sources/wantedteam.sc
+//> using file scripts/sources/modsanthology.sc
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -41,8 +44,29 @@ var ampdata: Buffer[MetaData] = Buffer.empty
 var modlanddata: Buffer[MetaData] = Buffer.empty
 var unexoticadata: Buffer[MetaData] = Buffer.empty
 var demozoodata: Buffer[MetaData] = Buffer.empty
+var oldexoticadata: Buffer[MetaData] = Buffer.empty
+var wantedteamdata: Buffer[MetaData] = Buffer.empty
+var modsanthologydata: Buffer[MetaData] = Buffer.empty
 
-def processMetaTsvs(entries: Buffer[MetaData], name: String) = {
+def dedupMeta(entries: Buffer[MetaData], name: String) = {
+  val dedupped = entries.groupBy(_.md5).map { case (md5, metas) =>
+    if (metas.size > 1) {
+      System.err.println(s"WARN: removing duplicate entries in ${name}, md5: ${metas.head.md5} entries: ${metas}")
+    }
+    val SORT = "\u0001"
+    val meta = metas.sortBy(m => ("" +
+     (if (m.year == 0) 9999 else m.year) + SORT +
+     (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) +
+     m.album + SORT +
+     (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
+    )).head
+    MetaData(md5, meta.authors, meta.publishers, meta.album, meta.year)
+  }.toBuffer
+  dedupped
+}
+
+def processMetaTsvs(_entries: Buffer[MetaData], name: String) = {
+  val entries = dedupMeta(_entries, name)
   // encoding does also deduplication
   val encoded = encodeMetaTsv(entries, name)
   val decoded = decodeMetaTsv(encoded, idx2md5)
@@ -134,7 +158,7 @@ lazy val ampTsvs = Future(_try {
         m.md5.take(12),
         m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
         Buffer.empty,
-        "",
+        m.album,
         0
       ))
     } else None
@@ -148,6 +172,7 @@ lazy val modlandTsvs = Future(_try {
     var path =
       if (e.path.startsWith("Ad Lib/")) e.path.substring("Ad Lib/".length)
       else e.path
+    val format = path.substring(0, path.indexOf("/"))
     path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     if (path != "- unknown" && path != "_unknown") {
       modland.parseModlandAuthorAlbum(path).map { case (authors, album) =>
@@ -170,11 +195,11 @@ lazy val unexoticaTsvs = Future(_try {
     val md5 = m._1
     val path = m._2
     val authorAlbum = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/")).split("/")
-    val authors = Buffer(unexotica.transformAuthor(authorAlbum(0)))
+    val authors = Buffer(unexotica.transformAuthors(authorAlbum(0)))
     val filesize = m._3
     val meta = m._4
     val album = unexotica.transformAlbum(meta, authorAlbum)
-    val publishers = Buffer(unexotica.transformPublisher(meta))
+    val publishers = unexotica.transformPublishers(meta)
     val year = meta.year.fold(_.toString, _.toString)
     MetaData(
       md5.take(12),
@@ -190,21 +215,24 @@ lazy val unexoticaTsvs = Future(_try {
 
 lazy val demozooTsvs = Future(_try {
   val entries = demozoo.metas.par.flatMap { case (md5, m) =>
-    val dates = Seq(m.modDate, m.prodDate).filterNot(_.isEmpty)
+    val dates = Seq(m.modDate, m.prodDate, m.partyDate.getOrElse("")).filterNot(_.isEmpty)
+    val earliestDate = if (dates.isEmpty) "" else dates.min
     val authors = m.authors.filterNot(_ == "?").sorted.toBuffer
+    val useProd = !m.prod.isEmpty && (m.prodDate == earliestDate || m.partyDate.getOrElse("") != earliestDate)
     val info = MetaData(
       md5.take(12),
       if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
       ((m.prodPublishers, m.party, m.modPublishers) match {
-        case (prod,_,_) if !prod.isEmpty =>
+        case (prod,_,_) if useProd =>
           if (prod.forall(_.trim.isEmpty)) Buffer.empty else prod.toBuffer
-        case (_,party,_) if !party.isEmpty => Buffer(party.get)
+        case (_,party,_) if !party.isEmpty =>
+          Buffer(party.get)
         case (_,_,mod) if !mod.isEmpty =>
           if (mod.forall(_.trim.isEmpty)) Buffer.empty else mod.toBuffer
         case _ => Buffer.empty
       }).sorted,
-      m.prod.trim,
-      if (!dates.isEmpty) dates.min.substring(0,4).toInt else 0
+      if (useProd) m.prod.trim else "",
+      if (!earliestDate.isEmpty) earliestDate.substring(0,4).toInt else 0
       //if (!m.prodPlatforms.isEmpty) m.prodPlatforms else m.modPlatform
     )
     info match {
@@ -216,14 +244,81 @@ lazy val demozooTsvs = Future(_try {
   demozoodata = processMetaTsvs(entries, "demozoo.tsv")
 })
 
+lazy val oldexoticaTsvs = Future(_try {
+  val entries = oldexotica.metas.par.flatMap { m =>
+    val authors = oldexotica.transformAuthors(m)
+    val publishers = oldexotica.transformPublishers(m)
+    val album = oldexotica.transformAlbum(m)
+    val year = m.year.getOrElse(0)
+    if (authors.isEmpty && publishers.isEmpty && album.isEmpty && year == 0) None
+    else Some(MetaData(
+      m.md5.take(12),
+      authors,
+      publishers,
+      album,
+      year
+    ))
+  }.toBuffer.distinct
+
+  oldexoticadata = processMetaTsvs(entries, "oldexotica.tsv")
+})
+
+lazy val wantedteamTsvs = Future(_try {
+  val entries = wantedteam.metas.par.flatMap { m =>
+    if (m.authors.isEmpty && m.publishers.isEmpty && m.album.isEmpty && !m.year.isDefined) None
+    else Some(MetaData(
+      m.md5.take(12),
+      m.authors,
+      m.publishers,
+      m.album,
+      m.year.getOrElse(0)
+    ))
+  }.toBuffer.distinct
+
+  wantedteamdata = processMetaTsvs(entries, "wantedteam.tsv")
+})
+
+lazy val modsanthologyTsvs = Future(_try {
+  val entries = modsanthology.metas.par.flatMap { m =>
+    if (m.authors.isEmpty && m.publishers.isEmpty && m.album.isEmpty && !m.year.isDefined) None
+    else Some(MetaData(
+      m.md5.take(12),
+      m.authors,
+      m.publishers,
+      m.album,
+      m.year.getOrElse(0)
+    ))
+  }.toBuffer.distinct
+
+  modsanthologydata = processMetaTsvs(entries, "modsanthology.tsv")
+})
+
 // needs to be processed first
 Await.ready(md5idxTsv, Duration.Inf)
 val future = Future.sequence(
-  Seq(md5idxTsv, songlengthsTsvs, modinfosTsvs, ampTsvs, modlandTsvs, unexoticaTsvs, demozooTsvs)
+  Seq(md5idxTsv,
+      songlengthsTsvs,
+      modinfosTsvs,
+      ampTsvs,
+      modlandTsvs,
+      unexoticaTsvs,
+      demozooTsvs,
+      oldexoticaTsvs,
+      wantedteamTsvs,
+      modsanthologyTsvs
+  )
 
 ) andThen {
   case _ =>
-    val combined = combineMetadata(ampdata, modlanddata, unexoticadata, demozoodata)
+    val combined = combineMetadata(
+      ampdata,
+      modlanddata,
+      unexoticadata,
+      demozoodata,
+      oldexoticadata,
+      wantedteamdata,
+      modsanthologydata
+    )
     processMetaTsvs(combined, "combined.tsv")
 }
 
