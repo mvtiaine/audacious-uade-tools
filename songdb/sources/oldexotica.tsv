@@ -320,11 +320,11 @@
 06b0dfec21966af516aaf80fde1db077	0	80698	player	uade	FutureComposer 1.3	0	6378	FC13-FutureComposer/FC13.tristar/FC13.tristar
 06b890430af28b89de13435e00f820b2	1	48010	loop	uade	MON	0	7788	MON-ManiacsOfNoise-New/MON.Gyroscope_Bug/MON.Gyroscope_Bug
 06be02e465330f4af6b0dddfecc8f771	0	98710	silence	uade	Infogrames	0	2179	RH-RobHubbard-2/Ween/Ween/MUS2c.DUM
-06c73c16252e1920d6e6409a630a26a9	0	30744	player	uade	TFMX Pro	0	3532	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/Karamalz/mdat.Ongame
+06c73c16252e1920d6e6409a630a26a9	0	22486	player+silence	uade	TFMX Pro	0	3532	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/Karamalz/mdat.Ongame
 06c73c16252e1920d6e6409a630a26a9	1	23912	player
 06c73c16252e1920d6e6409a630a26a9	2	7696	player
-06c73c16252e1920d6e6409a630a26a9	3	10385	player+silence
-06c73c16252e1920d6e6409a630a26a9	4	8292	player+silence
+06c73c16252e1920d6e6409a630a26a9	3	10377	player+silence
+06c73c16252e1920d6e6409a630a26a9	4	8324	player+silence
 06e2d57e413adfdca1410876ecd19c7d	1	261518	loop	uade	The YM2149 Player v1.52c	0	2312	YM-YM2149/Hippel/Hippel/MCoder/YM.EnchantedLand_Level3
 06ece54129079ebe215b8d7e7a53a56d	1	135961	loop	uade	The YM2149 Player v1.52c	0	6396	YM-YM2149/Jones/Jones/YM.1stSamurai
 06ece54129079ebe215b8d7e7a53a56d	2	67018	loop
@@ -398,8 +398,8 @@
 090c016baaea10002b0d42fc6c58ad54	13	5787	player
 090c016baaea10002b0d42fc6c58ad54	2	6902	player+silence
 090c016baaea10002b0d42fc6c58ad54	3	7182	player+silence
-090c016baaea10002b0d42fc6c58ad54	4	6621	player+silence
-090c016baaea10002b0d42fc6c58ad54	5	6050	player+silence
+090c016baaea10002b0d42fc6c58ad54	4	6622	player+silence
+090c016baaea10002b0d42fc6c58ad54	5	6061	player+silence
 090c016baaea10002b0d42fc6c58ad54	6	5144	player
 090c016baaea10002b0d42fc6c58ad54	7	3858	player
 090c016baaea10002b0d42fc6c58ad54	8	2592	player
@@ -424,7 +424,7 @@
 0966a9a7a2cd66baca16870be4494817	5	1929	player
 0966a9a7a2cd66baca16870be4494817	6	3637	player
 0966a9a7a2cd66baca16870be4494817	7	5345	player
-0966a9a7a2cd66baca16870be4494817	8	130173	loop
+0966a9a7a2cd66baca16870be4494817	8	47653	loop
 0978cf8401d1261154b53c59ac1d28c6	0	30764	player	uade	AHX v2	0	1171	AHX-AbyssHighestExperience/Mermaid/Mermaid/AHX.Sick_of_it_all
 099002bbcefd0e9622b8693602bcbee5	0	53772	player	uade	ArtOfNoise (4ch)	0	27180	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0005
 0995447f50ce6467639d875ca84e344a	1	128020	player	uade	Hippel-COSO	0	59004	HIP-Hippel/Amberstar/Amberstar/HIPC.Amberstar-15
@@ -721,11 +721,11 @@
 1077ebebfa48a1ecdad8f3fc5688af6b	0	228934	player	uade	Sonic Arranger	0	44934	SA-SonicArranger/SA.MetalWars/SA.MetalWars
 1082bb9a814f89998f0c704feec26df3	0	62191	player	uade	TFMX Pro	0	3044	TFMX/Freak_Out/Freak_Out/mdat.ALL
 1082bb9a814f89998f0c704feec26df3	1	0	nosound
-1082bb9a814f89998f0c704feec26df3	2	8333	silence
-1082bb9a814f89998f0c704feec26df3	3	13290	silence
-1082bb9a814f89998f0c704feec26df3	4	8333	silence
-1082bb9a814f89998f0c704feec26df3	5	13443	silence
-1082bb9a814f89998f0c704feec26df3	6	10803	silence
+1082bb9a814f89998f0c704feec26df3	2	8320	silence
+1082bb9a814f89998f0c704feec26df3	3	13277	silence
+1082bb9a814f89998f0c704feec26df3	4	8320	silence
+1082bb9a814f89998f0c704feec26df3	5	13438	silence
+1082bb9a814f89998f0c704feec26df3	6	10795	silence
 108e16512379f70e0d57b7a799293d26	1	189168	loop	uade	The YM2149 Player v1.52c	0	1748	YM-YM2149/Tao/Tao/YM.Loader_Sid
 10933c0ebbafc8504e348c6432e7fd88	1	191676	loop	uade	The YM2149 Player v1.52c	0	4260	YM-YM2149/BigAlec/BigAlec/YM.Structure
 10995fb473bde2b06af1854fea3a7012	0	54937	player	uade	SoundFX	0	58732	SFX-SoundFX/GreatCourtsII/GreatCourtsII/SFX.GreatCourtsII_2
@@ -752,7 +752,7 @@
 10ffa7b2479dd877d9ca7e4c73734363	0	116143	loop	uade	SoundMon 2.2	0	34030	BP-SoundMon/Orchestral_Delights/Orchestral_Delights/BP3.Summertime
 112f22cc3c484680cc9533e073c2db9b	0	31909	player	uade	SoundMon 2.0	0	6560	BP-SoundMon/Frantic_Freddie/Frantic_Freddie/BP.Frantic_Freddie_Song_3
 11397f6c9e5e17d7670ba70fe21f6bf1	0	69124	player	uade	ArtOfNoise (4ch)	0	21600	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0052
-11475ff9d2a9cf8d98869875441fe159	1	418749	player+silence	uade	Jochen Hippel ST	0	4236	HIP-Hippel-ST/dragonflight_title.soc/dragonflight_title.soc
+11475ff9d2a9cf8d98869875441fe159	1	418750	player+silence	uade	Jochen Hippel ST	0	4236	HIP-Hippel-ST/dragonflight_title.soc/dragonflight_title.soc
 11475ff9d2a9cf8d98869875441fe159	2	1949	player
 114c38fd548ffc9748c1dc0fd1d8aa8e	0	71736	player	uade	AHX v2	0	3542	AHX-AbyssHighestExperience/Hooligan/Hooligan/AHX.Maleigh
 114c38fd548ffc9748c1dc0fd1d8aa8e	1	71736	player
@@ -885,7 +885,7 @@
 13a242410edab48afbaf4261316a5263	2	79372	player
 13a242410edab48afbaf4261316a5263	3	69144	player
 13a242410edab48afbaf4261316a5263	4	94744	player
-13a242410edab48afbaf4261316a5263	5	147542	player+volume
+13a242410edab48afbaf4261316a5263	5	147873	player
 13a242410edab48afbaf4261316a5263	6	22642	player+silence
 13a242410edab48afbaf4261316a5263	7	5787	player
 13a242410edab48afbaf4261316a5263	8	92172	player
@@ -1274,9 +1274,9 @@
 1a7fe16d62042870eb99192046d5627e	4	0	nosound
 1a7fe16d62042870eb99192046d5627e	5	0	nosound
 1a8cd1f8954d3ac911bb86f6290f69db	0	0	error	uade	MusiclineEditor	0	1647	ML-MusicLineEditor/ML.Pink2.lha
-1a8e0ddc1d36996681b124811facf87e	0	308366	player	uade	TFMX 7V	0	22912	TFMX/Turrican_3/Turrican_3/mdat.T3-Title
-1a8e0ddc1d36996681b124811facf87e	1	47904	player
-1a8e0ddc1d36996681b124811facf87e	2	289164	player+silence
+1a8e0ddc1d36996681b124811facf87e	0	308286	player	uade	TFMX 7V	0	22912	TFMX/Turrican_3/Turrican_3/mdat.T3-Title
+1a8e0ddc1d36996681b124811facf87e	1	47824	player
+1a8e0ddc1d36996681b124811facf87e	2	288610	player+silence
 1ac0ad1a5c8305e5963224671d1668e1	0	38400	player	uade	SIDMon 2.0	0	5544	SID2-SidMon-2/SID2.Carcass-DemonIntro/SID2.Carcass-DemonIntro
 1ae4f444c6ee3dbdfc1552b970b86e05	0	3500160	player	uade	SoundMon 2.0	0	39212	BP-SoundMon/Project-X/Project-X/BP.Level_3
 1aebff19cf21c1d734dfa13bdc83b8d8	0	102038	player	uade	SoundFX	0	55872	SFX-SoundFX/TwinWorld/TwinWorld/SFX.Twinworld_6-End
@@ -1299,8 +1299,8 @@
 1b148e1d4b3b98f25d1ee6fd6437e25f	0	30257	loop	uade	SoundMon 2.0	0	41084	BP-SoundMon/BP.Cardinals_Hit/BP.Cardinals_Hit
 1b181d2f48d14791482fb08a9344b518	0	222731	loop	uade	MusiclineEditor	0	103559	ML-MusicLineEditor/ML.Opra/ML.Opra
 1b1de91fbb3861f404550fc87821b954	0	0	nosound	uade	UADE	0	14140	CUST-Custom/CUST.The_Plague/CUST.The_Plague
-1b2f1e67905c4db9deb8c53f5ef69b45	0	48728	player	uade	AHX v2	0	1948	AHX-AbyssHighestExperience/FreQvibes/FreQvibes/AHX.AkSElxf.UCk!
 1b2f1e67905c4db9deb8c53f5ef69b45	0	48728	player	uade	AHX v2	0	1948	AHX-AbyssHighestExperience/FreQvibes/FreQvibes/AHX.Akself.Uck!
+1b2f1e67905c4db9deb8c53f5ef69b45	0	48728	player	uade	AHX v2	0	1948	AHX-AbyssHighestExperience/FreQvibes/FreQvibes/AHX.AkSElxf.UCk!
 1b3b7d1f10d9d1e220f6b4b475b0cecd	0	404276	player	uade	SunTronic	0	15848	CUST-SUNTronic/SUNTronicTunes/shades.src
 1b663863ba5c44535677c5f0511abf02	0	46096	player	uade	Jason Page	0	6938	JP-JasonPage/ViroCop/ViroCop/JPND.ViroCOP-04
 1b663863ba5c44535677c5f0511abf02	1	3858	player
@@ -1868,8 +1868,8 @@
 274f4a672b05eeff51655867cc8186a8	5	313480	loop+volume
 27a4fbc9a60f981871fa1b8678045a3c	1	16181	loop	uade	The YM2149 Player v1.52c	0	988	YM-YM2149/Lowe/Lowe/YM.AlteredBeast_NextLv
 27be90725a7f19140b51cfd12f3332e3	1	8339	player	uade	Jochen Hippel ST	0	928	HIP-Hippel-ST/Enchanted_Lands/Enchanted_Lands/enchanted_lands_lcomp.soc
-27be90725a7f19140b51cfd12f3332e3	2	28172	player
-27be90725a7f19140b51cfd12f3332e3	3	10248	player
+27be90725a7f19140b51cfd12f3332e3	2	28192	player
+27be90725a7f19140b51cfd12f3332e3	3	10268	player
 27c27a80e7b8a163384f0468e01623cc	1	989874	loop	uade	The YM2149 Player v1.52c	0	4028	YM-YM2149/Hippel/Hippel/DIGI/YM.GhostBattle_Title
 27c4a8255bd6ff9fa27936d33f967d0f	1	47493	loop	uade	Hudson Hawk - SpecialFX	0	72420	CUST-Custom/HudsonHawk/HudsonHawk/CUST.HudsonHawk
 27c4a8255bd6ff9fa27936d33f967d0f	10	36318	loop
@@ -1965,7 +1965,7 @@
 285c9c4061c4b2df7a5916fb59201733	0	419789	player	uade	JamCracker	0	140068	JAM-JamCracker/JAM.WalkingWaves/JAM.WalkingWaves
 285ea75d048a61650b74dfc38b98cfbb	0	81944	player	uade	TFMX Pro	0	5676	TFMX/Z-Out/Z-Out/mdat.Level6
 285ea75d048a61650b74dfc38b98cfbb	1	46116	player
-285ea75d048a61650b74dfc38b98cfbb	2	2451	player
+285ea75d048a61650b74dfc38b98cfbb	2	2431	player
 285ea75d048a61650b74dfc38b98cfbb	3	1326	player
 28620d08df52c491d08b7720e8cee69b	0	342285	player	uade	AHX v2	0	10701	AHX-AbyssHighestExperience/Pink/Pink/AHX.Stormlord
 288361dad4bdc4b9d8f00751798f5c83	0	115321	player	uade	SunTronic	0	11504	CUST-SUNTronic/SUNTronicTunes/kompo03.src
@@ -1980,10 +1980,10 @@
 28a7123c11c7690bef5a5ca26bc39d0c	0	57610	player	uade	TFMX Pro	0	8920	TFMX/Hanse/Hanse/mdat.Hanse
 28a7123c11c7690bef5a5ca26bc39d0c	1	76820	player
 28a7123c11c7690bef5a5ca26bc39d0c	10	1647	player
-28a7123c11c7690bef5a5ca26bc39d0c	11	4970	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	11	4971	player+silence
 28a7123c11c7690bef5a5ca26bc39d0c	12	4979	player+silence
 28a7123c11c7690bef5a5ca26bc39d0c	13	5459	player+silence
-28a7123c11c7690bef5a5ca26bc39d0c	14	5446	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	14	5459	player+silence
 28a7123c11c7690bef5a5ca26bc39d0c	15	6438	player+silence
 28a7123c11c7690bef5a5ca26bc39d0c	16	97316	player
 28a7123c11c7690bef5a5ca26bc39d0c	2	38420	player
@@ -2071,7 +2071,7 @@
 2b15b48a97e8c96ae899e8c0d8bcd0d8	2	150321	loop
 2b15b48a97e8c96ae899e8c0d8bcd0d8	3	38897	loop
 2b15b48a97e8c96ae899e8c0d8bcd0d8	4	20322	silence
-2b17b7bab930f73adf9c108be0125660	1	143372	player	uade	Hippel-COSO	0	4162	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_town.soc
+2b17b7bab930f73adf9c108be0125660	1	143372	player	uade	Jochen Hippel COSO	0	4162	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_town.soc
 2b17b7bab930f73adf9c108be0125660	2	199716	player
 2b17b7bab930f73adf9c108be0125660	3	163868	player
 2b18fb2c5733d4fb79315ca64ddba1b8	0	138268	player	uade	Sonic Arranger	0	55446	SONIC-SonicArranger/MarvinsMarvAdventure/MarvinsMarvAdventure/SONIC.MarvinsMA-tm_level3
@@ -2136,7 +2136,7 @@
 2c5a3ecc3c14c18d23b98d7d18346825	0	266329	player	uade	FutureComposer 1.4	0	20070	FC14-FutureComposer/Vim/Vim/FC14.thumpin
 2c72ba0795352b0569184633d604c4ee	0	158744	player	uade	Sonic Arranger	0	60068	SONIC-SonicArranger/LionHeart/LionHeart/SONIC.Lionheart-2_x
 2c72ba0795352b0569184633d604c4ee	1	2592	player
-2c73383f7ba88c7278cb2e2f581ca79d	1	248644	player+silence	uade	Jochen Hippel ST	0	3195	HIP-Hippel-ST/Ghost_Battle/Ghost_Battle/ghostbattle_level1.sdc
+2c73383f7ba88c7278cb2e2f581ca79d	1	248642	player+silence	uade	Jochen Hippel ST	0	3195	HIP-Hippel-ST/Ghost_Battle/Ghost_Battle/ghostbattle_level1.sdc
 2c9de2cbc585e9c686798e2800075213	0	3858	player	uade	SunTronic	0	7428	CUST-SUNTronic/SUNTronicTunes/suntronic-n3
 2ca29f3222e112d87b7bb8061a0be8d3	0	26276	player+silence	uade	Sonic Arranger	0	12130	SONIC-SonicArranger/LaserDance/LaserDance/SONIC.Laserdance-LaserArt1
 2cb8e8e18263c0356eca41ef7990c110	0	165154	player	uade	TFMX	0	15964	TFMX/Circus_Attractions/Circus_Attractions/mdat.Circus_Attractions-Title
@@ -2145,8 +2145,8 @@
 2ced0db9b85c11d2be4bfa90144d8d3f	0	31407	player	uade	SoundFX	0	22676	SFX-SoundFX/Venus/Venus/SFX.Venus7
 2cf830fd08314e68c4eab36c15bf5ee5	0	152380	loop	uade	MarkCookseyOld	0	59030	MC-MarkCooksey/MCO.Live_And_Let_Die/MCO.Live_And_Let_Die
 2d02fc26e346d00217cc79d5608a18a1	0	3056	silence	uade	TFMX Pro	0	1060	TFMX/Software_Manager/Software_Manager/mdat.Fx
-2d02fc26e346d00217cc79d5608a18a1	1	3119	silence
-2d02fc26e346d00217cc79d5608a18a1	2	3078	silence
+2d02fc26e346d00217cc79d5608a18a1	1	3112	silence
+2d02fc26e346d00217cc79d5608a18a1	2	3077	silence
 2d02fc26e346d00217cc79d5608a18a1	3	3821	silence
 2d02fc26e346d00217cc79d5608a18a1	4	3721	silence
 2d02fc26e346d00217cc79d5608a18a1	5	3185	silence
@@ -2474,8 +2474,8 @@
 348f92eef529e9febd7b338310207d69	1	62894	loop	uade	The YM2149 Player v1.52c	0	3300	YM-YM2149/Tao/Tao/YM.Linwu1_Sid
 34a6e210feeb0026f2bf72a30dbd6e36	0	76820	player	uade	TFMX Pro	0	4868	TFMX/Caribbean_Disaster/Caribbean_Disaster/mdat.Cred
 34b35a9fa1ec8b9566e0badacd52e504	1	140192	loop	uade	The YM2149 Player v1.52c	0	17272	YM-YM2149/ACC/ACC/SynthSamplesIV/YM.PopCorn
-34bdf1d057c07b99cffac8414cf04761	0	148516	player	uade	TFMX Pro	0	2032	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Mus
-34bdf1d057c07b99cffac8414cf04761	1	148516	player
+34bdf1d057c07b99cffac8414cf04761	0	123740	player	uade	TFMX Pro	0	2032	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Mus
+34bdf1d057c07b99cffac8414cf04761	1	123740	player
 34dc3806612bd1f570ceb727a3594785	0	6817	silence	uade	Darius Zendeh Mod - type: >1<	0	14898	DZ-DariusZendeh/R-Type1/R-Type1/DZ.Level7
 34dc3806612bd1f570ceb727a3594785	1	40560	loop
 34dc3806612bd1f570ceb727a3594785	2	26983	loop
@@ -2581,8 +2581,8 @@
 3741f1a477d9ad05d19c362e5ada4966	1	64569	loop	uade	The YM2149 Player v1.52c	0	3244	YM-YM2149/Hippel/Hippel/DIGI/YM.GhostBattle_End
 374aac1f88b7caeb4c23922728aa698f	0	111523	player	uade	AHX v2	0	1814	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Uhm
 375f096409b16ed93adef8c3029de3c1	0	92172	player	uade	TFMX Pro	0	2460	TFMX/Hexuma/Hexuma/mdat.Stoneage
-3766066d2981ddff116c74289e1b7c64	1	191761	player+silence	uade	Jochen Hippel ST	0	5176	HIP-Hippel-ST/comicbakery.sog/comicbakery.sog
-3766066d2981ddff116c74289e1b7c64	2	7438	player+silence
+3766066d2981ddff116c74289e1b7c64	1	191763	player+silence	uade	Jochen Hippel ST	0	5176	HIP-Hippel-ST/comicbakery.sog/comicbakery.sog
+3766066d2981ddff116c74289e1b7c64	2	7436	player+silence
 376dbf06a3eea9fc6b94761b25d6339c	0	135636	player	uade	SoundMon 2.0	0	12030	BP-SoundMon/Rap_Is_Crap/Rap_Is_Crap/BP.Vendetta
 37950b1c47c3a65b52a10ecaea5834d2	1	191852	loop	uade	The YM2149 Player v1.52c	0	5572	YM-YM2149/BigAlec/BigAlec/YM.SanxionMix
 37a3d74e4c41b6005f922abfe5c4f033	1	102198	loop	uade	The YM2149 Player v1.52c	0	12684	YM-YM2149/Dunn/Dunn/YM.AddamsFamily
@@ -2983,7 +2983,7 @@
 3fe88231a980c4088b14c0a75b13c473	8	26906	player
 3fff7a4ae84dd7253e8a7db0fb8b8aad	1	142227	player	uade	Soundfactory	0	77680	PSF-SoundFactory/PSF.ChristiesSong/PSF.ChristiesSong
 4006264f066b6d2aed27770cd7becdfb	0	176648	player	uade	SIDMon 2.0	0	36576	SID2-SidMon-2/Cobra/Cobra/SID2.Cobra-Stage_2
-4010ab64fa14852669cc8f0cb3a1c6e7	1	92172	player	uade	Hippel-COSO	0	35966	HIP-Hippel/Australian_Pio/Australian_Pio/australian_pio_ragti.soc
+4010ab64fa14852669cc8f0cb3a1c6e7	1	92172	player	uade	Jochen Hippel COSO	0	35966	HIP-Hippel/Australian_Pio/Australian_Pio/australian_pio_ragti.soc
 4010ab64fa14852669cc8f0cb3a1c6e7	2	51220	player
 4010ab64fa14852669cc8f0cb3a1c6e7	3	64020	player
 4010ab64fa14852669cc8f0cb3a1c6e7	4	0	nosound
@@ -3198,7 +3198,7 @@
 44a60fddd131257d897a3ed22a8bd655	3	30744	player
 44a60fddd131257d897a3ed22a8bd655	4	2451	player
 44a60fddd131257d897a3ed22a8bd655	5	2592	player
-44a60fddd131257d897a3ed22a8bd655	6	18475	silence
+44a60fddd131257d897a3ed22a8bd655	6	18483	silence
 44aa3fa5805759f89cf6e7207952d52e	0	91661	player+silence	uade	SIDMon 1.0	0	30586	SID1-SidMon-1/SID1.Anarchy/SID1.Anarchy
 44bc324c993abcc3ba9944add0852906	0	69224	player	uade	AHX v2	0	1960	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Carrera Rocks
 44c041f4a62bdb30308a0d2db677d005	0	84516	player	uade	Sonic Arranger	0	19126	SA-SonicArranger/SA.Sknint36/SA.Sknint36
@@ -3267,18 +3267,18 @@
 46ab972eb6e0fded67d7e2dc63c69edf	0	128663	player	uade	DeltaMusic 2.0	0	28568	DM-DeltaMusic/Nebulus_2/Nebulus_2/DM2.n2-Landsubgame
 46bfbaa5fdd445771d0f8d485a03750b	0	71997	player	uade	Mugician	0	7483	DMU-DigitalMugician/DMU.Langoliers/DMU.Langoliers
 46c050eff65add2e0b6a7981b528332a	0	76880	player	uade	SunTronic	0	10892	CUST-SUNTronic/SUNTronicTunes/amanzing.src
-46c98baa7fed1a3a11e4cb3e18334035	0	184344	player	uade	TFMX Pro	0	12296	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Race
-46c98baa7fed1a3a11e4cb3e18334035	1	4099	player
-46c98baa7fed1a3a11e4cb3e18334035	10	1848	player
+46c98baa7fed1a3a11e4cb3e18334035	0	153620	player	uade	TFMX Pro	0	12296	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Race
+46c98baa7fed1a3a11e4cb3e18334035	1	3416	player
+46c98baa7fed1a3a11e4cb3e18334035	10	1547	player
 46c98baa7fed1a3a11e4cb3e18334035	11	0	nosound
-46c98baa7fed1a3a11e4cb3e18334035	2	134430	player
-46c98baa7fed1a3a11e4cb3e18334035	3	17924	player
-46c98baa7fed1a3a11e4cb3e18334035	4	884	player
-46c98baa7fed1a3a11e4cb3e18334035	5	1848	player
-46c98baa7fed1a3a11e4cb3e18334035	6	3134	player
-46c98baa7fed1a3a11e4cb3e18334035	7	107544	player
-46c98baa7fed1a3a11e4cb3e18334035	8	134430	player
-46c98baa7fed1a3a11e4cb3e18334035	9	53772	player
+46c98baa7fed1a3a11e4cb3e18334035	2	112025	player
+46c98baa7fed1a3a11e4cb3e18334035	3	14950	player
+46c98baa7fed1a3a11e4cb3e18334035	4	743	player
+46c98baa7fed1a3a11e4cb3e18334035	5	1547	player
+46c98baa7fed1a3a11e4cb3e18334035	6	2612	player
+46c98baa7fed1a3a11e4cb3e18334035	7	89620	player
+46c98baa7fed1a3a11e4cb3e18334035	8	112025	player
+46c98baa7fed1a3a11e4cb3e18334035	9	44810	player
 46ec5ac0f874ee96329f3dd35569610f	0	99989	player	uade	AHX v2	0	4292	AHX-AbyssHighestExperience/Pink/Pink/AHX.pink-AxelF
 46f2cac42cd66a3f4c8d200937906f8d	0	135636	player+silence	uade	AHX v2	0	6759	AHX-AbyssHighestExperience/Pink/Pink/AHX.Unteleported
 46f90cda3358dc9593c04ac2c6ca69bd	1	172649	loop	uade	The YM2149 Player v1.52c	0	22760	YM-YM2149/SynthDream/SynthDream/Eternal/YM.JoardyGlitter
@@ -3290,7 +3290,7 @@
 47155de33e6fcdcfda9b46074c47cfdb	0	150767	player	uade	Mugician	0	100756	DMU-DigitalMugician/DMU.EditorSong/DMU.EditorSong
 472299c46f3882452c9a4f9cf54a0fed	0	161574	player+silence	uade	Sonic Arranger	0	187868	SA-SonicArranger/SA.Mega_End/SA.Mega_End
 47344131fc0648ed40e8f6769063afe6	1	3600000	timeout	uade	The YM2149 Player v1.52c	0	4588	YM-YM2149/Page/Page/YM.FireIce_Sea
-4744e8607fda30d339b6d5f814228d53	0	160289	player+silence	uade	TFMX Pro	0	6420	TFMX/Rudolf_Stember_Other/Rudolf_Stember_Other/mdat.Happy_b
+4744e8607fda30d339b6d5f814228d53	0	160306	player+silence	uade	TFMX Pro	0	6420	TFMX/Rudolf_Stember_Other/Rudolf_Stember_Other/mdat.Happy_b
 4744e8607fda30d339b6d5f814228d53	1	7696	player
 475d2e340c734d60f94c2bd8e9401612	1	228772	loop	uade	The YM2149 Player v1.52c	0	4092	YM-YM2149/Hippel/Hippel/BIG/YM.HumanRace
 475d2e340c734d60f94c2bd8e9401612	2	71483	loop
@@ -3501,9 +3501,9 @@
 4c30b6969045a2dd6e3ca05949750a42	5	0	nosound
 4c6724cd2081f9200e89e1b7545edac8	1	390431	player	uade	Jochen Hippel ST	0	11026	HIP-Hippel-ST/fifth_gear.sog/fifth_gear.sog
 4c6724cd2081f9200e89e1b7545edac8	2	72165	silence
-4c6724cd2081f9200e89e1b7545edac8	3	20162	repeat
-4c6724cd2081f9200e89e1b7545edac8	4	23068	player
-4c6724cd2081f9200e89e1b7545edac8	5	10248	player
+4c6724cd2081f9200e89e1b7545edac8	3	608337	loop
+4c6724cd2081f9200e89e1b7545edac8	4	23048	player
+4c6724cd2081f9200e89e1b7545edac8	5	10268	player
 4c84ac60c42c4895bc1acd1d33281687	1	130612	player	uade	Jochen Hippel	0	20240	HIP-Hippel/Warp/Warp/HIP.Warp-End
 4c87226f051e1edb925f9830297fc0da	1	29930	silence	uade	Jochen Hippel ST	0	2072	HIP-Hippel-ST/unknown.soc/unknown.soc
 4c954f287a39155d743b860b22fe6e9c	0	30724	player	uade	Mugician	0	20561	DMU-DigitalMugician/DMU.Songtiment/DMU.Songtiment
@@ -3550,9 +3550,9 @@
 4e72ac494e1c334a312241655dddaf97	0	176688	player	uade	SIDMon 1.0	0	17548	SID1-SidMon-1/SID1.Black_Monks_2/SID1.Black_Monks_2
 4e857d3f9f6cbc7076c725d3f476f309	0	392065	loop	uade	AProSys	0	2572	APS-AProSys/APS.StairWalking/APS.StairWalking
 4e9cbbd0af9087d86f4eeff830210d50	0	85681	player	uade	SoundFX	0	36328	SFX-SoundFX/Rolling_Ronny/Rolling_Ronny/SFX.Rolling_Ronny_2
-4ec32fe51f5ec09045a43cc2c6857a27	0	223207	player	uade	Mugician II	0	251574	DMU-DigitalMugician/Borobodur/Borobodur/DMU.Borobodur_Title
-4ec32fe51f5ec09045a43cc2c6857a27	1	62111	player
-4ec32fe51f5ec09045a43cc2c6857a27	2	19390	player
+4ec32fe51f5ec09045a43cc2c6857a27	0	222604	player	uade	Mugician II	0	251574	DMU-DigitalMugician/Borobodur/Borobodur/DMU.Borobodur_Title
+4ec32fe51f5ec09045a43cc2c6857a27	1	61950	player
+4ec32fe51f5ec09045a43cc2c6857a27	2	19350	player
 4eca7dcc38a9e5c7727ed30611c610ec	0	61191	player+silence	uade	SunTronic	0	14012	CUST-SUNTronic/SUNTronicTunes/nebulus2.src
 4ee20d5e09e09ea5aca1fa89158506b6	0	241607	silence	uade	MusiclineEditor	0	7266	ML-MusicLineEditor/Role_Model/Role_Model/ML.hartenaker
 4efdab769acda59f9548de31daf62b94	1	585537	loop	uade	The YM2149 Player v1.52c	0	6716	YM-YM2149/Hippel/Hippel/TSD/YM.CybernoidII
@@ -3638,7 +3638,7 @@
 502af9e42db56adf4484eb4e285ef20d	3	3395	player
 502af9e42db56adf4484eb4e285ef20d	4	1486	player
 502af9e42db56adf4484eb4e285ef20d	5	82426	player
-502af9e42db56adf4484eb4e285ef20d	6	3600000	timeout
+502af9e42db56adf4484eb4e285ef20d	6	233800	loop
 5042f5e91fc7cffd1ce8d6ecaffdc5ca	0	128040	player	uade	ArtOfNoise (4ch)	0	20478	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0050
 5053a98509ff617639683886990787cb	1	205619	loop	uade	The YM2149 Player v1.52c	0	18128	YM-YM2149/Hippel/Hippel/YM.TEXShow
 5053acb130a4e0f2f0ef200a4fc8b2db	0	117732	player	uade	SoundFX	0	23980	SFX-SoundFX/BattleIsle/BattleIsle/SFX13.BattleIsleData2-Map
@@ -3698,7 +3698,7 @@
 508b430fa69bec630a194b97373ee95d	2	325210	loop
 508b430fa69bec630a194b97373ee95d	3	248081	loop
 508b430fa69bec630a194b97373ee95d	4	325782	loop
-508e6528decbf4e000f2e46abcffeca0	0	208257	player	uade	Mugician II	0	181789	DMU-DigitalMugician/DMU.Hoi-Intro/DMU.Hoi-Intro
+508e6528decbf4e000f2e46abcffeca0	0	207694	player	uade	Mugician II	0	181789	DMU-DigitalMugician/DMU.Hoi-Intro/DMU.Hoi-Intro
 50b942550a1770b5c7cea7584dd0415b	1	96982	silence	uade	The YM2149 Player v1.52c	0	2988	YM-YM2149/Daglish/Daglish/YM.WinterGames_Jazz
 50c6f2acae6027df0816b75e98af1389	0	226364	player+silence	uade	SoundMon 2.0	0	91576	BP-SoundMon/BP.Instructions/BP.Instructions
 50e17bb7b928be29135f8a45ac8b473a	0	107685	player	uade	AHX v2	0	2678	AHX-AbyssHighestExperience/Mr.Young/Mr.Young/AHX.cApTuRe
@@ -3794,16 +3794,16 @@
 535faad9fb414f96e6d53777d85073fc	6	50818	player
 536ccc1adfac8476bd05765aa202a4b7	0	138268	player	uade	Sonic Arranger	0	13454	SA-SonicArranger/SA.Hamm_di_damm_di/SA.Hamm_di_damm_di
 537be6b43995524e8e1c4af4d94849b8	0	257268	player+volume	uade	FutureComposer 1.3	0	19456	FC13-FutureComposer/Hydra/Hydra/FC13.hydra_evil_spell
-5389fe4d04743466d8289484638f7583	1	649219	player+silence	uade	Hippel-COSO	0	49456	HIP-Hippel/Australian_Pio/Australian_Pio/austalian_pio_ongame.soc
+5389fe4d04743466d8289484638f7583	1	616564	player+silence	uade	Jochen Hippel COSO	0	49456	HIP-Hippel/Australian_Pio/Australian_Pio/austalian_pio_ongame.soc
 5389fe4d04743466d8289484638f7583	2	0	nosound
-539abc9c8ae743056a4f7bb96c8e00bc	0	213139	player	uade	TFMX Pro	0	11160	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Title
-539abc9c8ae743056a4f7bb96c8e00bc	1	124182	player
-539abc9c8ae743056a4f7bb96c8e00bc	2	22445	player
-539abc9c8ae743056a4f7bb96c8e00bc	3	11554	player
-539abc9c8ae743056a4f7bb96c8e00bc	4	5767	player
-539abc9c8ae743056a4f7bb96c8e00bc	5	46116	player
-539abc9c8ae743056a4f7bb96c8e00bc	6	40972	player
-539d99b331075d5ed480d7f10f53e8b6	0	151343	player+silence	uade	TFMX Pro	0	7012	TFMX/L_And_M_Adventure/L_And_M_Adventure/mdat.L_M_Title
+539abc9c8ae743056a4f7bb96c8e00bc	0	177613	player	uade	TFMX Pro	0	11160	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Title
+539abc9c8ae743056a4f7bb96c8e00bc	1	103485	player
+539abc9c8ae743056a4f7bb96c8e00bc	2	18687	player
+539abc9c8ae743056a4f7bb96c8e00bc	3	9605	player
+539abc9c8ae743056a4f7bb96c8e00bc	4	4822	player
+539abc9c8ae743056a4f7bb96c8e00bc	5	38420	player
+539abc9c8ae743056a4f7bb96c8e00bc	6	34140	player
+539d99b331075d5ed480d7f10f53e8b6	0	151365	player+silence	uade	TFMX Pro	0	7012	TFMX/L_And_M_Adventure/L_And_M_Adventure/mdat.L_M_Title
 539f2ea8b2a39cee18f4b48fca196239	1	19281	silence	uade	The YM2149 Player v1.52c	0	7452	YM-YM2149/Daglish/Daglish/YM.RickDangerous
 539f2ea8b2a39cee18f4b48fca196239	2	26279	silence
 539f2ea8b2a39cee18f4b48fca196239	3	14861	silence
@@ -3970,8 +3970,8 @@
 56d70d4c5e134877ae162e83e4de224f	3	44810	player
 56d70d4c5e134877ae162e83e4de224f	4	8982	player
 56d70d4c5e134877ae162e83e4de224f	5	3902	player+silence
-56d70d4c5e134877ae162e83e4de224f	6	5742	player+silence
-56d70d4c5e134877ae162e83e4de224f	7	5059	silence
+56d70d4c5e134877ae162e83e4de224f	6	5741	player+silence
+56d70d4c5e134877ae162e83e4de224f	7	5061	silence
 56d70d4c5e134877ae162e83e4de224f	8	46096	player
 56d70d4c5e134877ae162e83e4de224f	9	65306	player
 56dd31cd632be5d4a5cf8bd921dfab72	0	77025	loop	uade	SoundMon 2.0	0	59282	BP-SoundMon/BP.Kwik_Snax/BP.Kwik_Snax
@@ -4691,8 +4691,8 @@
 63736796d0bb68f27fbe2f5a762d839c	2	53792	player
 63736796d0bb68f27fbe2f5a762d839c	3	53792	player
 638a76377b9541e9430418a37f57f83e	1	99868	player	uade	Jochen Hippel ST	0	2646	HIP-Hippel-ST/Prehistoric_Tale/Prehistoric_Tale/a_prehistoric_tale_level0.soc
-638a76377b9541e9430418a37f57f83e	2	11037	player+silence
-638a76377b9541e9430418a37f57f83e	3	7300	player+silence
+638a76377b9541e9430418a37f57f83e	2	15392	player
+638a76377b9541e9430418a37f57f83e	3	7289	player+silence
 638a76377b9541e9430418a37f57f83e	4	38420	player
 6390fa67e31a8d7f4341a09ad483be59	1	127946	loop	uade	MON	0	49374	MON-ManiacsOfNoise-New/MysterWorlds/MysterWorlds/MON.MysterWorlds-SpaceCabin
 63993103bf9794dfa1030f5dcff57540	0	253339	loop	uade	AProSys	0	5764	APS-AProSys/APS.Tragic/APS.Tragic
@@ -4748,7 +4748,7 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	3513	loop
+6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
@@ -4932,7 +4932,7 @@
 697652bd13895946160f46ddc6711fb7	1	81924	player
 697652bd13895946160f46ddc6711fb7	2	81924	player
 697652bd13895946160f46ddc6711fb7	3	5164	player
-697652bd13895946160f46ddc6711fb7	4	5699	silence
+697652bd13895946160f46ddc6711fb7	4	5731	silence
 6987747163d2cd5598b9628d99bb51f1	1	341355	loop	uade	The YM2149 Player v1.52c	0	1776	YM-YM2149/Hippel/Hippel/MCoder/YM.Phalanx2_Game
 69b5c9c536ef499a17d59f5c6441f0a8	0	7716	player	uade	SunTronic	0	7516	CUST-SUNTronic/SUNTronicTunes/suntronic-14
 69ba07cea5464de9130008d65886a0e8	0	94804	player	uade	SIDMon 1.0	0	37838	SID1-SidMon-1/SID1.Sad_Story/SID1.Sad_Story
@@ -5379,8 +5379,8 @@
 71e1e3895e376e2e2bcd86866a0c5702	2	1949	player
 71e27a1878ac9efbb3f0cdcfa43626be	0	115200	player	uade	SIDMon 2.0	0	9222	SID2-SidMon-2/SID2.Ice_7/SID2.Ice_7
 71f0509c5fd4eab01b280d875954a069	0	111382	player	uade	Sonic Arranger	0	6780	SA-SonicArranger/SA.Nucleogenesis2/SA.Nucleogenesis2
-71f3e4d8f35628b9889cf30ac9e0a171	0	80758	player	uade	SunTronic	0	9416	CUST-SUNTronic/SUNTronicTunes/The_Eidolon.src
 71f3e4d8f35628b9889cf30ac9e0a171	0	80758	player	uade	SunTronic	0	9416	CUST-SUNTronic/SUNTronicTunes/suntronic-eid1
+71f3e4d8f35628b9889cf30ac9e0a171	0	80758	player	uade	SunTronic	0	9416	CUST-SUNTronic/SUNTronicTunes/The_Eidolon.src
 71f85579b7ba6c8afd835a2eb937bf33	0	76920	player	uade	ArtOfNoise (4ch)	0	12854	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0060
 72173461e888df26f731bc1e86220737	0	336900	player	uade	TFMX Pro	0	11743	TFMX/Quik_And_Silva/Quik_And_Silva/mdat.Quik_And_Silva-Title
 72173461e888df26f731bc1e86220737	1	120344	player
@@ -5619,7 +5619,7 @@
 79209b6c28d19d337ed921e7c451705f	0	509099	loop	uade	AProSys	0	25826	APS-AProSys/APS.Ppy/APS.Ppy
 7933b88a21d2f3aacbe6f8e92597a5ca	0	92433	player	uade	AHX v2	0	3269	AHX-AbyssHighestExperience/Kyzer/Kyzer/AHX.Sandbank
 79385cbdeba5b0691a87f1047854a299	1	138846	loop	uade	The YM2149 Player v1.52c	0	2092	YM-YM2149/Hippel/Hippel/MCoder/YM.EnchantedLand_GameOver
-794133e1f1131b23c09cd729e8a62a4e	0	85300	player	uade	TFMX 7V	0	2252	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/BMWi/mdat.Bmw
+794133e1f1131b23c09cd729e8a62a4e	0	85199	player	uade	TFMX 7V	0	2252	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/BMWi/mdat.Bmw
 7949087500d2a2fb16e6104ebc6fdc2d	1	91462	silence	uade	Soundfactory	0	30130	PSF-SoundFactory/PSF.Orientat/PSF.Orientat
 7949e746e1676a7dd95fa9bea34497bf	0	30764	player	uade	TFMX	0	13228	TFMX/Lethal_Zone/Lethal_Zone/mdat.Game
 7949e746e1676a7dd95fa9bea34497bf	1	51240	player
@@ -5886,7 +5886,7 @@
 7bf98b936f951067b70d5f9634dbf33d	2	0	nosound
 7bf98b936f951067b70d5f9634dbf33d	3	0	nosound
 7bfe2ce750fea5d02bd5fc21720eaf2c	1	372507	player	uade	Jochen Hippel ST	0	8906	HIP-Hippel-ST/Stormlord/Stormlord/stormlord_main.soc
-7bfe2ce750fea5d02bd5fc21720eaf2c	2	12898	player+silence
+7bfe2ce750fea5d02bd5fc21720eaf2c	2	15392	player
 7bfe2ce750fea5d02bd5fc21720eaf2c	3	5787	player
 7bfe2ce750fea5d02bd5fc21720eaf2c	4	67215	player
 7bfe2ce750fea5d02bd5fc21720eaf2c	5	1949	player
@@ -6027,6 +6027,10 @@
 7e61d86c9d05d6d1b89dd180d953c791	0	201706	player	uade	Mugician	0	84716	DMU-DigitalMugician/Borobodur/Borobodur/DMU.Borobodur_Ingame2
 7e61d86c9d05d6d1b89dd180d953c791	1	5860	player+silence
 7e61d86c9d05d6d1b89dd180d953c791	2	64000	player
+7e833022c3aa3c8072a9d930008b3558	0	43103	silence	uade	TFMX ST	0	13668	TFMX/Das_Schwartze_Auge/Das_Schwartze_Auge/mdat.Titel7ch
+7e833022c3aa3c8072a9d930008b3558	1	0	nosound
+7e833022c3aa3c8072a9d930008b3558	2	345273	volume
+7e833022c3aa3c8072a9d930008b3558	3	38010	silence
 7e9159a5e737c7186fb1042a17476bb3	1	0	error	uade	The YM2149 Player v1.52c	0	3432	YM-YM2149/Hippel/Hippel/BIG/YM.ActionBiker
 7e9159a5e737c7186fb1042a17476bb3	2	64483	silence
 7e9159a5e737c7186fb1042a17476bb3	3	13842	silence
@@ -6151,7 +6155,7 @@
 8176745133947c45815ddd6191d2697f	0	121985	silence	uade	Infogrames	0	3305	RH-RobHubbard-2/Gobliiins_2/Gobliiins_2/Gobliins23.dum
 8183ff31c6ddddb84be243ecbe863208	1	120612	loop	uade	The YM2149 Player v1.52c	0	3368	YM-YM2149/JCBrooke/JCBrooke/YM.HeavyMetal
 8186a6c18047c6782ea584b7bd26cd99	0	59579	player	uade	FutureComposer 1.4	0	9484	FC14-FutureComposer/FC14.SlipStream3/FC14.SlipStream3
-818a3aa1e0d70ba0873fdd684b031c9b	0	69867	player	uade	Mugician II	0	122767	DMU-DigitalMugician/DMU.7VoiceDemo/DMU.7VoiceDemo
+818a3aa1e0d70ba0873fdd684b031c9b	0	69666	player	uade	Mugician II	0	122767	DMU-DigitalMugician/DMU.7VoiceDemo/DMU.7VoiceDemo
 819af2dbed67c8be5bc6ccba59e0a45a	0	114601	player+silence	uade	AHX v2	0	2455	AHX-AbyssHighestExperience/Curt_Cool/Curt_Cool/AHX.Stranglehold
 81bb2646e1b82ed2e0660af052f77ebc	0	292914	player	uade	FutureComposer 1.4	0	25238	FC14-FutureComposer/FantaZY/FantaZY/FC14.HellSector-3
 81d353f63179b4fb535a99295563d1b7	1	341010	loop	uade	The YM2149 Player v1.52c	0	8660	YM-YM2149/Lap/Lap/YM.Lap10
@@ -6243,7 +6247,7 @@
 843a5e5f8248e4067592711f76d2c23d	5	53852	player
 843a5e5f8248e4067592711f76d2c23d	6	78226	player
 843a5e5f8248e4067592711f76d2c23d	7	72098	player
-843d029fe85a16de5d1cce5c38e3e434	0	279601	player+silence	uade	JamCracker	0	77112	JAM-JamCracker/DrAwesome/DrAwesome/JAM.DrAwesome2
+843d029fe85a16de5d1cce5c38e3e434	0	279608	player+silence	uade	JamCracker	0	77112	JAM-JamCracker/DrAwesome/DrAwesome/JAM.DrAwesome2
 84554f3c437c5f1ef516cf77396fb1eb	0	15372	player	uade	AHX v2	0	2324	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Leven na de Dood
 84554f3c437c5f1ef516cf77396fb1eb	1	15372	player
 84554f3c437c5f1ef516cf77396fb1eb	2	7676	player
@@ -6261,7 +6265,7 @@
 8461ac86c297fd54323996677304924c	4	27930	loop
 8462e1a7306d5cdc311d8b834cfe0f7a	0	470487	loop	uade	UADE	0	52724	CUST-Custom/CUST.IK++/CUST.IK++
 846912eda193ea66ad709d3c5a5e8908	0	17211	silence	uade	AHX v2	0	1058	AHX-AbyssHighestExperience/Miao/Miao/AHX.Logo
-8473e4cd7b0afa6717132cb01d7e22ad	0	188848	player+silence	uade	TFMX Pro	0	4728	TFMX/Logical/Logical/mdat.Titelmsx
+8473e4cd7b0afa6717132cb01d7e22ad	0	188849	player+silence	uade	TFMX Pro	0	4728	TFMX/Logical/Logical/mdat.Titelmsx
 847c1e2d0aa064cd3325984927737f29	0	244676	player+silence	uade	SoundFX	0	199924	SFX-SoundFX/Synthetix/Synthetix/SFX.Pardie
 848300786c0d5465dc6a40b787e8e748	0	30744	player	uade	Major Tom's Player 2.01	0	45632	MTP-MajorTom/HolyNoise/HolyNoise/MTP2.Holy_Noise-5
 848300786c0d5465dc6a40b787e8e748	0	30744	player	uade	Major Tom's Player 2.01	0	45632	MTP-MajorTom/MTP2.Slashback/MTP2.Slashback
@@ -6288,7 +6292,7 @@
 84e3df4d56b2ed887ba73c92c7262414	0	164388	player+silence	uade	ArtOfNoise (4ch)	0	34925	AON-ArtOfNoise/Twice/Twice/AON.space rebellion.fin
 84f57664bc584692f282b44d581bc1a3	0	3600000	timeout	uade	MusiclineEditor	0	38709	ML-MusicLineEditor/Role_Model-Old_Tunes/Role_Model-Old_Tunes/ML.Acid1
 8507af2bf8cb30bc63638a1e4cdba42a	1	120764	loop	uade	The YM2149 Player v1.52c	0	6472	YM-YM2149/CountZero/CountZero/YM.SOTE2
-8508bc4ef55aed798e9c0d72ba154b32	0	314357	player+silence	uade	TFMX Pro	0	9808	TFMX/Demo_Songs/Demo_Songs/mdat.Acieed1
+8508bc4ef55aed798e9c0d72ba154b32	0	314358	player+silence	uade	TFMX Pro	0	9808	TFMX/Demo_Songs/Demo_Songs/mdat.Acieed1
 8508bc4ef55aed798e9c0d72ba154b32	1	11775	player
 8508bc4ef55aed798e9c0d72ba154b32	2	17642	player
 851bbac629680a61cf9a68002addcd90	0	42861	player	uade	SoundFX	0	43036	SFX-SoundFX/FutureWars/FutureWars/SFX.Future_Wars_Tune_10
@@ -6458,7 +6462,7 @@
 87fd3e37c831da97a6ea04f9db33876d	0	242176	player	uade	ArtOfNoise (4ch)	0	68548	AON-ArtOfNoise/Twice/Twice/AON.64k-intro for Maverick
 8802ae827dd3f004b3eb6c625a354a1e	1	331899	loop	uade	The YM2149 Player v1.52c	0	5272	YM-YM2149/Scharvona/Scharvona/YM.PredatorII_4
 8805353d367f011c6f0a385b50e6e9ee	0	7716	player	uade	SunTronic	0	7256	CUST-SUNTronic/SUNTronicTunes/time12.src
-880ea14f055aeb84dc11ac0dd3a660ce	1	84496	player	uade	Hippel-COSO	0	8814	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_always.soc
+880ea14f055aeb84dc11ac0dd3a660ce	1	84496	player	uade	Jochen Hippel COSO	0	8814	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_always.soc
 880ea14f055aeb84dc11ac0dd3a660ce	2	92172	player
 880ea14f055aeb84dc11ac0dd3a660ce	3	46096	player
 880ea14f055aeb84dc11ac0dd3a660ce	4	76820	player
@@ -6675,6 +6679,7 @@
 8bd8a3128921da194fa0cdcf8c548021	0	353780	loop	uade	UADE	0	152108	CUST-Custom/TreasurePatterns/TreasurePatterns/CUST.Creatures Live
 8c00dca04851cad9bde490646207aa68	0	155636	loop	uade	AHX v2	0	5377	AHX-AbyssHighestExperience/Mark_De_Jong/Mark_De_Jong/AHX.Wild Sound
 8c121122f8f18efe65a8911e7b3818d9	0	105615	player	uade	DeltaMusic 2.0	0	29744	DM-DeltaMusic/DM2.AngelsCracktro/DM2.AngelsCracktro
+8c199557c3e523587ca91289543426a8	0	46116	player	uade	TFMX Pro	0	5608	TFMX/Metal_Law/Metal_Law/mdat.Loader
 8c2bee204bcf65bfb7f0b8ef832b1342	1	76068	loop	uade	The YM2149 Player v1.52c	0	7444	YM-YM2149/Conran/Conran/YM.TopCat
 8c2bee204bcf65bfb7f0b8ef832b1342	2	10241	silence
 8c309124cf84a070c2f269358fabbb5d	1	152612	loop	uade	The YM2149 Player v1.52c	0	9360	YM-YM2149/AntiChrist/AntiChrist/YM.CSC2
@@ -6760,9 +6765,9 @@
 8dfe289c12ecf053aabbf71c8ca2420f	2	23068	player
 8dfe289c12ecf053aabbf71c8ca2420f	3	2592	player
 8dfe289c12ecf053aabbf71c8ca2420f	4	3215	player
-8dfe289c12ecf053aabbf71c8ca2420f	5	8982	player
+8dfe289c12ecf053aabbf71c8ca2420f	5	9002	player
 8dfe289c12ecf053aabbf71c8ca2420f	6	743	player
-8dfe289c12ecf053aabbf71c8ca2420f	7	8940	player+silence
+8dfe289c12ecf053aabbf71c8ca2420f	7	8934	player+silence
 8dfe289c12ecf053aabbf71c8ca2420f	8	51220	player
 8e03bb404cd34e29b3cca09cf802f2b1	0	200822	player	uade	SoundMon 2.0	0	22814	BP-SoundMon/Roll_Or_Die/Roll_Or_Die/BP.SM-Priest-Of-Lie
 8e0fa8b4ca29e62a161ad638eb5ca3ce	0	81944	player	uade	Jason C. Brooke	0	38378	JCB-JCBrooke/JCB.Space_Harrier/JCB.Space_Harrier
@@ -7088,10 +7093,10 @@
 93f99290c9963f3c1f5f575d68f4184e	1	2592	player
 93fc7ade1d263bab0b5b66e8344f29b5	1	84385	loop	uade	The YM2149 Player v1.52c	0	10092	YM-YM2149/EIA/EIA/YM.Spunge
 941b0d2654436355d91d22c8bf383b6b	1	159788	loop	uade	The YM2149 Player v1.52c	0	8692	YM-YM2149/AntiChrist/AntiChrist/YM.Christelle
-9429e9415b448ae346e6f0ffb032abaf	0	111543	player	uade	TFMX 7V	0	16013	TFMX/Apidya/Apidya/mdat.Credits
-9429e9415b448ae346e6f0ffb032abaf	1	369338	player+silence
+9429e9415b448ae346e6f0ffb032abaf	0	111462	player	uade	TFMX 7V	0	16013	TFMX/Apidya/Apidya/mdat.Credits
+9429e9415b448ae346e6f0ffb032abaf	1	369227	player+silence
 9429e9415b448ae346e6f0ffb032abaf	2	30704	player
-9429e9415b448ae346e6f0ffb032abaf	3	21443	player+silence
+9429e9415b448ae346e6f0ffb032abaf	3	21437	player+silence
 943820be62aff47baf1ff8ddabaad77a	0	35928	player	uade	SunTronic	0	8512	CUST-SUNTronic/SUNTronicTunes/sound91.src
 944568c78e748cc961e1d35a58730fe3	0	70390	player	uade	SIDMon 2.0	0	5654	SID2-SidMon-2/SID2.Ice-Runner/SID2.Ice-Runner
 946ba6997a93adac5ad5619c3f6365e0	0	61448	player	uade	ArtOfNoise (4ch)	0	9908	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0036
@@ -7187,7 +7192,7 @@
 9617f75fbe0442228d930b0fde4505bf	9	7800	silence
 961b3321c7acf3f12cbbdd2b9aaf5a36	0	79693	player	uade	SoundFX	0	37852	SFX-SoundFX/Kerni-Other/Kerni-Other/SFX.spectrum
 96328ee3b8c48a5b0aff3877dc728ba5	0	199797	player	uade	FutureComposer 1.3	0	19968	FC13-FutureComposer/Hydra/Hydra/FC13.hydra_rising_sun
-9635b443d5d199c47d33ec4a9daa0333	1	207392	player	uade	Hippel-COSO	0	9036	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_dungeon.soc
+9635b443d5d199c47d33ec4a9daa0333	1	207392	player	uade	Jochen Hippel COSO	0	9036	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_dungeon.soc
 9635b443d5d199c47d33ec4a9daa0333	2	143372	player
 9635b443d5d199c47d33ec4a9daa0333	3	80658	player
 9635b443d5d199c47d33ec4a9daa0333	4	92172	player
@@ -7313,10 +7318,10 @@
 9975c1d343f99677f8900866a54e8cd9	0	157914	player+silence	uade	AHX v2	0	3079	AHX-AbyssHighestExperience/Tang/Tang/AHX.GiannaSistaMixSux
 998429822e88fba0935b71412d487b37	0	113693	player	uade	AHX v2	0	4400	AHX-AbyssHighestExperience/Pink/Pink/AHX.Fame
 999054b1232e379ae17c81c921e59b2d	0	46076	player	uade	ArtOfNoise (4ch)	0	7268	AON-ArtOfNoise/Twice-Revolution/Twice-Revolution/AON.revolution-0055
-999303ee1320d562e48e04554a0c071e	0	89781	player	uade	TFMX 7V	0	7056	TFMX/Apidya/Apidya/mdat.Title
+999303ee1320d562e48e04554a0c071e	0	89560	player	uade	TFMX 7V	0	7056	TFMX/Apidya/Apidya/mdat.Title
 999303ee1320d562e48e04554a0c071e	1	0	nosound
-999303ee1320d562e48e04554a0c071e	2	91187	player
-999303ee1320d562e48e04554a0c071e	3	44950	player
+999303ee1320d562e48e04554a0c071e	2	91147	player
+999303ee1320d562e48e04554a0c071e	3	44830	player
 99954072e3ab900bac9e5ee7e81b0b09	0	8962	player	uade	AHX v2	0	423	AHX-AbyssHighestExperience/Kyzer/Kyzer/AHX.Metal City
 999aefdba33ccd9b00379fc6bb67f493	0	215048	player	uade	Mugician	0	65469	DMU-DigitalMugician/DMU.HoiLevel4/DMU.HoiLevel4
 999aefdba33ccd9b00379fc6bb67f493	1	5613	player+silence
@@ -7447,7 +7452,7 @@
 9d801383871c177f163633e7796a7bfc	0	40349	player	uade	TFMX Pro	0	3040	TFMX/Caribbean_Disaster/Caribbean_Disaster/mdat.Knei
 9d87266b480ff7fc852b26f7347d9b2d	0	163105	player	uade	Martin Walker	0	62936	AVP-ActivisionPro/Thunderhawk/Thunderhawk/AVP.Thunderhawk 1
 9d9ef1a6507f8d0644b14426fbddef56	0	174261	silence	uade	AHX v2	0	4588	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Het is fijn met Reyn
-9d9f944336e0a967981a6ba5739daa2c	0	55128	loop	uade	TFMX Pro	0	3028	TFMX/Ramses/Ramses/mdat.Titel
+9d9f944336e0a967981a6ba5739daa2c	0	55064	loop	uade	TFMX Pro	0	3028	TFMX/Ramses/Ramses/mdat.Titel
 9d9f944336e0a967981a6ba5739daa2c	1	38420	player
 9d9f944336e0a967981a6ba5739daa2c	2	46096	player
 9da8d2850375d225ca173723f2ac7f11	0	189991	player	uade	SoundMon 2.0	0	75904	BP-SoundMon/DTACK_Music_Compilation/DTACK_Music_Compilation/BP.Remix-X
@@ -7509,8 +7514,8 @@
 9f4411304bc006bceb8b33c654920c8f	0	142930	player	uade	AHX v2	0	4513	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Fucking the Arp
 9f444d965325eda3b42b590bc90b528f	0	59397	loop	uade	POKEYNoise V0.25alpha	0	2724	PN-PokeyNoise/PN.Storm/PN.Storm
 9f462f5529c145f359dd55c4b4aa8fc0	0	13443	player	uade	AHX v2	0	643	AHX-AbyssHighestExperience/Pink/Pink/AHX.fROGGA!
-9f6994edcf6c98a256f632915bc5db9c	0	35687	player	uade	TFMX 7V	0	7580	TFMX/Metal_Law/Metal_Law/mdat.MLawTitle
-9f6994edcf6c98a256f632915bc5db9c	1	107845	player
+9f6994edcf6c98a256f632915bc5db9c	0	35627	player	uade	TFMX 7V	0	7580	TFMX/Metal_Law/Metal_Law/mdat.MLawTitle
+9f6994edcf6c98a256f632915bc5db9c	1	107785	player
 9f6994edcf6c98a256f632915bc5db9c	2	18667	player
 9f707a1b7e2f31a62efa8747fd41c3d3	0	221261	player+silence	uade	SoundMon 2.0	0	36388	BP-SoundMon/Exodus_3010/Exodus_3010/BP.Galaxian_Cloud
 9f9ac068409bea73449702f64d425927	1	172267	loop	uade	The YM2149 Player v1.52c	0	1888	YM-YM2149/Hippel/Hippel/MCoder/YM.PrehistoricTale_Bonus
@@ -7581,7 +7586,7 @@ a0e23563f1fefa355d88f2654a63196b	4	1888	player
 a0e23563f1fefa355d88f2654a63196b	5	5164	player
 a0e23563f1fefa355d88f2654a63196b	6	30744	player
 a0e23563f1fefa355d88f2654a63196b	7	76820	player
-a0e23563f1fefa355d88f2654a63196b	8	46417	player
+a0e23563f1fefa355d88f2654a63196b	8	46437	player
 a0e813edadf5c0c4b53708b3fa4a4031	0	138268	player	uade	TFMX Pro	0	2848	TFMX/Anstoss/Anstoss/mdat.Addon1
 a0ef8c5dd72a5b05d36cabd1cb6c4936	1	173460	silence	uade	The YM2149 Player v1.52c	0	3848	YM-YM2149/Daglish/Daglish/YM.Deflektor
 a1014b81c2053737d1611a270a9a9a97	0	74911	player	uade	DeltaMusic 2.0	0	29546	DM-DeltaMusic/DM2.SoundRipperIntro/DM2.SoundRipperIntro
@@ -7810,7 +7815,7 @@ a64f4c46856b3b2ef7d3d0a6043a7f02	2	157478	player
 a64f4c46856b3b2ef7d3d0a6043a7f02	3	1949	player
 a64f4c46856b3b2ef7d3d0a6043a7f02	4	103706	player
 a64f4c46856b3b2ef7d3d0a6043a7f02	5	3858	player
-a64f4c46856b3b2ef7d3d0a6043a7f02	6	9605	player
+a64f4c46856b3b2ef7d3d0a6043a7f02	6	9625	player
 a64f4c46856b3b2ef7d3d0a6043a7f02	7	1949	player
 a64f4c46856b3b2ef7d3d0a6043a7f02	8	11554	player
 a6699bd89d4de002b8538a98f456233a	1	20496	player	uade	Jochen Hippel	0	11844	HIP-Hippel/HIP.Endless_Piracy/HIP.Endless_Piracy
@@ -7974,7 +7979,7 @@ a942cfc4c74207b84c42d6e0b7b37ba9	0	13885	player	uade	Soundcontrol 3.0/3.2/4.0/	0
 a94abec649430e63b1e4bee73acad6cc	1	142392	loop	uade	The YM2149 Player v1.52c	0	3648	YM-YM2149/Whittaker/Whittaker/YM.BeverlyHillsCop
 a94e52f94ca5497738bf7e73d2bc41e5	0	162488	player+silence	uade	TFMX Pro	0	4484	TFMX/X-Out/X-Out/mdat.XOutHigh
 a94e52f94ca5497738bf7e73d2bc41e5	1	162488	player+silence
-a94f94797f3e74695c566e66d523f6d8	0	159870	player	uade	TFMX 7V	0	6040	TFMX/Hexuma/Hexuma/mdat.Title
+a94f94797f3e74695c566e66d523f6d8	0	159367	player	uade	TFMX 7V	0	6040	TFMX/Hexuma/Hexuma/mdat.Title
 a951070f6af368f676620ca3882f440c	1	70492	loop	uade	The YM2149 Player v1.52c	0	6700	YM-YM2149/Cooksey/Cooksey/YM.GhostsnGoblins
 a951070f6af368f676620ca3882f440c	10	25719	silence
 a951070f6af368f676620ca3882f440c	2	7121	silence
@@ -8050,7 +8055,7 @@ aac2978755ac28255370243a61990a05	5	48105	loop
 aac734819cbbc9d783b9e8bd81eef9c3	0	107256	loop	uade	AHX v2	0	4755	AHX-AbyssHighestExperience/Curt_Cool/Curt_Cool/AHX.Unsuspected_M_THX
 aac801d3e3edf21235e0f55f0b93d1ea	0	118897	player	uade	SoundFX	0	151164	SFX-SoundFX/SFX.Tecnostromper/SFX.Tecnostromper
 aad3f6d1a58bacca43a3969ec3c54571	0	25908	silence	uade	AHX v2	0	2645	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.OhSnaak-2-Intro
-aad6a074c7919748f5a345f9c9786b0a	0	37475	player	uade	TFMX Pro	0	1776	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Load
+aad6a074c7919748f5a345f9c9786b0a	0	31206	player	uade	TFMX Pro	0	1776	TFMX/Master_Blazer/Master_Blazer/mdat.MB_Load
 aae102e3f4d0aee9b2385ecab411e425	0	40550	player	uade	AHX v2	0	1183	AHX-AbyssHighestExperience/Mr.Tickle/Mr.Tickle/AHX.The Magic Spoon
 aae963319d4e92581ff567fc27226471	0	23068	player	uade	Sonic Arranger	0	2908	SA-SonicArranger/SA.Exodus/SA.Exodus
 aaeb1abd603fbe0a3e1ae5d9c13325cc	0	112688	player	uade	ArtOfNoise (4ch)	0	30532	AON-ArtOfNoise/Twice/Twice/AON.chip-assault
@@ -8313,7 +8318,7 @@ b01594ad51fcae10ba708b3d5b595ac2	3	2592	player
 b01594ad51fcae10ba708b3d5b595ac2	4	3215	player
 b01594ad51fcae10ba708b3d5b595ac2	5	9002	player
 b01594ad51fcae10ba708b3d5b595ac2	6	743	player
-b01594ad51fcae10ba708b3d5b595ac2	7	8927	player+silence
+b01594ad51fcae10ba708b3d5b595ac2	7	8940	player+silence
 b01594ad51fcae10ba708b3d5b595ac2	8	51220	player
 b018b76b18f4e98cf5ab012ee9223f93	0	46156	player	uade	SunTronic	0	7748	CUST-SUNTronic/SUNTronicTunes/suntronic-ko2
 b018e9d11520178ed5c8f42aaa489cab	0	10268	player	uade	TFMX Pro	0	1564	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/BiFi_Adventure_2/mdat.Ongame
@@ -8422,7 +8427,7 @@ b2536a80ab2995cf154298d53d5607d5	1	55701	player
 b2536a80ab2995cf154298d53d5607d5	2	63377	player
 b2536a80ab2995cf154298d53d5607d5	3	80658	player
 b2536a80ab2995cf154298d53d5607d5	4	57610	player
-b2536a80ab2995cf154298d53d5607d5	5	4545	player+silence
+b2536a80ab2995cf154298d53d5607d5	5	4537	player+silence
 b25e8b74480f4ff5277f84d56ff1dce6	0	157807	player+silence	uade	SIDMon 2.0	0	12948	SID2-SidMon-2/SID2.Compost54/SID2.Compost54
 b27ca79c14696387c19c01f65e153eff	0	275231	player	uade	TFMX Pro	0	11700	TFMX/Z-Out/Z-Out/mdat.Titel
 b27ca79c14696387c19c01f65e153eff	1	115220	player
@@ -8515,7 +8520,7 @@ b4464307eaa4edc42efa3ccbf824c247	1	148516	player
 b44ceb2d9561d53ab711ab406705e63f	0	127699	player	uade	Sonic Arranger	0	39258	SONIC-SonicArranger/SONIC.NobodysVaultButMine/SONIC.NobodysVaultButMine
 b44e9c5240435e8dcf3cf24cbf8e5d77	0	11694	player	uade	UADE	0	24920	CUST-Custom/RoboCop2/RoboCop2/CUST.Robocop2_CheatMode
 b456e6ee11696e785903356dc9ce35a5	1	291226	player	uade	Jochen Hippel ST	0	3534	HIP-Hippel-ST/insects_in_space.soc/insects_in_space.soc
-b456e6ee11696e785903356dc9ce35a5	2	24321	player+silence
+b456e6ee11696e785903356dc9ce35a5	2	24322	player+silence
 b459174fa12e6b45b8df665517ef3f40	1	341161	loop	uade	The YM2149 Player v1.52c	0	13648	YM-YM2149/Noodle/Noodle/YM.Commando
 b4599c290a7a6e8eb576a3e2e4c7bb6e	0	201404	player	uade	David Whittaker	0	197906	DW-DavidWhittaker/ShadowOfTheBeast/ShadowOfTheBeast/DW.Beast_Title
 b45fae3fffa3c163151f2ac5457f9e86	0	123579	player	uade	FaceTheMusic	0	94682	FTM-FaceTheMusic/FTM.Song_Without_Name/FTM.Song_Without_Name
@@ -8530,7 +8535,7 @@ b4a9b7c1826a1e9b7a2d3acb44d7366d	4	15372	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	5	65306	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	6	34582	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	7	7696	player
-b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43218	player+volume
+b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43215	player+volume
 b4a9b7c1826a1e9b7a2d3acb44d7366d	9	25620	player
 b4dc066d9c05c77860d61d0c4c8bfeac	0	149638	loop	uade	UADE	0	91964	CUST-Custom/CUST.Lets_Dance/CUST.Lets_Dance
 b4e8593d1c10eee0bae32f2f844ffb44	0	76820	player	uade	TFMX Pro	0	956	TFMX/Kangarudy/Kangarudy/mdat.Sleep
@@ -8662,7 +8667,7 @@ b8150f82691d093475a771743ba49efd	0	224407	player+silence	uade	SoundFX	0	117716	S
 b828ea95277a8f2677b55668c7c40754	0	55826	loop	uade	UADE	0	3056	CUST-Custom/CUST.LetterPlayer1/CUST.LetterPlayer1
 b83f3abe04d2868cfd3af6fbe15a9bb4	0	40972	player	uade	TFMX Pro	0	1512	TFMX/Mr_Nutz/Mr_Nutz/mdat.Map
 b854bf8f6953dc8b7b218bcfa017abb9	1	419055	loop	uade	The YM2149 Player v1.52c	0	4320	YM-YM2149/Tao/Tao/YM.Miner_Sid
-b87068dfc86c5145d78bd90ce688ef06	0	394274	player+silence	uade	JamCracker	0	94484	JAM-JamCracker/JAM.Jinx/JAM.Jinx
+b87068dfc86c5145d78bd90ce688ef06	0	394138	player+silence	uade	JamCracker	0	94484	JAM-JamCracker/JAM.Jinx/JAM.Jinx
 b8730193729b1f92e610a455c02230fb	0	251118	player	uade	SoundMon 2.0	0	8846	BP-SoundMon/Roll_Or_Die/Roll_Or_Die/BP.SM-In-Misery
 b877cc85c37d85fee265f6d7f1090f3a	0	0	error	uade	MusiclineEditor	0	8409	ML-MusicLineEditor/ML.Flimbo's_Quest.lha
 b882f863829927ee0e9d6be0f07019fb	0	131396	player	uade	AHX v2	0	2169	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Wheeeeee!
@@ -8841,7 +8846,7 @@ bbb07312591b3908172a6b5c1f9e4804	0	38460	player	uade	AHX v2	0	1287	AHX-AbyssHigh
 bbb1f74fbdcbb36be6a768251807086b	1	125307	player	uade	Jesper Olsen	0	59452	JO-JesperOlsen/Lollypop/Lollypop/JO.Lollypop-L6_TheDreamland
 bbb5ffa725fb0168d060dae4e82223cc	1	259236	player	uade	Hippel-COSO	0	25944	HIP-Hippel/Last_Ninja_Remix/Last_Ninja_Remix/HIPC.Last_Ninja_Remix-3
 bbb8dbc21d4d9cc049be0d7aee2cbadd	0	222713	player+silence	uade	TronicTracker(?)	0	11944	TRONIC-TronicTracker/TRONIC.Crystal/TRONIC.Crystal
-bbbc982b50febedb19bc8d441c29d2a5	0	201565	player	uade	TFMX 7V	0	13368	TFMX/Anstoss/Anstoss/mdat.Titel
+bbbc982b50febedb19bc8d441c29d2a5	0	201344	player	uade	TFMX 7V	0	13368	TFMX/Anstoss/Anstoss/mdat.Titel
 bbd1c3d87c0f1a0d79823daec86cae1b	0	201385	player+volume	uade	SoundMon 2.0	0	7360	BP-SoundMon/Expressions/Expressions/BP.Never_Ending_Story
 bbda76cf5ea6d0cccd4874990c7be4a2	1	172652	loop	uade	The YM2149 Player v1.52c	0	21316	YM-YM2149/Leitch/Leitch/YM.VikingChild_Game1
 bbda76cf5ea6d0cccd4874990c7be4a2	2	205622	loop
@@ -9139,13 +9144,13 @@ c134cd48fd624c37aad1e21cc5dcc2e8	2	3838	player
 c134cd48fd624c37aad1e21cc5dcc2e8	3	3838	player
 c1451e7f0e2eaa049ef497909e0621be	0	4044	silence	uade	TFMX Pro	0	960	TFMX/Freak_Out/Freak_Out/mdat.FX
 c1451e7f0e2eaa049ef497909e0621be	1	3170	silence
-c1451e7f0e2eaa049ef497909e0621be	2	3276	silence
+c1451e7f0e2eaa049ef497909e0621be	2	3280	silence
 c1451e7f0e2eaa049ef497909e0621be	3	3107	silence
 c1451e7f0e2eaa049ef497909e0621be	4	3759	silence
-c1451e7f0e2eaa049ef497909e0621be	5	3201	silence
+c1451e7f0e2eaa049ef497909e0621be	5	3197	silence
 c1451e7f0e2eaa049ef497909e0621be	6	3234	silence
-c1451e7f0e2eaa049ef497909e0621be	7	3358	silence
-c1451e7f0e2eaa049ef497909e0621be	8	3220	silence
+c1451e7f0e2eaa049ef497909e0621be	7	3370	silence
+c1451e7f0e2eaa049ef497909e0621be	8	3216	silence
 c14a8c5997a423bebcc8d13a6438b1a1	0	99848	player	uade	SIDMon 2.0	0	5676	SID2-SidMon-2/SID2.Quartex/SID2.Quartex
 c1615bb39c5d9a60ea0b27e7c70081c4	1	77676	loop	uade	The YM2149 Player v1.52c	0	5240	YM-YM2149/Lowe/Lowe/YM.FinalFight
 c1615bb39c5d9a60ea0b27e7c70081c4	2	89487	loop
@@ -9498,9 +9503,9 @@ c8ca1073652106e9ed81b7ff57625bc7	1	675019	loop	uade	The YM2149 Player v1.52c	0	1
 c8d4cba98c6ca9ef9c4e11048a9e94ac	0	128100	player	uade	FutureComposer 1.4	0	19980	FC14-FutureComposer/FC14.Dizkzor/FC14.Dizkzor
 c8df5adc864ab31a73c407e5560983d1	1	106398	loop	uade	The YM2149 Player v1.52c	0	8044	YM-YM2149/Whittaker/Whittaker/YM.GoldAztecs_Level2
 c8ed838b34fffdbb02ce0e1978538716	0	218911	loop	uade	UADE	0	173576	CUST-Custom/CUST.An_Unbidden_Eye/CUST.An_Unbidden_Eye
-c8f4f08ea2b4b7b7854eb62677b07aba	0	431745	player	uade	TFMX 7V	0	27614	TFMX/Turrican_2/Turrican_2/mdat.T2_Title
-c8f4f08ea2b4b7b7854eb62677b07aba	1	185851	player
-c8f4f08ea2b4b7b7854eb62677b07aba	2	141975	player+silence
+c8f4f08ea2b4b7b7854eb62677b07aba	0	431685	player	uade	TFMX 7V	0	27614	TFMX/Turrican_2/Turrican_2/mdat.T2_Title
+c8f4f08ea2b4b7b7854eb62677b07aba	1	185369	player
+c8f4f08ea2b4b7b7854eb62677b07aba	2	141839	player+silence
 c90facd2f48fab9dde851b8b8d7afee4	0	84596	player	uade	AHX v2	0	2814	AHX-AbyssHighestExperience/Mr.Tickle/Mr.Tickle/AHX.gleeben_globen
 c918b53fb23f452388982a7d022a420e	0	46096	player	uade	Sonic Arranger	0	2764	SA-SonicArranger/SA.EndTheme/SA.EndTheme
 c922576d67115f1b125dc1f99f06cf33	1	150653	loop	uade	The YM2149 Player v1.52c	0	7256	YM-YM2149/Scharvona/Scharvona/YM.KidGlovesII_Intro
@@ -9535,7 +9540,7 @@ c9a5bc4618b2a699a9f10dbbde630a45	3	56222	loop
 c9a8b38c510fdcae29eb5a212121367d	0	144445	player+silence	uade	GlueMon	0	2484	GLUE-GlueMon/GLUE.Woodsock/GLUE.Woodsock
 c9b430c12ba35598f8e51a569a1b510d	1	35325	player	uade	Jesper Olsen	0	14260	JO-JesperOlsen/Lollypop/Lollypop/JO.Lollypop-Subgame_03
 c9b430c12ba35598f8e51a569a1b510d	2	17260	player
-c9b67824f3697ebd7d146555d3e5072a	1	96010	player	uade	Jochen Hippel ST	0	884	HIP-Hippel-ST/Rings_Of_Medusa/Rings_Of_Medusa/rings_of_medusa_loader.soc
+c9b67824f3697ebd7d146555d3e5072a	1	96030	player	uade	Jochen Hippel ST	0	884	HIP-Hippel-ST/Rings_Of_Medusa/Rings_Of_Medusa/rings_of_medusa_loader.soc
 c9b977cc22437a9d0276bffa410f4a71	0	55219	loop	uade	FredMonitor	0	10928	FRED-FredEditor/Giants/Giants/FRED.Giants-bug3
 c9c83ab2b8e73bb32b6bcaabf8d0bcf6	0	144075	player	uade	SoundMon 2.2	0	37730	BP-SoundMon/BP3.Gork/BP3.Gork
 c9d3ee7acb8fd1358a40dc3ed6865350	0	61448	player	uade	Mugician	0	8980	DMU-DigitalMugician/DMU.A_little_bit_of_Galway/DMU.A_little_bit_of_Galway
@@ -9646,7 +9651,7 @@ ccb0b1d70ff36c7e798c5c0c26b8e8af	5	7834	silence
 ccb0b1d70ff36c7e798c5c0c26b8e8af	6	7118	silence
 ccb0b1d70ff36c7e798c5c0c26b8e8af	7	22560	silence
 ccc342f2c0f762dde4691ae70e8d5a19	1	303365	loop	uade	The YM2149 Player v1.52c	0	15744	YM-YM2149/EIA/EIA/YM.HitMe
-ccc8a534f1318ad787532b044fddae98	0	5787	player	uade	TFMX Pro	0	892	TFMX/Master_Blazer/Master_Blazer/mdat.MB_LucasArts
+ccc8a534f1318ad787532b044fddae98	0	4822	player	uade	TFMX Pro	0	892	TFMX/Master_Blazer/Master_Blazer/mdat.MB_LucasArts
 ccd10a01c21d56d3306c1a888ca78da8	1	628255	loop	uade	The YM2149 Player v1.52c	0	3976	YM-YM2149/Hippel/Hippel/BIG/YM.InternationalKarate
 ccd5f2f2e839310393b71573783b77d7	0	116526	player	uade	FutureComposer 1.3	0	18060	FC13-FutureComposer/Hydra/Hydra/FC13.hydra_great_saga
 cce0e3185535347c33cdff1908e05b61	0	188062	player	uade	SoundMon 2.0	0	60968	BP-SoundMon/BP.Universe/BP.Universe
@@ -9734,7 +9739,7 @@ cdd2e706f39f6417bb2430b190e8934b	7	13222	player
 cdd2e706f39f6417bb2430b190e8934b	8	1929	player
 cdd42653157d2f5b19601965ef28ec84	0	134410	player	uade	SIDMon 2.0	0	10744	SID2-SidMon-2/SID2.Utopia/SID2.Utopia
 cdd73a630a81864e9012949c3501f78a	1	95497	loop	uade	The YM2149 Player v1.52c	0	1816	YM-YM2149/Hippel/Hippel/MCoder/YM.BackToTheFuture
-cde19238a9d2ee0f1e4945dbadcf81f7	1	271679	player+volume	uade	Jochen Hippel ST	0	3448	HIP-Hippel-ST/asm_quiz.soc/asm_quiz.soc
+cde19238a9d2ee0f1e4945dbadcf81f7	1	271686	player+volume	uade	Jochen Hippel ST	0	3448	HIP-Hippel-ST/asm_quiz.soc/asm_quiz.soc
 cde19238a9d2ee0f1e4945dbadcf81f7	2	128663	player
 cded58dbac246246f726066ca9909233	1	153620	player	uade	Jochen Hippel ST	0	1670	HIP-Hippel-ST/golden_child.soc/golden_child.soc
 cdf89a3a346b69c05ff0fbcc548cc52f	0	109473	player	uade	DeltaMusic 2.0	0	71640	DM-DeltaMusic/DM2.DeepHeatIII/DM2.DeepHeatIII
@@ -10041,7 +10046,7 @@ d39df1c052254239fb4cf3eece9b860b	1	38096	loop
 d39df1c052254239fb4cf3eece9b860b	2	144588	loop
 d39df1c052254239fb4cf3eece9b860b	3	133997	loop
 d3a09bfd81054ab9d58f1c6b8db2af79	0	23068	player	uade	AHX v2	0	1517	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Bacoman Diddly
-d3b4377b0d5150b73ed419453824b118	1	86425	player	uade	Hippel-COSO	0	5448	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_endsequence.soc
+d3b4377b0d5150b73ed419453824b118	1	86425	player	uade	Jochen Hippel COSO	0	5448	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_endsequence.soc
 d3b4377b0d5150b73ed419453824b118	2	403231	player
 d3b4377b0d5150b73ed419453824b118	3	86425	player
 d3b58b84ebc29eab20a51db306351fc3	0	307005	player+silence	uade	ArtOfNoise (4ch)	0	590168	AON-ArtOfNoise/Tommy/Tommy/AON.--->> FM-DemoSong <<---.x
@@ -10391,6 +10396,9 @@ dbb35a33498ed3ee448b03956d04e484	1	0	nosound
 dbf06296c17204c6435a43ae7778b064	0	30744	player	uade	TFMX Pro	0	1244	TFMX/Kangarudy/Kangarudy/mdat.Intro
 dbf635374eb978b5bbd4c4b82030cb28	0	126091	player	uade	SoundFX	0	86732	SFX-SoundFX/SFX.Funk/SFX.Funk
 dc02c7c9d719fa356730a3cf752c193f	0	0	nosound	uade	PumaTracker	0	2038	PUMA-PumaTracker/Toki/Toki/PUMA.Toki-LevelEnd
+dc07004f4dd85eb1500472b44f3c9e99	0	116144	player	uade	TFMX 7V	0	7748	TFMX/B_C_Kid/B_C_Kid/mdat.Titel
+dc07004f4dd85eb1500472b44f3c9e99	1	93418	player
+dc07004f4dd85eb1500472b44f3c9e99	2	12116	player
 dc099b0c587c9e92c03e2ba93076c49d	1	169334	player	uade	Jesper Olsen	0	56362	JO-JesperOlsen/Lollypop/Lollypop/JO.Lollypop-L5_TheMansion
 dc099b0c587c9e92c03e2ba93076c49d	2	5465	player
 dc11ac37457a9e7f11539dd6e35f88c0	0	64431	player+silence	uade	SoundFX	0	70168	SFX-SoundFX/SFX.Thrust/SFX.Thrust
@@ -10497,8 +10505,8 @@ ddce18446d8d8a2551788cf5a35d30f5	4	1064	player
 ddce18446d8d8a2551788cf5a35d30f5	5	20033	player
 ddce18446d8d8a2551788cf5a35d30f5	6	43564	player
 ddce18446d8d8a2551788cf5a35d30f5	7	39083	player
-ddcfaeee83bf6f8e3ae9b0e473e0f8ea	1	61468	player	uade	Hippel-COSO	0	2908	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_ani.soc
-ddcfaeee83bf6f8e3ae9b0e473e0f8ea	2	67697	player
+ddcfaeee83bf6f8e3ae9b0e473e0f8ea	1	61468	player	uade	Jochen Hippel COSO	0	2908	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_ani.soc
+ddcfaeee83bf6f8e3ae9b0e473e0f8ea	2	74911	player
 ddf83b8ca8b585b3684667fdb88f7852	0	38460	player	uade	AHX v2	0	1874	AHX-AbyssHighestExperience/Andreas_Spreen/Andreas_Spreen/AHX.just about
 de01e24139ae39dc454c919e4aac1e64	1	94780	loop	uade	The YM2149 Player v1.52c	0	10996	YM-YM2149/Davies/Davies/YM.StriderII
 de01e24139ae39dc454c919e4aac1e64	2	290937	loop
@@ -10527,7 +10535,7 @@ dea52f371d434db5939960ffbb8708a5	0	28192	player	uade	AHX v2	0	1025	AHX-AbyssHigh
 deb4fcb61cdb4dfdd9538600f96bef3f	0	78568	loop	uade	FredMonitor	0	7280	FRED-FredEditor/FRED.Fiddlin_Around/FRED.Fiddlin_Around
 debaadcb3da047311020044b6c82415b	0	118797	player	uade	MusicMaker8	0	4965	MM8-MusicMaker-8/MM8.TheGame/MM8.TheGame.sdata
 debfc310660afbffa7e1d44a4c3e5f58	0	492978	loop	uade	AProSys	0	6120	APS-AProSys/APS.SlowEvolution/APS.SlowEvolution
-dee1a6d9a9f03085db3804268996110a	1	61468	player	uade	Hippel-COSO	0	11816	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_surface.soc
+dee1a6d9a9f03085db3804268996110a	1	61468	player	uade	Jochen Hippel COSO	0	11816	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_surface.soc
 dee1a6d9a9f03085db3804268996110a	2	161316	player
 dee1a6d9a9f03085db3804268996110a	3	92172	player
 dee1a6d9a9f03085db3804268996110a	4	107544	player
@@ -10604,8 +10612,8 @@ e0490a913df7284f2846c994d43270ab	0	8821	player	uade	SoundMon 2.2	0	1504	BP-Sound
 e04d6bb2426707fec8ae343fcaee9453	0	288754	player	uade	SoundFX	0	73640	SFX-SoundFX/SFX.Heavy-Metal/SFX.Heavy-Metal
 e054fd31724237eb4edee1625975d652	0	152334	player	uade	TFMX Pro	0	6324	TFMX/Jan_Krolzig/Jan_Krolzig/mdat.CheekyTwins.jk
 e06b89c59ad3b823ded5f006a9256e9f	1	531635	player+silence	uade	Jochen Hippel ST	0	5872	HIP-Hippel-ST/Return_Of_Medusa/Return_Of_Medusa/return_of_medusa_game.soc
-e06b89c59ad3b823ded5f006a9256e9f	2	4501	player
-e06b89c59ad3b823ded5f006a9256e9f	3	155324	player+silence
+e06b89c59ad3b823ded5f006a9256e9f	2	4521	player
+e06b89c59ad3b823ded5f006a9256e9f	3	169655	player
 e06b89c59ad3b823ded5f006a9256e9f	4	40349	player
 e08019df685b09145cd8efbec6240863	0	190090	silence	uade	MusiclineEditor	0	12037	ML-MusicLineEditor/Twins/Twins/ML.Speeding
 e0944dec3b67941f408708065bd76237	1	470794	loop	uade	The YM2149 Player v1.52c	0	9228	YM-YM2149/Pritchard/Pritchard/YM.ThunderWings
@@ -10623,7 +10631,7 @@ e0d40d35577329b13e4e53a99b02448e	1	107036	loop	uade	The YM2149 Player v1.52c	0	1
 e0dca6c4ad621e8750560757b55ff847	0	122916	player	uade	TFMX Pro	0	19156	TFMX/Rudolf_Stember_Adverts/Rudolf_Stember_Adverts/Kellogs/mdat.Ongame
 e0dca6c4ad621e8750560757b55ff847	1	122916	player
 e0dca6c4ad621e8750560757b55ff847	10	15372	player
-e0dca6c4ad621e8750560757b55ff847	2	7731	player+silence
+e0dca6c4ad621e8750560757b55ff847	2	7730	player+silence
 e0dca6c4ad621e8750560757b55ff847	3	1326	player
 e0dca6c4ad621e8750560757b55ff847	4	84516	player
 e0dca6c4ad621e8750560757b55ff847	5	84516	player
@@ -10644,9 +10652,9 @@ e0fac0e7520f084bc449c3c2d1628318	1	101846	loop	uade	The YM2149 Player v1.52c	0	9
 e10b535a5e518a2ac8af54f888322b2b	1	66247	loop	uade	The YM2149 Player v1.52c	0	1712	YM-YM2149/Hippel/Hippel/AmberStar/YM.AmberStar5
 e11b98f5b895176c3750aa1f2c988df4	0	4651	player+silence	uade	AHX v2	0	314	AHX-AbyssHighestExperience/Mr.Tickle/Mr.Tickle/AHX.THXColly-Intro
 e12c1cccf83fe6eedf2dd645fe247820	0	69144	player	uade	Sonic Arranger	0	7364	SA-SonicArranger/SA.Anonym/SA.Anonym
-e12e8a781134635137b279f9dcc29e9f	0	190734	player	uade	TFMX 7V	0	7936	TFMX/Denny/Denny/mdat.Title
-e12e8a781134635137b279f9dcc29e9f	1	172718	player+silence
-e12e8a781134635137b279f9dcc29e9f	2	190734	player
+e12e8a781134635137b279f9dcc29e9f	0	190353	player	uade	TFMX 7V	0	7936	TFMX/Denny/Denny/mdat.Title
+e12e8a781134635137b279f9dcc29e9f	1	172685	player+silence
+e12e8a781134635137b279f9dcc29e9f	2	190353	player
 e13ac22414eada68f1e665e40a51fad2	0	174337	player	uade	AHX v2	0	8425	AHX-AbyssHighestExperience/Moz{Ic}Art/Moz{Ic}Art/AHX.A New Beginning
 e13ac22414eada68f1e665e40a51fad2	1	174337	player
 e1495c9613e4de92692809d9ec1e6fc4	0	79021	loop	uade	AHX v2	0	8144	AHX-AbyssHighestExperience/Hooligan/Hooligan/AHX.Slapfight
@@ -10714,9 +10722,9 @@ e2986b35b0118a8e2fd7ebb5dc0eaad2	6	3760	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	7	4159	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	8	5700	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	9	3876	silence
-e2a2915ddcc52e5de592cb99eac5c769	0	56854	loop	uade	TFMX Pro	0	2076	TFMX/Hanse/Hanse/mdat.Theme
+e2a2915ddcc52e5de592cb99eac5c769	0	26153	loop	uade	TFMX Pro	0	2076	TFMX/Hanse/Hanse/mdat.Theme
 e2b1c8187e91d00096234b84475857e2	0	276621	loop	uade	UADE	0	65212	CUST-Custom/CUST.RainbowArts_Slideshow/CUST.RainbowArts_Slideshow
-e2b8d005eae5fec9bfbaf1762bcef564	0	249992	player	uade	TFMX 7V	0	7568	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.scimitar
+e2b8d005eae5fec9bfbaf1762bcef564	0	249711	player	uade	TFMX 7V	0	7568	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.scimitar
 e2d87638669696dd288c43f9b2771e8d	1	177697	loop	uade	The YM2149 Player v1.52c	0	11588	YM-YM2149/SynthDream/SynthDream/Eternal/YM.OfAllPlaces
 e2e299606eeed9c9ebe0750942088cee	1	57020	loop	uade	The YM2149 Player v1.52c	0	13504	YM-YM2149/Lowe/Lowe/YM.RailRoadTycoon
 e2e299606eeed9c9ebe0750942088cee	2	43193	loop
@@ -10918,7 +10926,7 @@ e6d2453562cfd0f00ccb0aff46e14c56	6	442802	loop
 e6d2453562cfd0f00ccb0aff46e14c56	7	186028	loop
 e6d2453562cfd0f00ccb0aff46e14c56	8	299295	loop
 e6d2453562cfd0f00ccb0aff46e14c56	9	319314	loop
-e6e474903fdc5096e4071682913a827b	0	210771	player+silence	uade	JamCracker	0	50854	JAM-JamCracker/DrAwesome/DrAwesome/JAM.DrAwesome4
+e6e474903fdc5096e4071682913a827b	0	210767	player+silence	uade	JamCracker	0	50854	JAM-JamCracker/DrAwesome/DrAwesome/JAM.DrAwesome4
 e6eed234f5b020f5f69f8407e36015fc	1	35522	silence	uade	The YM2149 Player v1.52c	0	5244	YM-YM2149/Daglish/Daglish/YM.HardDrivin
 e6eed234f5b020f5f69f8407e36015fc	10	4278	silence
 e6eed234f5b020f5f69f8407e36015fc	11	3961	silence
@@ -10958,7 +10966,7 @@ e7b08bb1148d45e4d409b4c4fe875a1e	2	0	nosound
 e7b08bb1148d45e4d409b4c4fe875a1e	3	0	nosound
 e7b08bb1148d45e4d409b4c4fe875a1e	4	0	nosound
 e7b08bb1148d45e4d409b4c4fe875a1e	5	0	nosound
-e7c37e6dee3e99c6055e7c7c7e151b61	1	0	error	uade	Jochen Hippel ST	0	1476	HIP-Hippel-ST/car_race.soc/car_race.soc
+e7c37e6dee3e99c6055e7c7c7e151b61	1	115220	player	uade	Jochen Hippel ST	0	1476	HIP-Hippel-ST/car_race.soc/car_race.soc
 e7c3d7bb634e68a5ca410587bad475c7	0	373713	player	uade	SoundMon 2.0	0	63514	BP-SoundMon/BP.Hawkeye/BP.Hawkeye
 e7d8684685ad64c7733fe34642bf8864	0	116888	player	uade	AHX v2	0	4176	AHX-AbyssHighestExperience/Isaac/Isaac/AHX.Bluestar
 e7ee4ff2261d84fe4cb33a0398aeb3c3	1	9060	silence	uade	The YM2149 Player v1.52c	0	7160	YM-YM2149/Daglish/Daglish/YM.LegendsOfValour
@@ -11167,9 +11175,9 @@ ec067b60018c69bee8de161c72c1319f	0	10248	player	uade	AHX v2	0	2387	AHX-AbyssHigh
 ec068290369f65a002dcc46d57512329	1	259698	loop	uade	The YM2149 Player v1.52c	0	6652	YM-YM2149/EIA/EIA/YM.Summer
 ec3a2502143d5dc6459fa4481e9cb3ce	1	114893	loop	uade	The YM2149 Player v1.52c	0	3508	YM-YM2149/Joseph/Joseph/YM.JamesPondII_Hidden
 ec4d87bb592b7d1de2aaa6e758f1783f	1	230420	player	uade	Hippel-COSO	0	24606	HIP-Hippel/Enchanted_Land/Enchanted_Land/HIPC.Enchanted_Land-4
-ec5eae670f46d4bcf3160e25c15a5ff9	0	272695	player+silence	uade	TFMX 7V	0	12880	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.PreFlightCheck
-ec5eae670f46d4bcf3160e25c15a5ff9	1	209060	player
-ec5eae670f46d4bcf3160e25c15a5ff9	2	64502	player
+ec5eae670f46d4bcf3160e25c15a5ff9	0	271923	player+silence	uade	TFMX 7V	0	12880	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.PreFlightCheck
+ec5eae670f46d4bcf3160e25c15a5ff9	1	209040	player
+ec5eae670f46d4bcf3160e25c15a5ff9	2	64542	player
 ec6b005ff1db406f392ee09202510676	0	126915	player	uade	AHX v2	0	2915	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/Bubba/AHX.Bubba Hi Filtered
 ec7a497988cb4dbe5858afa65169df78	0	3174	player	uade	SoundMon 2.0	0	5216	BP-SoundMon/Frantic_Freddie/Frantic_Freddie/BP.Frantic_Freddie_Song_12
 ec7b29b8f531b2ba91e4f71c6fcd9363	1	44239	loop	uade	The YM2149 Player v1.52c	0	5556	YM-YM2149/Whittaker/Whittaker/YM.SpittingImage
@@ -11283,7 +11291,7 @@ ee1a7513cd1fa67b237599444b1b806c	0	92212	player	uade	FutureComposer 1.4	0	14940	
 ee1e7c441dc94fc6944b1cfb5b79f077	1	102606	loop	uade	The YM2149 Player v1.52c	0	11888	YM-YM2149/Simmonds/Simmonds/YM.GLoc
 ee29c3d6decb244f832afae38738170e	0	227447	player	uade	SunTronic	0	15604	CUST-SUNTronic/SUNTronicTunes/magnum2.src
 ee410de93d0804a5f6fa9dd01146d529	0	11554	player	uade	Sonic Arranger	0	9208	SONIC-SonicArranger/SONIC.TheUh-OhSong/SONIC.TheUh-OhSong
-ee4118dff6934c8b8a7f2314e5fecd4b	1	375920	player+volume	uade	Jochen Hippel ST	0	3466	HIP-Hippel-ST/Enchanted_Lands/Enchanted_Lands/enchanted_lands_level3.SOC
+ee4118dff6934c8b8a7f2314e5fecd4b	1	375929	player+volume	uade	Jochen Hippel ST	0	3466	HIP-Hippel-ST/Enchanted_Lands/Enchanted_Lands/enchanted_lands_level3.SOC
 ee412242da3508c30e1c282811878158	1	193813	loop	uade	The YM2149 Player v1.52c	0	4920	YM-YM2149/JCBrooke/JCBrooke/YM.StarQuake
 ee412242da3508c30e1c282811878158	2	51222	silence
 ee412242da3508c30e1c282811878158	3	51943	silence
@@ -11325,7 +11333,7 @@ ef4a14c89f50e0e5cb73cc09cd15da67	0	61528	player	uade	AHX v2	0	4503	AHX-AbyssHigh
 ef639410f8b72b6e91e3fd67a7828c7b	0	151711	player	uade	DeltaMusic 2.0	0	24646	DM-DeltaMusic/DM2.AngelsIntro/DM2.AngelsIntro
 ef67e5124ef8ec277b1316bc54b3ebc3	1	241935	player	uade	Jochen Hippel ST	0	6428	HIP-Hippel-ST/J1_TITL.SOC/J1_TITL.SOC
 ef67e5124ef8ec277b1316bc54b3ebc3	2	237188	player+silence
-ef67e5124ef8ec277b1316bc54b3ebc3	3	29821	player+silence
+ef67e5124ef8ec277b1316bc54b3ebc3	3	29822	player+silence
 ef67e5124ef8ec277b1316bc54b3ebc3	4	1949	player
 ef6ec42f209aa9f8b7b79b14c29fc844	1	338743	loop	uade	The YM2149 Player v1.52c	0	9924	YM-YM2149/Hippel/Hippel/YM.Pandora
 ef6ec42f209aa9f8b7b79b14c29fc844	2	113844	loop
@@ -11339,7 +11347,7 @@ efde101c5eda62fc205338d1b42de852	1	185078	loop	uade	The YM2149 Player v1.52c	0	3
 efe7ca7a7598aa80c5fc5342c8f16908	0	0	error	uade	TFMX Pro	0	7875	TFMX/Quik_And_Silva/Quik_And_Silva/mdat.Quik_And_Silva-Ingame
 efe7ca7a7598aa80c5fc5342c8f16908	1	0	error
 efe7ca7a7598aa80c5fc5342c8f16908	2	0	error
-efe7ca7a7598aa80c5fc5342c8f16908	3	7714	loop
+efe7ca7a7598aa80c5fc5342c8f16908	3	7720	loop
 efe859db77aa239122f32460e09a6d09	0	115381	player	uade	AHX v2	0	8166	AHX-AbyssHighestExperience/Tony_Stuvo_Aky/Tony_Stuvo_Aky/AHX.Binary Teardrops (filtered
 eff0782d3bd31ffe957b8b9a890e3c55	0	110096	player	uade	Mugician	0	20628	DMU-DigitalMugician/DMU.MagneticFieldsII/DMU.MagneticFieldsII
 eff411ef2b56a0838bdfea5520afaf3a	1	115682	loop	uade	The YM2149 Player v1.52c	0	3456	YM-YM2149/Scharvona/Scharvona/YM.PredatorII_2
@@ -11409,7 +11417,7 @@ f1170d4b823eb3cfccfbbcdc598639a8	0	140820	player	uade	Sonic Arranger	0	13136	SON
 f11d7fb62fc2bc5427bba309d27cd97f	1	130015	loop	uade	The YM2149 Player v1.52c	0	3020	YM-YM2149/Scharvona/Scharvona/YM.LastNinjaIII_Level4
 f1362c760c8409e3e6caf6b4e278cd81	0	30844	player	uade	FutureComposer 1.3	0	17488	FC13-FutureComposer/FC13.Future_11_Jump'n'roll/FC13.Future_11_Jump'n'roll
 f14eeab046d30659e54b31ec7259ac75	0	158375	player+silence	uade	TFMX Pro	0	7536	TFMX/Transplant/Transplant/mdat.Transplant
-f14eeab046d30659e54b31ec7259ac75	1	158376	player+silence
+f14eeab046d30659e54b31ec7259ac75	1	158375	player+silence
 f14eeab046d30659e54b31ec7259ac75	2	38420	player
 f14eeab046d30659e54b31ec7259ac75	3	41615	player
 f161648fa291799611a98d7adb62a2f7	0	76900	player	uade	AHX v2	0	2884	AHX-AbyssHighestExperience/Mr.Tickle/Mr.Tickle/AHX.Plonk!
@@ -11445,8 +11453,8 @@ f280d7bf41796936c57f8390b56c761e	1	8010	loop	uade	The YM2149 Player v1.52c	0	660
 f2827b13666cb6426e91a630c214f5ae	0	18894	player+volume	uade	AHX v2	0	1268	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/AHX.Follin
 f28be965ff963d0cdcf8d1540946dff1	1	38420	player	uade	Jochen Hippel ST	0	5292	HIP-Hippel-ST/starballs.sog/starballs.sog
 f28be965ff963d0cdcf8d1540946dff1	2	33764	player+silence
-f28be965ff963d0cdcf8d1540946dff1	3	18402	player+silence
-f28be965ff963d0cdcf8d1540946dff1	4	5801	player+silence
+f28be965ff963d0cdcf8d1540946dff1	3	19230	player
+f28be965ff963d0cdcf8d1540946dff1	4	5800	player+silence
 f28be965ff963d0cdcf8d1540946dff1	5	1949	player
 f28be965ff963d0cdcf8d1540946dff1	6	113311	player
 f29d2350b514d7ca3240d154ca8a8332	0	31688	player	uade	TFMX Pro	0	4736	TFMX/Mr_Nutz/Mr_Nutz/mdat.Wolken
@@ -11475,7 +11483,7 @@ f332834cbe52191b11c27ec27102c788	0	188162	player	uade	SIDMon 2.0	0	133542	SID2-S
 f341276fdf1fce147b8ea1338133f3f6	0	125468	player	uade	TFMX Pro	0	8728	TFMX/Oath/Oath/mdat.Level1
 f341276fdf1fce147b8ea1338133f3f6	1	51220	player
 f341276fdf1fce147b8ea1338133f3f6	2	2712	player
-f341276fdf1fce147b8ea1338133f3f6	3	4663	silence
+f341276fdf1fce147b8ea1338133f3f6	3	4666	silence
 f3466f56f1479d46d254910809d3b0b6	1	252965	loop	uade	The YM2149 Player v1.52c	0	10684	YM-YM2149/MegaTizer/MegaTizer/YM.Pete_DigiTallis1
 f3484eef519cc32aa319b13c1f1e7b07	0	88394	player	uade	FutureComposer 1.3	0	8826	FC13-FutureComposer/FC13.Mikael_Balle_Tune_1/FC13.Mikael_Balle_Tune_1
 f35820b6aec42fb14ea82984dac92b15	0	93490	silence	uade	UADE	0	30424	CUST-Custom/F.O.F.T./F.O.F.T./CUST.2
@@ -11563,7 +11571,7 @@ f4a8e613d6655eb0d5e9ab95c9b8a56d	1	162858	loop	uade	The YM2149 Player v1.52c	0	8
 f4b013120ffa7c0ed3382f87b381be38	0	177210	loop	uade	SoundMon 2.0	0	40562	BP-SoundMon/BP.1st_Division_Manager/BP.1st_Division_Manager
 f4e7d9f3e144c10e7a47e5577225bb8f	1	148516	loop	uade	The YM2149 Player v1.52c	0	2004	YM-YM2149/Joseph/Joseph/YM.KnightMare_2
 f4eddba03e62efa7340fbf9ee91142ae	1	388903	loop	uade	The YM2149 Player v1.52c	0	15848	YM-YM2149/Jess/Jess/YM.Jess_OvrLast
-f514c87dff002e6d693c8c04273a9e5d	1	457626	player	uade	Hippel-COSO	0	182276	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_titletune.soc
+f514c87dff002e6d693c8c04273a9e5d	1	457626	player	uade	Jochen Hippel COSO	0	182276	HIP-Hippel/Dragonflight/Dragonflight/dragonflight_titletune.soc
 f5179aee93efe19baef051d367ad7be2	1	115260	player	uade	Jochen Hippel	0	33290	HIP-Hippel/Chambers_Of_Shaolin/Chambers_Of_Shaolin/HIP.Shaolin-Dragon
 f5182c9abb13df2d354b24ef08cb781e	0	186675	player	uade	SoundMon 2.0	0	7888	BP-SoundMon/Expressions/Expressions/BP.Green_Beret
 f51c9a436987cab88ec90f9228bbf867	0	97316	player	uade	GlueMon	0	1716	GLUE-GlueMon/GLUE.Gnu-Song/GLUE.Gnu-Song
@@ -11744,8 +11752,8 @@ f8a793f009715ca7a8156c28cdcf1ea4	1	137108	repeat	uade	The YM2149 Player v1.52c	0
 f8a793f009715ca7a8156c28cdcf1ea4	2	40862	silence
 f8a793f009715ca7a8156c28cdcf1ea4	3	85247	loop
 f8a793f009715ca7a8156c28cdcf1ea4	4	51901	silence
-f8aabca5ed4103015e8ae1599cf5f5eb	0	272096	player	uade	TFMX 7V	0	12900	TFMX/Carl_Lewis_Challenge/Carl_Lewis_Challenge/mdat.Challenge
-f8aabca5ed4103015e8ae1599cf5f5eb	1	48387	player
+f8aabca5ed4103015e8ae1599cf5f5eb	0	271815	player	uade	TFMX 7V	0	12900	TFMX/Carl_Lewis_Challenge/Carl_Lewis_Challenge/mdat.Challenge
+f8aabca5ed4103015e8ae1599cf5f5eb	1	48246	player
 f8b1fa6e0d8515c940b0e9741aecdee9	0	1949	player	uade	SunTronic	0	7244	CUST-SUNTronic/SUNTronicTunes/tank6
 f8c47af846c63934c71e5c113919df43	0	10327	volume	uade	MusiclineEditor	0	4346	ML-MusicLineEditor/Role_Model-Old_Tunes/Role_Model-Old_Tunes/ML.Skaskidaski_2
 f8cebda5b948de542638916768df677b	0	92232	player	uade	FutureComposer 1.3	0	25388	FC13-FutureComposer/FC13.Paranoimia/FC13.Paranoimia
@@ -12048,5 +12056,5 @@ ffe8031ff503fbaad8447047574d7902	8	32733	player
 ffe8031ff503fbaad8447047574d7902	9	60825	player
 ffef570841af429d05b9c4b34a7abdf8	0	342854	player+silence	uade	Oktalyzer	0	40054	OKT-Oktalyzer/Necronom/Necronom/OKT.Necronom-7
 fffb5fb3d3274693a41fbde04928ec04	0	253193	player+silence	uade	SIDMon 2.0	0	174442	SID2-SidMon-2/SID2.Turtle-Byte/SID2.Turtle-Byte
-fffcde5e59120e1cc0533977d1ef45ba	0	292737	player+silence	uade	TFMX 7V	0	8628	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.RushOfDiscovery
+fffcde5e59120e1cc0533977d1ef45ba	0	292690	player+silence	uade	TFMX 7V	0	8628	TFMX/Marx_Marvellous/Marx_Marvellous/mdat.RushOfDiscovery
 fffe869a7f8d605a97343259026b5f56	0	172428	player	uade	AHX v2	0	6858	AHX-AbyssHighestExperience/JaZz{Jolly}/JaZz{Jolly}/Bubba/AHX.Bubba Title Filtered
