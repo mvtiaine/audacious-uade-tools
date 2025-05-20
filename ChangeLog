@@ -1,3 +1,7 @@
+2025-05-20
+- Update with latest UADE changes
+- Metadata extraction tweaks
+
 2025-04-07
 - Implement metadata lookup from Mods Anthology and Wanted Team
 - Added ExoticA (old) to sources (including metadata)

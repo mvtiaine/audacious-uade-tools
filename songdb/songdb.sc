@@ -56,8 +56,8 @@ def dedupMeta(entries: Buffer[MetaData], name: String) = {
     val SORT = "\u0001"
     val meta = metas.sortBy(m => ("" +
      (if (m.year == 0) 9999 else m.year) + SORT +
-     (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) +
-     m.album + SORT +
+     (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) + SORT +
+     (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
      (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
     )).head
     MetaData(md5, meta.authors, meta.publishers, meta.album, meta.year)
