@@ -67,10 +67,15 @@ lazy val metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par
         val extra_authors = authors.toList
         val filename = e.path.split("/").last
         var album =
-          if (filename.matches("^\\w+\\.\\([A-Z0-9].*\\)[A-Za-z0-9]+.*")) filename.split("\\.\\(").last
-            .replaceAll("\\).*","")
-            .replace("_"," ")
-            .trim
+          if (filename.matches("^\\w+\\.\\([A-Z0-9].*\\)[A-Za-z0-9\\(!]+.*"))
+            filename.split("\\.\\(").last
+              .replaceAll("\\).*","")
+              .replaceAll("\\(","")
+              .replace("_"," ")
+              .replaceAll(" \\[DFC\\]$","") // ???
+              .replaceAll(" - DFC$","") // ???
+              .replaceAll(" DFC$","") // ???
+              .trim
           else ""
         album = if (album.length > 1) album else ""
         Some(AMPMeta(e.md5, e.path, e.filesize, extra_authors, album))

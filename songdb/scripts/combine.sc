@@ -126,6 +126,7 @@ def combineMetadata(
     if (album.isEmpty) album = pickAlbum(d)
     if (album.isEmpty) album = pickAlbum(o)
     if (album.isEmpty) album = pickAlbum(w)
+    if (album.isEmpty) album = pickAlbum(a)
     if (album.isEmpty) album = pickAlbum(m)
     if (album.isEmpty) album = pickAlbum(ma)
 
@@ -215,22 +216,18 @@ def combineMetadata(
       val key = keys.find(metasByAuthorAlbumWithPublisherOrYear.contains(_))
       if (key.isDefined) {
         val metas = metasByAuthorAlbumWithPublisherOrYear(key.get)
-        var publishers = metas.find(!_.publishers.isEmpty).map(_.publishers).getOrElse(Buffer.empty)
+        var publishers = if (m.publishers.isEmpty) metas.find(!_.publishers.isEmpty).map(_.publishers).getOrElse(Buffer.empty) else m.publishers
         if (!metas.forall(m => m.publishers.isEmpty
           || m.publishers.exists(p => publishers.contains(p))
           || publishers.exists(p => m.publishers.contains(p)))
         ) {
           System.err.println(s"WARN: publishers differ for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.flatMap(_.publishers).mkString(",")}")
-          publishers = m.publishers
         }
-        var year = metas.find(_.year != 0).map(_.year).getOrElse(0)
+        var year = if (m.year == 0) metas.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0) else m.year
         if (!metas.forall(m => m.year == 0 || m.year == year)) {
           System.err.println(s"WARN: year differs for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.map(_.year).mkString(",")}")
-          year = m.year
         }
-        val publishers_ = if (m.publishers.isEmpty) publishers else m.publishers
-        val year_ = if (m.year == 0) year else m.year
-        m.copy(publishers = publishers_, year = year_)
+        m.copy(publishers = publishers, year = year)
       } else {
         m
       }
@@ -286,13 +283,11 @@ def combineMetadata(
       val key = keys.find(metasByPublisherAlbumWithYear.contains(_))
       if (key.isDefined) {
         val metas = metasByPublisherAlbumWithYear(key.get)
-        var year = metas.find(_.year != 0).map(_.year).getOrElse(0)
+        var year = metas.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0)
         if (!metas.forall(m => m.year == 0 || m.year == year)) {
           System.err.println(s"WARN: year differs for ${m.md5} - ${m.album} - ${m.publishers.mkString(",")} - ${m.year} != ${metas.map(_.year).mkString(",")}")
-          m
-        } else {
-          m.copy(year = year)
         }
+        m.copy(year = year)
       } else {
         m
       }
@@ -346,16 +341,12 @@ def combineMetadata(
               || publishers.exists(p => m.publishers.contains(p)))
           ) {
             System.err.println(s"WARN: publishers differ for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.get.flatMap(_.publishers).mkString(",")}")
-            publishers = m.publishers
           }
-          var year = if (m.year == 0) metas.get.find(_.year != 0).map(_.year).getOrElse(0) else m.year
+          var year = if (m.year == 0) metas.get.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0) else m.year
           if (!metas.get.forall(m => m.year == 0 || m.year == year)) {
             System.err.println(s"WARN: year differs for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.get.map(_.year).mkString(",")}")
-            year = m.year
           }
-          val publishers_ = if (m.publishers.isEmpty) publishers else m.publishers
-          val year_ = if (m.year == 0) year else m.year
-          m.copy(authors = authors, publishers = publishers_, year = year_)
+          m.copy(authors = authors, publishers = publishers, year = year)
         } else {
           m
         }
