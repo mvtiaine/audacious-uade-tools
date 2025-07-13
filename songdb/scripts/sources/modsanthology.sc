@@ -1800,7 +1800,7 @@ lazy val maz1txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ1-Autho
 lazy val maz2txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ2-Authors(G-Q).txt").toFile
 lazy val maz3txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ3-Authors(R-Z).txt").toFile
 
-def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala.io.Codec.ISO8859))(s =>
+def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
   val lines = s.getLines
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
@@ -1987,7 +1987,7 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scal
 
 lazy val maz4txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ4-Groups.txt").toFile
 
-def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala.io.Codec.ISO8859))(s =>
+def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
   val lines = s.getLines
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
@@ -2328,7 +2328,7 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala
 ).get
 
 lazy val maz5txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ5-Misc.txt").toFile
-def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala.io.Codec.ISO8859))(s =>
+def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
   val lines = s.getLines
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
@@ -2567,7 +2567,7 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala.i
 ).get
 
 lazy val maz6txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ6-Synth.txt").toFile
-def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(scala.io.Codec.ISO8859))(s =>
+def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
   val lines = s.getLines
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
