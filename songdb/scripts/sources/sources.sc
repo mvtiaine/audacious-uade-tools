@@ -44,19 +44,21 @@ case class TsvEntry (
   format: String,
   channels: Int,
   filesize: Int,
+  xxh32: String,
   path: String,
 )
 
-lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(s"sources/${tsv._1}"))(_.getLines.map(line =>
+lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(s"sources/${tsv._1}")(using scala.io.Codec.ISO8859))(_.getLines.map(line =>
   val l = line.split("\t")
-  if (l.length > 8) TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), l(4), l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8))
-  else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), "", "", 0, -1, "")
-).toBuffer).get.groupBy(_.md5))).seq
+  if (l.length > 4) TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), l(4), l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9))
+  else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), "", "", 0, -1, "", "")
+).toBuffer).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
 
 case class SourceDBEntry (
   md5: String,
   path: String,
   filesize: Int,
+  xxh32: String,
 )
 
 def readSourceDB(source: Source) = {
@@ -65,7 +67,7 @@ def readSourceDB(source: Source) = {
       System.err.println("WARN: duplicate files in " + source + " for " + md5 + ": " + subsongs)
     }
     subsongs.filter(_.path != "").map(e =>
-      SourceDBEntry(md5, e.path, e.filesize)
+      SourceDBEntry(md5, e.path, e.filesize, e.xxh32)
     )
   }).flatten.seq
 }

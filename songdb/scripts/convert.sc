@@ -4,6 +4,7 @@
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
 import scala.collection.mutable.Buffer
+import scala.collection.mutable.Map
 import scala.collection.parallel.CollectionConverters._
 import scala.reflect.ClassTag
 import scala.util.Using
@@ -20,71 +21,90 @@ case class SubsongInfo (
 )
 
 trait BaseInfo {
-  def md5: String // 48-bits of md5 hex encoded (lower case)
-  def copyWithMd5(newMd5: String): BaseInfo
+  def hash: String // 48-bit hash
+  def copyWithHash(newHash: String): BaseInfo
 }
 
 case class SongInfo (
-  override val md5: String, // 48-bits of md5 hex encoded (lower case)
+  override val hash: String,
   minsubsong: Int,
   subsongs: Buffer[SubsongInfo],
 ) extends BaseInfo {
-  override def copyWithMd5(newMd5: String) = copy(md5 = newMd5)
-  override def toString = s"SongInfo(${md5},${minsubsong},${subsongs.mkString(",")})"
+  override def copyWithHash(newHash: String) = copy(hash = newHash)
+  override def toString = s"SongInfo(${hash},${minsubsong},${subsongs.mkString(",")})"
 }
 
 case class ModInfo (
-  override val md5: String, // 48-bits of md5 hex encoded (lower case)
+  override val hash: String,
   format: String, // tracker or player name (freeform)
   channels: Int, // channels or 0 if not known/defined
 ) extends BaseInfo {
-  override def copyWithMd5(newMd5: String) = copy(md5 = newMd5)
+  override def copyWithHash(newHash: String) = copy(hash = newHash)
 }
 
 case class MetaData (
-  override val md5: String, // 48-bits of md5 hex encoded (lower case)
+  override val hash: String,
   authors: Buffer[String],
   publishers: Buffer[String],
   album: String,
   year: Int,
 ) extends BaseInfo {
-  override def copyWithMd5(newMd5: String) = copy(md5 = newMd5)
+  override def copyWithHash(newHash: String) = copy(hash = newHash)
   override def toString =
-    s"MetaData(${md5},${authors.mkString(",")},${publishers.mkString(",")},${album},${year})"
+    s"MetaData(${hash},${authors.mkString(",")},${publishers.mkString(",")},${album},${year})"
 }
 
-def decodeMd5IdxTsv(tsv: String) = {
-  val idx2md5 = Buffer[String]() // idx -> 48-bit md5
+def hashidxdiff(entries: Iterable[Buffer[String]]) = {
+  var prevhash = 0
+  var prevtail = Buffer.empty[String]
+  entries.map(e => {
+    val tail = e.tail
+    val hashv = base64d24(e(0))
+    val res = if (tail == prevtail || tail.isEmpty) {
+      assert(hashv > prevhash)
+      val diff = hashv - prevhash
+      Buffer(base64e24(diff)) ++ e.tail
+    } else {
+      e
+    }
+    prevhash = hashv
+    prevtail = tail
+    res
+  })
+}
+
+def decodeHashIdxTsv(tsv: String) = {
+  val idx2hash = Buffer[String]()
   val rows = tsv.split('\n')
   assert(rows(0) == base64e(0)) // 0 entry is special
-  var prevmd5 = 0L
+  var prevhash = 0L
   rows.tail.foreach { b64 =>
-    val md5 = prevmd5 + base64d(b64)
-    assert(prevmd5 == 0 || md5 > prevmd5)
-    idx2md5 += f"${md5}%012x"
-    prevmd5 = md5
+    val hash = prevhash + base64d(b64)
+    assert(prevhash == 0 || hash > prevhash)
+    idx2hash += f"${hash}%012x"
+    prevhash = hash
   }
-  idx2md5
+  idx2hash
 }
 
-def encodeMd5IdxTsv(idx2md5: Buffer[String]) = {
-  val res = Buffer(base64e(idx2md5.head)) // 0 entry is special
+def encodeHashIdxTsv(idx2hash: Buffer[String]) = {
+  val res = Buffer(base64e(idx2hash.head)) // 0 entry is special
   var prev = 0L
-  idx2md5.tail.foreach { md5 =>
-    val b64 = base64e(md5)
-    val md5v = base64d(b64)
-    val diff = base64e(md5v - prev, true)
+  idx2hash.tail.foreach { hash =>
+    val b64 = base64e(hash)
+    val hashv = base64d(b64)
+    val diff = base64e(hashv - prev, true)
     assert(diff.length() <= 6)
-    assert(diff.length() >= 2)
-    prev = md5v
+    assert(diff.length() >= 1)
+    prev = hashv
     res += diff
   }
   res.mkString("\n").concat("\n")
 }
 
-def decodeSonglengthsTsv(tsv: String, idx2md5: Buffer[String]) = {
-  assert(idx2md5.nonEmpty)
-  def decodeRow(cols: Array[String], md5: String) = {
+def decodeSonglengthsTsv(tsv: String, idx2hash: Buffer[String]) = {
+  assert(idx2hash.nonEmpty)
+  def decodeRow(cols: Array[String], hash: String) = {
     def decodeSongend(songend: String) : String = songend match {
       case "e" => "error"
       case "p" => "player"
@@ -120,18 +140,18 @@ def decodeSonglengthsTsv(tsv: String, idx2md5: Buffer[String]) = {
       }
       subsongs += prev
     )
-    SongInfo(md5, minsubsong, subsongs)
+    SongInfo(hash, minsubsong, subsongs)
   }
   val songlengths = tsv.split('\n').zipWithIndex.par.map {
     // 0 entry is special in md5 list
-    case (row, index) => decodeRow(row.split('\t'), idx2md5(index + 1))
+    case (row, index) => decodeRow(row.split('\t'), idx2hash(index + 1))
   }
-  assert(songlengths.map(_.md5).distinct.size == songlengths.size)
-  songlengths.toBuffer.sortBy(_.md5)
+  assert(songlengths.map(_.hash).distinct.size == songlengths.size)
+  songlengths.toBuffer.sortBy(_.hash)
 }
 
-def encodeSonglengthsTsv(songlengths: Buffer[SongInfo]) = {
-  assert(songlengths.map(_.md5).distinct.size == songlengths.size)
+def encodeSonglengthsTsv(songlengths: Buffer[SongInfo], _check: Map[String, String]) = {
+  assert(songlengths.map(_.hash).distinct.size == songlengths.size)
   def encode(songend: String) : String = songend match {
       case "player+silence" => "b"
       case "player+volume" => "P"
@@ -139,7 +159,7 @@ def encodeSonglengthsTsv(songlengths: Buffer[SongInfo]) = {
       case "loop+volume" => "L"
       case _ => songend.take(1)
   }
-  val entries = songlengths.sortBy(_.md5).par.map(e =>
+  val entries = songlengths.sortBy(_.hash).par.map(e =>
     var prev = ""
     val subsongs = e.subsongs.map(s =>
       val _songend = if (s.songend != "player") encode(s.songend) else ""
@@ -153,25 +173,25 @@ def encodeSonglengthsTsv(songlengths: Buffer[SongInfo]) = {
       }
     )
     val minsubsong = if (e.minsubsong != 1) e.minsubsong.toString else ""
-    Buffer(e.md5.take(12), subsongs.mkString(" "), minsubsong)
+    Buffer(e.hash.take(12), subsongs.mkString(" "), minsubsong)
   ).map(_ match {
-    case Buffer(md5, "", "") => Buffer(md5)
-    case Buffer(md5, subsongs, "") => Buffer(md5, subsongs)
+    case Buffer(hash, "", "") => Buffer(hash)
+    case Buffer(hash, subsongs, "") => Buffer(hash, subsongs)
     case b => b
   }).seq
-  val dedupped = dedup(entries, "songlengths.tsv")
+  val dedupped = dedup(entries, "songlengths.tsv", _check)
   validate(dedupped, "songlengths.tsv")
-  // drop md5 as line # == md5idx
+  // drop hash as line # == hashidx
   dedupped.map(b => b.tail.mkString("\t")).mkString("\n").concat("\n")
 }
 
 def decodeTsv[T <: BaseInfo : ClassTag] (
   tsv: String,
-  idx2md5: Buffer[String],
+  idx2hash: Buffer[String],
   decodeRow: (Array[String], String, T) => T,
   initial: T
 ): Buffer[T] = {
-  assert(idx2md5.nonEmpty)
+  assert(idx2hash.nonEmpty)
   var idx = 0
   var info = initial
   var i = 0
@@ -182,21 +202,21 @@ def decodeTsv[T <: BaseInfo : ClassTag] (
       val next_idx = base64d24(cols(0))
       if (cols.length == 1) {
         idx += next_idx
-        info = info.copyWithMd5(idx2md5(idx)).asInstanceOf[T]
+        info = info.copyWithHash(idx2hash(idx)).asInstanceOf[T]
       } else {
         idx = next_idx
-        info = decodeRow(cols, idx2md5(idx), info)
+        info = decodeRow(cols, idx2hash(idx), info)
       }
       i += 1
-      assert(idx < idx2md5.size)
+      assert(idx < idx2hash.size)
       info
   }
-  assert(infos.map(_.md5).distinct.size == split.size)
-  infos.toBuffer.sortBy(_.md5)
+  assert(infos.map(_.hash).distinct.size == split.size)
+  infos.toBuffer.sortBy(_.hash)
 }
 
-def decodeModInfosTsv(tsv: String, idx2md5: Buffer[String]) = {
-  def decodeRow(cols: Array[String], md5: String, prev: ModInfo) = {
+def decodeModInfosTsv(tsv: String, idx2hash: Buffer[String]) = {
+  def decodeRow(cols: Array[String], hash: String, prev: ModInfo) = {
     val format = if (cols.length > 1) {
       if (cols(1) == REPEAT) prev.format
       else cols(1)
@@ -207,28 +227,28 @@ def decodeModInfosTsv(tsv: String, idx2md5: Buffer[String]) = {
       else cols(2).toInt
     } else 0
 
-    ModInfo(md5, format, channels)
+    ModInfo(hash, format, channels)
   }
-  decodeTsv(tsv, idx2md5, decodeRow, ModInfo("", "", 0))
+  decodeTsv(tsv, idx2hash, decodeRow, ModInfo("", "", 0))
 }
 
-def encodeModInfosTsv(modinfos: Buffer[ModInfo]) = {
-  assert(modinfos.map(_.md5).distinct.size == modinfos.size)
-  def sorter = (e: ModInfo) => e.format + SORT + e.channels + SORT + e.md5
+def encodeModInfosTsv(modinfos: Buffer[ModInfo], _idx: Map[String, String]) = {
+  assert(modinfos.map(_.hash).distinct.size == modinfos.size)
+  def sorter = (e: ModInfo) => e.format + SORT + e.channels + SORT + e.hash
   val infos = modinfos.sortBy(sorter).par.map(m =>
     Buffer(
-      m.md5.take(12),
+      m.hash.take(12),
       m.format,
       if (m.channels > 0) m.channels.toString else ""
     )
   ).seq
-  val dedupped = dedupidx(infos, "modinfos.tsv", strict=true)
+  val dedupped = dedupidx(infos, "modinfos.tsv", _idx, strict=true)
   validate(dedupped, "modinfos.tsv")
-  md5idxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
+  hashidxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
 }
 
-def decodeMetaTsv(tsv: String, idx2md5: Buffer[String]) = {
-  def decodeRow(cols: Array[String], md5: String, prev: MetaData) = {
+def decodeMetaTsv(tsv: String, idx2hash: Buffer[String]) = {
+  def decodeRow(cols: Array[String], hash: String, prev: MetaData) = {
     val authors = if (cols.length > 1) {
       if (cols(1) == REPEAT) prev.authors
       else if (cols(1).isEmpty) Buffer.empty
@@ -251,28 +271,28 @@ def decodeMetaTsv(tsv: String, idx2md5: Buffer[String]) = {
       else cols(4).toInt
     } else 0
 
-    MetaData(md5, authors, publishers, album, year)
+    MetaData(hash, authors, publishers, album, year)
   }
-  decodeTsv(tsv, idx2md5, decodeRow, MetaData("", Buffer.empty, Buffer.empty, "", 0))
+  decodeTsv(tsv, idx2hash, decodeRow, MetaData("", Buffer.empty, Buffer.empty, "", 0))
 }
 
-def encodeMetaTsv(meta: Buffer[MetaData], name: String) = {
+def encodeMetaTsv(meta: Buffer[MetaData], name: String, _idx: Map[String, String]) = {
   def sorter = (e: MetaData) =>
     e.authors.mkString(SEPARATOR) + SORT +
     e.publishers.mkString(SEPARATOR) + SORT +
     e.album + SORT + 
     e.year + SORT +
-    e.md5
+    e.hash
   val infos = meta.sortBy(sorter).par.map(i =>
     Buffer(
-      i.md5.take(12),
+      i.hash.take(12),
       i.authors.mkString(SEPARATOR),
       i.publishers.mkString(SEPARATOR),
       i.album,
       if (i.year > 0) i.year.toString else ""
     )
   ).seq
-  val dedupped = dedupidx(infos, name)
+  val dedupped = dedupidx(infos, name, _idx)
   validate(dedupped, name)
-  md5idxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
+  hashidxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
 }
