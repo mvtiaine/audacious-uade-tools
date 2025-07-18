@@ -16,7 +16,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 * Songdb TSV files:
 - tsv/pretty/*/songlengths.tsv - subsong and songlengths info
 - tsv/pretty/*/modinfos.tsv - module file format and channel info
-- tsv/pretty/*/combined.tsv - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
+- tsv/pretty/*/metadata.tsv - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
 
 - tsv/pretty/*/amp.tsv - author/album metadata sourced from AMP
 - tsv/pretty/*/demozoo.tsv - author/publisher/album/year metadata sourced from Demozoo
@@ -64,7 +64,7 @@ fffe869a7f8d	AHX v2
 ```
 [hash]<TAB>[format]<TAB>[channels]
 
-combined.tsv (and amp/demozoo/modland/modsanthology/oldexotica/unexotica/wantedteam.tsv)
+metadata.tsv (and amp/demozoo/modland/modsanthology/oldexotica/unexotica/wantedteam.tsv)
 ```
 feaa9d2a4869	Scorpik	Alchemy	Toxic Ziemniak	1992
 feaba2f4c992	Jazz			

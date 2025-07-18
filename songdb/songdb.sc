@@ -386,7 +386,7 @@ val future = Future.sequence(
       wantedteamdata,
       modsanthologydata
     )
-    processMetaTsvs(combined, "combined.tsv", true)
+    processMetaTsvs(combined, "metadata.tsv", true)
 }
 
 future onComplete {
