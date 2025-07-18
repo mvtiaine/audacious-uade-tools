@@ -87,7 +87,6 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     val xxh32Pretty = createPrettyMetaTsv(xxh32)
 
     Files.write(Paths.get(s"/tmp/songdb/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
-    Files.write(Paths.get(s"/tmp/songdb/encoded/md5/${name}"), encoded.getBytes("UTF-8"))
     Files.write(Paths.get(s"/tmp/songdb/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
 
     assert(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
@@ -105,7 +104,7 @@ def _try[T](f: => T) = try {
     throw e
 }
 
-lazy val md5idxTsv = Future(_try {
+lazy val md5idx = Future(_try {
   idx2md5.zipWithIndex.foreach { case (md5s, idx) =>
     val b64 = md5(md5s)
     val md5v = base64d(b64)
@@ -115,9 +114,6 @@ lazy val md5idxTsv = Future(_try {
     assert(_idxmd5.get(b24).isEmpty)
     _idxmd5(b24) = md5s
   }
-
-  val encoded = encodeHashIdxTsv(idx2md5)
-  Files.write(Paths.get("/tmp/songdb/encoded/md5/md5idx.tsv"), encoded.getBytes("UTF-8"))
 })
 
 lazy val xxh32idxTsv = Future(_try {
@@ -159,7 +155,6 @@ lazy val songlengthsTsvs = Future(_try {
   val xxh32Decoded = decodeSonglengthsTsv(xxh32Encoded, idx2xxh32)
   val xxh32Pretty = createPrettySonglengthsTsv(xxh32)
 
-  Files.write(Paths.get("/tmp/songdb/encoded/md5/songlengths.tsv"), encoded.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/encoded/xxh32/songlengths.tsv"), xxh32Encoded.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
@@ -189,7 +184,6 @@ lazy val modinfosTsvs = Future(_try {
   val xxh32Decoded = decodeModInfosTsv(xxh32Encoded, idx2xxh32)
   val xxh32Pretty = createPrettyModInfosTsv(xxh32)
 
-  Files.write(Paths.get("/tmp/songdb/encoded/md5/modinfos.tsv"), encoded.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/encoded/xxh32/modinfos.tsv"), xxh32Encoded.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get("/tmp/songdb/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
@@ -350,7 +344,6 @@ lazy val modsanthologyTsvs = Future(_try {
 })
 
 Seq(
-  "/tmp/songdb/encoded/md5",
   "/tmp/songdb/encoded/xxh32",
   "/tmp/songdb/pretty/md5",
   "/tmp/songdb/pretty/xxh32"
@@ -359,10 +352,10 @@ Seq(
 }
 
 // needs to be processed first
-Await.ready(Future.sequence(Seq(md5idxTsv,xxh32idxTsv)), Duration.Inf)
+Await.ready(Future.sequence(Seq(md5idx,xxh32idxTsv)), Duration.Inf)
 
 val future = Future.sequence(
-  Seq(md5idxTsv,
+  Seq(md5idx,
       xxh32idxTsv,
       songlengthsTsvs,
       modinfosTsvs,
