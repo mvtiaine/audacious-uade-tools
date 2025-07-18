@@ -3,23 +3,28 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by aud
 * Directories:
 
 - songdb/ - Scala CLI, SQL scripts and raw source TSVs to generate the final processed TSV files
-- tsv/ - the songdb TSV files used by audacious-uade. The files are "encoded" to almost binary format to optimize for size and fast in-memory songdb initialization
+- tsv/encoded/ - the songdb TSV files used by audacious-uade. The files are "encoded" to almost binary format to optimize for size and fast in-memory songdb initialization.
 - tsv/pretty/ - pretty printed / clear text versions of the TSV files. See "spec" below.
 - misc/ - misc bash scripts
 
-* Songdb TSV files:
+* Hashing
 
-- tsv/md5idx.tsv - index of MD5 hashes (48 bits) (not used for pretty printed TSVs)
-- tsv/modinfos.tsv - module file format and channel info
-- tsv/songlengths.tsv - subsong and songlengths info
-- tsv/amp.tsv - author/album metadata sourced from AMP
-- tsv/demozoo.tsv - author/publisher/album/year metadata sourced from Demozoo
-- tsv/modland.tsv - author/album metadata sourced from Modland
-- tsv/modsanthology.tsv - author/publisher/album/year metadata sourced from Mods Anthology
-- tsv/oldexotica.tsv - author/publisher/album/year metadata sourced from ExoticA (old)
-- tsv/unexotica.tsv - author/publisher/album/year metadata sourced from UnExoticA
-- tsv/wantedteam.tsv - author/publisher/album/year metadata sourced from Wanted Team
-- tsv/combined.tsv - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
+There are two alternative hashing methods provided and separate TSVs for each under md5 and xxh32 subfolders.
+- MD5 - 48-bits (MSB) as hex, hash calculated from whole file
+- XXH32+filesize - 48-bits as hex (32-bit + 16-bit). Calculated+concatenated as hex(XXH32(file)) + hex(filesize & 0xFFFF). XXH32 is calculated from max first 256k bytes only, filesize is full filesize.
+
+* Songdb TSV files:
+- tsv/pretty/*/songlengths.tsv - subsong and songlengths info
+- tsv/pretty/*/modinfos.tsv - module file format and channel info
+- tsv/pretty/*/combined.tsv - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
+
+- tsv/pretty/*/amp.tsv - author/album metadata sourced from AMP
+- tsv/pretty/*/demozoo.tsv - author/publisher/album/year metadata sourced from Demozoo
+- tsv/pretty/*/modland.tsv - author/album metadata sourced from Modland
+- tsv/pretty/*/modsanthology.tsv - author/publisher/album/year metadata sourced from Mods Anthology
+- tsv/pretty/*/oldexotica.tsv - author/publisher/album/year metadata sourced from ExoticA (old)
+- tsv/pretty/*/unexotica.tsv - author/publisher/album/year metadata sourced from UnExoticA
+- tsv/pretty/*/wantedteam.tsv - author/publisher/album/year metadata sourced from Wanted Team
 
 * Raw TSV source files:
 
@@ -49,7 +54,7 @@ fffd7a7d8547	1	250840,p+s
 fffd9ea13bc6	1	162860,p
 fffdc1d765c3	0	40880,l 117860,l 8780,s 79340,l 8080,s 19000,s
 ```
-[md5]<TAB>[minsubsong]<TAB>[[songlength(ms),songend]<SPACE>[songlength(ms),songend]<SPACE>[...]]
+[hash]<TAB>[minsubsong]<TAB>[[songlength(ms),songend]<SPACE>[songlength(ms),songend]<SPACE>[...]]
 
 modinfos.tsv
 ```
@@ -57,7 +62,7 @@ fffdc1d765c3	CustomPlay
 fffdd3c2bef3	Scream Tracker 3.2x (GUS)	8
 fffe869a7f8d	AHX v2	
 ```
-[md5]<TAB>[format]<TAB>[channels]
+[hash]<TAB>[format]<TAB>[channels]
 
 combined.tsv (and amp/demozoo/modland/modsanthology/oldexotica/unexotica/wantedteam.tsv)
 ```
@@ -65,7 +70,7 @@ feaa9d2a4869	Scorpik	Alchemy	Toxic Ziemniak	1992
 feaba2f4c992	Jazz			
 feabaabf8a62	Mantronix~Tip	Blue House Productions~Rebels~Sonic Projects	Blue House 2	1991
 ```
-[md5]<TAB>[authors]<TAB>[publishers]<TAB>[album]<TAB>[year]
+[hash]<TAB>[authors]<TAB>[publishers]<TAB>[album]<TAB>[year]
 - multiple authors or publishers are separated by ~
 
 The TSV files use UTF-8 encoding.
@@ -74,7 +79,7 @@ I reserve the right to change the format or location in Github of any of the TSV
 
 * License
 
-The Scala and SQL scripts are licensed unded GPL-2.0-or-later.
+The Scala and SQL scripts are licensed under GPL-2.0-or-later.
 For any applicable sui generis rights or copyrights I may have over the database files, they are provided under CC BY-NC-SA 4.0 license.
 
 Sources used for the database:
