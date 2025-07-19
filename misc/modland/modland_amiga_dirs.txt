@@ -169,10 +169,11 @@
 ^.{33}Impulsetracker/
 ^.{33}Screamtracker 2/
 ^.{33}Screamtracker 3/
-# TODO grouppaa platformin mukaan
 ^.{33}Ad Lib/Screamtracker 3 AdLib/
 ^.{33}Astroidea XMF/
 ^.{33}Asylum/
+^.{33}CBA/
+^.{33}Coconizer/
 ^.{33}Composer 667/
 ^.{33}Composer 669/
 ^.{33}Composer 670 (CDFM)/
@@ -185,25 +186,26 @@
 ^.{33}Digitrakker/
 ^.{33}Disorder Tracker 2/
 ^.{33}Dynamic Studio Professional/
+^.{33}EasyTrax/
 ^.{33}Epic Megagames MASI/
 ^.{33}Extreme Tracker/
 ^.{33}FM Tracker/
 ^.{33}Farandole Composer/
+^.{33}Funktracker/
 ^.{33}General DigiMusic/
 ^.{33}Graoumf Tracker/
 ^.{33}Graoumf Tracker 2/
 ^.{33}Imago Orpheus/
+^.{33}Liquid Tracker/
 ^.{33}MO3/
 ^.{33}Mad Tracker 2/
+^.{33}Megatracker/
 ^.{33}Multitracker/
 ^.{33}Octalyser/
 ^.{33}OpenMPT MPTM/
 ^.{33}Polytracker/
+^.{33}Real Tracker/
 ^.{33}Ultratracker/
 ^.{33}Unis 669/
 ^.{33}Velvet Studio/
 ^.{33}X-Tracker/
-^.{33}Funktracker/
-^.{33}Liquid Tracker/
-^.{33}Megatracker/
-^.{33}Real Tracker/
