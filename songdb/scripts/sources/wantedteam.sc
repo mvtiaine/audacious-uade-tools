@@ -34,7 +34,7 @@ lazy val wantedteam_customs_by_path =
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
 lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl/WT_Customs.txt").toFile
-lazy val customs = Using(scala.io.Source.fromFile(customstxt)(scala.io.Codec.ISO8859))(_.getLines.toBuffer.drop(3).par.flatMap { line =>
+lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.drop(3).par.flatMap { line =>
   val parts = line.split("\\s+")
   val path = parts(0).replace(".lha","").replace(".lzx","")
   val size = parts(1).toIntOption.getOrElse(0)

@@ -8,6 +8,7 @@
 //> using file scripts/convert.sc
 //> using file scripts/pretty.sc
 //> using file scripts/combine.sc
+//> using file scripts/xxh32.sc
 
 //> using file scripts/songlengths.sc
 //> using file scripts/sources/sources.sc
@@ -34,11 +35,13 @@ import dedup._
 import convert._
 import pretty._
 import combine._
+import xxh32._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
+lazy val idx2xxh32 = Buffer("0" * 12) ++ songlengths.db.map(e => md5ToXxh32(e.md5.take(12))).sorted.distinct
 
 var ampdata: Buffer[MetaData] = Buffer.empty
 var modlanddata: Buffer[MetaData] = Buffer.empty
@@ -49,9 +52,9 @@ var wantedteamdata: Buffer[MetaData] = Buffer.empty
 var modsanthologydata: Buffer[MetaData] = Buffer.empty
 
 def dedupMeta(entries: Buffer[MetaData], name: String) = {
-  val dedupped = entries.groupBy(_.md5).map { case (md5, metas) =>
+  val dedupped = entries.groupBy(_.hash).map { case (hash, metas) =>
     if (metas.size > 1) {
-      System.err.println(s"WARN: removing duplicate entries in ${name}, md5: ${metas.head.md5} entries: ${metas}")
+      System.err.println(s"WARN: removing duplicate entries in ${name}, hash: ${metas.head.hash} entries: ${metas}")
     }
     val SORT = "\u0001"
     val meta = metas.sortBy(m => ("" +
@@ -60,21 +63,36 @@ def dedupMeta(entries: Buffer[MetaData], name: String) = {
      (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
      (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
     )).head
-    MetaData(md5, meta.authors, meta.publishers, meta.album, meta.year)
+    MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year)
   }.toBuffer
   dedupped
 }
 
-def processMetaTsvs(_entries: Buffer[MetaData], name: String) = {
+def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false) = {
   val entries = dedupMeta(_entries, name)
   // encoding does also deduplication
-  val encoded = encodeMetaTsv(entries, name)
+  val encoded = encodeMetaTsv(entries, name, _md5idx)
   val decoded = decodeMetaTsv(encoded, idx2md5)
   val pretty = createPrettyMetaTsv(decoded)
-  Files.write(Paths.get(s"/tmp/songdb/${name}"), encoded.getBytes("UTF-8"))
-  Files.write(Paths.get(s"/tmp/songdb/pretty/${name}"), pretty.getBytes("UTF-8"))
+
+  Files.write(Paths.get(s"/tmp/songdb/pretty/md5/${name}"), pretty.getBytes("UTF-8"))
+
   assert(decoded == parsePrettyMetaTsv(pretty))
-  assert(encoded == encodeMetaTsv(decoded, name))
+  assert(encoded == encodeMetaTsv(decoded, name, _md5idx))
+
+  if (allTsvs) {
+    val xxh32 = metasToXxh32(decoded)
+    val xxh32Encoded = encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx)
+    val xxh32Decoded = decodeMetaTsv(xxh32Encoded, idx2xxh32)
+    val xxh32Pretty = createPrettyMetaTsv(xxh32)
+
+    Files.write(Paths.get(s"/tmp/songdb/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
+    Files.write(Paths.get(s"/tmp/songdb/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
+
+    assert(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
+    assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
+  }
+
   decoded
 }
 
@@ -86,7 +104,7 @@ def _try[T](f: => T) = try {
     throw e
 }
 
-lazy val md5idxTsv = Future(_try {
+lazy val md5idx = Future(_try {
   idx2md5.zipWithIndex.foreach { case (md5s, idx) =>
     val b64 = md5(md5s)
     val md5v = base64d(b64)
@@ -96,9 +114,21 @@ lazy val md5idxTsv = Future(_try {
     assert(_idxmd5.get(b24).isEmpty)
     _idxmd5(b24) = md5s
   }
+})
 
-  val encoded = encodeMd5IdxTsv(idx2md5)
-  Files.write(Paths.get("/tmp/songdb/md5idx.tsv"), encoded.getBytes("UTF-8"))
+lazy val xxh32idxTsv = Future(_try {
+  idx2xxh32.zipWithIndex.foreach { case (xxh32s, idx) =>
+    val b64 = xxh32(xxh32s)
+    val xxh32v = base64d(b64)
+    val b24 = base64e24(idx, true)
+    assert(_xxh32idx.get(xxh32s).isEmpty)
+    _xxh32idx(xxh32s) = b24
+    assert(_idxxxh32.get(b24).isEmpty)
+    _idxxxh32(b24) = xxh32s
+  }
+
+  val encoded = encodeHashIdxTsv(idx2xxh32)
+  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/xxh32idx.tsv"), encoded.getBytes("UTF-8"))
 })
 
 lazy val songlengthsTsvs = Future(_try {
@@ -116,13 +146,23 @@ lazy val songlengthsTsvs = Future(_try {
   ).toBuffer.distinct
 
   // encoding does also deduplication
-  val encoded = encodeSonglengthsTsv(entries)
+  val encoded = encodeSonglengthsTsv(entries, _md5check)
   val decoded = decodeSonglengthsTsv(encoded, idx2md5)
   val pretty = createPrettySonglengthsTsv(decoded)
-  Files.write(Paths.get("/tmp/songdb/songlengths.tsv"), encoded.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/songlengths.tsv"), pretty.getBytes("UTF-8"))
+
+  val xxh32 = songlengthsToXxh32(decoded)
+  val xxh32Encoded = encodeSonglengthsTsv(xxh32, _xxh32check)
+  val xxh32Decoded = decodeSonglengthsTsv(xxh32Encoded, idx2xxh32)
+  val xxh32Pretty = createPrettySonglengthsTsv(xxh32)
+
+  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/songlengths.tsv"), xxh32Encoded.getBytes("UTF-8"))
+  Files.write(Paths.get("/tmp/songdb/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
+  Files.write(Paths.get("/tmp/songdb/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
+
   assert(decoded == parsePrettySonglengthsTsv(pretty))
-  assert(encoded == encodeSonglengthsTsv(decoded))
+  assert(encoded == encodeSonglengthsTsv(decoded, _md5check))
+  assert(xxh32Decoded == parsePrettySonglengthsTsv(xxh32Pretty))
+  assert(xxh32Encoded == encodeSonglengthsTsv(xxh32, _xxh32check))
 })
 
 lazy val modinfosTsvs = Future(_try {
@@ -135,13 +175,23 @@ lazy val modinfosTsvs = Future(_try {
   }.toBuffer.distinct
 
   // encoding does also deduplication
-  val encoded = encodeModInfosTsv(entries)
+  val encoded = encodeModInfosTsv(entries, _md5idx)
   val decoded = decodeModInfosTsv(encoded, idx2md5)
   val pretty = createPrettyModInfosTsv(decoded)
-  Files.write(Paths.get("/tmp/songdb/modinfos.tsv"), encoded.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/modinfos.tsv"), pretty.getBytes("UTF-8"))
+
+  val xxh32 = modinfosToXxh32(decoded)
+  val xxh32Encoded = encodeModInfosTsv(xxh32, _xxh32idx)
+  val xxh32Decoded = decodeModInfosTsv(xxh32Encoded, idx2xxh32)
+  val xxh32Pretty = createPrettyModInfosTsv(xxh32)
+
+  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/modinfos.tsv"), xxh32Encoded.getBytes("UTF-8"))
+  Files.write(Paths.get("/tmp/songdb/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
+  Files.write(Paths.get("/tmp/songdb/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
+
   assert(decoded == parsePrettyModInfosTsv(pretty))
-  assert(encoded == encodeModInfosTsv(decoded))
+  assert(encoded == encodeModInfosTsv(decoded, _md5idx))
+  assert(xxh32Decoded == parsePrettyModInfosTsv(xxh32Pretty))
+  assert(xxh32Encoded == encodeModInfosTsv(xxh32, _xxh32idx))
 })
 
 lazy val ampTsvs = Future(_try {
@@ -293,10 +343,20 @@ lazy val modsanthologyTsvs = Future(_try {
   modsanthologydata = processMetaTsvs(entries, "modsanthology.tsv")
 })
 
+Seq(
+  "/tmp/songdb/encoded/xxh32",
+  "/tmp/songdb/pretty/md5",
+  "/tmp/songdb/pretty/xxh32"
+).foreach { dir =>
+  Files.createDirectories(Paths.get(dir))
+}
+
 // needs to be processed first
-Await.ready(md5idxTsv, Duration.Inf)
+Await.ready(Future.sequence(Seq(md5idx,xxh32idxTsv)), Duration.Inf)
+
 val future = Future.sequence(
-  Seq(md5idxTsv,
+  Seq(md5idx,
+      xxh32idxTsv,
       songlengthsTsvs,
       modinfosTsvs,
       ampTsvs,
@@ -319,7 +379,7 @@ val future = Future.sequence(
       wantedteamdata,
       modsanthologydata
     )
-    processMetaTsvs(combined, "combined.tsv")
+    processMetaTsvs(combined, "metadata.tsv", true)
 }
 
 future onComplete {

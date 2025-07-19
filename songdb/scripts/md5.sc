@@ -114,22 +114,3 @@ def base64d24(base64: String) = {
   }
   v.toInt
 }
-
-def md5idxdiff(entries: Iterable[Buffer[String]]) = {
-  var prevmd5 = 0
-  var prevtail = Buffer.empty[String]
-  entries.map(e => {
-    val tail = e.tail
-    val md5v = base64d24(e(0))
-    val res = if (tail == prevtail || tail.isEmpty) {
-      assert(md5v > prevmd5)
-      val diff = md5v - prevmd5
-      Buffer(base64e24(diff)) ++ e.tail
-    } else {
-      e
-    }
-    prevmd5 = md5v
-    prevtail = tail
-    res
-  })
-}

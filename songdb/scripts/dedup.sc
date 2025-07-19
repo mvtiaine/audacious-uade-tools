@@ -2,6 +2,7 @@
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 import scala.collection.mutable.Buffer
+import scala.collection.mutable.Map
 import scala.collection.parallel.CollectionConverters._
 
 import md5._
@@ -9,20 +10,20 @@ import md5._
 val REPEAT = "\u007F"
 val SORT = "\u0001"
 
-def dedup(entries: Iterable[Buffer[String]], file: String) = {
+def dedup(entries: Iterable[Buffer[String]], file: String, _check: Map[String,String]) = {
   import Ordering.Implicits._
   // keeps original order
   val keys = entries.map(_(0)).toSeq.distinct
   val dedupped = entries.groupBy(_(0)).par.map(e =>
     if (e._2.size > 1) {
-      System.err.println(s"WARN: removing duplicate entries in ${file}, md5: ${_md5check(e._1)} entries: ${e._2}")
+      System.err.println(s"WARN: removing duplicate entries in ${file}, hash: ${_check(e._1)} entries: ${e._2}")
     }
     (e._1, e._2.toSeq.sorted.head)
   ).seq
   keys.map(dedupped).toSeq
 }
 
-def dedupidx(entries: Iterable[Buffer[String]], file: String, strict: Boolean = false) = {
+def dedupidx(entries: Iterable[Buffer[String]], file: String, _idx: Map[String,String], strict: Boolean = false) = {
   // keeps original order
   val keys = entries.par.map(_(0)).seq.toSeq.distinct
   val dedupped = entries.groupBy(_(0)).par.map(e =>
@@ -30,7 +31,7 @@ def dedupidx(entries: Iterable[Buffer[String]], file: String, strict: Boolean = 
       if (strict) {
         assert(e._2.forall(_ == e._2.head))
       } else {
-        System.err.println(s"WARN: removing duplicate entries in ${file}, md5: ${e._1} entries: ${e._2}")
+        System.err.println(s"WARN: removing duplicate entries in ${file}, hash: ${e._1} entries: ${e._2}")
       }
     }
     (e._1, e._2.toSeq.sortBy(entries =>
@@ -41,7 +42,7 @@ def dedupidx(entries: Iterable[Buffer[String]], file: String, strict: Boolean = 
   var prev = Buffer.empty[String]
   for (k <- keys) {
     val s = dedupped(k)
-    val idx = _md5idx(s.head)
+    val idx = _idx(s.head)
     assert(base64d24(idx) > 0)
     if (s.tail.sameElements(prev)) {
       res += Buffer(idx)
