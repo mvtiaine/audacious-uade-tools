@@ -17,27 +17,27 @@ def combineMetadata(
   wantedteam: Buffer[MetaData],
   modsanthology: Buffer[MetaData],
 ) = {
-  val md5s = (
-    amp.par.map(_.md5) ++
-    modland.par.map(_.md5) ++
-    unexotica.par.map(_.md5) ++
-    demozoo.par.map(_.md5) ++
-    oldexotica.par.map(_.md5) ++
-    wantedteam.par.map(_.md5) ++
-    modsanthology.par.map(_.md5)
+  val hashes = (
+    amp.par.map(_.hash) ++
+    modland.par.map(_.hash) ++
+    unexotica.par.map(_.hash) ++
+    demozoo.par.map(_.hash) ++
+    oldexotica.par.map(_.hash) ++
+    wantedteam.par.map(_.hash) ++
+    modsanthology.par.map(_.hash)
   ).toSet
 
-  val ampg = amp.groupBy(_.md5).par.mapValues(_.head)
+  val ampg = amp.groupBy(_.hash).par.mapValues(_.head)
   // canonize Falcon (PL) -> Falcon etc.
-  val modlandg = modland.groupBy(_.md5).par.mapValues(v => v.head.copy(
+  val modlandg = modland.groupBy(_.hash).par.mapValues(v => v.head.copy(
     authors = v.head.authors.map(_.replaceAll(" \\(.*\\)$", "")))).seq
-  val demozoog = demozoo.groupBy(_.md5).par.mapValues(_.head)
-  val unexoticag = unexotica.groupBy(_.md5).par.mapValues(_.head)
-  val oldexoticag = oldexotica.groupBy(_.md5).par.mapValues(_.head)
-  val wantedteamg = wantedteam.groupBy(_.md5).par.mapValues(_.head)
+  val demozoog = demozoo.groupBy(_.hash).par.mapValues(_.head)
+  val unexoticag = unexotica.groupBy(_.hash).par.mapValues(_.head)
+  val oldexoticag = oldexotica.groupBy(_.hash).par.mapValues(_.head)
+  val wantedteamg = wantedteam.groupBy(_.hash).par.mapValues(_.head)
   // canonize XXX of YYY -> XXX
   // XXX.sweden -> XXX etc.
-  val modsanthologyg = modsanthology.groupBy(_.md5).par.mapValues(v => v.head.copy(
+  val modsanthologyg = modsanthology.groupBy(_.hash).par.mapValues(v => v.head.copy(
     authors = v.head.authors.map(_
     .replaceAll(" of .*", "")
     .replaceAll("\\.canada$", "")
@@ -52,14 +52,14 @@ def combineMetadata(
     .replaceAll("\\.usa$", "")
   ))).seq
 
-  var metas = md5s.par.map { md5 =>
-    val a = ampg.get(md5)
-    val m = modlandg.get(md5)
-    val d = demozoog.get(md5)
-    val u = unexoticag.get(md5)
-    val o = oldexoticag.get(md5)
-    val w = wantedteamg.get(md5)
-    val ma = modsanthologyg.get(md5)
+  var metas = hashes.par.map { hash =>
+    val a = ampg.get(hash)
+    val m = modlandg.get(hash)
+    val d = demozoog.get(hash)
+    val u = unexoticag.get(hash)
+    val o = oldexoticag.get(hash)
+    val w = wantedteamg.get(hash)
+    val ma = modsanthologyg.get(hash)
  
     def pickAuthor[T](
       a: Option[MetaData],
@@ -163,7 +163,7 @@ def combineMetadata(
     if (year == 0) year = pickYear(w)
     if (year == 0) year = pickYear(ma)
 
-    MetaData(md5, authors, publishers, album, year)
+    MetaData(hash, authors, publishers, album, year)
   }
 
   // find metas which have common author(s) + album, add publishers and year if missing
@@ -221,11 +221,11 @@ def combineMetadata(
           || m.publishers.exists(p => publishers.contains(p))
           || publishers.exists(p => m.publishers.contains(p)))
         ) {
-          System.err.println(s"WARN: publishers differ for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.flatMap(_.publishers).mkString(",")}")
+          System.err.println(s"WARN: publishers differ for ${m.hash} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.flatMap(_.publishers).mkString(",")}")
         }
         var year = if (m.year == 0) metas.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0) else m.year
         if (!metas.forall(m => m.year == 0 || m.year == year)) {
-          System.err.println(s"WARN: year differs for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.map(_.year).mkString(",")}")
+          System.err.println(s"WARN: year differs for ${m.hash} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.map(_.year).mkString(",")}")
         }
         m.copy(publishers = publishers, year = year)
       } else {
@@ -285,7 +285,7 @@ def combineMetadata(
         val metas = metasByPublisherAlbumWithYear(key.get)
         var year = metas.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0)
         if (!metas.forall(m => m.year == 0 || m.year == year)) {
-          System.err.println(s"WARN: year differs for ${m.md5} - ${m.album} - ${m.publishers.mkString(",")} - ${m.year} != ${metas.map(_.year).mkString(",")}")
+          System.err.println(s"WARN: year differs for ${m.hash} - ${m.album} - ${m.publishers.mkString(",")} - ${m.year} != ${metas.map(_.year).mkString(",")}")
         }
         m.copy(year = year)
       } else {
@@ -340,11 +340,11 @@ def combineMetadata(
               || m.publishers.exists(p => publishers.contains(p))
               || publishers.exists(p => m.publishers.contains(p)))
           ) {
-            System.err.println(s"WARN: publishers differ for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.get.flatMap(_.publishers).mkString(",")}")
+            System.err.println(s"WARN: publishers differ for ${m.hash} - ${m.authors.mkString(",")} - ${m.album} - ${m.publishers.mkString(",")} != ${metas.get.flatMap(_.publishers).mkString(",")}")
           }
           var year = if (m.year == 0) metas.get.filter(_.year != 0).map(_.year).toSeq.seq.sorted.headOption.getOrElse(0) else m.year
           if (!metas.get.forall(m => m.year == 0 || m.year == year)) {
-            System.err.println(s"WARN: year differs for ${m.md5} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.get.map(_.year).mkString(",")}")
+            System.err.println(s"WARN: year differs for ${m.hash} - ${m.authors.mkString(",")} - ${m.album} - ${m.year} != ${metas.get.map(_.year).mkString(",")}")
           }
           m.copy(authors = authors, publishers = publishers, year = year)
         } else {
@@ -356,5 +356,5 @@ def combineMetadata(
     }
   )
 
-  metas.toBuffer.sortBy(_.md5)
+  metas.toBuffer.sortBy(_.hash)
 }
