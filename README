@@ -39,6 +39,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 - songdb/sources/unexotica.tsv - module infos and songlengths for UnExoticA
 - songdb/sources/wantedteam.tsv - module infos and songlengths for Wanted Team
 - songdb/sources/zakalwe.tsv - module infos and songlengths for Zakalwe chip git repo
+- songdb/sources/audio/*.tsv - audio fingerprints (chromaprint), zstd compressed in git. See scripts/sources/audio.sc for format.
 
 Except for demozoo.tsv, the raw TSV source files are generated using the precalc binary+script https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/ from my local copy/mirror/snapshot of the various sites/sources.
 
