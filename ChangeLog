@@ -1,3 +1,9 @@
+2025-07-23
+- Audio fingerprinting (chromaprint) support:
+-- metadata is now also matched/combined based on audio fingerprints, to support different rips, corrupted files etc.
+-- may cause false positive matches, but tried to find acceptable balance between correctness and coverage
+-- source tsv files with fingeprints available in songdb/sources/audio/ (see scripts/sources/audio.sc for format)
+
 2025-07-18
 - XXH32 hashing support:
 -- faster hash alternative to MD5, also using only first 256k bytes for hash.
