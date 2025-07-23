@@ -15,6 +15,7 @@ case class SonglengthEntry (
   minsubsong: Int,
   maxsubsong: Int,
   subsongs: Seq[Subsong],
+  player: String,
   format: String,
   channels: Int,
 )
@@ -24,6 +25,7 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,subsongs) => {
   val maxsubsong = subsongs.maxBy(_.subsong).subsong
   val songs = subsongs.map(s => Subsong(s.subsong, s.songlength, s.songend)).distinct.toSeq
   val e = subsongs.filterNot(_.format.isEmpty)
+  val player = e.headOption.map(_.player).getOrElse("")
   val format = e.headOption.map(e => if (e.format != "???") e.format else "").getOrElse("")
   val channels = e.headOption.map(_.channels).getOrElse(0)
   if (songs.length > maxsubsong - minsubsong + 1) {
@@ -32,9 +34,9 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,subsongs) => {
       for (subsong <- minsubsong to maxsubsong) {
         subsongs.append(songs.filter(_.subsong == subsong).maxBy(_.songlength))
       }
-      SonglengthEntry(md5, minsubsong, maxsubsong, subsongs.toSeq, format, channels)
+      SonglengthEntry(md5, minsubsong, maxsubsong, subsongs.toSeq, player, format, channels)
   } else {
-    SonglengthEntry(md5, minsubsong, maxsubsong, songs, format, channels)
+    SonglengthEntry(md5, minsubsong, maxsubsong, songs, player, format, channels)
   }
 }}).distinct.groupBy(_.md5).map({case (md5, entries) =>
   var best = entries.head
@@ -49,3 +51,5 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,subsongs) => {
   }
   best
 }).toSeq.seq
+
+lazy val songlengthsByMd5 = db.groupBy(_.md5.take(12)).par.mapValues(_.distinct).seq

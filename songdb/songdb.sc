@@ -9,6 +9,7 @@
 //> using file scripts/pretty.sc
 //> using file scripts/combine.sc
 //> using file scripts/xxh32.sc
+//> using file scripts/chromaprint.sc
 
 //> using file scripts/songlengths.sc
 //> using file scripts/sources/sources.sc
@@ -19,6 +20,7 @@
 //> using file scripts/sources/oldexotica.sc
 //> using file scripts/sources/wantedteam.sc
 //> using file scripts/sources/modsanthology.sc
+//> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -36,6 +38,7 @@ import convert._
 import pretty._
 import combine._
 import xxh32._
+import audio._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
