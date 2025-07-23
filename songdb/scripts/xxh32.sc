@@ -64,8 +64,16 @@ def metasToXxh32(meta: Buffer[MetaData]) = {
   val xxh = meta.map(e => e.copy(hash = md5ToXxh32(e.hash)))
   xxh.groupBy(_.hash).par.map { case (_, entries) =>
     if (!entries.forall(_ == entries.head)) {
-      // select best based on which has most metadata fields
-      val best = entries.maxBy(e => e.authors.size + e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))
+      // select best based on some ad hoc metadata heuristics
+      val scores = entries.map(e => (e, e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))).toMap
+      val bestscore = scores.maxBy(_._2)._2
+      val bestentries = entries.filter(e => (e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0)) == bestscore)
+      val minyear = bestentries.map(e => if (e.year > 0) e.year else 9999).min
+      val byyear = bestentries.filter(_.year == minyear)
+      var best = if (byyear.nonEmpty) byyear.maxBy(_.authors.size) else bestentries.maxBy(_.authors.size)
+      if (best.authors.isEmpty) {
+        best = best.copy(authors = bestentries.maxBy(_.authors.size).authors)
+      }
       System.err.println(s"WARN: Conflicting meta data entries for xxh32 ${entries.head.hash} md5s ${xxh32ToMd5(entries.head.hash)}: ${entries}, best: ${best}")
       best.copy(hash = entries.head.hash)
     } else entries.head
