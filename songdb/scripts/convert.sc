@@ -17,7 +17,8 @@ val SORT = "\u0001"
 
 case class SubsongInfo (
   songlength: Int, // in ms
-  songend: String, // ...
+  songend: String,
+  duplicate: Boolean,
 )
 
 trait BaseInfo {
@@ -123,19 +124,28 @@ def decodeSonglengthsTsv(tsv: String, idx2hash: Buffer[String]) = {
     val subsongs = Buffer.empty[SubsongInfo]
     val minsubsong = if (cols.length == 1 || cols(1).isEmpty) 1 else cols(1).toInt
 
-    var prev = SubsongInfo(0, "error")
+    var prev = SubsongInfo(0, "error", false)
     cols(0).split(" ", -1).foreach(ss =>
       if (ss.isEmpty()) {
         assert(prev != null)
+        prev = prev.copy(duplicate = false)
+      } else if (ss == "!") {
+        assert(prev != null)
+        prev = prev.copy(duplicate = true)
       } else {
         val e = ss.split(',')
         val songlength =
           if (e(0).isEmpty) 0
           else base64d24(e(0)) * 20 // 20ms accuracy in encoded tsv
         val songend =
-          if (e.length == 1 || e(1).isEmpty) "player"
+          if (e.length == 1 || e(1).isEmpty || e(1) == "!") "player"
           else decodeSongend(e(1))
-        val subsong = SubsongInfo(songlength, songend)
+        val duplicate =
+          if (e.length == 1 && e(0) == "!") true
+          else if (e.length == 2 && e(1) == "!") true
+          else if (e.length > 2 && e(2) == "!") true
+          else false
+        val subsong = SubsongInfo(songlength, songend, duplicate)
         prev = subsong
       }
       subsongs += prev
@@ -165,11 +175,14 @@ def encodeSonglengthsTsv(songlengths: Buffer[SongInfo], _check: Map[String, Stri
       val _songend = if (s.songend != "player") encode(s.songend) else ""
       val sl = if (s.songlength > 0 && s.songlength < 20) 20 else s.songlength
       val _songlength = ""+base64e24((sl + 10) / 20) // 20ms accuracy in songlengths
-      val next = if (_songend.isEmpty) _songlength else _songlength + "," + _songend
-      if (prev == next) ""
-      else {
+      var next = if (_songend.isEmpty) _songlength else _songlength + "," + _songend
+      if (prev == next) {
+        if (s.duplicate) "!"
+        else ""
+      } else {
         prev = next
-        next
+        if (s.duplicate) next + ",!"
+        else next
       }
     )
     val minsubsong = if (e.minsubsong != 1) e.minsubsong.toString else ""

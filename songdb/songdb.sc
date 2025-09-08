@@ -24,6 +24,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.concurrent.Await
@@ -39,6 +40,7 @@ import pretty._
 import combine._
 import xxh32._
 import audio._
+import chromaprint._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
@@ -135,18 +137,64 @@ lazy val xxh32idxTsv = Future(_try {
 })
 
 lazy val songlengthsTsvs = Future(_try {
-  val entries = songlengths.db.sortBy(_.md5).par.map(e =>
+  audio.audioByMd5 // XXX need explicit eager init before .par to avoid "unparallelized" init due to most threads waiting below
+  val entries = songlengths.db.sortBy(_.md5).par.map(e => {
+    val md5 = e.md5.take(12)
+    val duplicates = mutable.SortedSet[Int]()
+    val fingerprints = audio.audioByMd5.get(md5).getOrElse(Buffer.empty)
+    if (fingerprints.nonEmpty) {
+      val filtered = fingerprints.filter(_.audioBytes > 0)
+      val grouped = (
+        if (filtered.forall(e => e.audioBytes > 2 * 11025 * 10 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
+        else filtered.groupBy(_.tag.replaceFirst(s"^[0-9]+-", "")
+      )).mapValues(_.distinct)
+      if (!grouped.values.forall(group => group.map(_.subsong).distinct.size == group.size)) {
+        System.err.println(s"WARN: inconsistent audio fingerprints for md5: $md5 player: ${e.player} format: ${e.format}")
+      }
+      assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
+      for ((_, group) <- grouped) {
+        var remaining = group
+        while (remaining.nonEmpty) {
+          val cmp = remaining.head
+          remaining = remaining.filterNot(_.subsong == cmp.subsong)
+          for (e <- remaining) {
+            var duplicate = true
+            if (e.audioChromaprint != cmp.audioChromaprint) {       
+              val threshold = if (filtered.forall(f => (f.tag == e.tag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 10)) 0.9 else 0.99
+              val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint, threshold)
+              if (similarity < threshold) {
+                duplicate = false
+                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong} is too low: ${similarity} threshold: ${threshold}")
+              } else {
+                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${similarity} threshold: ${threshold} (duplicate)")
+              }
+            } else if (e.audioHash != cmp.audioHash) {
+              duplicate = false
+              //System.err.println(s"DEBUG: Audio hash mismatch for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${cmp.audioHash} vs ${e.audioHash}")
+            }
+            if (duplicate) {
+              duplicates += e.subsong
+            }
+          }
+          remaining = remaining.filterNot(e => duplicates.contains(e.subsong))
+        }
+      }
+      if (duplicates.nonEmpty && e.subsongs.size > duplicates.size) {
+        System.err.println(s"WARN: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
+      }
+    }
     SongInfo(
-      e.md5.take(12),
+      md5,
       e.minsubsong,
       e.subsongs.sortBy(_.subsong).map(s =>
         SubsongInfo(
           s.songlength,
           s.songend,
+          e.subsongs.size > duplicates.size && duplicates.contains(s.subsong),
         )
       ).toBuffer
     )
-  ).toBuffer.distinct
+  }).toBuffer.distinct
 
   // encoding does also deduplication
   val encoded = encodeSonglengthsTsv(entries, _md5check)
