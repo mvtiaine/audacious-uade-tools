@@ -51,11 +51,12 @@ Here are example snippets and short spec for the pretty printed TSVs. Example pa
 
 songlengths.tsv
 ```
+ff5c7b3227e0	0	65920,p 65920,p,!
 fffd7a7d8547	1	250840,p+s
-fffd9ea13bc6	1	162860,p
 fffdc1d765c3	0	40880,l 117860,l 8780,s 79340,l 8080,s 19000,s
 ```
-[hash]<TAB>[minsubsong]<TAB>[[songlength(ms),songend]<SPACE>[songlength(ms),songend]<SPACE>[...]]
+[hash]<TAB>[minsubsong]<TAB>[[songlength(ms),songend[,!]]<SPACE>[songlength(ms),songend[,!]]<SPACE>[...]]
+- duplicate subsongs are denoted by !
 
 modinfos.tsv
 ```
