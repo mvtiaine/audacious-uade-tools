@@ -1,3 +1,7 @@
+2025-09-08
+- Implemented duplicate subsong detection using audio fingerprints
+- Improved metadata accuracy and coverage for audio fingerprint matching
+
 2025-07-23
 - Audio fingerprinting (chromaprint) support:
 -- metadata is now also matched/combined based on audio fingerprints, to support different rips, corrupted files etc.
