@@ -1,8 +1,81 @@
 // SPDX-License-Identifier: MIT
+// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// see below for further copyrights
 
 //> using dep org.scodec::scodec-bits::1.2.1
 //> using dep org.typelevel::spire::0.18.0
 
+import java.util.concurrent.ConcurrentHashMap
+import scala.collection.mutable
+import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
+import spire.math._
+
+val fpCache = new ConcurrentHashMap[String, (Int, IndexedSeq[UInt])]().asScala
+
+def decodeChromaprint(chromaprint: String): (Int, IndexedSeq[UInt]) = {
+  fpCache.getOrElseUpdate(chromaprint, {
+    val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
+    (algo, data)
+  })
+}
+
+val similarityCache = new ConcurrentHashMap[(String, String, Double), Double]().asScala
+
+def chromaSimilarity(chromaprint1: String, chromaprint2: String, minSimilarity: Double): Double = {
+  if (chromaprint1 == chromaprint2) {
+    return 1.0
+  }
+  val Seq(fp1, fp2) = Seq(chromaprint1, chromaprint2).sorted
+  similarityCache.getOrElseUpdate((fp1, fp2, minSimilarity), {
+    val (algo0, data0) = decodeChromaprint(fp1)
+    val (algo, data) = decodeChromaprint(fp2)
+    assert(algo0 == algo)
+    chromaSimilarityFast(algo0, data0, algo, data, minSimilarity)
+  })
+}
+
+def chromaSimilarityFast(
+  algo1: Int,
+  data1: IndexedSeq[spire.math.UInt],
+  algo2: Int,
+  data2: IndexedSeq[spire.math.UInt],
+  threshold: Double,
+): Double = {
+  if (algo1 != algo2) {
+    return 0.0
+  }
+
+  var maxSimilarity = 0.0
+  
+  for (offset <- Seq(0,-1,1,-2,2,-3,3)) {
+    var totalScore = 0
+    var overlap = 0
+    var i = 0
+    
+    while (i < data1.length) {
+      val j = i + offset
+      if (j >= 0 && j < data2.length) {
+        val xorValue = data1(i) ^ data2(j)
+        totalScore += (32 - Integer.bitCount(xorValue.toInt))
+        overlap += 1
+      }
+      i += 1
+    }
+    
+    if (overlap > 0) {
+      val similarity = totalScore.toDouble / (overlap * 32.0)
+      if (similarity > maxSimilarity) {
+        maxSimilarity = similarity
+        if (maxSimilarity >= threshold) {
+          return maxSimilarity
+        }
+      }
+    }
+  }
+  
+  maxSimilarity
+}
+/*
 def chromaSimilarity(
   algo1: Int,
   data1: IndexedSeq[spire.math.UInt],
@@ -44,6 +117,7 @@ def chromaSimilarity(
   maxSimilarity
 }
 
+*/
 // Chromaprint decoding and SimHash code, with some modifications, from:
 // https://github.com/mgdigital/Chromaprint.scala
 /*
@@ -109,6 +183,8 @@ object Base64 {
 // FingerprintDecompressor.scala
 //package chromaprint
 
+// mvtiaine: vibe optimized with Claude Sonnet 4
+
 import spire.math.{UInt, UShort}
 
 object FingerprintDecompressor {
@@ -166,61 +242,71 @@ object FingerprintDecompressor {
     length: Int
   ): Either[DecompressorException,IndexedSeq[IndexedSeq[UShort]]] = {
 
-    var result: Vector[Vector[UShort]] = Vector.empty
-    var current: Vector[UShort] = Vector.empty
-
-    // mvtiaine: offset tracking optimization
-    //def offset: Int = result.flatten.length + current.length
-    var offset: Int = 0
-    def incomplete: Boolean = result.length < length
+    // Pre-allocate result array with known size
+    val result = Array.ofDim[Vector[UShort]](length)
+    var resultIndex = 0
+    var current = Vector.empty[UShort]
+    var offset = 0
 
     val triplets = bytesToTriplets(bytes)
+    val tripletsLength = triplets.length
 
-    while (incomplete && triplets.lift(offset).isDefined) {
+    while (resultIndex < length && offset < tripletsLength) {
       val bit = triplets(offset)
       current = current :+ bit
-      offset += 1 // mvtiaine: offset tracking optimization
+      offset += 1
+      
       if (bit.toInt == 0) {
-        result = result :+ current
+        result(resultIndex) = current
+        resultIndex += 1
         current = Vector.empty
       }
     }
 
-    if (incomplete) {
+    if (resultIndex < length) {
       Left(new DecompressorException("Not enough normal bits"))
     } else {
-      Right(result)
+      Right(result.toIndexedSeq)
     }
   }
 
-  private def bytesToTriplets(bytes: IndexedSeq[Byte]): IndexedSeq[UShort] =
-    bytes.grouped(3).flatMap { t =>
-      Vector(
-        t(0) & 0x07,
-        (t(0) & 0x38) >> 3
-      ) ++ (t.lift(1) match {
-        case None =>
-          Vector.empty[Int]
-        case Some(t1) =>
-          Vector(
-            ((t(0) & 0xc0) >> 6) | ((t1 & 0x01) << 2),
-            (t1 & 0x0e) >> 1,
-            (t1 & 0x70) >> 4
-          ) ++ (t.lift(2) match {
-            case None =>
-              Vector.empty[Int]
-            case Some(t2) =>
-              Vector(
-                ((t1 & 0x80) >> 7) | ((t2 & 0x03) << 1),
-                (t2 & 0x1c) >> 2,
-                (t2 & 0xe0) >> 5
-              )
-          })
-      })
-    }.map(UShort(_)).toVector
+  // Optimized bit manipulation with lookup tables for common operations
+  private val mask3Bits = Array.tabulate(256)(i => i & 0x07)
+  private val mask5Bits = Array.tabulate(256)(i => i & 0x1f)
+  
+  private def bytesToTriplets(bytes: IndexedSeq[Byte]): IndexedSeq[UShort] = {
+    val result = Vector.newBuilder[UShort]
+    result.sizeHint(bytes.length * 8 / 3) // Rough estimate for better performance
+    
+    var i = 0
+    val bytesLength = bytes.length
+    
+    while (i < bytesLength) {
+      val b0 = bytes(i) & 0xff
+      result += UShort(mask3Bits(b0))
+      result += UShort((b0 & 0x38) >> 3)
+      
+      if (i + 1 < bytesLength) {
+        val b1 = bytes(i + 1) & 0xff
+        result += UShort(((b0 & 0xc0) >> 6) | ((b1 & 0x01) << 2))
+        result += UShort((b1 & 0x0e) >> 1)
+        result += UShort((b1 & 0x70) >> 4)
+        
+        if (i + 2 < bytesLength) {
+          val b2 = bytes(i + 2) & 0xff
+          result += UShort(((b1 & 0x80) >> 7) | ((b2 & 0x03) << 1))
+          result += UShort((b2 & 0x1c) >> 2)
+          result += UShort((b2 & 0xe0) >> 5)
+        }
+      }
+      i += 3
+    }
+    
+    result.result()
+  }
 
   private def packedTripletSize(size: Int): Int =
-    (size * 3 + 7) / 8
+    (size * 3 + 7) >> 3  // Bit shift instead of division
 
   private def extractExceptionBits
   (
@@ -228,107 +314,148 @@ object FingerprintDecompressor {
     normalBits: IndexedSeq[IndexedSeq[UShort]]
   ): Either[DecompressorException,IndexedSeq[IndexedSeq[Option[UShort]]]] = {
 
-    val quintets = bytesToQuintets(body.drop(packedTripletSize(normalBits.flatten.length)))
+    val normalBitsLength = normalBits.iterator.map(_.length).sum
+    val quintets = bytesToQuintets(body.drop(packedTripletSize(normalBitsLength)))
 
-    val maxNormals: Map[Int,Set[Int]] = normalBits.zipWithIndex.
-      map(t => (t._2, t._1.zipWithIndex.filter(_._1.toInt == 7).map(_._2).toSet)).
-      foldLeft(Map.empty[Int,Set[Int]]){ (m, n) => m.updated(n._1, n._2)}
+    // Pre-compute exception positions more efficiently
+    val exceptionPositions = Array.ofDim[Array[Int]](normalBits.length)
+    var totalExceptions = 0
+    
+    var i = 0
+    while (i < normalBits.length) {
+      val positions = normalBits(i).zipWithIndex.collect {
+        case (bit, idx) if bit.toInt == 7 => idx
+      }.toArray
+      exceptionPositions(i) = positions
+      totalExceptions += positions.length
+      i += 1
+    }
 
-    val requiredExceptionBits = maxNormals.values.flatten.toVector.length
-
-    if (requiredExceptionBits > quintets.length) {
-
+    if (totalExceptions > quintets.length) {
       Left(new DecompressorException("Not enough exception bits"))
     } else {
-
-      var offset: Int = 0
-
-      Right(normalBits.indices.map{ i =>
-        maxNormals(i).foldLeft(Vector.fill[Option[UShort]](normalBits(i).length)(None)){ (v, n) =>
-          val b = quintets(offset)
-          offset += 1
-          v.updated(n, Some(b))
+      var quintetOffset = 0
+      val result = Array.ofDim[IndexedSeq[Option[UShort]]](normalBits.length)
+      
+      i = 0
+      while (i < normalBits.length) {
+        val normalBitLength = normalBits(i).length
+        val exceptions = Array.fill[Option[UShort]](normalBitLength)(None)
+        
+        val positions = exceptionPositions(i)
+        var j = 0
+        while (j < positions.length) {
+          exceptions(positions(j)) = Some(quintets(quintetOffset))
+          quintetOffset += 1
+          j += 1
         }
-      })
+        
+        result(i) = exceptions.toIndexedSeq
+        i += 1
+      }
+      
+      Right(result.toIndexedSeq)
     }
   }
 
-  // scalastyle:off magic.number
-
-  private def bytesToQuintets(bytes: IndexedSeq[Byte]): IndexedSeq[UShort] =
-    bytes.grouped(5).flatMap{ q =>
-      Vector(
-        q(0) & 0x1f
-      ) ++ (q.lift(1) match {
-        case None =>
-          Vector.empty[Int]
-        case Some(q1) =>
-          Vector(
-            ((q(0) & 0xe0) >> 5) | ((q1 & 0x03) << 3),
-            (q1 & 0x7c) >> 2
-          ) ++ (q.lift(2) match {
-            case None =>
-              Vector.empty[Int]
-            case Some(q2) =>
-              Vector(
-                ((q1 & 0x80) >> 7) | ((q2 & 0x0f) << 1)
-              ) ++ (q.lift(3) match {
-                case None =>
-                  Vector.empty[Int]
-                case Some(q3) =>
-                  Vector(
-                    ((q2 & 0xf0) >> 4) | ((q3 & 0x01) << 4),
-                    (q3 & 0x3e) >> 1
-                  ) ++ (q.lift(4) match {
-                    case None =>
-                      Vector.empty[Int]
-                    case Some(q4) =>
-                      Vector(
-                        ((q3 & 0xc0) >> 6) | ((q4 & 0x07) << 2),
-                        (q4 & 0xf8) >> 3
-                      )
-                  })
-              })
-          })
-      })
-    }.map(UShort(_)).toIndexedSeq
-
-  // scalastyle:on magic.number
+  private def bytesToQuintets(bytes: IndexedSeq[Byte]): IndexedSeq[UShort] = {
+    val result = Vector.newBuilder[UShort]
+    result.sizeHint(bytes.length * 8 / 5) // Rough estimate
+    
+    var i = 0
+    val bytesLength = bytes.length
+    
+    while (i < bytesLength) {
+      val q0 = bytes(i) & 0xff
+      result += UShort(mask5Bits(q0))
+      
+      if (i + 1 < bytesLength) {
+        val q1 = bytes(i + 1) & 0xff
+        result += UShort(((q0 & 0xe0) >> 5) | ((q1 & 0x03) << 3))
+        result += UShort((q1 & 0x7c) >> 2)
+        
+        if (i + 2 < bytesLength) {
+          val q2 = bytes(i + 2) & 0xff
+          result += UShort(((q1 & 0x80) >> 7) | ((q2 & 0x0f) << 1))
+          
+          if (i + 3 < bytesLength) {
+            val q3 = bytes(i + 3) & 0xff
+            result += UShort(((q2 & 0xf0) >> 4) | ((q3 & 0x01) << 4))
+            result += UShort((q3 & 0x3e) >> 1)
+            
+            if (i + 4 < bytesLength) {
+              val q4 = bytes(i + 4) & 0xff
+              result += UShort(((q3 & 0xc0) >> 6) | ((q4 & 0x07) << 2))
+              result += UShort((q4 & 0xf8) >> 3)
+            }
+          }
+        }
+      }
+      i += 5
+    }
+    
+    result.result()
+  }
 
   private def combineBits
   (
     normalBits: IndexedSeq[IndexedSeq[UShort]],
     exceptionBits: IndexedSeq[IndexedSeq[Option[UShort]]]
-  ): IndexedSeq[UShort] =
-    normalBits.zip(exceptionBits).flatMap{ p =>
-      p._1.zipWithIndex.map{ b =>
-        if (b._1.toInt == 7) {
-          b._1 + p._2(b._2).getOrElse{throw new RuntimeException("Exception bit not found")}
+  ): IndexedSeq[UShort] = {
+    val result = Vector.newBuilder[UShort]
+    result.sizeHint(normalBits.iterator.map(_.length).sum)
+    
+    var i = 0
+    while (i < normalBits.length) {
+      val normal = normalBits(i)
+      val exceptions = exceptionBits(i)
+      
+      var j = 0
+      while (j < normal.length) {
+        val normalBit = normal(j)
+        if (normalBit.toInt == 7) {
+          exceptions(j) match {
+            case Some(exceptionBit) => result += normalBit + exceptionBit
+            case None => throw new RuntimeException("Exception bit not found")
+          }
         } else {
-          b._1
+          result += normalBit
         }
+        j += 1
       }
+      i += 1
     }
+    
+    result.result()
+  }
 
-  private def unpackBits(bits: IndexedSeq[UShort]): IndexedSeq[UInt] =
-    bits.foldLeft((UInt(0), UInt(0), Vector.empty[UInt])){ (t, bit) =>
-      val ( value, lastBit, result ) = t
+  private def unpackBits(bits: IndexedSeq[UShort]): IndexedSeq[UInt] = {
+    val result = Vector.newBuilder[UInt]
+    result.sizeHint(bits.length / 2) // Rough estimate
+    
+    var value = UInt(0)
+    var lastBit = UInt(0)
+    var previousValue = UInt(0)
+    
+    var i = 0
+    while (i < bits.length) {
+      val bit = bits(i)
       if (bit.toInt == 0) {
-        (
-          UInt(0),
-          UInt(0),
-          result :+ result.lastOption.map(value ^ _).getOrElse(value)
-        )
+        val finalValue = if (result.knownSize == 0) value else value ^ previousValue
+        result += finalValue
+        previousValue = finalValue
+        value = UInt(0)
+        lastBit = UInt(0)
       } else {
         val nextLast = lastBit + UInt(bit.toInt)
-        (
-          value | UInt(1) << (nextLast.toInt - 1),
-          nextLast,
-          result
-        )
+        value = value | (UInt(1) << (nextLast.toInt - 1))
+        lastBit = nextLast
       }
-    }._3
-
+      i += 1
+    }
+    
+    result.result()
+  }
 }
 
 // SimHash.scala

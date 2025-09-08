@@ -20,9 +20,17 @@ def songlengthLine(s: SongInfo): String = {
     s.hash.take(12),
     s.minsubsong.toString,
     s.subsongs.map(ss =>
-      Buffer(
-        ss.songlength.toString,
-        shorten(ss.songend)
+      (if (ss.duplicate)
+        Buffer(
+          ss.songlength.toString,
+          shorten(ss.songend),
+          "!",
+        )
+      else
+        Buffer(
+          ss.songlength.toString,
+          shorten(ss.songend)
+        )
       ).mkString(",")
     ).mkString(" ")
   ).mkString("\t")
@@ -57,7 +65,8 @@ def parsePrettySonglengthsTsv(tsv: String) = {
       val e = ss.split(',')
       SubsongInfo(
         songlength = e(0).toInt,
-        songend = decodeSongend(e(1))
+        songend = decodeSongend(e(1)),
+        duplicate = e.length > 2 && e(2) == "!"
       )
     }
     SongInfo(hash, minsubsong, subsongs.toBuffer)

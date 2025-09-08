@@ -365,77 +365,62 @@ def combineMetadata(
     lazy val entriesByHash = entries.groupBy(_.md5)
     var hashes = entries.map(_.md5).distinct
     var metas = hashes.flatMap(h => metasByHash.get(h))
-    // caching probably not very useful currently
-    val fpCache = mutable.Map[String, (Int, IndexedSeq[UInt])]()
-    val similarityCache = mutable.Map[(String, String), Double]()
-    // NOTE: no .par usage allowed after this point
     while (metas.nonEmpty && hashes.nonEmpty) {
-      var best = metas.head
+      var cmp = metas.head
       if (!metas.forall(_ == metas.head) || hashes.size != metas.size) {
+        val cmpAudioEntries = entriesByHash(cmp.hash).distinctBy(_.normalizedSubsong)
+        val duplicateHashes = mutable.Buffer.empty[String]
+        for (hash <- hashes) {
+          var audioEntries = entriesByHash(hash).distinctBy(_.normalizedSubsong)
+          assert(audioEntries.size == cmpAudioEntries.size)
+          var duplicate = true
+          for (i <- 0 until audioEntries.size) {
+            if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
+              val threshold = 0.9
+              val similarity = chromaSimilarity(cmpAudioEntries(i).audioChromaprint, audioEntries(i).audioChromaprint, threshold)
+              if (similarity < threshold) {
+                duplicate = false
+                //System.err.println(s"DEBUG: Chromaprint similarity for ${hash} vs ${cmp.hash} subsong ${i} is too low: ${similarity}")
+              } else {
+                //System.err.println(s"DEBUG: Chromaprint similarity for ${hash} vs ${cmp.hash} subsong ${i}: ${similarity}")
+              }
+            } else if (cmpAudioEntries(i).audioHash != audioEntries(i).audioHash) {
+              duplicate = false
+              //System.err.println(s"DEBUG: Audio hash mismatch for ${hash} subsong ${i} vs ${cmp.hash} subsong ${i}: ${cmpAudioEntries(i).audioHash} vs ${audioEntries(i).audioHash}")
+            }
+          }
+          if (duplicate) {
+            duplicateHashes += hash
+          }
+        }
+        val duplicateMetas = duplicateHashes.flatMap(h => metasByHash.get(h))
         // select best based on some ad hoc metadata heuristics
-        val scores = metas.map(e => (e.hash, e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))).toMap
+        val scores = duplicateMetas.map(e => (e.hash, e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))).toMap
         val bestscore = scores.maxBy(_._2)._2
-        val bestmetas = metas.filter(e => (e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0)) == bestscore)
+        val bestmetas = duplicateMetas.filter(e => (e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0)) == bestscore)
         val minyear = bestmetas.map(e => if (e.year > 0) e.year else 9999).min
         val byyear = bestmetas.filter(_.year == minyear)
-        best = if (byyear.nonEmpty) byyear.maxBy(_.authors.size) else bestmetas.maxBy(_.authors.size)
+        var best = if (byyear.nonEmpty) byyear.maxBy(_.authors.size) else bestmetas.maxBy(_.authors.size)
         if (best.authors.isEmpty) {
           best = best.copy(authors = bestmetas.maxBy(_.authors.size).authors)
         }
-        val bestAudioEntries = entriesByHash(best.hash).distinctBy(_.subsong)
-        for (hash <- hashes) {
+        for (hash <- duplicateHashes) {
           if (scores.getOrElse(hash, 0) < bestscore) {
-            var bestEntries = bestAudioEntries
-            var audioEntries = entriesByHash(hash).distinctBy(_.subsong)
-            assert(audioEntries.size == bestEntries.size)
-            var duplicate = true
-            for (i <- 0 until audioEntries.size) {
-              if (bestEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
-                try {
-                  val similarity = similarityCache.getOrElseUpdate((bestEntries(i).audioChromaprint, audioEntries(i).audioChromaprint),
-                    similarityCache.getOrElseUpdate((audioEntries(i).audioChromaprint, bestEntries(i).audioChromaprint), {
-                      val (algo0, data0) = fpCache.getOrElseUpdate(bestEntries(i).audioChromaprint, {
-                        val Right(algo, data) = FingerprintDecompressor(bestEntries(i).audioChromaprint) : @unchecked
-                        (algo, data)
-                      })
-                      val (algo, data) = fpCache.getOrElseUpdate(audioEntries(i).audioChromaprint, {
-                        val Right(algo, data) = FingerprintDecompressor(audioEntries(i).audioChromaprint) : @unchecked
-                        (algo, data)
-                      })
-                      assert(algo0 == algo)
-                      chromaSimilarity(algo0, data0, algo, data)
-                    })
-                  )
-                  if (similarity < 0.95) {
-                    duplicate = false
-                    //System.err.println(s"DEBUG: Chromaprint similarity for ${hash} vs ${best.hash} subsong ${i} is too low: ${similarity}")
-                  } else {
-                    //System.err.println(s"DEBUG: Chromaprint similarity for ${hash} vs ${best.hash} subsong ${i}: ${similarity}")
-                  }
-                } catch {
-                  case e: Throwable =>
-                    System.err.println(s"Error comparing chromaprint for ${hash} vs ${best.hash} subsong ${i}: ${e.getMessage}")
-                    throw e
-                }
-              }
+            if (metasByHash.contains(hash)) {
+              System.err.println(s"WARN: Overriding meta data entry ${metasByHash(hash)} with ${best}")
+            } else {
+              System.err.println(s"WARN: Overriding meta data for md5 ${hash} with ${best}")
             }
-            if (duplicate) {
-              if (metasByHash.contains(hash)) {
-                System.err.println(s"WARN: Overriding meta data entry ${metasByHash(hash)} with ${best}")
-              } else {
-                System.err.println(s"WARN: Overriding meta data for md5 ${hash} with ${best}")
-              }
-              val old = metasByHash.getOrElse(hash, best)
-              val authors = if (old.authors.isEmpty) best.authors else old.authors
-              metasByHash(hash) = best.copy(authors = authors, hash = hash)
-              hashes = hashes.filterNot(_ == hash)
-              metas = metas.filterNot(_.hash == hash)
-            }
+            val old = metasByHash.getOrElse(hash, best)
+            val authors = if (old.authors.isEmpty) best.authors else old.authors
+            metasByHash(hash) = best.copy(authors = authors, hash = hash)
+            hashes = hashes.filterNot(_ == hash)
+            metas = metas.filterNot(_.hash == hash)
           }
         }
       }
-      hashes = hashes.filterNot(_ == best.hash)
-      metas = metas.filterNot(_.hash == best.hash)
+      hashes = hashes.filterNot(_ == cmp.hash)
+      metas = metas.filterNot(_.hash == cmp.hash)
     }
   }
 
