@@ -6914,6 +6914,7 @@
 6a6fe4aa32f8a569cf830c9ac9a914b4	1	61568	player	uade	Protracker	0	15472	5814052c	Mods-4/Modules/Misc/ChipTune.A-F/Cashflow.mod
 6a70806abd2ffa3e7e05f70182170f7d	1	84616	player	uade	Protracker	0	11108	db5cb8ae	Mods-2/Modules/Authors.G-Q/Glue/Chipper.mod
 6a70bb0e75959f753e280f4bcd2c84e6	1	261245	player	uade	Protracker	0	123074	982afa43	Mods-1/Modules/Authors.A-F/Fleshbra/Neptune.mod
+6a837119201b11003bbed437007ab631	0	154857	loop	uade	FredMonitor	0	10830	7ec9bfc5	Mods-4/Modules/Synth/Fred/FRED.Fuzzball-Title
 6a865df5c2a2de2d495c1611aa6856f9	1	199797	player	uade	Protracker	0	218538	e6297aa2	Mods-4/Modules/Misc/Misc.G-L/Hopeless_Situation.mod
 6a88926b0331678acc30e7ac1cfe21bb	1	66672	player	uade	Protracker	0	17492	c2217db3	Mods-2/Modules/Authors.G-Q/Hollywoo/King_Chaos.mod
 6a93c85b7f9213310fd65953ad5342c0	1	515860	player	uade	Protracker	0	690610	3f595221	Mods-4/Modules/Misc/D-Techno.R-Z/The_Last_Saga.mod
@@ -8159,6 +8160,8 @@
 7d8fbc8720237432f556fdfa6f3ac89b	1	178396	player	uade	Protracker	0	189320	70abafb2	Mods-2/Modules/Authors.G-Q/Jugi/Tubular_Vectors.mod
 7d935f1f1c21cd413e73fe3cbd80fb72	0	32532	player	uade	SoundMon 2.0	0	4304	f65cd79d	Mods-4/Modules/Synth/SoundMon/BP.Alien-Effects
 7d942987c4ca27747a1d070654143dcb	1	246616	player	uade	Protracker	0	78864	7a29bd2a	Mods-2/Modules/Authors.G-Q/Maxym/Double_Split.mod
+7d959535a41eb8716aee19e9a2922491	1	145984	player	uade	Hippel	0	10204	30400c12	Mods-4/Modules/Synth/Hippel/HIP.Prince
+7d959535a41eb8716aee19e9a2922491	2	145025	silence
 7da2706cf0e35057ac1d50056b100223	1	225497	player	st3play	Scream Tracker 3.01 (SB)	6	185088	b5ea2d02	Mods-3/Modules/Authors.R-Z/Zigg/Shattered_Delusions.S3M
 7da85d28ebb1a65655ce276bc9c76729	1	394119	player+silence	uade	Protracker	0	299500	cb822100	Mods-1/Modules/Authors.A-F/FBY/Tetriade.mod
 7da92d6983550fb0af7da45cf9d8b8ed	1	156224	player+silence	uade	Protracker	0	99762	7bb6e691	Mods-1/Modules/Authors.A-F/Emax/Screw_me!.mod
@@ -10103,6 +10106,7 @@
 9c520cbef419b77a0ee8c9d592e26498	1	115321	player	uade	Protracker	0	75276	479e7b93	Mods-4/Modules/Misc/Oldies/Bubble_Ghost.mod
 9c52870d99b358aa3bbd4fc4baac7593	1	51501	player	uade	Protracker	0	550624	ba48c1bf	Mods-3/Modules/Authors.R-Z/Shout/Argotypoline_VI.mod
 9c52870d99b358aa3bbd4fc4baac7593	1	51501	player	uade	Protracker	0	550624	ba48c1bf	Mods-3/Modules/Authors.R-Z/Shout/MS-DOS/Argo_VI.mod
+9c561134ce626071f8b781b44b069469	0	131438	loop	uade	FredMonitor	0	18118	3488f2af	Mods-4/Modules/Synth/Fred/FRED.Fuzzball-InGame
 9c59b767eb1a09744bb4f015db13822c	1	43142	player	uade	Protracker	0	10084	ce73c925	Mods-4/Modules/Misc/ChipTune.O-Z/Stars(c)hip-01.mod
 9c59c2fd9a9d88912aedd3b7aa816f0b	1	263154	player	uade	Protracker	0	101958	6277260d	Mods-3/Modules/Authors.R-Z/Strobo/Electricity.mod
 9c5ecd6b46d34c027baac75b3c67654f	1	69586	player	uade	Protracker	0	193524	b48cb2a7	Mods-2/Modules/Authors.G-Q/Maf/Dyna-K_Music-5.mod
