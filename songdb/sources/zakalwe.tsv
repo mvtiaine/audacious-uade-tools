@@ -6252,6 +6252,7 @@
 6a57d7785541003ef0425cb1e544a80f	9	3453	silence
 6a72a599cea64269c509a6237382536f	1	143372	player	uade	Special FX ST	0	8106	ddb51f7e	special_fx_st/PushOver/DODA.PushOver electro
 6a7f42ab06e70625143718597f726266	1	138369	player	uade	Protracker compatible	0	28120	f10c8d93	mod/wotw/zwerge3.1.mod
+6a837119201b11003bbed437007ab631	0	154857	loop	uade	FredMonitor	0	10830	7ec9bfc5	fred/fred.fuzzball-title
 6a8ba238e9e0b9c0f6f71130e35e7511	1	151792	player	uade	Soundtracker II (15 instr.)	0	39858	ad993cd1	mod15/Don_Adan_rips/ST_LesAventuresDeMoktar/MOD.lagjeu4
 6aa1a0c5b8c3d58f5ea0b76820090f9f	1	9082	player	uade	Digital Illusions	0	114446	c3e75e4c	mod_packer/digital_illusions/pinball_dreams/di.beatbox
 6aa1a0c5b8c3d58f5ea0b76820090f9f	10	5988	player
@@ -7236,6 +7237,9 @@
 7d8082ab2b8bf21586712591ad8213d5	1	13664	player	uade	Jesper Olsen	0	41052	4ce6675f	jesper_olsen/LollyPop/jo.ingame_12
 7d8082ab2b8bf21586712591ad8213d5	1	13664	player	uade	Jesper Olsen	0	41052	4ce6675f	jesper_olsen/LollyPop/JO.LollyPop 19
 7d900285e8ede6eb94ee1237a7cd403f	0	40555	loop	uade	MusiclineEditor	0	44857	1590a0d9	music_line_editor/krister_fundin/flip bit.ml
+7d959535a41eb8716aee19e9a2922491	1	145984	player	uade	Hippel	0	10204	30400c12	hip/HIP.Prince
+7d959535a41eb8716aee19e9a2922491	1	145984	player	uade	Hippel	0	10204	30400c12	jochen_hippel/HIP.Prince
+7d959535a41eb8716aee19e9a2922491	2	145025	silence
 7d9ec8fa3216a8f0b19b18fdea76623b	0	21984	loop	uade	MusiclineEditor	0	11442	8fd211d9	music_line_editor/krister_fundin/equinoxe iv.ml
 7dbbd2586bf0ca98ef4359fa4b7e3f7c	0	56163	player	uade	SoundFX	0	55168	2f1b615a	soundfx/HistoryLine/SFX.HLintro1
 7dbc9a9887791a87127871f5144e4949	0	41012	player	uade	ArtOfNoise (4ch)	0	7576	c6bfafda	art_of_noise/twice_revolution/Twice-Revolution/AON.revolution-0006
