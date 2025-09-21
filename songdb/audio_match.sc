@@ -15,6 +15,7 @@
 //    grep md5 sources/*.tsv
 //    grep md5 ../tsv/pretty/md5/*.tsv
 
+// NOTE: running this first time will fetch/install dependencies etc. which may take a while.
 // NOTE: this requires a lot of memory (several GB), 8G+ recommended.
 // NOTE: decompress the files in 'sources/audio' first with e.g.
 //    zstd -d sources/audio/audio_*.zst

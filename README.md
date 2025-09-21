@@ -112,7 +112,7 @@ Proper "real time" implementation should use something like https://github.com/a
 
  It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file, instead of microphone recording.
 
-**Requirements:** scala-cli, chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal.
+**Requirements:** scala-cli, chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is not 0.
 
 **Setup:**
 ```bash
@@ -129,7 +129,8 @@ zstd -d sources/audio/audio_*.zst
 
 See comments in `songdb/audio_match.sc` and `songdb/record.sh` sources for all arguments and more details.
 
-**Note:**: Run `./audio_match.sc` once before running `./record.sh`
+**Note:**: Decompress the files in `sources/audio` first with `zstd -d sources/audio/audio_*.zst`
+**Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch/install the Scala dependencies on first run, which takes a while.
 
 **Output:**
 
