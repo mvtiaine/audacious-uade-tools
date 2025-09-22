@@ -77,7 +77,11 @@ val fingerprint = if (input == "-") {
 val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
 val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
-val Right(algo,full) = FingerprintDecompressor(fingerprint) : @unchecked
+val Right(algo,data) = FingerprintDecompressor(fingerprint) : @unchecked
+if (data.forall(_ == UInt(0))) {
+  System.err.println("Input fingerprint is all zeros, make sure your microphone is working properly")
+  sys.exit(1)
+}
 
 System.err.print("Processing (x/16) ")
 case class Result(md5: String, subsong: Int, score: Double)
@@ -88,7 +92,7 @@ var results = Buffer.empty[Result]
   results ++= audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
     val Right(a,d) = FingerprintDecompressor(af.audioChromaprint) : @unchecked
     assert(a == algo)
-    val score = chromaSimilarity(a, d, algo, full, 0.7)
+    val score = chromaSimilarity(a, d, algo, data, 0.7)
     if (score >= minscore) {
       Some(Result(af.md5, af.subsong, score))
     } else None

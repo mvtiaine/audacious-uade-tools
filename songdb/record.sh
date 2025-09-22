@@ -46,9 +46,6 @@ if [ "$TIMEOUT" -ge 3 ]; then
 elif [ "$TIMEOUT" -lt 3 ] && [ "$TIMEOUT" -ne 0 ]; then
     echo "Timeout must be at least 3 seconds or use 0 for interactive recording."
     exit 1
-else
-    echo "Press ENTER to start recording..."
-    read
 fi
 
 mkdir -p /tmp/audacious-uade-tools
