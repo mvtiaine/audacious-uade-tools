@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>

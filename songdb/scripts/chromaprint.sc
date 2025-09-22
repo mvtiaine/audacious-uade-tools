@@ -2,12 +2,13 @@
 // Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 // see below for further copyrights
 
-//> using dep org.scodec::scodec-bits::1.2.1
+//> using dep org.scodec::scodec-bits::1.2.4
 //> using dep org.typelevel::spire::0.18.0
 
 import java.util.concurrent.ConcurrentHashMap
 import scala.collection.mutable
 import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
+import scala.util.boundary, boundary.break
 import spire.math._
 
 val fpCache = new ConcurrentHashMap[String, (Int, IndexedSeq[UInt])]().asScala
@@ -40,34 +41,36 @@ def chromaSimilarityFast(
   algo2: Int,
   data2: IndexedSeq[spire.math.UInt],
   threshold: Double,
+  fuzziness: Int = 3
 ): Double = {
   if (algo1 != algo2) {
     return 0.0
   }
 
   var maxSimilarity = 0.0
-  
-  for (offset <- Seq(0,-1,1,-2,2,-3,3)) {
-    var totalScore = 0
-    var overlap = 0
-    var i = 0
+  val offsets = Seq(0) ++ (1 to fuzziness).flatMap(i => Seq(-i, i))
+
+  boundary {
+    for (offset <- offsets) {
+      var totalScore = 0
+      var overlap = 0
+      var i = 0
     
-    while (i < data1.length) {
-      val j = i + offset
-      if (j >= 0 && j < data2.length) {
-        val xorValue = data1(i) ^ data2(j)
-        totalScore += (32 - Integer.bitCount(xorValue.toInt))
-        overlap += 1
+      while (i < data1.length) {
+        val j = i + offset
+        if (j >= 0 && j < data2.length) {
+          val xorValue = data1(i) ^ data2(j)
+          totalScore += (32 - Integer.bitCount(xorValue.toInt))
+          overlap += 1
+        }
+        i += 1
       }
-      i += 1
-    }
     
-    if (overlap > 0) {
-      val similarity = totalScore.toDouble / (overlap * 32.0)
-      if (similarity > maxSimilarity) {
-        maxSimilarity = similarity
-        if (maxSimilarity >= threshold) {
-          return maxSimilarity
+      if (overlap > 0) {
+        val similarity = totalScore.toDouble / (overlap * 32.0)
+        if (similarity > maxSimilarity) {
+          maxSimilarity = similarity
+          if (maxSimilarity >= threshold) break()
         }
       }
     }
