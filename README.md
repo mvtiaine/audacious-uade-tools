@@ -106,18 +106,19 @@ The TSV files use UTF-8 encoding.
 
 Identify Amiga exotic modules and tracker music from audio files or via microphone.
 
-The tool uses simple brute force approach for chroma similarity matching, so can be a bit slow. On M4 Max it takes around 30s to process 30s audio recording. All CPU cores are utilized.
+The tool uses simple brute force approach for chroma similarity matching, so can be a bit slow. On M4 Max it takes from half a minute to a minute or two depending on input length. All CPU cores are utilized.
 
-Proper "real time" implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
+Proper implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
 
- It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file, instead of microphone recording.
+It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file (like YouTube rip), instead of using microphone.
 
-**Requirements:** scala-cli, chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is not 0.
+**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is not 0.
 
 **Setup:**
 ```bash
 cd songdb
 zstd -d sources/audio/audio_*.zst
+./audio_match.sc
 ```
 
 **Usage:**
@@ -131,6 +132,7 @@ See comments in `songdb/audio_match.sc` and `songdb/record.sh` sources for all a
 
 **Note:**: Decompress the files in `sources/audio` first with `zstd -d sources/audio/audio_*.zst`
 **Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch/install the Scala dependencies on first run, which takes a while.
+**Note:**: Only tested on macOS and Linux.
 
 **Output:**
 
