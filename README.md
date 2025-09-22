@@ -112,7 +112,7 @@ Proper implementation should use something like https://github.com/acoustid/acou
 
 It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file (like YouTube rip), instead of using microphone.
 
-**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is not 0.
+**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
 
 **Setup:**
 ```bash
