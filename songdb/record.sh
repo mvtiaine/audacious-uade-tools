@@ -5,6 +5,7 @@
 
 # Requires at least scala-cli, sox and chromaprint (fpcalc)
 # on macOS you also need to give microphone permission to the terminal app
+# also make sure mic input volume is high enough
 
 # see audio_match.sc for more details
 
