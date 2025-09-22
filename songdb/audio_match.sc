@@ -165,16 +165,22 @@ def isSilentFingerprint(data: IndexedSeq[spire.math.UInt]): Boolean = {
   val totalBits = data.map(x => Integer.bitCount(x.toInt)).sum
   val totalPossibleBits = data.length * 32
   
-  // If less than 1% of bits are set, likely silence or very quiet audio
+  // More aggressive silence detection
   val setBitRatio = totalBits.toDouble / totalPossibleBits
   
-  // Also check for patterns that indicate silence:
-  // - Very low bit density
-  // - Highly repetitive patterns (same values repeated)
+  // Check for patterns that indicate silence or bogus data
   val uniqueValues = data.distinct.length
   val repetitionRatio = uniqueValues.toDouble / data.length
   
-  setBitRatio < 0.01 || (setBitRatio < 0.05 && repetitionRatio < 0.1)
+  // Check for all-zero or near-zero fingerprints
+  val zeroCount = data.count(_ == UInt(0))
+  val zeroRatio = zeroCount.toDouble / data.length
+  
+  // Detect silence, near-silence, or bogus patterns
+  setBitRatio < 0.005 || // Less than 0.5% bits set
+  zeroRatio > 0.9 || // More than 90% zero values
+  (setBitRatio < 0.02 && repetitionRatio < 0.05) || // Low diversity
+  uniqueValues <= 2 // Only 1-2 unique values
 }
 
 def chromaSimilarity(
