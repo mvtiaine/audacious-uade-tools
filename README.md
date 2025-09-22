@@ -131,7 +131,9 @@ zstd -d sources/audio/audio_*.zst
 See comments in `songdb/audio_match.sc` and `songdb/record.sh` sources for all arguments and more details.
 
 **Note:**: Decompress the files in `sources/audio` first with `zstd -d sources/audio/audio_*.zst`
+
 **Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch/install the Scala dependencies on first run, which takes a while.
+
 **Note:**: Only tested on macOS and Linux.
 
 **Output:**
