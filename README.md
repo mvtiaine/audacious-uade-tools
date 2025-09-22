@@ -85,7 +85,7 @@ fffe869a7f8d	AHX v2
 
 Format: `[hash]<TAB>[format]<TAB>[channels]`
 
-### metadata.tsv (and amp/demozoo/modland/modsanthology/oldexotica/unexotica/wantedteam.tsv)
+### metadata.tsv
 
 ```
 feaa9d2a4869	Scorpik	Alchemy	Toxic Ziemniak	1992
