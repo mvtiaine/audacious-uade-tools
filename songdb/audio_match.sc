@@ -78,8 +78,9 @@ val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
 val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
 val Right(algo,data) = FingerprintDecompressor(fingerprint) : @unchecked
-if (data.forall(_ == UInt(0))) {
-  System.err.println("Input fingerprint is all zeros, make sure your microphone is working properly")
+
+if (isSilentFingerprint(data)) {
+  System.err.println("Input fingerprint appears to be from silence/very quiet audio - check your audio source")
   sys.exit(1)
 }
 
@@ -155,6 +156,25 @@ if (results.isEmpty) {
   println("-" * formatRow(columns.map(_.header)).length)
   rows.foreach(row => println(formatRow(row)))
   println()
+}
+
+def isSilentFingerprint(data: IndexedSeq[spire.math.UInt]): Boolean = {
+  if (data.isEmpty) return true
+  
+  // Count total number of set bits
+  val totalBits = data.map(x => Integer.bitCount(x.toInt)).sum
+  val totalPossibleBits = data.length * 32
+  
+  // If less than 1% of bits are set, likely silence or very quiet audio
+  val setBitRatio = totalBits.toDouble / totalPossibleBits
+  
+  // Also check for patterns that indicate silence:
+  // - Very low bit density
+  // - Highly repetitive patterns (same values repeated)
+  val uniqueValues = data.distinct.length
+  val repetitionRatio = uniqueValues.toDouble / data.length
+  
+  setBitRatio < 0.01 || (setBitRatio < 0.05 && repetitionRatio < 0.1)
 }
 
 def chromaSimilarity(
