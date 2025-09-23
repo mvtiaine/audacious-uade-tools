@@ -123,12 +123,15 @@ zstd -d sources/audio/audio_*.zst
 
 **Usage:**
 ```bash
-./audio_match.sc               # Match chromaprints, prints usage
-./record.sh 0                  # Interactive recording and matching using microphone
-./record.sh 30                 # Record and match 30 seconds using microphone
+./audio_match.sc                                 # Prints usage
+./audio_match.sc AQAAC1EShUokRcMfoT-OX8RfNKH...  # Match specific chromaprint
+fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromaprint from audiofile
+./record.sh                                      # Prints usage
+./record.sh 0                                    # Interactive recording and matching using microphone
+./record.sh 30                                   # Record and match 30 seconds using microphone
 ```
 
-See comments in `songdb/audio_match.sc` and `songdb/record.sh` sources for all arguments and more details.
+See `songdb/audio_match.sc` and `songdb/record.sh` sources for more details.
 
 **Note:**: Decompress the files in `sources/audio` first with `zstd -d sources/audio/audio_*.zst`
 
