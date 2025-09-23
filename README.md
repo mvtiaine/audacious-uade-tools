@@ -173,3 +173,10 @@ Sources used for the database:
 - **Wanted Team** - http://wt.exotica.org.uk/
 - **Aminet** - https://aminet.net/
 - **Zakalwe** - git://zakalwe.fi/chip
+
+
+## Used By
+
+This database is also used by:
+
+- **HippoPlayer** - https://github.com/koobo/HippoPlayer
