@@ -2,14 +2,14 @@
 
 This repo contains Scala CLI scripts for generating songdb TSV files used by [audacious-uade](https://github.com/mvtiaine/audacious-uade).
 
-Also an experimental Shazam like tool is included (see below) for identifying music from audio files or via microphone.
+Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
 
 ## Directories
 
 - **songdb/** - Scala CLI, SQL scripts and raw source TSVs to generate the final processed TSV files
 - **tsv/encoded/** - the songdb TSV files used by audacious-uade. The files are "encoded" to almost binary format to optimize for size and fast in-memory songdb initialization.
-- **tsv/pretty/** - pretty printed / clear text versions of the TSV files. See "spec" below.
+- **tsv/pretty/** - pretty printed / clear text versions of the TSV files. See [TSV Format Specification](#tsv-format-specification).
 - **misc/** - misc bash scripts
 
 
