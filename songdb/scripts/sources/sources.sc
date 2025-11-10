@@ -18,7 +18,8 @@ enum Source:
     Aminet,
     Modland_Incoming,
     Demozoo_Leftovers,
-    OldExotica
+    OldExotica,
+    ModArchive
 
 import Source._
 
@@ -33,6 +34,7 @@ val tsvfiles = Buffer(
   ("modland_incoming.tsv", Modland_Incoming),
   ("demozoo_leftovers.tsv", Demozoo_Leftovers),
   ("oldexotica.tsv", OldExotica),
+  ("modarchive.tsv", ModArchive),
 );
 
 case class TsvEntry (
@@ -73,10 +75,13 @@ def readSourceDB(source: Source) = {
 }
 
 lazy val modland = readSourceDB(Modland)
-lazy val unexotica = readSourceDB(UnExotica)
 lazy val amp = readSourceDB(AMP)
-lazy val aminet = readSourceDB(Aminet)
-lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
-lazy val wantedteam = readSourceDB(Wanted_Team)
-lazy val oldexotica = readSourceDB(OldExotica)
+lazy val unexotica = readSourceDB(UnExotica)
 lazy val modsanthology = readSourceDB(Mods_Anthology)
+lazy val wantedteam = readSourceDB(Wanted_Team)
+lazy val zakalwe = readSourceDB(Zakalwe)
+lazy val aminet = readSourceDB(Aminet)
+lazy val modland_incoming = readSourceDB(Modland_Incoming)
+lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
+lazy val oldexotica = readSourceDB(OldExotica)
+lazy val modarchive = readSourceDB(ModArchive)
