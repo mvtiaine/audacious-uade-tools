@@ -1,3 +1,6 @@
+2025-11-10
+- Added ModArchive (upto 2023 additions) to sources. No metadata, except from audio fingerprint matching
+
 2025-09-22
 - Added experimental "Shazam" like tool. See README.md.
 
