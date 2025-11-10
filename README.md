@@ -1,4 +1,4 @@
-# Audacious UADE Tools
+# audacious-uade-tools
 
 This repo contains Scala CLI scripts for generating songdb TSV files used by [audacious-uade](https://github.com/mvtiaine/audacious-uade).
 
@@ -173,6 +173,7 @@ Sources used for the database:
 - **Wanted Team** - http://wt.exotica.org.uk/
 - **Aminet** - https://aminet.net/
 - **Zakalwe** - git://zakalwe.fi/chip
+- **ModArchive** - https://modarchive.org/
 
 
 ## Used By
