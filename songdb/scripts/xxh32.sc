@@ -30,6 +30,9 @@ val xxh32DupWhiteList = Set(
   "9b5752980f4e", // 674b25511b3bbafdad37030a8630fdfd vs 3aa9ff3d1bd5d6fe5687004ffef4fdc3
   "330b37fdbc1d", // 91d2efefd99cbb9e7c53aef09903d25d vs f43a6475e9700db56786479d792675ea
   "f043f90d4bc0", // f98d02e1a580828bb8923c4e16d93149 vs 84054586870e79817aa597123b7aeb43
+  "728d535a6168", // 09e58b5ced527047bb209ca9cfbbeced vs 72c2d9b7817e0642f02372dd24a7b0ec
+  "5e151636c8ae", // 02e6ac2209a476bf3d1abcb587bdd1fe vs 7370e7cc32e1d359fca348726c4eb81a
+  "1b0bf529bc3c", // c9a4f5d4d6c645aefdabd74d557729be vs 924c9d32b91d45bcd6e64a35faad6bf2
 )
 
 def songlengthsToXxh32(songlengths: Buffer[SongInfo]) = {

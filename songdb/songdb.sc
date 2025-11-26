@@ -20,6 +20,7 @@
 //> using file scripts/sources/oldexotica.sc
 //> using file scripts/sources/wantedteam.sc
 //> using file scripts/sources/modsanthology.sc
+//> using file scripts/sources/tosecmusic.sc
 //> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
@@ -41,6 +42,7 @@ import combine._
 import xxh32._
 import audio._
 import chromaprint._
+import tosecmusic._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
@@ -55,6 +57,7 @@ var demozoodata: Buffer[MetaData] = Buffer.empty
 var oldexoticadata: Buffer[MetaData] = Buffer.empty
 var wantedteamdata: Buffer[MetaData] = Buffer.empty
 var modsanthologydata: Buffer[MetaData] = Buffer.empty
+var tosecmusicdata: Buffer[MetaData] = Buffer.empty
 
 def dedupMeta(entries: Buffer[MetaData], name: String) = {
   val dedupped = entries.groupBy(_.hash).map { case (hash, metas) =>
@@ -137,16 +140,16 @@ lazy val xxh32idxTsv = Future(_try {
 })
 
 lazy val songlengthsTsvs = Future(_try {
-  audio.audioByMd5 // XXX need explicit eager init before .par to avoid "unparallelized" init due to most threads waiting below
+  audio.audioByPlayerAndMd5 // XXX need explicit eager init before .par to avoid "unparallelized" init due to most threads waiting below
   val entries = songlengths.db.sortBy(_.md5).par.map(e => {
     val md5 = e.md5.take(12)
     val duplicates = mutable.SortedSet[Int]()
-    val fingerprints = audio.audioByMd5.get(md5).getOrElse(Buffer.empty)
+    val fingerprints = audio.audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
     if (fingerprints.nonEmpty) {
       val filtered = fingerprints.filter(_.audioBytes > 0)
       val grouped = (
-        if (filtered.forall(e => e.audioBytes > 2 * 11025 * 10 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
-        else filtered.groupBy(_.tag.replaceFirst(s"^[0-9]+-", "")
+        if (filtered.forall(e => e.audioBytes > 2 * 11025 * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
+        else filtered.groupBy(_.audioTag.replaceFirst(s"^[0-9]+-", "")
       )).mapValues(_.distinct)
       if (!grouped.values.forall(group => group.map(_.subsong).distinct.size == group.size)) {
         System.err.println(s"WARN: inconsistent audio fingerprints for md5: $md5 player: ${e.player} format: ${e.format}")
@@ -160,7 +163,7 @@ lazy val songlengthsTsvs = Future(_try {
           for (e <- remaining) {
             var duplicate = true
             if (e.audioChromaprint != cmp.audioChromaprint) {       
-              val threshold = if (filtered.forall(f => (f.tag == e.tag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 10)) 0.9 else 0.99
+              val threshold = if (filtered.forall(f => (f.audioTag == e.audioTag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 12)) 0.9 else 0.99
               val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint, threshold)
               if (similarity < threshold) {
                 duplicate = false
@@ -394,6 +397,23 @@ lazy val modsanthologyTsvs = Future(_try {
   modsanthologydata = processMetaTsvs(entries, "modsanthology.tsv")
 })
 
+lazy val tosecmusicTsvs = Future(_try {
+  val tosec = sources.tosecmusic ++ sources.tosecmusic_unknown
+  val entries = tosec.sortBy(_.md5).distinct.par.flatMap { e =>
+    tosecmusic.parseTosecMeta(e.md5, e.path).map { meta =>
+      MetaData(
+        e.md5.take(12),
+        meta.authors,
+        meta.publishers,
+        meta.album,
+        meta.year
+      )
+    }
+  }.toBuffer.distinct
+
+  tosecmusicdata = processMetaTsvs(entries, "tosecmusic.tsv")
+})
+
 Seq(
   "/tmp/songdb/encoded/xxh32",
   "/tmp/songdb/pretty/md5",
@@ -416,7 +436,8 @@ val future = Future.sequence(
       demozooTsvs,
       oldexoticaTsvs,
       wantedteamTsvs,
-      modsanthologyTsvs
+      modsanthologyTsvs,
+      // tosecmusicTsvs (too unreliable)
   )
 
 ) andThen {
@@ -428,7 +449,8 @@ val future = Future.sequence(
       demozoodata,
       oldexoticadata,
       wantedteamdata,
-      modsanthologydata
+      modsanthologydata,
+      Buffer.empty // tosecmusicdata (too unreliable)
     )
     processMetaTsvs(combined, "metadata.tsv", true)
 }

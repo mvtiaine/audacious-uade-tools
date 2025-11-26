@@ -43,6 +43,20 @@ lazy val modarchive_by_id = sources.demozoo_leftovers
   .filter(_.path.startsWith("api.modarchive.org")).groupBy(_.path.split("/").take(2).last)
 lazy val wantedteam_by_path = sources.wantedteam.groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
 lazy val unexotica_by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
+lazy val fujiology_by_path = sources.fujiology.flatMap { entry =>
+  val path = entry.path.toLowerCase
+  val parts = path.split("/").dropRight(1)
+  val pathFixed = if (parts.length >= 2 && parts.last == parts(parts.length - 2)) {
+    parts.dropRight(1)
+  } else {
+    parts
+  }
+  val path2 = pathFixed.mkString("/").toLowerCase
+  Seq(
+    (path, entry),
+    (path2, entry),
+  )
+}.groupBy(_._1).view.mapValues(_.map(_._2)).toMap
 lazy val oldexotica_by_archive = oldexotica.metas.groupBy(_.archive.toLowerCase)
 
 lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLines.toSeq.par.flatMap(line =>
@@ -114,9 +128,6 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLin
   if (linkClass == "AmigascneFile") {
     val path = "ftp.amigascne.org/pub/amiga" + url.toLowerCase
     findLeftovers(path)
-  } else if (linkClass == "FujiologyFile") {
-    val path = "ftp.untergrund.net/users/ltk_tscc/fujiology" + url.toLowerCase
-    findLeftovers(path)
   } else if (linkClass == "ModarchiveModule") {
     if (modarchive_by_id.contains(url)) {
       val md5 = modarchive_by_id(url).head.md5
@@ -141,6 +152,24 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLin
     val path = "web.archive.org/web/" + url.toLowerCase
     findLeftovers(path)
   // embedded sources
+  } else if (linkClass == "FujiologyFile") {
+    val path = (if (url.startsWith("/")) url.drop(1).toLowerCase else url.toLowerCase)
+      .replace(".zip","")
+    val parts = path.split("/")
+    val pathFixed = if (parts.length >= 2 && parts.last == parts(parts.length - 2)) {
+      parts.dropRight(1).mkString("/")
+    } else {
+      path
+    }
+    if (fujiology_by_path.contains(pathFixed)) {
+      val entries = fujiology_by_path(pathFixed)
+      if (entries.size > 1) {
+        System.err.println("WARN: fujiology path " + pathFixed + " - multiple entries - " + entries)
+        entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+      } else {
+        entries.map(e => (e.md5, meta))
+      }
+    } else Buffer.empty
   } else if (url.contains("://amp.dascene.net/downmod.php?index=")) {
     val id = url.replaceAll("&application=AMP","").split("=").last.toInt
     if (amp.amp_mods_by_id.contains(id)) {

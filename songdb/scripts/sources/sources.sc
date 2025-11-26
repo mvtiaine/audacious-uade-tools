@@ -19,7 +19,13 @@ enum Source:
     Modland_Incoming,
     Demozoo_Leftovers,
     OldExotica,
-    ModArchive
+    ModArchive,
+    TOSEC_Music,
+    TOSEC_Music_Unknown,
+    SOAMC,
+    Fujiology,
+    MBnet,
+    NostalgicPlayer
 
 import Source._
 
@@ -35,6 +41,12 @@ val tsvfiles = Buffer(
   ("demozoo_leftovers.tsv", Demozoo_Leftovers),
   ("oldexotica.tsv", OldExotica),
   ("modarchive.tsv", ModArchive),
+  ("tosecmusic.tsv", TOSEC_Music),
+  ("tosecmusic_unknown.tsv", TOSEC_Music_Unknown),
+  ("soamc.tsv", SOAMC),
+  ("fujiology.tsv", Fujiology),
+  ("mbnet.tsv", MBnet),
+  ("nostalgicplayer.tsv", NostalgicPlayer),
 );
 
 case class TsvEntry (
@@ -66,7 +78,7 @@ case class SourceDBEntry (
 def readSourceDB(source: Source) = {
   tsvs.filter(_._1 == source).par.flatMap(_._2).map({case (md5,subsongs) =>
     if (subsongs.groupBy(_.subsong).exists(_._2.size > 1)) {
-      System.err.println("WARN: duplicate files in " + source + " for " + md5 + ": " + subsongs)
+      System.err.println("INFO: duplicate files in " + source + " for " + md5 + ": " + subsongs)
     }
     subsongs.filter(_.path != "").map(e =>
       SourceDBEntry(md5, e.path, e.filesize, e.xxh32)
@@ -85,3 +97,9 @@ lazy val modland_incoming = readSourceDB(Modland_Incoming)
 lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
 lazy val oldexotica = readSourceDB(OldExotica)
 lazy val modarchive = readSourceDB(ModArchive)
+lazy val tosecmusic = readSourceDB(TOSEC_Music)
+lazy val tosecmusic_unknown = readSourceDB(TOSEC_Music_Unknown)
+lazy val soamc = readSourceDB(SOAMC)
+lazy val fujiology = readSourceDB(Fujiology)
+lazy val mbnet = readSourceDB(MBnet)
+lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
