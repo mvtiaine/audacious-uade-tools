@@ -14,18 +14,6 @@ COPY (
 ) TO '/tmp/demozoo_amigascne.tsv' WITH NULL AS '';
 
 COPY (
-    SELECT DISTINCT CONCAT('https://ftp.untergrund.net/users/ltk_tscc/fujiology',a.parameter) FROM
-        productions_production_types c,
-        productions_productionlink a,
-        productions_production b
-    WHERE
-        a.link_class = 'FujiologyFile'
-        AND a.production_id = b.id
-        AND c.production_id = b.id
-        AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name like '%Music')
-) TO '/tmp/demozoo_fujiology.tsv' WITH NULL AS '';
-
-COPY (
     SELECT DISTINCT CONCAT('https://api.modarchive.org/downloads.php?moduleid=',a.parameter) FROM
         productions_production_types c,
         productions_productionlink a,
