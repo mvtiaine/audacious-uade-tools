@@ -25,7 +25,8 @@ enum Source:
     SOAMC,
     Fujiology,
     MBnet,
-    NostalgicPlayer
+    NostalgicPlayer,
+    AmigaMega
 
 import Source._
 
@@ -47,6 +48,7 @@ val tsvfiles = Buffer(
   ("fujiology.tsv", Fujiology),
   ("mbnet.tsv", MBnet),
   ("nostalgicplayer.tsv", NostalgicPlayer),
+  ("amigamega.tsv", AmigaMega),
 );
 
 case class TsvEntry (
@@ -103,3 +105,4 @@ lazy val soamc = readSourceDB(SOAMC)
 lazy val fujiology = readSourceDB(Fujiology)
 lazy val mbnet = readSourceDB(MBnet)
 lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
+lazy val amigamega = readSourceDB(AmigaMega)

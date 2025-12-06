@@ -21,6 +21,9 @@
 //> using file scripts/sources/wantedteam.sc
 //> using file scripts/sources/modsanthology.sc
 //> using file scripts/sources/tosecmusic.sc
+//> using file scripts/sources/fujiology.sc
+//> using file scripts/sources/tosec.sc
+//> using file scripts/sources/whdload.sc
 //> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
@@ -43,8 +46,13 @@ import xxh32._
 import audio._
 import chromaprint._
 import tosecmusic._
+import fujiology._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
+
+// shutup warning
+System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
+tosec.metas // force init
 
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
@@ -58,9 +66,10 @@ var oldexoticadata: Buffer[MetaData] = Buffer.empty
 var wantedteamdata: Buffer[MetaData] = Buffer.empty
 var modsanthologydata: Buffer[MetaData] = Buffer.empty
 var tosecmusicdata: Buffer[MetaData] = Buffer.empty
+var fujiologydata: Buffer[MetaData] = Buffer.empty
 
 def dedupMeta(entries: Buffer[MetaData], name: String) = {
-  val dedupped = entries.groupBy(_.hash).map { case (hash, metas) =>
+  val dedupped = entries.groupBy(_.hash).flatMap { case (hash, metas) =>
     if (metas.size > 1) {
       System.err.println(s"WARN: removing duplicate entries in ${name}, hash: ${metas.head.hash} entries: ${metas}")
     }
@@ -71,7 +80,11 @@ def dedupMeta(entries: Buffer[MetaData], name: String) = {
      (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
      (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
     )).head
-    MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year)
+    if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
+      None
+    } else {
+      Some(MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year))
+    }
   }.toBuffer
   dedupped
 }
@@ -183,7 +196,7 @@ lazy val songlengthsTsvs = Future(_try {
         }
       }
       if (duplicates.nonEmpty && e.subsongs.size > duplicates.size) {
-        System.err.println(s"WARN: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
+        System.err.println(s"INFO: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
       }
     }
     SongInfo(
@@ -411,7 +424,23 @@ lazy val tosecmusicTsvs = Future(_try {
     }
   }.toBuffer.distinct
 
-  tosecmusicdata = processMetaTsvs(entries, "tosecmusic.tsv")
+  // too unreliable, only used as secondary source
+  // tosecmusicdata = processMetaTsvs(entries, "tosecmusic.tsv")
+  tosecmusicdata = entries
+})
+
+lazy val fujiologyTsvs = Future(_try {
+  val entries = fujiology.metas.par.flatMap { m =>
+    if (m.authors.isEmpty && m.publishers.isEmpty && m.album.isEmpty && !m.year.isDefined) None
+    else Some(MetaData(
+      m.md5.take(12),
+      m.authors,
+      m.publishers,
+      m.album,
+      m.year.getOrElse(0)
+    ))
+  }.toBuffer.distinct
+  fujiologydata = processMetaTsvs(entries, "fujiology.tsv")
 })
 
 Seq(
@@ -437,7 +466,8 @@ val future = Future.sequence(
       oldexoticaTsvs,
       wantedteamTsvs,
       modsanthologyTsvs,
-      // tosecmusicTsvs (too unreliable)
+      fujiologyTsvs,
+      tosecmusicTsvs,
   )
 
 ) andThen {
@@ -450,7 +480,8 @@ val future = Future.sequence(
       oldexoticadata,
       wantedteamdata,
       modsanthologydata,
-      Buffer.empty // tosecmusicdata (too unreliable)
+      fujiologydata,
+      tosecmusicdata,
     )
     processMetaTsvs(combined, "metadata.tsv", true)
 }
