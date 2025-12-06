@@ -1,3 +1,9 @@
+2025-12-07
+- Added TOSEC Music, SOAMC=, MBnet Apaja, NostalgicPlayer, AmigaMega to sources. No metadata, except from audio fingerprint matching
+- Added Fujiology to sources
+- Added TOSEC and WHDLoad-Database as supplementary metadata sources
+- Metadata extraction tweaks
+
 2025-11-10
 - Added ModArchive (upto 2023 additions) to sources. No metadata, except from audio fingerprint matching
 
