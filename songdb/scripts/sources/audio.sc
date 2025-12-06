@@ -49,8 +49,8 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean) = {
     if (audioBytes > 0) {
       val audioMd5 = if (l.length >= 5) l(4) else ""
       val audioChromaprint = if (l.length >= 6) l(5) else ""
-      // require at least 12s of audio for simhash comparison to minimize false positives
-      val (audioSimHash, simTag) = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > 2 * 11025 * 12) {
+      // require at least 9s of audio for simhash comparison to minimize false positives
+      val (audioSimHash, simTag) = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > 2 * 11025 * 9) {
         val (algo,data) = decodeChromaprint(audioChromaprint) : @unchecked
         val numHashes = Math.max(1, audioBytes / (2 * 11025 * 3)) // one hash per 3s of audio
         val h = SimHash(data, numHashes)

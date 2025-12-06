@@ -2,7 +2,7 @@
 // Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 // mostly vibe coded with Claude 4.5
 
-// NOTE: currently not used due to too unreliable metadata in TOSEC Music
+// NOTE: currently not used as primary metadata source due to too unreliable metadata
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
@@ -106,6 +106,7 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   
   // Ignore covers and other unreliable metadata
   val filename = path.split("/").last
+  /* XXX commented out as not used as primary metadata source
   if (path.startsWith("Games - AON/") ||
       path.startsWith("Games - BP/") ||
       path.startsWith("Games - FRED/") ||
@@ -116,6 +117,7 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
       filename.startsWith("ZZZ")) {
     return None
   }
+  */
 
   val isSceneMusic = path.startsWith("Music - Scene")
   val isCovers = path.startsWith("Music - Games - Covers/")
@@ -286,6 +288,12 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
     publishers.clear()
     album = ""
   }
+
+  val meta = TosecMeta(authors.filterNot(_.trim.isEmpty).sorted.distinct, composers.filterNot(_.trim.isEmpty).sorted.distinct, publishers.filterNot(_.trim.isEmpty).sorted.distinct, album.trim, year)
   
-  Some(TosecMeta(authors.filterNot(_.trim.isEmpty).sorted.distinct, composers.filterNot(_.trim.isEmpty).sorted.distinct, publishers.filterNot(_.trim.isEmpty).sorted.distinct, album.trim, year))
+  if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
+    return None
+  } else {
+    Some(meta)
+  }
 }

@@ -187,7 +187,11 @@ lazy val examples = {
         year = Some(1989)
       }
       if (txt.matches(".* composed [BbRr]y .*")) {
-        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a => {
+          if (a.contains("/")) {
+            a.split("/").head.trim
+          } else a.trim
+        }).sorted.toBuffer
       } else if (txt.contains(" composed ")) {
         authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
       } else if (txt.contains(" by ")) {
@@ -281,6 +285,8 @@ lazy val rips = {
         authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
           if (a.contains("(") && a.contains(")")) {
             a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else if (a.contains("/")) {
+            a.split("/").head.trim
           } else a.trim
         ).sorted.toBuffer
         } else if (txt.contains(" composed ")) {
