@@ -31,6 +31,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 
 - `tsv/pretty/*/amp.tsv` - author/album metadata sourced from AMP
 - `tsv/pretty/*/demozoo.tsv` - author/publisher/album/year metadata sourced from Demozoo
+- `tsv/pretty/*/fujiology.tsv` - author/publisher/album/year metadata sourced from Fujiology
 - `tsv/pretty/*/modland.tsv` - author/album metadata sourced from Modland
 - `tsv/pretty/*/modsanthology.tsv` - author/publisher/album/year metadata sourced from Mods Anthology
 - `tsv/pretty/*/oldexotica.tsv` - author/publisher/album/year metadata sourced from ExoticA (old)
@@ -43,10 +44,17 @@ There are two alternative hashing methods provided and separate TSVs for each un
 - `songdb/sources/amp.tsv` - module infos and songlengths for AMP
 - `songdb/sources/demozoo.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo.sql`) from Demozoo postgres database dump
 - `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding AMP/Modland downloads). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
+- `songdb/sources/fujiology.tsv` - module infos and songlengths for Fujiology
+- `songdb/sources/mbnet.tsv` - module infos and songlengths for MBnet Apaja
 - `songdb/sources/modland.tsv` - module infos and songlengths for Modland
 - `songdb/sources/modland_incoming.tsv` - modules infos and songlengths for Modland incoming directory
 - `songdb/sources/modsanthology.tsv` - module infos and songlengths for Mods Anthology
+- `songdb/sources/modarchive.tsv` - module infos and songlengths for ModArchive
+- `songdb/sources/nostalgicplayer.tsv` - module infos and songlengths for NostalgicPlayer
 - `songdb/sources/oldexotica.tsv` - module infos and songlengths for ExoticA (old)
+- `songdb/sources/soamc.tsv` - module infos and songlengths for SOAMC=
+- `songdb/sources/tosecmusic.tsv` - module infos and songlengths for TOSEC Music
+- `songdb/sources/tosecmusic_unknown.tsv` - module infos and songlengths for TOSEC Music Unknown
 - `songdb/sources/unexotica.tsv` - module infos and songlengths for UnExoticA
 - `songdb/sources/wantedteam.tsv` - module infos and songlengths for Wanted Team
 - `songdb/sources/zakalwe.tsv` - module infos and songlengths for Zakalwe chip git repo
@@ -54,7 +62,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 
 Except for `demozoo.tsv`, the raw TSV source files are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
 
-**Note:** Some additional required files not included in Github, specifically local mirror of some of the AMP, ExoticA (old), UnExoticA and Wanted Team web pages + Mods Anthology txt files are needed to actually run the Scala `songdb.sc` script.
+**Note:** Some additional required files not included in Github, specifically local mirror of some of source web pages and/or database files are needed to actually run the Scala `songdb.sc` script.
 
 **Note:** Only files playable by audacious-uade are included in the database. The script runs completely locally and does not download anything from internet.
 
@@ -164,16 +172,24 @@ For any applicable sui generis rights or copyrights I may have over the database
 
 Sources used for the database:
 
-- **AMP** - https://amp.dascene.net/
-- **Modland** - http://ftp.modland.com/
-- **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
-- **ExoticA (old)** - http://old.exotica.org.uk/
-- **Demozoo** - https://demozoo.org/
-- **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
-- **Wanted Team** - http://wt.exotica.org.uk/
+- **AmigaMega** - https://amigamega.com/index.html
 - **Aminet** - https://aminet.net/
-- **Zakalwe** - git://zakalwe.fi/chip
+- **AMP** - https://amp.dascene.net/
+- **Demozoo** - https://demozoo.org/
+- **ExoticA (old)** - http://old.exotica.org.uk/
+- **Fujiology** - https://fujiology.untergrund.net/
+- **MBnet Apaja** - https://archive.org/details/modit
 - **ModArchive** - https://modarchive.org/
+- **Modland** - http://ftp.modland.com/
+- **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
+- **NostalgicPlayer** - https://nostalgicplayer.dk/
+- **SOAMC=** - https://www.paula8364.com
+- **TOSEC** - https://www.tosecdev.org/
+- **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
+- **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
+- **Wanted Team** - http://wt.exotica.org.uk/
+- **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
+- **Zakalwe** - git://zakalwe.fi/chip
 
 
 ## Used By
