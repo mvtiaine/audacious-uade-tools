@@ -26,7 +26,8 @@ case class WantedTeamMeta (
   authors: Buffer[String],
   album: String,
   publishers: Buffer[String],
-  year: Option[Int]
+  year: Option[Int],
+  _type: String,
 )
 
 lazy val wantedteam_customs_by_path =
@@ -76,7 +77,7 @@ lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Cod
     System.err.println(s"WARN: wantedteam customs missing md5s for $path")
   }
   entries.map(e =>
-    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year)
+    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year, "")
   )
 }).get.distinct.seq
 
@@ -244,7 +245,7 @@ lazy val examples = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year)
+        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "")
       )
     } else {
       Seq.empty
@@ -315,7 +316,7 @@ lazy val rips = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year)
+        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "")
       )
     } else {
       Seq.empty

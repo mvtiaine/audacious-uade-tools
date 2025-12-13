@@ -25,8 +25,20 @@ case class FujiologyMeta (
   album: String,
   year: Option[Int],
   system: String,
+  prodType: String,
   // TODO composer?
 )
+
+def normalizePlatform(platform: String): String = {
+  if (platform.startsWith("Amiga")) "Amiga"
+  else if (platform.startsWith("Atari")) "Atari"
+  else if (platform.startsWith("FALCON")) "Atari"
+  else if (platform.startsWith("JAGUAR")) "Atari"
+  else if (platform.startsWith("TT")) "Atari"
+  else if (platform.startsWith("Windows")) "PC"
+  else if (platform.startsWith("MS-DOS")) "PC"
+  else ""
+}
 
 def getCellString(row: Row, cellIndex: Int): String = {
     val cell = row.getCell(cellIndex)
@@ -156,6 +168,7 @@ lazy val music_metas = {
             album = prod,
             year = None,
             system,
+            prodType = "",
           )
           if (metas.exists(m => m.md5 == entry.md5)) {
             System.err.println(s"WARN: Fujiology duplicates: ${meta} vs ${metas.filter(_.md5 == entry.md5)}")
@@ -179,13 +192,15 @@ lazy val prods_metas = {
     system: String,
     prod: String,
     filename: String,
-    publishers: Buffer[String]
+    publishers: Buffer[String],
+    prodType: String,
   )
 
   def parseRow(row: Row, system: String, prodRows: Buffer[ProdRow]) = {
     if (row.getLastCellNum() >= 6) {
       val group = getCellString(row, 0)
       val prod = getCellString(row, 1)
+      val prodType = getCellString(row, 2)
       val filenames = getCellString(row, 6).toLowerCase.split(",|\\. ").map(_.trim)
         .filterNot(_.isEmpty)
         .map(_.replace(".zip", ""))
@@ -195,7 +210,8 @@ lazy val prods_metas = {
           system,
           prod,
           filename,
-          publishers.toBuffer
+          publishers.toBuffer,
+          prodType
         )
       }
     }
@@ -232,6 +248,7 @@ lazy val prods_metas = {
           album = prod.prod,
           year = None,
           system = prod.system,
+          prodType = prod.prodType,
         )
       } else {
         System.err.println(s"WARN: Fujiology ${prefix} PRODS no entry for filename '${filename}': ${e}")
@@ -275,7 +292,8 @@ lazy val mags_metas = {
     prod: String,
     system: String,
     filename: String,
-    publishers: Buffer[String]
+    publishers: Buffer[String],
+    prodType: String,
   )
   val magRows = Buffer[MagRow]()
   while (rows.hasNext()) {
@@ -284,6 +302,7 @@ lazy val mags_metas = {
       val prod = getCellString(row, 0)
         .replace(" - All Issues", "")
       val group = getCellString(row, 1)
+      val prodType = getCellString(row, 2)
       val system = getCellString(row, 3)
       val filenames = getCellString(row, 7).toLowerCase.split(",|\\. ").map(_.trim)
         .filterNot(_.isEmpty)
@@ -294,7 +313,8 @@ lazy val mags_metas = {
           prod,
           system,
           filename,
-          publishers.toBuffer
+          publishers.toBuffer,
+          prodType
         )
       }
     }
@@ -318,6 +338,7 @@ lazy val mags_metas = {
         album = mag.prod,
         year = None,
         system = mag.system,
+        prodType = mag.prodType,
       )
     } else {
       System.err.println(s"WARN: Fujiology MAGS no entry for filename '${filename}': ${e}")
@@ -339,6 +360,7 @@ lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).f
       album = "",
       year = Some(dirs(1).toInt),
       system = "",
+      prodType = "",
     ))
   } else None
 }

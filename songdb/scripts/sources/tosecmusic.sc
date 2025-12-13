@@ -27,7 +27,7 @@ val authorOfGroupPattern = raw"^(.+?) of (.+)$$".r
 val multiAuthorOfGroupPattern = raw"^(.+?)\s+of\s+(.+)$$".r  // match "Author1 + Author2 of Group"
 val yearPattern = raw"^(\d{4})".r  // extract year from beginning of string (handles dates like 1989-08-26)
 val validYearPattern = raw"^\d{4}$$".r  // valid year is exactly 4 digits, no 'x' allowed
-val articlePattern = raw"^(.+?),\s*(The|A|An|Les?|La|L'|Der)$$".r  // match "Title, The/A/An/Les/Le/La/L'" patterns
+val articlePattern = raw"^(.+?),\s*(The|A|An|Les?|La|L'|Der)\b(.*)".r  // match "Title, The/A/An/Les/Le/La/L'" patterns
 val yearOrPlaceholderPattern = raw"^(\d{4}|\d{2}xx|\d{3}x)".r  // matches "1991" or "19xx" or "199x"
 val platformPattern = raw"^(AGA|ECS|OCS|CD32|CDTV)$$".r  // platform/technical descriptors to ignore
 
@@ -83,7 +83,7 @@ def splitPublishers(publisherString: String): Seq[String] = {
 
 def normalizeAlbumName(name: String): String = {
   name match {
-    case articlePattern(title, article) => s"$article $title"
+    case articlePattern(title, article, rest) => s"$article $title$rest".trim
     case "deathtrap" => "Death Trap"
     case _ => name
   }
@@ -94,7 +94,8 @@ case class TosecMeta(
   composers: Buffer[String], // [cmp X] (with seq X)
   publishers: Buffer[String],
   album: String,
-  year: Int
+  year: Int,
+  _type: String
 )
 
 def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
@@ -289,7 +290,7 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
     album = ""
   }
 
-  val meta = TosecMeta(authors.filterNot(_.trim.isEmpty).sorted.distinct, composers.filterNot(_.trim.isEmpty).sorted.distinct, publishers.filterNot(_.trim.isEmpty).sorted.distinct, album.trim, year)
+  val meta = TosecMeta(authors.filterNot(_.trim.isEmpty).sorted.distinct, composers.filterNot(_.trim.isEmpty).sorted.distinct, publishers.filterNot(_.trim.isEmpty).sorted.distinct, album.trim, year, _type = if (path.contains("Games -")) "Game" else "Demo")
   
   if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
     return None

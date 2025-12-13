@@ -12,6 +12,7 @@ import scala.jdk.StreamConverters._
 import scala.util.Try
 import scala.util.Using
 
+import convert.MetaData
 import oldexotica.metas
 
 enum Precision:
@@ -34,7 +35,16 @@ case class DemozooMeta (
   party: Option[String],
   partyDate: Option[String],
   partyDatePrecision: Option[Precision],
+  prodType: Option[String]
 )
+
+def normalizePlatform(platform: String): String = {
+  if (platform.startsWith("Amiga")) "Amiga"
+  else if (platform.startsWith("Atari")) "Atari"
+  else if (platform.startsWith("Windows")) "PC"
+  else if (platform.startsWith("MS-Dos")) "PC"
+  else ""
+}
 
 lazy val ml_by_path = sources.modland.groupBy(_.path.toLowerCase)
 lazy val aminet_by_path = sources.aminet.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
@@ -59,16 +69,37 @@ lazy val fujiology_by_path = sources.fujiology.flatMap { entry =>
 }.groupBy(_._1).view.mapValues(_.map(_._2)).toMap
 lazy val oldexotica_by_archive = oldexotica.metas.groupBy(_.archive.toLowerCase)
 
-lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLines.toSeq.par.flatMap(line =>
-  def split(s: String) = s.replaceFirst("\\{","").replaceAll("\\}$","").split(",").filterNot(_ == "NULL")
-  def trim(s: String) = s.trim.replaceFirst("\"","").replaceAll("\"$","")
-  def precision(s: String) = s match {
-    case "y" => Precision.YEAR
-    case "m" => Precision.MONTH
-    case "d" => Precision.DATE
-    case _ => Precision.UNKNOWN
+def trim(s: String) = {
+  val trimmed = s.trim
+    .replaceFirst("^\\{","").replaceAll("\\}$","")
+    .replaceAll("\\\\","")
+    .trim
+  val res = if (trimmed.startsWith("\"") && trimmed.endsWith("\"")) {
+    trimmed.replaceFirst("^\"","").replaceAll("\"$","").trim
+  } else {
+    trimmed
   }
+  if (res == "NULL") "" else res
+}
+def split(s: String) = s
+  .replaceFirst("\\{","")
+  .replaceAll("\\}$","")
+  .replace("Revelation Crew, The", "The Revelation Crew") // XXX
+  .split(",")
+  .filterNot(s => s == "NULL" || s.isEmpty)
+def precision(s: String) = s match {
+  case "y" => Precision.YEAR
+  case "m" => Precision.MONTH
+  case "d" => Precision.DATE
+  case _ => Precision.UNKNOWN
+}
+def maybe(s: String) = {
+  val trimmed = trim(s)
+  if (trimmed == "NULL" || trimmed.isEmpty) None
+  else Some(trimmed)
+}
 
+lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.getLines.toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val id = l(0).toInt
   val prodId = l(1).toIntOption
@@ -85,13 +116,14 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLin
   val modPublishers = split(l(12)) map trim
   val prodPublishers = split(l(13)) map trim
   //val imageUrls = split(l(14))
-  val party = if (l.length > 14) Some(l(14)) else None
-  val partyDate = if (l.length > 15) Some(l(15)) else None
+  val party = if (l.length > 14) maybe(l(14)) else None
+  val partyDate = if (l.length > 15) maybe(l(15)) else None
   val partyDatePrecision = if (l.length > 16) Some(precision(l(16))) else None
+  val prodType = if (l.length > 17) maybe(l(17)) else None
 
   val meta = DemozooMeta(id, prodId, modDate, modDatePrecision, prodDate, prodDatePrecision,
     modPlatform, prodPlatforms.toSeq, prod, authors.toSeq, modPublishers.toSeq, prodPublishers.toSeq, // imageUrls.toSeq,
-    party, partyDate, partyDatePrecision)
+    party, partyDate, partyDatePrecision, prodType)
 
   def findArchive(archivePath: String) = {
     val parts = archivePath.split("/").toSeq
@@ -306,3 +338,33 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo.tsv"))(_.getLin
   
   best.map((md5, _))
 }).toSeq
+
+lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/demozoo_prods.tsv"))(_.getLines.toSeq.par.flatMap(line =>
+  val l = line.split("\t")
+  val prodId = l(0).toInt
+  val prodDate = l(1)
+  val prodDatePrecision = precision(l(2))
+  var prod = l(3)
+  val prodPlatforms = split(l(4)) map trim
+  val prodPublishers = split(l(5)) map trim
+  val musicAuthors = split(l(6)) map trim
+  val party =  maybe(l(7))
+  val partyDate = maybe(l(8))
+  val partyDatePrecision = precision(l(9))
+  val prodType = maybe(l(10))
+
+  val authors = musicAuthors.sorted.distinct.toBuffer
+
+  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar"))) {
+    val meta = MetaData(
+      hash = "",
+      authors = if (authors.size > 2) Buffer.empty else authors,
+      album = prod.trim,
+      publishers = prodPublishers.sorted.distinct.toBuffer,
+      year = prodDate.take(4).toIntOption.getOrElse(0),
+      _type = prodType.getOrElse(""),
+      _platform = if (prodPlatforms.isEmpty || prodPlatforms.size > 1) "" else normalizePlatform(prodPlatforms.head)
+    )
+    Some(meta)
+  } else None
+)).get.toSet

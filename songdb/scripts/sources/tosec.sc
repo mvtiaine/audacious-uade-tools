@@ -32,10 +32,13 @@ case class TosecMeta(
   title: String,
   publishers: Buffer[String],
   year: Int,
+  _type: String = "",
+  platform: String = "",
 )
 
 val tosecDir = System.getProperty("user.home") + "/tosec/TOSEC/"
 val tosecIsoDir = System.getProperty("user.home") + "/tosec/TOSEC-ISO/"
+val tosecCUEsDir = System.getProperty("user.home") + "/tosec/CUEs/"
 
 lazy val platforms = Buffer(
   //"3DO 3DO",
@@ -82,22 +85,64 @@ lazy val dats = Seq(
   "Packmags",
 )
 
+lazy val cuesDirs = Seq(
+  //"3DO/3DO Interactive Multiplayer/Games/",
+  //"3DO/3DO Interactive Multiplayer/Homebrew/Demos/",
+  //"3DO/3DO Interactive Multiplayer/Homebrew/Games/",
+  //"American Laser Games/CD-ROM System/Games/",
+  //"Apple/Macintosh/CD/Games/",
+  "Atari/Jaguar CD/Homebrew/Games/",
+  //"Bandai/Playdia/Games/",
+  "Commodore/Amiga CD32/Games/",
+  "Commodore/Amiga CD32/Homebrew/Games/",
+  "Commodore/Amiga CDTV/Games/",
+  "Commodore/Amiga CDTV/Homebrew/Games/",
+  "Commodore/Amiga/CD/Games/",
+  "IBM/PC Compatibles/CD/Games/",
+  //"Fujitsu/FM Towns/CD/Demos/",
+  //"Fujitsu/FM Towns/CD/Games/",
+  //"NEC/PC-Engine CD & TurboGrafx-16 CD/Games/"
+  //"NEC/PC-Engine CD & TurboGrafx-16 CD/Homebrew/Games/"
+  //"NEC/PC-FX/Demos/",
+  //"Philips/CD-i/Homebrew/Demos/",
+  //"Philips/CD-i/Homebrew/Games/"
+  //"Sega/32X/CD/Games/"
+  //"Sega/Dreamcast/Homebrew/Games/",
+  //"Sega/Mega-CD & Sega CD/CD/Games/"
+  //"Sega/Mega-CD & Sega CD/Homebrew/Demos/"
+  //"Sega/Mega-CD & Sega CD/Homebrew/Games/",
+  //"Sega/Saturn/Games/",
+  //"Sega/Saturn/Homebrew/Games/",
+  //"SNK/Neo-Geo CD/Demos/",
+  //"SNK/Neo-Geo CD/Games/",
+  //"Sony/PlayStation 2/Homebrew/Games/",
+  //"Sony/PlayStation Portable/Homebrew/Games/",
+  //"Sony/PlayStation/Demos/"
+  //"Sony/PlayStation/Games/",
+  //"Sony/PlayStation/Homebrew/Games/"
+)
+
+def normalizePlatform(platform: String): String = {
+  if (platform.startsWith("Atari")) "Atari"
+  else if (platform.startsWith("Commodore")) "Amiga"
+  else if (platform.startsWith("IBM")) "PC"
+  else ""
+}
+
 lazy val tosecPattern = """^(.*) \((.*?)\)\((.*?)\)""".r
 lazy val titleSuffixPattern = """\s*\((demo-playable)\)\s*$""".r
-lazy val articlePattern = """^(.*),\s*(The|A|An)$""".r
+lazy val articlePattern = """^(.*), (The|A|An)\b(.*)""".r
 lazy val namePattern = """^([^,]+),\s*(.+)$""".r
 
 def normalizeTitle(title: String): String = {
   // Remove demo-related suffixes
   val cleaned = titleSuffixPattern.replaceFirstIn(title, "").trim
   
-  // Move trailing article to front
   articlePattern.findFirstMatchIn(cleaned) match {
-    case Some(m) => s"${m.group(2)} ${m.group(1)}"
+    case Some(m) => s"${m.group(2)} ${m.group(1)}${m.group(3)}".trim
     case None => cleaned
   }
 }
-
 
 def normalizePublisher(publisher: String): String = {
   // Check if it's in "LastName, FirstName" format
@@ -107,13 +152,12 @@ def normalizePublisher(publisher: String): String = {
   }
 }
 
-lazy val allMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
+lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
   Files.list(Paths.get(dir)).toScala(Buffer).sorted
   .filter(e => platforms.exists(p => e.getFileName.toString.startsWith(p)))
   .filter(e => dats.exists(d => e.getFileName.toString.contains(s" $d ")))
   .filterNot(_.getFileName.toString.contains(" - Compilations - "))
   .flatMap(f =>
-    //println(s"Processing $dir file: $f")
     val dat = XML.loadFile(f.toFile)
     (dat \ "game").flatMap(g =>
       val name = (g \ "@name").text.trim
@@ -131,66 +175,83 @@ lazy val allMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
           if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
           else (title, year, publishers)
         case None =>
-          //println(s"TOSEC META: ${name} => FAILED TO PARSE")
           ("", 0, Buffer.empty)
       }
       if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
+        val _type = if (f.getFileName.toString.contains(" - Games ")) "Game"
+          else if (f.getFileName.toString.contains(" - Demos ")) "Demo"
+          else ""
         val meta = TosecMeta(
           title,
           publishers,
           year,
+          _type,
+          normalizePlatform(f.getFileName.toString)
         )
-        //println(s"TOSEC META: ${name} => ${meta}")
         Some(meta)
       } else None
     )
   ).toSet).toSet.seq
 
-lazy val metas = allMetas.par.flatMap(m =>
-
-  def deduplicatePublishers(publishers: Buffer[String]): Buffer[String] = {
-    // Group publishers that are the same with/without "The" prefix
-    val grouped = publishers.groupBy(p => 
-      if (p.startsWith("The ")) p.drop(4) else p
-    )
-  
-    // For each group, prefer the version with "The" if it exists
-    grouped.values.map { group =>
-      group.find(_.startsWith("The ")).getOrElse(group.head)
-    }.toBuffer.sorted
+lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
+  val fullDir = Paths.get(tosecCUEsDir, dir)
+  val files = {
+    var cues = Buffer.empty[String]
+    if (Files.exists(fullDir)) {
+      val list = Files.list(fullDir)
+      for (f <- list.toScala(Buffer)) {
+        if (f.toFile.isDirectory) {
+          cues ++= Files.list(f).toScala(Buffer).map(_.getFileName.toString)
+        } else {
+          cues += f.getFileName.toString
+        }
+      }
+    }
+    cues.sorted.distinct
   }
+  files.flatMap(filename =>
+    val name = filename.trim
+    val (title, year, publishers) = tosecPattern.findFirstMatchIn(name) match {
+      case Some(m) =>
+        val rawTitle = m.group(1).trim
+        val title = normalizeTitle(rawTitle)
+        val date = m.group(2).trim
+        val publishers = m.group(3).trim.split(" - ").map(_.trim)
+          .filterNot(_ == "-")
+          .map(normalizePublisher)
+          .sorted.distinct
+          .toBuffer
+        val year = date.take(4).toIntOption.getOrElse(0)
+        if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
+        else (title, year, publishers)
+      case None =>
+        ("", 0, Buffer.empty)
+    }
+    if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
+      val _type = if (dir.contains("/Games/")) "Game"
+        else if (dir.contains("/Demos/")) "Demo"
+        else ""
+      val meta = TosecMeta(
+        title,
+        publishers,
+        year,
+        _type,
+        normalizePlatform(dir)
+      )
+      Some(meta)
+    } else None
+  ).toSet
+).toSet.seq
 
-  if (allMetas.exists(n => n != m && n.title == m.title && n.year == m.year &&
-      n.publishers != m.publishers)) {
-    //println(s"TOSEC META PUBLISHERS CONFLICT: ${m} vs ${allMetas.filter(n => n != m && n.title == m.title && n.year == m.year)}")
-    // merge publishers
-    val mergedPublishers = deduplicatePublishers(m.publishers ++ allMetas.filter(n => n != m && n.title == m.title && n.year == m.year)
-      .flatMap(_.publishers)).distinct.sorted
-    Some(m.copy(publishers = mergedPublishers))
-
-  } else if (allMetas.exists(n => n != m && n.title == m.title && n.publishers == m.publishers &&
-      n.year != m.year)) {
-    //println(s"TOSEC META YEAR CONFLICT: ${m} vs ${allMetas.filter(n => n != m && n.title == m.title && n.publishers == m.publishers)}")
-    // keep oldest year
-    val oldestYear = allMetas.filter(n => n != m && n.title == m.title && n.publishers == m.publishers)
-      .map(_.year).filter(_ > 0).minOption
-    if (oldestYear.isDefined && (m.year == 0 || oldestYear.get < m.year)) {
-      Some(m.copy(year = oldestYear.get))
-    } else Some(m)
-
-  } else Some(m)
-)
-
-for (m <- metas) {
-  //println(s"FINAL TOSEC META: ${m}")
-}
-
+lazy val metas = datMetas ++ cuesMetas
 lazy val tosecMetas = metas.map(m =>
   MetaData(
     hash = "",
     authors = Buffer.empty,
-    publishers = m.publishers,
-    album = m.title,
+    publishers = m.publishers.sorted.distinct.toBuffer,
+    album = m.title.trim,
     year = m.year,
+    _type = m._type.trim,
+    _platform = m.platform.trim,
   )
 )

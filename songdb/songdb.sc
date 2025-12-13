@@ -83,7 +83,7 @@ def dedupMeta(entries: Buffer[MetaData], name: String) = {
     if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
       None
     } else {
-      Some(MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year))
+      Some(MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year, meta._type, meta._platform))
     }
   }.toBuffer
   dedupped
@@ -114,7 +114,7 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
   }
 
-  decoded
+  entries
 }
 
 def _try[T](f: => T) = try {
@@ -276,7 +276,9 @@ lazy val ampTsvs = Future(_try {
         m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
         Buffer.empty,
         m.album,
-        0
+        0,
+        m._type,
+        if (m.album.endsWith(" PC")) "PC" else "",
       ))
     } else None
   ).toBuffer.distinct
@@ -292,7 +294,7 @@ lazy val modlandTsvs = Future(_try {
     val format = path.substring(0, path.indexOf("/"))
     path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     if (path != "- unknown" && path != "_unknown") {
-      modland.parseModlandAuthorAlbum(path).map { case (authors, album) =>
+      modland.parseModlandAuthorAlbum(format, path).map { case (authors, album) =>
         MetaData(
           e.md5.take(12),
           authors.sorted.toBuffer,
@@ -323,7 +325,9 @@ lazy val unexoticaTsvs = Future(_try {
       authors,
       publishers,
       album,
-      if (year != "Unknown") year.toInt else 0
+      if (year != "Unknown") year.toInt else 0,
+      meta.`type`,
+      "Amiga",
     )
   }.toBuffer.distinct
 
@@ -337,9 +341,9 @@ lazy val demozooTsvs = Future(_try {
     val authors = m.authors.filterNot(_ == "?").sorted.toBuffer
     val useProd = !m.prod.isEmpty && (m.prodDate == earliestDate || m.partyDate.getOrElse("") != earliestDate)
     val info = MetaData(
-      md5.take(12),
-      if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
-      ((m.prodPublishers, m.party, m.modPublishers) match {
+      hash = md5.take(12),
+      authors = if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
+      publishers = ((m.prodPublishers, m.party, m.modPublishers) match {
         case (prod,_,_) if useProd =>
           if (prod.forall(_.trim.isEmpty)) Buffer.empty else prod.toBuffer
         case (_,party,_) if !party.isEmpty =>
@@ -348,12 +352,14 @@ lazy val demozooTsvs = Future(_try {
           if (mod.forall(_.trim.isEmpty)) Buffer.empty else mod.toBuffer
         case _ => Buffer.empty
       }).sorted,
-      if (useProd) m.prod.trim else "",
-      if (!earliestDate.isEmpty) earliestDate.substring(0,4).toInt else 0
+      album = if (useProd) m.prod.trim else "",
+      year = if (!earliestDate.isEmpty) earliestDate.substring(0,4).toInt else 0,
+      _type = m.prodType.getOrElse(""),
+      _platform = if (m.prodPlatforms.isEmpty || m.prodPlatforms.size > 1) "" else demozoo.normalizePlatform(m.prodPlatforms.head)
       //if (!m.prodPlatforms.isEmpty) m.prodPlatforms else m.modPlatform
     )
     info match {
-      case MetaData(_, Buffer(), Buffer(), "", 0) => None
+      case MetaData(_, Buffer(), Buffer(), "", 0, "", "") => None
       case _ => Some(info)
     }
   }.toBuffer.distinct
@@ -367,13 +373,16 @@ lazy val oldexoticaTsvs = Future(_try {
     val publishers = oldexotica.transformPublishers(m)
     val album = oldexotica.transformAlbum(m)
     val year = m.year.getOrElse(0)
+    val _type = m.info.replaceAll("\\(.*\\)$","").trim
     if (authors.isEmpty && publishers.isEmpty && album.isEmpty && year == 0) None
     else Some(MetaData(
       m.md5.take(12),
       authors,
       publishers,
       album,
-      year
+      year,
+      if (_type != "N/A") _type else "",
+      "Amiga",
     ))
   }.toBuffer.distinct
 
@@ -403,7 +412,9 @@ lazy val modsanthologyTsvs = Future(_try {
       m.authors,
       m.publishers,
       m.album,
-      m.year.getOrElse(0)
+      m.year.getOrElse(0),
+      m._type,
+      "Amiga",
     ))
   }.toBuffer.distinct
 
@@ -419,7 +430,8 @@ lazy val tosecmusicTsvs = Future(_try {
         meta.authors,
         meta.publishers,
         meta.album,
-        meta.year
+        meta.year,
+        meta._type
       )
     }
   }.toBuffer.distinct
@@ -437,7 +449,9 @@ lazy val fujiologyTsvs = Future(_try {
       m.authors,
       m.publishers,
       m.album,
-      m.year.getOrElse(0)
+      m.year.getOrElse(0),
+      m.prodType,
+      fujiology.normalizePlatform(m.system),
     ))
   }.toBuffer.distinct
   fujiologydata = processMetaTsvs(entries, "fujiology.tsv")
