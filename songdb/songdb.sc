@@ -397,7 +397,9 @@ lazy val wantedteamTsvs = Future(_try {
       m.authors,
       m.publishers,
       m.album,
-      m.year.getOrElse(0)
+      m.year.getOrElse(0),
+      m._type,
+      "Amiga",
     ))
   }.toBuffer.distinct
 
@@ -412,9 +414,7 @@ lazy val modsanthologyTsvs = Future(_try {
       m.authors,
       m.publishers,
       m.album,
-      m.year.getOrElse(0),
-      m._type,
-      "Amiga",
+      m.year.getOrElse(0)
     ))
   }.toBuffer.distinct
 

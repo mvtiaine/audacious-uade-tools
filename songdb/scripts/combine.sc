@@ -1014,6 +1014,7 @@ def combineMetadata(
           debug(s"Filling publishers for ${meta.hash} - ${meta.album}: publishers ${meta.publishers.mkString(",")} -> ${cmp.publishers.mkString(",")} source: ${cmp}")
           meta = meta.copy(publishers = cmp.publishers)
         }
+        }
       }
     }
     meta
