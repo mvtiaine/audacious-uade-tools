@@ -81,6 +81,9 @@ lazy val audioFingerprints =
     parseAudioTsv(tsv.getAbsolutePath, withSimHash = true)
   ).seq.distinct.toBuffer
 
+
+lazy val audioByMd5 = audioFingerprints.groupBy(_.md5).par.mapValues(_.sortBy(_.normalizedSubsong).distinct)
+
 lazy val audioByPlayerAndMd5 = audioFingerprints.groupBy(e => (e.player, e.md5))
   .par.mapValues(_.sortBy(_.normalizedSubsong).distinct)
 

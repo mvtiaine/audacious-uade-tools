@@ -2,6 +2,7 @@
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
+//> using dep com.ibm.icu:icu4j:78.1
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.regex.Pattern
@@ -11,13 +12,25 @@ import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.ParSet
 import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
+import scala.util.boundary, boundary.break
 import spire.math._
+import com.ibm.icu.text.Transliterator
 
-import convert._
 import audio._
 import chromaprint._
+import convert._
+import demozoo._
 import tosec._
 import whdload._
+
+private val transliteratorThreadLocal = new ThreadLocal[Transliterator] {
+  override def initialValue(): Transliterator = 
+    Transliterator.getInstance("NFD; [:Nonspacing Mark:] Remove; NFC; Latin-ASCII")
+}
+
+def debug(msg: String): Unit = {
+  System.err.println(s"DEBUG: $msg")
+}
 
 extension (s: String)
   def startsOrEndsWith(s2: String, minSLength: Int = 4, minELength: Int = 7): Boolean =
@@ -33,83 +46,77 @@ def removeArticle(s: String): String = {
   else if (s.startsWith("A ")) s.substring(2)
   else s
 }
-
-def withArticleVariants(s: String): Buffer[String] = {
-  val withoutArticle = removeArticle(s)
-  if (withoutArticle != s) Buffer(s, withoutArticle)
-  else Buffer(s)
-}
-
-def withArticleVariants(items: Buffer[String]): Buffer[String] = {
-  items.flatMap(withArticleVariants).distinct
-}
-
 def expandArticleVariants(m: MetaData): Set[MetaData] = {
   // Generate all combinations of article variants
   // For authors/publishers: if any item has an article, create versions with original and without
-  val authorsList = if (m.authors.isEmpty) {
+  val authorsLists = if (m.authors.isEmpty) {
     Seq(m.authors)
   } else {
-    val withVariants = withArticleVariants(m.authors)
-    if (withVariants == m.authors) Seq(m.authors)
-    else Seq(m.authors, withVariants)
+    val authors = Seq(m.authors)
+    val noArticles = m.authors.map(removeArticle)
+    if (m.authors != noArticles) authors ++ Seq(noArticles)
+    else authors
   }
   
-  val albumList = withArticleVariants(m.album)
+  var albumLists = Seq(m.album)
+  val albumNoArticle = removeArticle(m.album)
+  if (m.album != albumNoArticle) albumLists = albumLists ++ Seq(albumNoArticle)
   
-  val publishersList = if (m.publishers.isEmpty) {
+  val publishersLists = if (m.publishers.isEmpty) {
     Seq(m.publishers)
   } else {
-    val withVariants = withArticleVariants(m.publishers)
-    if (withVariants == m.publishers) Seq(m.publishers)
-    else Seq(m.publishers, withVariants)
+    val publishers = Seq(m.publishers)
+    val noArticles = m.publishers.map(removeArticle)
+    if (m.publishers != noArticles) publishers ++ Seq(noArticles)
+    else publishers
   }
   
-  (for {
-    authors <- authorsList
-    album <- albumList
-    publishers <- publishersList
-  } yield m.copy(authors = authors, album = album, publishers = publishers)).toSet
+  val variants = (for {
+    authors <- authorsLists
+    album <- albumLists
+    publishers <- publishersLists
+  } yield m.copy(hash = "", authors = authors, album = album, publishers = publishers))
+  .filterNot(v => v.authors == m.authors && v.album == m.album && v.publishers == m.publishers)
+  .toSet
+
+  variants + m
 }
 
-def normalize(s: String) = s
-  .replaceAll("[^A-Za-z0-9]","")
-  .replaceAll("ü","ue")
-  .replaceAll("Ø","o")
-  .replaceAll("ë","e")
-  .toLowerCase
-def normalizeAlbum(m: MetaData): String = normalizeAlbum(m.album, m.publishers)
-def normalizeAlbum(album: String, publishers: Buffer[String]): String = {
+def normalize(s: String) = {
+  val lower = s.toLowerCase
+  val transliterated = transliteratorThreadLocal.get().transliterate(lower)
+  transliterated.replaceAll("[^A-Za-z0-9]","").trim
+}
+
+def normalizeAlbum(m: MetaData): String = normalizeAlbum(m._type, m.album, m.publishers)
+def normalizeAlbum(_type: String, album: String, publishers: Buffer[String]): String = {
   var a = album
+  if (_type.toLowerCase == "cracktro")
+    a = a.trim + " [cracktro]"
   publishers.foreach(p =>
     a = a.replaceAll(s"^${Pattern.quote(p)} ", "")
   )
-  a
-  .replaceAll(" PC$", "")
-  .replaceAll(" v[0-9]+(\\.[0-9]+)*$","")
-  .replaceAll("\\(.*\\)$","")
-  .replaceAll(" #(.*)$"," $1")
-  .replaceAll(" 0([1-9][0-9])$"," $1")
-  .replaceAll(" 00([0-9])$"," $1")
-  .replaceAll(" 0([0-9])$"," $1")
-  .replaceAll(" 0$","")
-  .replaceAll(" 1$","")
-  .replaceAll(" [Ii]$","")
-  .replaceAll(" [Ii][Ii]$"," 2")
-  .replaceAll(" [Ii][Ii][Ii]$"," 3")
-  .replaceAll(" [Ii][Vv]$"," 4")
-  .replaceAll(" [Vv]$"," 5")
-  .replaceAll(" [Vv][Ii]$"," 6")
-  .replaceAll(" [Vv][Ii][Ii]$"," 7")
-  .replaceAll(" [Vv][Ii][Ii][Ii]$"," 8")
-  .replaceAll(" [Ii][Xx]$"," 9")
-  .replaceAll("[^A-Za-z0-9]","")
-  .trim
-  .toLowerCase
-  .replaceAll("ü","ue")
-  .replaceAll("Ø","o")
-  .replaceAll("ë","e")
-  .trim
+  transliteratorThreadLocal.get().transliterate(a
+    .replaceAll("\\(.*\\)","")
+    .replaceAll(" PC$", "")
+    .replaceAll(" [vV][0-9]+(\\.[0-9]+)*\\b","") // TODO [vV] optional
+    .replaceAll(" #(.*)$"," $1")
+    .replaceAll(" 0([1-9][0-9])$"," $1")
+    .replaceAll(" 00([0-9])$"," $1")
+    .replaceAll(" 0([0-9])$"," $1")
+    .replaceAll(" 0$","")
+    .replaceAll(" 1$","")
+    .replaceAll(" [Ii]$","")
+    .replaceAll(" [Ii][Ii]$"," 2")
+    .replaceAll(" [Ii][Ii][Ii]$"," 3")
+    .replaceAll(" [Ii][Vv]$"," 4")
+    .replaceAll(" [Vv]$"," 5")
+    .replaceAll(" [Vv][Ii]$"," 6")
+    .replaceAll(" [Vv][Ii][Ii]$"," 7")
+    .replaceAll(" [Vv][Ii][Ii][Ii]$"," 8")
+    .replaceAll(" [Ii][Xx]$"," 9")
+    .toLowerCase
+  ).replaceAll("[^A-Za-z0-9\\.]","").trim
 }
 
 def pickMostCommonPublishers(metas: Set[MetaData]): Buffer[String] = {
@@ -165,7 +172,7 @@ def combineMetadata(
   modsanthology: Buffer[MetaData],
   fujiology: Buffer[MetaData],
   tosecmusic: Buffer[MetaData], // only supplementary
-) = {
+): Buffer[MetaData] = {
   val hashes = (
     amp.par.map(_.hash) ++
     modland.par.map(_.hash) ++
@@ -188,10 +195,11 @@ def combineMetadata(
     oldexotica ++
     wantedteam ++
     modsanthology ++
-    fujiology2 ++
-    tosecmusic
+    fujiology2
+    // tosecmusic // too unreliable
   ).groupBy(_.hash).par.mapValues(_.distinct).seq
-  val allmetas2 = allmetas.flatMap(_._2.toSet).toSet
+  val allmetas2 = (allmetas.flatMap(_._2.toSet).toSet ++ tosecMetas ++ whdloadMetas ++ demozooMetas ++ tosecmusic.map(_.copy(hash = "")))
+    .flatMap(expandArticleVariants)
 
   val demozoog = demozoo.groupBy(_.hash).par.mapValues(_.head).seq
   val ampg = amp.groupBy(_.hash).par.mapValues(_.head).seq
@@ -284,63 +292,64 @@ def combineMetadata(
       var album = pick(metaSources, f = _.album).getOrElse("")
       var publishers = pick(metaSources, f = _.publishers).getOrElse(Buffer.empty)
       var year = pick(metaSources, f = _.year).getOrElse(0)
+      var _type = pick(metaSources, f = _. _type).getOrElse("")
+      var _platform = pick(metaSources, f = _. _platform).getOrElse("")
 
-      debug(s"initial pick for $hash -> authors: ${authors}, album: '${album}', publishers: ${publishers}, year: ${year}")
-      MetaData(hash, authors, publishers, album, year)
+      debug(s"initial pick for $hash -> authors: ${authors}, album: '${album}', publishers: ${publishers}, year: ${year}, type: ${_type}, platform: ${_platform}")
+      MetaData(hash, authors, publishers, album, year, _type, _platform)
     }
   
     // Duplicate entries with "The X", "An X", "A X" to include both versions
-    val allmetas3 = (allmetas2 ++ metas ++ tosecMetas ++ whdloadMetas)
-      .flatMap(expandArticleVariants)
+    lazy val allmetas3 = (allmetas2 ++ metas)
 
-    val yearAlbumPublishers = allmetas3
+    lazy val yearAlbumPublishers = allmetas3
       .filterNot(_.album.isEmpty)
       .filterNot(_.publishers.isEmpty)
       .filterNot(_.year == 0)
       .map(m => (m.year, normalizeAlbum(m), m.publishers.map(normalize).sorted.distinct))
       .toSet
   
-    val yearAlbum = allmetas3
+    lazy val yearAlbum = allmetas3
       .filterNot(_.album.isEmpty)
       .filterNot(_.year == 0)
       .map(m => (m.year, normalizeAlbum(m)))
       .toSet
 
-    val albumPublishers = allmetas3
+    lazy val albumPublishers = allmetas3
       .filterNot(_.album.isEmpty)
       .filterNot(_.publishers.isEmpty)
       .map(m => (normalizeAlbum(m), m.publishers.map(normalize).sorted.distinct))
       .toSet
 
-    val authorsAlbumPublishers = allmetas3
+    lazy val authorsAlbumPublishers = allmetas3
       .filterNot(_.authors.isEmpty)
       .filterNot(_.album.isEmpty)
       .filterNot(_.publishers.isEmpty)
       .map(m => (m.authors.map(normalize).sorted.distinct, normalizeAlbum(m), m.publishers.map(normalize).sorted.distinct))
       .toSet
   
-    val authorsAlbumYear = allmetas3
+    lazy val authorsAlbumYear = allmetas3
       .filterNot(_.authors.isEmpty)
       .filterNot(_.album.isEmpty)
       .filterNot(_.year == 0)
       .map(m => (m.authors.map(normalize).sorted.distinct, normalizeAlbum(m), m.year))
       .toSet
 
-    val authorsYearPublishers = allmetas3
+    lazy val authorsYearPublishers = allmetas3
       .filterNot(_.authors.isEmpty)
       .filterNot(_.publishers.isEmpty)
       .filterNot(_.year == 0)
       .map(m => (m.authors.map(normalize).sorted.distinct, m.year, m.publishers.map(normalize).sorted.distinct))
       .toSet
 
-    val authorsYearNoAlbum = allmetas3
+    lazy val authorsYearNoAlbum = allmetas3
       .filter(_.album.isEmpty)
       .filterNot(_.authors.isEmpty)
       .filterNot(_.year == 0)
       .map(m => (m.authors.map(normalize).sorted.distinct, m.year))
       .toSet
 
-    val authorsPublishersNoAlbum = allmetas3
+    lazy val authorsPublishersNoAlbum = allmetas3
       .filter(_.album.isEmpty)
       .filterNot(_.authors.isEmpty)
       .filterNot(_.publishers.isEmpty)
@@ -353,6 +362,8 @@ def combineMetadata(
       var album = meta.album
       var publishers = meta.publishers
       var year = meta.year
+      var _type = meta._type
+      var _platform = meta._platform
 
       def pickYearAlbumWithPublishers(m: Option[MetaData]) = {
         if (year == 0 && album.isEmpty && m.isDefined && m.get.year != 0 && m.get.album.nonEmpty) {
@@ -442,7 +453,7 @@ def combineMetadata(
       def pickPublishersWithAlbumAndYear(m: Option[MetaData]): Unit = {
         if (publishers.isEmpty && m.isDefined && m.get.publishers.nonEmpty) {
           if (year != 0 && album.nonEmpty && yearAlbumPublishers.exists(e => e._1 == year &&
-              e._2 == normalizeAlbum(album, m.get.publishers) &&
+              e._2 == normalizeAlbum(_type, album, m.get.publishers) &&
               e._3.exists(p => m.get.publishers.map(normalize).exists(_.startsOrEndsWith(p))))
           ) {
             debug(s"pickPublishersWithAlbumAndYear: $hash -> ${m.get.publishers}")
@@ -454,7 +465,7 @@ def combineMetadata(
       def pickPublishersWithAlbum(m: Option[MetaData]): Unit = {
         if (publishers.isEmpty && m.isDefined && m.get.publishers.nonEmpty) {
           if (year == 0 && album.nonEmpty && albumPublishers.exists(e =>
-              e._1 == normalizeAlbum(album, m.get.publishers) &&
+              e._1 == normalizeAlbum(_type, album, m.get.publishers) &&
               e._2.exists(p => m.get.publishers.map(normalize).exists(_.startsOrEndsWith(p))))
           ) {
             debug(s"pickPublishersWithAlbum: $hash -> ${m.get.publishers}")
@@ -466,7 +477,7 @@ def combineMetadata(
       def pickYearWithAlbumAndPublishers(m: Option[MetaData]) = {
         if (year == 0 && m.isDefined && m.get.year != 0) {
           if (album.nonEmpty && publishers.nonEmpty && yearAlbumPublishers.exists(e => e._1 == m.get.year &&
-              e._2 == normalizeAlbum(album, publishers) &&
+              e._2 == normalizeAlbum(_type, album, publishers) &&
               e._3.exists(p => publishers.map(normalize).exists(_.startsOrEndsWith(p))))
           ) {
             debug(s"pickYearWithAlbumAndPublishers: $hash -> ${m.get.year}")
@@ -478,7 +489,7 @@ def combineMetadata(
       def pickYearWithAlbum(m: Option[MetaData]) = {
         if (year == 0 && m.isDefined && m.get.year != 0) {
           if (publishers.isEmpty && album.nonEmpty && yearAlbum.exists(e => e._1 == m.get.year &&
-              e._2 == (normalizeAlbum(album, Buffer.empty)))
+              e._2 == (normalizeAlbum(_type, album, Buffer.empty)))
            ) {
             debug(s"pickYearWithAlbum: $hash -> ${m.get.year}")
             year = m.get.year
@@ -604,13 +615,12 @@ def combineMetadata(
       sources.foreach(pickYearWithoutAlbum)
       sources.foreach(pickPublishersWithoutAlbum)
 
-      MetaData(meta.hash, meta.authors, publishers, album, year)
+      MetaData(meta.hash, meta.authors, publishers, album, year, _type, _platform)
     }
   
     for (iteration <- 1 to 2) {
       // find metas which have common author(s) + album, add publishers and year if missing
-      val metasByAuthorAlbumWithPublisherOrYear = (allmetas2 ++ metas ++ tosecMetas ++ whdloadMetas)
-        .flatMap(expandArticleVariants)
+      lazy val metasByAuthorAlbumWithPublisherOrYear = (allmetas2 ++ metas)
         .filterNot(_.authors.isEmpty)
         .filterNot(_.album.isEmpty)
         .filterNot(m => m.publishers.isEmpty && m.year == 0)
@@ -657,8 +667,7 @@ def combineMetadata(
       )
   
       // find metas which have common publisher(s) + album, add year if missing
-      val metasByPublisherAlbumWithYear = (allmetas2 ++ metas ++ tosecMetas ++ whdloadMetas)
-        .flatMap(expandArticleVariants)
+      lazy val metasByPublisherAlbumWithYear = (allmetas2 ++ metas)
         .filterNot(_.publishers.isEmpty)
         .filterNot(_.album.isEmpty)
         .filter(_.year != 0)
@@ -702,8 +711,7 @@ def combineMetadata(
       // if meta author is missing, compare to other metas
       // and when there is only 1 album with same non-empty name and only 1 distinct author(s) for that album and publisher matches (or is missing in the original meta)
       // -> add author, publisher and year
-      val metasByAlbumWithAuthorPublisherOrYear = (allmetas2 ++ metas ++ tosecMetas ++ whdloadMetas)
-        .flatMap(expandArticleVariants)
+      lazy val metasByAlbumWithAuthorPublisherOrYear = (allmetas2 ++ metas)
         .filterNot(_.album.isEmpty)
         .filterNot(m => m.publishers.isEmpty && m.year == 0)
         .groupBy(m => normalizeAlbum(m))
@@ -898,5 +906,168 @@ def combineMetadata(
       }
     }
   }
-  metasByHash.values.toBuffer.sortBy(_.hash).distinct
+  lazy val finalMetas = metasByHash.values
+
+  lazy val allmetas3 = (allmetas2 ++ finalMetas)
+    .filterNot(_.album.isEmpty)
+
+  lazy val metasWithAlbum = allmetas3
+    .filterNot(_.album.isEmpty)
+    .groupBy(m => normalizeAlbum(m))
+
+  lazy val yearPublisher = allmetas3
+    .filterNot(_.year == 0)
+    .filterNot(_.publishers.isEmpty)
+    .flatMap(m => {
+      m.publishers.map(normalize).flatMap { publisher =>
+        Seq(
+          (m.year - 1, publisher),
+          (m.year, publisher),
+          (m.year + 1, publisher)
+        )
+      }
+    })
+    .toSet
+
+  lazy val yearAuthor = allmetas3
+    .filterNot(_.year == 0)
+    .filterNot(_.authors.isEmpty)
+    .flatMap(m => {
+      m.authors.map(normalize).flatMap { author =>
+        Seq(
+          (m.year - 1, author, m._type, m._platform),
+          (m.year, author, m._type, m._platform),
+          (m.year + 1, author, m._type, m._platform)
+        )
+      }
+    })
+    .groupBy(e => (e._1, e._2))
+
+  lazy val authorToYears = allmetas3
+    .filterNot(_.year == 0)
+    .filterNot(_.authors.isEmpty)
+    .flatMap(m => {
+      m.authors.map(normalize).flatMap { author =>
+        Seq(
+          (author, m.year)
+        )
+      }
+    })
+    .groupBy(_._1)
+    .mapValues(_.map(_._2).toSet)
+
+  finalMetas.par.map(m =>
+    var meta = m
+    boundary {
+      if (meta.album.isEmpty) {
+        break()
+      }
+      val key = normalizeAlbum(meta)
+      val availableMetas = metasWithAlbum(key)
+        .filterNot(_.hash == meta.hash)
+      val availableTypes = availableMetas.map(_._type).filterNot(_.isEmpty).toSet
+      var metas = availableMetas
+        .filterNot(_.publishers.isEmpty)
+        .filterNot(_.year == 0)
+        .filter(m => (m._type.toLowerCase.startsWith("game") && meta._type.toLowerCase.startsWith("game")) || (!m._type.toLowerCase.startsWith("game") && !meta._type.toLowerCase.startsWith("game")) || (meta._type.isEmpty && availableTypes.size <= 1))
+        .filter(m => m.authors.isEmpty || meta.authors.isEmpty || meta.authors.map(normalize).exists(a => m.authors.map(normalize).exists(_.startsOrEndsWith(a))))
+
+      if (metas.isEmpty) {
+        break()
+      }
+
+      if (metas.filter(_._platform.toLowerCase == meta._platform.toLowerCase).size >= 1) {
+        metas = metas.filter(_._platform.toLowerCase == meta._platform.toLowerCase)
+      }
+
+      if (metas.filter(_.album.toLowerCase == meta.album.toLowerCase).size >= 1) {
+        metas = metas.filter(_.album.toLowerCase == meta.album.toLowerCase)
+      }
+
+      val cmp = metas.filter(_.album == meta.album).headOption.getOrElse(metas.head)
+      val publishers = cmp.publishers.map(normalize).sorted.distinct
+      val year = cmp.year
+
+      if (meta.publishers.isEmpty && meta.year == 0) {
+        val yearAuthorMatches = meta.authors.map(normalize).flatMap(a => yearAuthor.get((year, a))).flatten
+          .filter(e =>
+            (e._3.toLowerCase.startsWith("game") && meta._type.toLowerCase.startsWith("game")) ||
+            (!e._3.toLowerCase.startsWith("game") && !meta._type.toLowerCase.startsWith("game")) || (meta._type.isEmpty && availableTypes.size <= 1))
+          .filter(e => meta._platform.isEmpty || e._4.toLowerCase.isEmpty || e._4.toLowerCase == meta._platform.toLowerCase)
+          .distinct
+
+        if (!(meta.authors.isEmpty || yearAuthorMatches.nonEmpty || meta.authors.map(normalize).forall(a => !authorToYears.get(a).isDefined))) {
+          break()
+        }
+        if (metas.forall(m => m.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p)))) &&
+            metas.forall(m => m.year == year) &&
+            publishers.exists(p => yearPublisher.contains((year, p)))
+        ) {
+          debug(s"Filling publishers and year for ${meta.hash} - ${meta.album}: publishers ${meta.publishers.mkString(",")} -> ${cmp.publishers.mkString(",")}, year ${meta.year} -> ${year} source: ${cmp}")
+          meta = meta.copy(publishers = cmp.publishers, year = year)
+        }
+
+      } else if (meta.publishers.isEmpty && meta.year != 0 && metas.forall(m => m.year == meta.year)) {
+        if (metas.forall(m => m.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p)))) &&
+            publishers.exists(p => yearPublisher.contains((meta.year, p)))
+        ) {
+          debug(s"Filling publishers for ${meta.hash} - ${meta.album}: publishers ${meta.publishers.mkString(",")} -> ${cmp.publishers.mkString(",")} source: ${cmp}")
+          meta = meta.copy(publishers = cmp.publishers)
+        }
+      }
+    }
+    meta
+
+  ).map(m =>
+    var meta = m
+    // fill missing authors based on unique authors + album + publishers + year combination
+    boundary {
+      if (meta.album.isEmpty || meta.authors.nonEmpty || meta.publishers.isEmpty || meta.year == 0) {
+        break()
+      }
+      val key = normalizeAlbum(meta)
+      val availableMetas = metasWithAlbum(key)
+        .filterNot(_.hash == meta.hash)
+      val availableTypes = availableMetas.map(_._type).filterNot(_.isEmpty).toSet
+      var metas = availableMetas
+        .filter(m => (m._type.toLowerCase.startsWith("game") && meta._type.toLowerCase.startsWith("game")) || (!m._type.toLowerCase.startsWith("game") && !meta._type.toLowerCase.startsWith("game")) || (meta._type.isEmpty && availableTypes.size <= 1))
+        .filter(m => m.publishers.map(normalize).exists(p => meta.publishers.map(normalize).exists(_.startsOrEndsWith(p))))
+        .filter(m => m.year == meta.year)
+
+      if (metas.isEmpty) {
+        break()
+      }
+
+      if (metas.filter(_._platform.toLowerCase == meta._platform.toLowerCase).size >= 1) {
+        metas = metas.filter(_._platform.toLowerCase == meta._platform.toLowerCase)
+      }
+
+      if (metas.filter(_.album.toLowerCase == meta.album.toLowerCase).size >= 1) {
+        metas = metas.filter(_.album.toLowerCase == meta.album.toLowerCase)
+      }
+  
+      if (metas.size > 1) {
+        val audioHashes = metas.flatMap(m => audio.audioByMd5.get(m.hash).getOrElse(Buffer.empty).flatMap(_.audioHash)).toSet
+        if (audioHashes.size > 1) {
+          break()
+        }
+      }
+      metas = metas
+        .filterNot(_.authors.isEmpty)
+        .filterNot(_.publishers.isEmpty)
+        .filterNot(_.year == 0)
+
+      if (metas.isEmpty) {
+        break()
+      }
+      val cmp = metas.filter(_.album == meta.album).headOption.getOrElse(metas.head)
+      val authors = cmp.authors.map(normalize).sorted.distinct
+      if (!metas.forall(m => m.authors.map(normalize).sorted.distinct == authors)) {
+        break()
+      }
+      debug(s"Filling authors for ${meta}: authors ${meta.authors.mkString(",")} -> ${cmp.authors.mkString(",")} source: ${cmp}")
+      meta = meta.copy(authors = cmp.authors)
+    }
+    meta
+  ).toBuffer.sortBy(_.hash).distinct
 }

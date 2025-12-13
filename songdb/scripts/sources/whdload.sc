@@ -18,7 +18,7 @@ import convert._
 case class WHDLoadMeta(
   fullName: String,
   shortName: String,
-  `type`: String,
+  _type: String,
   hardware: String,
   genre: String,
   producer: String,
@@ -40,7 +40,7 @@ lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Co
   WHDLoadMeta(
     fullName = l(0).trim,
     shortName = l(1).trim,
-    `type` = l(2).trim,
+    _type = l(2).trim,
     hardware = l(3).trim,
     genre = l(4).trim,
     producer = l(5).trim,
@@ -55,14 +55,14 @@ lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Co
   )
 }).get
 
-lazy val articlePattern = """^(.*),\s*(The|A|An)$""".r
+lazy val articlePattern = """^(.*), (The|A|An)\b(.*)""".r
 
 def normalize(s: String): String = {
   // Remove any text inside parentheses
   val withoutParens = s.replaceAll("""\([^)]*\)""", "").trim
   // Move trailing article to front
   articlePattern.findFirstMatchIn(withoutParens) match {
-    case Some(m) => s"${m.group(2)} ${m.group(1)}"
+    case Some(m) => s"${m.group(2)} ${m.group(1)}${m.group(3)}".trim
     case None => withoutParens
   }
 }
@@ -75,9 +75,11 @@ lazy val whdloadMetas = metas.par.flatMap(m =>
     val meta = MetaData(
       hash = "",
       authors = Buffer.empty,
-      album = name,
-      publishers = publishers,
+      album = name.trim,
+      publishers = publishers.sorted.distinct.toBuffer,
       year = m.year,
+      _type = m._type.trim,
+      _platform = "Amiga",
     )
     //println(s"WHDLOAD META: ${meta}")
     meta

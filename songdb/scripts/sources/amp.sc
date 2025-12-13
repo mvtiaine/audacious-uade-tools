@@ -47,6 +47,7 @@ case class AMPMeta (
   filesize: Int,
   extra_authors: List[String],
   album: String,
+  _type: String = "Game", // assume all album names refer to games
 )
 
 lazy val amp_mods_by_id = amp_mods.groupBy(_.id)

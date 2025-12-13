@@ -30,11 +30,14 @@ SELECT DISTINCT
 --        array_agg(DISTINCT n.original_url) AS image_urls,
         r.name AS party,
         p.shown_date_date AS party_date,
-        p.shown_date_precision AS party_date_precision
+        p.shown_date_precision AS party_date_precision,
+        array_agg(DISTINCT v.name) AS production_type
     FROM
-        productions_production_types c,
-        productions_productionlink a,
-        productions_production b
+        productions_productionlink a
+    INNER JOIN productions_production b
+        ON a.production_id = b.id
+    INNER JOIN productions_production_types c
+        ON c.production_id = b.id
     LEFT JOIN productions_production_platforms d
         ON d.production_id = b.id
     LEFT JOIN platforms_platform e
@@ -46,6 +49,7 @@ SELECT DISTINCT
     LEFT JOIN productions_soundtracklink h
         ON h.soundtrack_id = b.id
     LEFT JOIN productions_production i
+    -- TODO check if release_date_date check needed
         ON i.id = h.production_id AND i.release_date_date <= b.release_date_date + 30
     LEFT JOIN productions_production_platforms j
         ON j.production_id = i.id
@@ -69,6 +73,10 @@ SELECT DISTINCT
         ON s.production_id = b.id
     LEFT JOIN demoscene_nick t
         ON t.id = s.nick_id
+    LEFT JOIN productions_production_types u
+        ON u.production_id = i.id
+    LEFT JOIN productions_productiontype v
+        ON v.id = u.productiontype_id
     WHERE
         (
             (a.is_download_link = true AND a.link_class = 'BaseUrl')
@@ -87,8 +95,6 @@ SELECT DISTINCT
             OR a.parameter LIKE 'http%://www.exotica.org.uk/download.php?file=media/audio/UnExoticA/%'
             OR a.parameter LIKE 'http%://media.demozoo.org/%'
         )
-        AND a.production_id = b.id
-        AND c.production_id = b.id
         AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name LIKE '%Music')
     GROUP BY
         a.production_id,
@@ -101,4 +107,4 @@ SELECT DISTINCT
         r.name,
         p.shown_date_date,
         p.shown_date_precision
-) TO '/tmp/demozoo.tsv' WITH NULL AS '';
+) TO '/tmp/demozoo_music.tsv' WITH NULL AS '';
