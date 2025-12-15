@@ -20,7 +20,11 @@ case class SonglengthEntry (
   channels: Int,
 )
 
-lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,subsongs) => {
+lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
+  if (!_subsongs.forall(_.player == _subsongs.head.player)) {
+    System.err.println("WARN: inconsistent players for " + md5 + ": " + _subsongs)
+  }
+  val subsongs = if (_subsongs.exists(_.player == "uade")) _subsongs.filter(_.player == "uade") else _subsongs.filter(_.player == _subsongs.head.player)
   val minsubsong = subsongs.minBy(_.subsong).subsong
   val maxsubsong = subsongs.maxBy(_.subsong).subsong
   val songs = subsongs.map(s => Subsong(s.subsong, s.songlength, s.songend)).distinct.toSeq
@@ -38,7 +42,11 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,subsongs) => {
   } else {
     SonglengthEntry(md5, minsubsong, maxsubsong, songs, player, format, channels)
   }
-}}).distinct.groupBy(_.md5).map({case (md5, entries) =>
+}}).distinct.groupBy(_.md5).map({case (md5, _entries) =>
+  if (!_entries.forall(_.player == _entries.head.player)) {
+    System.err.println("WARN: inconsistent players for " + md5 + ": " + _entries)
+  }
+  val entries = if (_entries.exists(_.player == "uade")) _entries.filter(_.player == "uade") else _entries.filter(_.player == _entries.head.player)
   var best = entries.head
   if (entries.length > 1) {
     val totallens = entries.map(_.subsongs.map(_.songlength).sum)

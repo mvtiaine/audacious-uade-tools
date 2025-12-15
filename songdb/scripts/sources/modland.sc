@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2014-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 
-def parseModlandAuthorAlbum(path: String): Option[(Seq[String], String)] = {
+def parseModlandAuthorAlbum(format: String, path: String): Option[(Seq[String], String)] = {
   val UNKNOWN = "- unknown"
   val COOPS = Seq("coop-", "coop - ", "coop ")
 
@@ -14,40 +14,47 @@ def parseModlandAuthorAlbum(path: String): Option[(Seq[String], String)] = {
     Some((Seq(author, coopAuthor), album))
   }
 
-  tokens.length match {
-    case 1 | 4 =>
-      val author = tokens(0)
-      if (author == UNKNOWN) {
-        None
-      } else {
-        Some((Seq(author), ""))
-      }
-    case 2 =>
-      var author = tokens(0)
-      var token1 = tokens(1)
-      if (COOPS.exists(token1.startsWith)) {
-        authorCoop(author, token1, "")
-      } else {
-        if (author == UNKNOWN || token1.startsWith("not by")) {
-            None
-        } else {
-            Some((Seq(author), token1))
-        }
-      }
-    case 3 =>
-      var author = tokens(0)
-      val token1 = tokens(1)
-      if (COOPS.exists(token1.startsWith)) {
-        authorCoop(author, token1, tokens(2))
-      } else {
-        if (author == UNKNOWN || token1 == "unnamed") {
+  // XXX
+  if (s"${format}/$path".startsWith("Delitracker Custom/TSM")) {
+    Some((Seq("TSM"), ""))
+  } else {
+    tokens.length match {
+      case 1 | 4 =>
+        val author = tokens(0)
+        if (author == UNKNOWN) {
           None
         } else {
-          Some((Seq(author), s"${token1} (${tokens(2)})"))
+          Some((Seq(author), ""))
         }
-      }
-    case _ =>
-      assert(false)
-      None
+      case 2 =>
+        var author = tokens(0)
+        var token1 = tokens(1)
+        if (COOPS.exists(token1.startsWith)) {
+          authorCoop(author, token1, "")
+        } else {
+          if (author == UNKNOWN || token1.startsWith("not by")) {
+            None
+          } else if (token1.toLowerCase == "unknown") {
+            Some((Seq(author), ""))
+          } else {
+            Some((Seq(author), token1))
+          }
+        }
+      case 3 =>
+        var author = tokens(0)
+        val token1 = tokens(1)
+        if (COOPS.exists(token1.startsWith)) {
+          authorCoop(author, token1, tokens(2))
+        } else {
+          if (author == UNKNOWN || token1 == "unnamed") {
+            None
+          } else {
+            Some((Seq(author), s"${token1} (${tokens(2)})"))
+          }
+        }
+      case _ =>
+        assert(false)
+        None
+    }
   }
 }
