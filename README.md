@@ -27,7 +27,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 - `tsv/pretty/*/modinfos.tsv` - module file format and channel info
 - `tsv/pretty/*/metadata.tsv` - all metadata from different sources distilled to single TSV
 
-### Individual Source Files
+### Extra TSV Files
 
 - `tsv/pretty/*/amp.tsv` - author/album metadata sourced from AMP
 - `tsv/pretty/*/demozoo.tsv` - author/publisher/album/year metadata sourced from Demozoo
