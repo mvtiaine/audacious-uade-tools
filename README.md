@@ -40,10 +40,12 @@ There are two alternative hashing methods provided and separate TSVs for each un
 
 ## Raw TSV Source Files
 
+- `songdb/sources/amigamega.tsv` - module infos and songlengths for AmigaMega
 - `songdb/sources/aminet.tsv` - module infos and songlengths for Aminet
 - `songdb/sources/amp.tsv` - module infos and songlengths for AMP
-- `songdb/sources/demozoo.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo.sql`) from Demozoo postgres database dump
-- `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding AMP/Modland downloads). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
+- `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding known sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
+- `songdb/sources/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
+- `songdb/sources/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
 - `songdb/sources/fujiology.tsv` - module infos and songlengths for Fujiology
 - `songdb/sources/mbnet.tsv` - module infos and songlengths for MBnet Apaja
 - `songdb/sources/modland.tsv` - module infos and songlengths for Modland
