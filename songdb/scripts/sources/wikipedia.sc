@@ -47,7 +47,6 @@ case class WikipediaMeta(
 lazy val dos_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("Index_of_DOS_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
     
@@ -62,7 +61,6 @@ lazy val dos_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(3).split(",").map(_.trim).to(Buffer),
           year = extractYear(texts(1)),
         )
-        println(s"WIKIPEDIA DOS META: ${meta}")
         Some(meta)
       } else {
         None
@@ -73,7 +71,6 @@ lazy val dos_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val windows_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("Index_of_Windows_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
     
@@ -88,7 +85,6 @@ lazy val windows_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(3).split(",").map(_.trim).to(Buffer),
           year = extractYear(texts(1)),
         )
-        println(s"WIKIPEDIA WINDOWS META: ${meta}")
         Some(meta)
       } else {
         None
@@ -99,7 +95,6 @@ lazy val windows_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val windows_3x_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Windows_3.x_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
     
@@ -114,7 +109,6 @@ lazy val windows_3x_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer
           publishers = Buffer.empty, // developer/publisher is combined
           year = extractYear(texts(1)),
         )
-        println(s"WIKIPEDIA WINDOWS 3.x META: ${meta}")
         Some(meta)
       } else {
         None
@@ -125,7 +119,6 @@ lazy val windows_3x_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer
 lazy val pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_PC_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
       
@@ -141,7 +134,6 @@ lazy val pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(2).split(",").map(_.trim).to(Buffer),
           year = extractYear(texts(5)),
         )
-        println(s"WIKIPEDIA PC META: ${meta}")
         Some(meta)
       } else {
         None
@@ -152,7 +144,6 @@ lazy val pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val free_pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_free_PC_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
       
@@ -168,7 +159,6 @@ lazy val free_pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(2).split(",").map(_.trim).to(Buffer),
           year = extractYear(texts(5)),
         )
-        println(s"WIKIPEDIA FREE PC META: ${meta}")
         Some(meta)
       } else {
         None
@@ -179,7 +169,6 @@ lazy val free_pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val cd32_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Amiga_CD32_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
       
@@ -195,7 +184,6 @@ lazy val cd32_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(3).split(",").map(_.trim).to(Buffer),
           year = extractYear(texts(4)),
         )
-        println(s"WIKIPEDIA CD32 META: ${meta}")
         Some(meta)
       } else {
         None
@@ -206,7 +194,6 @@ lazy val cd32_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val jaguar_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Atari_Jaguar_games"))
   .par.flatMap { f =>
-    println(s"Processing WIKIPEDIA file: ${f}")
     val doc = JsoupBrowser().parseFile(f.toFile)
     val rows = doc >> elementList("table.wikitable tbody tr")
       
@@ -226,7 +213,6 @@ lazy val jaguar_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
           publishers = texts(1).split(",").map(_.trim).to(Buffer),
           year = earliestYear,
         )
-        println(s"WIKIPEDIA JAGUAR META: ${meta}")
         Some(meta)
       } else {
         None
@@ -267,7 +253,3 @@ lazy val wikipediaMetas = ((dos_metas ++ windows_metas ++ windows_3x_metas ++ pc
 ))
 .map(m => if (m.publishers.forall(_ == m.album)) m.copy(publishers = Buffer.empty) else m) // XXX
 .toSet.seq
-
-for (m <- wikipediaMetas) {
-  println(s"WIKIPEDIA FINAL META: ${m}")
-}
