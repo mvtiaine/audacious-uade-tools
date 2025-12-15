@@ -120,7 +120,7 @@ var results = Buffer.empty[Result]
     } else None
   })
 }
-results = results.sortBy(_.score).reverse.take(maxresults)
+results = results.sortBy(_.score).reverse.distinct.take(maxresults)
 System.err.print(" done.\n")
 
 if (results.isEmpty) {
