@@ -28,6 +28,7 @@ case class WantedTeamMeta (
   publishers: Buffer[String],
   year: Option[Int],
   _type: String,
+  _platform: String,
 )
 
 lazy val wantedteam_customs_by_path =
@@ -77,7 +78,8 @@ lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Cod
     System.err.println(s"WARN: wantedteam customs missing md5s for $path")
   }
   entries.map(e =>
-    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year, "")
+    val isAtari = title.contains(" ST ") || e.path.contains(" ST") || e.path.endsWith("ST") || e.path.contains("MYST_")
+    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year, "", if (isAtari) "Atari" else "Amiga")
   )
 }).get.distinct.seq
 
@@ -245,7 +247,9 @@ lazy val examples = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "")
+        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE/") || e.path.contains("ST/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_")
+        val isPC = e.path.endsWith("PC")
+        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty
@@ -316,7 +320,8 @@ lazy val rips = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "")
+        val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST")
+        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else "Amiga")
       )
     } else {
       Seq.empty

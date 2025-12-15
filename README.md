@@ -189,6 +189,7 @@ Sources used for the database:
 - **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
 - **Wanted Team** - http://wt.exotica.org.uk/
 - **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
+- **Wikipedia** - https://wikipedia.org
 - **Zakalwe** - git://zakalwe.fi/chip
 
 

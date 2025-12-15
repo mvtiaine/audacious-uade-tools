@@ -1794,7 +1794,7 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
 
 val SEPARATOR = "==============================================================================="
 
-lazy val modsanthology_by_path = sources.modsanthology.groupBy(_.path.split("/").takeRight(2).mkString("/"))
+val modsanthology_by_path = sources.modsanthology.groupBy(_.path.split("/").takeRight(2).mkString("/"))
 
 lazy val maz1txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ1-Authors(A-F).txt").toFile
 lazy val maz2txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ2-Authors(G-Q).txt").toFile

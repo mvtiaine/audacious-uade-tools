@@ -64,11 +64,16 @@ case class TsvEntry (
   path: String,
 )
 
-lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(s"sources/${tsv._1}")(using scala.io.Codec.ISO8859))(_.getLines.map(line =>
-  val l = line.split("\t")
-  if (l.length > 4) TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), l(4), l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9))
-  else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), "", "", 0, -1, "", "")
-).toBuffer).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
+lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(s"sources/${tsv._1}")(using scala.io.Codec.ISO8859))(tsv =>
+  var player = ""
+  tsv.getLines.map(line =>
+    val l = line.split("\t")
+    if (l.length > 4) {
+      player = l(4)
+      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9))
+    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "")
+  ).toBuffer
+).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
 
 case class SourceDBEntry (
   md5: String,
