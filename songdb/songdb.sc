@@ -24,6 +24,7 @@
 //> using file scripts/sources/fujiology.sc
 //> using file scripts/sources/tosec.sc
 //> using file scripts/sources/whdload.sc
+//> using file scripts/sources/wikipedia.sc
 //> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
@@ -47,12 +48,12 @@ import audio._
 import chromaprint._
 import tosecmusic._
 import fujiology._
+import wikipedia._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
 // shutup warning
 System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
-tosec.metas // force init
 
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
@@ -399,7 +400,7 @@ lazy val wantedteamTsvs = Future(_try {
       m.album,
       m.year.getOrElse(0),
       m._type,
-      "Amiga",
+      m._platform,
     ))
   }.toBuffer.distinct
 
@@ -414,7 +415,7 @@ lazy val modsanthologyTsvs = Future(_try {
       m.authors,
       m.publishers,
       m.album,
-      m.year.getOrElse(0)
+      m.year.getOrElse(0),
     ))
   }.toBuffer.distinct
 

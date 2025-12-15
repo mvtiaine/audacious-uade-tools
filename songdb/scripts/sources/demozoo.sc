@@ -20,6 +20,7 @@ enum Precision:
 
 case class DemozooMeta (
   id: Int,
+  title: String,
   prodId: Option[Int],
   modDate: String,
   modDatePrecision: Precision,
@@ -37,6 +38,8 @@ case class DemozooMeta (
   partyDatePrecision: Option[Precision],
   prodType: Option[String]
 )
+
+def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
 
 def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Amiga")) "Amiga"
@@ -102,28 +105,42 @@ def maybe(s: String) = {
 lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.getLines.toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val id = l(0).toInt
-  val prodId = l(1).toIntOption
-  val modDate = l(2)
-  val modDatePrecision = precision(l(3))
-  val prodDate = l(4)
-  val prodDatePrecision = precision(l(5))
-  val modPlatform = l(6)
-  val prodPlatforms = split(l(7)) map trim
-  val prod = l(8)
-  val linkClass = l(9)
-  val url = l(10)
-  val authors = split(l(11)) map trim
-  val modPublishers = split(l(12)) map trim
-  val prodPublishers = split(l(13)) map trim
-  //val imageUrls = split(l(14))
-  val party = if (l.length > 14) maybe(l(14)) else None
-  val partyDate = if (l.length > 15) maybe(l(15)) else None
-  val partyDatePrecision = if (l.length > 16) Some(precision(l(16))) else None
-  val prodType = if (l.length > 17) maybe(l(17)) else None
+  val title = l(1)
+  val prodId = l(2).toIntOption
+  val modDate = l(3)
+  val modDatePrecision = precision(l(4))
+  val prodDate = l(5)
+  val prodDatePrecision = precision(l(6))
+  val modPlatform = l(7)
+  val prodPlatforms = split(l(8)) map trim
+  val prod = l(9)
+  val linkClass = l(10)
+  val url = l(11)
+  val authors = split(l(12)) map trim
+  val modPublishers = split(l(13)) map trim
+  val prodPublishers = split(l(14)) map trim
+  //val imageUrls = split(l(15))
+  val party = if (l.length > 15) maybe(l(15)) else None
+  val partyDate = if (l.length > 16) maybe(l(16)) else None
+  val partyDatePrecision = if (l.length > 17) Some(precision(l(17))) else None
+  val prodType = if (l.length > 18) maybe(l(18)) else None
 
-  val meta = DemozooMeta(id, prodId, modDate, modDatePrecision, prodDate, prodDatePrecision,
+  val meta = DemozooMeta(id, title, prodId, modDate, modDatePrecision, prodDate, prodDatePrecision,
     modPlatform, prodPlatforms.toSeq, prod, authors.toSeq, modPublishers.toSeq, prodPublishers.toSeq, // imageUrls.toSeq,
     party, partyDate, partyDatePrecision, prodType)
+
+  def findMatches(meta: DemozooMeta, entries: Buffer[(String, String)]) = {
+    val title = normalize(meta.title)
+    val authors = meta.authors.map(normalize)
+    val filenames = entries.map(e => (e._1, normalize(e._2.split("/").last)))
+    var matches = filenames.filter(_._2.contains(title))
+    if (matches.isEmpty) {
+      matches = filenames.filter(f => authors.exists(a => f._2.contains(a)))
+    } else if (matches.size > 1) {
+      matches = matches.filter(f => authors.exists(a => f._2.contains(a)))
+    }
+    matches
+  }
 
   def findArchive(archivePath: String) = {
     val parts = archivePath.split("/").toSeq
@@ -133,13 +150,13 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       
     val matches = demozoo_leftovers_by_path.filterKeys(_.startsWith(path))
     if (matches.isEmpty) {
-      Buffer.empty[String]
+      Buffer.empty[(String, String)]
     } else {
       var entries = matches.values.flatten
       if (entries.size > 1) {
         System.err.println("WARN: demozoo leftover archive " + archivePath + " - multiple entries - " + entries.mkString(", "))
       }
-      entries.map(_.md5).toBuffer.distinct
+      entries.map(e => (e.md5, e.path)).toBuffer.distinct
     }
   }
 
@@ -150,9 +167,17 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
     } else if (findArchive(path).nonEmpty) {
       val md5s = findArchive(path)
       if (md5s.size > 1) {
-        md5s.map(md5 => (md5, meta.copy(authors = Seq.empty)))
+        val matches = findMatches(meta, md5s)
+        if (matches.size == 1) {
+          matches
+            .map(m => (m._1, meta)) ++
+          md5s.filterNot(m => matches.exists(_._1 == m._1))
+            .map(md5 => (md5._1, meta.copy(authors = Seq.empty)))
+        } else {
+          md5s.map(md5 => (md5._1, meta.copy(authors = Seq.empty)))
+        }
       } else {
-        md5s.map(md5 => (md5, meta))
+        md5s.map(md5 => (md5._1, meta))
       }
     } else Buffer.empty
 
@@ -197,7 +222,15 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       val entries = fujiology_by_path(pathFixed)
       if (entries.size > 1) {
         System.err.println("WARN: fujiology path " + pathFixed + " - multiple entries - " + entries)
-        entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
+        if (matches.size == 1) {
+          matches
+            .map(m => (m._1, meta)) ++
+          entries.filterNot(m => matches.exists(_._1 == m.md5))
+            .map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        } else {
+          entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        }
       } else {
         entries.map(e => (e.md5, meta))
       }
@@ -229,7 +262,15 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       val entries = aminet_by_path(path)
       if (entries.size > 1) {
         System.err.println("WARN: aminet path " + path + " - multiple entries - " + entries.mkString(", "))
-        entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
+        if (matches.size == 1) {
+          matches
+            .map(m => (m._1, meta)) ++
+          entries.filterNot(m => matches.exists(_._1 == m.md5))
+            .map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        } else {
+          entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        }
       } else {
         entries.map(e => (e.md5, meta))
       }
@@ -259,7 +300,15 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       val entries = unexotica_by_path(path)
       if (entries.size > 1) {
         System.err.println("WARN: unexotica path " + path + " - multiple entries - " + entries)
-        entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
+        if (matches.size == 1) {
+          matches
+            .map(m => (m._1, meta)) ++
+          entries.filterNot(m => matches.exists(_._1 == m.md5))
+            .map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        } else {
+          entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+        }
       } else {
         entries.map(e => (e.md5, meta))
       }
@@ -276,7 +325,15 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
         val entries = oldexotica_by_archive(archive)
         if (entries.size > 1) {
           System.err.println("WARN: oldexotica path " + archive + " - multiple entries - " + entries)
-          entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+          val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
+          if (matches.size == 1) {
+            matches
+              .map(m => (m._1, meta)) ++
+            entries.filterNot(m => matches.exists(_._1 == m.md5))
+              .map(e => (e.md5, meta.copy(authors = Seq.empty)))
+          } else {
+            entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
+          }
         } else {
           entries.map(e => (e.md5, meta))
         }
@@ -333,7 +390,14 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
     val minPartyDate = if (partyDates.isEmpty) "" else partyDates.min
     best = metas.map(_._2).headOption.map(m =>
       val earliestDate = Seq(minProdDate, minPartyDate, m.modDate).filterNot(_.isEmpty).min
-      m.copy(prodId = None, prod = "", prodPublishers = Seq.empty, prodDate = "", modDate = earliestDate))
+      if (metas.size == 1 && m.partyDate.isDefined && m.partyDate.get.take(4).toInt == earliestDate.take(4).toInt) {
+        m.copy(prodId = None, prod = "", prodPublishers = Seq.empty, prodDate = "", prodType = None, modDate = m.partyDate.get)
+      } else if (metas.size == 1 && m.prodId.isDefined && earliestDate == minProdDate) {
+        m.copy(modDate = earliestDate)
+      } else {
+        m.copy(prodId = None, prod = "", prodPublishers = Seq.empty, prodDate = "", prodType = None, modDate = earliestDate)
+      }
+    )
   }
   
   best.map((md5, _))

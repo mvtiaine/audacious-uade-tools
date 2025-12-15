@@ -14,6 +14,7 @@ $$ LANGUAGE plpgsql IMMUTABLE STRICT;
 COPY (
 SELECT DISTINCT
         a.production_id AS id,
+        b.title as title,
         i.id AS prod_id,
         b.release_date_date AS mod_date,
         b.release_date_precision AS mod_date_precision,
@@ -98,6 +99,7 @@ SELECT DISTINCT
         AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name LIKE '%Music')
     GROUP BY
         a.production_id,
+        b.title,
         i.id,
         b.release_date_date,
         b.release_date_precision,

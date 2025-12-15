@@ -49,10 +49,12 @@ case class MetaData (
   publishers: Buffer[String],
   album: String,
   year: Int,
+  _type: String = "",
+  _platform: String = "",
 ) extends BaseInfo {
   override def copyWithHash(newHash: String) = copy(hash = newHash)
   override def toString =
-    s"MetaData(${hash},${authors.mkString(",")},${publishers.mkString(",")},${album},${year})"
+    s"MetaData(${hash},${authors.mkString(",")},${publishers.mkString(",")},${album},${year},${_type},${_platform})"
 }
 
 def hashidxdiff(entries: Iterable[Buffer[String]]) = {
