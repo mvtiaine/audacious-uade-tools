@@ -23,6 +23,7 @@ import demozoo._
 import songlengths._
 import tosec._
 import whdload._
+import wikipedia._
 
 private val transliteratorThreadLocal = new ThreadLocal[Transliterator] {
   override def initialValue(): Transliterator = 
@@ -308,6 +309,7 @@ def combineMetadata(
       .filterNot(_.year == 0)
       .map(m => (m.year, normalizeAlbum(m)))
 
+    val albumPublishers = allmetas
       .filterNot(_.album.isEmpty)
       .filterNot(_.publishers.isEmpty)
       .map(m => (normalizeAlbum(m), m.publishers.map(normalize).sorted.distinct))
@@ -991,9 +993,6 @@ def combineMetadata(
   val authorMetas = allmetas
     .filterNot(_.authors.isEmpty)
     .par.flatMap(m => {
-      m.authors.map(normalize).flatMap { author =>
-        Seq(
-    .filterNot(_.year == 0)
       m.authors.map(normalize).flatMap { author =>
         Seq(
           (author, m)
