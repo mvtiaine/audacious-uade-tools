@@ -84,12 +84,33 @@ if (isSilentFingerprint(data)) {
   sys.exit(1)
 }
 
+// XXX ignore SOAMC 001/ entries as it has lots of duplicated/corrupted entries with random filenames
+// and different md5s, polluting the results and slowing down the processing
+val soamc001Md5s = sources.tsvs
+  .filter(_._1 == Source.SOAMC)
+  .flatMap(_._2)
+  .filter { case (md5, entries) => entries.forall(_.path.startsWith("001/")) }
+  .map(_._1.take(12))
+  .toSet
+val otherMd5s = sources.tsvs
+  .flatMap { case (source, entriesByMd5) =>
+    if (source == Source.SOAMC) {
+      entriesByMd5.filter { case (md5, entries) => !entries.forall(_.path.startsWith("001/")) }.keys
+    } else {
+      entriesByMd5.keys
+    }
+  }
+  .map(_.take(12))
+  .toSet
+val soamc001OnlyMd5s = soamc001Md5s.diff(otherMd5s)
+
 System.err.print("Processing (x/16) ")
 case class Result(md5: String, subsong: Int, score: Double)
 var results = Buffer.empty[Result]
 (0 to 15).foreach { i =>
   System.err.print(s".${i+1}.")
   val audioFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false)
+    .filterNot(af => soamc001OnlyMd5s.contains(af.md5))
   results ++= audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
     val Right(a,d) = FingerprintDecompressor(af.audioChromaprint) : @unchecked
     assert(a == algo)
@@ -114,7 +135,10 @@ if (results.isEmpty) {
     
   val filenames = sources.tsvs.flatMap { case (source, entriesByMd5) =>
     entriesByMd5.flatMap { case (md5, entries) =>
-      entries.filter(_.path.nonEmpty).map(entry => md5.take(12) -> entry.path.split('/').last)
+      entries
+        .filter(_.path.nonEmpty)
+        .filterNot(entry => source == Source.SOAMC && entry.path.startsWith("001/"))
+        .map(entry => md5.take(12) -> entry.path.split('/').last)
     }
   }.groupBy(_._1).mapValues(_.map(_._2).sorted.distinct.mkString(", ")).toMap
 
