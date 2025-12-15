@@ -25,7 +25,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 
 - `tsv/pretty/*/songlengths.tsv` - subsong and songlengths info
 - `tsv/pretty/*/modinfos.tsv` - module file format and channel info
-- `tsv/pretty/*/metadata.tsv` - AMP/Demozoo/Modland/Mods Anthology/ExoticA (old)/UnExoticA/Wanted Team metadata merged to single TSV
+- `tsv/pretty/*/metadata.tsv` - all metadata from different sources distilled to single TSV
 
 ### Individual Source Files
 
