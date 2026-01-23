@@ -176,7 +176,10 @@ lazy val songlengthsTsvs = Future(_try {
           remaining = remaining.filterNot(_.subsong == cmp.subsong)
           for (e <- remaining) {
             var duplicate = true
-            if (e.audioChromaprint != cmp.audioChromaprint) {       
+            // XXX audioChromaprint may differ even if md5 is same
+            if (cmp.audioMd5 == e.audioMd5) {
+              // duplicate = true
+            } else if (e.audioChromaprint != cmp.audioChromaprint) {       
               val threshold = if (filtered.forall(f => (f.audioTag == e.audioTag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 12)) 0.9 else 0.99
               val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint, threshold)
               if (similarity < threshold) {
@@ -293,7 +296,12 @@ lazy val modlandTsvs = Future(_try {
       if (e.path.startsWith("Ad Lib/")) e.path.substring("Ad Lib/".length)
       else e.path
     val format = path.substring(0, path.indexOf("/"))
-    path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
+    // XXX Ashley Hogg
+    if (path.indexOf("/") == path.lastIndexOf("/")) {
+      path = path.substring(path.indexOf("/") + 1)
+    } else {
+      path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
+    }
     if (path != "- unknown" && path != "_unknown") {
       modland.parseModlandAuthorAlbum(format, path).map { case (authors, album) =>
         MetaData(

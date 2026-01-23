@@ -6,7 +6,9 @@ def parseModlandAuthorAlbum(format: String, path: String): Option[(Seq[String], 
   val COOPS = Seq("coop-", "coop - ", "coop ")
 
   val tokens = path.split("/")
-  assert(tokens.length >= 1)
+  // XXX Ashley Hogg
+  if (tokens.length == 0)
+    return None
 
   def authorCoop(author: String, token: String, album: String): Option[(Seq[String], String)] = {
     val coop = COOPS.find(token.startsWith).get
