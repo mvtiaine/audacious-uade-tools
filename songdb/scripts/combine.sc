@@ -761,7 +761,10 @@ def combineMetadata(
             assert(audioEntries.size == cmpAudioEntries.size)
             var duplicate = true
             for (i <- 0 until audioEntries.size) {
-              if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
+              // XXX audioChromaprint may differ even if md5 is same
+              if (cmpAudioEntries(i).audioMd5 == audioEntries(i).audioMd5) {
+                // duplicate = true
+              } else if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
                 val threshold = if (audioEntries(i).audioBytes > 2 * 11025 * 12) 0.9 else 0.99
                 val similarity = chromaSimilarity(cmpAudioEntries(i).audioChromaprint, audioEntries(i).audioChromaprint, threshold)
                 if (similarity < threshold) {

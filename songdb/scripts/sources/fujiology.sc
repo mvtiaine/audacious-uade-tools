@@ -15,7 +15,10 @@ import org.apache.poi.ss.usermodel.Row
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
-val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_7.xlsx"
+//val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_7.xlsx"
+// XXX corrupted fujiology excel file?
+org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
+val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_9.xlsx"
 lazy val fujiology_by_filename = sources.fujiology.groupBy(_.path.split("/").last.toLowerCase)
 
 case class FujiologyMeta (
@@ -95,9 +98,9 @@ lazy val music_metas = {
   val by_filename = mutable.Map.from(fujiology_by_filename)
   val file = new FileInputStream(new File(fujiology_xlsx))
   val workbook = new XSSFWorkbook(file)
-  val sheet = workbook.getSheet("MUSIC")
+  //val sheet = workbook.getSheet("MUSIC")
+  val sheet = workbook.getSheet("MUSIC FT-SNDH-ASMA")
   var prevfolder = ""
-  var prevprod = ""
   val rows = sheet.iterator()
   rows.next()
   while (rows.hasNext()) {
@@ -111,25 +114,48 @@ lazy val music_metas = {
         .map(_.replace("#","_"))
         .map(_.trim)
         .filterNot(_.isEmpty)
+      val format = getCellString(row, 4)
       val system = getCellString(row, 5)
       val prod = getCellString(row, 6)
       val crew = getCellString(row, 7)
       var foldername = getCellString(row, 10)
-      if (prod != prevprod) {
-        prevprod = prod
+      if (!foldername.isEmpty) {
         prevfolder = foldername
-      }
-      if (foldername.isEmpty) {
-        foldername = prevfolder
       }
       val composers = splitComposers(composer)
       val publishers = splitGroups(crew)
 
-      filenames.foreach { filename =>
+      filenames.foreach { filename_ =>
+        var filename = filename_
         var entries = by_filename.getOrElse(filename, Seq())
           .filter(_.path.startsWith("MUSIC/"))
+        
+        if (entries.isEmpty && filename.endsWith(".zip")) {
+          var altname = ""
+          format match {
+            case mod if format.startsWith("mod") =>
+              altname = filename.replace(".zip", ".mod")
+            case "EPSS" =>
+              altname = filename.replace(".zip", ".spi")
+            case "quartet [4q]" =>
+              altname = filename.replace(".zip", ".4q")
+            case "quartet [4Q]" =>
+              altname = filename.replace(".zip", ".4q")
+            case "stonetracker" =>
+              altname = filename.replace(".zip", ".spm")
+            case other =>
+              altname = filename.replace(".zip", s".${other.toLowerCase}")
+          }
+          if (!altname.isEmpty) {
+            entries = by_filename.getOrElse(altname, Seq())
+              .filter(_.path.startsWith("MUSIC/"))
+            if (!entries.isEmpty) {
+              filename = altname
+            }
+          }
+        }
 
-        if (entries.isEmpty) {
+        if (entries.isEmpty && !Seq("SNDH","SAP","sid","mp3","mp2","ogg","flac","wav","mid","avi").contains(format)) {
           System.err.println(s"WARN: Fujiology no MUSIC matches for '${filename}' composer '${composer}' folder '${foldername}'")
         }
         if (entries.size > 1) {
@@ -142,13 +168,25 @@ lazy val music_metas = {
             entries = Seq(entries.head)
           }
           if (entries.size > 1 && !foldername.isEmpty) {
-            entries = entries.filter(e => normalize(e.path).contains(s"/${normalize(foldername)}/"))
+            val filteredEntries = entries.filter(e => normalize(e.path).contains(s"/${normalize(foldername)}/"))
+            if (!filteredEntries.isEmpty) {
+              entries = filteredEntries
+            }
           }
           if (!entries.isEmpty && entries.forall(_.md5 == entries.head.md5)) {
             entries = Seq(entries.head)
           }
           if (entries.size > 1 && !composers.isEmpty) {
-            entries = entries.filter(e => normalize(e.path).contains(s"/${normalize(composers.head).take(8)}/"))
+            val filteredEntries = entries.filter(e => normalize(e.path).contains(s"/${normalize(composers.head).take(8)}/"))
+            if (!filteredEntries.isEmpty) {
+              entries = filteredEntries
+            }
+          }
+          if (entries.size > 1 && !prevfolder.isEmpty) {
+            val filteredEntries = entries.filter(e => normalize(e.path).contains(s"/${normalize(prevfolder)}/"))
+            if (!filteredEntries.isEmpty) {
+              entries = filteredEntries
+            }
           }
           if (!entries.isEmpty && entries.forall(_.md5 == entries.head.md5)) {
             entries = Seq(entries.head)
@@ -196,12 +234,12 @@ lazy val prods_metas = {
     prodType: String,
   )
 
-  def parseRow(row: Row, system: String, prodRows: Buffer[ProdRow]) = {
-    if (row.getLastCellNum() >= 6) {
+  def parseRow(row: Row, system: String, prodRows: Buffer[ProdRow], filenameIdx: Int) = {
+    if (row.getLastCellNum() >= filenameIdx) {
       val group = getCellString(row, 0)
       val prod = getCellString(row, 1)
       val prodType = getCellString(row, 2)
-      val filenames = getCellString(row, 6).toLowerCase.split(",|\\. ").map(_.trim)
+      val filenames = getCellString(row, filenameIdx).toLowerCase.split(",|\\. ").map(_.trim)
         .filterNot(_.isEmpty)
         .map(_.replace(".zip", ""))
       val publishers = splitGroups(group)
@@ -216,12 +254,12 @@ lazy val prods_metas = {
       }
     }
   }
-  def parseSheet(sheet: XSSFSheet, system: String): Buffer[ProdRow] = {
+  def parseSheet(sheet: XSSFSheet, system: String, filenameIdx: Int = 6): Buffer[ProdRow] = {
     val prodRows = Buffer[ProdRow]()
     val rows = sheet.iterator()
     rows.next()
     while (rows.hasNext()) {
-      parseRow(rows.next(), system, prodRows)
+      parseRow(rows.next(), system, prodRows, filenameIdx)
     }
     prodRows
   }
@@ -236,10 +274,7 @@ lazy val prods_metas = {
       }
       var filename = e.path.split("/")(i).toLowerCase
       val prods = prodsByFilename.getOrElse(filename, Seq())
-      if (prods.nonEmpty) {
-        if (prods.size > 1) {
-          System.err.println(s"WARN: Fujiology ${prefix} PRODS multiple entries for filename '${filename}': ${prods}")
-        }
+      if (prods.size == 1) {
         val prod = prods.head
         metas += FujiologyMeta(
           md5 = e.md5,
@@ -250,6 +285,8 @@ lazy val prods_metas = {
           system = prod.system,
           prodType = prod.prodType,
         )
+      } else if (prods.size > 1) {
+        System.err.println(s"WARN: Fujiology ${prefix} PRODS multiple entries for filename '${filename}': ${prods}")
       } else {
         System.err.println(s"WARN: Fujiology ${prefix} PRODS no entry for filename '${filename}': ${e}")
       }
@@ -258,7 +295,7 @@ lazy val prods_metas = {
   }
 
   var system = "Atari ST/E"
-  val stRows = parseSheet(workbook.getSheetAt(0), system)
+  val stRows = parseSheet(workbook.getSheetAt(0), system, 5)
   metas ++= parseMetas("ST/", stRows, 3)
 
   system = "FALCON 030-060"
