@@ -49,7 +49,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
 
 **Note:** Audio fingerprint files must be separately downloaded from https://github.com/mvtiaine/audacious-uade-tools/releases/tag/audio
-See [Audio Matching](#audio-matching)) for setup.
+See [Audio Matching](#audio-matching) for setup.
 
 **Note:** Some additional required files not included in Github, specifically local mirror of some of source web pages and/or database files are needed to actually run the Scala `songdb.sc` script.
 
@@ -141,6 +141,8 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ```
 
 See `songdb/audio_match.sc` and `songdb/record.sh` sources for more details.
+
+**Note:**: audio TSV files and git repo must be in sync
 
 **Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch the Scala dependencies on first run, which takes a while.
 
