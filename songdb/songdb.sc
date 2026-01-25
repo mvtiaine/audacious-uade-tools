@@ -25,6 +25,7 @@
 //> using file scripts/sources/tosec.sc
 //> using file scripts/sources/whdload.sc
 //> using file scripts/sources/wikipedia.sc
+//> using file scripts/sources/exodos.sc
 //> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
@@ -48,7 +49,6 @@ import audio._
 import chromaprint._
 import tosecmusic._
 import fujiology._
-import wikipedia._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 

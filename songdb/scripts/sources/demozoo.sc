@@ -422,7 +422,7 @@ lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/demozoo_prods.ts
 
   val authors = musicAuthors.sorted.distinct.toBuffer
 
-  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar"))) {
+  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E"))) {
     val meta = MetaData(
       hash = "",
       authors = if (authors.size > 2) Buffer.empty else authors,
