@@ -81,7 +81,7 @@ lazy val whdloadMetas = metas.par.flatMap(m =>
       _type = m._type.trim,
       _platform = "Amiga",
     )
-    //println(s"WHDLOAD META: ${meta}")
+    println(s"WHDLOAD META: ${meta}")
     meta
   )
 ).toSet

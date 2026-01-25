@@ -321,7 +321,8 @@ lazy val rips = {
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
         val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST")
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else "Amiga")
+        val isPC = e.path.contains("MOD_StarControl2")
+        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty
