@@ -7,6 +7,7 @@
 ^.{33}Arpeggiator/
 ^.{33}Art And Magic/
 ^.{33}Art Of Noise/
+^.{33}Ashley Hogg/
 ^.{33}Audio Sculpture/
 ^.{33}BP SoundMon 2/
 ^.{33}BP SoundMon 3/

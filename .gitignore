@@ -2,4 +2,4 @@
 .scala-build
 .bsp
 .vscode
-audio_*.tsv
+audio_*.tsv*

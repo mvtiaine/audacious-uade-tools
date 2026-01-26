@@ -26,7 +26,11 @@ enum Source:
     Fujiology,
     MBnet,
     NostalgicPlayer,
-    AmigaMega
+    AmigaMega,
+    Classic_Game_Soundtracks,
+    Lemon_Amiga,
+    ProTracker_Modules_GPack,
+    Tundrah
 
 import Source._
 
@@ -49,6 +53,10 @@ val tsvfiles = Buffer(
   ("mbnet.tsv", MBnet),
   ("nostalgicplayer.tsv", NostalgicPlayer),
   ("amigamega.tsv", AmigaMega),
+  ("classicgamesoundtracks.tsv", Classic_Game_Soundtracks),
+  ("lemonamiga.tsv", Lemon_Amiga),
+  ("protrackermodulesgpack.tsv", ProTracker_Modules_GPack),
+  ("tundrah.tsv", Tundrah),
 );
 
 case class TsvEntry (
@@ -111,3 +119,7 @@ lazy val fujiology = readSourceDB(Fujiology)
 lazy val mbnet = readSourceDB(MBnet)
 lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
 lazy val amigamega = readSourceDB(AmigaMega)
+lazy val classicgamesoundtracks = readSourceDB(Classic_Game_Soundtracks)
+lazy val lemonamiga = readSourceDB(Lemon_Amiga)
+lazy val protrackermodulesgpack = readSourceDB(ProTracker_Modules_GPack)
+lazy val tundrah = readSourceDB(Tundrah)

@@ -40,29 +40,16 @@ There are two alternative hashing methods provided and separate TSVs for each un
 
 ## Raw TSV Source Files
 
-- `songdb/sources/amigamega.tsv` - module infos and songlengths for AmigaMega
-- `songdb/sources/aminet.tsv` - module infos and songlengths for Aminet
-- `songdb/sources/amp.tsv` - module infos and songlengths for AMP
+- `songdb/sources/*.tsv` - module infos and songlengths for each site/source
 - `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding duplicated sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
 - `songdb/sources/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
 - `songdb/sources/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
-- `songdb/sources/fujiology.tsv` - module infos and songlengths for Fujiology
-- `songdb/sources/mbnet.tsv` - module infos and songlengths for MBnet Apaja
-- `songdb/sources/modland.tsv` - module infos and songlengths for Modland
-- `songdb/sources/modland_incoming.tsv` - modules infos and songlengths for Modland incoming directory
-- `songdb/sources/modsanthology.tsv` - module infos and songlengths for Mods Anthology
-- `songdb/sources/modarchive.tsv` - module infos and songlengths for ModArchive
-- `songdb/sources/nostalgicplayer.tsv` - module infos and songlengths for NostalgicPlayer
-- `songdb/sources/oldexotica.tsv` - module infos and songlengths for ExoticA (old)
-- `songdb/sources/soamc.tsv` - module infos and songlengths for SOAMC=
-- `songdb/sources/tosecmusic.tsv` - module infos and songlengths for TOSEC Music
-- `songdb/sources/tosecmusic_unknown.tsv` - module infos and songlengths for TOSEC Music Unknown
-- `songdb/sources/unexotica.tsv` - module infos and songlengths for UnExoticA
-- `songdb/sources/wantedteam.tsv` - module infos and songlengths for Wanted Team
-- `songdb/sources/zakalwe.tsv` - module infos and songlengths for Zakalwe chip git repo
 - `songdb/sources/audio/*.tsv` - audio fingerprints (chromaprint), zstd compressed in git. See `scripts/sources/audio.sc` for format.
 
-Except for `demozoo.tsv`, the raw TSV source files are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
+The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
+
+**Note:** Audio fingerprint files must be separately downloaded from https://github.com/mvtiaine/audacious-uade-tools/releases/tag/audio
+See [Audio Matching](#audio-matching) for setup.
 
 **Note:** Some additional required files not included in Github, specifically local mirror of some of source web pages and/or database files are needed to actually run the Scala `songdb.sc` script.
 
@@ -125,13 +112,25 @@ It's recommended to record at least 30s of audio, but the more the better. Accur
 **Requirements:** scala-cli (https://scala-cli.virtuslab.org/), chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
 
 **Setup:**
+
+Download and decompress audio fingerprint files:
+
+```bash
+cd songdb/sources/audio
+rm audio_*.zst
+for i in {0..9} {a..f}; do wget https://github.com/mvtiaine/audacious-uade-tools/releases/download/audio/audio_$i.tsv.zst; done
+zstd -d audio_*.zst
+```
+
+Fetch dependencies:
+
 ```bash
 cd songdb
-zstd -d sources/audio/audio_*.zst
 ./audio_match.sc
 ```
 
 **Usage:**
+
 ```bash
 ./audio_match.sc                                 # Prints usage
 ./audio_match.sc AQAAC1EShUokRcMfoT-OX8RfNKH...  # Match specific chromaprint
@@ -143,9 +142,9 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 
 See `songdb/audio_match.sc` and `songdb/record.sh` sources for more details.
 
-**Note:**: Decompress the files in `sources/audio` first with `zstd -d sources/audio/audio_*.zst`
+**Note:**: audio TSV files and git repo must be in sync
 
-**Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch/install the Scala dependencies on first run, which takes a while.
+**Note:**: Run `./audio_match.sc` once before running `./record.sh`. It will fetch the Scala dependencies on first run, which takes a while.
 
 **Note:**: Only tested on macOS and Linux.
 
@@ -177,14 +176,18 @@ Sources used for the database:
 - **AmigaMega** - https://amigamega.com/index.html
 - **Aminet** - https://aminet.net/
 - **AMP** - https://amp.dascene.net/
+- **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
 - **Demozoo** - https://demozoo.org/
+- **eXoDOS** - https://www.retro-exo.com/
 - **ExoticA (old)** - http://old.exotica.org.uk/
 - **Fujiology** - https://fujiology.untergrund.net/
+- **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
 - **MBnet Apaja** - https://archive.org/details/modit
 - **ModArchive** - https://modarchive.org/
 - **Modland** - http://ftp.modland.com/
 - **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
 - **NostalgicPlayer** - https://nostalgicplayer.dk/
+- **ProTracker Modules GPack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
 - **SOAMC=** - https://www.paula8364.com
 - **TOSEC** - https://www.tosecdev.org/
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
@@ -193,6 +196,8 @@ Sources used for the database:
 - **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
 - **Wikipedia** - https://wikipedia.org
 - **Zakalwe** - git://zakalwe.fi/chip
+
+And my old Amiga mod collection.
 
 
 ## Used By

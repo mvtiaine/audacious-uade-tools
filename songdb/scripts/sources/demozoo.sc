@@ -39,6 +39,9 @@ case class DemozooMeta (
   prodType: Option[String]
 )
 
+// XXX
+def fix(name: String) = name.replace(" - FIXME! This scener is a merge of two sceners!","")
+
 def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
 
 def normalizePlatform(platform: String): String = {
@@ -116,9 +119,9 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
   val prod = l(9)
   val linkClass = l(10)
   val url = l(11)
-  val authors = split(l(12)) map trim
-  val modPublishers = split(l(13)) map trim
-  val prodPublishers = split(l(14)) map trim
+  val authors = split(l(12)) map trim map fix
+  val modPublishers = split(l(13)) map trim map fix
+  val prodPublishers = split(l(14)) map trim map fix
   //val imageUrls = split(l(15))
   val party = if (l.length > 15) maybe(l(15)) else None
   val partyDate = if (l.length > 16) maybe(l(16)) else None
@@ -410,8 +413,8 @@ lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/demozoo_prods.ts
   val prodDatePrecision = precision(l(2))
   var prod = l(3)
   val prodPlatforms = split(l(4)) map trim
-  val prodPublishers = split(l(5)) map trim
-  val musicAuthors = split(l(6)) map trim
+  val prodPublishers = split(l(5)) map trim map fix
+  val musicAuthors = split(l(6)) map trim map fix
   val party =  maybe(l(7))
   val partyDate = maybe(l(8))
   val partyDatePrecision = precision(l(9))
@@ -419,7 +422,7 @@ lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/demozoo_prods.ts
 
   val authors = musicAuthors.sorted.distinct.toBuffer
 
-  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar"))) {
+  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E"))) {
     val meta = MetaData(
       hash = "",
       authors = if (authors.size > 2) Buffer.empty else authors,

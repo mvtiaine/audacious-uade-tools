@@ -20,6 +20,7 @@ import audio._
 import chromaprint._
 import convert._
 import demozoo._
+import exodos._
 import songlengths._
 import tosec._
 import whdload._
@@ -86,7 +87,11 @@ def expandArticleVariants(m: MetaData): Set[MetaData] = {
 
 def normalize(s: String) = {
   val lower = s.toLowerCase
-  val transliterated = transliteratorThreadLocal.get().transliterate(lower)
+  var transliterated = transliteratorThreadLocal.get().transliterate(lower)
+  if (transliterated.replace(" ", "").trim.length >= 7) {
+    val head = transliterated.trim.split(" ")(0)
+    if (head.length >= 4) transliterated = head
+  }
   transliterated.replaceAll("[^A-Za-z0-9]","").trim
 }
 
@@ -192,9 +197,11 @@ def combineMetadata(
   val extraMetas = Set.empty[MetaData] ++ (
     (amp ++ modland ++ unexotica ++ demozoo ++ oldexotica ++ wantedteam ++ modsanthology ++ fujiology2).map(_.copy(hash = ""))
     ++
-    tosecMetas ++ whdloadMetas ++ demozooMetas ++ wikipediaMetas ++ tosecmusic.map(_.copy(hash = ""))
+    tosecMetas ++ whdloadMetas ++ demozooMetas ++ exodosMetas ++ wikipediaMetas ++ tosecmusic.map(_.copy(hash = ""))
   )
-    .filterNot(m => (m._type == "Game" && m._platform == "PC" && m.year < 1991))
+    .filterNot(m => (m._type == "Game" && m._platform == "PC" && (m.year > 0 && m.year < 1991)))
+    .filterNot(m => (m._platform == "PC" && (m.year > 0 && m.year < 1990)))
+    .filterNot(m => (m._platform == "Atari" && (m.year > 0 && m.year < 1989)))
     .flatMap(expandArticleVariants)
 
   val demozoog = demozoo.groupBy(_.hash).par.mapValues(_.head).seq
@@ -761,7 +768,10 @@ def combineMetadata(
             assert(audioEntries.size == cmpAudioEntries.size)
             var duplicate = true
             for (i <- 0 until audioEntries.size) {
-              if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
+              // XXX audioChromaprint may differ even if md5 is same
+              if (cmpAudioEntries(i).audioMd5 == audioEntries(i).audioMd5) {
+                // duplicate = true
+              } else if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
                 val threshold = if (audioEntries(i).audioBytes > 2 * 11025 * 12) 0.9 else 0.99
                 val similarity = chromaSimilarity(cmpAudioEntries(i).audioChromaprint, audioEntries(i).audioChromaprint, threshold)
                 if (similarity < threshold) {
@@ -911,7 +921,10 @@ def combineMetadata(
         e.format.contains("Digital Tracker") ||
         e.format.contains("Megatracker")
       )) {
-        platform = "Atari"
+        // Also used on Amiga
+        if (!entries.exists(e => e.format == "Quartet ST" || e.format == "Rob Hubbard ST")) {
+          platform = "Atari"
+        }
       } else if (entries.exists(e =>
         e.format.toLowerCase.contains("soundtracker") ||
         e.format.toLowerCase.contains("noisetracker") ||
@@ -925,7 +938,6 @@ def combineMetadata(
         e.format.contains("Symphonie") ||
         e.format.contains("UNIC Tracker") ||
         e.format.contains("SoundFX") ||
-        e.format.contains("Oktalyzer") ||
         e.format.toLowerCase.contains("chiptracker") ||
         e.format.contains("Images Music System") ||
         e.format.contains("Ice Tracker") ||
@@ -953,11 +965,14 @@ def combineMetadata(
         platform = "Amiga"
       } else if (!entries.exists(e =>
         e.format.toLowerCase.contains("protracker") ||
+        e.format.toLowerCase.contains("oktalyzer") ||
         e.format.endsWith("SID") ||
         e.format.contains("POKEYNoise") ||
         e.format.contains("Archimedes Tracker") ||
         e.format.contains("Coconizer") ||
-        e.player == "hivelytracker"
+        e.format.contains("Blade Packer") ||
+        e.player == "hivelytracker" ||
+        e.player == "ft2play"
       )) {
         if (entries.exists(_.player == "uade")) {
           platform = "Amiga"
@@ -1011,6 +1026,7 @@ def combineMetadata(
       val key = normalizeAlbum(meta)
       val availableMetas = metasWithAlbum(key)
         .filterNot(_.hash == meta.hash)
+        .filter(m => meta._platform.isEmpty || m._platform.isEmpty || m._platform.toLowerCase == meta._platform.toLowerCase)
       val availableTypes = availableMetas.map(_._type).filterNot(_.isEmpty).toSet
       var metas = availableMetas
         .filterNot(_.publishers.isEmpty)
@@ -1031,9 +1047,20 @@ def combineMetadata(
         metas = metas.filter(_.album.toLowerCase == meta.album.toLowerCase)
       }
 
+      val player = songlengths.songlengthsByMd5(meta.hash).head.player
+      if (player == "uade" && metas.exists(_._platform == "Amiga") && metas.exists(m => m._platform.nonEmpty && m._platform != "Amiga")) {
+        metas = metas.filter(m => m._platform.isEmpty || m._platform == "Amiga")
+      }
+
       val cmp = metas.filter(_.album == meta.album).headOption.getOrElse(metas.head)
       val publishers = cmp.publishers.map(normalize).sorted.distinct
       val year = cmp.year
+
+      lazy val yearPlatformTypeMatch = (metas.forall(m => m.year == year) || (
+        metas.forall(m => m.year == 0 || Math.abs(m.year - year) <= 1) &&
+        metas.forall(m => m._platform.isEmpty || m._platform == meta._platform) &&
+        metas.forall(m => m._type.isEmpty || m._type == meta._type))
+      )
 
       if (meta.publishers.isEmpty && meta.year == 0) {
         val authorMatches = meta.authors.map(normalize).flatMap(a => authorMetas.get(a)).flatten
@@ -1047,21 +1074,31 @@ def combineMetadata(
         if (!(meta.authors.isEmpty || authorMatches.nonEmpty)) {
           break()
         }
-        if (metas.forall(m => m.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p)))) &&
-            metas.forall(m => m.year == year) &&
+        if (metas.forall(m =>
+            m.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p)))) &&
+            yearPlatformTypeMatch &&
             publishers.exists(p => yearPublisher.contains((year, p)))
         ) {
           debug(s"Filling publishers and year for ${meta.hash} - ${meta.album}: publishers ${meta.publishers.mkString(",")} -> ${cmp.publishers.mkString(",")}, year ${meta.year} -> ${year} source: ${cmp}")
           meta = meta.copy(publishers = cmp.publishers, year = year)
         }
 
-      } else if (meta.publishers.isEmpty && meta.year != 0 && metas.forall(m => m.year == meta.year)) {
+      } else if (meta.publishers.isEmpty && meta.year != 0 && yearPlatformTypeMatch) { 
         if (metas.forall(m => m.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p)))) &&
             publishers.exists(p => yearPublisher.contains((meta.year, p))) &&
             availableMetas.filter(m => meta.authors.isEmpty || m.authors.map(normalize).exists(a => meta.authors.map(normalize).exists(_.startsOrEndsWith(a)))).forall(m => m.year == 0 || m.year == meta.year)
         ) {
           debug(s"Filling publishers for ${meta.hash} - ${meta.album}: publishers ${meta.publishers.mkString(",")} -> ${cmp.publishers.mkString(",")} source: ${cmp}")
           meta = meta.copy(publishers = cmp.publishers)
+        }
+
+      } else if (meta.publishers.nonEmpty && meta.year == 0 && year != 0 && yearPlatformTypeMatch) {
+        if (availableMetas.filter(m => meta.authors.isEmpty || m.authors.map(normalize).exists(a => meta.authors.map(normalize).exists(_.startsOrEndsWith(a)))).forall(m => m.year == 0 || m.year == year) &&
+            meta.publishers.map(normalize).exists(p => publishers.exists(_.startsOrEndsWith(p))) &&
+            publishers.exists(p => yearPublisher.contains((year, p)))
+        ) {
+          debug(s"Filling year for ${meta.hash} - ${meta.album}: year ${meta.year} -> ${year} source: ${cmp}")
+          meta = meta.copy(year = year)
         }
       }
     }
@@ -1077,6 +1114,7 @@ def combineMetadata(
       val key = normalizeAlbum(meta)
       val availableMetas = metasWithAlbum(key)
         .filterNot(_.hash == meta.hash)
+        .filter(m => meta._platform.isEmpty || m._platform.isEmpty || m._platform.toLowerCase == meta._platform.toLowerCase)
       val availableTypes = availableMetas.map(_._type).filterNot(_.isEmpty).toSet
       var metas = availableMetas
         .filter(m => (m._type.toLowerCase.startsWith("game") && meta._type.toLowerCase.startsWith("game")) || (!m._type.toLowerCase.startsWith("game") && !meta._type.toLowerCase.startsWith("game")) || (meta._type.isEmpty && availableTypes.size <= 1))

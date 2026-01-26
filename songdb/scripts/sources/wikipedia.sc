@@ -252,4 +252,5 @@ lazy val wikipediaMetas = ((dos_metas ++ windows_metas ++ windows_3x_metas ++ pc
   )
 ))
 .map(m => if (m.publishers.forall(_ == m.album)) m.copy(publishers = Buffer.empty) else m) // XXX
+.map(m => m.copy(publishers = m.publishers.map(_.replace("Entertaient", "Entertainment")).sorted.distinct)) // XXX
 .toSet.seq
