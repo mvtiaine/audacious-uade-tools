@@ -3,6 +3,7 @@
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 //> using dep net.ruippeixotog::scala-scraper::3.1.0
+//> using dep org.apache.commons:commons-lang3:3.20.0
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -17,6 +18,8 @@ import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
+
+import org.apache.commons.text.WordUtils
 
 val amp_path = System.getProperty("user.home") + "/AMP/"
 
@@ -47,13 +50,13 @@ case class AMPMeta (
   filesize: Int,
   extra_authors: List[String],
   album: String,
-  _type: String = "Game", // assume all album names refer to games
+  _type: String,
 )
 
 lazy val amp_mods_by_id = amp_mods.groupBy(_.id)
 
 val seenIds = scala.collection.mutable.Set[Int]()
-lazy val metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.map(f =>
+lazy val _metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.map(f =>
   val doc = JsoupBrowser().parseFile(f.toFile)
   val data = doc >> elementList("#result")
   if (data.length > 1) {
@@ -68,7 +71,7 @@ lazy val metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par
         val extra_authors = authors.toList
         val filename = e.path.split("/").last
         var album =
-          if (filename.matches("^\\w+\\.\\([A-Z0-9].*\\)[A-Za-z0-9\\(!]+.*"))
+          if (filename.matches("^\\w+\\.\\([a-zA-Z0-9].*\\).*"))
             filename.split("\\.\\(").last
               .replaceAll("\\).*","")
               .replaceAll("\\(","")
@@ -78,9 +81,39 @@ lazy val metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par
               .replaceAll(" DFC$","") // ???
               .trim
           else ""
-        album = if (album.length > 1) album else ""
-        Some(AMPMeta(e.md5, e.path, e.filesize, extra_authors, album))
+        val format = filename.split("\\.").head
+        // XXX
+        var filtered = if (album.length > 1) album else ""
+        filtered = if (filtered.contains(" ") && filtered.replace(" ","").toIntOption.isDefined) "" else filtered
+        filtered = if (filtered == format || extra_authors.exists(_.contains(filtered))) "" else filtered
+        filtered = if (Seq(
+          "16 Betha 362","Big Jim","Crim","DJB","Gammis","Impulse","Jape","Liam the Lemming","Logos","Micken","Mystical",
+          "SH3","Statix","Tense","The Hooligan","Turtle","WOTW","X-Ball"
+        ).exists(a => extra_authors.contains(a))) "" else filtered
+        filtered = if (Seq("Look Back in").contains(filtered)) "" else filtered
+        // assume all album names refer to games
+        Some(AMPMeta(e.md5, e.path, e.filesize, extra_authors, filtered, if (filtered.isEmpty) "" else "Game"))
       } else None
     })
   } else Iterable.empty[AMPMeta]
 ).flatten.distinct.seq
+
+lazy val _byAlbum: Map[String, Buffer[AMPMeta]] = _metas.filter(_.album.nonEmpty).toBuffer.groupBy(_.album)
+lazy val metas = _metas.map(meta =>
+  var _meta = if (meta.album.nonEmpty) {
+    val m = _byAlbum.getOrElse(meta.album, Buffer.empty).filter(_.extra_authors.exists(a => meta.extra_authors.contains(a)))
+    val p = meta.path.split("/").last
+    val f = p.split("\\.").head
+    if (((m.size == 1 && p == s"${f}.(${meta.album})") || Character.isLowerCase(meta.album.charAt(0))) && !Seq(
+        "Bigyo","Darryl Sloan","Laura Shigihara","Max","Mike Anderton","Nightshade","Simon Speight","Unison"
+      ).exists(a => meta.extra_authors.contains(a))
+    ) {
+      meta.copy(album = "", _type = "")
+    } else meta
+  } else meta
+  _meta =
+    if (!_meta.album.isEmpty && _meta.album.toLowerCase == _meta.album) _meta.copy(album = WordUtils.capitalize(_meta.album))
+    else _meta
+  _meta = if (_meta.album.endsWith(" Aga")) _meta.copy(album = _meta.album.replaceAll(" Aga$", " AGA")) else _meta
+  _meta
+).distinct.seq
