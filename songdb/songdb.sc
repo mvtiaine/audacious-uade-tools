@@ -274,7 +274,7 @@ lazy val ampTsvs = Future(_try {
     best
   }.par.flatMap(m =>
     val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
-    if (!m.extra_authors.isEmpty && !m.extra_authors.forall(a => a.isEmpty || a == "Unknown Composers")) {
+    if (!(m.extra_authors.isEmpty && m.album.isEmpty)) {
       Some(MetaData(
         m.md5.take(12),
         m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
@@ -291,6 +291,8 @@ lazy val ampTsvs = Future(_try {
 })
 
 lazy val modlandTsvs = Future(_try {
+  val smus = sources.modland.filter(e => e.path.startsWith("IFF-SMUS/") && e.path.toLowerCase.endsWith(".smus"))
+    .groupBy(_.path.split("/").take(3).mkString("/"))
   val entries = sources.modland.sortBy(_.md5).par.flatMap { e =>
     var path =
       if (e.path.startsWith("Ad Lib/")) e.path.substring("Ad Lib/".length)
@@ -302,15 +304,23 @@ lazy val modlandTsvs = Future(_try {
     } else {
       path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     }
-    if (path != "- unknown" && path != "_unknown") {
-      modland.parseModlandAuthorAlbum(format, path).map { case (authors, album) =>
-        MetaData(
-          e.md5.take(12),
-          authors.sorted.toBuffer,
-          Buffer.empty,
-          album,
-          0
-        )
+    if (path != "_unknown") {
+      modland.parseModlandAuthorAlbum(format, path).flatMap { case (authors, album) =>
+        var _album = album
+          // XXX special IFF-SMUS album handling
+        if (e.path.startsWith("IFF-SMUS/") && smus(e.path.split("/").take(3).mkString("/")).size <= 1 &&
+            !Seq("Brian Howarth","Chris Grigg","Maggie").exists(a => authors.contains(a))) {
+          _album = ""
+        }
+        if (!(authors.isEmpty && _album.isEmpty)) {
+          Some(MetaData(
+            e.md5.take(12),
+            authors.sorted.distinct.toBuffer,
+            Buffer.empty,
+            _album,
+            0
+          ))
+        } else None
       }
     } else None
   }.toBuffer.distinct

@@ -68,7 +68,8 @@ lazy val _metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).pa
       if (!seenIds.contains(id) && amp_mods_by_id.contains(id)) {
         seenIds += id
         val e = amp_mods_by_id(id).head
-        val extra_authors = authors.toList
+        val extra_authors = authors.toList.filterNot(a =>
+          Seq("!to be deleted!","Unknown Composers").contains(a)) // XXX
         val filename = e.path.split("/").last
         var album =
           if (filename.matches("^\\w+\\.\\([a-zA-Z0-9].*\\).*"))

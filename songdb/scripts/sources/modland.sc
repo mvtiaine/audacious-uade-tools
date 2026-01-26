@@ -36,7 +36,7 @@ def parseModlandAuthorAlbum(format: String, path: String): Option[(Seq[String], 
         } else {
           if (author == UNKNOWN || token1.startsWith("not by")) {
             None
-          } else if (token1.toLowerCase == "unknown") {
+          } else if (token1.toLowerCase.startsWith("unknown") || token1 == "various") {
             Some((Seq(author), ""))
           } else {
             Some((Seq(author), token1))
