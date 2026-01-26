@@ -176,7 +176,7 @@ Sources used for the database:
 - **AmigaMega** - https://amigamega.com/index.html
 - **Aminet** - https://aminet.net/
 - **AMP** - https://amp.dascene.net/
-- **Classic Game Sountracks** - https://www.nemmelheim.de/cgs_small/index2.php
+- **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
 - **Demozoo** - https://demozoo.org/
 - **eXoDOS** - https://www.retro-exo.com/
 - **ExoticA (old)** - http://old.exotica.org.uk/
