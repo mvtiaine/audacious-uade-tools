@@ -46,7 +46,7 @@ There are two alternative hashing methods provided and separate TSVs for each un
 - `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding duplicated sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
 - `songdb/sources/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
 - `songdb/sources/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
-- `songdb/sources/audio/*.tsv` - audio fingerprints (chromaprint), zstd compressed in git. See `scripts/sources/audio.sc` for format.
+- `songdb/sources/audio/*.tsv` - audio fingerprints (chromaprint), separate download. See `scripts/sources/audio.sc` for format.
 
 The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
 
@@ -118,6 +118,7 @@ It's recommended to record at least 30s of audio, but the more the better. Accur
 Download and decompress audio fingerprint files:
 
 ```bash
+mkdir -p songdb/sources/audio
 cd songdb/sources/audio
 rm audio_*.zst
 for i in {0..9} {a..f}; do wget https://github.com/mvtiaine/audacious-uade-tools/releases/download/audio/audio_$i.tsv.zst; done
