@@ -190,7 +190,7 @@ Sources used for the database:
 - **Modland** - http://ftp.modland.com/
 - **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
 - **NostalgicPlayer** - https://nostalgicplayer.dk/
-- **ProTracker Modules GPack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
+- **Protracker Modules GPack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
 - **SOAMC=** - https://www.paula8364.com
 - **TOSEC** - https://www.tosecdev.org/
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
