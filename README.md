@@ -122,7 +122,7 @@ mkdir -p songdb/sources/audio
 cd songdb/sources/audio
 rm audio_*.zst
 for i in {0..9} {a..f}; do wget https://github.com/mvtiaine/audacious-uade-tools/releases/download/audio/audio_$i.tsv.zst; done
-zstd -d audio_*.zst
+zstd -d -f --rm audio_*.zst
 ```
 
 Fetch dependencies:
