@@ -208,3 +208,8 @@ And my old Amiga mod collection.
 This database is also used by:
 
 - **HippoPlayer** - https://github.com/koobo/HippoPlayer
+
+## Contact
+
+My email address is [firstname].[lastname][at]aalto.fi
+The old address mvtiaine@cc.hut.fi no longer works.
