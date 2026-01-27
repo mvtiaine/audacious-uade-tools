@@ -1,3 +1,5 @@
+:warning: Repository history was recently filtered with git-filter-repo to reduce size, so recloning is needed. Also audio fingerprint TSVs are now separate downloads. Sorry for any inconvenience.
+
 # audacious-uade-tools
 
 This repo contains Scala CLI scripts for generating songdb TSV files used by [audacious-uade](https://github.com/mvtiaine/audacious-uade).

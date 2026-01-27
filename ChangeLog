@@ -1,3 +1,6 @@
+2026-01-27
+- Traces of audio fingerprint files in git history were removed with git-filter-repo. Recloning is needed.
+
 2026-01-25
 - Update source data snapshots to 2026-01-01 or thereabouts
 - Added Classic Game Soundtracks, Lemon Amiga Ultimate MOD pack!, ProTracker Modules GPack and my old Amiga mod collection to sources.
