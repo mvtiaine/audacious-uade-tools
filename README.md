@@ -18,6 +18,7 @@ Also an experimental Shazam like tool is included (see [Audio Matching](#audio-m
 ## Hashing
 
 There are two alternative hashing methods provided and separate TSVs for each under md5 and xxh32 subfolders.
+Hashes are calculated from decompressed files, even if the original source files were compressed.
 
 - **MD5** - 48-bits (MSB) as hex, hash calculated from whole file
 - **XXH32+filesize** - 48-bits as hex (32-bit + 16-bit). Calculated+concatenated as hex(XXH32(file)) + hex(filesize & 0xFFFF). XXH32 is calculated from max first 256k bytes only, filesize is full filesize.
@@ -176,9 +177,9 @@ For any applicable sui generis rights or copyrights I may have over the database
 
 Sources used for the database:
 
-- **AmigaMega** - https://amigamega.com/index.html
+- **Amiga Music Preservation (AMP)** - https://amp.dascene.net/
+- **AmigaMega** - https://amigamega.com/
 - **Aminet** - https://aminet.net/
-- **AMP** - https://amp.dascene.net/
 - **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
 - **Demozoo** - https://demozoo.org/
 - **eXoDOS** - https://www.retro-exo.com/
@@ -186,12 +187,12 @@ Sources used for the database:
 - **Fujiology** - https://fujiology.untergrund.net/
 - **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
 - **MBnet Apaja** - https://archive.org/details/modit
-- **ModArchive** - https://modarchive.org/
 - **Modland** - http://ftp.modland.com/
 - **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
 - **NostalgicPlayer** - https://nostalgicplayer.dk/
 - **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
-- **SOAMC=** - https://www.paula8364.com
+- **Stone Oakvalley's Amiga Music Collection (SOAMC=)** - https://www.paula8364.com
+- **The Mod Archive** - https://modarchive.org/
 - **TOSEC** - https://www.tosecdev.org/
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
 - **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
