@@ -33,7 +33,7 @@ case class WHDLoadMeta(
   // ...
 )
 
-val whdloaddb_csv = System.getProperty("user.home") + "/whdload/WHDLoad_Database.csv"
+val whdloaddb_csv = System.getProperty("user.home") + "/sources/whdload/WHDLoad_Database.csv"
 
 lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.par.map { line =>
   val l = line.split(";")

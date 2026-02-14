@@ -17,7 +17,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val oldexotica_path = System.getProperty("user.home") + "/oldexotica/"
+val oldexotica_path = System.getProperty("user.home") + "/sources/oldexotica/"
 
 case class OldExoticaMeta (
   archive: String,
@@ -30,8 +30,14 @@ case class OldExoticaMeta (
   year: Option[Int],
 )
 
-lazy val oldexotica_mods_by_path = sources.oldexotica.groupBy(_.path.trim.split("/").takeRight(2).mkString("/"))
-lazy val oldexotica_mods_by_dir = sources.oldexotica.groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
+lazy val oldexotica_mods_by_path = sources.oldexotica
+  .filter(_.path.startsWith("tunes/archive/"))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .groupBy(_.path.trim.split("/").takeRight(2).mkString("/"))
+lazy val oldexotica_mods_by_dir = sources.oldexotica
+  .filter(_.path.startsWith("tunes/archive/"))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
 
 lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).toScala(Buffer).par.flatMap(f =>
   val doc = JsoupBrowser().parseFile(f.toFile, "cp1252")

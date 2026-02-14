@@ -9,54 +9,56 @@ import scala.util.Using
 
 enum Source:
   case
-    Modland,
-    AMP,
-    UnExotica,
-    Mods_Anthology,
-    Wanted_Team,
-    Zakalwe,
+    AmigaMega_Demos,
+    AmigaMega_Games,
     Aminet,
-    Modland_Incoming,
+    AMP,
+    Classic_Game_Soundtracks,
     Demozoo_Leftovers,
-    OldExotica,
+    Fujiology,
+    Lemon_Amiga,
+    MBnet,
     ModArchive,
+    Modland,
+    Modland_Incoming,
+    Mods_Anthology,
+    NostalgicPlayer,
+    OldExotica,
+    ProTracker_Modules_GPack,
+    SOAMC,
     TOSEC_Music,
     TOSEC_Music_Unknown,
-    SOAMC,
-    Fujiology,
-    MBnet,
-    NostalgicPlayer,
-    AmigaMega,
-    Classic_Game_Soundtracks,
-    Lemon_Amiga,
-    ProTracker_Modules_GPack,
-    Tundrah
+    Tundrah,
+    UnExotica,
+    Wanted_Team,
+    Zakalwe
 
 import Source._
 
 val tsvfiles = Buffer(
-  ("modland.tsv", Modland),
-  ("amp.tsv", AMP),
-  ("unexotica.tsv", UnExotica),
-  ("modsanthology.tsv", Mods_Anthology),
-  ("wantedteam.tsv", Wanted_Team),
-  ("zakalwe.tsv", Zakalwe),
+  ("amigamega_demos.tsv", AmigaMega_Demos),
+  ("amigamega_games.tsv", AmigaMega_Games),
   ("aminet.tsv", Aminet),
-  ("modland_incoming.tsv", Modland_Incoming),
+  ("amp.tsv", AMP),
+  ("classicgamesoundtracks.tsv", Classic_Game_Soundtracks),
   ("demozoo_leftovers.tsv", Demozoo_Leftovers),
-  ("oldexotica.tsv", OldExotica),
+  ("fujiology.tsv", Fujiology),
+  ("lemonamiga.tsv", Lemon_Amiga),
+  ("mbnet.tsv", MBnet),
   ("modarchive.tsv", ModArchive),
+  ("modland.tsv", Modland),
+  ("modland_incoming.tsv", Modland_Incoming),
+  ("modsanthology.tsv", Mods_Anthology),
+  ("nostalgicplayer.tsv", NostalgicPlayer),
+  ("oldexotica.tsv", OldExotica),
+  ("protrackermodulesgpack.tsv", ProTracker_Modules_GPack),
+  ("soamc.tsv", SOAMC),
   ("tosecmusic.tsv", TOSEC_Music),
   ("tosecmusic_unknown.tsv", TOSEC_Music_Unknown),
-  ("soamc.tsv", SOAMC),
-  ("fujiology.tsv", Fujiology),
-  ("mbnet.tsv", MBnet),
-  ("nostalgicplayer.tsv", NostalgicPlayer),
-  ("amigamega.tsv", AmigaMega),
-  ("classicgamesoundtracks.tsv", Classic_Game_Soundtracks),
-  ("lemonamiga.tsv", Lemon_Amiga),
-  ("protrackermodulesgpack.tsv", ProTracker_Modules_GPack),
   ("tundrah.tsv", Tundrah),
+  ("unexotica.tsv", UnExotica),
+  ("wantedteam.tsv", Wanted_Team),
+  ("zakalwe.tsv", Zakalwe),
 );
 
 case class TsvEntry (
@@ -99,27 +101,28 @@ def readSourceDB(source: Source) = {
       SourceDBEntry(md5, e.path, e.filesize, e.xxh32)
     )
   }).flatten.seq
-}
+}.toSeq
 
-lazy val modland = readSourceDB(Modland)
-lazy val amp = readSourceDB(AMP)
-lazy val unexotica = readSourceDB(UnExotica)
-lazy val modsanthology = readSourceDB(Mods_Anthology)
-lazy val wantedteam = readSourceDB(Wanted_Team)
-lazy val zakalwe = readSourceDB(Zakalwe)
 lazy val aminet = readSourceDB(Aminet)
-lazy val modland_incoming = readSourceDB(Modland_Incoming)
+lazy val amp = readSourceDB(AMP)
+lazy val amigamega_demos = readSourceDB(AmigaMega_Demos)
+lazy val amigamega_games = readSourceDB(AmigaMega_Games)
+lazy val classicgamesoundtracks = readSourceDB(Classic_Game_Soundtracks)
 lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
-lazy val oldexotica = readSourceDB(OldExotica)
+lazy val fujiology = readSourceDB(Fujiology)
+lazy val lemonamiga = readSourceDB(Lemon_Amiga)
+lazy val mbnet = readSourceDB(MBnet)
 lazy val modarchive = readSourceDB(ModArchive)
+lazy val modland = readSourceDB(Modland)
+lazy val modland_incoming = readSourceDB(Modland_Incoming)
+lazy val modsanthology = readSourceDB(Mods_Anthology)
+lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
+lazy val oldexotica = readSourceDB(OldExotica)
+lazy val protrackermodulesgpack = readSourceDB(ProTracker_Modules_GPack)
+lazy val soamc = readSourceDB(SOAMC)
 lazy val tosecmusic = readSourceDB(TOSEC_Music)
 lazy val tosecmusic_unknown = readSourceDB(TOSEC_Music_Unknown)
-lazy val soamc = readSourceDB(SOAMC)
-lazy val fujiology = readSourceDB(Fujiology)
-lazy val mbnet = readSourceDB(MBnet)
-lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
-lazy val amigamega = readSourceDB(AmigaMega)
-lazy val classicgamesoundtracks = readSourceDB(Classic_Game_Soundtracks)
-lazy val lemonamiga = readSourceDB(Lemon_Amiga)
-lazy val protrackermodulesgpack = readSourceDB(ProTracker_Modules_GPack)
 lazy val tundrah = readSourceDB(Tundrah)
+lazy val unexotica = readSourceDB(UnExotica)
+lazy val wantedteam = readSourceDB(Wanted_Team)
+lazy val zakalwe = readSourceDB(Zakalwe)

@@ -14,6 +14,7 @@ import scala.util.Using
 
 import convert.MetaData
 import oldexotica.metas
+import sources.SourceDBEntry
 
 enum Precision:
   case UNKNOWN, YEAR, MONTH, DATE
@@ -53,26 +54,14 @@ def normalizePlatform(platform: String): String = {
 }
 
 lazy val ml_by_path = sources.modland.groupBy(_.path.toLowerCase)
-lazy val aminet_by_path = sources.aminet.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
+lazy val aminet_by_path = sources.aminet.groupBy(_.path
+  .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx",""))
 lazy val demozoo_leftovers_by_path = sources.demozoo_leftovers.groupBy(_.path.toLowerCase)
 lazy val modarchive_by_id = sources.demozoo_leftovers
   .filter(_.path.startsWith("api.modarchive.org")).groupBy(_.path.split("/").take(2).last)
 lazy val wantedteam_by_path = sources.wantedteam.groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
 lazy val unexotica_by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
-lazy val fujiology_by_path = sources.fujiology.flatMap { entry =>
-  val path = entry.path.toLowerCase
-  val parts = path.split("/").dropRight(1)
-  val pathFixed = if (parts.length >= 2 && parts.last == parts(parts.length - 2)) {
-    parts.dropRight(1)
-  } else {
-    parts
-  }
-  val path2 = pathFixed.mkString("/").toLowerCase
-  Seq(
-    (path, entry),
-    (path2, entry),
-  )
-}.groupBy(_._1).view.mapValues(_.map(_._2)).toMap
+lazy val fujiology_by_path = sources.fujiology.groupBy(_.path.toLowerCase)
 lazy val oldexotica_by_archive = oldexotica.metas.groupBy(_.archive.toLowerCase)
 
 def trim(s: String) = {
@@ -118,7 +107,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
   val prodPlatforms = split(l(8)) map trim
   val prod = l(9)
   val linkClass = l(10)
-  val url = l(11)
+  val url = l(11).toLowerCase
   val authors = split(l(12)) map trim map fix
   val modPublishers = split(l(13)) map trim map fix
   val prodPublishers = split(l(14)) map trim map fix
@@ -145,30 +134,25 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
     matches
   }
 
-  def findArchive(archivePath: String) = {
-    val parts = archivePath.split("/").toSeq
-    val path = (parts.dropRight(1) :+ parts.last
-      .replaceAll("\\.(dms|adf|lha|lzh|lzx|zip|rar|7z|arj|tgz|tar\\.gz|tar\\.bz2|tar\\.xz|tar)$",""))
-      .mkString("/")
-      
-    val matches = demozoo_leftovers_by_path.filterKeys(_.startsWith(path))
+  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_leftovers_by_path) = {
+    val matches = paths.filterKeys(_.startsWith(archivePath))
     if (matches.isEmpty) {
       Buffer.empty[(String, String)]
     } else {
       var entries = matches.values.flatten
       if (entries.size > 1) {
-        System.err.println("WARN: demozoo leftover archive " + archivePath + " - multiple entries - " + entries.mkString(", "))
+        System.err.println("WARN: demozoo archive " + archivePath + " - multiple entries - " + entries.mkString(", "))
       }
       entries.map(e => (e.md5, e.path)).toBuffer.distinct
     }
   }
 
-  def findLeftovers(path: String) =
-    if (demozoo_leftovers_by_path.contains(path)) {
-      val md5 = demozoo_leftovers_by_path(path).head.md5
+  def findLeftovers(path: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_leftovers_by_path) =
+    if (paths.contains(path)) {
+      val md5 = paths(path).head.md5
       Buffer((md5, meta))
-    } else if (findArchive(path).nonEmpty) {
-      val md5s = findArchive(path)
+    } else if (findArchive(path, paths).nonEmpty) {
+      val md5s = findArchive(path, paths)
       if (md5s.size > 1) {
         val matches = findMatches(meta, md5s)
         if (matches.size == 1) {
@@ -186,7 +170,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
 
   // non-url links
   if (linkClass == "AmigascneFile") {
-    val path = "ftp.amigascne.org/pub/amiga" + url.toLowerCase
+    val path = "ftp.amigascne.org/pub/amiga" + url
     findLeftovers(path)
   } else if (linkClass == "ModarchiveModule") {
     if (modarchive_by_id.contains(url)) {
@@ -194,52 +178,30 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (linkClass == "ModlandFile" && url.startsWith("/pub/modules/")) {
-    val path = url.replaceFirst("/pub/modules/", "").replace("//","/").toLowerCase
+    val path = url.replaceFirst("/pub/modules/", "").replace("//","/")
     if (ml_by_path.contains(path)) {
       val md5 = ml_by_path(path).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (linkClass == "PaduaOrgFile") {
-    val path = "ftp.padua.org/pub/c64" + url.toLowerCase
+    val path = "ftp.padua.org/pub/c64" + url
     findLeftovers(path)
+  // TODO scene.org source
   } else if (linkClass == "SceneOrgFile") {
-    val path = "files.scene.org/get" + url.toLowerCase
+    val path = "files.scene.org/get" + url
     findLeftovers(path)
   } else if (linkClass == "UntergrundFile") {
-    val path = "ftp.untergrund.net" + url.toLowerCase
+    val path = "ftp.untergrund.net" + url
     findLeftovers(path)
   } else if (linkClass == "WaybackMachinePage") {
-    val path = "web.archive.org/web/" + url.toLowerCase
+    val path = "web.archive.org/web/" + url
     findLeftovers(path)
   // embedded sources
   } else if (linkClass == "FujiologyFile") {
-    val path = (if (url.startsWith("/")) url.drop(1).toLowerCase else url.toLowerCase)
-      .replace(".zip","")
-    val parts = path.split("/")
-    val pathFixed = if (parts.length >= 2 && parts.last == parts(parts.length - 2)) {
-      parts.dropRight(1).mkString("/")
-    } else {
-      path
-    }
-    if (fujiology_by_path.contains(pathFixed)) {
-      val entries = fujiology_by_path(pathFixed)
-      if (entries.size > 1) {
-        System.err.println("WARN: fujiology path " + pathFixed + " - multiple entries - " + entries)
-        val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
-        if (matches.size == 1) {
-          matches
-            .map(m => (m._1, meta)) ++
-          entries.filterNot(m => matches.exists(_._1 == m.md5))
-            .map(e => (e.md5, meta.copy(authors = Seq.empty)))
-        } else {
-          entries.map(e => (e.md5, meta.copy(authors = Seq.empty)))
-        }
-      } else {
-        entries.map(e => (e.md5, meta))
-      }
-    } else Buffer.empty
+    val path = (if (url.startsWith("/")) url.drop(1) else url)
+    findLeftovers(path, fujiology_by_path)
   } else if (url.contains("://amp.dascene.net/downmod.php?index=")) {
-    val id = url.replaceAll("&application=AMP","").split("=").last.toInt
+    val id = url.replaceAll("&application=amp","").split("=").last.toInt
     if (amp.amp_mods_by_id.contains(id)) {
       val md5 = amp.amp_mods_by_id(id).head.md5
       Buffer((md5, meta))
@@ -249,7 +211,6 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
     val path = url
       .replaceAll("http[s]?://amp.dascene.net/modules/","")
       .replace("//","/")
-      .replace(".gz","").toLowerCase
     if (amp.amp_by_path.contains(path)) {
       val md5 = amp.amp_by_path(path).head.md5
       Buffer((md5, meta))
@@ -257,7 +218,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
   } else if (url.contains("://aminet.net/")) {
     val path = url
       .replaceAll("http[s]?://aminet.net/package/","")
-      .replaceAll("http[s]?://aminet.net/","").toLowerCase
+      .replaceAll("http[s]?://aminet.net/","")
       .replace("//","/")
       .replace(".lzx","")
       .replace(".lha","")
@@ -279,26 +240,22 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       }
     } else Buffer.empty
   } else if (url.contains("://wt.exotica.org.uk/files/")) {
-    val path = url.replaceAll("http[s]?://wt.exotica.org.uk/files/","").toLowerCase
+    val path = url
+      .replaceAll("http[s]?://wt.exotica.org.uk/files/","")
       .replace("//","/")
-      .replace(".lzx","")
-      .replace(".lha","")
     if (wantedteam_by_path.contains(path)) {
       val md5 = wantedteam_by_path(path).head.md5
       Buffer((md5, meta))
     } else None
-  } else if (url.contains("://files.exotica.org.uk/?file=exotica/media/audio/UnExoticA/") ||
-             url.contains("://www.exotica.org.uk/download.php?file=media/audio/UnExoticA/") ||
-             url.contains("://www.exotica.org.uk/tunes/archive/Authors/")
+  } else if (url.contains("://files.exotica.org.uk/?file=exotica/media/audio/unexotica/") ||
+             url.contains("://www.exotica.org.uk/download.php?file=media/audio/unexotica/") ||
+             url.contains("://www.exotica.org.uk/tunes/archive/authors/")
   ) {
     val path = url
-      .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/UnExoticA/","")
-      .replaceAll("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/UnExoticA/", "")
-      .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/Authors/", "")
+      .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/unexotica/","")
+      .replaceAll("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/unexotica/", "")
+      .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/authors/", "")
       .replace("//","/")
-      .toLowerCase
-      .replace(".lzx","")
-      .replace(".lha","")
     if (unexotica_by_path.contains(path)) {
       val entries = unexotica_by_path(path)
       if (entries.size > 1) {
@@ -323,7 +280,6 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
         .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/","")
         .replaceAll("http[s]?://old.exotica.org.uk/tunes/archive/","")
         .replace("//","/")
-        .toLowerCase
       if (oldexotica_by_archive.contains(archive)) {
         val entries = oldexotica_by_archive(archive)
         if (entries.size > 1) {
@@ -343,7 +299,9 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
       } else Buffer.empty
   // leftovers
   } else {
-    val path = url .replaceAll("http[s]?://","").replace("//","/").toLowerCase
+    val path = url
+      .replaceAll("http[s]?://","")
+      .replace("//","/")
     findLeftovers(path)
   }
 

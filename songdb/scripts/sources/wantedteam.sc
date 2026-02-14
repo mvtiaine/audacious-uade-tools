@@ -17,7 +17,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val wantedteam_path = System.getProperty("user.home") + "/wantedteam/"
+val wantedteam_path = System.getProperty("user.home") + "/sources/wantedteam/"
 
 case class WantedTeamMeta (
   md5: String,
@@ -35,10 +35,10 @@ lazy val wantedteam_customs_by_path =
   sources.wantedteam.filter(_.path.startsWith("customs/"))
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
-lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl/WT_Customs.txt").toFile
+lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl.lha/WT_Customs.txt").toFile
 lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.drop(3).par.flatMap { line =>
   val parts = line.split("\\s+")
-  val path = parts(0).replace(".lha","").replace(".lzx","")
+  val path = parts(0)
   val size = parts(1).toIntOption.getOrElse(0)
   val ver = parts(2).toInt
   val title = parts.drop(3).mkString(" ")
@@ -93,7 +93,7 @@ lazy val examples = {
   val rows = doc >> elementList("li")
   rows.par.flatMap(r =>
     var txt = r.text.trim
-    val path = txt.split(" ").head.replace(".lha","").replace(".lzx","")
+    val path = txt.split(" ").head
     val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
     txt = txt.split(" - ").tail.mkString(" - ").trim
 
@@ -247,7 +247,7 @@ lazy val examples = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE/") || e.path.contains("ST/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_")
+        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE.lzx/") || e.path.contains("ST.lzx/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_")
         val isPC = e.path.endsWith("PC")
         WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
@@ -267,7 +267,7 @@ lazy val rips = {
   val rows = doc >> elementList("li")
   rows.par.flatMap(r =>
     var txt = r.text.trim
-    val path = txt.split(" ").head.replace(".lha","").replace(".lzx","")
+    val path = txt.split(" ").head
     val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
     txt = txt.split(" - ").tail.mkString(" - ").trim
 

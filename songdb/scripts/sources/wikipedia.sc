@@ -22,7 +22,7 @@ import net.ruippeixotog.scalascraper.model._
 
 import convert._
 
-val wikipedia_path = System.getProperty("user.home") + "/wikipedia/"
+val wikipedia_path = System.getProperty("user.home") + "/sources/wikipedia/"
 
 def extractYear(dateStr: String): Int = {
   // Try parsing as a simple integer first (year-only like "2003")

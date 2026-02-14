@@ -15,7 +15,7 @@ import scala.jdk.StreamConverters._
 import scala.util.Using
 import scala.util.boundary, boundary.break
 
-val modsanthology_path = System.getProperty("user.home") + "/modsanthology/"
+val modsanthology_path = System.getProperty("user.home") + "/sources/modsanthology/"
 
 case class ModsAnthologyMeta (
   md5: String,

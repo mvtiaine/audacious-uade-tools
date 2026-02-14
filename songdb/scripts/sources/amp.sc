@@ -21,7 +21,7 @@ import net.ruippeixotog.scalascraper.model._
 
 import org.apache.commons.text.WordUtils
 
-val amp_path = System.getProperty("user.home") + "/AMP/"
+val amp_path = System.getProperty("user.home") + "/sources/AMP/"
 
 case class AMPMod (
   id: Int,
@@ -36,7 +36,7 @@ lazy val amp_mods = Files.list(Paths.get(amp_path + "downmod/")).toScala(Buffer)
   val loc = Using(scala.io.Source.fromFile(f.toFile())(using scala.io.Codec.UTF8))( _.getLines.find(_.startsWith("location:"))).get
   if (loc.isDefined) {
     val url = loc.get.replace("location: ","")
-    val path = java.net.URLDecoder.decode(url,"UTF-8").replaceAll("http[s]?://amp.dascene.net/modules/","").replace(".gz","")
+    val path = java.net.URLDecoder.decode(url,"UTF-8").replaceAll("http[s]?://amp.dascene.net/modules/","")
     if (amp_by_path.contains(path.toLowerCase)) {
       val e = amp_by_path(path.toLowerCase).head
       Some(AMPMod(f.toString().split("=").last.toInt, e.md5, path, e.filesize))
@@ -105,7 +105,7 @@ lazy val metas = _metas.map(meta =>
     val m = _byAlbum.getOrElse(meta.album, Buffer.empty).filter(_.extra_authors.exists(a => meta.extra_authors.contains(a)))
     val p = meta.path.split("/").last
     val f = p.split("\\.").head
-    if (((m.size == 1 && p == s"${f}.(${meta.album})") || Character.isLowerCase(meta.album.charAt(0))) && !Seq(
+    if (((m.size == 1 && p == s"${f}.(${meta.album}).gz") || Character.isLowerCase(meta.album.charAt(0))) && !Seq(
         "Bigyo","Darryl Sloan","Laura Shigihara","Max","Mike Anderton","Nightshade","Simon Speight","Unison"
       ).exists(a => meta.extra_authors.contains(a))
     ) {
