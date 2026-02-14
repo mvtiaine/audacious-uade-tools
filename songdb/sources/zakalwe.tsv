@@ -166,7 +166,7 @@
 0291db4acf531a32f85d3127a064cfb4	1	24354	player
 0291db4acf531a32f85d3127a064cfb4	2	44790	player
 0291db4acf531a32f85d3127a064cfb4	3	65266	player
-0299f9848ec762022e03db1830bc1a16	0	207473	player	uade	ArtOfNoise (4ch)	0	7312	299b0372	art_of_noise/stc_packed/aon.Wings Of Death Level 5.stc
+0295481256c34c4a9d204e033cbea193	1	73725	player	uade	Unic Tracker	0	144504	66534a57	mod_packer/unic_tracker/UNIC.MK.EaglePlayerIntro
 029ba8df9ba9d3b780b1e1fa449bb432	0	15834	player	uade	Sonix Music Driver	0	468	f29229b9	sonix/Zueri_demo/SMUS.Ende
 02a44f1fa6258d9264af196fbea55a6d	0	17906	loop	uade	MusiclineEditor	0	34438	adc20386	music_line_editor/krister_fundin/unnamed 31.ml
 02c21c169e2c9343c1668d415dd2c362	0	190111	player	uade	Benn Daglish	0	87830	6649f5b0	benn_daglish/Super_Scramble_Simulator/bd.bike0.mus
@@ -202,6 +202,7 @@
 0360ff245dd3ec2efdb43fa9e8e014a9	0	61488	player	uade	Anders 0land	0	3372	1574708f	anders_0land/HOT_PrimeMover/HOT.PrimeMover 12
 036142342dd404432c94e0398bc2f622	0	61528	player	uade	AHX v2	0	3557	ce3db23c	ahx/Rebb/druid2.ahx
 036a072492e82ec13f7332bd59835a83	1	23168	player	uade	Promizer 4.0	0	5770	81eb1d9a	mod_packer/promizer/pm40/PM40.do-you-w
+036f177c3920c53c67d0889388f81999	0	76800	player	uade	ArtOfNoise (4ch)	0	15604	8fd628b9	art_of_noise/stc_packed/aon.The Rising Dope.stc
 037007ebc600f4a2e99525de45aee4bb	1	99968	player	uade	P40A - P40B - P41A	0	22764	efc34d43	mod_packer/the_player/p4x/P40A.GiftOfGods
 037d6ef9ee8824d6788f7e939cf37203	0	55734	player+silence	uade	AHX v2	0	4476	bbfe2d5f	ahx/Hooligan/ahx.BH_90210
 0383890d4374b875273aaeae12cde950	0	15352	player	uade	Nick Pelling Packer	0	475	9de1ee77	nick_pelling_packer/NPP_Battletoads/NPP.bikept1
@@ -792,7 +793,6 @@
 0ed8112e08552e4b16450f1975922a07	7	201895	loop
 0ed8112e08552e4b16450f1975922a07	8	199359	loop
 0ed8112e08552e4b16450f1975922a07	9	203678	loop
-0ede1fc29c55c871a4f9fba68c1b33ff	0	284685	player+silence	uade	ArtOfNoise (4ch)	0	9120	cf8b31a8	art_of_noise/stc_packed/aon.lastninja2-end.stc
 0ee335547bdfdef5ea17fa05714d4309	0	1627	player	uade	Sean Conran	0	14702	7b900613	sean_conran/CountDuckula/SCR.Count_Duckula-1
 0ee335547bdfdef5ea17fa05714d4309	1	622	player
 0efa01259fd37f180600d0923509070c	0	61448	player	uade	Mugician	0	4084	df082dfa	digital_mugician/mug/MUG.Ferry Teel-1
@@ -901,7 +901,6 @@
 10b76a337e94c30d5c21790be7fa9ac9	7	85641	silence
 10b76a337e94c30d5c21790be7fa9ac9	8	85641	silence
 10b76a337e94c30d5c21790be7fa9ac9	9	85641	silence
-10b7c226dddf3dcae198750f4d78c2e9	0	209764	player	uade	ArtOfNoise (4ch)	0	6596	aeb24b2a	art_of_noise/stc_packed/aon.wingsofdeath1.stc
 10bf7fc387ceb6d45bed4a987cf47375	1	99968	player	uade	Protracker	0	7770	92e660a7	mod/2pac/antipasti#13.mod
 10ca2bc5b237fa8ea151879ec2ccccab	0	192282	player	uade	AHX v2	0	2872	95de95c9	ahx/Xeron/plinky-plonky-boink.ahx
 10d91967ffb971cc8a0ba221af109a68	1	38520	player	uade	Soundtracker II (15 instr.)	0	28596	ff0cf5aa	mod15/Don_Adan_rips/ST_Prehistorik/MOD.prehistorintro
@@ -1000,6 +999,7 @@
 12aa45e914ab0f9313a5b800ad062827	0	98903	loop	uade	MusiclineEditor	0	17633	a24060e6	music_line_editor/krister_fundin/accidental.ml
 12b8e3d8f5e35b278496337789792640	0	49994	player	uade	AHX v2	0	1522	1f2f7b72	ahx/Oxide/skydrive.ahx
 12bfa8bbd84a8fcba53119e2d50a61cf	1	84616	player	uade	Protracker	0	12908	a3b11c03	mod/other/prime&some1-pip5.mod
+12c3c0bf56255d68882607bfa5838545	0	138268	player	uade	ArtOfNoise (4ch)	0	14715	33fbd257	art_of_noise/stc_packed/aon.back in time.stc
 12c3c0bf56255d68882607bfa5838545	0	138268	player	uade	ArtOfNoise (4ch)	0	14715	33fbd257	art_of_noise/twice/AON.Back_In_Time
 12d53552d480f1eeecd676df4d8cfb35	1	38960	loop	uade	MON	0	28672	8040b62f	mon/new/DeathTrap/MON.Death Trap High
 12e6bd0d27658d6cb91c80e34adc53b3	0	61090	loop	uade	MusiclineEditor	0	2526	effa3dfe	music_line_editor/krister_fundin/jopp hej di.ml
@@ -1161,7 +1161,6 @@
 144b8e03201a2e448f042190245600a3	0	255722	silence	uade	MusiclineEditor	0	49962	05166985	music_line_editor/Francesco_Gambino/ML.CybScan
 144dd5c9aa096304d7776b22b83fd20d	1	360029	player	uade	Protracker	0	75138	1fedc87f	mod/deck_collection/nallet.new.mod
 14637e10d97b7017ef80ba27f15b4ab0	0	71776	player	uade	AHX v2	0	2777	8d33f95b	ahx/Develin/ackzell-eff2.ahx
-146cd130c8659c9e36b9c5ac193f7c47	0	163728	player	uade	ArtOfNoise (4ch)	0	9972	012f5940	art_of_noise/stc_packed/aon.DNA warrior.stc
 146f610a10df4f17ec88e2a239f43933	1	87068	player	uade	Wally Beben	0	14778	33cfe071	wally_beben/WB.ColossusChessX-512K
 146f610a10df4f17ec88e2a239f43933	2	107323	player
 146f610a10df4f17ec88e2a239f43933	3	394611	player
@@ -1211,7 +1210,6 @@
 1553f0fe39d685578ff1099ba24ed021	4	11554	player
 1553f0fe39d685578ff1099ba24ed021	5	61468	player
 1553f0fe39d685578ff1099ba24ed021	6	25640	player
-155614cb5695c05002a52471cbd7970b	0	164388	player+silence	uade	ArtOfNoise (4ch)	0	16764	b454debb	art_of_noise/stc_packed/aon.space rebellion.fin.stc
 15590e4d80a2f4d92bd711489978e4be	0	47919	loop	uade	MusiclineEditor	0	4757	12a7b038	music_line_editor/krister_fundin/på väg.ml
 1559cd94146f62a14992e318ab4ff5e4	1	57730	player	uade	Protracker	0	8576	dd67d0b2	mod/other/zandax-paperboy_hiscore.mod
 1560c8621e71420760fed635730b70d2	0	30628	repeat	uade	MusiclineEditor	0	4564	502f6e63	music_line_editor/Role_Model-Old_Tunes/ML.Funkensteinsbride_2
@@ -1461,6 +1459,7 @@
 1a0ff11d614e0a8c343e9186b9dd6c6e	7	23088	player
 1a0ff11d614e0a8c343e9186b9dd6c6e	8	186253	player
 1a0ff11d614e0a8c343e9186b9dd6c6e	9	28956	player+silence
+1a20153411eead0f20a861303390b46e	0	284685	player+silence	uade	ArtOfNoise (4ch)	0	38688	128635fd	art_of_noise/stc_packed/aon.lastninja2-end.stc
 1a20153411eead0f20a861303390b46e	0	284685	player+silence	uade	ArtOfNoise (4ch)	0	38688	128635fd	art_of_noise/twice/AON.lastninja2-end-Old
 1a3ae4d43d733c03e4cbd9e9e329b10b	0	236911	player	uade	SIDMon 1.0	0	8096	f8f8e6b1	sid/SID1.Master_Of_Time_II
 1a3b6c8e53eaec5751775efe9f7ad96c	1	130693	player	uade	Protracker	0	24178	0dd063a6	mod/tdk/FUN3.MOD
@@ -1775,7 +1774,6 @@
 201b8696ad5b08dbba4d6d572392a47c	1	128844	player	uade	OctaMED MMD0	0	53134	1b74b4b6	med/Lemmings_2-The_Tribes/med.space
 201bf8f86641d5195bd97657e44f31f9	0	86988	player	uade	PumaTracker	0	3336	e9a3dd28	pumatracker/Elf-ST/PUMA.st-forest
 2035871ec574e548712962d7cbd13534	1	76920	player	uade	Protracker	0	17838	91689f5e	mod/other/tommy-byggsats06.mod
-203dc87dafbe027bf4b64e65bb88aaea	0	134390	player	uade	ArtOfNoise (4ch)	0	4540	ba336560	art_of_noise/stc_packed/aon.OverDoze.stc
 20467b65544326ddbf60a2b8541024c4	0	92192	player	uade	Quartet ST	0	2632	6d99bb2e	quartet_st/Quartet/QTS.DEMO4
 204747a3183e400bd8b1b63815212ed8	1	23168	player	uade	Protracker	0	8686	2bcf1bfb	mod/other/reflex-da_photoshop.mod
 204bea19a010e6f0d19224657864fa44	1	69224	player	uade	Protracker	0	32416	1f628873	mod/other/beathawk-accident_but_why.mod
@@ -3722,6 +3720,7 @@
 3ece44ede397e181d3f0f6fc4e64125f	0	51260	player	uade	SunTronic	0	9796	6bc05413	suntronic_custom/ready
 3ecf6d705b44906eaecf7630c05751a0	1	193990	player	uade	Jesper Olsen	0	28422	c4c50422	jesper_olsen/LollyPop/jo.ingame_11
 3ecf6d705b44906eaecf7630c05751a0	1	193990	player	uade	Jesper Olsen	0	28422	c4c50422	jesper_olsen/LollyPop/JO.LollyPop 18
+3ed7d294740bdbeed7a1dc561b44f567	0	1463224	player	uade	ArtOfNoise (4ch)	0	12067	4c4b67c3	art_of_noise/stc_packed/aon.draconus.stc
 3ed7d294740bdbeed7a1dc561b44f567	0	1463224	player	uade	ArtOfNoise (4ch)	0	12067	4c4b67c3	art_of_noise/twice/AON.draconus
 3ee13bb816ddf36fd20ed5218f984a74	0	139414	player	uade	AHX v2	0	5628	4e042f07	ahx/Geir Tjelta/AHX.Newsong
 3ee13bb816ddf36fd20ed5218f984a74	1	139414	player
@@ -4291,6 +4290,7 @@
 4806e9da83676fd815d13aa750b185f2	0	169213	player	uade	AHX v2	0	5939	de97e800	ahx/Gavin Lucas/forbidden colours2.1.ahx
 4806e9da83676fd815d13aa750b185f2	1	169213	player
 480ac218977dc45ac50d3798435afa89	0	72339	player	uade	Quartet ST	0	1192	3c7d9e5e	quartet_st/InsignificantDemo/QTS.ID 29
+48117a0b19a637bd409856bfa959a54b	0	179260	player	uade	ArtOfNoise (4ch)	0	42112	3b5f2ebf	art_of_noise/stc_packed/aon.Wings Of Death Level 3.stc
 481bfaa7fdf938e5da7a54b77fbc4e62	1	11427	loop	uade	NeverWhere Loader Custom 	0	8416	9c08f36f	cust/NeverWhere/cust.NeverWhere_Loader
 481d5559f1abd18a8ad9d219adc98a81	0	0	nosound	uade	FWMP	0	22400	a3605dea	forgotten_worlds/Forgotten_Worlds/FW.Forgotten Worlds Intro
 485b534b80ce08e1b6e4d9c78a4932f5	0	578172	player	uade	ArtOfNoise (8ch)	0	290500	c7368d56	art_of_noise/twice/AON8.starfields
@@ -4308,7 +4308,6 @@
 48c5758f2806e006491884870cbd604a	0	325724	silence	uade	MusiclineEditor	0	20183	6414402e	music_line_editor/essential_sound/touchfuture.ml
 48c76ad4b197f4855446eea14545c712	0	142990	player	uade	Nick Pelling Packer	0	2150	a9bf352c	nick_pelling_packer/NPP_WingCommanderCD32/NPP.wing.c.barracks2
 48c76ad4b197f4855446eea14545c712	0	143010	player	uade	Nick Pelling Packer	0	2150	a9bf352c	nick_pelling_packer/NPP_WingCommander/NPP.wing.c.barracks2
-48c9ac119c480462d5b18efaa3132718	0	71736	player	uade	ArtOfNoise (4ch)	0	8964	f86a6b90	art_of_noise/stc_packed/aon.Shadow Zone.stc
 48cbe36b38f27adbdf05926c3db61831	0	85526	loop	uade	AHX v2	0	3683	fc4be7d3	ahx/Pink/AHX.Iridion
 48cbe36b38f27adbdf05926c3db61831	1	4674	silence
 48cbe36b38f27adbdf05926c3db61831	2	5591	silence
@@ -4984,6 +4983,7 @@
 550611c774741662740622252033312d	9	3161	silence
 55095652105d314d5d1f9514d203581c	0	125488	player	uade	Quartet ST	0	8608	a7198dac	quartet_st/International3DTennis/QTS.International3DTennis 2
 551092e55fcff24288e4012b9ac97d1c	1	7394	player	uade	OctaMED MMD0	0	5560	98752902	med/Traps_n_Treasures/med.jingle_3
+551279243a6f41f004baab21c54dd3b7	0	230441	player	uade	ArtOfNoise (4ch)	0	20400	d054dcf9	art_of_noise/stc_packed/aon.unreal.stc
 551279243a6f41f004baab21c54dd3b7	0	230441	player	uade	ArtOfNoise (4ch)	0	20400	d054dcf9	art_of_noise/twice/AON.unreal
 5520af70c132dcd14b83c1f91a4defab	0	42451	loop	uade	MusiclineEditor	0	12597	a6f6e454	music_line_editor/krister_fundin/seasons.ml
 5535e478422dab0640952b23d51cb10f	0	5639	silence	uade	UADE	0	33900	582d3ceb	cust/Gauntlet3/cust.Gauntlet_III_1
@@ -5081,7 +5081,6 @@
 56503c97899322bcf195502f375ba876	1	108488	player	uade	Protracker compatible	0	19786	fecc37bb	mod/other/scorpion-black_lamp.mod
 565c06df875303fb3c12c4a73834a570	0	53832	player	uade	AHX v2	0	1901	1e663e2a	ahx/Silok/maredreams.ahx
 566934e09ee55ae96826d90531d5399c	0	107403	player	uade	AHX v2	0	14130	0fe7fa6a	ahx/m0d/stranger's pie.ahx
-566f3d5e22bb045b954e4324d0942aa5	0	175000	player	uade	ArtOfNoise (4ch)	0	9984	d6b7fc52	art_of_noise/stc_packed/aon.big deal.stc
 5682089dcf49adf4338202f3e3d1c652	0	61568	player	uade	G.M.C	0	39468	424299a3	mod_packer/gmc/Jumping_Jack_Son/gmc.ROCKROCK.DATA
 56acfe9d89b53e44433b88b98fadcc00	1	73082	player	uade	Protracker compatible	0	12358	a76bb9cb	mod/other/MIG.MOD
 56b2a97af8fd7863fc02bb8edbfd77d4	0	115463	loop	uade	Quartet ST	0	10204	38982dba	quartet_st/QuartetDemo2/QTS.Xenon
@@ -5273,7 +5272,6 @@
 5a270d62406f5941da22297f7d4201cd	0	137688	loop	uade	CustomPlay	0	7108	668c2cf5	cust/Seasons-intro/cust.Seasons intro
 5a32736f254ad132eac1d2f4ab7309b8	0	55224	loop	uade	AHX v2	0	2982	a720f0c6	ahx/Xeron/times of old.ahx
 5a36dfd5d4493544ba7a174566774fac	1	25077	player	uade	Protracker	0	2458	ab3f1e46	mod/2pac/antipasti#26.mod
-5a42bb14a6868615f94cb4e0e754851b	0	90745	player	uade	ArtOfNoise (4ch)	0	4080	7d500fe4	art_of_noise/stc_packed/aon.hiscoretune.stc
 5a4bf3b5039a368a634703d91625c6bb	1	107845	player	uade	OctaMED MMD1	0	87404	fcd1d342	med/LethalWeapon/Med.Theme
 5a4e444d17b06f787cf1b5cb26cf57b9	0	259135	player	uade	SoundMon 2.0	0	16276	3cdb037d	bp/BP.New_Dimension
 5a5285e75524009b7074b17f3eaf4893	0	62103	loop	uade	MusiclineEditor	0	3591	a191c8a4	music_line_editor/Firefox/ML.Organ_Symphony
@@ -5556,6 +5554,7 @@
 5eb042f6e232557e60bbd0173c6d7f9e	0	7495	player	uade	Nick Pelling Packer	0	438	e689feee	nick_pelling_packer/NPP_WingCommanderCD32/NPP.w.c.enemyacekilled
 5eb4011d09f6507d976f610dc863ba95	0	170992	silence	uade	MusiclineEditor	0	77933	0af633ad	music_line_editor/Francesco_Gambino/ML.Lands
 5eb4011d09f6507d976f610dc863ba95	1	237154	silence
+5eb4fc5cfbf15374a899aec9193e77b7	0	180024	player	uade	ArtOfNoise (4ch)	0	30642	2efd587d	art_of_noise/stc_packed/aon.dawn.stc
 5eb4fc5cfbf15374a899aec9193e77b7	0	180024	player	uade	ArtOfNoise (4ch)	0	30642	2efd587d	art_of_noise/twice/AON.dawn
 5eb9d2073aa734499b4ee89580930366	0	172730	player	uade	AHX v2	0	8611	10f21458	ahx/Varthall/last millennium.ahx
 5eb9e3d04defb66bb6452f14f5669c59	0	94796	loop	uade	PreTracker	0	3852	37ffd578	pretracker/Silok/midnight elevator.prt
@@ -5648,7 +5647,6 @@
 605be5788db8d668f42a474798440214	0	241633	player	uade	MED Packer	0	48088	6c2b56f3	med_packer/CaptainPlanet/MMDC.CaptainPlanet title
 6067912fd8ace841f9c2a654801c14ab	1	76277	player	uade	OctaMED MMD0	0	48586	cb1a66e7	med/Lemmings_2-The_Tribes/med.endtune
 606ecdcd068436e9c4fce24dd876c223	0	190754	player	uade	Benn Daglish	0	86626	d7413a1a	benn_daglish/bd.prison
-6075cc22c920d8285780abdc62bdca94	0	1463224	player	uade	ArtOfNoise (4ch)	0	5584	f4f30174	art_of_noise/stc_packed/aon.draconus.stc
 607abafe256116a40acc27da8c2ddd4b	1	153841	player	uade	Steve Turner	0	17213	537f133f	jason_page/old/JPold.Paradroid90
 607abafe256116a40acc27da8c2ddd4b	2	53832	player
 607abafe256116a40acc27da8c2ddd4b	3	7696	player
@@ -5787,7 +5785,6 @@
 61403d4920e54dc40386e2a7b5e6fa54	0	46136	player	uade	AHX v2	0	1924	d2b45549	ahx/Jazz/AHX.JaZz Time!
 6149e2e6a7d7089d83b5d78f78d1d1d8	1	134209	player	uade	P40A - P40B - P41A	0	60446	b57225d4	mod_packer/the_player/p4x/Superfrog/p4x.title
 615c174f362853da2ac2cc17e68eb420	1	10368	player	uade	Protracker	0	5606	3999d7e4	mod/2pac/antipasti#38.mod
-6163fceff3ca42e71241a731c5c12b3d	0	179260	player	uade	ArtOfNoise (4ch)	0	9988	4a5f90e5	art_of_noise/stc_packed/aon.Wings Of Death Level 3.stc
 61660b0418af55196032be48143a39af	0	287488	player	uade	SoundFX	0	72464	2bae0a19	soundfx/SFX.magnetic2
 616eb169b7a14fdbdf6b897d9e989e69	1	34481	player	uade	Protracker	0	81208	5eb951a5	mod/wotw/Turrican2/Turrican2_HiScore.mod
 617347aa846d310192a892c914f5b337	0	323913	loop	uade	MusiclineEditor	0	41007	08cb0dd9	music_line_editor/Buse/ML.MontyStillRunning
@@ -6361,7 +6358,6 @@
 6b04cab90dfb903bf5546a8f6d17a423	4	121299	loop
 6b04cab90dfb903bf5546a8f6d17a423	5	91326	loop
 6b04cab90dfb903bf5546a8f6d17a423	6	0	nosound
-6b0c0e66c5e2ee899341ef1ef4d519b3	0	230441	player	uade	ArtOfNoise (4ch)	0	6976	c1aa8405	art_of_noise/stc_packed/aon.unreal.stc
 6b0ec09c9eb1c9a11224639cc87a879f	0	227042	player+volume	uade	David Whittaker	0	18372	df8665e9	david_whittaker/dw.Garfield_1
 6b0ec09c9eb1c9a11224639cc87a879f	1	3637	player
 6b0ec09c9eb1c9a11224639cc87a879f	2	5626	player
@@ -7616,6 +7612,7 @@
 84df64e16b04d02006adad053df3ab7f	0	102340	player	uade	ChipTracker	0	20934	3423b76d	mod_packer/kris_tracker/Wolfchild/KRIS.W4
 84df64e16b04d02006adad053df3ab7f	1	20415	player
 84df64e16b04d02006adad053df3ab7f	2	57529	player
+84e3df4d56b2ed887ba73c92c7262414	0	164388	player+silence	uade	ArtOfNoise (4ch)	0	34925	f3b28ab4	art_of_noise/stc_packed/aon.space rebellion.fin.stc
 84e3df4d56b2ed887ba73c92c7262414	0	164388	player+silence	uade	ArtOfNoise (4ch)	0	34925	f3b28ab4	art_of_noise/twice/AON.space rebellion.fin
 84f57664bc584692f282b44d581bc1a3	0	3600000	timeout	uade	MusiclineEditor	0	38709	dfdf2eda	music_line_editor/Role_Model-Old_Tunes/ML.Acid1
 84f57664bc584692f282b44d581bc1a3	0	3600000	timeout	uade	MusiclineEditor	0	38709	dfdf2eda	music_line_editor/Role_Model/acid1.ml
@@ -7633,6 +7630,7 @@
 85380a1b013a7f592b4547ba261a90e1	2	65075	loop
 85380a1b013a7f592b4547ba261a90e1	3	58081	loop
 85380a1b013a7f592b4547ba261a90e1	4	98508	loop
+853b86aa1712ddc7fee38faa6138cc70	0	175000	player	uade	ArtOfNoise (4ch)	0	23906	28e86aed	art_of_noise/stc_packed/aon.big deal.stc
 853b86aa1712ddc7fee38faa6138cc70	0	175000	player	uade	ArtOfNoise (4ch)	0	23906	28e86aed	art_of_noise/twice/AON.Big_Deal
 854ade77084b3b5b17d9361f0ebf77b6	0	65366	player	uade	SunTronic	0	10740	cfeac8b4	suntronic_custom/kompo05.src
 854c9ea5543e13359523df21486a3761	0	1527	player	uade	Digital Sonix & Chrome	0	7844	66293558	dsc/DSC.DragonsBreath-DRFX
@@ -8456,6 +8454,7 @@
 9201ba735e678ecbae18ba3d01628440	2	121067	loop
 9201ba735e678ecbae18ba3d01628440	3	55602	loop
 9201ba735e678ecbae18ba3d01628440	4	55203	loop
+920e99eac9ec37faa66bc53c2cba0f1a	0	71736	player	uade	ArtOfNoise (4ch)	0	24032	28547486	art_of_noise/stc_packed/aon.Shadow Zone.stc
 921401d7d00310937b782037c069439f	0	47281	player	uade	CustomPlay	0	34504	84c8493b	cust/HelterSkelter/cust.HelterSkelter
 921727b71cb416d08164236c6528f22a	0	106655	loop	uade	CustomPlay	0	14540	660dd6ab	cust/WinterChallenge/cust.WinterChallenge Bobsled
 92188ced099844f0fc2ca0e0dc42644a	0	368669	player	uade	Sonic Arranger	0	19748	3d3f5827	sonic_arranger/sa.melf's_acid_arrow
@@ -9313,6 +9312,7 @@ a3b8f25e5cc3f3cb521335d1167ef475	1	23168	player	uade	Protracker	0	8700	3d8a8cbc	
 a3bad550e54a0117103bb8f7571ff701	1	233415	player	uade	P40A - P40B - P41A	0	143100	38121106	mod_packer/the_player/p4x/Alien_Breed_2/AGA_Version/p4x.title
 a3c565f17bf567e7efdef777010caec7	1	32110	player	uade	Protracker compatible	0	6372	f649f552	mod/other/deck-collection/aerodynamisk neger.mod
 a3c77070815f5474a9fc713cebf656e4	1	48768	player	uade	Protracker	0	18476	825acd77	mod/other/soul-applebomb.mod
+a3d278b83663e62cedf92a174bb110d7	0	163728	player	uade	ArtOfNoise (4ch)	0	25864	94e35dea	art_of_noise/stc_packed/aon.DNA warrior.stc
 a3d278b83663e62cedf92a174bb110d7	0	163728	player	uade	ArtOfNoise (4ch)	0	25864	94e35dea	art_of_noise/twice/AON.DNA warrior
 a3d4420d383b31f89657b73424c1c8d5	0	278426	player	uade	Synth 4.0	0	21022	88be5747	synthesis/SYN.Mindstorm
 a3d5b66b514aade36ff973bb0a544a75	1	99968	player	uade	Soundtracker II (15 instr.)	0	144110	9ecde244	pierre_adane/Pang/mod.pqng-presente
@@ -9397,6 +9397,7 @@ a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
 a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
 a5c563e29c16eb6521977b95f8148e83	1	0	nosound	uade	OctaMED MMD1	0	41204	0e280d7e	med/LethalWeapon/Med.SoundFX
+a5c787bd63487d08566f85b10e79009f	0	69144	player	uade	ArtOfNoise (4ch)	0	25022	22d34ca1	art_of_noise/stc_packed/aon.cloud 9.stc
 a5c787bd63487d08566f85b10e79009f	0	69144	player	uade	ArtOfNoise (4ch)	0	25022	22d34ca1	art_of_noise/twice/AON.cloud 9
 a5e0628e935e6ef0cb90d7ae52977669	0	135865	silence	uade	Infogrames	0	5684	ccecde2e	infogrames/Populous_2/PopulousII.dum
 a5e47206b1f8caed160dab27c5993713	1	127116	player	uade	OctaMED MMD0	0	34012	c886023b	med/Hook/med.ingame_7
@@ -9489,6 +9490,7 @@ a7cc5aa1cb66218656ae53b59e6105d7	0	109895	player	uade	SoundFX	0	120736	0d39c88f	
 a7cdf9222b2f39c2e2c7e39da032a9f9	1	57349	player	uade	Protracker	0	20260	5cce3d7e	mod/other/subject-camel_rape.mod
 a7d0daaff61bce6d8b8959850ee2c3ea	1	38520	player	uade	Protracker	0	6178	9b00119c	mod/other/dsx-nike1.mod
 a7de805f467c7eb63ea2171e61ad7ee2	0	172830	player	uade	Beathoven Synthesizer	0	260468	917d2c73	beathoven_synthesizer/Katakis/bss.Katakis-loading
+a7df40d6235ff49c013a58ce4e91f792	0	33103	player+silence	uade	Synth 4.0	0	4352	c68c70ef	synthesis/SYN.T.H.X-EMULATOR
 a7e38a8108d0d6b4f0647e9694ecdf85	1	80725	loop	uade	CustomPlay	0	68776	dfd241e0	cust/UNSquadron/cust.U.N.Squadron
 a7e38a8108d0d6b4f0647e9694ecdf85	2	10398	loop
 a7e38a8108d0d6b4f0647e9694ecdf85	3	39742	loop
@@ -9712,6 +9714,7 @@ ab3b25bb7fa21edcf696b70e847afae5	0	7676	player	uade	AHX v2	0	1420	34ae8b95	ahx/J
 ab3b25bb7fa21edcf696b70e847afae5	1	0	nosound
 ab3b25bb7fa21edcf696b70e847afae5	2	0	nosound
 ab4122f9499eda2ecbef4a6e4aca31c5	0	24133	player	uade	SoundFX	0	73364	017e3f5c	soundfx/FutureWars/SFX.Future_Wars_Tune_4
+ab45d5c5427617d6ee6e4260710edaf1	0	209764	player	uade	ArtOfNoise (4ch)	0	31360	8773ea16	art_of_noise/stc_packed/aon.wingsofdeath1.stc
 ab45d5c5427617d6ee6e4260710edaf1	0	209764	player	uade	ArtOfNoise (4ch)	0	31360	8773ea16	art_of_noise/twice/AON.wingsofdeath1
 ab475a04377775d00b7e7d01d83ef13c	1	25700	player	uade	Protracker compatible	0	15598	1c95a564	mod/other/shout-fresh_juice2.mod
 ab4a591482781116af0c32601e460483	0	118937	player	uade	SoundMon 2.0	0	53858	14366a26	bp/BP.Soulmachine
@@ -9887,7 +9890,6 @@ aecd3ee12dccc986ab189466b3035809	1	166420	player	uade	Jochen Hippel	0	45106	3f22
 aecd3ee12dccc986ab189466b3035809	1	166420	player	uade	Jochen Hippel	0	45106	3f221219	hip/SevenGatesOfJambala/SOG.SevenGatesOfJambala 2
 aecd3ee12dccc986ab189466b3035809	1	166420	player	uade	Jochen Hippel	0	45106	3f221219	jochen_hippel/HIP.Jambala-GameOver
 aecd3ee12dccc986ab189466b3035809	1	166420	player	uade	Jochen Hippel	0	45106	3f221219	jochen_hippel/SevenGatesOfJambala/SOG.SevenGatesOfJambala 2
-aecf161346d7dd60d875515bd9ce1db2	0	180024	player	uade	ArtOfNoise (4ch)	0	7364	e41ef682	art_of_noise/stc_packed/aon.dawn.stc
 aecf1cfe82e353d8573010bdbc479a2c	1	20758	player+silence	uade	P50A - P60A - P61A	0	290110	60471045	mod_packer/the_player/p6x/Strangers/p60.VIDEO03
 aed928d373e2e14ec033ebe526f9ca32	0	90667	loop	uade	PreTracker	0	6510	037d48aa	pretracker/Speedvicio/Gravastar.prt
 aedaf62da76ea8890e432f0dea5bbdcb	0	0	nosound	uade	Martin Walker	0	65002	8c8f6d3d	activision_pro/martin_walker/avp.kingmaker
@@ -10559,7 +10561,6 @@ b9c303df4a93b22d40f548fe577e14d7	7	3961	silence
 b9c303df4a93b22d40f548fe577e14d7	8	4921	silence
 b9c303df4a93b22d40f548fe577e14d7	9	3161	silence
 b9c7cc3523d2f2b6cff2a7603944475e	0	10047	player	uade	Sonix Music Driver	0	742	31ba6b0b	sonix/Spirit_Of_Excalibur/SMUS.BattleWon
-b9d0d215edc49bb3e7a5bcce046330ed	0	138268	player	uade	ArtOfNoise (4ch)	0	4424	dfdb1cf6	art_of_noise/stc_packed/aon.back in time.stc
 b9d31333722e43052e020b17517b8e55	1	142187	player	uade	Protracker	0	256860	79b13084	mod/deck_collection/coffee blues ii.mod
 b9d89f676cd263c82e8033a2f155b681	0	126734	player	uade	TFMX Pro	0	3256	efebc604	tfmx/Hexuma/mdat.Mine
 b9ddc38e4429d81b9b58f9673673340d	1	114758	player	uade	Protracker	0	191928	241e5cb6	mod/deck_collection/ecstatic guidance.mod
@@ -11018,7 +11019,6 @@ c2e654cc6a1ee8cac90966a62803d679	0	107403	player	uade	Images Music System	0	2934
 c2e7f8eed3eb59b6020deb78648d5726	1	211331	player	uade	P40A - P40B - P41A	0	40122	d313353b	mod_packer/the_player/p4x/Superfrog/p4x.level_02
 c2fd18d9109c5ea13fde0d9e87627ad2	0	92071	player	uade	PumaTracker	0	5840	38654b5d	pumatracker/Toki/puma.Toki4.1
 c30d82adddab99eeb791a0d7034572da	0	77248	loop	uade	MusiclineEditor	0	5327	17156cec	music_line_editor/krister_fundin/ice cubes.ml
-c3112bcc28ee19329517595b08e6c69d	0	76800	player	uade	ArtOfNoise (4ch)	0	3048	6eaed42f	art_of_noise/stc_packed/aon.The Rising Dope.stc
 c31bc05931a7bb360bc6e488a807b663	0	76920	player	uade	AHX v2	0	6084	ffd60009	ahx/Neurodancer/blue socks.ahx
 c326c228e036757c157eeb749d4d7889	1	76920	player	uade	Protracker	0	22002	57119067	mod/other/monty-interpol.mod
 c3275babfadb7ee31477a03a75eb354a	0	7676	player	uade	AHX v2	0	1306	1ee3e7c6	ahx/Jazz/AHX.Cybernoid2
@@ -11082,6 +11082,7 @@ c4133ff7606741b06dcfad1093c2dbe4	0	64984	player	uade	Janne Salmijarvi Optimize	0
 c415f9f78dcb261c43ac3d651b70729e	1	31306	player	uade	Protracker compatible	0	10746	6b6fdbc3	mod/other/JINGLE2.MOD
 c4194afdd8d96372f9f63c955b695a73	0	7260	player+silence	uade	SoundFX	0	27676	b2304d9c	soundfx/Bush_Buck/SFX.BushBuck 16
 c4213b0a4705efc638a7ff8fb593328d	1	92272	player	uade	Protracker	0	52180	2c31bf81	mod/Don_Adan_rips/MOD_LamborghiniAmericanCha/MOD.pari
+c426e6170604e76e21aa7c7f065051c4	0	207473	player	uade	ArtOfNoise (4ch)	0	48344	230633c6	art_of_noise/stc_packed/aon.Wings Of Death Level 5.stc
 c427c744f023ba089dcf0419688431fc	1	50034	player	uade	Protracker	0	14404	45a54fd8	mod/tdk/SPEEDO.MOD
 c4282ef0f9dc5414da9563770e53b7f5	0	234582	loop	uade	MusiclineEditor	0	34153	145e8780	music_line_editor/krister_fundin/the drum song.ml
 c4282ef0f9dc5414da9563770e53b7f5	1	38495	loop
@@ -11963,6 +11964,7 @@ d360da421df02dd3b896139b0c6d35f5	0	64000	player	uade	Syntracker	0	11070	e7e76544
 d376d69b27a82b024ccdb39ac1d8c78a	0	174116	player	uade	TFMX	0	11570	8c1cdc21	tfmx/Rock'n'Roll/MDAT.R'n'R-Jumping_Wild
 d376d69b27a82b024ccdb39ac1d8c78a	1	5313	silence
 d376d69b27a82b024ccdb39ac1d8c78a	2	0	nosound
+d38950e5eee00d75810dc4b91abd794f	0	90745	player	uade	ArtOfNoise (4ch)	0	15399	32b91c1e	art_of_noise/stc_packed/aon.hiscoretune.stc
 d38950e5eee00d75810dc4b91abd794f	0	90745	player	uade	ArtOfNoise (4ch)	0	15399	32b91c1e	art_of_noise/twice/AON.hiscoretune
 d38ab7f4fd74b558293e63cc5d2334d7	0	50464	loop	uade	MusiclineEditor	0	1864	3fa0e54a	music_line_editor/krister_fundin/castle in the sky.ml
 d39ac1ea06ee152a4c67857fb4ac4edf	0	131155	player	uade	PumaTracker	0	6702	6bb64c6b	pumatracker/Toki/puma.Toki8
@@ -11986,6 +11988,7 @@ d3eee1dcc53d98625e6a5e9723aaaced	0	174779	player	uade	Quartet ST	0	6220	31ee6d41
 d3f67433eaa53acb135803fb3f79aa9a	0	8102	loop	uade	MusiclineEditor	0	9720	7714210d	music_line_editor/krister_fundin/starlight.ml
 d3f81086385cbf28297b226563b3dc78	1	184445	player	uade	Protracker	0	69396	8155cfbb	mod/Star_Control_2/MOD.star control2,tune5
 d3fd1fa3d619b1417dffd68cf203aae0	0	30965	player	uade	ArtOfNoise (4ch)	0	11444	1de1bb2c	art_of_noise/pink/AON.The_Feeling
+d40709c617adf93f5c72797cc1672b42	0	134390	player	uade	ArtOfNoise (4ch)	0	20040	c02b1f56	art_of_noise/stc_packed/aon.OverDoze.stc
 d40709c617adf93f5c72797cc1672b42	0	134390	player	uade	ArtOfNoise (4ch)	0	20040	c02b1f56	art_of_noise/twice/AON.OverDoze
 d40aab182b40a945ad1119dcf82aba4a	0	107685	player	uade	AHX v2	0	2371	0481e034	ahx/Tony Vera Diaz/ii zelur retlif.ahx
 d40c9e83f627563cbe0644110dc9f589	0	99989	player	uade	AHX v2	0	5491	87a6c941	ahx/Apollon/first one!.ahx
@@ -12646,7 +12649,6 @@ e0a105d0f3ada6ff38aa41d5350caa2d	0	102842	loop	uade	AHX v2	0	4536	a5394d11	ahx/S
 e0b97394c08cd2ef392ff2972b02228d	0	201988	loop	uade	FredMonitor	0	19078	4b0a4eac	fred/FRED.S02-SummerTime
 e0c53ab29c40f28c19721e2e47654974	0	99869	loop	uade	MusiclineEditor	0	1310	7f27ce54	music_line_editor/krister_fundin/airplane.ml
 e0d77cec510777da73afd7fcfbd4a338	1	32592	player	uade	Protracker compatible	0	8514	e936519b	mod/wotw/Intro_Number_087.mod
-e0ec80f12335a4273baf7ba721b13728	0	71736	player	uade	ArtOfNoise (4ch)	0	14612	40bf5bff	art_of_noise/stc_packed/aon.Action Section.stc
 e106f9104ba5f92eefc84fd7bd88c3b1	0	107423	player	uade	SoundMon 2.0	0	13206	5c3638a8	bp/BP.Crystal
 e11b98f5b895176c3750aa1f2c988df4	0	4651	player+silence	uade	AHX v2	0	314	f1abf956	ahx/Xeron/thxcolly-intro.ahx
 e11bedfd5f9cec39f5572b12c7639d2b	0	47904	player	uade	TFMX	0	4552	13c4892e	tfmx/unknown/Fatal Heritage/MDAT.FatalHeritage 26
@@ -12840,6 +12842,7 @@ e50e872d16bdc2baaf2f3cb5bd5ec93c	0	25586	volume	uade	TFMX	0	4424	10a12566	tfmx/u
 e5143601e59d557c9fceb6a7dc61cfa2	0	182837	player	uade	AHX v2	0	5863	cc565ec9	ahx/Jazz/AHX.Frogger
 e5143601e59d557c9fceb6a7dc61cfa2	1	152234	player
 e518d9fee24f0d269ca4ec0fd48e43dc	1	0	nosound	uade	OctaMED MMD0	0	44546	125312ba	med/Hook/med.sfx_5
+e51d94d0c9fc5aa498d23f00ad7333ce	0	71736	player	uade	ArtOfNoise (4ch)	0	30088	586b7df0	art_of_noise/stc_packed/aon.Action Section.stc
 e51d94d0c9fc5aa498d23f00ad7333ce	0	71736	player	uade	ArtOfNoise (4ch)	0	30088	586b7df0	art_of_noise/twice/AON.Action_Section
 e52324427cdc5b5dd93c7adb2ec7f7fe	1	40128	player	uade	Protracker compatible	0	10106	ba17864d	mod/other/SAC14.MOD
 e52a000d67bb8c14177eeb00c43c7a92	0	77644	player	uade	Oktalyzer	0	17988	a0dee500	oktalyzer/Necronom/OKT.Necronom-8
@@ -13170,7 +13173,6 @@ ea5df69bd2654efd8d3db5356cd6c028	3	3235	player
 ea5fdeec59110c8c920dc2952e01b31e	0	270107	player	uade	TFMX Pro	0	15436	2753740d	tfmx/Jim_Power/MDAT.Jim_Power_Main-CH
 ea5fdeec59110c8c920dc2952e01b31e	1	92172	player
 ea6652a029732f1fffb0544044717e8b	0	86666	player	uade	EarAche	0	22126	b6a4481d	earache/EA.DecayCracktro-DragonWars
-ea6b13e12635189b5d88d1e70dc11d9b	0	69144	player	uade	ArtOfNoise (4ch)	0	6280	9ffc30d3	art_of_noise/stc_packed/aon.cloud 9.stc
 ea7eaedacc8d1155767401d99608f113	0	55681	player	uade	Nick Pelling Packer	0	1960	c3be74eb	nick_pelling_packer/NPP_Battletoads/NPP.surf
 ea842e9b6bea72f0699fb76521fdb826	0	84496	player	uade	Syntracker	0	24804	e52be2a2	syntracker/SYNMOD.Autumn Melodies
 ea93761a82c8b06ec5b29c8cd20a0f45	0	35954	loop	uade	MusiclineEditor	0	27897	349f9988	music_line_editor/krister_fundin/the machine.ml

@@ -145,6 +145,7 @@
 06a25454d9b1ccd482e7231f39e8c02c	1	228170	player	uade	Protracker	0	464758	c98866d3	Sample Fusion and David Enheden/Billig Arbetskraft (fusion freestyle).mod
 06a26e39175c22b0af788d5a6a1820ee	1	206790	player	uade	Protracker	0	322172	46f1eaa8	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - No Good (greezemix).mod
 06b0e566f85133fc6a67081791a91781	1	202690	player	uade	OctaMED MMD1	0	186496	1df293ea	MED--/Med.Walkabout Adventure.Med
+06bde6afa9df7bc1bcf19efaf65eecef	1	15472	player	uade	Protracker	0	7646	06e82feb	Demos/Mod.Heresy Trainer.Mod
 06d10618f0d27140176867a8441388b7	1	130431	player	uade	Protracker	0	261910	e3bf2bba	Pop Songs/- Dance and Pop/1980s/Mike Oldfield/baroque oldfield.mod
 06d32c53ea67e36b6af6ddaf97d493a7	1	389967	player+silence	uade	Protracker	0	238228	dba14ca8	Groove and funk/-- groove (dance).mod
 06d53e94c32accbab7840cc68dc6b68a	1	337272	player+volume	uade	Protracker compatible	0	228974	8d2012f1	Pop Songs/- Dance and Pop/1980s/enigma2 - unknown.mod
@@ -328,7 +329,6 @@
 0f05f23278e45e48800a5cb1b8cde36c	1	58755	player	uade	Protracker	0	341738	4d19a395	Pop Songs/- House, Acid, Trance/DJ BoBo - SOMEBODY DANCE WITH ME Prologiktekkkno.mod
 0f2364cc09f2067d4cbf11a3b1f9a1b3	1	331070	player+silence	uade	Protracker	0	354526	ca7ead14	Pop Songs/- Dance and Pop/1980s/Jean-Michel Jarre/Zoolookologie Remix-tronik.mod
 0f29b9f892dd26129a6cbede7b4f2ec1	1	51320	player	uade	Protracker	0	7594	a335d6cb	Demos/Mod.Jump And Run.Mod
-0f30c9ab49ae7bef82b644b06eda7e4e	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	7052	c72f66e7	Demos/Mod.Rebels Trainer.Mod
 0f31064427ee8e5f3331fdd674e899af	1	246663	player+silence	uade	OctaMED MMD1	0	70158	3cd50d4a	Pop Songs/- Dance and Pop/1980s/Jean-Michel Jarre/magnetic fields ii.mmd1.mod
 0f31ae1f23d36d4c3d63232628c82b5e	1	330168	player	uade	Protracker	0	607552	1dd8bce7	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/Pop Songs/insomnia ( remix ).mod
 0f31ae1f23d36d4c3d63232628c82b5e	1	330168	player	uade	Protracker	0	607552	1dd8bce7	Pop Songs/- Dance and Pop/1990s/Faithless - Insomnia - 7 inch mix by punnik.mod
@@ -359,7 +359,6 @@
 103d700577d9473c4b4752adef414edb	1	154172	player+silence	uade	Protracker compatible	0	97066	373972a3	Pop Songs/- Dance and Pop/1960s and 70s/Beatles/Beatles - All my loving (los fernandos) remix).mod
 1043ead3b3487d024238c7aae8d45f5e	1	94603	player	uade	Protracker	0	298704	8f4bf8b1	House, Techno and Acid/90s Dance House/Soul roots!.ital.mod
 10560443c00a4a6d27957501d03f02e5	1	64690	player+silence	uade	Protracker	0	86914	ec9196b8	GAMES/Zool/Unused/MOD.Zool1.4.mod
-1057edc89635dbc01395c650de4a1384	0	283737	player	libopenmpt	Generic ProTracker or compatible	4	35128	72be6324	MODS - My classics--/PANIC.MOD
 105b9900621e57d19103561c97a47315	1	319338	player	uade	Protracker	0	211654	9bcc145e	CLASSICS/unsorted/XTD - Discovery.mod
 106db0e8336bde9bda9b965e576b6691	1	151329	player	uade	Protracker	0	113820	5568841b	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/echoing (garage).mod
 1097ebca0ed7ee6f822a318605739fc2	1	61689	player	uade	Protracker	0	15206	71aee6bc	Cracktro/Mod.Accession Crack 02.Mod
@@ -616,6 +615,7 @@
 1b37f5d78db54b81a50d50ac715eff8c	1	138369	player	uade	Protracker compatible	0	12386	8fbafdae	Demos/Mod.Jaba Point Grim.Mod
 1b423882b4d81de4723dabcdb009fd75	1	331153	player	uade	Protracker	0	246466	61317e15	GAMES/Leander-OurRout.mod
 1b59fc3c09f57c1037e7c9068ccebcac	1	116386	player	uade	Protracker	0	436170	7d32785f	Pop Songs/- Dance and Pop/1990s/Others/Whigfield - Saturday Night (Norwegian Karaoke voc).mod
+1b6c71358d9eb45ba1040bb98dea8c02	1	153178	player	uade	Protracker	0	138138	e9d958a2	MODS - My classics--/TOXIC.MOD
 1b72b8fe5447d79d7be409c0a6d89f01	1	192141	player	uade	Protracker compatible	0	57716	bd2de4ff	House, Techno and Acid/House Dance Anthems/-17. Acid (remix).mod
 1b9b16475457c1bad2886f6d909c12c2	1	102496	player+silence	uade	Protracker compatible	0	55164	fbed967a	Pop Songs/- Dance and Pop/1960s and 70s/Ben E King - Stand-by-me (piano).1961.mod
 1bb58f3d8dee66e9c1c5489488e9181c	1	99968	player	uade	Protracker	0	56928	86cafaea	GAMES/Alastair Brimble/ALL_TERRAIN_RACING-6.MOD
@@ -768,9 +768,9 @@
 211f880173e2f6be2383a8ea47f11fd7	1	284293	player	uade	Protracker	0	65860	9961eff3	Demos/Kefrens/Mod.Kefrens 01.Mod
 2129734a17fc9d528c20bd522f6788f5	1	426646	player+silence	uade	OctaMED MMD1	0	119218	de1cbf4b	Pop Songs/- Dance and Pop/1980s/New Order/blue monday.mmd1.mod
 212996759babe9dbb123296d6aa61e37	1	304944	player+silence	uade	Protracker	0	284102	781cad11	House, Techno and Acid/90s Dance House/euphoria.mod
-2129f7014bf0f62635eb176b22d1b04c	0	15337	player	libopenmpt	Generic ProTracker or compatible	4	2480	9f81fb39	Cracktro/Mod.Wanted Team Crack 02.Mod
 2132a697ed5bc16af9c5ea7dbe2f03b3	1	370393	player+silence	ft2play	Fasttracker	8	386752	2d3619b5	House, Techno and Acid/Techno and Garage/ambient power.mod
 2145b30774608826cca6eea613b9a160	1	211753	player+silence	uade	Protracker	0	1085156	e415b64a	Rock/dandelion flower.mod
+2159f30662d283cd6717ef6a4efb55cb	1	210688	player	uade	OctaMED MMD1	0	76112	ef1877ae	MODS - My classics--/SONATA.MOD
 215ba0e4a1f948bcd1db5e66212fec1e	1	321990	player	uade	Protracker	0	159586	ff5afa76	Demos/mod.stagebox.remix.Mod
 217867d385da659ca59e0025a5eccfd8	1	7930	loop	uade	Midnight Resistance - Spe	0	63228	8123cf8b	Modules for DeliTracker --/Games/Custom/MidnightResistance/CUST.MidnightResistance
 217867d385da659ca59e0025a5eccfd8	10	3261	silence
@@ -929,6 +929,7 @@
 24d31dcce1482fbbcb2225a19767393f	2	170761	player
 24d31dcce1482fbbcb2225a19767393f	3	44275	player+volume
 24d6be609a312ce4569b08cac0fca6f7	1	253569	player	uade	Protracker	0	67814	770c8ac4	House, Techno and Acid/House oldskool/EvilSpirit - by jarko Liimatainen.mod
+24ec717e163127580ba1d8f4ed222288	1	352714	player	uade	OctaMED MMD1	0	265036	4c85d0bf	MODS - My classics--/Odd Mix.MOD
 24eec6dcd7603899be93f7a62d11419c	1	131095	player	uade	Protracker	0	367514	b33acd1e	Old Time/Scotland - the land.mod
 24f73545647259d9cb97414bdcdbc56d	1	57730	player	uade	Protracker	0	8832	64a0829b	Demos/Mod.Loader Tune 01.Mod
 24f89a3359a35f74acfa9ce7169ed141	1	129902	player+silence	uade	Protracker	0	840840	f1a4973e	Demos/Mod.I Give Up, Too Hard 4 Me.Mod
@@ -968,7 +969,6 @@
 262371ae3bf08f98bc01ecaa383bad1e	1	153741	player	uade	Protracker	0	74480	689a8b75	GAMES/DisposableHero.mod
 2626bfc4295d4b3a6c212a319451b267	1	136741	player	uade	Protracker	0	284140	26ab3a71	Pop Songs/- House, Acid, Trance/The Bee Gees - Night fever (Trance mix).mod
 262b93dd53f2aba8e64abb091837a8e3	1	146045	player	uade	Protracker	0	43652	f9212e1d	1987/mod.Bassspeedo
-262ebbc359a4de652ba0afb2b0232412	0	114647	player	libopenmpt	MED v2 (MMD0)	4	134396	6d68871e	MED--/Med.Amiganuts.Med
 26347dca2d454ecfc04c14fe79a4b5a3	1	207493	player	uade	Protracker compatible	0	88490	69815d67	GAMES/COUNTDOW.MOD
 266540abdb10325ce7eebb085a2399d7	1	233816	player	uade	Protracker	0	357166	93c57a7a	Pop Songs/- Dance and Pop/1990s/Amiga Mods/Amiga Mod - sundancer.mod
 2665b2a74756ed9a17ed528b8ab4b3ef	1	327154	player	uade	Protracker	0	326652	b11c277f	House, Techno and Acid/Gabba and Breakcore/go with my heart.mod
@@ -1117,7 +1117,6 @@
 2d476325cb10c37eee5743939753ccdc	7	4199	player
 2d476325cb10c37eee5743939753ccdc	8	30824	player
 2d476325cb10c37eee5743939753ccdc	9	3114	player
-2d56675582e5bfa1bb3384ffb0d61641	0	214719	player	libopenmpt	Generic ProTracker or compatible	4	28400	664504b5	MODS - My classics--/NONAME.MOD
 2d624679ca1e9507309fc1d31654cce3	1	120123	player	uade	Startrekker (4ch)	0	139552	d7736f72	CLASSICS/Amazing Tunes II/beat-me - kevin collier.mod
 2d9a755e598e8074274e22a31e9e0fe2	1	483147	player+silence	uade	Protracker	0	597096	88a1cfe5	House, Techno and Acid/Acid House - Oldskool/shaman's nature.mod
 2da38eec83dff228edac588d80f98a46	1	634398	player+silence	uade	Protracker	0	209120	30a13f0f	MODS - My classics--/Lost.mod
@@ -1288,7 +1287,9 @@
 3432df8ccf7f970d49031051e1741026	0	303718	player+silence	uade	JamCracker	0	50954	f938a212	MODS - My classics--/DrAWESOME1.MOD
 344202bf4d272072faef8468ac3634f5	1	159990	player	uade	Protracker	0	1307454	dee882b0	House, Techno and Acid/Jungle, Garage, Rap/breakitdown.mod
 3445025e36ab0729fba2e79196d808c0	1	102360	player	uade	Protracker	0	72532	006d1490	GAMES/ELFMANIA_LV1_FOREST.MOD
+34547899f0b514199aedabc0d3596af6	1	182119	player+silence	uade	OctaMED MMD1	0	299198	d97a24fa	MED--/STARTREK.MED
 3459371240e2c007b829d46ca260eb6f	1	65708	player	uade	Protracker	0	69438	b57133b6	GAMES/ELFMANIA_LV0_BONUSLVL.MOD
+346275c4f8f308e0f0d5998370486de1	1	284293	player	uade	Protracker	0	50688	b9719e8c	MODS - My classics--/PANIC.MOD
 34687516714755f4183fc4a857a67838	1	138369	player	uade	Protracker	0	554100	2badea43	House, Techno and Acid/Deep Chill/mccnex - Col-OR-WA-ve.mod
 347ad1ee4abaeac4dd0915baed0ecbee	1	38520	player	uade	Startrekker (4ch)	0	33226	62c7fe30	Demos/Mod.Dotty Flowers Short.Mod
 3493ee988eeef337f3c6b05a29d8fa89	1	41072	player	uade	Protracker	0	30612	5428130f	Old Time/TheReveille.MOD
@@ -1303,6 +1304,7 @@
 34d595fd99316d5878f40042eb266d6e	1	232450	player	uade	Protracker compatible	0	131524	b69d8781	Pop Songs/- House, Acid, Trance/808 State/808 - Pacific IN YER FACE (meddley).mod
 34f4f3bb95c0b6ebc89440621f31385b	1	100431	player	uade	Protracker	0	142368	ff162568	House, Techno and Acid/Rave and Trance/Amiga Scala Mods - RaveExpo.mod
 3509d85079385ceee084320adf7713a1	1	84616	player	uade	Protracker	0	10344	642e0f53	Demos/Mod.Corinnes Whistle.Mod
+3514acc36677efbf6aa3aa75a4f91a75	1	146326	player+silence	uade	Protracker compatible	0	829440	a31fc8be	Pop Songs/- Dance and Pop/1990s/Los Del R¡o - Macarena.(Remix) 1993.mod
 351a2226e6303bd079e4ed41449ae96f	1	319222	player+silence	uade	Protracker	0	366436	a395fda9	Pop Songs/- House, Acid, Trance/The Orb - Majestic remix - by echo.mod
 352179d071cecf89abf1482b03d2c0b7	0	179220	player	uade	Sonic Arranger	0	33578	7213cabd	Cracktro/Skid_Row23.lethal xcess.sonic
 3525cd0df5f45634e2d7f328c0f31956	1	291105	player	uade	Protracker	0	237508	baec9e4c	GAMES/Pinball_Fantasy_1.Mod
@@ -1317,7 +1319,7 @@
 3576d372c41b413fadba523849791ae3	1	307683	player	uade	Protracker	0	272318	32219757	House, Techno and Acid/House Dance Anthems/-6. body funk.mod
 357ba00f070652299864e6fcca44f736	1	159488	player	uade	Protracker	0	138980	c6d09854	Pop Songs/- Dance and Pop/1980s/Black - wonderful life (synth) - 1986.mod
 3596940a200064f8b2e0cee47deef0f5	1	345139	player	uade	Protracker	0	260286	8ef5866c	Pop Songs/- Dance and Pop/1990s/Felix/dont you want me (light techno) - by decibel.mod
-359ea03e70ce0b88aa9d5a193b878ed0	1	370255	player+silence	uade	Protracker	0	122758	94e4d443	Demos/Mod.SONG#Ždust.Mod
+359ea03e70ce0b88aa9d5a193b878ed0	1	370255	player+silence	uade	Protracker	0	122758	94e4d443	Demos/Mod.SONG#Ždust.Mod
 35a16e8fdf0648cb37b900710a66f9d8	1	275311	player	uade	Protracker	0	423044	5fcc5581	Pop Songs/- Dance and Pop/1990s/Capella - U got possesed by a track.mod
 35aaaef1c0d8d5b3b339f3c482d454ad	1	28915	player	uade	Protracker	0	365546	81689b57	Demos/MOD.game_module16(min).Mod
 35aaaef1c0d8d5b3b339f3c482d454ad	10	20596	player
@@ -1340,6 +1342,7 @@
 35f6d2ee570a9d4b9ed48b1bfd384bcf	0	134631	player	uade	Sonic Arranger	0	16816	f7bef448	Modules for DeliTracker --/Games/SonicArranger/Ambermoon/SONIC.OwnerOfALonelySword
 3610abb212717adc1382ee0b0576b1d3	1	142187	player	uade	Protracker compatible	0	201356	b1651eb1	Pop Songs/- House, Acid, Trance/Technotronic/Technotronic - Pump up the Jam (mix).1989.mod
 3624699b8cc4db3c73845fee2dedc949	1	14408	player+silence	uade	Protracker	0	31326	845454e4	GAMES/Mod.Follin Hiscore.Mod
+36523aab42a92028995f5c097082761b	1	163969	player	uade	Protracker compatible	0	27598	bdb6e8ec	Cracktro/Mod.L.Ö.Ö. - by 4-mat.Mod
 36523ae96413557e5d0b3ee2b15d4ac7	1	193422	player+silence	uade	OctaMED MMD1	0	91400	7c3a474c	MED--/Med.Ethnicolour.Med
 365a4adfdc1f0082a38b7b5f3a9c5d34	1	7676	player	it2play	Impulse Tracker 2.14+	1	243892	77df86f0	Modules for DeliTracker --/Misc Modules/Eclipse music/sml_lofi/SML_LF14.IT
 366693d5084089b9b5cf2409f0990a0e	1	64120	player	uade	Protracker	0	124448	f89c6f10	Demos/Mod.Title Mus.Mod
@@ -1578,7 +1581,6 @@
 3bc2865c41a830a923939bdb549cea80	1	345549	player+silence	uade	Soundtracker II (31 instr.)	0	115988	b38ec995	Pop Songs/- Dance and Pop/1960s and 70s/Air on a G String.by Helmer.mod
 3bcd0050a4269b1c99de49bfc141439d	1	140921	player	uade	Protracker	0	105312	5f9ed486	GAMES/Pinball_Dreams-Beatbox.mod
 3bd63088ffc4777cc669c6898aece4e4	1	96010	player	uade	Protracker	0	149092	2a93565f	Old Time/Classical - Dolce Viola - hnk-dont cry remix.mod
-3bedc47f535fc573d82146afbd26aae9	0	224327	player+silence	libopenmpt	Generic ProTracker or compatible	4	72684	d5506e0b	MODS - My classics--/- NORTHSTAR-Titan.MOD
 3c0378cc26342b063a17aea6c38bf5dc	1	191982	player+silence	uade	Protracker	0	159038	da3c6820	House, Techno and Acid/Modern HardCore/BasicInstinct.mod
 3c0455b8feaf6ca74cf050639c629a1e	1	84616	player	uade	Protracker	0	227006	2078855b	Rock/Country/BRAINBUG - ShininOlBoots.mod
 3c052724f4172b6a186cc8872341f971	1	77724	player	uade	Protracker	0	124768	56144f60	House, Techno and Acid/Modern HardCore/dont stop me.mod
@@ -1704,6 +1706,7 @@
 4010ab64fa14852669cc8f0cb3a1c6e7	2	51220	player
 4010ab64fa14852669cc8f0cb3a1c6e7	3	64020	player
 4010ab64fa14852669cc8f0cb3a1c6e7	4	0	nosound
+402584f85d00c9da02c8182dfc6337c6	1	215531	player	uade	OctaMED MMD1	0	110042	8cd37572	Pop Songs/- TV and Movie/REDDWARF.MOD
 4031fac933f5455a6e63c68555405c9f	1	151312	player+silence	uade	Protracker	0	92568	1ddf5d53	Pop Songs/- TV and Movie/good, bad and ugly.mod
 403363801fa85dfd641215ba2f8b1cfb	1	242055	player	uade	Protracker compatible	0	173350	5160059b	Pop Songs/- House, Acid, Trance/Bomb the bass - Megablast (re-mix)-by moby.mod
 4038a4ca676957fcdbd5ebf169f2be0d	1	376144	player	uade	Protracker	0	206900	cfc5e813	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/+let there be house.mod
@@ -1716,6 +1719,7 @@
 40af54557c7e74dd688e85b2515b12fb	1	369345	player+volume	uade	OctaMED MMD1	0	273942	94bb1c02	Req Med 6 --/dreamer.mmd1.mod
 40b7052bb8fc4e3a395c03dbdb52653f	1	69224	player	uade	Protracker	0	43592	a5e01589	GAMES/Elvira2_ELISH(EL.MOD
 40bf6b827fedc0d7a6aa9aeabaa26185	1	182375	player	uade	Protracker compatible	0	203092	7adec21b	Rock/crazy.mod
+40c1fd127e0d0a78675974c44b6a4882	1	61568	player	uade	Protracker	0	8520	5d402762	Cracktro/Mod.Gonads Cracks.Mod
 40ce62e9691f572df3f29ae7b8814133	1	276857	player+silence	uade	Protracker	0	249302	8157f7b4	Groove and funk/chill/oldskool.mod
 40e18f0cc0acac3a61ee743a90c2cd48	1	61568	player	uade	Protracker compatible	0	11846	8da214eb	Demos/Mod.Tip 01.Mod
 40e40b91876cf6f2d9b9eaa73fa88e6d	1	69224	player	uade	Protracker	0	23948	361c74e0	GAMES/Body_Blows__5.MOD
@@ -1950,7 +1954,6 @@
 47d10841d6cad4eb59c2873e32cb76a9	7	225083	loop
 47d10841d6cad4eb59c2873e32cb76a9	8	6281	silence
 47d3b9d383e2f8e24c73fd7b6bbddabe	1	187091	player+silence	ft2play	FastTracker v2.00	28	869277	78303669	Modules for DeliTracker --/Misc Modules/a_day_without_her.xm
-47d41d2abc45283ac5ad81059262d2d7	0	241733	player+volume	libopenmpt	OctaMED v4 (MMD1)	4	128028	1c70125c	MODS - My classics--/DRILL ACID.MOD
 47ea60b112d92ac3e48da6b9624cec79	1	296846	player+silence	uade	Protracker	0	290700	6204fa7b	CLASSICS/unsorted/BIONIC - Pure Motion.mod
 47fac3b4f7d5e9c57ba225c939e4ac24	1	410807	player+silence	uade	Startrekker (4ch)	0	166614	396a19c3	CLASSICS/Amazing Tunes II/MOD.manda.alt. - Jolyon Myers.mod
 47fac3b4f7d5e9c57ba225c939e4ac24	1	410807	player+silence	uade	Startrekker (4ch)	0	166614	396a19c3	Demos/mod.manda.alt.Mod
@@ -2007,7 +2010,6 @@
 4a70a59a39d1105663ac27725df16b86	1	53872	player	uade	Protracker	0	9872	c0336411	Cracktro/Supplex6.mod
 4a70a59a39d1105663ac27725df16b86	1	53872	player	uade	Protracker	0	9872	c0336411	Demos/Mod.Horrible Saxophon.Mod
 4a7cd0bf694d71fa4edb78c17f785bdd	1	115883	player	uade	OctaMED MMD1	0	135842	65f28229	MED--/Med.Choon Of The Month!.Med
-4a93ab19c8d5f36745e8d83ee2f40a84	0	369576	player+silence	libopenmpt	Generic ProTracker or compatible	4	68356	dde3bda1	MODS - My classics--/- MEMORY DUST.MOD
 4a990c8491b3edb13d6aac33c5652fda	1	61568	player	uade	Protracker	0	24174	67079c5e	Pop Songs/- Dance and Pop/1960s and 70s/Rolling Stones - Ruby-tuesday2 - chip tune.mod
 4aa7538daa781213ca72870c5ddbc7fb	1	46216	player	uade	Protracker	0	29954	9dcafb1a	GAMES/ARABIAN-4.MOD
 4aa7538daa781213ca72870c5ddbc7fb	2	8158	player
@@ -2066,6 +2068,7 @@
 4b5f8f1c724ffb0501c58c6094bb8806	7	924	player
 4b5f8f1c724ffb0501c58c6094bb8806	8	62231	player
 4b5f8f1c724ffb0501c58c6094bb8806	9	1024	player
+4b5f97f5335b40f709e7a11db79c149b	1	1506341	player+silence	uade	MED4 (4ch)	0	63335	18c7fdb1	MODS - My classics--/SLOW.MOD
 4b753d1589d626f774791b0edf4a7448	1	168711	player	uade	Protracker	0	259350	0731e2b8	Pop Songs/- House, Acid, Trance/rushmore remix.mod
 4b76890bec1ead670c281e940fc36631	1	170989	player+silence	uade	Protracker	0	148148	00180d83	Groove and funk/chill/selton.mod
 4b77bff4befa393dd99d3ab4b6f5fc07	1	71816	player	uade	Protracker	0	18030	8e45bab2	Cracktro/Mod.Delight Crack 05.Mod
@@ -2115,7 +2118,6 @@
 4d2f1e119d73442acd8ace41ec9c0318	1	376466	player	uade	Protracker compatible	0	58474	91600042	Demos/Mod.Monty Ingame 02.Mod
 4d35f907376efc19a28a4ec887667e74	1	211472	player	uade	Protracker	0	327536	abc6f4a5	House, Techno and Acid/Modern HardCore/sabotage(1).mod
 4d35f907376efc19a28a4ec887667e74	1	211472	player	uade	Protracker	0	327536	abc6f4a5	Sample Fusion and David Enheden/Sabotage mix.mod
-4d55779376964fa209d501ca4d9c1a85	0	181071	player+silence	libopenmpt	OctaMED v4 (MMD1)	4	244100	5e18cf39	MED--/STARTREK.MED
 4d5ef9cff9f60becfdd959f949d1889e	1	122997	player	uade	Protracker compatible	0	56874	7628cfba	Pop Songs/- Dance and Pop/1980s/Others/DREAMER.MOD
 4d65ef7d2a2e65177faebcc04c837151	1	245672	player	uade	Protracker compatible	0	242206	5120415f	Demos/Kefrens/Mod.Desert Dreams 1a.Mod
 4d733b3412cb431446e955d4a783ddf9	1	82044	player	uade	Protracker	0	72712	f98d4299	Pop Songs/- Dance and Pop/1990s/Ace of Base/Ace of Base - All that she wants (flute midi).mod
@@ -2161,9 +2163,6 @@
 4fac6e73988600494b89d3e94d9c4190	2	129808	player
 4fb541b8f8e612235fc100d6c6adf8d1	1	300128	player	uade	Protracker	0	61200	e5e6ab2a	Demos/Mod.Adsr - The Dub.Mod
 4fb6e1b500be1561f5591aa81acfb13a	1	222704	player	uade	Protracker	0	562832	ba28e836	Groove and funk/electro-groove.mod
-4fc69c8514e9e4c8eb5d61d525cedeb2	0	172143	player	libopenmpt	Startrekker	4	56572	77821ca3	MODS - My classics--/SHADOWoftheBeastII.MOD
-4fc69c8514e9e4c8eb5d61d525cedeb2	1	7668	player
-4fc69c8514e9e4c8eb5d61d525cedeb2	2	102147	player
 4fcd8b35c8c07d371a440194669ed82a	1	84616	player	uade	Protracker	0	23638	d546b78e	GAMES/Body_Blows__7.MOD
 4fd2169065fb4844e6154a31efb32dc2	1	255542	player+silence	uade	Protracker compatible	0	686186	79855fec	Pop Songs/- House, Acid, Trance/90s House and Dance MegaMixes/House Mixes/house e3.mod
 4fd2985634bb6df686926cb154ff9c37	1	35647	player	uade	Protracker	0	283678	5d9fd993	Pop Songs/- Rock/Queen/Queen - We Will Rock You (intro only).mod
@@ -2198,8 +2197,6 @@
 514883a68082d1126a6bb03bcd08adf5	1	10368	player	uade	Protracker	0	8896	56aa93d5	Pop Songs/- Dance and Pop/1990s/Others/Duran Duran - ordinary world(8 bit intro).mod
 514e139cbc9477c373a2b445a69d816d	1	290141	player	uade	Protracker	0	262686	4d37fe44	CLASSICS/unsorted/RANDALL - Lookin For Weekend.mod
 515cd49370ebc8eb0b28bb748259e4de	1	107645	player	uade	Protracker	0	53824	c7388b7e	GAMES/introtune.mod
-516201c88470631660e0c9cfa1a8ca3f	0	182489	player+silence	libopenmpt	Generic ProTracker or compatible	4	89668	3936a753	MODS - My classics--/TEKKNO-Rhythm (powerpacked).MOD
-516201c88470631660e0c9cfa1a8ca3f	1	7668	player
 51707a8389cbd67ca83a926c6fd5cf9f	1	354603	player	uade	Protracker	0	213038	7291f9f2	House, Techno and Acid/House Dance Anthems/-12. sunshine.mod
 517e3f1a82994b21a1372a3588e8a3ac	1	378113	player	uade	Protracker	0	840000	ecf612a3	House, Techno and Acid/House Dance Ballads/the will of the wipe (trance explorer 2).mod
 5183c65c611d7a045ef838c4fbb71079	1	292894	player	uade	OctaMED MMD1	0	307958	5f0170a8	GAMES/DesertStrike.MED.mod
@@ -2247,7 +2244,6 @@
 532cd53203de7bdd45e5c97038e362e3	1	295506	player	uade	Protracker	0	355472	73bdba8c	Pop Songs/- House, Acid, Trance/Suburban Base - Dance Diverse 2 - keep on moving.mod
 532fecc4a56018f5331c63cb588130ec	1	96653	player	uade	OctaMED MMD1	0	88324	e20f83e6	MED--/Med.Title.Med
 533585c65d62d55f111e97cc59ae9ff5	1	86525	player	uade	Protracker	0	18336	f4d67a89	Demos/Mod.Eastside.Mod
-5336bced0bcc0cea7970ac9fae05850c	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	3788	5a570a84	Cracktro/Mod.Gonads Cracks.Mod
 5337b893e6b6d75ff9510cb515d72729	1	230541	player	uade	Protracker compatible	0	360916	2ed3a516	House, Techno and Acid/Deep House/dog a baseline.mod
 533983cc1f45984e2a78c47e0cfcfae8	1	222709	player+silence	uade	Protracker	0	468692	6a6796c1	Pop Songs/- Dance and Pop/1990s/Capella - U Got 2 Know - by tricktrax.mod
 534c1072f6c331d1b136afc4fe19b4bb	1	39754	player+silence	uade	Protracker compatible	0	218118	ae001d6c	Pop Songs/- Rock/Roxette - Joyride (Karaoke).1991.mod
@@ -2286,7 +2282,6 @@
 5417404fe64bb895ae1696f3caf6306c	1	442696	player	uade	Unic Tracker	0	163246	a1e6d730	Demos/mod.guardian dragon.Mod
 5420a882507c8a8766fab96a5bc916db	1	313731	player	uade	Protracker	0	160078	8ce0b6a0	GAMES/kid_chaos_level_4-3.mod
 5420a882507c8a8766fab96a5bc916db	1	313731	player	uade	Protracker	0	160078	8ce0b6a0	Pop Songs/Amiga Game Pop Songs/kid_chaos_level_4-3.mod
-5420bbc93b5c3f5d923bbd10ff5dfbeb	0	316927	player	libopenmpt	OctaMED v4 (MMD1)	4	202176	58163623	MODS - My classics--/Odd Mix.MOD
 54246a7818aa238a75d7c6243ec78292	1	53872	player	uade	Protracker	0	59788	309ab6e9	Pop Songs/- Dance and Pop/1980s/Madonna/Open your heart (synth).mod
 54698849416d588c312d8b1b807e5f1c	1	286608	player+silence	uade	Startrekker (4ch)	0	95328	b4bf245e	CLASSICS/hard-rockin - the judge.mod
 54698849416d588c312d8b1b807e5f1c	1	286608	player+silence	uade	Startrekker (4ch)	0	95328	b4bf245e	GAMES/Hard-rockin.mod
@@ -2773,6 +2768,7 @@
 643259bce4b38b2ef2225589553f530a	1	150827	player	uade	Protracker	0	78856	3b18c734	Pop Songs/- Rock/Daisy Chainsaw - Love Your Money.mod
 64347b826fbf9ef3b9f85901fa2f78e5	1	13563	player	uade	Protracker compatible	0	28284	7abd75f9	Pop Songs/- Dance and Pop/1980s/Neneh Cherry - Buffalo stance (intro).mod
 6436f55c55f1c384ab266fc90c0041ae	1	159832	player+silence	uade	Protracker	0	383902	122aeddb	Rock/sunshine(2).mod
+643f5c9899f355d293ec7f9c46f933bf	1	15472	player	uade	Protracker	0	5200	091196fb	Cracktro/Mod.Wanted Team Crack 02.Mod
 644923a2decfa57d65e85f2a733398ab	1	136620	player	uade	Protracker	0	471444	2df1b75f	Pop Songs/- Dance and Pop/1960s and 70s/Amiga mod - it's alright.mod
 646159c8c14b94275f6096857ebd90f4	1	120324	player	uade	Protracker	0	27410	2b625d81	Demos/Mod.Fireballs.Mod
 6462c7de62cdd8e848763cea8d78fbbd	1	146733	player+silence	uade	Protracker compatible	0	115488	d337b107	Pop Songs/- Dance and Pop/1990s/Snap - The power (snaps basic mix).mod
@@ -2900,6 +2896,7 @@
 6881124d3fd8ee8f505cab63aa197f0c	1	292050	player	uade	OctaMED MMD2	0	843594	5b741987	8 Voice --/hands of fate/djnick - hands of fate.med
 6881dfd3b8facd3a93629d2e8beb25d9	1	84616	player	uade	Protracker	0	83110	6aa23892	Rock/do me right!.mod
 68887ab52ddf063cb8519676ddc19168	1	319827	player+silence	uade	Protracker	0	198172	d04da5b5	House, Techno and Acid/Jungle, Garage, Rap/fantasie.mod
+689f9209fdf201ae7f139a177e76d1a1	1	130791	player+silence	uade	OctaMED MMD1	0	219060	9c9ea364	MODS - My classics--/. SANITET.MOD
 68b47cd7d000bfaa9f97b542b7f9e83f	1	222845	player	uade	Protracker compatible	0	205624	586dccad	House, Techno and Acid/House oldskool/mod.grosshouse.Mod
 68bbc8f4ef70fc2343497125a15f7eff	1	220393	player	uade	Protracker	0	318456	da0e20a8	CLASSICS/unsorted/RANDALL - Move Your Body.mod
 68bcc05259f3e8872e8bc09a4a86b92f	1	238318	player	uade	Protracker	0	90212	fdfc6cfb	GAMES/DojoDan_LEVEL-1.MOD
@@ -2921,7 +2918,6 @@
 68ffa30af1da2dca75e621bd2c3fe7a7	1	379902	player	uade	Protracker	0	174780	820ea38d	German Synth --/WEIRD_LI.MOD
 6909d9f881f92126f6fa67466efad37a	1	83330	player	uade	Noisetracker 1.x	0	25872	53d5b88a	Demos/Kefrens/Mod.Blues.Mod
 691305ed5aadc65124ec2316d4cb0010	1	176769	player	uade	Protracker compatible	0	91170	fbe689e7	Demos/Mod.Granni Got Run Over.Mod
-691d63d5899ffb54c9ed3256c614a540	0	298338	player+silence	libopenmpt	OctaMED v4 (MMD1)	4	115560	5d2bc373	MODS - My classics--/. Techno cool acid.MOD
 6945ad1c7a4d8e233918ba929dbbb1a5	1	311159	player	uade	Protracker	0	127104	2f68513a	House, Techno and Acid/90s Dance House/MOD.DIZZY.mod
 6947d6a7937da4b44250279f576246c6	1	245893	player	uade	Protracker	0	69424	f651bcb4	Demos/Mod.Crystal Hammer.Mod
 694e9d58f328e1f37c69a7ed13242b6a	1	205367	player+silence	uade	Protracker	0	121642	d58c5365	Groove and funk/chill/white night.mod
@@ -2975,6 +2971,7 @@
 6b140f34f1e3d131cbb8d8f66d043110	1	198531	player	uade	Protracker	0	59282	76943bf3	GAMES/Heimdall.MOD
 6b1a2d6a44685889fb8cc4838173bb60	1	105836	player	uade	Protracker compatible	0	47344	9c78f662	German Synth --/WHATSUP.MOD
 6b2e868edccbbff5874bb8bd2e4ef06d	1	130391	player	uade	Protracker	0	475710	567c15ae	CLASSICS/unsorted/X-CEED - berlin-1931AD.mod
+6b33775baeaaa380509b1432062d0711	1	1017634	player	uade	MED4 (4ch)	0	53448	a4a70e01	MODS - My classics--/VICTORY.MOD
 6b3555552188f5aacca41ebb9d9bff47	1	241824	player+silence	uade	OctaMED MMD0	0	433426	e2976e5d	Pop Songs/- TV and Movie/Bartman (PT).mod
 6b38db53cb3096b6a41cbb5d6d278950	1	76082	player+silence	uade	Protracker compatible	0	37858	549b5169	GAMES/JoeClark.MOD
 6b5161c96b720dacd577215d824471c4	1	173011	player	uade	Protracker	0	513146	69077738	House, Techno and Acid/Techno and Garage/get-it-into-trance.mod
@@ -3105,7 +3102,6 @@
 702f17dd2e75c6a83de906be7a783694	1	184445	player	uade	Protracker compatible	0	72950	f0ec823e	Pop Songs/- Rock/Megadeath - Hangar18.mod
 703caa1ef0b334686ca3b40d1058e090	1	162728	player+silence	uade	Protracker	0	99768	a710ca0b	Pop Songs/- Dance and Pop/1990s/Felix/Felix - Don't You Want Me - by beathoven.1993.mod
 7041252fd43bb28fb09def761eb7f2d0	1	145361	player	uade	Protracker	0	96064	be5052c9	GAMES/DARKMERE.MOD
-70420cc121b988101e46525eadf33eb5	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	3000	82efeac4	Demos/Mod.P60a.Mod
 70656caae1de1be1a71730b217b0e4fa	1	126835	player	uade	Protracker compatible	0	122620	d2bd20e5	GAMES/Brat.mod
 7071dbf116ee40ed8dca79ba7a77f9a4	1	143412	player	uade	Protracker	0	350964	aa4237d9	Pop Songs/- Dance and Pop/1960s and 70s/Pink Floyd/Pink Floyd - Atom Heart Mother.1970.mod
 7076bda3963a6db32a84074e9af2c802	1	215599	player+silence	uade	Protracker	0	437438	ca1ab72c	Pop Songs/- Dance and Pop/1990s/Nightcrawlers - Push The Feeling On (7inch remix).1995.mod
@@ -3129,7 +3125,6 @@
 714132296d128352ab704587c4ab28af	1	263627	player+silence	uade	Protracker	0	217580	5291027b	Pop Songs/- Dance and Pop/1990s/Stereo MC's - Step It Up (Acid Jazz mix V1 by ginseng).mod
 7143536c8a0e1dfbea771436ed268191	1	61568	player	uade	Noisetracker 1.x	0	39783	a7592272	Pop Songs/- Dance and Pop/1960s and 70s/Beatles/blakbird.mod
 71465f5b5b8948c723d2660edab13dc6	1	116586	player	uade	Protracker	0	165132	1307591b	Rock/heaven can wait.mod
-71604119f9d65b0a6757055765832440	0	130087	player+silence	libopenmpt	OctaMED v4 (MMD1)	4	151928	215373f5	MODS - My classics--/. SANITET.MOD
 7167bbda012283bafaa66b05a5407eaf	1	302328	player+volume	uade	Protracker	0	389512	808c6211	GAMES/slam tilt/mod.pirate-sounds
 717cf9c013e74df3d40eb09cb8d4a58b	1	46216	player	uade	Protracker	0	40228	019a9ec1	GAMES/ULTIMA_F.MOD
 7188f6437e1dfaa27272a9b695631373	1	596839	player	uade	Protracker compatible	0	731942	1e8e241d	House, Techno and Acid/Techno and Garage/basemental.mod
@@ -3233,6 +3228,7 @@
 74de743d0b3cb8fbef3cc0aa9ec6fb67	1	194869	player+volume	uade	Protracker	0	267964	9bd489d4	Old Time/a gun for ringo.mod
 74e256ce8ab0dfa56b1b9ca44abdca29	1	235043	silence	uade	Protracker	0	701070	3abee1fa	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Poison - remix by icebeat.mod
 7500338f8d36dbc90f157f3b7d8c5afd	1	316732	player+silence	it2play	Impulse Tracker 2.14+	16	474346	31cf4573	Pop Songs/- TV and Movie/JamesB living daylights remix.s3m
+75039350853753f5878ae76332d4b1d8	1	127035	player	uade	Startrekker (4ch)	0	95030	1c86f1c6	MODS - My classics--/POTBLACK.MOD
 75074430fd3de1c121b37227f981e5b9	1	195215	player	uade	Protracker	0	235080	a80c4fe1	Groove and funk/chill/MOD.langsam(sledge-h.)groove cherry.mod
 75151d0a204259eddcbf34cb743c5972	1	199588	player+silence	uade	Protracker	0	393088	d0eca4e9	Rock/wild-hog_walk.mod
 751b42cc37c1b3f8d80dfce88d862ad1	1	166155	player+silence	uade	Protracker	0	30698	75651e9b	House, Techno and Acid/Modern HardCore/MOD.303 - 2 - 'slope#1'.mod
@@ -3308,6 +3304,7 @@
 782a74a73a3a266c36a69b147b88cbff	1	277562	player	uade	Protracker compatible	0	122644	81fa3515	Rock/patience.mod
 7832b475f0136d7150a2cd9e33e31339	1	70020	player+silence	uade	Protracker	0	182896	cd3d7b04	Groove and funk/miles away.mod
 783c9d5c42742822ab577948bebc39f2	1	253569	player	uade	Protracker compatible	0	107398	a3c45df5	Demos/Kefrens/Mod.Song 06-2.Mod
+783d4f537e382a2c3da616da112a147b	1	115180	player	uade	OctaMED MMD0	0	155108	e0f18e66	MED--/Med.Amiganuts.Med
 784f7b7a86b795eda88fac92ece83232	1	134551	player	uade	Protracker	0	254774	7ed65d56	Pop Songs/- Dance and Pop/1980s/Paul Hardcastle﻿ - The Wizard .TOTP.1986.mod
 78535103586490846010f566f33c0962	1	66992	player+silence	uade	Protracker	0	139248	00d6f842	Groove and funk/volume.mod
 785bf4eb91b7b5295aa6c3ce5c0e2c2e	1	317951	player	uade	Protracker	0	529454	0bd5f9e5	Pop Songs/- Dance and Pop/1980s/Kraftwerk/computer world.mod
@@ -3319,6 +3316,7 @@
 786863f56cb6948d88995f57d5aa6b4d	1	96874	player	uade	Protracker	0	87800	4284335e	GAMES/minskies-title.mod
 7868b2bf8908d76cbe272e7ea9234f4c	1	357256	player	uade	Protracker	0	191232	2938d18e	House, Techno and Acid/Rave and Trance/flow-into-trance.mod
 7880e3069ac08b076025a6dbd8f9dc89	1	7796	player	uade	Protracker	0	84744	67cb7561	Demos/Mod.Relax VB.Mod
+7888f047fd7d7f65e9db006c2bb9de7c	1	61568	player	uade	Protracker	0	8274	a80fbebf	Demos/Mod.P60a.Mod
 7888f0b87e6ab10a35edd3eadac22a31	1	507561	player	uade	Protracker	0	250008	b5ee5822	Pop Songs/- House, Acid, Trance/Bizarre Inc - playing with knives (speed).mod
 7894ea2db0b1b66ef205912204d47fd4	1	29096	player	uade	Protracker	0	80598	17f62eee	Pop Songs/- House, Acid, Trance/90s House and Dance MegaMixes/Digital Concert 6 - Flash Prod. Commando/digi6-6.mod
 7896e53440952a095627734531984afd	1	127116	player	uade	Protracker	0	326684	963d2cb5	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Out of Space (mix remix by king frost).mod
@@ -3519,6 +3517,7 @@
 7c2d4c4c952cc6eb068174172d5f0376	1	137505	player	uade	Protracker	0	229108	ca76f8e8	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/Pop Songs/no limit (5).mod
 7c39aa8371f58d5a9eadaa9567c12ce7	1	147883	player+silence	uade	Protracker	0	1414404	ed1ec66c	CLASSICS/unsorted/VINNIE - The Groovy Element.mod
 7c3de44a280930a9a1864456636d3ad2	1	141523	player	uade	Protracker	0	843436	d08677d9	Pop Songs/- Dance and Pop/1980s/Mike Oldfield/Mike Oldfield - Moonlight Shadow.1983 (good).mod
+7c4511cfccb3579b4a15c34e5d4c216f	1	277288	player+silence	uade	OctaMED MMD1	0	170466	081eaf82	MODS - My classics--/. MONDAY.MOD
 7c5e2c9711d157ebbaa748fe27164b01	1	457626	player	uade	Hippel-COSO	0	182334	773697b7	Modules for DeliTracker --/Games/Hippel-COSO/dragonflighti/HIPC.DRAGONFLIGHT_TITLE
 7c74d49291d5f50e83ff0a3bc9964fdb	1	23168	player	uade	Protracker	0	12156	98b43fa2	Cracktro/Mod.Insane Trainer 01.Mod
 7c755fe7108b92d68c5392a585aebf03	1	155438	player+volume	uade	Protracker	0	38308	14cc7c9d	House, Techno and Acid/Deep Chill/jammdawn.ultra chill.mod
@@ -3587,6 +3586,7 @@
 7f9e1e4688de39e7ee6d27fc0e77553f	2	313750	player+volume
 7f9e1e4688de39e7ee6d27fc0e77553f	3	286745	player
 7f9e65e6529c314c98265037521e01bb	1	123981	player	uade	Protracker	0	334088	1ec158c8	Pop Songs/- Dance and Pop/1980s/this is ska 'remix'.mod
+7fa6e90ed6da8368a6e598020300548a	1	230541	player	uade	Protracker compatible	0	121310	71b082e5	MODS - My classics--/SHOUT IT OUT.MOD
 7fb61eb51d44b1a1d6750f1968737b34	1	96130	player	uade	Protracker	0	227960	96aec17b	Demos/Mod.Cp Hus I Skogens.Mod
 7fbafbb93669592a55c167786c949f91	1	70530	player	uade	Protracker	0	11918	2a2fba4a	Demos/Mod.Bullets In The Air.Mod
 7fbdbff4a13a38d6b701add9c8787e85	1	38520	player	uade	Noisetracker 1.x	0	33711	fe871511	Pop Songs/- Dance and Pop/1960s and 70s/Beatles/majesty.mod
@@ -3607,6 +3607,7 @@
 804d7b3198b12694d9e4d099d7aeb6f2	1	46216	player	uade	Noisetracker 1.x	0	26340	8cd7b998	GAMES/Blastar - intro.mod
 805738eab035324d3cb71b52c9773d48	1	108971	player	uade	Protracker	0	187072	c67a4e85	Pop Songs/- Dance and Pop/1980s/Jean-Michel Jarre/- Amiga Captain_blood_theme.mod
 805738eab035324d3cb71b52c9773d48	1	108971	player	uade	Protracker	0	187072	c67a4e85	Pop Songs/Amiga Game Pop Songs/- Amiga Captain_blood_theme.mod
+807a29250f98bc85ec2f86130865562d	1	215149	player	uade	Noisetracker 1.x	0	56930	9c3023f4	MODS - My classics--/NONAME.MOD
 807a9d599c397a7bcb5e7288249bc4d2	1	240105	player+silence	uade	Protracker	0	717838	956c92a9	House, Techno and Acid/Gabba and Breakcore/Hoffman - Drop The Panic.mod
 80856b90580a494a27a7148df647ac56	1	61568	player	uade	Protracker	0	62340	c93ee01c	Pop Songs/- Dance and Pop/1980s/Others/simple minds - dont you.mod
 8089c4752f8b2c6819de2cba3522dacb	1	188584	player	uade	Protracker	0	148462	cdc83b3a	Pop Songs/- House, Acid, Trance/Josh Wink - Higher state of consciousness (remix).mod
@@ -3642,6 +3643,7 @@
 817291e6c5125c249ca09f77e2081acd	5	74446	loop
 817291e6c5125c249ca09f77e2081acd	6	29739	player
 8175cb7f94688387208d6fff17a2dfcb	1	261245	player	uade	Protracker compatible	0	180186	986dd85b	Pop Songs/- Dance and Pop/1990s/Dr. Alban - Its my life - by Maverik.mod
+817dcbb7970da2c8ae2a5ae50405126f	1	198226	silence	uade	Protracker	0	230678	b104aedf	MODS - My classics--/ATripToFunkyla.mod
 8183a6bad2d53f073747de995dc5b507	1	548312	player	uade	Protracker	0	270622	381cc67d	Pop Songs/- House, Acid, Trance/L.A. Style - James brown is dead/MOD.james brown is dead (time guardian mix).mod
 8190c4060d4a18cedfdad48b0b5b60e4	1	184445	player	uade	Protracker	0	145258	dfe468e5	GAMES/BODYBLOWS-2_TITLE.MOD
 8190c4060d4a18cedfdad48b0b5b60e4	1	184445	player	uade	Protracker	0	145258	dfe468e5	Pop Songs/Amiga Game Pop Songs/BODYBLOWS-2_TITLE.MOD
@@ -3649,7 +3651,6 @@
 819afac76dd2a06e9088ad284c5478cf	1	159284	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	377057	58ed66c6	Modules for DeliTracker --/Misc Modules/BREED - Nirvana (nevermind).S3M
 81a750d3fcf9ae27e2ed49a9f9c1de40	1	153721	player	uade	Protracker compatible	0	205942	9bc8c5a6	Pop Songs/- Dance and Pop/1990s/Reel 2 Real - move_it.can you feel it baby mix-2.mod
 81ad8efe2b3dfb3bd5dd7d5ffe63a00a	1	285067	player+silence	uade	Protracker compatible	0	560782	1a8912de	House, Techno and Acid/Modern HardCore/insenity.mod
-81b52b98a0f39697261d5681e5300926	0	274390	player	libopenmpt	Startrekker	4	62188	2ab2ae88	MODS - My classics--/SHADOWoftheBeast.MOD
 81bee078abb6ac20fc73e29a12aad179	1	108931	player	uade	Protracker	0	74284	587534bd	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/Pop Songs/no limits remix.mod
 81ccb24a8e8720428b6638156283a453	1	235323	player	uade	Protracker	0	179180	427551ad	Pop Songs/- TV and Movie/Benny hill remix.mod
 81de11517e3ef4892cb69dc808d6f02a	1	18044	player	uade	Protracker	0	116246	3a08e17a	Pop Songs/- Dance and Pop/1960s and 70s/james brown (intro only).mod
@@ -3684,7 +3685,6 @@
 82f9bf16c31a98c46ced8a6b2dc2f281	1	456455	player+silence	uade	Protracker	0	502986	b017a071	CLASSICS/unsorted/JUICE - Infinite Red Shift.mod
 82faf466cc981dc0110063541adfbca3	1	146045	player	uade	Noisetracker 1.x	0	98405	f810f882	Pop Songs/- Dance and Pop/1990s/Others/d.j.bobo.mod
 82ff6ca995822576b92e160d95956c68	1	61568	player	uade	Protracker	0	25940	7a8dbe59	Demos/Kefrens/Mod.Dig It Twice.Mod
-8308b2870d429fdc15d22edb6d40ed41	0	276153	player+silence	libopenmpt	OctaMED v4 (MMD1)	4	127004	11bd9f60	MODS - My classics--/. MONDAY.MOD
 8325525a6e5812b2c00851bb4e2894f6	1	249731	player	uade	Protracker	0	95342	8e3d9cd8	LSD-Grapevine --/GV #11 - Mellow Roll.Mod
 83281858cedfb1710f9dee6929b97c0e	1	148358	player	ft2play	Fasttracker	8	406318	3f11ea74	Pop Songs/- House, Acid, Trance/Leila K. - Open sesame (sonix mix).mod
 8339fb6d087b819b9bedc19662e6dfb1	1	246978	player	uade	Protracker	0	311398	b78ee6ac	House, Techno and Acid/90s Dance House/- FEEL-IT.mod
@@ -3762,8 +3762,6 @@
 86023f6754cf6efc7db948fc4874d136	1	71816	player	uade	Protracker compatible	0	61336	699c5deb	German Synth --/UPFRONTT.MOD
 860d9e1995f4342ae54057e9b5fc558f	1	192141	player	uade	Protracker	0	59998	fe32bc4a	GAMES/CARVUP_TITLE.MOD
 860d9e1995f4342ae54057e9b5fc558f	1	192141	player	uade	Protracker	0	59998	fe32bc4a	Pop Songs/Amiga Game Pop Songs/CARVUP_TITLE.MOD
-8632fe7f320335dc276b034ea0cdcf64	0	153371	player	libopenmpt	Generic ProTracker or compatible	4	41832	6b46a6f3	MODS - My classics--/TORVAK.MOD
-8632fe7f320335dc276b034ea0cdcf64	1	75795	player+silence
 86472aacd00c585fafdc9651785aeb18	1	138369	player	uade	Protracker	0	88606	3d2f6640	GAMES/Alastair Brimble/idea2 (superfrog demo).mod
 8647e8b556270b7fbd2c8b8213ee878c	1	207493	player	uade	Protracker	0	104238	f5b10db0	LSD-Grapevine --/GV #15 - Just Add LSD.Mod
 866073b99d43b5dbf750175ebb216544	1	199455	player	uade	Protracker	0	1155140	4923f5d5	CLASSICS/unsorted/JUICE - Octarine Calx.mod
@@ -3928,7 +3926,6 @@
 89f7b9cec01629912446e81ce997e481	3	366172	silence
 89f7b9cec01629912446e81ce997e481	4	2592	player
 89fdff77931bf48f54e82baabc8d4aa3	1	49463	player+silence	uade	Protracker	0	376106	1b8a43c2	Old Time/ba'rock.mod
-8a0a66dafa830a0ed110404d23049925	0	214345	player	libopenmpt	OctaMED v4 (MMD1)	4	74432	9d9fafe2	Pop Songs/- TV and Movie/REDDWARF.MOD
 8a0d34b189eab9579d64225f1ccfe9ca	0	20817	player	uade	Action Amics	0	140880	6d31f748	Modules for DeliTracker --/Games/Actionamics/Dynablaster/Dynablaster.AST
 8a0d34b189eab9579d64225f1ccfe9ca	1	25680	player
 8a0d34b189eab9579d64225f1ccfe9ca	10	3697	player
@@ -4306,6 +4303,8 @@
 964a8be1491b83db6fd9ada1b2b324be	1	40289	player	uade	Protracker	0	157118	50df0732	Demos/Kefrens/Mod.Shut Up And Sleep.Mod
 965dc9e391151b218ef404eb1d652582	1	339271	player	uade	OctaMED MMD0	0	92576	096bb72d	MED--/Med.Toccata.Med
 965f4de908139c0995d7c4c5aebf68bc	1	18672	silence	uade	Protracker	0	27718	2c9787c9	GAMES/Mod.Flashback Logo.Mod
+966968d7b228ca580c37ab6099907365	1	172529	player	uade	Startrekker (4ch)	0	93516	7db1a8b9	MODS - My classics--/SHADOWoftheBeastII.MOD
+966968d7b228ca580c37ab6099907365	2	135797	player
 9679305c01c7e9e1769dc88140fe853d	1	175925	player	uade	Protracker compatible	0	165260	23aac5d5	Pop Songs/- Dance and Pop/1960s and 70s/Pink Floyd/Money (by W.T Toms).mod
 968c01753b552265e7c0308efbd68979	1	208317	player	uade	Protracker	0	372958	1260082f	Pop Songs/- Dance and Pop/1990s/Doop - Doop.1994.(PT).mod
 96b77e5a99e94d459b88bc346257dc1c	1	129125	player	uade	Protracker	0	160966	674a412a	House, Techno and Acid/Rave and Trance/ecstacy-(tg'94).mod
@@ -4349,7 +4348,6 @@
 98b8cf93fe6b604b264adb75d3ff18b3	1	55520	player	uade	Protracker compatible	0	71778	1da75f24	Pop Songs/- Rock/Metallica/miladalsskriket.mod
 98c6beb9cc9fe56e1e01d1f00fa265d1	1	232872	player	uade	Protracker	0	318222	f2b6a373	Sample Fusion and David Enheden/another day(1).mod
 98d09dcd795f2f242946cb57b8b59521	1	379661	player	uade	Noisetracker 1.x	0	163319	cc5df0c6	Pop Songs/- Dance and Pop/1980s/Others/Debbie Gibson - we could be together (midi).mod
-98d9238c402d17b69a4cad08c9d3546d	0	83830	player	libopenmpt	OctaMED v4 (MMD1)	4	44912	af27fbcc	MED--/SKIDMARK.MED
 98fae50f2dc924ee5b427537410943a6	1	328335	player+silence	uade	Protracker	0	116424	f409c2f1	Pop Songs/- Dance and Pop/1980s/Madonna/perhaps/where's the party!!.mod
 98fc3e86950df1323e96d1b7b70b70ab	1	376537	player+volume	uade	Protracker compatible	0	228950	35a48d8e	Pop Songs/- House, Acid, Trance/DJ Vex - Quadrophonia (T.D.X).mod
 9905f897da9d52edc7f7a6abb42e4789	1	172331	player+silence	uade	Protracker	0	134992	300f5115	GAMES/CARDIAXX-1.MOD
@@ -4369,12 +4367,14 @@
 99aa3002807245c6fd8568dbb06ae01c	1	280455	player	uade	Protracker	0	331274	0c6552e7	Pop Songs/- Dance and Pop/1960s and 70s/John Lennon Plastic Ono - Give Peace the Chance (speed mix).mod
 99b1c9ffb7045fa4449395be7312e8d9	1	41193	player	uade	Protracker	0	9974	975d3d46	Demos/Mod.60 Fuhrer.Mod
 99d71b2a647c9d911437727dc68d7d8b	0	14447	player	uade	SoundMon 2.2	0	1808	41d07151	Modules for DeliTracker --/Games/SoundMon 2.2/aztecchallenge/Aztec_zon.BP
+99db6369cbea69220482a4b21ef12b59	1	265003	player	uade	OctaMED MMD1	0	148864	0f63095e	MED--/Med.¸1991 S4F Kingsize!.Med
 99e66caa24a0c7bb6349653fa48c2a6c	1	350628	player+volume	uade	Protracker	0	1840824	1adb3e73	Pop Songs/- Dance and Pop/1990s/Corona - Baby Baby (spacebrain remix)1991.mod
 99fc5b0ff5fdef5b5ac48371bb057e22	1	320869	player+silence	uade	Noisetracker 1.x	0	116054	66db2e76	Pop Songs/- Rock/GNR - Sweet child o mine (synth).mod
 9a0bbb1893d52ca93879580d9f5c8f33	1	192844	player	uade	Protracker	0	69388	493010c6	GAMES/PINDR-CHOOSE_A_GAME.MOD
 9a1292b07febd61d4f4e325537253dd2	1	177240	player+silence	uade	Protracker	0	341116	f07befce	House, Techno and Acid/Gabba and Breakcore/mod.justice_phantom_ii.mod
 9a3b73e0a1a630a49fc3de25187804ba	1	469763	player	uade	Protracker	0	250110	cd12c953	House, Techno and Acid/90s Dance House/- the feeling.mod
 9a5e09c21b156663d44a7c0d6150cb76	1	402100	player+silence	uade	Protracker compatible	0	303016	9bc8b49d	Pop Songs/- Dance and Pop/1980s/New Order/Bizzare Love Triangle (new order).mod
+9a685ca36f0c94eb6ef57d94909e40d2	1	84777	player	uade	OctaMED MMD1	0	70812	47f557b4	MED--/SKIDMARK.MED
 9a755d393e6bdb0cd7e9b1dc698fd569	1	199694	player+volume	uade	Protracker compatible	0	833338	ca9a3dab	Pop Songs/- Dance and Pop/1990s/U96 - Love Religion - mix 1995.mod
 9a808b7562ea6b1bfa111d5be202385d	1	308527	player	uade	Protracker	0	125172	c4d0e4bb	Demos/Mod.Xmas Mix.Mod
 9a88d58be4273cee82a57215009b75a5	1	107645	player	uade	Protracker	0	281230	79c8de9e	German Synth --/German pop/- U4IA.MOD
@@ -4435,6 +4435,7 @@
 9c7c8138bc3d26cc4672f0dbd0a4b509	1	215798	player+silence	uade	Protracker	0	154808	7eb15ca0	House, Techno and Acid/Modern HardCore/Amiga. black_striker.mod
 9c90b196c7b6b5a3c8a10b51ab18d406	1	224131	player	uade	Protracker	0	50400	27ee838f	GAMES/HERO-QUEST_PRESENT.MOD
 9c99ef1dc8590f8416ddba9157302bef	1	325406	player+silence	uade	Protracker	0	104116	79b32c9b	House, Techno and Acid/Rave and Trance/- rescue freedom mix.mod
+9c9e91ee84a6fea26bb9fbfda8973fa7	1	182658	player+silence	uade	Protracker	0	129414	993ddf54	MODS - My classics--/TEKKNO-Rhythm (powerpacked).MOD
 9ca02889a5025336b240376c3f95a311	1	180343	player+silence	uade	Protracker compatible	0	101928	ae886ac1	Demos/Mod.Cool.mod
 9ca51bccdbe83548ff054b919f95580f	1	438250	player+silence	uade	Protracker	0	1320474	2b3728dd	Pop Songs/- Dance and Pop/1990s/Morcheeba - Col (fluorescent sea ml12 dub mix) by Spectra.mod
 9caa666354189ac2183903c597fc91fe	1	99968	player	uade	Protracker	0	127224	52fee524	Pop Songs/- House, Acid, Trance/90s House and Dance MegaMixes/House Mixes/house 7.mod
@@ -4487,7 +4488,6 @@
 9f035591d2aed407342aa59dba2975f9	1	46799	player	uade	Protracker	0	43866	facce365	Modules for DeliTracker --/Misc Modules/Eclipse music/nf-coitu.mod
 9f07eb12e6878b080bf4131aa819c122	1	130693	player	uade	Noisetracker 1.x	0	40496	2ab78f1e	German Synth --/WAR.MOD
 9f109bff26b2e3d1a5fbf3232e4548c8	0	437089	loop	uade	UADE	0	36268	43aca189	Modules for DeliTracker --/Games/battle squadron/Custom_Versions/cust.intro_and_title
-9f3a192af02ff7b13e0316ca849c6ccd	0	152832	player	libopenmpt	Generic ProTracker or compatible	4	99644	928339b6	MODS - My classics--/TOXIC.MOD
 9f3b585dbaeaf6121ee976558bb4beb5	1	196039	player	uade	Protracker	0	496366	edae9fa0	House, Techno and Acid/Acid House Dance/- Synergy.mod
 9f4a42858176b801580b692df8291d64	1	140921	player	uade	Protracker	0	61038	c12078b5	GAMES/BUBBLE&SQUEAK-FACTORY.MOD
 9f4dffbcee0a490582ef1983915f50bf	0	123861	player	uade	Sonic Arranger	0	31884	5b06df8d	Modules for DeliTracker --/Games/SonicArranger/Ambermoon/SONIC.PloddingAlong
@@ -4636,7 +4636,6 @@ a44579c83b9025a2ff602493f727814e	1	411570	player	uade	Protracker	0	314458	3cf211
 a478e50032f416e8d1daff3cd9c44f32	1	262531	player	uade	Protracker	0	318288	451c1d22	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Wind it up (Remix by Trace).mod
 a481008cbe2e3e2ecd720c3560f93844	1	205001	player	uade	Protracker	0	216298	bffd2aac	House, Techno and Acid/Modern HardCore/deeper deeper - hardcore.mod
 a48c0ae65c666e58fdd41ae93857558e	1	237474	player	uade	Protracker	0	127986	e7ecf9b9	LSD-Grapevine --/GV #12 - Judgement day.Mod
-a4a85209db0f938030fe4de8a4b90a7f	0	233872	player+silence	libopenmpt	Generic ProTracker or compatible	4	140588	5f89e544	MODS - My classics--/THERE-CAN be only one (powerpacked).mod
 a4af7e4fb3ee404fec0d4e86334788eb	1	19310	player	uade	Protracker	0	38162	4f71e3f4	GAMES/Bubbans4.mod
 a4d379b1a990c48e846cddef67fe38f8	1	101174	player	uade	Protracker	0	322678	6cca8754	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/Pop Songs/MOD.100% bomull-Cotton.mod
 a4dd186dde5c0f3a060249dc7311e3f5	1	310016	player+silence	uade	Soundtracker II (31 instr.)	0	102294	03cbd9de	Pop Songs/- Dance and Pop/1980s/Jean-Michel Jarre/magnetic fields iv.mod
@@ -4651,6 +4650,7 @@ a582b96bf49b03f28b9ae63bda4c577c	1	168691	player	uade	Protracker	0	149160	7fccfc
 a58979bc67fff14ccd75384bc1be2671	1	193507	player	uade	Protracker compatible	0	73130	5ed0dd3e	Pop Songs/new/LevelMusic_lemmings.mod
 a5928120c965c99e55e5a0c90cf261e9	0	153821	player	uade	AHX v2	0	4783	4fb85eb1	Modules for DeliTracker --/Games/THX/THX.ForbiddenColours
 a59678d96c0c21d52115a76ef3db84d1	1	319880	player	uade	Protracker compatible	0	209860	bc91d3e0	Pop Songs/- Rock/Metallica/battery '92.mod
+a5a1b4ede3157923e57c73d556bbe92f	1	200531	player+silence	uade	OctaMED MMD0	0	357048	94b9dc71	Pop Songs/- Dance and Pop/1990s/Los Del R¡o - Macarena -1993.mod
 a5ae1929fe1618bb6452a2badbbb5544	1	170184	player+silence	uade	Protracker	0	349754	5a156470	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Voodoo People - Remix by Mr Young.1994.mod
 a5ae51353f09c7f39338c9f12d61476a	1	347892	player	uade	Protracker compatible	0	295954	18e34166	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Charly (Stryx 1999 remix).1991.mod
 a5e0628e935e6ef0cb90d7ae52977669	0	135865	silence	uade	Infogrames	0	5684	ccecde2e	Modules for DeliTracker --/Games/RobHubbard 2/Popolous2/PopulousII.dum
@@ -4735,7 +4735,9 @@ a83ca41116cfb2cb26b40e4ad0b7df9e	1	326216	player+silence	it2play	Impulse Tracker
 a850a9ff87dc3b4542c862466c953817	1	196501	player	uade	Protracker compatible	0	451438	a4346b28	Pop Songs/- Dance and Pop/1990s/Ice Mc - Think About the Way (Trance Remix).mod
 a85101d6e64734040046f78d9389f566	1	257421	player+silence	uade	Protracker	0	487902	00d6f0cb	Pop Songs/- House, Acid, Trance/2Unlimited/Scoopex Plays 2 Unlim/Scoopex-Workaholikk (by Svein Johansen).mod
 a85c00a43fcbca1fe70990c9a6d8f27b	1	203213	player	uade	Protracker	0	303544	d0ffdd67	House, Techno and Acid/Deep Chill/dreams.mod
+a85c62374556c68b278adc42e753a1dd	1	134169	player	uade	Protracker	0	1577254	cc0860b9	Pop Songs/- House, Acid, Trance/Los Del R¡o - Macarena (Fuck macarena - swearing mix).mod
 a878ac6916b448abd4d127ae48d425a5	1	199551	player+silence	uade	Protracker	0	1254990	d52d0024	CLASSICS/unsorted/SHORTY & TIM - Will Of The Wind.mod
+a885093f93bff14960c7e8941a933104	1	299831	player+volume	uade	OctaMED MMD1	0	150174	9f68b1be	MODS - My classics--/. Techno cool acid.MOD
 a88be2968c955d610f11a9b205f5512a	1	1419400	player+silence	uade	OctaMED MMD0	0	196992	0d0ffe30	8 Voice --/PD SOFT 163/Music/Farewell
 a8daabc9a923d1dee1656ca042049eac	1	65251	player+silence	uade	Protracker	0	21148	0da9b724	Demos/Mod.The Meadow At Dawn.Mod
 a8f12a6f8ad93a75523ea61a33b59372	1	122864	player+volume	uade	Protracker	0	258314	a82dd9b9	CLASSICS/unsorted/Vocal - Switchback-Endpart.mod
@@ -4751,6 +4753,7 @@ a96124533d1ce9d25fdbb866ef93f352	1	188129	player+silence	it2play	Impulse Tracker
 a9840a140a8813da68905e5261dce0b3	1	106127	player+silence	uade	Noisetracker 1.x	0	30676	1e30a0f8	Pop Songs/- Dance and Pop/1960s and 70s/Chubby Checker - The twist (midi).mod
 a9ad78695f3e68a2856f26fce4c928b4	1	85702	player	uade	OctaMED MMD1	0	133084	1aaa2330	GAMES/HiredGunsDead.MED
 a9c70f8ca5c8d5eb94a4366c884e1f84	1	30824	player	uade	Protracker	0	9764	adf902e8	Demos/Mod.No Future.Mod
+a9cdbe1e62b5dcab0f4ad89999d9fbaf	1	234338	player+silence	uade	Protracker compatible	0	179014	2f60d395	MODS - My classics--/THERE-CAN be only one (powerpacked).mod
 a9d1ca2a0d89bb248a2c77035e68320b	1	145582	player	uade	Protracker	0	70252	dfc9c528	House, Techno and Acid/House Dance Anthems/Ravi Abbots Dance House/echoing(wow-remix).mod
 a9d3babef01831f6c12d70bf8ab6d6a7	1	107856	loop	uade	MON	0	98716	a2667066	Modules for DeliTracker --/Games/M.O.N/dragonwars/DragonWars_End.MON
 a9d9ff8306b51ac3c5cde48f814d7c71	0	231483	player+silence	uade	Oktalyzer	0	318474	7ee7834c	8 Voice --/5 Falcons and a Bass.mod
@@ -4791,8 +4794,9 @@ abb06bec49ee63d4a77b59d1f4bd93ce	2	5324	player
 abb552f849065dde004b8bee604f4258	1	130693	player	uade	Protracker compatible	0	95602	9262f80e	GAMES/LotusTurboChallenge2End.mod
 abb95f62f219bcbc21eaf01b2f3fbbf3	1	177713	player	uade	Noisetracker 1.x	0	89452	c74ea124	Pop Songs/- Dance and Pop/1990s/Snow - Informer (remix).mod
 abbdfcc1f6e4a93f8dec5d8af7be1272	1	121612	player	ft2play	Fasttracker (M.K.)	4	626594	49854283	Rock/blues(1) by flier and psycho.mod
+abbf3f2574e42633331d313f9df01c4f	1	153721	player	uade	Protracker compatible	0	68672	450e4a8d	MODS - My classics--/TORVAK.MOD
+abbf3f2574e42633331d313f9df01c4f	2	76003	player+silence
 abd56447154b6d217d82fe3525c9793f	1	106214	player+volume	uade	Protracker	0	31802	c65df40e	Old Time/SuccessfulCampaign.MOD
-abdc7c659904ffc9a59ccaf2f9e38ad2	0	324955	player	libopenmpt	Generic ProTracker or compatible	4	68228	44817447	MODS - My classics--/- SPACE SONG.MOD
 abe4b50b4388cdcd9bdf3b85dfd0b218	1	307543	player+silence	uade	Protracker	0	241332	5b26e889	House, Techno and Acid/Acid House Dance/JUICE - Insane.mod
 abe9ade0e033818655fab260394a5ae8	1	163949	player	uade	Protracker compatible	0	106826	8f65bb2c	Rock/beat it(1).mod
 abf6642482552a69727cbba7443e544f	1	15472	player	uade	Protracker compatible	0	35660	05dbfc34	GAMES/Armalyteend.mod
@@ -4884,7 +4888,6 @@ b05094da462204b6c1170ea523bc1517	1	89720	player	uade	Protracker	0	50292	f0c98a56
 b052586b2e879f0b5e0034142ddcd615	1	219132	player+silence	uade	Protracker	0	151142	38f9cf9a	Demos/Mod.Funky Rudolf!.Mod
 b056f0652f68a9f0a4f60d1139abc165	1	116064	player	uade	Protracker	0	218776	a0820a3e	Rock/movin' out.mod
 b057f9006213e277dd2aa129893d1170	1	418322	player	uade	Protracker compatible	0	537230	8b92dbf9	Chill/smooth rider.mod
-b078e5a2fd6e493480e2822f27c63097	0	209607	player	libopenmpt	OctaMED v4 (MMD1)	4	51536	ce33474d	MODS - My classics--/SONATA.MOD
 b082b39582bf58d412c7276118008fbf	1	231566	player	uade	Protracker	0	710012	510f5ca3	Pop Songs/- Dance and Pop/1990s/Rednex - Cotton Eye Joe (cattle drive).mod
 b0b291b341a36d7fd49e6576ba9b518e	1	195155	player	uade	Protracker	0	334472	bf6a0dbc	Pop Songs/- Dance and Pop/1990s/Interactive/Interactive - Forever Young (single remix).1994.mod
 b0b67ca4bbef069241be97f3feb23c7b	1	258205	player+silence	uade	Protracker compatible	0	116594	3f78ef1a	MODS - My classics--/magic tubes.mod
@@ -5124,6 +5127,7 @@ ba6cf3befea91c44d148ecb77c6b9e31	5	7696	player
 ba6cf3befea91c44d148ecb77c6b9e31	6	92172	player
 ba6cf3befea91c44d148ecb77c6b9e31	7	22425	player
 ba6de98e529c3c8d072d67e4754b3c63	1	56424	player	uade	Protracker	0	19000	c99f9695	Demos/Mod.Puppy Poppy.Mod
+ba7f256e78c2c647b49c96b798235574	1	274929	player	uade	Startrekker (4ch)	0	110580	a9a4fa27	MODS - My classics--/SHADOWoftheBeast.MOD
 ba8491df0b51f51b5d1fd64d5b979c64	1	183495	player+silence	uade	Protracker	0	1130408	b7eb80ce	Sample Fusion and David Enheden/Hell's Devils  (like Apollo 440).mod
 ba8ef9e1b881dadcde486cc26ea19b55	1	222845	player	uade	Protracker	0	53764	2ae04010	House, Techno and Acid/Acid House Dance/ - thrill.mod
 ba91aa91f6cbd687a9a63172d448bbb8	1	28272	player	uade	Protracker	0	34476	f5baf160	Pop Songs/- Dance and Pop/1960s and 70s/zip a dee doo dah!.mod
@@ -5252,6 +5256,7 @@ c0ee922822377d34bea06fbeb590738f	1	116586	player	uade	Protracker	0	23578	3f2afc1
 c110164583e757ffb42cdd87604570a3	1	208799	player	uade	Protracker	0	138476	2e08768b	Chill/## breathe deep ##.mod
 c11fde3f42c359b0882971d0bec8e57f	1	163969	player	uade	Protracker	0	48710	b77f65de	Demos/Mod.Laidback 03.Mod
 c12c3aea8c82bd272d32261a31e9d496	1	88434	player	uade	Protracker	0	394832	7af61a10	House, Techno and Acid/Deep Chill/musix-wild-perspective.animal trance.mod
+c12f8423220f16dd60edd8f68a0bafff	1	370233	player+silence	uade	Noisetracker 1.x	0	116368	7b6865a9	MODS - My classics--/- MEMORY DUST.MOD
 c131b6e8aa4647cdf7afa4f3d7dff9e0	1	222483	player	uade	Protracker compatible	0	246406	11d14771	GAMES/Exile-Newweirdbu.mod
 c134cd48fd624c37aad1e21cc5dcc2e8	0	6389	player	uade	Mugician	0	32973	ae213bca	Modules for DeliTracker --/Games/Digital Mugician 1/borobodur/Borobodur_Ingame4.DMU
 c134cd48fd624c37aad1e21cc5dcc2e8	1	166400	player
@@ -5342,12 +5347,10 @@ c5615b2fe6aa248a792554525c9f9cf2	0	176668	player	uade	Soundtracker II - V or com
 c564afc4bb79b7260e46e01dc60b8e6c	1	174197	player	uade	Startrekker (4ch)	0	71508	419f753a	CLASSICS/Amazing Tunes II/MOD.i dont car - Steve Hasler.mod
 c564afc4bb79b7260e46e01dc60b8e6c	1	174197	player	uade	Startrekker (4ch)	0	71508	419f753a	Demos/mod.i dont care.Mod
 c568baf3d0a1a69c215e81d7387f47a7	1	173574	player	uade	Protracker	0	133652	e58643c1	House, Techno and Acid/Modern HardCore/experience(1).mod
-c5750a44833eb2e4ddafbd3524b7a729	0	126731	player	libopenmpt	Startrekker	4	45044	9e92ac15	MODS - My classics--/POTBLACK.MOD
 c58168b59a01fd798d673c74b25d007c	1	269410	player+silence	uade	Protracker	0	151698	fbcf18b9	Demos/Mod.Overture.Mod
 c58a976f24e6dc663ce2565183b0f5c3	1	211331	player	uade	Protracker	0	97750	de88297b	Demos/Kefrens/Mod.Legend.Mod
 c59e57b43044826d842747055ba17bf4	1	153721	player	uade	Protracker compatible	0	320044	0baebda4	CLASSICS/unsorted/RICHARD JOSEPH - Gods17.mod
 c59e57b43044826d842747055ba17bf4	1	153721	player	uade	Protracker compatible	0	320044	0baebda4	GAMES/Gods17.mod
-c5a58ded70c480dcc72fcae320221609	0	227799	player+silence	libopenmpt	Generic ProTracker or compatible	4	81560	46dfef3c	MODS - My classics--/SHOUT IT OUT.MOD
 c5a9f79b7971132aadc5a9fe8229efe9	1	226422	player	uade	Protracker compatible	0	828220	e066c079	House, Techno and Acid/Goa and Trance Anthems/Better Days (dance chill).mod
 c5bd1adc01ff0b9ff6db5380260df8f3	1	190244	player+silence	ft2play	Fasttracker (M.K.)	4	206156	f8a4836d	German Synth --/German pop/Wolfenstein - hilarious.mod
 c5bd1adc01ff0b9ff6db5380260df8f3	1	190244	player+silence	ft2play	Fasttracker (M.K.)	4	206156	f8a4836d	German Synth --/WOLFEN.MOD
@@ -5838,6 +5841,7 @@ d89206d59bc98d4a1c40322b2c4efbd7	1	82044	player	uade	Protracker compatible	0	554
 d892174eba9aa4dc0742e1e8ebc087ab	1	172793	player+silence	uade	Protracker	0	603348	9a23f6f6	House, Techno and Acid/Techno and Garage/infinity extacy.mod
 d895338fcb3468f3d67cf2a4cea5de93	1	102520	player	uade	Protracker	0	274350	8ee54ce7	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Voodoo People - Remix Meanace 1994.mod
 d8a10c0335f58c46e6412ced9649dc21	1	184445	player	uade	Soundtracker II (31 instr.)	0	195188	adb1b28b	Demos/mod.space2.Mod
+d8b33b4093022c235a9c74960415b700	1	325567	player	uade	Protracker	0	102266	fbcb69e1	MODS - My classics--/- SPACE SONG.MOD
 d8c230e8fa652511d2c90b7e638672f4	1	172566	player+silence	uade	Protracker	0	780284	9f44946e	Pop Songs/- Dance and Pop/1990s/Captain Hollywood Project - Only With You (single mix).1993.mod
 d8c3ae66591f9d6fc10e4160c343dcbe	1	252605	player+silence	uade	Soundtracker II (31 instr.)	0	123688	4991229b	German Synth --/WILDCOPP.MOD
 d8c825ef60f104276c35ecb23df5437e	1	65406	player	uade	Protracker	0	70678	46ce62b3	Chill/magic dance.mod
@@ -6118,7 +6122,6 @@ e4467b68bb252faaab65ca5fa9badbb1	1	234198	player	uade	Protracker	0	497100	a91d93
 e44cb4c2113b81cfc3f9a1b5e5b597a1	1	245712	player	uade	Protracker	0	136842	f03ada29	Pop Songs/- House, Acid, Trance/Jaydee - Plastic Dreams  - 1993.mod
 e44fd122a71daeb78f3cbcd24a737bc1	1	197466	player	it2play	Impulse Tracker 2.14+	24	245779	14266a67	Modules for DeliTracker --/Misc Modules/Eclipse music/NN-TAISH.IT
 e4723ddcd3bbd6fcb985b47e7ca56bb5	1	192141	player	uade	Protracker	0	173284	1e1f609d	Pop Songs/- TV and Movie/CantinaBand_.mod
-e48b7e0c212f0c68b2ce8610f0c9a88f	0	15337	player	libopenmpt	Generic ProTracker or compatible	4	3508	9e1b3d58	Demos/Mod.Heresy Trainer.Mod
 e4b721df9dbbee22a01ca2c3bd0f5368	1	213092	player+silence	uade	Protracker	0	229004	9443253f	Pop Songs/- House, Acid, Trance/The Prodigy/The Prodigy - Wind It Up (ganymed).mod
 e4d82989b7549a685737f67afa3a2424	1	405676	player+silence	uade	Protracker compatible	0	199830	f3ceb60a	Pop Songs/- House, Acid, Trance/Technotronic/technotronic megamix (sam).mod
 e4df9d3d6418a16fbce7f846c61be7cc	1	166672	player+silence	uade	Protracker compatible	0	93516	5be57364	Demos/Mod.Danceboard.Mod
@@ -6319,6 +6322,7 @@ ebbb3cb39e70e7e33e55af5ce84da182	1	22364	player
 ebbb3cb39e70e7e33e55af5ce84da182	2	3154	player
 ebbca8790fd86996e37af3e51c4f1f99	1	304598	player+silence	uade	Protracker compatible	0	579956	25f476b1	House, Techno and Acid/Modern HardCore/The sign - by daxx.mod
 ebcc4220458d01ee42db2e4f5ce9aa25	1	189770	player	uade	Protracker	0	447216	f812a36b	Pop Songs/- House, Acid, Trance/Dune - Hardcore Vibes (remix by soundmaster.mod
+ebce7709973525629e412632524509b0	1	243542	player	uade	OctaMED MMD1	0	196482	76f1142d	MODS - My classics--/DRILL ACID.MOD
 ebd667ac0345b878860479414349d72c	1	236409	player	st3play	Scream Tracker 3.01 (SB)	8	126908	1e0a0855	Modules for DeliTracker --/Misc Modules/summerse.s3m
 ebe07fd6e58f150195001c22f6726eb5	1	209342	player	uade	Startrekker (4ch)	0	227664	69c0aace	Pop Songs/- TV and Movie/batmeat.Mod
 ec0a2018ab79a8850e48ff9c242672c0	1	208337	player	uade	Protracker	0	435536	1af6435a	Groove and funk/- take it to the top.mod
@@ -6464,7 +6468,6 @@ f0ad52e878cff017782aa11ca3e30ec9	1	30824	player	uade	Protracker compatible	0	126
 f0b5b732bb9c850603037e5c1cff7ef6	1	10368	player	uade	Protracker	0	43038	21962b5a	GAMES/star dust/MOD.sd-pitiksollahoppu!.mod
 f0bb970347d8e1d21c6242ab28852e03	1	213682	player	uade	Protracker	0	146066	5f8115a5	Pop Songs/- Dance and Pop/1990s/Culture Beat/Culture beat - Mr.vain (stremixed).mod
 f0bd3cddc9dce82cc5bdb4b3ba9dd262	1	291428	player+volume	uade	Protracker	0	162330	10153dd3	Pop Songs/- Dance and Pop/1980s/Art of Noise/Art of Noise - Peter gunn (mix).mod
-f0c07fa69521599e01151be466240bea	0	197764	player+silence	libopenmpt	Generic ProTracker or compatible	4	162432	1fb3ad5a	MODS - My classics--/ATripToFunkyla.mod
 f0d20f72b67dae2498ed46451493c7f1	1	126011	player	uade	Soundtracker II (15 instr.)	0	107182	5e52082f	Demos/mod.muzac.Mod
 f0da87b7b2554256bda5951438682607	1	326284	player+silence	uade	Protracker	0	170580	17bb34af	Demos/Mod.Pipes.Mod
 f0dd1829180b2c9c773438a8b07686b5	1	136350	player+silence	uade	Protracker compatible	0	381756	813ad663	Pop Songs/- Dance and Pop/1990s/Ace of Base/Ace of Base - All that she wants (undub CMS mix).mod
@@ -6475,6 +6478,7 @@ f123df08db14b8d6d55f82eaedfe7895	1	53872	player	uade	Protracker	0	8548	4bf431ab	
 f129a537195d64b9b5a4320e53c51d32	1	226895	player+silence	uade	Protracker	0	533944	0f3bdef8	Drum, Dub and Ragga/Apollo 440 - talkin'bout dub.mod
 f129a537195d64b9b5a4320e53c51d32	1	226895	player+silence	uade	Protracker	0	533944	0f3bdef8	Pop Songs/- House, Acid, Trance/Apollo 440 - Ain't Talkin' 'Bout Dub (remix by Roz).1997.mod
 f12baf2ecb1b016d0aa77e35d454a900	1	152957	player	uade	Protracker compatible	0	156046	77b7a53e	Pop Songs/Amiga Game Pop Songs/Bomb Jacky game - BombTheJack.mod
+f13937e6a481a45f26369c72636e7a25	1	23168	player	uade	Protracker	0	11748	f33530e3	Demos/Mod.Rebels Trainer.Mod
 f13e7dc1eb4a4c4988078a10c1fa8bf5	1	153721	player	uade	Protracker	0	137691	67252316	House, Techno and Acid/Modern HardCore/power-house.mod
 f160b06bd09ad77a3e73397242dcc8cb	1	76920	player	uade	Protracker compatible	0	26422	cf8cb024	Old Time/YorkFusiliers.MOD
 f1622c44678436309a14fe0507065fed	1	153829	loop	uade	MON	0	179871	4051d35e	Modules for DeliTracker --/Games/M.O.N/LordOfTheRings/LORDOFTHERINGS_1.Mon
@@ -6675,10 +6679,12 @@ f822d13910de17d70bb1c8059db948c6	7	3282	silence
 f822d13910de17d70bb1c8059db948c6	8	3397	silence
 f822d13910de17d70bb1c8059db948c6	9	3381	silence
 f8251bd523294daeeefc0285df62f535	1	288111	player	uade	Protracker	0	545548	3e954931	Pop Songs/- Dance and Pop/1990s/AZAZEL - Fracture.mod
+f82b016a8151155081eaf1dc30b75dfd	1	230541	player	uade	Noisetracker 1.x	0	106666	a33253e2	MODS - My classics--/- NORTHSTAR-Titan.MOD
 f832fec308f426fcbb3b690075375131	1	257005	player	uade	Protracker	0	290780	7cd5f4dc	MODS - My classics--/- ACES HIGH.MOD
 f8341449130d0e811b2dec622f74182d	1	183084	player+silence	uade	Protracker	0	402836	858b1cb4	Pop Songs/- House, Acid, Trance/U.S.U.R.A- Open Your Mind - 1993.Remix.mod
 f834307d99e74e8c58142601cfcc8cbb	1	284595	player	uade	Protracker	0	374086	4fd1df52	House, Techno and Acid/Goa and Trance Anthems/MOD.01-WARM.mod
 f8477d1d24620c8529ec56b17a4361e3	0	98823	player	uade	Sonic Arranger	0	21862	ca281825	Modules for DeliTracker --/Games/SonicArranger/Ambermoon/SONIC.RoughWaterfrontTavern
+f88eaaba1ca651f5bc5c0536fbc85865	1	0	nosound	uade	MED4 (4ch)	0	79992	08fd0453	Pop Songs/- Rock/Deep Purple/SMOKE ON THE WATER.MOD
 f8a857a610b9654401c7a17b35c5a499	1	198439	player+silence	uade	Protracker	0	224342	dbee4789	CLASSICS/MOBY - Elekfunk.mod
 f8a857a610b9654401c7a17b35c5a499	1	198439	player+silence	uade	Protracker	0	224342	dbee4789	Demos/mod.elekfunk.Mod
 f8bd79d2107ad46cc6e3af84427113cf	1	69350	player+silence	uade	Protracker compatible	0	22474	ebae1665	Demos/mod.spice it up.Mod

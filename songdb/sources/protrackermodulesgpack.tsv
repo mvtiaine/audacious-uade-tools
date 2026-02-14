@@ -556,7 +556,7 @@
 062e29dca4a65fcee4a5764a443312ed	1	230541	player	uade	Protracker compatible	0	139572	0213a837	pkk us/virus_06.mod
 062f2af00551cb8f809d2dc0b1e1902c	1	271011	player	uade	Protracker	0	132768	83e6cbff	maza fi/meathead.mod
 0630c54851862d335eeb9b4c4c288f93	1	306980	player	uade	Protracker	0	319678	03631666	moby fr/murdilokustra.mod
-063113530439e9588164f184ebf988cc	1	411369	player	uade	Protracker	0	223868	0ad37b89	tarmslyng dk/du lugter af sřhest.mod
+063113530439e9588164f184ebf988cc	1	411369	player	uade	Protracker	0	223868	0ad37b89	tarmslyng dk/du lugter af sřhest.mod
 063a5718822b7a319bcb9aa31e143cae	1	153721	player	uade	Protracker	0	40738	a6d2b776	maze no/chippy nr.483.mod
 063dbb0b94cc96ef135898a4dba382ce	1	437553	player+silence	uade	Protracker compatible	0	200658	e38e459b	andy synthe pl/the rain is coming.mod
 063e1c8a8026363eecd61b93ab1c351b	1	240146	player	uade	Protracker	0	502248	196ebc26	deetail fi/exterminator.mod
@@ -9057,7 +9057,6 @@
 5f5f0277a093855f1c638465859acebc	1	16617	player	uade	Protracker	0	85250	3b055bd3	4mat uk/summer.mod
 5f5fbf41dad578783b64289bedfacd05	1	107645	player	uade	Protracker	0	29260	8078d8a1	moone fr/natural born killaz.mod
 5f6720a715e3eb480ca6ae6869384e53	1	63477	player	uade	Protracker	0	9668	6c7eac13	grim fi/smooth future2.mod
-5f6c9b5062f5d090026cf6852b144e5d	0	123535	player	libopenmpt	Generic ProTracker or compatible	4	313752	8e95a60b	spiryt pl/raining blues.pp.mod
 5f7015b8f4b70558f42cbb0f07ed48dc	1	221318	player	uade	Protracker	0	94262	0fc71304	leum padmore us/wakeup.mod
 5f72c5ab3913a3001969c87b96afe535	1	52807	player	uade	Protracker	0	65546	cc587230	zoltar dr3amusic se/(sir ababol)baroque in d minor.mod
 5f756ad6502bb144315db7f52e039431	1	212445	player+silence	uade	Protracker compatible	0	459250	5937b7b0	uctumi ar/melting flux.mod
@@ -9153,7 +9152,7 @@
 607d622054e48662bc3737ff047631bb	1	204127	player+volume	uade	Protracker	0	113460	7d72e2a8	goto80 se/fat 68000.mod
 607f1e59fb95acc86183468a17f8e6bb	1	140921	player	uade	Protracker compatible	0	180356	2e175ac9	whiplash fi/beginning.mod
 608711bc33bb1dff8138f1463eadd1ce	1	131014	player	uade	Protracker	0	27996	e59957c9	goto80 se/track the pattern.mod
-6088b771ebe32bcf3138b4fb75d0f6ec	1	110377	player	uade	Protracker compatible	0	221634	2f2b755d	beathawk fi/křrmykala.mod
+6088b771ebe32bcf3138b4fb75d0f6ec	1	110377	player	uade	Protracker compatible	0	221634	2f2b755d	beathawk fi/křrmykala.mod
 608a40ff95cfc93f4d7efe7766a9f60d	1	46216	player	uade	Protracker compatible	0	34856	b5a39a6c	bronson fi/adept.mod
 608ef4ccee169a54f3e11d0c45ccbecb	1	237634	player	uade	Protracker	0	406472	7e7054f9	revisq pl/eternal-mix.mod
 608f4ae10d0f3794af1b3b446b9e60fc	1	105957	player	uade	Protracker compatible	0	523892	7e7c78a2	kola pl/beavis & butthead.mod
@@ -18011,6 +18010,7 @@ bc843bfaf42883010346074cc9845122	1	32110	player	uade	Protracker	0	7192	d0379749	
 bc85f4e4df078f6dfd3cb74318860750	1	370500	player+silence	uade	Protracker	0	555412	23534fcc	hris pl/pink window.mod
 bc87f67e3d32e0ac8cbebcf2d335a534	1	161397	player	uade	Protracker	0	81720	0a5b2c54	troop nl/09.mod
 bc87f88c8cbe9923ab665a4cc7d78395	1	205714	player+silence	uade	Protracker	0	189186	177212fe	dasse se/koozza.mod
+bc884183b3a36f72ee8c0b1aa74a8963	1	123840	player	uade	Protracker	0	377812	5bc3fc8a	spiryt pl/raining blues.pp.mod
 bc896669950e55627d2994ea707f138c	1	280656	player	uade	Protracker	0	175872	651908b2	deetail fi/nightvisions (trim).mod
 bc8ef09c09209cb5741db4126ad5eb2b	1	241465	player+silence	uade	Protracker compatible	0	108946	e439fa64	othon is/trial.mod
 bc8f4f766621706a2c1a3d23f71e7e9d	1	111483	player	uade	Protracker	0	338090	339b944c	magnetic-fox pl/h&g ost - once in a dream.mod
@@ -22436,7 +22436,7 @@ e9d78c358fac76fda8395e9c1b7297b0	1	39485	player	uade	Protracker	0	6536	8cab7387	
 e9dcb143c0e15b33e245665e54e04045	1	38199	player	uade	Protracker	0	28388	10b99bfc	revisq pl/dla mistera uhu.mod
 e9e94b9d69af65842d358c36b21c70cf	1	163969	player	uade	Protracker	0	118874	ba1933e9	emax se/this day.mod
 e9e9544044f906941446d4bfdc741692	1	79432	player	uade	Protracker	0	44284	199b1767	squirrel fish fi/f-duck.mod
-e9eb977a85b3b6c2230dd03965a6c7ba	1	364281	player+silence	uade	Protracker	0	179652	360a9fe5	tony stuvo aky es/la ilusión perdida.mod
+e9eb977a85b3b6c2230dd03965a6c7ba	1	364281	player+silence	uade	Protracker	0	179652	360a9fe5	tony stuvo aky es/la ilusión perdida.mod
 e9ebd5146050a11f1c757e68b489be44	1	224593	player	uade	Protracker	0	155770	d037c0c3	hobbes se/magic moments.new.mod
 e9ebeb57f8111bc15ebd6ecddd27a641	1	163454	player+silence	uade	Protracker compatible	0	140572	b51d231f	4mat uk/twylight.mod
 e9ee8de942345ba635a3b54001ca9e7d	1	96130	player	uade	Protracker	0	14890	8c560eaf	supernao nl/fairchild.mod
@@ -23270,7 +23270,7 @@ f23213de2217b8a534d5557ca14ce104	1	62834	player	uade	Protracker	0	14992	5c13ff5f
 f232e9191b96ba0769bf0995306b3346	1	185731	player	uade	Protracker	0	230136	581bfee9	opio se/peace in my heart.mod
 f233c976b17440d8216b79f718e510da	1	263875	player+volume	uade	Protracker compatible	0	123386	42cbaf4a	4mat uk/true faith.mod
 f23591e54a333f2be5733975cc1ccc5c	1	107645	player	uade	Protracker compatible	0	99702	e12903f0	mc prime time nl/baseline squad.mod
-f23748504781a80a99bd93d6b5e6ae54	1	61568	player	uade	Protracker	0	15618	7c45fdf7	vent fi/säröviisu.mod
+f23748504781a80a99bd93d6b5e6ae54	1	61568	player	uade	Protracker	0	15618	7c45fdf7	vent fi/säröviisu.mod
 f237de7386b91ac3311848adab93e6f3	1	127539	player+silence	ft2play	Fasttracker (M.K.)	4	25546	5a89e81c	seablue dk/wolf that kills (& warhawk).mod
 f23c67dd749f7d11913a3be8309384a7	1	169493	player+silence	uade	Protracker	0	186610	96976fdb	panik se/ka0s fr0ntier.mod
 f23cef4e9e3575454fd6361b7c4fcb70	1	281822	player	uade	Protracker	0	594150	d18eb4e0	asarhad rs/foam.mod
@@ -24337,7 +24337,7 @@ fd3204c0e080ee8d6d25256f7ecbf531	1	101877	player	uade	Protracker	0	315178	1a9244
 fd3262f582d67229293b15727ab4510b	1	105896	player	uade	Protracker	0	76108	26d203dc	gibs fr/cruel summer.mod
 fd3571712f94341df0ab9d4bde516ba5	1	138369	player	uade	Protracker	0	39790	2b18434a	king arthur no/top mark.mod
 fd37e60373b2d7de0c0364105634a626	1	232992	player+silence	uade	Protracker	0	277528	5a7012e5	climber pl/lowlands.mod
-fd3b688b54ae1a885e7d7cbd210f37a7	1	55922	player	uade	Protracker	0	91324	da414030	distance fi/tyäpaikka.mod
+fd3b688b54ae1a885e7d7cbd210f37a7	1	55922	player	uade	Protracker	0	91324	da414030	distance fi/tyäpaikka.mod
 fd3e2d0fa7841d633acff617ec690d5e	1	103706	player	uade	Protracker	0	28038	4fb15207	the loop de/happy (c)hippo.mod
 fd3ea7be1c05bb0a4d768d7b3452b69c	1	91951	player	uade	Protracker	0	48036	7d7f5793	4mat uk/games ost/(agony) highlands2.mod
 fd4384bb24606ec7358aa47ca4c6d4b0	1	220224	player+silence	uade	Protracker	0	154564	2d8ab71b	prophet dk/dyspnoea.mod

@@ -166,6 +166,8 @@
 0751d262526c0007f21e9898e5a0a832	6	61468	player
 0751d262526c0007f21e9898e5a0a832	7	51220	player
 0778424c1c68655e4d61f10a8b372cd7	1	335694	player	uade	Startrekker (4ch)	0	153194	280aaf0d	Games - MOD/Dune - Fremens (1992)(Virgin)[a][seq Stephane Picq][cmp Philip Ulrich and Stephane Picq].mod
+0797b1a1e2d1b3427a47f92825de0c5b	1	213381	player	uade	Hippel-COSO	0	27992	921b66c5	Games - HIPCOSO/Lethal Xcess - Tune 5 (1991)(Eclipse)[cmp Jochen Hippel][2 Tracks].hipc
+0797b1a1e2d1b3427a47f92825de0c5b	2	28111	player
 07a772a0fbe3f5769f9aa08912953e25	1	184445	player	uade	Protracker	0	134162	0fe84b44	Games - MOD/Alfred Chicken AGA - Endgame (1993)(Mindscape)[a][cmp David Whittaker][seq Mark Knight].mod
 07ab2b78ead4d7032e32f3dff8cfc6d1	1	38520	player	uade	Noisetracker 1.x	0	38366	50a393b6	Games - MOD/Blastar - Lavic Island End (1993)(Core Design)[h Mr Styckx][cmp Martin Iveson].mod
 07b9d37f3981f365eb7dc56505a1b0f0	1	27006	player	uade	Protracker	0	32222	33025180	Games - MOD/Brian the Lion - Tune 04 (1994)(Psygnosis)[cmp Rick Ede].mod
@@ -1109,6 +1111,7 @@
 32b6991d2c4d11ae063f898520f8aa9e	1	64120	player	uade	Protracker	0	23136	5e7f66cb	Games - MOD/Brian the Lion - Tune 17 (1994)(Psygnosis)[cmp Rick Ede].mod
 32bb10b7b2dc7a100b1d21769ad14774	1	122997	player	uade	Protracker	0	88784	fe5a5141	Games - MOD/Risky Woods - High Score (1991)(Electronic Arts)[cmp Jose A Martin].mod
 32bb4814e216f04c71dc67d1d18b5b7c	1	73605	player	uade	Dave Lowe	0	42420	e4a5c5fd	Games - DL-/Betrayal - Title (1990)(Rainbird Software).dl
+32bfec0e61179e2669fd3b0d46a88f00	1	315723	player+volume	uade	Hippel-COSO	0	32460	6df22f57	Games - HIPCOSO/Lethal Xcess - Tune 7 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 32f78639ed6e6b05dfb1d575196b1713	1	107645	player	uade	Protracker	0	49426	3d0318eb	Games - MOD/Alfred Chicken AGA - Radio (1993)(Mindscape)[a][cmp David Whittaker][seq Mark Knight].mod
 3316a68a571211b1bf60c1d333cd54ef	0	378779	loop	uade	SCUMM_Player	0	3760	06b063cf	Games - SCUMM/Zak McKracken - Airport 2 (1988)(Lucasfilm)[cmp Matthew Kane].scumm
 331dee311ce9eb110dc703f098ac3668	0	114396	player	uade	David Whittaker	0	42470	f19e80d5	Games - DW/Back to the Future Part II (1990)(ImageWorks)[a2][cmp David Whittaker][6 Tracks].DW
@@ -1852,6 +1855,7 @@
 53c53191b730afb8011e365fd22df5b8	1	30824	player	uade	Noisetracker 1.x	0	39628	279457a0	Games - MOD/Blob - Credits (1993)(Core Design)[cmp Martin Ivesson].mod
 54143a428ab0f75f916bdeb77fa6f88e	1	96130	player	uade	Protracker	0	52412	6bddfd87	Games - MOD/CarVup - Ingame 1 (1990)(Core Design)[cmp Matthew Simmonds].mod
 5420a882507c8a8766fab96a5bc916db	1	313731	player	uade	Protracker	0	160078	8ce0b6a0	Games - MOD/Kid Chaos - Level 4-3 (1994)(Ocean)[cmp Pipe Smokers Cough].mod
+5427b4c6dd760734cccb81c10e1844bc	1	153620	player	uade	Hippel-COSO	0	33142	2cef90f0	Games - HIPCOSO/Lethal Xcess - Tune 3 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 544a05938d37a2c490e3abaf4c42fb74	1	217741	player	uade	Protracker	0	67988	7527019a	Games - MOD/Leander - Level 3 (1991)(Psygnosis)[h CM][cmp Matthew Simmonds].mod
 5451c30a76fa31fe94a902b1fda48775	1	30824	player	uade	Protracker	0	54824	858462ba	Games - MOD/Castle Warrior - Bentley (1989)(Delphine)[cmp J. Baudlot].mod
 545adbb3f8828f3cc9b9b241d6259f97	0	121610	player	uade	David Whittaker	0	43442	041445a6	Games - DW/Army Moves (1987)(Imagine)[a][cmp David Whittaker][4 Tracks].dw
@@ -1951,6 +1955,7 @@
 5a3b26933102a0ed8cdd7a14e5313b5a	1	486221	player	uade	Protracker compatible	0	71264	0776b752	Demos - MOD/Silents Megademo - Future (1990)(Silents)[cmp Jesper Kyd].mod
 5a42fef5881a7fc17bec243535372bfd	1	30824	player	uade	Soundtracker II (15 instr.)	0	24896	3cddc09e	Games - MOD/Buggy Commando - Ingame (1988)(Digital Soft Productions).mod
 5a4bf3b5039a368a634703d91625c6bb	1	107845	player	uade	OctaMED MMD1	0	87404	fcd1d342	Games - MED/Lethal Weapon - Theme (1992)(Ocean).med
+5a5b5b1987455b107d9f1298160762be	1	262431	player	uade	Hippel-COSO	0	26470	a2b53dac	Games - HIPCOSO/Lethal Xcess - Tune 4 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 5a9dac7389d548302771c3951e028e58	1	146045	player	uade	Protracker compatible	0	37740	560e9ba3	Games - MOD/Killing Game Show, The - Credits (1990)(Psygnosis)[2 Tracks].mod
 5a9dac7389d548302771c3951e028e58	2	84616	player
 5aab529509934fe0fa974ea809184fa7	0	74443	silence	uade	UADE	0	52920	d3772647	Games - CUSTom/Qix (1989)(Taito)[cmp Tim Follin][13 Tracks].cus
@@ -3117,6 +3122,7 @@
 9008615687b948af9d969ee12b6c8226	3	10589	player
 9008615687b948af9d969ee12b6c8226	4	8339	player
 9008cdda7262e8f1404b0a1a00500157	0	252062	player	uade	SoundMon 2.0	0	41320	3692ba97	Games - BP/Alien Breed - Title (1991)(Team 17)[cmp Allister Brimble].bp
+906ac90ae563d71ad2f44869adbe191b	1	330269	player	uade	Hippel-COSO	0	27766	0b9c9344	Games - HIPCOSO/Lethal Xcess - Tune 6 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 907bc4c21307e010aff47d4d6e8ae509	1	54837	player	uade	Protracker	0	22154	dc749642	Games - MOD/Colonization - Morellis Lesson (1995)(MicroProse).mod
 908d5e80ee856c0390699e580afa3a97	1	80758	player	uade	Protracker compatible	0	38300	1611efde	Games - MOD/Back to the Future Part 3 - Ingame 2 (1991)(Image Works)[2 Tracks].mod
 90a670633201d90f640f15055afe7dd6	1	19310	player	uade	Protracker compatible	0	32296	f45cd645	Games - MOD/Lotus 2 - Tune 5 (1991)(Gremlin)[cmp Barry Leitch].mod
@@ -3738,6 +3744,9 @@ aefa1346bbb8fe96e32a0a8f1011dc56	1	119058	player	uade	Dave Lowe	0	62276	ca68f206
 aefa1346bbb8fe96e32a0a8f1011dc56	2	112668	player
 aefa1346bbb8fe96e32a0a8f1011dc56	3	11554	player
 aefa1346bbb8fe96e32a0a8f1011dc56	4	32010	player
+af07caa6ce5f9ee753cbafc76739823e	1	404610	player+volume	uade	Hippel-COSO	0	60742	33dd5535	Games - HIPCOSO/Lethal Xcess - Tune 1 (1991)(Eclipse)[cmp Jochen Hippel][3 Tracks].hipc
+af07caa6ce5f9ee753cbafc76739823e	2	2592	player
+af07caa6ce5f9ee753cbafc76739823e	3	2624595	silence
 af447bcd3ac9328e6b4098483975367f	0	10441	silence	uade	SCUMM_Player	0	254	1f82ceed	Games - SCUMM/Zak McKracken - Teleport 2 (1988)(Lucasfilm)[cmp Matthew Kane].scumm
 af6ee7fd5bcede7d098857b8e4325d7f	1	192141	player	uade	Soundtracker II (15 instr.)	0	88574	ad4d8e6a	Demos - MOD/Dexion Megademo - 7 (1988)(Dexion)[h ASLE][cmp Future Freak of Dexion].mod
 af83d19912a27fd6ac51b8d21e2b63f5	0	384021	player	uade	Soundtracker II - V or compatible	0	130686	143043da	Demos - MOD/Abortion - Nightwork (1989-03-27)(Armin Sander-Michael Leier)[cmp Chris Korte].mod
@@ -3872,7 +3881,7 @@ b81a24a061eadbf4e248c109951b5208	3	25720	player
 b81a24a061eadbf4e248c109951b5208	4	7073	player
 b8218a2313318e5a9fc88a30b53829c7	1	84616	player	uade	Protracker	0	42856	fe0b13f6	Games - MOD/Brian the Lion - Tune 40 (1994)(Psygnosis)[cmp Rick Ede].mod
 b831c248499180904d66cc071d7a8e86	1	221398	player	uade	Protracker compatible	0	135166	1ba29e22	Games - MOD/Swiv (1991)(Sales Curve)[a][cmp Andrew Barnabas].mod
-b85074a3d6fef748c4a917190a2a7f73	1	63477	player	uade	Protracker compatible	0	58740	70782941	Games - MOD/All Terrain Racing - Title (1993)(Team 17)[cmp Allister Brimble].mod
+b85074a3d6fef748c4a917190a2a7f73	1	63245	player	ft2play	Fasttracker (M.K.)	4	58740	70782941	Games - MOD/All Terrain Racing - Title (1993)(Team 17)[cmp Allister Brimble].mod
 b864467892edeb2e662f9b92e34b570e	0	6041	silence	uade	Infogrames	0	1043	a4b50978	Games - RH/BoBo - Interlude (1988)(Infogrames).dum
 b880e6a8b95481e247dd75c4d80e706b	1	439263	player+silence	uade	Protracker	0	118230	c2a264da	Games - MOD/Project-X - Thesmophoria (1992)(Team 17).mod
 b8922f4454a3d10c61d977f69f321e38	0	63718	player	uade	David Whittaker	0	45388	f145af66	Games - DW/International Soccer Challenge (1989)(Micro Style)[a][cmp David Whittaker].dw
@@ -4562,6 +4571,7 @@ e1df3f2d65094751a03e5ce8a441592d	7	10446	silence
 e1df3f2d65094751a03e5ce8a441592d	8	10068	silence
 e1f915872fc2750672f1f93aaf7e6ca3	1	300151	player+silence	uade	Protracker	0	105644	ad36f060	Games - MOD/Full Contact (1990)(Team 17)[a3][cmp Allister Brimble].mod
 e20b7595472b1818634f946e18e98e08	1	122916	player	uade	Hippel-COSO	0	59514	a0fd2d85	Games - HIPCOSO/Amberstar - Tune 18 (1992)(Thalion)[cmp Jochen Hippel].hipc
+e21817d0c2ec4d7558ead9f7e71c8476	1	327697	player	uade	Hippel-COSO	0	30280	a2363ce7	Games - HIPCOSO/Lethal Xcess - Tune 8 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 e224fcd717acadf91f3e7e63bdb0f412	1	100792	player	uade	Protracker	0	82054	39e028df	Games - MOD/Elfmania - Level 5 Gbl Cave (1994)(Terramarque)[cmp Antti A. Mikkonen].mod
 e2314f89dd8ea28f0b9190d2c35489a2	1	134531	player	uade	Protracker compatible	0	197376	c25d9b30	Games - MOD/Shadow Warriors - Title (1990)(Ocean)[a][cmp Matt Furniss].mod
 e23692bc47a6e92a583ec41abd95f709	1	6510	player	uade	Protracker	0	2142	24e2803c	Games - MOD/Jaguar XJ220 - Funkychip 1 (1992)(Core Design)[cmp Martin Iveson].mod
@@ -4696,6 +4706,7 @@ ea0518772c82d9f1f116decd3eb94c0c	1	93116	player
 ea0518772c82d9f1f116decd3eb94c0c	2	153258	player
 ea0518772c82d9f1f116decd3eb94c0c	3	23168	player
 ea3046f968f544478df2185f0e065bc3	1	12920	player	uade	Protracker	0	32800	69b18b5c	Games - MOD/Cover Girl Strip Poker - Selector (1991)(Emotional Pictures)[cmp Martin de Agger].mod
+ea30f2126de29e1e395727fdd36f91e9	1	145944	player	uade	Hippel-COSO	0	28522	2b73f66e	Games - HIPCOSO/Lethal Xcess - Tune 2 (1991)(Eclipse)[cmp Jochen Hippel].hipc
 ea5bbc799367cf1d1c039e5bed98b6b8	0	163829	loop	uade	UADE	0	80704	c495fbed	Games - CUSTom/Hammerfist (1990)(Vivid Image).cus
 ea5bbc799367cf1d1c039e5bed98b6b8	1	58133	loop
 ea5bbc799367cf1d1c039e5bed98b6b8	2	136615	loop
