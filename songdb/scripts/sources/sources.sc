@@ -71,6 +71,7 @@ case class TsvEntry (
   channels: Int,
   filesize: Int,
   xxh32: String,
+  crc32: String,
   path: String,
 )
 
@@ -80,8 +81,8 @@ lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(
     val l = line.split("\t")
     if (l.length > 4) {
       player = l(4)
-      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9))
-    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "")
+      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9), l(10))
+    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "", "")
   ).toBuffer
 ).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
 

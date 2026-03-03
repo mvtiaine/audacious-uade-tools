@@ -21,7 +21,7 @@ import net.ruippeixotog.scalascraper.model._
 
 import org.apache.commons.text.WordUtils
 
-val amp_path = System.getProperty("user.home") + "/sources/AMP/"
+val amp_path = System.getProperty("user.home") + "/siterip/AMP/"
 
 case class AMPMod (
   id: Int,
