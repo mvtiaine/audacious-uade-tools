@@ -94,7 +94,7 @@ def maybe(s: String) = {
   else Some(trimmed)
 }
 
-lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.getLines.toSeq.par.flatMap(line =>
+lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.tsv"))(_.getLines.toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val id = l(0).toInt
   val title = l(1)
@@ -364,7 +364,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/demozoo_music.tsv"))(_.
   best.map((md5, _))
 }).toSeq
 
-lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/demozoo_prods.tsv"))(_.getLines.toSeq.par.flatMap(line =>
+lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_prods.tsv"))(_.getLines.toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val prodId = l(0).toInt
   val prodDate = l(1)

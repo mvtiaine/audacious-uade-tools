@@ -163,7 +163,7 @@ Score | MD5          | Sub | Authors    | Album                 | Publishers    
 ```
 
 List of top matched entries with match score, MD5, subsong and some metadata from songdb.
-You can grep the MD5 from `songdb/sources/*.tsv` and `tsv/pretty/md5/*.tsv` to locate the matching mod file and all available metadata.
+You can grep the MD5 from `songdb/sources/*/*.tsv` and `tsv/pretty/md5/*.tsv` to locate the matching mod file and all available metadata.
 
 
 ## License

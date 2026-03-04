@@ -12,7 +12,7 @@
 // Depending on your system and input fingerprint length, running the script may take several minutes or more.
 
 // grep the md5 from results to locate the matching mod files and all available metadata:
-//    grep md5 sources/*.tsv
+//    grep md5 sources/*/*.tsv
 //    grep md5 ../tsv/pretty/md5/*.tsv
 
 // NOTE: running this first time will fetch/install dependencies etc. which may take a while.
