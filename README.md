@@ -172,36 +172,9 @@ The Scala and SQL scripts are licensed under **GPL-2.0-or-later**.
 
 For any applicable sui generis rights or copyrights I may have over the database files, they are provided under **CC BY-NC-SA 4.0** license.
 
-
 ### Sources
 
-Sources used for the database:
-
-- **Amiga Music Preservation (AMP)** - https://amp.dascene.net/
-- **AmigaMega** - https://amigamega.com/
-- **Aminet** - https://aminet.net/
-- **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
-- **Demozoo** - https://demozoo.org/
-- **eXoDOS** - https://www.retro-exo.com/
-- **ExoticA (old)** - http://old.exotica.org.uk/
-- **Fujiology** - https://fujiology.untergrund.net/
-- **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
-- **MBnet Apaja** - https://archive.org/details/modit
-- **Modland** - http://ftp.modland.com/
-- **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1
-- **NostalgicPlayer** - https://nostalgicplayer.dk/
-- **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
-- **Stone Oakvalley's Amiga Music Collection (SOAMC=)** - https://www.paula8364.com
-- **The Mod Archive** - https://modarchive.org/
-- **TOSEC** - https://www.tosecdev.org/
-- **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
-- **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
-- **Wanted Team** - http://wt.exotica.org.uk/
-- **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
-- **Wikipedia** - https://wikipedia.org
-- **Zakalwe** - git://zakalwe.fi/chip
-
-And my old Amiga mod collection.
+See [sources.md](sources.md) for sources used for the database.
 
 
 ## Used By
@@ -209,6 +182,7 @@ And my old Amiga mod collection.
 This database is also used by:
 
 - **HippoPlayer** - https://github.com/koobo/HippoPlayer
+
 
 ## Contact
 
