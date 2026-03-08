@@ -6,6 +6,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by [au
 
 Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
+The database contains 440000 modules with songlengths+modinfos, and metadata (authors/album/publishers/year) for around 350000.
 
 ## Directories
 
@@ -106,7 +107,7 @@ The TSV files use UTF-8 encoding.
 
 Identify Amiga exotic modules and tracker music from audio files or via microphone.
 
-The tool uses simple brute force approach for chroma similarity matching, so can be a bit slow. On M4 Max it takes from half a minute to a minute or two depending on input length. All CPU cores are utilized.
+The tool uses simple brute force approach for chroma similarity matching. On M4 Max it takes about 10 seconds, depending on input length. All CPU cores are utilized.
 
 Proper implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
 
