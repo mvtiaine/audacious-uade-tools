@@ -2,18 +2,6 @@
 -- Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 COPY (
-    SELECT DISTINCT CONCAT('http://ftp.amigascne.org/pub/amiga',a.parameter) FROM
-        productions_production_types c,
-        productions_productionlink a,
-        productions_production b
-    WHERE
-        a.link_class = 'AmigascneFile'
-        AND a.production_id = b.id
-        AND c.production_id = b.id
-        AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name like '%Music')
-) TO '/tmp/demozoo_amigascne.tsv' WITH NULL AS '';
-
-COPY (
     SELECT DISTINCT CONCAT('https://api.modarchive.org/downloads.php?moduleid=',a.parameter) FROM
         productions_production_types c,
         productions_productionlink a,
@@ -36,18 +24,6 @@ COPY (
         AND c.production_id = b.id
         AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name like '%Music')
 ) TO '/tmp/demozoo_padua.tsv' WITH NULL AS '';
-
-COPY (
-    SELECT DISTINCT CONCAT('https://files.scene.org/get',a.parameter) FROM
-        productions_production_types c,
-        productions_productionlink a,
-        productions_production b
-    WHERE
-        a.link_class = 'SceneOrgFile'
-        AND a.production_id = b.id
-        AND c.production_id = b.id
-        AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name like '%Music')
-) TO '/tmp/demozoo_sceneorg.tsv' WITH NULL AS '';
 
 COPY (
     SELECT DISTINCT CONCAT('https://ftp.untergrund.net',a.parameter) FROM

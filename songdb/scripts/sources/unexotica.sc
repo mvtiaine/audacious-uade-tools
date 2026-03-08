@@ -17,7 +17,7 @@ import io.circe.generic.auto._
 import io.circe.yaml
 import io.circe.yaml.parser
 
-val unexotica_path = System.getProperty("user.home") + "/UnExotica/"
+val unexotica_path = System.getProperty("user.home") + "/sources/unexotica/"
 
 implicit def h[A,B](implicit a: Decoder[A], b: Decoder[B]): Decoder[Either[A,B]] = {
   val l: Decoder[Either[A,B]]= a.map(Left.apply)
@@ -47,11 +47,7 @@ case class UnExoticaMeta (
 )
 
 lazy val metas = sources.unexotica.par.flatMap(e =>
-  val tokens = e.path.split("/")
-  val parent1 = e.path.split("/").dropRight(1)
-  val parent2 = e.path.split("/").dropRight(2)
-  val file1 = unexotica_path + parent1.mkString("/") + ".txt"
-  val file2 = unexotica_path + parent2.mkString("/") + ".txt"
+  val txt = unexotica_path + e.path.split("/").take(3).map(_.replace(".lha", ".txt")).mkString("/")
 
   def parse(file: String) = {
     val yaml = parser.parse(Using(scala.io.Source.fromFile(file)(using scala.io.Codec.ISO8859))(_.mkString).get)
@@ -61,8 +57,7 @@ lazy val metas = sources.unexotica.par.flatMap(e =>
       .valueOr(throw _)
     Some(e.md5, e.path, e.filesize, meta)
   }
-  if (Files.exists(Paths.get(file1))) parse(file1)
-  else if (Files.exists(Paths.get(file2))) parse(file2)
+  if (Files.exists(Paths.get(txt))) parse(txt)
   else None
 ).groupBy(_._1).map({case (md5, metas) =>
   // pick oldest for duplicates

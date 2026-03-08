@@ -1,3 +1,8 @@
+2026-03-08
+- Tons of new sources, see sources.md for full list
+- Optimized audio fingerprint matching, now about 5x faster
+- Metadata extraction/heuristics tweaks and fixes
+
 2026-01-27
 - Traces of audio fingerprint files in git history were removed with git-filter-repo. Recloning is needed.
 

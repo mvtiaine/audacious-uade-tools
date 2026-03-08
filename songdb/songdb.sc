@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx56G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -52,6 +52,8 @@ import fujiology._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
+val DEST = "/tmp/songdb/"
+
 // shutup warning
 System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
 
@@ -97,7 +99,7 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
   val decoded = decodeMetaTsv(encoded, idx2md5)
   val pretty = createPrettyMetaTsv(decoded)
 
-  Files.write(Paths.get(s"/tmp/songdb/pretty/md5/${name}"), pretty.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/pretty/md5/${name}"), pretty.getBytes("UTF-8"))
 
   assert(decoded == parsePrettyMetaTsv(pretty))
   assert(encoded == encodeMetaTsv(decoded, name, _md5idx))
@@ -108,8 +110,8 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     val xxh32Decoded = decodeMetaTsv(xxh32Encoded, idx2xxh32)
     val xxh32Pretty = createPrettyMetaTsv(xxh32)
 
-    Files.write(Paths.get(s"/tmp/songdb/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
-    Files.write(Paths.get(s"/tmp/songdb/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
+    Files.write(Paths.get(s"$DEST/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
+    Files.write(Paths.get(s"$DEST/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
 
     assert(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
     assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
@@ -150,7 +152,7 @@ lazy val xxh32idxTsv = Future(_try {
   }
 
   val encoded = encodeHashIdxTsv(idx2xxh32)
-  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/xxh32idx.tsv"), encoded.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/encoded/xxh32/xxh32idx.tsv"), encoded.getBytes("UTF-8"))
 })
 
 lazy val songlengthsTsvs = Future(_try {
@@ -226,9 +228,9 @@ lazy val songlengthsTsvs = Future(_try {
   val xxh32Decoded = decodeSonglengthsTsv(xxh32Encoded, idx2xxh32)
   val xxh32Pretty = createPrettySonglengthsTsv(xxh32)
 
-  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/songlengths.tsv"), xxh32Encoded.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/encoded/xxh32/songlengths.tsv"), xxh32Encoded.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
   assert(decoded == parsePrettySonglengthsTsv(pretty))
   assert(encoded == encodeSonglengthsTsv(decoded, _md5check))
@@ -255,9 +257,9 @@ lazy val modinfosTsvs = Future(_try {
   val xxh32Decoded = decodeModInfosTsv(xxh32Encoded, idx2xxh32)
   val xxh32Pretty = createPrettyModInfosTsv(xxh32)
 
-  Files.write(Paths.get("/tmp/songdb/encoded/xxh32/modinfos.tsv"), xxh32Encoded.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
-  Files.write(Paths.get("/tmp/songdb/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/encoded/xxh32/modinfos.tsv"), xxh32Encoded.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
+  Files.write(Paths.get(s"$DEST/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
   assert(decoded == parsePrettyModInfosTsv(pretty))
   assert(encoded == encodeModInfosTsv(decoded, _md5idx))
@@ -477,9 +479,9 @@ lazy val fujiologyTsvs = Future(_try {
 })
 
 Seq(
-  "/tmp/songdb/encoded/xxh32",
-  "/tmp/songdb/pretty/md5",
-  "/tmp/songdb/pretty/xxh32"
+  s"$DEST/encoded/xxh32",
+  s"$DEST/pretty/md5",
+  s"$DEST/pretty/xxh32"
 ).foreach { dir =>
   Files.createDirectories(Paths.get(dir))
 }
@@ -524,7 +526,7 @@ future onComplete {
     e.printStackTrace()
     System.exit(1)
   case Success(value) =>
-    System.out.println("Songdb files created to /tmp/songdb/")
+    System.out.println(s"Songdb files created to $DEST/")
 }
 
 Await.ready(future, Duration.Inf)

@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx8G
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -12,7 +12,7 @@
 // Depending on your system and input fingerprint length, running the script may take several minutes or more.
 
 // grep the md5 from results to locate the matching mod files and all available metadata:
-//    grep md5 sources/*.tsv
+//    grep md5 sources/*/*.tsv
 //    grep md5 ../tsv/pretty/md5/*.tsv
 
 // NOTE: running this first time will fetch/install dependencies etc. which may take a while.
@@ -182,11 +182,18 @@ if (results.isEmpty) {
   println()
 }
 
-def isSilentFingerprint(data: IndexedSeq[spire.math.UInt]): Boolean = {
+def isSilentFingerprint(data: Array[Int]): Boolean = {
   if (data.isEmpty) return true
   
   // Count total number of set bits
-  val totalBits = data.map(x => Integer.bitCount(x.toInt)).sum
+  var totalBits = 0
+  var zeroCount = 0
+  var i = 0
+  while (i < data.length) {
+    totalBits += Integer.bitCount(data(i))
+    if (data(i) == 0) zeroCount += 1
+    i += 1
+  }
   val totalPossibleBits = data.length * 32
   
   // More aggressive silence detection
@@ -197,7 +204,6 @@ def isSilentFingerprint(data: IndexedSeq[spire.math.UInt]): Boolean = {
   val repetitionRatio = uniqueValues.toDouble / data.length
   
   // Check for all-zero or near-zero fingerprints
-  val zeroCount = data.count(_ == UInt(0))
   val zeroRatio = zeroCount.toDouble / data.length
   
   // Detect silence, near-silence, or bogus patterns
@@ -209,9 +215,9 @@ def isSilentFingerprint(data: IndexedSeq[spire.math.UInt]): Boolean = {
 
 def chromaSimilarity(
   algo1: Int,
-  knownFullData: IndexedSeq[spire.math.UInt],
+  knownFullData: Array[Int],
   algo2: Int,
-  unknownData: IndexedSeq[spire.math.UInt],
+  unknownData: Array[Int],
   minMatchRatio: Double = 0.7
 ): Double = {
   if (algo1 != algo2) {
@@ -244,10 +250,8 @@ def chromaSimilarity(
     val endIdx = math.min(unknownLength, knownLength - offset)
     
     var i = 0
-    while (i < endIdx && offset + i < knownLength) {
-      val j = i + offset
-      val xorValue = unknownData(i) ^ knownFullData(j)
-      currentScore += (32 - Integer.bitCount(xorValue.toInt))
+    while (i < endIdx) {
+      currentScore += (32 - Integer.bitCount(unknownData(i) ^ knownFullData(i + offset)))
       overlap += 1
       i += 1
     }

@@ -9,54 +9,234 @@ import scala.util.Using
 
 enum Source:
   case
-    Modland,
-    AMP,
-    UnExotica,
-    Mods_Anthology,
-    Wanted_Team,
-    Zakalwe,
+    _1996Mods,
+    AlteredPerception,
+    AmbMod,
+    AmigaMuseum,
+    AmigaMegaDemos,
+    AmigaMegaGames,
+    AmigaScene,
     Aminet,
-    Modland_Incoming,
-    Demozoo_Leftovers,
-    OldExotica,
-    ModArchive,
-    TOSEC_Music,
-    TOSEC_Music_Unknown,
-    SOAMC,
+    AMP,
+    ArtPacksAcidOrg,
+    ArtScene,
+    BlasterSoundBBS,
+    CelicModules,
+    ChiptuneCom,
+    ClassicGameSoundtracks,
+    Dacapo,
+    DaJormas,
+    Demodulate,
+    DemozooLeftovers,
+    DfxCollection,
+    DrMusic,
+    DrMusicLab,
+    DynamicMusicStation,
+    EuroScene1,
+    EuroScene2,
+    Flerp,
+    FredTheGang2014,
+    FreedomCD,
+    FTPKloszArtPL,
     Fujiology,
+    GroovyBytes,
+    Haxorfi,
+    Hornet,
+    HotSoundVision,
+    HotSoundVision2,
+    ImphobiaDreams,
+    ImphobiaDreams2,
+    Kosmic,
+    LemonAmiga,
+    MassiveModCollection,
+    MaximumMods,
+    MazziveInjection,
     MBnet,
+    MegaModMadness,
+    Melcom,
+    MidiMultimediaExchangeBBS,
+    ModJP,
+    ModArchive,
+    Modiromppu,
+    Modland,
+    ModlandIncoming,
+    ModPlanet,
+    ModSoulBrother,
+    ModsAnthology,
+    ModulesInJP,
+    ModulesPL,
+    ModulyPL,
+    Monstro,
+    MrOherd,
+    MultimediaSoundFactory,
+    Music95,
+    MusicBox1994,
+    MusicBoxPC,
+    MusicModSoundEffect,
+    NetlabelArchive,
+    NightshiftSoundVision,
+    NoiseMusic,
     NostalgicPlayer,
-    AmigaMega,
-    Classic_Game_Soundtracks,
-    Lemon_Amiga,
-    ProTracker_Modules_GPack,
-    Tundrah
+    OldExotica,
+    PlayItByYear,
+    PowerModul1,
+    PowerModul2,
+    ProTrackerModulesGPack,
+    RetroExo,
+    RetroPlayWHDLoadPacks,
+    Scene96,
+    SceneOrg,
+    SceneOrgLostFound,
+    SceneSporg,
+    SceneStorm,
+    SceneXplorer,
+    SceneXplorer2,
+    SOAMC,
+    SoundMod1,
+    SoundMod2,
+    SoundMusicMidiCollection2,
+    SoundsTerrific,
+    SoundsTerrificII,
+    SoundwareCollection,
+    TerraSoundLibrary,
+    TheDarkCornerBBS,
+    TheModuleCollection,
+    TheSceneArchives,
+    TheSoundLibrary,
+    TheUltimateModCollection,
+    TheUltimateMusicSound1,
+    TheUltimateMusicSound2,
+    TOSECMusic,
+    TOSECMusicUnknown,
+    Tundrah,
+    UgamodCollection1,
+    UgamodCollection2,
+    Ultrasounds,
+    UnExotica,
+    WantedTeam,
+    WeirdScienceMultimedia,
+    WeirdScienceMultimedia2,
+    WorldOfGameMods,
+    WorldOfSound1,
+    WorldOfSound2,
+    Zakalwe,
+    Unnamed
 
 import Source._
 
 val tsvfiles = Buffer(
-  ("modland.tsv", Modland),
-  ("amp.tsv", AMP),
-  ("unexotica.tsv", UnExotica),
-  ("modsanthology.tsv", Mods_Anthology),
-  ("wantedteam.tsv", Wanted_Team),
-  ("zakalwe.tsv", Zakalwe),
-  ("aminet.tsv", Aminet),
-  ("modland_incoming.tsv", Modland_Incoming),
-  ("demozoo_leftovers.tsv", Demozoo_Leftovers),
-  ("oldexotica.tsv", OldExotica),
-  ("modarchive.tsv", ModArchive),
-  ("tosecmusic.tsv", TOSEC_Music),
-  ("tosecmusic_unknown.tsv", TOSEC_Music_Unknown),
-  ("soamc.tsv", SOAMC),
-  ("fujiology.tsv", Fujiology),
-  ("mbnet.tsv", MBnet),
-  ("nostalgicplayer.tsv", NostalgicPlayer),
-  ("amigamega.tsv", AmigaMega),
-  ("classicgamesoundtracks.tsv", Classic_Game_Soundtracks),
-  ("lemonamiga.tsv", Lemon_Amiga),
-  ("protrackermodulesgpack.tsv", ProTracker_Modules_GPack),
-  ("tundrah.tsv", Tundrah),
+  ("bbs/blastersoundbbs.tsv", BlasterSoundBBS),
+  ("bbs/mbnet.tsv", MBnet),
+  ("bbs/midimultimediaexchangebbs.tsv", MidiMultimediaExchangeBBS),
+  ("bbs/thedarkcornerbbs.tsv", TheDarkCornerBBS),
+  ("cd/dacapo.tsv", Dacapo),
+  ("cd/drmusic.tsv", DrMusic),
+  ("cd/drmusiclab.tsv", DrMusicLab),
+  ("cd/dynamicmusicstation.tsv", DynamicMusicStation),
+  ("cd/euroscene1.tsv", EuroScene1),
+  ("cd/euroscene2.tsv", EuroScene2),
+  ("cd/freedomcd.tsv", FreedomCD),
+  ("cd/groovybytes.tsv", GroovyBytes),
+  ("cd/hotsoundvision.tsv", HotSoundVision),
+  ("cd/hotsoundvision2.tsv", HotSoundVision2),
+  ("cd/imphobiadreams.tsv", ImphobiaDreams),
+  ("cd/imphobiadreams2.tsv", ImphobiaDreams2),
+  ("cd/massivemodcollection.tsv", MassiveModCollection),
+  ("cd/maximummods.tsv", MaximumMods),
+  ("cd/megamodmadness.tsv", MegaModMadness),
+  ("cd/modsanthology.tsv", ModsAnthology),
+  ("cd/monstro.tsv", Monstro),
+  ("cd/multimediasoundfactory.tsv", MultimediaSoundFactory),
+  ("cd/music95.tsv", Music95),
+  ("cd/musicbox1994.tsv", MusicBox1994),
+  ("cd/musicboxpc.tsv", MusicBoxPC),
+  ("cd/musicmodsoundeffect.tsv", MusicModSoundEffect),
+  ("cd/nightshiftsoundvision.tsv", NightshiftSoundVision),
+  ("cd/powermodul1.tsv", PowerModul1),
+  ("cd/powermodul2.tsv", PowerModul2),
+  ("cd/scene96.tsv", Scene96),
+  ("cd/scenestorm.tsv", SceneStorm),
+  ("cd/scenexplorer.tsv", SceneXplorer),
+  ("cd/scenexplorer2.tsv", SceneXplorer2),
+  ("cd/soundmod1.tsv", SoundMod1),
+  ("cd/soundmod2.tsv", SoundMod2),
+  ("cd/soundmusicmidicollection2.tsv", SoundMusicMidiCollection2),
+  ("cd/soundsterrific.tsv", SoundsTerrific),
+  ("cd/soundsterrificii.tsv", SoundsTerrificII),
+  ("cd/soundwarecollection.tsv", SoundwareCollection),
+  ("cd/terrasoundlibrary.tsv", TerraSoundLibrary),
+  ("cd/themodulecollection.tsv", TheModuleCollection),
+  ("cd/thesoundlibrary.tsv", TheSoundLibrary),
+  ("cd/theultimatemusicsound1.tsv", TheUltimateMusicSound1),
+  ("cd/theultimatemusicsound2.tsv", TheUltimateMusicSound2),
+  ("cd/ugamodcollection1.tsv", UgamodCollection1),
+  ("cd/ugamodcollection2.tsv", UgamodCollection2),
+  ("cd/ultrasounds.tsv", Ultrasounds),
+  ("cd/weirdsciencemultimedia.tsv", WeirdScienceMultimedia),
+  ("cd/weirdsciencemultimedia2.tsv", WeirdScienceMultimedia2),
+  ("cd/worldofsound1.tsv", WorldOfSound1),
+  ("cd/worldofsound2.tsv", WorldOfSound2),
+  ("collection/1996mods.tsv", _1996Mods),
+  ("collection/alteredperception.tsv", AlteredPerception),
+  ("collection/ambmod.tsv", AmbMod),
+  ("collection/celicmodules.tsv", CelicModules),
+  ("collection/dfxcollection.tsv", DfxCollection),
+  ("collection/fredthegang2014.tsv", FredTheGang2014),
+  ("collection/lemonamiga.tsv", LemonAmiga),
+  ("collection/mazziveinjection.tsv", MazziveInjection),
+  ("collection/melcom.tsv", Melcom),
+  ("collection/mod_jp.tsv", ModJP),
+  ("collection/modiromppu.tsv", Modiromppu),
+  ("collection/modplanet.tsv", ModPlanet),
+  ("collection/modulesinjp.tsv", ModulesInJP),
+  ("collection/modulypl.tsv", ModulyPL),
+  ("collection/mroherd.tsv", MrOherd),
+  ("collection/playitbyyear.tsv", PlayItByYear),
+  ("collection/protrackermodulesgpack.tsv", ProTrackerModulesGPack),
+  ("collection/retroplaywhdloadpacks.tsv", RetroPlayWHDLoadPacks),
+  ("collection/thescenearchives.tsv", TheSceneArchives),
+  ("collection/theultimatemodcollection.tsv", TheUltimateModCollection),
+  ("collection/tosecmusic.tsv", TOSECMusic),
+  ("collection/tosecmusic_unknown.tsv", TOSECMusicUnknown),
+  ("collection/tundrah.tsv", Tundrah),
+  ("collection/unnamed.tsv", Unnamed),
+  ("group/dajormas.tsv", DaJormas),
+  ("group/kosmic.tsv", Kosmic),
+  ("group/modsoulbrother.tsv", ModSoulBrother),
+  ("group/netlabelarchive.tsv", NetlabelArchive),
+  ("group/noisemusic.tsv", NoiseMusic),
+  ("site/amigamega_demos.tsv", AmigaMegaDemos),
+  ("site/amigamega_games.tsv", AmigaMegaGames),
+  ("site/amigamuseum.tsv", AmigaMuseum),
+  ("site/amigascne.tsv", AmigaScene),
+  ("site/aminet.tsv", Aminet),
+  ("site/amp.tsv", AMP),
+  ("site/artpacksacidorg.tsv", ArtPacksAcidOrg),
+  ("site/artscene.tsv", ArtScene),
+  ("site/chiptunecom.tsv", ChiptuneCom),
+  ("site/classicgamesoundtracks.tsv", ClassicGameSoundtracks),
+  ("site/demodulate.tsv", Demodulate),
+  ("site/demozoo_leftovers.tsv", DemozooLeftovers),
+  ("site/flerp.tsv", Flerp),
+  ("site/ftpkloszartpl.tsv", FTPKloszArtPL),
+  ("site/fujiology.tsv", Fujiology),
+  ("site/haxorfi.tsv", Haxorfi),
+  ("site/hornet.tsv", Hornet),
+  ("site/modarchive.tsv", ModArchive),
+  ("site/modland.tsv", Modland),
+  ("site/modland_incoming.tsv", ModlandIncoming),
+  ("site/modulespl.tsv", ModulesPL),
+  ("site/nostalgicplayer.tsv", NostalgicPlayer),
+  ("site/oldexotica.tsv", OldExotica),
+  ("site/retroexo.tsv", RetroExo),
+  ("site/sceneorg.tsv", SceneOrg),
+  ("site/sceneorg_lostfound.tsv", SceneOrgLostFound),
+  ("site/scenesporg.tsv", SceneSporg),
+  ("site/soamc.tsv", SOAMC),
+  ("site/unexotica.tsv", UnExotica),
+  ("site/wantedteam.tsv", WantedTeam),
+  ("site/worldofgamemods.tsv", WorldOfGameMods),
+  ("site/zakalwe.tsv", Zakalwe),
 );
 
 case class TsvEntry (
@@ -69,6 +249,7 @@ case class TsvEntry (
   channels: Int,
   filesize: Int,
   xxh32: String,
+  crc32: String,
   path: String,
 )
 
@@ -78,8 +259,8 @@ lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(
     val l = line.split("\t")
     if (l.length > 4) {
       player = l(4)
-      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9))
-    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "")
+      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9), l(10))
+    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "", "")
   ).toBuffer
 ).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
 
@@ -99,27 +280,27 @@ def readSourceDB(source: Source) = {
       SourceDBEntry(md5, e.path, e.filesize, e.xxh32)
     )
   }).flatten.seq
-}
+}.toSeq
 
-lazy val modland = readSourceDB(Modland)
-lazy val amp = readSourceDB(AMP)
-lazy val unexotica = readSourceDB(UnExotica)
-lazy val modsanthology = readSourceDB(Mods_Anthology)
-lazy val wantedteam = readSourceDB(Wanted_Team)
-lazy val zakalwe = readSourceDB(Zakalwe)
+lazy val amigascne = readSourceDB(AmigaScene)
 lazy val aminet = readSourceDB(Aminet)
-lazy val modland_incoming = readSourceDB(Modland_Incoming)
-lazy val demozoo_leftovers = readSourceDB(Demozoo_Leftovers)
-lazy val oldexotica = readSourceDB(OldExotica)
-lazy val modarchive = readSourceDB(ModArchive)
-lazy val tosecmusic = readSourceDB(TOSEC_Music)
-lazy val tosecmusic_unknown = readSourceDB(TOSEC_Music_Unknown)
-lazy val soamc = readSourceDB(SOAMC)
+lazy val amp = readSourceDB(AMP)
+lazy val artpacksacidorg = readSourceDB(ArtPacksAcidOrg)
+lazy val blastersoundbbs = readSourceDB(BlasterSoundBBS)
+lazy val demodulate = readSourceDB(Demodulate)
+lazy val demozoo_leftovers = readSourceDB(DemozooLeftovers)
+lazy val flerp = readSourceDB(Flerp)
 lazy val fujiology = readSourceDB(Fujiology)
-lazy val mbnet = readSourceDB(MBnet)
-lazy val nostalgicplayer = readSourceDB(NostalgicPlayer)
-lazy val amigamega = readSourceDB(AmigaMega)
-lazy val classicgamesoundtracks = readSourceDB(Classic_Game_Soundtracks)
-lazy val lemonamiga = readSourceDB(Lemon_Amiga)
-lazy val protrackermodulesgpack = readSourceDB(ProTracker_Modules_GPack)
-lazy val tundrah = readSourceDB(Tundrah)
+lazy val hornet = readSourceDB(Hornet)
+lazy val modland = readSourceDB(Modland)
+lazy val modplanet = readSourceDB(ModPlanet)
+lazy val modsanthology = readSourceDB(ModsAnthology)
+lazy val modsoulbrother = readSourceDB(ModSoulBrother)
+lazy val oldexotica = readSourceDB(OldExotica)
+lazy val sceneorg = readSourceDB(SceneOrg)
+lazy val sceneorg_lostfound = readSourceDB(SceneOrgLostFound)
+lazy val scenesporg = readSourceDB(SceneSporg)
+lazy val tosecmusic = readSourceDB(TOSECMusic)
+lazy val tosecmusic_unknown = readSourceDB(TOSECMusicUnknown)
+lazy val unexotica = readSourceDB(UnExotica)
+lazy val wantedteam = readSourceDB(WantedTeam)

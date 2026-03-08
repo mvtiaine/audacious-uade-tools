@@ -36,9 +36,9 @@ case class TosecMeta(
   platform: String = "",
 )
 
-val tosecDir = System.getProperty("user.home") + "/tosec/TOSEC/"
-val tosecIsoDir = System.getProperty("user.home") + "/tosec/TOSEC-ISO/"
-val tosecCUEsDir = System.getProperty("user.home") + "/tosec/CUEs/"
+val tosecDir = System.getProperty("user.home") + "/sources/tosec/TOSEC/"
+val tosecIsoDir = System.getProperty("user.home") + "/sources/tosec/TOSEC-ISO/"
+val tosecCUEsDir = System.getProperty("user.home") + "/sources/tosec/CUEs/"
 
 lazy val platforms = Buffer(
   //"3DO 3DO",

@@ -37,7 +37,7 @@ case class eXoDOSMeta(
     //addonIncluded: Boolean,
 )
 
-val dosmaster_tsv = System.getProperty("user.home") + "/exodos/DOS_Master - DOS_Master.tsv"
+val dosmaster_tsv = System.getProperty("user.home") + "/sources/exodos/DOS_Master - DOS_Master.tsv"
 
 lazy val metas = Using(scala.io.Source.fromFile(dosmaster_tsv)(using scala.io.Codec.UTF8))(_.getLines.toBuffer.par.map { line =>
   val l = line.split("\\t")

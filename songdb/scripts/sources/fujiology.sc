@@ -18,7 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 //val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_7.xlsx"
 // XXX corrupted fujiology excel file?
 org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
-val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_9.xlsx"
+val fujiology_xlsx = System.getProperty("user.home") + "/sources/fujiology/fujiology_archive_2_9_9.xlsx"
 lazy val fujiology_by_filename = sources.fujiology.groupBy(_.path.split("/").last.toLowerCase)
 
 case class FujiologyMeta (
@@ -241,7 +241,6 @@ lazy val prods_metas = {
       val prodType = getCellString(row, 2)
       val filenames = getCellString(row, filenameIdx).toLowerCase.split(",|\\. ").map(_.trim)
         .filterNot(_.isEmpty)
-        .map(_.replace(".zip", ""))
       val publishers = splitGroups(group)
       filenames.foreach { filename =>
         prodRows += ProdRow(
@@ -343,7 +342,6 @@ lazy val mags_metas = {
       val system = getCellString(row, 3)
       val filenames = getCellString(row, 7).toLowerCase.split(",|\\. ").map(_.trim)
         .filterNot(_.isEmpty)
-        .map(_.replace(".zip", ""))
       val publishers = splitGroups(group)
       filenames.foreach { filename =>
         magRows += MagRow(
