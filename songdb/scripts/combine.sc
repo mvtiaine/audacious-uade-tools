@@ -122,20 +122,26 @@ val normalizeAlbumPatterns = Seq(
   (" [Ii][Xx]$"," 9")
 ).map { case (pattern, replacement) => (Pattern.compile(pattern), replacement) }
 val normalizePattern2 = Pattern.compile("[^A-Za-z0-9\\.]")
+val normalizeAlbumCache = new ConcurrentHashMap[String, String]()
 def normalizeAlbum(m: MetaData): String = normalizeAlbum(m._type, m.album, m.publishers)
 def normalizeAlbum(_type: String, album: String, publishers: Buffer[String]): String = {
-  var a = album
-  if (_type.toLowerCase == "cracktro")
-    a = a.trim + " [cracktro]"
-  publishers.foreach(p =>
-    a = a.replaceAll(s"^${Pattern.quote(p)} ", "")
-  )
-  val normalized = normalizeAlbumPatterns.foldLeft(a) { case (acc, (pattern, replacement)) =>
-    pattern.matcher(acc).replaceAll(replacement)
-  }.toLowerCase
+  if (album.isEmpty) ""
+  else {
+    var a = album
+    if (_type.toLowerCase == "cracktro")
+      a = a.trim + " [cracktro]"
+    publishers.foreach(p =>
+      a = a.replaceAll(s"^${Pattern.quote(p)} ", "")
+    )
+    normalizeAlbumCache.computeIfAbsent(a, a => {
+      val normalized = normalizeAlbumPatterns.foldLeft(a) { case (acc, (pattern, replacement)) =>
+        pattern.matcher(acc).replaceAll(replacement)
+      }.toLowerCase
 
-  val transliterated = transliteratorThreadLocal.get().transliterate(normalized)
-  normalizePattern2.matcher(transliterated).replaceAll("").trim
+      val transliterated = transliteratorThreadLocal.get().transliterate(normalized)
+      normalizePattern2.matcher(transliterated).replaceAll("").trim
+    })
+  }
 }
 
 def pickMostCommonPublishers(metas: Set[MetaData]): Buffer[String] = {

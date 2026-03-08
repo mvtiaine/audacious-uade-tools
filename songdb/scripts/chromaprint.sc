@@ -11,12 +11,12 @@ import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
 import scala.util.boundary, boundary.break
 import spire.math._
 
-val fpCache = new ConcurrentHashMap[String, (Int, IndexedSeq[UInt])]().asScala
+val fpCache = new ConcurrentHashMap[String, (Int, Array[Int])]().asScala
 
-def decodeChromaprint(chromaprint: String): (Int, IndexedSeq[UInt]) = {
+def decodeChromaprint(chromaprint: String): (Int, Array[Int]) = {
   fpCache.getOrElseUpdate(chromaprint, {
     val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
-    (algo, data)
+    (algo, data.map(_.toInt).toArray)
   })
 }
 
@@ -37,9 +37,9 @@ def chromaSimilarity(chromaprint1: String, chromaprint2: String, minSimilarity: 
 
 def chromaSimilarityFast(
   algo1: Int,
-  data1: IndexedSeq[spire.math.UInt],
+  data1: Array[Int],
   algo2: Int,
-  data2: IndexedSeq[spire.math.UInt],
+  data2: Array[Int],
   threshold: Double,
   fuzziness: Int = 3
 ): Double = {
@@ -47,35 +47,41 @@ def chromaSimilarityFast(
     return 0.0
   }
 
+  val len1 = data1.length
+  val len2 = data2.length
   var maxSimilarity = 0.0
-  val offsets = Seq(0) ++ (1 to fuzziness).flatMap(i => Seq(-i, i))
 
   boundary {
-    for (offset <- offsets) {
-      var totalScore = 0
-      var overlap = 0
-      var i = 0
-    
-      while (i < data1.length) {
-        val j = i + offset
-        if (j >= 0 && j < data2.length) {
-          val xorValue = data1(i) ^ data2(j)
-          totalScore += (32 - Integer.bitCount(xorValue.toInt))
+    var oi = 0
+    while (oi <= fuzziness) {
+      var pass = 0
+      while (pass < (if (oi == 0) 1 else 2)) {
+        val offset = if (pass == 0) -oi else oi
+        val iStart = Math.max(0, -offset)
+        val iEnd = Math.min(len1, len2 - offset)
+        var totalScore = 0
+        var overlap = 0
+        var i = iStart
+
+        while (i < iEnd) {
+          totalScore += (32 - Integer.bitCount(data1(i) ^ data2(i + offset)))
           overlap += 1
+          i += 1
         }
-        i += 1
-      }
-    
-      if (overlap > 0) {
-        val similarity = totalScore.toDouble / (overlap * 32.0)
-        if (similarity > maxSimilarity) {
-          maxSimilarity = similarity
-          if (maxSimilarity >= threshold) break()
+
+        if (overlap > 0) {
+          val similarity = totalScore.toDouble / (overlap * 32.0)
+          if (similarity > maxSimilarity) {
+            maxSimilarity = similarity
+            if (maxSimilarity >= threshold) break()
+          }
         }
+        pass += 1
       }
+      oi += 1
     }
   }
-  
+
   maxSimilarity
 }
 /*
@@ -472,7 +478,8 @@ object SimHash {
 
   // mvtiaine: modified to support generating multiple/longer hashes as BigInt,
   // instead of single UInt from small part of the data
-  def apply(data: Seq[UInt], hashes: Int = 1): BigInt = {
+  // also IndexedSeq[UInt] to Array[Int] to reduce overhead and optimized loop
+  def apply(data: Array[Int], hashes: Int = 1): BigInt = {
     if (data.isEmpty) {
       return BigInt(0)
     }
@@ -480,28 +487,21 @@ object SimHash {
     val groups = if (groupSize > 0) data.grouped(groupSize).toSeq else Seq(data)
 
     groups.map { group =>
-      group.foldLeft(Vector.fill[Int](length)(0)) {
-        (hash, el) =>
-          (0 until length).foldLeft(hash) {
-            (iHash, i) =>
-              iHash.updated(
-                i,
-                iHash(i) + (
-                  if ((el & (UInt(1) << i)).toInt == 0) {
-                    -1
-                  } else {
-                    1
-                  })
-              )
-          }
-      }.zipWithIndex.foldLeft(UInt(0)){
-        (result, next) =>
-          if (next._1 > 0) {
-            result | (UInt(1) << next._2)
-          } else {
-            result
-          }
+      val counts = new Array[Int](length)
+      for (el <- group) {
+        var i = 0
+        while (i < length) {
+          if ((el & (1 << i)) == 0) counts(i) -= 1 else counts(i) += 1
+          i += 1
+        }
       }
+      var result = 0
+      var i = 0
+      while (i < length) {
+        if (counts(i) > 0) result |= (1 << i)
+        i += 1
+      }
+      result
     }.foldLeft(BigInt(0))((acc, hash) => (acc << 32) | BigInt(hash.toLong & 0xFFFFFFFFL))
   }
 }
