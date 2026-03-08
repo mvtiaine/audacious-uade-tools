@@ -230,7 +230,8 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   } else if (linkClass == "FujiologyFile") {
     val path = (if (url.startsWith("/")) url.drop(1) else url)
     findLeftovers(path, fujiology_by_path)
-  } else if (url.contains("://amp.dascene.net/downmod.php?index=")) {
+  } else if (url.contains("://amp.dascene.net/downmod.php?index=") ||
+             url.contains("://amp.dascene.net/analyzer2.php?idx=")) {
     val id = url.replaceAll("&application=amp","").split("=").last.toInt
     if (amp.amp_mods_by_id.contains(id)) {
       val md5 = amp.amp_mods_by_id(id).head.md5
