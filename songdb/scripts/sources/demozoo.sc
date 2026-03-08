@@ -53,7 +53,7 @@ def normalizePlatform(platform: String): String = {
   else ""
 }
 
-lazy val ml_by_path = sources.modland.groupBy(_.path.toLowerCase)
+lazy val modland_by_path = sources.modland.groupBy(_.path.toLowerCase)
 lazy val aminet_by_path = sources.aminet.groupBy(_.path
   .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx",""))
 lazy val demozoo_leftovers_by_path = sources.demozoo_leftovers.groupBy(_.path.toLowerCase)
@@ -63,6 +63,17 @@ lazy val wantedteam_by_path = sources.wantedteam.groupBy(_.path.split("/").take(
 lazy val unexotica_by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
 lazy val fujiology_by_path = sources.fujiology.groupBy(_.path.toLowerCase)
 lazy val oldexotica_by_archive = oldexotica.metas.groupBy(_.archive.toLowerCase)
+lazy val amigascne_by_path = sources.amigascne.groupBy(_.path.toLowerCase)
+lazy val sceneorg_by_path = sources.sceneorg.groupBy(_.path.toLowerCase)
+lazy val sceneorg_lostfound_by_path = sources.sceneorg_lostfound.groupBy(_.path.toLowerCase)
+lazy val demodulate_by_path = sources.demodulate.groupBy(_.path.toLowerCase)
+lazy val artpacksacidorg_by_path = sources.artpacksacidorg.groupBy(_.path.toLowerCase)
+lazy val flerp_by_path = sources.flerp.groupBy(_.path.toLowerCase)
+lazy val hornet_by_path = sources.hornet.groupBy(_.path.toLowerCase)
+lazy val modsoulbrother_by_path = sources.modsoulbrother.groupBy(_.path.toLowerCase)
+lazy val scenesporg_by_path = sources.scenesporg.groupBy(_.path.toLowerCase)
+lazy val blastersoundbbs_by_path = sources.blastersoundbbs.groupBy(_.path.toLowerCase)
+lazy val modplanet_by_path = sources.modplanet.groupBy(_.path.toLowerCase)
 
 def trim(s: String) = {
   val trimmed = s.trim
@@ -170,8 +181,8 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
 
   // non-url links
   if (linkClass == "AmigascneFile") {
-    val path = "ftp.amigascne.org/pub/amiga" + url
-    findLeftovers(path)
+    val path = (if (url.startsWith("/")) url.drop(1) else url)
+    findLeftovers(path, amigascne_by_path)
   } else if (linkClass == "ModarchiveModule") {
     if (modarchive_by_id.contains(url)) {
       val md5 = modarchive_by_id(url).head.md5
@@ -179,17 +190,36 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     } else Buffer.empty
   } else if (linkClass == "ModlandFile" && url.startsWith("/pub/modules/")) {
     val path = url.replaceFirst("/pub/modules/", "").replace("//","/")
-    if (ml_by_path.contains(path)) {
-      val md5 = ml_by_path(path).head.md5
+    if (modland_by_path.contains(path)) {
+      val md5 = modland_by_path(path).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (linkClass == "PaduaOrgFile") {
     val path = "ftp.padua.org/pub/c64" + url
     findLeftovers(path)
-  // TODO scene.org source
   } else if (linkClass == "SceneOrgFile") {
-    val path = "files.scene.org/get" + url
-    findLeftovers(path)
+    val path = (if (url.startsWith("/")) url.drop(1) else url)
+    if (path.startsWith("demos/compilations/demodulate/")) {
+      findLeftovers(path.replace("demos/compilations/demodulate/",""), demodulate_by_path)
+    } else if (path.startsWith("demos/compilations/lost_found_and_more/")) {
+      findLeftovers(path.replace("demos/compilations/lost_found_and_more/",""), sceneorg_lostfound_by_path)
+    } else if (path.startsWith("mirrors/artpacks/")) {
+      findLeftovers(path.replace("mirrors/artpacks/",""), artpacksacidorg_by_path)
+    } else if (path.startsWith("mirrors/flerp/")) {
+      findLeftovers(path.replace("mirrors/flerp/",""), flerp_by_path)
+    } else if (path.startsWith("mirrors/hornet/")) {
+      findLeftovers(path.replace("mirrors/hornet/",""), hornet_by_path)
+    } else if (path.startsWith("mirrors/modsoulbrother/")) {
+      findLeftovers(path.replace("mirrors/modsoulbrother/",""), modsoulbrother_by_path)
+    } else if (path.startsWith("mirrors/scenesp.org/compilations/blastersound_bbs/")) {
+      findLeftovers(path.replace("mirrors/scenesp.org/compilations/blastersound_bbs/",""), blastersoundbbs_by_path)
+    } else if (path.startsWith("mirrors/scenesp.org/compilations/modplanet/normal/")) {
+      findLeftovers(path.replace("mirrors/scenesp.org/compilations/modplanet/normal/",""), modplanet_by_path)
+    } else if (path.startsWith("mirrors/scenesp.org/")) {
+      findLeftovers(path.replace("mirrors/scenesp.org/",""), scenesporg_by_path)
+    } else {
+      findLeftovers(path, sceneorg_by_path)
+    }
   } else if (linkClass == "UntergrundFile") {
     val path = "ftp.untergrund.net" + url
     findLeftovers(path)
