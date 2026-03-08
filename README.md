@@ -6,7 +6,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by [au
 
 Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
-The database contains 440000 modules with songlengths+modinfos, and metadata (authors/album/publishers/year) for around 350000.
+The database contains songlengths and module infos for around 440000 unique MD5s, and metadata (authors/album/publishers/year) for 350000, coming from 1.6M+ files in over 100 sources.
 
 ## Directories
 
@@ -44,10 +44,10 @@ Hashes are calculated from decompressed files, even if the original source files
 
 ## Raw TSV Source Files
 
-- `songdb/sources/*.tsv` - module infos and songlengths for each site/source
-- `songdb/sources/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding duplicated sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
-- `songdb/sources/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
-- `songdb/sources/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
+- `songdb/sources/*/*.tsv` - module infos and songlengths for each site/source
+- `songdb/sources/site/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding duplicated sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
+- `songdb/sources/metadata/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
+- `songdb/sources/metadata/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
 - `songdb/sources/audio/*.tsv` - audio fingerprints (chromaprint), separate download. See `scripts/sources/audio.sc` for format.
 
 The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
