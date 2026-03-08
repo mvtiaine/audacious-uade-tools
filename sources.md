@@ -40,20 +40,20 @@ Sources used for the database:
 - **Altered Perception Archive** - https://ftp.modland.com/incoming/delivery%20bay/2023-10-20_Altered_Perception_Archive/
 - **Ambmod** - https://files.scene.org/browse/mirrors/scenesp.org/compilations/ambmod/
 - **Amiga - Play It By Year Collection** - https://archive.org/details/amiga-play-it-by-year-collection
-- **Celic Modules** - ...
+- **Celic Modules** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Moduly/
 - **DFX Collection** - https://archive.org/details/amiga_iso_collection
-- **Fred / The Gang 2014 Amiga Collection** - ...
+- **Fred / The Gang 2014 Amiga Collection** - https://grandis.nu/turran/FTP/Collection/Compilation/Fred_TheGang_2014_Amiga_Collection/Music%20-%20Unsorted/
 - **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
 - **Mazzive Injection tracked worx '98** - https://ftp.scene.org/pub/demos/compilations/mazzive_injection_traxed_worx/
 - **melcom's Chiptune Archive** - https://files.scene.org/browse/music/compilations/
 - **modiromppu** - https://archive.org/details/modiromppu
 - **Modplanet** - https://files.scene.org/browse/mirrors/scenesp.org/compilations/modplanet/
 - **Modules in JP** - https://archive.org/details/jp-mod-music
-- **Moduly PL** - ...
+- **Moduly PL** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Scena/Modules/
 - **mod_jp** - https://archive.org/details/jp-mod-music
 - **Mr.Oherd Tracker Music Pack** - https://archive.org/details/mytrackermusicpack
 - **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
-- **Retroplay WHDLoad Packs** - ...
+- **Retroplay WHDLoad Packs** - https://grandis.nu/turran/FTP/Retroplay%20WHDLoad%20Packs/
 - **The Scene Archives** - https://files.scene.org/browse/mirrors/the_scene_archives/
 - **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
@@ -106,7 +106,7 @@ And my old Amiga mod collection.
 - **Power Modul Vol. 2** - https://archive.org/details/power-modul-2
 - **Scene 96** - https://ftp.scene.org/pub/demos/compilations/scene_96_international_edition/
 - **Scene Storm** - https://archive.org/details/cdrom-amigaformatcd13B-scene-storm
-- **Scene Xplorer 1** - ...
+- **Scene Xplorer 1** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
 - **Scene Xplorer 2** - https://archive.org/details/cdrom-scenexplorer2
 - **Sound, Music & MIDI Collection 2** - https://archive.org/details/smmvol-2
 - **SoundMOD Volume One** - https://archive.org/details/soundmod-volume-1-pc-canada
@@ -116,19 +116,20 @@ And my old Amiga mod collection.
 - **SoundWare Collection** - https://archive.org/details/SoundWare_Collection_CMS_Software_Distributing_1993
 - **Terra Sound Library** - https://archive.org/details/terra-sound-library
 - **The Module Collection** - https://archive.org/details/TheModuleCollection1 + 2 + 3
-- **The Sound Library & Graphics Workshop** - ...
+- **The Sound Library & Graphics Workshop** - https://grandis.nu/turran/FTP/TOSEC-ISO/CD/Commodore%20Amiga%20-%20CD%20-%20Multimedia%20-%20[ISO]/
 - **The Ultimate Music & Sound Collection Vol. 1** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-1
 - **The Ultimate Music & Sound Collection Vol. 2** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-2
 - **The Weird Science Multimedia Toolkit** - https://archive.org/details/TheWeirdScienceMultimediaToolkitAmigaComputingCoverdiscCDRom
-- **The Weird Science Multimedia Toolkit 2** - ...
-- **UGA Mod Collection 1** - ...
-- **UGA Mod Collection 2** - ...
+- **The Weird Science Multimedia Toolkit 2** - https://grandis.nu/turran/FTP/TOSEC-ISO/CD/Commodore%20Amiga%20-%20CD%20-%20Multimedia%20-%20[ISO]/
+- **UGA Mod Collection 1** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
+- **UGA Mod Collection 2** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
 - **Ultra Sounds 1** - https://www.wtsretro.dk/shop/andet/apple/spil-og-software-mac/ultra-sounds-1-pc-jewelcase/
 - **World of Sound** - https://archive.org/details/WorldofSound_1671503536330
 - **World of Sound volume II** - https://archive.org/details/us-dreams-usd-066-world-of-sound-volume-ii
 
 #### Metadata only
 
+- **Kestra / Bitworld** - https://janeway.exotica.org.uk/
 - **TOSEC** - https://www.tosecdev.org/
 - **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
 - **Wikipedia** - https://wikipedia.org
