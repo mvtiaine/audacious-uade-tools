@@ -26,7 +26,7 @@ def chromaSimilarity(chromaprint1: String, chromaprint2: String, minSimilarity: 
   if (chromaprint1 == chromaprint2) {
     return 1.0
   }
-  val Seq(fp1, fp2) = Seq(chromaprint1, chromaprint2).sorted
+  val (fp1, fp2) = if (chromaprint1 < chromaprint2) (chromaprint1, chromaprint2) else (chromaprint2, chromaprint1)
   similarityCache.getOrElseUpdate((fp1, fp2, minSimilarity), {
     val (algo0, data0) = decodeChromaprint(fp1)
     val (algo, data) = decodeChromaprint(fp2)
