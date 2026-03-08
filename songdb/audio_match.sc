@@ -133,14 +133,14 @@ if (results.isEmpty) {
     parsePrettyMetaTsv(tsv).groupBy(_.hash)
   }
     
-  val filenames = sources.tsvs.flatMap { case (source, entriesByMd5) =>
+  val filenames = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
     entriesByMd5.flatMap { case (md5, entries) =>
       entries
         .filter(_.path.nonEmpty)
         .filterNot(entry => source == Source.SOAMC && entry.path.startsWith("001/"))
         .map(entry => md5.take(12) -> entry.path.split('/').last)
     }
-  }.groupBy(_._1).mapValues(_.map(_._2).sorted.distinct.mkString(", ")).toMap
+  }.groupBy(_._1).mapValues(_.map(_._2).seq.sorted.distinct.mkString(", ")).toMap.seq
 
   case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, String]) => String)
 
