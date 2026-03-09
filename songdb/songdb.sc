@@ -162,7 +162,7 @@ lazy val songlengthsTsvs = Future(_try {
     val duplicates = mutable.SortedSet[Int]()
     val fingerprints = audio.audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
     if (fingerprints.nonEmpty) {
-      val filtered = fingerprints.filter(_.audioBytes > 0)
+      val filtered = fingerprints.filter(_.audioBytes > 0).distinctBy(_.subsong)
       val grouped = (
         if (filtered.forall(e => e.audioBytes > 2 * 11025 * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
         else filtered.groupBy(_.audioTag.replaceFirst(s"^[0-9]+-", "")
@@ -183,7 +183,7 @@ lazy val songlengthsTsvs = Future(_try {
               // duplicate = true
             } else if (e.audioChromaprint != cmp.audioChromaprint) {       
               val threshold = if (filtered.forall(f => (f.audioTag == e.audioTag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 12)) 0.9 else 0.99
-              val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint, threshold)
+              val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint)
               if (similarity < threshold) {
                 duplicate = false
                 //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong} is too low: ${similarity} threshold: ${threshold}")

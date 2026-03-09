@@ -7,7 +7,6 @@
 import java.util.concurrent.ConcurrentHashMap
 import scala.collection.mutable
 import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
-import scala.util.boundary, boundary.break
 
 val fpCache = new ConcurrentHashMap[String, (Int, Array[Int])]().asScala
 
@@ -18,18 +17,29 @@ def decodeChromaprint(chromaprint: String): (Int, Array[Int]) = {
   })
 }
 
-val similarityCache = new ConcurrentHashMap[(String, String, Double), Double]().asScala
+final class StringPair(val a: String, val b: String) {
+  override val hashCode: Int = a.hashCode * 31 + b.hashCode
+  override def equals(obj: Any): Boolean = obj match {
+    case other: StringPair => a == other.a && b == other.b
+    case _ => false
+  }
+}
 
-def chromaSimilarity(chromaprint1: String, chromaprint2: String, minSimilarity: Double): Double = {
+val similarityCache = new ConcurrentHashMap[StringPair, java.lang.Double]()
+
+def chromaSimilarity(chromaprint1: String, chromaprint2: String): Double = {
   if (chromaprint1 == chromaprint2) {
     return 1.0
   }
   val (fp1, fp2) = if (chromaprint1 < chromaprint2) (chromaprint1, chromaprint2) else (chromaprint2, chromaprint1)
-  similarityCache.getOrElseUpdate((fp1, fp2, minSimilarity), {
+  val key = new StringPair(fp1, fp2)
+  val cached = similarityCache.get(key)
+  if (cached != null) return cached.doubleValue
+  similarityCache.computeIfAbsent(key, _ => {
     val (algo0, data0) = decodeChromaprint(fp1)
     val (algo, data) = decodeChromaprint(fp2)
     assert(algo0 == algo)
-    chromaSimilarityFast(algo0, data0, algo, data, minSimilarity)
+    chromaSimilarityFast(algo0, data0, algo, data)
   })
 }
 
@@ -38,7 +48,6 @@ def chromaSimilarityFast(
   data1: Array[Int],
   algo2: Int,
   data2: Array[Int],
-  threshold: Double,
   fuzziness: Int = 3
 ): Double = {
   if (algo1 != algo2) {
@@ -49,35 +58,32 @@ def chromaSimilarityFast(
   val len2 = data2.length
   var maxSimilarity = 0.0
 
-  boundary {
-    var oi = 0
-    while (oi <= fuzziness) {
-      var pass = 0
-      while (pass < (if (oi == 0) 1 else 2)) {
-        val offset = if (pass == 0) -oi else oi
-        val iStart = Math.max(0, -offset)
-        val iEnd = Math.min(len1, len2 - offset)
-        var totalScore = 0
-        var overlap = 0
-        var i = iStart
+  var oi = 0
+  while (oi <= fuzziness) {
+    var pass = 0
+    while (pass < (if (oi == 0) 1 else 2)) {
+      val offset = if (pass == 0) -oi else oi
+      val iStart = Math.max(0, -offset)
+      val iEnd = Math.min(len1, len2 - offset)
+      var totalScore = 0
+      var overlap = 0
+      var i = iStart
 
-        while (i < iEnd) {
-          totalScore += (32 - Integer.bitCount(data1(i) ^ data2(i + offset)))
-          overlap += 1
-          i += 1
-        }
-
-        if (overlap > 0) {
-          val similarity = totalScore.toDouble / (overlap * 32.0)
-          if (similarity > maxSimilarity) {
-            maxSimilarity = similarity
-            if (maxSimilarity >= threshold) break()
-          }
-        }
-        pass += 1
+      while (i < iEnd) {
+        totalScore += (32 - Integer.bitCount(data1(i) ^ data2(i + offset)))
+        overlap += 1
+        i += 1
       }
-      oi += 1
+
+      if (overlap > 0) {
+        val similarity = totalScore.toDouble / (overlap * 32.0)
+        if (similarity > maxSimilarity) {
+          maxSimilarity = similarity
+        }
+      }
+      pass += 1
     }
+    oi += 1
   }
 
   maxSimilarity

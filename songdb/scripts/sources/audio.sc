@@ -50,17 +50,17 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean) = {
       val audioMd5 = if (l.length >= 5) l(4) else ""
       val audioChromaprint = if (l.length >= 6) l(5) else ""
       // require at least 9s of audio for simhash comparison to minimize false positives
-      val (audioSimHash, simTag) = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > 2 * 11025 * 9) {
+      val (audioSimHash, simTags) = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > 2 * 11025 * 9) {
         val (algo,data) = decodeChromaprint(audioChromaprint) : @unchecked
         val numHashes = Math.max(1, audioBytes / (2 * 11025 * 3)) // one hash per 3s of audio
         val h = SimHash(data, numHashes)
         val hex = h.toString(16)
-        (hex, h.bitLength/4)
-      } else ("","")
+        (hex, Seq((h.bitLength+1)/4, (h.bitLength-1)/4).distinct)
+      } else ("",Seq.empty[Int])
       val audioHash = Seq(audioSimHash, audioChromaprint, audioMd5).filter(_.nonEmpty).head
-      val audioTag = normalizedSubsong + "-" + player + "-" + (if (audioHash == audioSimHash) simTag else audioHash)
-      //System.err.println(s"AUDIOTAG: ${md5}: ${audioTag}")
-      Some(AudioFingerprint(
+      val audioTags = if (audioHash == audioSimHash) simTags.map(t => normalizedSubsong + "-" + player + "-" + t) else Seq(normalizedSubsong + "-" + player + "-" + audioHash)
+      //System.err.println(s"AUDIOTAG: ${md5}: ${simTags}")
+      audioTags.map(audioTag => AudioFingerprint(
         md5,
         player,
         subsong,
@@ -87,5 +87,5 @@ lazy val audioByMd5 = audioFingerprints.groupBy(_.md5).par.mapValues(_.sortBy(_.
 lazy val audioByPlayerAndMd5 = audioFingerprints.groupBy(e => (e.player, e.md5))
   .par.mapValues(_.sortBy(_.normalizedSubsong).distinct)
 
-lazy val audioByAudioTags = audioFingerprints.groupBy(e =>
-  audioByPlayerAndMd5((e.player, e.md5)).map(_.audioTag).sorted.distinct).par.mapValues(_.distinct).seq
+lazy val audioByAudioTags = audioFingerprints.map(e =>
+  (e.audioTag, e)).groupMap(_._1)(_._2).par.mapValues(_.distinct).seq

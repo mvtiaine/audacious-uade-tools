@@ -268,6 +268,66 @@ def combineMetadata(
   // album/publishers/year: UnExotica > Demozoo > OldExotica > WantedTeam > AMP > Modland > ModsAnthology > Fujiology
   val allMetaSources = Seq(unexoticag, demozoog, oldexoticag, wantedteamg, ampg, modlandg, modsanthologyg, fujiologyg)
 
+  // precompute per-audioTag data that doesn't change across passes
+  val audioTagData = audio.audioByAudioTags.map { case (audioTag, entries) =>
+    val entriesByHash = entries.groupBy(_.md5).view.mapValues(_.distinctBy(_.normalizedSubsong)).toMap
+    val hashes = entries.map(_.md5).distinct.sorted
+    (audioTag, entries, entriesByHash, hashes)
+  }
+  // group audioTags into connected components by shared md5s
+  // audioTags in different components touch disjoint md5 sets and can run in parallel
+  val audioTagKeys = audioTagData.map(_._1).toArray
+  val parent = mutable.Map[String, String]()
+  def find(x: String): String = {
+    var r = x
+    while (parent.getOrElse(r, r) != r) r = parent.getOrElse(r, r)
+    var c = x
+    while (c != r) { val n = parent.getOrElse(c, c); parent(c) = r; c = n }
+    r
+  }
+  def union(a: String, b: String): Unit = { parent(find(a)) = find(b) }
+  // build mapping: md5 -> first audioTag that uses it, then union subsequent audioTags
+  val md5FirstTag = mutable.Map[String, String]()
+  for ((audioTag, _, _, hashes) <- audioTagData; h <- hashes) {
+    md5FirstTag.get(h) match {
+      case Some(first) => union(audioTag, first)
+      case None => md5FirstTag(h) = audioTag
+    }
+  }
+  val audioTagDataMap = audioTagData.map(t => (t._1, t)).toMap
+  val components = audioTagKeys.groupBy(find).values.map(_.map(audioTagDataMap).toSeq).toSeq
+
+  // precompute duplicate relationships per audioTag: for each hash, all hashes that are audio-duplicates of it
+  // this is constant across all passes since it depends only on audio data
+  val duplicatesForTag = components.par.flatMap { component =>
+    component.map { case (audioTag, _, entriesByHash, hashes) =>
+      val dupMap = hashes.map { cmpHash =>
+        val cmpAudioEntries = entriesByHash(cmpHash)
+        val dups = hashes.par.filter { hash =>
+          val audioEntries = entriesByHash(hash)
+          assert(audioEntries.size == cmpAudioEntries.size)
+          var duplicate = true
+          var i = 0
+          while (i < audioEntries.size && duplicate) {
+            if (cmpAudioEntries(i).audioMd5 == audioEntries(i).audioMd5) {
+              // duplicate = true
+            } else if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
+              val threshold = if (audioEntries(i).audioBytes > 2 * 11025 * 12) 0.9 else 0.99
+              val similarity = chromaSimilarity(cmpAudioEntries(i).audioChromaprint, audioEntries(i).audioChromaprint)
+              if (similarity < threshold) duplicate = false
+            } else if (cmpAudioEntries(i).audioHash != audioEntries(i).audioHash) {
+              duplicate = false
+            }
+            i += 1
+          }
+          duplicate
+        }.seq.toSet
+        (cmpHash, dups)
+      }.toMap
+      (audioTag, dupMap)
+    }
+  }.seq.toMap
+
   for (pass <- 1 to allMetaSources.size) {
 
     def trace(msg: Unit => String): Unit = {
@@ -774,53 +834,23 @@ def combineMetadata(
     metasByHash ++= metas.groupBy(_.hash).mapValues(_.head)
     // process twice to get metadata from "transitive" duplicates also (A matches B, B matches C, but A doesn't match C)
     val processAgain = pass == allMetaSources.size
-    for (iteration <- 1 to (if (processAgain) 3 else 1)) {
-      audio.audioByAudioTags.foreach { case (audioTag, entries) =>
+
+    def processAudioTag(audioTag: String, entries: collection.Seq[AudioFingerprint], entriesByHash: collection.Map[String, collection.Seq[AudioFingerprint]], hashes: collection.Seq[String]): Unit = {
         trace(_ => s"Processing audio tag ${audioTag} with entries: ${entries.map(_.copy(audioChromaprint = "", audioHash = "", audioSimHash = "")).seq}")
-        val entriesByHash = entries.groupBy(_.md5).mapValues(_.distinctBy(_.normalizedSubsong))
-        var hashes = entries.map(_.md5).distinct.sorted
-        var metas = hashes.flatMap(h => metasByHash.get(h))
+        var remainingHashes = hashes
+        var metas = remainingHashes.flatMap(h => metasByHash.get(h))
          // use all hashes for final pass
         if (processAgain) {
-          metas ++= hashes.filterNot(metasByHash.contains).map(h => MetaData(h, Buffer.empty, Buffer.empty, "", 0, "", ""))
+          metas ++= remainingHashes.filterNot(metasByHash.contains).map(h => MetaData(h, Buffer.empty, Buffer.empty, "", 0, "", ""))
         }
         trace(_ => s"Found ${metas.size} matching metas for audio tag ${audioTag}: ${metas.seq}")
-        while (metas.nonEmpty && hashes.nonEmpty) {
+        while (metas.nonEmpty && remainingHashes.nonEmpty) {
           var cmp = metas.head
           var anyMetadata = metas.exists(m => m.authors.nonEmpty || m.publishers.nonEmpty || m.album.nonEmpty || m.year != 0)
-          if (anyMetadata && (!metas.forall(_ == metas.head) || hashes.size != metas.size)) {
-            trace(_ => s"Metas or hashes differ for audio tag ${audioTag}, comparing ${cmp.hash} with ${hashes.mkString(", ")}")
-            val cmpAudioEntries = entriesByHash(cmp.hash)
-            val duplicateHashes = hashes.par.flatMap { hash =>
-              var audioEntries = entriesByHash(hash)
-              assert(audioEntries.size == cmpAudioEntries.size)
-              var duplicate = true
-              boundary {
-                for (i <- 0 until audioEntries.size) {
-                  // XXX audioChromaprint may differ even if md5 is same
-                  if (cmpAudioEntries(i).audioMd5 == audioEntries(i).audioMd5) {
-                    // duplicate = true
-                  } else if (cmpAudioEntries(i).audioChromaprint != audioEntries(i).audioChromaprint) {
-                    val threshold = if (audioEntries(i).audioBytes > 2 * 11025 * 12) 0.9 else 0.99
-                    val similarity = chromaSimilarity(cmpAudioEntries(i).audioChromaprint, audioEntries(i).audioChromaprint, threshold)
-                    if (similarity < threshold) {
-                      duplicate = false
-                      trace(_ => s"Chromaprint similarity for ${hash} vs ${cmp.hash} subsong ${i} is too low: ${similarity}")
-                    } else {
-                      // duplicate = true
-                      trace(_ => s"Chromaprint similarity for ${hash} vs ${cmp.hash} subsong ${i}: ${similarity}")
-                    }
-                  } else if (cmpAudioEntries(i).audioHash != audioEntries(i).audioHash) {
-                    duplicate = false
-                    trace(_ => s"Audio hash mismatch for ${hash} subsong ${i} vs ${cmp.hash} subsong ${i}: ${cmpAudioEntries(i).audioHash} vs ${audioEntries(i).audioHash}")
-                  }
-                  if (!duplicate) {
-                    break()
-                  }
-                }
-              }
-              if (duplicate) Some(hash) else None
-            }.toBuffer.sorted.distinct
+          if (anyMetadata && (!metas.forall(_ == metas.head) || remainingHashes.size != metas.size)) {
+            trace(_ => s"Metas or hashes differ for audio tag ${audioTag}, comparing ${cmp.hash} with ${remainingHashes.mkString(", ")}")
+            val cachedDups = duplicatesForTag(audioTag)(cmp.hash)
+            val duplicateHashes = remainingHashes.filter(cachedDups.contains).toBuffer.sorted.distinct
             val duplicateMetas = duplicateHashes.flatMap(h => metasByHash.get(h)).distinct
             val anyMetadata = duplicateMetas.exists(m => m.authors.nonEmpty || m.publishers.nonEmpty || m.album.nonEmpty || m.year != 0)
             if (anyMetadata && duplicateHashes.size > 1) {
@@ -941,8 +971,16 @@ def combineMetadata(
               }
             }
           }
-          hashes = hashes.filterNot(_ == cmp.hash)
+          remainingHashes = remainingHashes.filterNot(_ == cmp.hash)
           metas = metas.filterNot(_.hash == cmp.hash)
+        }
+      }
+
+    for (iteration <- 1 to (if (processAgain) 3 else 1)) {
+      // process connected components in parallel; audioTags within each component run sequentially
+      components.par.foreach { component =>
+        component.foreach { case (audioTag, entries, entriesByHash, hashes) =>
+          processAudioTag(audioTag, entries, entriesByHash, hashes)
         }
       }
     }
