@@ -58,7 +58,7 @@ Sources used for the database:
 - **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
 
-- **Unnamed** - `Amiga_Cracktros_Modules.rar`, `Amiga_Cracktros_Modules2.zip`, `Amiga_GameMusic.rar`, `Amiga_Games_Modules.rar`, `Amiga.Music`, `Other Amiga Music.7z`
+- **Unnamed** - `Amiga_Cracktros_Modules.rar`, `Amiga_Cracktros_Modules2.zip`, `Amiga_GameMusic.rar`, `Amiga_Games_Modules.rar`, `Amiga.Music`, `Other Amiga Music.7z` - https://amigamuseum.emu-france.info/Fichiers/Musiques/Modules/ - https://grandis.nu/turran/FTP/Collection/Music/Misc/
 
 And my old Amiga mod collection.
 
@@ -87,10 +87,10 @@ And my old Amiga mod collection.
 - **Euroscene 2** - https://aminet.net/package/demo/funet/Euroscene_2
 - **Freedom CD** - https://ftp.scene.org/pub/demos/compilations/freedom_cd/
 - **Groovy Bytes Chapter One** - https://ftp.scene.org/pub/demos/compilations/groovy_bytes_chapter_1/
-- **Imphobia: Dreams** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams/
-- **Imphobia: Dreams 2** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams2/
 - **Hot Sound & Vision** - https://archive.org/details/unica-hot-sound-and-vision
 - **Hot Sound & Vision 2** - https://archive.org/details/unica-hot-sound-and-vision-2
+- **Imphobia: Dreams** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams/
+- **Imphobia: Dreams 2** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams2/
 - **Massive MOD Collection** - https://archive.org/details/massive-mod-collection
 - **Maximum MODS** - https://archive.org/details/MaximumMODS_4200_MOD_Musical_Files
 - **MegaMODMadness** - https://archive.org/details/digitaldataarchivemegamodmaddness
@@ -129,7 +129,6 @@ And my old Amiga mod collection.
 
 #### Metadata only
 
-- **Kestra / Bitworld** - https://janeway.exotica.org.uk/
 - **TOSEC** - https://www.tosecdev.org/
 - **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
 - **Wikipedia** - https://wikipedia.org
