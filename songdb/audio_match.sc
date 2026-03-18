@@ -48,7 +48,7 @@ import pretty._
 import sources._
 
 val MINSCORE = 0.67
-val MAXRESULTS = 10
+val MAXRESULTS = 20
 
 if (args.length < 1) {
   Console.err.println("Usage:")
@@ -105,7 +105,7 @@ val otherMd5s = sources.tsvs
 val soamc001OnlyMd5s = soamc001Md5s.diff(otherMd5s)
 
 System.err.print("Processing (x/16) ")
-case class Result(md5: String, subsong: Int, score: Double)
+final case class Result(md5: String, subsong: Int, score: Double)
 var results = Buffer.empty[Result]
 (0 to 15).foreach { i =>
   System.err.print(s".${i+1}.")
@@ -142,7 +142,7 @@ if (results.isEmpty) {
     }
   }.groupBy(_._1).mapValues(_.map(_._2).seq.sorted.distinct.mkString(", ")).toMap.seq
 
-  case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, String]) => String)
+  final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, String]) => String)
 
   val columns = Seq(
     Column("Score", 6, (r, _, _) => r.score.formatted("%.3f")),

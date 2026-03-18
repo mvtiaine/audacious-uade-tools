@@ -16,7 +16,7 @@ import scala.util.boundary, boundary.break
 import convert._
 
 // eXoID   MobyID  Game    File    Folder  Year    Publisher       Developer       Genre   Perspective     Misc    Series  URL     Collection      Notes   Compilation?    Foreign?        Add-On Included?
-case class eXoDOSMeta(
+final case class eXoDOSMeta(
     //exoID: Int,
     //mobyID: Int,
     game: String,

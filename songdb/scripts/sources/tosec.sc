@@ -28,7 +28,7 @@ object XML extends XMLLoader[Elem] {
   }
 }
 
-case class TosecMeta(
+final case class TosecMeta(
   title: String,
   publishers: Buffer[String],
   year: Int,

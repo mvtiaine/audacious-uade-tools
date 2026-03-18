@@ -37,7 +37,7 @@ def extractYear(dateStr: String): Int = {
   }
 }
 
-case class WikipediaMeta(
+final case class WikipediaMeta(
   title: String,
   developers: Buffer[String],
   publishers: Buffer[String],

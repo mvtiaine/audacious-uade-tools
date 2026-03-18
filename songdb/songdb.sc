@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx56G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx56G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -49,6 +49,7 @@ import audio._
 import chromaprint._
 import tosecmusic._
 import fujiology._
+import demozoo._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
@@ -56,6 +57,9 @@ val DEST = "/tmp/songdb/"
 
 // shutup warning
 System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
+
+// init audio fingerprints eagerly to reduce memory usage
+audio.duplicateSubsongsByPlayerAndMd5
 
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
@@ -156,55 +160,9 @@ lazy val xxh32idxTsv = Future(_try {
 })
 
 lazy val songlengthsTsvs = Future(_try {
-  audio.audioByPlayerAndMd5 // XXX need explicit eager init before .par to avoid "unparallelized" init due to most threads waiting below
   val entries = songlengths.db.sortBy(_.md5).par.map(e => {
     val md5 = e.md5.take(12)
-    val duplicates = mutable.SortedSet[Int]()
-    val fingerprints = audio.audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
-    if (fingerprints.nonEmpty) {
-      val filtered = fingerprints.filter(_.audioBytes > 0).distinctBy(_.subsong)
-      val grouped = (
-        if (filtered.forall(e => e.audioBytes > 2 * 11025 * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
-        else filtered.groupBy(_.audioTag.replaceFirst(s"^[0-9]+-", "")
-      )).mapValues(_.distinct)
-      if (!grouped.values.forall(group => group.map(_.subsong).distinct.size == group.size)) {
-        System.err.println(s"WARN: inconsistent audio fingerprints for md5: $md5 player: ${e.player} format: ${e.format}")
-      }
-      assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
-      for ((_, group) <- grouped) {
-        var remaining = group
-        while (remaining.nonEmpty) {
-          val cmp = remaining.head
-          remaining = remaining.filterNot(_.subsong == cmp.subsong)
-          for (e <- remaining) {
-            var duplicate = true
-            // XXX audioChromaprint may differ even if md5 is same
-            if (cmp.audioMd5 == e.audioMd5) {
-              // duplicate = true
-            } else if (e.audioChromaprint != cmp.audioChromaprint) {       
-              val threshold = if (filtered.forall(f => (f.audioTag == e.audioTag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 12)) 0.9 else 0.99
-              val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint)
-              if (similarity < threshold) {
-                duplicate = false
-                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong} is too low: ${similarity} threshold: ${threshold}")
-              } else {
-                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${similarity} threshold: ${threshold} (duplicate)")
-              }
-            } else if (e.audioHash != cmp.audioHash) {
-              duplicate = false
-              //System.err.println(s"DEBUG: Audio hash mismatch for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${cmp.audioHash} vs ${e.audioHash}")
-            }
-            if (duplicate) {
-              duplicates += e.subsong
-            }
-          }
-          remaining = remaining.filterNot(e => duplicates.contains(e.subsong))
-        }
-      }
-      if (duplicates.nonEmpty && e.subsongs.size > duplicates.size) {
-        System.err.println(s"INFO: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
-      }
-    }
+    val duplicates = audio.duplicateSubsongsByPlayerAndMd5.getOrElse((e.player, md5), scala.collection.mutable.SortedSet[Int]())
     SongInfo(
       md5,
       e.minsubsong,
@@ -356,35 +314,7 @@ lazy val unexoticaTsvs = Future(_try {
 })
 
 lazy val demozooTsvs = Future(_try {
-  val entries = demozoo.metas.par.flatMap { case (md5, m) =>
-    val dates = Seq(m.modDate, m.prodDate, m.partyDate.getOrElse("")).filterNot(_.isEmpty)
-    val earliestDate = if (dates.isEmpty) "" else dates.min
-    val authors = m.authors.filterNot(_ == "?").sorted.toBuffer
-    val useProd = !m.prod.isEmpty && (m.prodDate == earliestDate || m.partyDate.getOrElse("") != earliestDate)
-    val info = MetaData(
-      hash = md5.take(12),
-      authors = if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
-      publishers = ((m.prodPublishers, m.party, m.modPublishers) match {
-        case (prod,_,_) if useProd =>
-          if (prod.forall(_.trim.isEmpty)) Buffer.empty else prod.toBuffer
-        case (_,party,_) if !party.isEmpty =>
-          Buffer(party.get)
-        case (_,_,mod) if !mod.isEmpty =>
-          if (mod.forall(_.trim.isEmpty)) Buffer.empty else mod.toBuffer
-        case _ => Buffer.empty
-      }).sorted,
-      album = if (useProd) m.prod.trim else "",
-      year = if (!earliestDate.isEmpty) earliestDate.substring(0,4).toInt else 0,
-      _type = m.prodType.getOrElse(""),
-      _platform = if (m.prodPlatforms.isEmpty || m.prodPlatforms.size > 1) "" else demozoo.normalizePlatform(m.prodPlatforms.head)
-      //if (!m.prodPlatforms.isEmpty) m.prodPlatforms else m.modPlatform
-    )
-    info match {
-      case MetaData(_, Buffer(), Buffer(), "", 0, "", "") => None
-      case _ => Some(info)
-    }
-  }.toBuffer.distinct
-
+  val entries = demozoo.metas.par.flatMap(demozoo.transformMeta).toBuffer.distinct
   demozoodata = processMetaTsvs(entries, "demozoo.tsv")
 })
 

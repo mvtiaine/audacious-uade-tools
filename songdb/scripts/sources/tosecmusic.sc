@@ -89,7 +89,7 @@ def normalizeAlbumName(name: String): String = {
   }
 }
 
-case class TosecMeta(
+final case class TosecMeta(
   authors: Buffer[String], // [seq X] or [cmp X] or (X)
   composers: Buffer[String], // [cmp X] (with seq X)
   publishers: Buffer[String],

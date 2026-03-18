@@ -21,7 +21,7 @@ org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
 val fujiology_xlsx = System.getProperty("user.home") + "/sources/fujiology/fujiology_archive_2_9_9.xlsx"
 lazy val fujiology_by_filename = sources.fujiology.groupBy(_.path.split("/").last.toLowerCase)
 
-case class FujiologyMeta (
+final case class FujiologyMeta (
   md5: String,
   authors: Buffer[String],
   publishers: Buffer[String],
@@ -101,6 +101,7 @@ lazy val music_metas = {
   //val sheet = workbook.getSheet("MUSIC")
   val sheet = workbook.getSheet("MUSIC FT-SNDH-ASMA")
   var prevfolder = ""
+  var prodType = ""
   val rows = sheet.iterator()
   rows.next()
   while (rows.hasNext()) {
@@ -118,6 +119,7 @@ lazy val music_metas = {
       val system = getCellString(row, 5)
       val prod = getCellString(row, 6)
       val crew = getCellString(row, 7)
+      val info = getCellString(row, 9)
       var foldername = getCellString(row, 10)
       if (!foldername.isEmpty) {
         prevfolder = foldername
@@ -206,7 +208,10 @@ lazy val music_metas = {
             album = prod,
             year = None,
             system,
-            prodType = "",
+            if (info.toLowerCase.contains("converted") || info.toLowerCase.contains("conversion") ||
+                info.toLowerCase.contains("remix") || info.toLowerCase.contains("remake") ||
+                info.toLowerCase.contains("original")
+            ) "" else prodType,
           )
           if (metas.exists(m => m.md5 == entry.md5)) {
             System.err.println(s"WARN: Fujiology duplicates: ${meta} vs ${metas.filter(_.md5 == entry.md5)}")
@@ -214,6 +219,13 @@ lazy val music_metas = {
           metas += meta
           by_filename.update(filename, by_filename(filename).filterNot(_ == entry))
         }
+      }
+      if (composer == "DEMOS (Falcon)") {
+        prodType = "Demo"
+      } else if (composer == "Demos (ST)") {
+        prodType = "Demo"
+      } else if (composer == "GAMES") {
+        prodType = "Game"
       }
     }
   }
@@ -226,7 +238,7 @@ lazy val prods_metas = {
   val by_filename = mutable.Map.from(fujiology_by_filename)
   val file = new FileInputStream(new File(fujiology_xlsx))
   val workbook = new XSSFWorkbook(file)
-  case class ProdRow (
+  final case class ProdRow (
     system: String,
     prod: String,
     filename: String,
@@ -324,7 +336,7 @@ lazy val mags_metas = {
   val sheet = workbook.getSheet("MAGAZINES")
   val rows = sheet.iterator()
   rows.next()
-  case class MagRow (
+  final case class MagRow (
     prod: String,
     system: String,
     filename: String,

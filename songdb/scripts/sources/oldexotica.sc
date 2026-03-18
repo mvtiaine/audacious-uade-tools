@@ -19,7 +19,7 @@ import net.ruippeixotog.scalascraper.model._
 
 val oldexotica_path = System.getProperty("user.home") + "/sources/oldexotica/"
 
-case class OldExoticaMeta (
+final case class OldExoticaMeta (
   archive: String,
   md5: String,
   path: String,
@@ -32,11 +32,11 @@ case class OldExoticaMeta (
 
 lazy val oldexotica_mods_by_path = sources.oldexotica
   .filter(_.path.startsWith("tunes/archive/"))
-  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(2).mkString("/"))
 lazy val oldexotica_mods_by_dir = sources.oldexotica
   .filter(_.path.startsWith("tunes/archive/"))
-  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
 
 lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).toScala(Buffer).par.flatMap(f =>
@@ -167,6 +167,13 @@ def transformAuthors(meta: OldExoticaMeta): Buffer[String] = {
 
 def transformPublishers(meta: OldExoticaMeta): Buffer[String] = {
   var publisher = meta.info
+  if (meta.name_source == "Icing 95") {
+    publisher = "Icing";
+  } else if (meta.name_source == "Motorola Inside 98") {
+    publisher = "Motorola Inside";
+  } else if (meta.name_source == "THX IRC Compo") {
+    publisher = "THX IRC Compo";
+  }
   if (publisher.endsWith("N/A") ||
       publisher.endsWith("?") ||
       publisher.endsWith("Various") ||
@@ -203,17 +210,22 @@ def transformPublishers(meta: OldExoticaMeta): Buffer[String] = {
       publisher == "Games" ||
       publisher == "Demo" ||
       publisher == "Intro" ||
+      publisher == "BBS Intro" ||
+      publisher == "Invitation Intro" ||
       publisher == "Diskmag" ||
       publisher == "Utility" ||
       publisher == "Cruncher Utility" ||
       publisher == "(Made for unfinished game)" ||
       publisher == "THX Sound System" ||
       publisher == "Music Demo" ||
+      publisher == "Music Disk" ||
       publisher == "Advert" ||
       publisher == "Megadrive" ||
       publisher.startsWith("Demo (") ||
       publisher.startsWith("Musicdisk") ||
       publisher.startsWith("Compo") ||
+      publisher.startsWith("Music Compo") ||
+      publisher.startsWith("IRC Music Competition") ||
       publisher.startsWith("(Another version of") ||
       publisher.startsWith("Cover - ") ||
       publisher.startsWith("Conv. Of C64 Tune") ||
@@ -244,6 +256,12 @@ def transformAlbum(meta: OldExoticaMeta): String = {
     album = album.split(" / ").head.trim
   }
   if (album == "DTACK Music Comp") {
+    album = ""
+  } else if (album == "Icing 95") {
+    album = ""
+  } else if (album == "Motorola Inside 98") {
+    album = ""
+  } else if (album == "THX IRC Compo") {
     album = ""
   }
   album

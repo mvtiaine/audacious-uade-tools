@@ -27,7 +27,7 @@ implicit def h[A,B](implicit a: Decoder[A], b: Decoder[B]): Decoder[Either[A,B]]
 
 type StringOrList = Either[String,List[String]]
 type IntOrList = Either[Int,List[Int]]
-case class UnExoticaMeta (
+final case class UnExoticaMeta (
   `type`: String,
   title: Either[String,Int],
   `alternative titles`: Option[StringOrList],

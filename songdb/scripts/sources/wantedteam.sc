@@ -19,7 +19,7 @@ import net.ruippeixotog.scalascraper.model._
 
 val wantedteam_path = System.getProperty("user.home") + "/sources/wantedteam/"
 
-case class WantedTeamMeta (
+final case class WantedTeamMeta (
   md5: String,
   path: String,
   filesize: Int,

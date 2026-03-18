@@ -17,7 +17,7 @@ import scala.util.boundary, boundary.break
 
 val modsanthology_path = System.getProperty("user.home") + "/sources/modsanthology/"
 
-case class ModsAnthologyMeta (
+final case class ModsAnthologyMeta (
   md5: String,
   path: String,
   filesize: Int,
@@ -1773,6 +1773,9 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
   if (!authors.isEmpty && album.endsWith(authors.head)) {
     album = ""
     //publishers = Buffer.empty
+  }
+  if (album == "Sound of Gnome") {
+    album = "Sounds of Gnome"
   }
   authors = authors
     .filterNot(_.toLowerCase == "the")

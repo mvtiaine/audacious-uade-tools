@@ -15,7 +15,7 @@ import scala.util.boundary, boundary.break
 
 import convert._
 
-case class WHDLoadMeta(
+final case class WHDLoadMeta(
   fullName: String,
   shortName: String,
   _type: String,

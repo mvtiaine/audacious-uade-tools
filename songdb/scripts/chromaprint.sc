@@ -6,14 +6,78 @@
 
 import java.util.concurrent.ConcurrentHashMap
 import scala.collection.mutable
-import scala.jdk.CollectionConverters.ConcurrentMapHasAsScala
 
-val fpCache = new ConcurrentHashMap[String, (Int, Array[Int])]().asScala
+object FpChunker {
+  final class ChunkKey(val data: Array[Int]) {
+    override val hashCode: Int = java.util.Arrays.hashCode(data)
+    override def equals(obj: Any): Boolean = obj match {
+      case other: ChunkKey => java.util.Arrays.equals(data, other.data)
+      case _ => false
+    }
+  }
 
-def decodeChromaprint(chromaprint: String): (Int, Array[Int]) = {
-  fpCache.getOrElseUpdate(chromaprint, {
+  val chunkSize = 64
+  val cache = new ConcurrentHashMap[ChunkKey, Array[Int]]()
+
+  def chunkify(data: Array[Int]): Array[Array[Int]] = {
+    val chunks = new Array[Array[Int]]((data.length + chunkSize - 1) / chunkSize)
+    var i = 0
+    while (i < chunks.length) {
+      val start = i * chunkSize
+      val len = Math.min(chunkSize, data.length - start)
+      val arr = new Array[Int](len)
+      System.arraycopy(data, start, arr, 0, len)
+      val key = new ChunkKey(arr)
+      var cached = cache.get(key)
+      if (cached == null) {
+        cached = arr
+        val existing = cache.putIfAbsent(key, cached)
+        if (existing != null) cached = existing
+      }
+      chunks(i) = cached
+      i += 1
+    }
+    chunks
+  }
+}
+
+final class FP (val algo: Int, rawData: Array[Int]) {
+  val length: Int = rawData.length
+  val chunks: Array[Array[Int]] = FpChunker.chunkify(rawData)
+  
+  def data: Array[Int] = {
+    val arr = new Array[Int](length)
+    var i = 0
+    while (i < chunks.length) {
+      val c = chunks(i)
+      System.arraycopy(c, 0, arr, i * FpChunker.chunkSize, c.length)
+      i += 1
+    }
+    arr
+  }
+
+  // hashCode and equals omit deep array checks as they're not used in deduplication anymore
+  // but kept valid for exact matching if needed
+  override val hashCode: Int = algo * 31 + java.util.Arrays.deepHashCode(chunks.asInstanceOf[Array[AnyRef]])
+  override def equals(obj: Any): Boolean = obj match {
+    case other: FP => algo == other.algo && length == other.length && java.util.Arrays.deepEquals(chunks.asInstanceOf[Array[AnyRef]], other.chunks.asInstanceOf[Array[AnyRef]])
+    case _ => false
+  }
+}
+val fpCache = new ConcurrentHashMap[String, FP]()
+
+def clearCaches(): Unit = {
+  fpCache.clear()
+  similarityCache.clear()
+  FpChunker.cache.clear()
+}
+
+def decodeChromaprint(chromaprint: String): FP = {
+  val cached = fpCache.get(chromaprint)
+  if (cached != null) return cached
+  fpCache.computeIfAbsent(chromaprint, _ => {
     val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
-    (algo, data)
+    new FP(algo, data)
   })
 }
 
@@ -24,45 +88,47 @@ final class StringPair(val a: String, val b: String) {
     case _ => false
   }
 }
-
 val similarityCache = new ConcurrentHashMap[StringPair, java.lang.Double]()
 
 def chromaSimilarity(chromaprint1: String, chromaprint2: String): Double = {
   if (chromaprint1 == chromaprint2) {
     return 1.0
   }
-  val (fp1, fp2) = if (chromaprint1 < chromaprint2) (chromaprint1, chromaprint2) else (chromaprint2, chromaprint1)
-  val key = new StringPair(fp1, fp2)
+  val cp1 = if (chromaprint1 < chromaprint2) chromaprint1 else chromaprint2
+  val cp2 = if (chromaprint1 < chromaprint2) chromaprint2 else chromaprint1
+  val key = new StringPair(cp1, cp2)
   val cached = similarityCache.get(key)
   if (cached != null) return cached.doubleValue
   similarityCache.computeIfAbsent(key, _ => {
-    val (algo0, data0) = decodeChromaprint(fp1)
-    val (algo, data) = decodeChromaprint(fp2)
-    assert(algo0 == algo)
-    chromaSimilarityFast(algo0, data0, algo, data)
+    val fp1 = decodeChromaprint(cp1)
+    val fp2 = decodeChromaprint(cp2)
+    assert(fp1.algo == fp2.algo)
+    chromaSimilarityFast(fp1.algo, fp1.length, fp1.chunks, fp2.algo, fp2.length, fp2.chunks)
   })
 }
 
 def chromaSimilarityFast(
   algo1: Int,
-  data1: Array[Int],
+  len1: Int,
+  data1: Array[Array[Int]],
   algo2: Int,
-  data2: Array[Int],
+  len2: Int,
+  data2: Array[Array[Int]],
   fuzziness: Int = 3
 ): Double = {
   if (algo1 != algo2) {
     return 0.0
   }
 
-  val len1 = data1.length
-  val len2 = data2.length
   var maxSimilarity = 0.0
+  var zeroSimilarity = -1.0
 
-  var oi = 0
-  while (oi <= fuzziness) {
-    var pass = 0
-    while (pass < (if (oi == 0) 1 else 2)) {
-      val offset = if (pass == 0) -oi else oi
+  var pass = 0
+  while (pass < 2 && (maxSimilarity <= 0.0 || (maxSimilarity > 0.6 && maxSimilarity < 0.99))) {
+    var oi = if (pass == 0) 0 else 1
+    var prevSimilarity = zeroSimilarity
+    while (oi <= fuzziness && (maxSimilarity <= 0.0 || (maxSimilarity > 0.6 && maxSimilarity < 0.99))) {
+      val offset = if (pass == 0) oi else -oi
       val iStart = Math.max(0, -offset)
       val iEnd = Math.min(len1, len2 - offset)
       var totalScore = 0
@@ -70,20 +136,31 @@ def chromaSimilarityFast(
       var i = iStart
 
       while (i < iEnd) {
-        totalScore += (32 - Integer.bitCount(data1(i) ^ data2(i + offset)))
+        val v1 = data1(i >> 6)(i & 63)
+        val j = i + offset
+        val v2 = data2(j >> 6)(j & 63)
+        totalScore += (32 - Integer.bitCount(v1 ^ v2))
         overlap += 1
         i += 1
       }
 
       if (overlap > 0) {
         val similarity = totalScore.toDouble / (overlap * 32.0)
-        if (similarity > maxSimilarity) {
-          maxSimilarity = similarity
+        if (similarity < prevSimilarity) {
+          oi = fuzziness // break early
+        } else {
+          prevSimilarity = similarity
+          if (similarity > maxSimilarity) {
+            maxSimilarity = similarity
+          }
         }
       }
-      pass += 1
+      if (oi == 0) {
+        zeroSimilarity = maxSimilarity
+      }
+      oi += 1
     }
-    oi += 1
+    pass += 1
   }
 
   maxSimilarity

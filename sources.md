@@ -55,7 +55,6 @@ Sources used for the database:
 - **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
 - **Retroplay WHDLoad Packs** - https://grandis.nu/turran/FTP/Retroplay%20WHDLoad%20Packs/
 - **The Scene Archives** - https://files.scene.org/browse/mirrors/the_scene_archives/
-- **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
 
 - **Unnamed** - `Amiga_Cracktros_Modules.rar`, `Amiga_Cracktros_Modules2.zip`, `Amiga_GameMusic.rar`, `Amiga_Games_Modules.rar`, `Amiga.Music`, `Other Amiga Music.7z` - https://amigamuseum.emu-france.info/Fichiers/Musiques/Modules/ - https://grandis.nu/turran/FTP/Collection/Music/Misc/
@@ -117,6 +116,7 @@ And my old Amiga mod collection.
 - **Terra Sound Library** - https://archive.org/details/terra-sound-library
 - **The Module Collection** - https://archive.org/details/TheModuleCollection1 + 2 + 3
 - **The Sound Library & Graphics Workshop** - https://grandis.nu/turran/FTP/TOSEC-ISO/CD/Commodore%20Amiga%20-%20CD%20-%20Multimedia%20-%20[ISO]/
+- **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
 - **The Ultimate Music & Sound Collection Vol. 1** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-1
 - **The Ultimate Music & Sound Collection Vol. 2** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-2
 - **The Weird Science Multimedia Toolkit** - https://archive.org/details/TheWeirdScienceMultimediaToolkitAmigaComputingCoverdiscCDRom

@@ -19,7 +19,7 @@ if [ $# -eq 0 ]; then
     echo "Parameters:"
     echo "  timeout     - seconds to record (0 for interactive mode)"
     echo "  threshold   - similarity threshold (default: 0.67)"
-    echo "  max_results - maximum number of results to return (default: 10)"
+    echo "  max_results - maximum number of results to return (default: 20)"
     echo ""
     echo "Examples:"
     echo "  $0 0            # Interactive recording with defaults"
@@ -30,7 +30,7 @@ fi
 
 TIMEOUT=${1:-0}
 THRESHOLD=${2:-0.67}
-MAX_RESULTS=${3:-10}
+MAX_RESULTS=${3:-20}
 
 if ! command -v rec &> /dev/null; then
     echo "rec could not be found in PATH, please install sox first."

@@ -23,16 +23,16 @@ import org.apache.commons.text.WordUtils
 
 val amp_path = System.getProperty("user.home") + "/siterip/AMP/"
 
-case class AMPMod (
+final case class AMPMod (
   id: Int,
   md5: String,
   path: String,
   filesize: Int,
 )
 
-lazy val amp_by_path = sources.amp.groupBy(_.path.toLowerCase)
+val amp_by_path = sources.amp.groupBy(_.path.toLowerCase)
 
-lazy val amp_mods = Files.list(Paths.get(amp_path + "downmod/")).toScala(Buffer).par.map(f =>
+val amp_mods = Files.list(Paths.get(amp_path + "downmod/")).toScala(Buffer).par.map(f =>
   val loc = Using(scala.io.Source.fromFile(f.toFile())(using scala.io.Codec.UTF8))( _.getLines.find(_.startsWith("location:"))).get
   if (loc.isDefined) {
     val url = loc.get.replace("location: ","")
@@ -44,7 +44,7 @@ lazy val amp_mods = Files.list(Paths.get(amp_path + "downmod/")).toScala(Buffer)
   } else None
 ).flatten.seq
 
-case class AMPMeta (
+final case class AMPMeta (
   md5: String,
   path: String,
   filesize: Int,
@@ -53,7 +53,7 @@ case class AMPMeta (
   _type: String,
 )
 
-lazy val amp_mods_by_id = amp_mods.groupBy(_.id)
+val amp_mods_by_id = amp_mods.groupBy(_.id)
 
 val seenIds = scala.collection.mutable.Set[Int]()
 lazy val _metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.map(f =>
@@ -99,8 +99,8 @@ lazy val _metas = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).pa
   } else Iterable.empty[AMPMeta]
 ).flatten.distinct.seq
 
-lazy val _byAlbum: Map[String, Buffer[AMPMeta]] = _metas.filter(_.album.nonEmpty).toBuffer.groupBy(_.album)
-lazy val metas = _metas.map(meta =>
+val _byAlbum: Map[String, Buffer[AMPMeta]] = _metas.filter(_.album.nonEmpty).toBuffer.groupBy(_.album)
+val metas = _metas.map(meta =>
   var _meta = if (meta.album.nonEmpty) {
     val m = _byAlbum.getOrElse(meta.album, Buffer.empty).filter(_.extra_authors.exists(a => meta.extra_authors.contains(a)))
     val p = meta.path.split("/").last
