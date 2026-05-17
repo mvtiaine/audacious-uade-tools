@@ -1,0 +1,959 @@
+001997cae2256e61abdcd8fff956c482	0	115667	player	libopenmpt	Game Music Creator	4	32100	ed844ae7	3b2e03d8	2/GAMES/G520.DMS/FatalMission2/Music/Level2Music.DAT
+002cd6f8408f6a4b99446ec23fd0db98	0	226804	player	uade	Sonix Music Driver	0	8158	1fcfcb21	8057c74f	2/MUSICS/M168.DMS/scores/Easy
+002cd6f8408f6a4b99446ec23fd0db98	0	226804	player	uade	Sonix Music Driver	0	8158	1fcfcb21	8057c74f	2/MUSICS/M168.DMS/scores/Easy.smus
+006021cd65334396d27419f26fc9b438	0	205426	player+silence	uade	NoiseTracker	0	112416	42310a30	5def18a3	1/MUSIC-MODULE/echo.mod
+00e83979e0fdfc2e4ce908aaad721117	1	69224	player	uade	Protracker compatible	0	100542	0f54ece2	28db6f28	1/MUSIC-MODULE/coca-cola.mod
+0210930082f93ccc75a4eaedec3cad8a	1	206207	player	uade	Noisetracker 1.x	0	128624	b58901aa	489b1633	2/MUSICS/M192.DMS/compost
+02844cf00a60a06c3920f0483ff51068	1	222945	player	uade	Protracker	0	262146	42dd2eee	b632fe4c	2/MUSICS/M331A.DMS/Mod.Unity_In_Dub
+02c8b1497684cbd725b2c642880e1894	1	130974	player	uade	OctaMED MMD0	0	74410	71fded05	f1cfe25d	1/utilities/U311.DMS/BootPic/DemoSong.mod
+03af0f9c77e26f567db7c7fd18a1eaf2	0	51155	player+silence	libxmp	NoisePacker v3	4	179098	8b9951c4	98271041	2/MUSICS/M330A.DMS/MOD.Overture.CNP
+04838af2ff832e287550a171e940bd45	1	205564	player	uade	Noisetracker 1.x	0	88874	ffb666f8	d81868f7	1/ST-SAMPLES/TECHNO B/Mod.Trippel_Trouble
+04c6dcc48e43f63c965f6f80f1f65108	0	92292	player	uade	Amos Music Bank	0	77346	277c0374	8b0a81ce	1/Anim/A037.DMS/BirdMusic.Abk
+05957b293527532ba74c3a98c3aa8ef6	1	161397	player	uade	Protracker compatible	0	67732	ad002eb4	45a4c3cc	2/GAMES/G330.DMS/MOD.music
+0598bd8a40c47f47d72dad36b743e5d3	1	221398	player	uade	Protracker compatible	0	135166	8a389f42	808b506f	2/MUSICS/M069.DMS/mod.swiv
+06dfc8918b43f64857875e779212f215	0	0	nosound	libxmp	MED 2.00 MED3	4	922	76e228d2	fbedc624	1/ST-SAMPLES/ABERCOMBIE/Abercrombie
+06ef05a1cb8af49f1a90422ffeaefb59	0	142990	player	uade	Sonix Music Driver	0	7312	f2999727	68dd1722	2/MUSICS/M048.DMS/Scores/the sign of the death.smus
+07309c72ed90b2a930b3c772b8ee8423	1	325567	player	uade	Protracker	0	102266	3e3fd6c1	a0767f45	1/utilities/U028.DMS/MODULES/mod.space-song
+07309c72ed90b2a930b3c772b8ee8423	1	325567	player	uade	Protracker	0	102266	3e3fd6c1	a0767f45	1/utilities/U292.DMS/mod.space-song
+077749b1699e0ad56830e2b43cf6be1f	1	234359	player	uade	Noisetracker 1.x	0	159444	b38eaf85	d9b8eb9e	1/MUSIC-MODULE/take.mod
+079922a08e7b8055934496e563a36953	1	92272	player	uade	Protracker compatible	0	20480	f286e3fd	35b1cd7f	2/GAMES/G326.DMS/mus.h
+07a968a75fb7b476bc5619fb1f0d167f	1	143493	player	uade	Soundtracker II (15 instr.)	0	86518	5ed081da	6ba3e967	1/utilities/U302B.DMS/6
+07a968a75fb7b476bc5619fb1f0d167f	1	143493	player	uade	Soundtracker II (15 instr.)	0	86518	5ed081da	6ba3e967	2/MUSICS/M128.DMS/revolution
+07e69f314eec9bf737e9c18218b05e80	1	133968	player	uade	Protracker	0	59824	ec813964	1046fa50	1/AGA/AGA080A.DMS/Mod.Music
+07e69f314eec9bf737e9c18218b05e80	1	133968	player	uade	Protracker	0	59824	ec813964	1046fa50	1/AGA/AGA082A.DMS/Mod.Music
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	1/MUSIC-MODULE/dawn.mod
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	2/GAMES/G453.DMS/dat1
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	2/GAMES/G457.DMS/dat1
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	2/GAMES/G468.DMS/c/REV
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	2/GAMES/G468.DMS/dat1
+07f6c9c3bf8964c35537f2bd55085146	1	169093	player	uade	Protracker compatible	0	161372	0a4c06da	0c7d1955	2/GAMES/G472.DMS/dat1
+081563193a67698c4064f9c7b701d1fb	1	99968	player	uade	Soundtracker II (31 instr.)	0	121596	8491293c	207fbac4	1/MUSIC-MODULE/inlove.mod
+084b703a933c1fded923649eff398657	1	251920	player+silence	uade	Protracker	0	161638	a45f9b05	430adbd0	1/MUSIC-MODULE/take-time.mod
+08e2d2e2788572156781dafd5868ac61	0	154123	player	uade	Sonix Music Driver	0	6384	8164a38b	3fd8e995	2/MUSICS/M275.DMS/SCORES/1-96.smus
+08f52fcbeef41ce37e65eaca8ae6af8a	1	143493	player	uade	Protracker	0	101248	c172d4c3	611c64f0	1/MUSIC-MODULE/plastic.mod
+09b1ac667186a0a14ddd087f9a7254e3	1	436095	player+silence	uade	Noisetracker 1.x	0	134806	81b36d39	92360b7e	1/MUSIC-MODULE/imagine.mod
+0a3e826365a16d9df3081152d6311b23	0	32452	player	uade	Sonix Music Driver	0	1840	16fdc523	2781bc72	2/MUSICS/M275.DMS/SCORES/574-594.smus
+0a8392a23dc35d4b68c4d8b4af7e0dcb	0	188584	player	uade	Sonix Music Driver	0	9290	5f07b04e	bc4f2017	2/MUSICS/M048.DMS/Scores/Never give up.smus
+0a8f9dd73f63e2ec86d5388c026c8dd2	0	0	nosound	libxmp	MED 2.00 MED3	4	2261	0d05efff	7d2f8d58	1/ST-SAMPLES/ABERCOMBIE/GlastonburyTor
+0ac2f8201c18f09851793ea6e279176c	0	146045	player	uade	Amos Music Bank	0	71560	ec8daf2a	ff1b2e2c	2/GAMES/G390.DMS/B
+0acfbc31f7168084ed83e46ed60090c7	0	176789	player	uade	Sonix Music Driver	0	7566	51d84259	bda871c7	2/MUSICS/M275.DMS/SCORES/187-297.smus
+0ad473071ab5732683005e5ae2b29e8d	1	17401	player	uade	Protracker compatible	0	17306	ccd9c72f	099ede85	1/AGA/O.DMS/Son_Of_Blagger/mod.akes-gris
+0b2cd5de3cc14da17f7d1bf28b18f6ca	1	386215	player+silence	uade	Protracker compatible	0	139222	7aa53225	ba99c10a	1/MUSIC-MODULE/trust.mod
+0b45bc171912268b837698516271d0e3	1	173708	player+silence	uade	MED4 (4ch)	0	18850	b3506513	f0357099	1/Anim/A249.DMS/SynthSong1
+0bf9e6c5e1b4a452e5fb9846d09d1a48	1	230541	player	uade	Protracker compatible	0	149846	8a2825cd	13add0a1	1/MUSIC-MODULE/thunderforc.mod
+0c445108dc9f882af501d5644ae3d810	1	68320	player	uade	Protracker	0	115182	720b785b	327be8ef	2/DEMOS/D182.DMS/Atmospack
+0cd138a8575f1ddea3b57c2af24a2ee2	1	176488	player+silence	uade	MED4 (8ch)	0	92852	f6ee958b	b768a89e	2/MUSICS/M260.DMS/PUTV
+0cfe941d74f2d8aecbd57eaf4a37c0fb	0	84596	player	uade	Amos Music Bank	0	26122	349ef5e1	15a059f1	2/GAMES/G163.DMS/cag.abk
+0cfe941d74f2d8aecbd57eaf4a37c0fb	0	84596	player	uade	Amos Music Bank	0	26122	349ef5e1	15a059f1	2/GAMES/G165.DMS/cag.abk
+0d36fc8bacf4ac61937f11327b53bc1c	0	60162	player	uade	Sonix Music Driver	0	1778	9560d2e6	1c0edf26	2/MUSICS/M153.DMS/Scores/dingdong.smus
+0d678f4a7ff69bd56d0d63d84c8ad2c5	0	237594	player	libxmp	MED 1.12 MED2	4	23162	e9770587	842724d9	2/MUSICS/M122.DMS/y
+0dd6bc5659f5770ef3e10dd4560dca08	1	227688	player	uade	Protracker compatible	0	223626	c3e58290	bd391b4d	1/MUSIC-MODULE/pleasure.mod
+0dfe2bb4eb59a4acd265bd826b019767	0	145984	player	uade	FutureComposer 1.3	0	6756	9d4bc05b	122f2211	1/utilities/U294.DMS/modules/mod.thalion
+0e5b82d1869f80218443d9ad51f9d4da	1	206464	player+silence	uade	Protracker	0	264364	e6351e2b	93c71d0e	2/MUSICS/M208.DMS/mod.woman
+0f28f2c58b6eed1bf6e5334110c50d95	1	254549	player+silence	uade	Protracker	0	193658	f394eedd	ef1249c8	2/MUSICS/M120.DMS/MODULES/MOD.4
+0f2a2cf4a54b744e42f577bda1c914e9	0	268921	player	uade	Amos Music Bank	0	62494	f9cdb7a6	b28183ac	2/MUSICS/M156.DMS/Songs/Fletch
+0f32d9822a36bee9bf01fe8e4caed4ee	1	111681	player+silence	uade	Protracker compatible	0	171228	8456819f	e310df0e	1/MUSIC-MODULE/dreamingmood.mod
+0f429b76036964785a6aa72b30cb6986	1	82044	player	uade	Protracker compatible	0	105838	25b6c433	0c011e57	1/MUSIC-MODULE/vcalm.mod
+0f9aa59a8bb73576b001021560537eaa	1	300150	player+silence	uade	Protracker compatible	0	107692	52c2ebe1	7e63fa9a	2/MUSICS/M069.DMS/mod.full-contact
+0fb986b99efc31e3c773536fafb049d0	1	99968	player	uade	Protracker compatible	0	25694	16402c5c	7169835a	2/GAMES/G326.DMS/mus.a
+10239d27865466b86b75cc9146375d3e	1	188283	player	uade	Protracker compatible	0	208298	38b36dc6	c84673f7	1/MUSIC-MODULE/x-tase.mod
+110075e69b831f50e2ba3bd5ad08c6a1	1	315017	player	uade	Soundtracker II (15 instr.)	0	89580	4d7ecd18	cd710d24	2/GAMES/G427.DMS/Rescue/Rescue.Song1
+11873136e25aa8e7e88fc04465a20583	1	153721	player	uade	Startrekker (4ch)	0	52498	4df2dc1e	46f303a1	2/MUSICS/M090.DMS/mod.lada
+119bfa1c8675b12c0607f9bddb4b7706	1	215149	player	uade	Protracker	0	76586	b29a8158	17ff37f2	2/MUSICS/M212.DMS/MODULES/mod.genesis
+127886bdd9661436ede6a1edf6273562	1	160573	player	uade	Noisetracker 1.x	0	145458	b37e1f41	5f698690	1/MUSIC-MODULE/xter.mod
+12b18ff1dc8fa16f837cc77fb8202568	0	202891	player	uade	Sonix Music Driver	0	8186	0ef69eb1	dd9a21a0	2/MUSICS/M187.DMS/Scores/Its-a-sin.smus
+12f0a96a4b21bbdcec37845273167c7e	0	261104	player	libxmp	MED 2.00 MED3	4	3919	06768627	7cd29ba1	2/MUSICS/M085.DMS/Universe1
+130af8d1b06899ab2fbb90fdb54c1e08	0	258385	player+silence	uade	Sonix Music Driver	0	6848	7b61d856	3a9bfd9f	2/MUSICS/M168.DMS/scores/NoOneToHelp.smus
+130af8d1b06899ab2fbb90fdb54c1e08	0	258537	player+silence	uade	Sonix Music Driver	0	6848	7b61d856	3a9bfd9f	2/MUSICS/M048.DMS/Scores/noone to help.smus
+1344c20ae6ea175de8c2c03858158823	0	76920	player	uade	Amos Music Bank	0	50134	e3fd8f25	440d741a	2/GAMES/G199.DMS/music/m4.abk
+1346d694acc08dbdcd35fba0d4e7aa3c	1	315017	player	uade	Protracker	0	69022	43ce6675	cbd54b6e	1/MUSIC-MODULE/godzilla.mod
+13875f923047bdba56b5871fca3ff83c	1	250475	player+silence	uade	Protracker	0	191170	aff03033	c23f7c67	2/MUSICS/M330B.DMS/MOD.Dignity.C
+13a839a40f7a00512a5bd1b4e82edb7d	1	176875	player+silence	uade	Protracker compatible	0	147818	995de645	03b7a0e3	1/MUSIC-MODULE/rag-time.mod
+14a135dc3206c92218915cf624975af7	1	107645	player	uade	Soundtracker II (15 instr.)	0	45244	1ee25305	09026756	1/utilities/U302A.DMS/5
+14a4806d5ac7fe01c8fa16d2b5afe1d3	0	176769	player	uade	Amos Music Bank	0	48838	667cf564	6484309d	2/DEMOS/D037.DMS/Check/M2
+14a5f0962e63b06bc39b5d17f2b8f0f4	0	0	nosound	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	1/utilities/U091.DMS/Demos/Inventio8
+15056a5c1a3766df2cadbdf52b107108	0	99948	player	uade	Amos Music Bank	0	42054	7ec7dbc6	e52d2fc3	2/GAMES/G198.DMS/music/m1.abk
+1526f0355ee9956953d6fa0425f92ff2	0	199797	player	uade	Amos Music Bank	0	48336	a423c307	0a7c9c18	2/DEMOS/D037.DMS/Xeno/M3
+15d47cad06762a30eff3dee6a5ba6ba2	0	169093	player	uade	Amos Music Bank	0	24742	79d69139	97efca53	1/EDUCATION/E073.DMS/ewok.abk
+15e625928a819d63167eadefbde3dad7	1	256667	player+silence	uade	Protracker compatible	0	129392	1333318d	1b84b16d	2/MUSICS/M281.DMS/MODULES/mod.3
+15e7a93013e1c24b60f1cd48331aa85d	1	166035	player+volume	uade	Protracker compatible	0	88654	ad7574a3	8ea2930f	2/DEMOS/D174.DMS/mod.sd
+15fd49d0e3057d5d14b24531e4aa1465	1	64120	player	uade	Protracker compatible	0	30362	42d421e5	f4889a1a	2/GAMES/G082.DMS/zonfile.10
+16191c494786e7ce0d980cc17627c0be	1	76920	player	uade	Protracker compatible	0	23756	cfa281e2	d39b4836	2/GAMES/G326.DMS/mus.e
+1642242a52135fbc7774791ea436d1c9	0	193226	player	uade	Sonix Music Driver	0	10248	527f2af2	6d3ef109	2/MUSICS/M168.DMS/scores/StayHome.smus
+168d41a7df044034c3f86b2a419bdfa4	0	187198	player	uade	Amos Music Bank	0	88934	b8cd13bb	15d7657f	2/GAMES/G446.DMS/Oblidox/Music/Music2.abk
+1763d238e2cce71289556de5dd187a14	0	139333	player	uade	Amos Music Bank	0	42804	ee73b1e0	7587555c	1/EDUCATION/E073.DMS/yaz.abk
+177650e7abf953f28454b9295813d061	1	180089	player+volume	uade	Protracker compatible	0	123204	03d25a7a	48378fe0	1/MUSIC-MODULE/hrunner.mod
+1779130d7749dbffb7d8c12d17487638	0	576022	player	uade	Sonix Music Driver	0	23240	e4ee6a33	df0c1c07	2/MUSICS/M293.DMS/SCORES/Brandenburg5_1.smus
+17bab573f08f6383310f203c060b78c8	0	46196	player	uade	Amos Music Bank	0	68090	5ddd6fe8	20dd605c	2/GAMES/G032.DMS/Music.abk
+17e2b2c99987e6da2fefa1de78486740	0	59016	player	uade	Sonix Music Driver	0	1846	a5ebeab4	bf2fed92	2/MUSICS/M153.DMS/Scores/JingleBells.smus
+17f82b155eb4bfff782d4760aa545a76	1	197245	player	uade	Protracker compatible	0	27396	a74a2b38	c08c0915	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX5
+180131d43badf2850e08c15ff7019d74	0	57514	player	libopenmpt	Startrekker	4	121630	642035a5	11c254f9	1/EDUCATION/E109A.DMS/sound.fx/1
+18105632858759f0d608ef19b0d1e094	0	140885	player+silence	uade	Amos Music Bank	0	44174	c5adfd0d	ba223957	2/GAMES/G390.DMS/D
+1850ea3b48563238036cd35a0fc1f1e6	1	172931	player	uade	Protracker compatible	0	143674	c67352e0	ea6b5383	1/utilities/U109.DMS/mod.backpopped
+186ec272b439302b63f27b774ce11939	0	401021	player	uade	TFMX	0	10556	13d1e164	2baf6c08	2/MUSICS/M195.DMS/mdat.3
+18a02222afe26cd9025e8c877be09523	0	69244	player	uade	Amos Music Bank	0	58192	6136b3b0	cfeb16d6	2/GAMES/G199.DMS/music/m3.abk
+19b7e580bcf30b086c868415f29e4193	0	238217	player	uade	Amos Music Bank	0	105986	003dd9b3	80eae92d	2/MUSICS/M156.DMS/Songs/TeamZauka
+19c5647279627145bdb6977855c0fc27	0	97497	player	uade	Sonix Music Driver	0	5094	e9fc51ba	73abe44b	2/MUSICS/M048.DMS/Scores/Hi Heady (ABC).smus
+19f1f3e385f3ed76c1c3214b9ef3b8ec	1	252778	player+silence	uade	Protracker compatible	0	170610	966f1c7c	762238ca	1/MUSIC-MODULE/galaxyii.mod
+19f1f3e385f3ed76c1c3214b9ef3b8ec	1	252778	player+silence	uade	Protracker compatible	0	170610	966f1c7c	762238ca	2/GAMES/G502.DMS/G
+1a6d5d8815a74e074d7514d7d3d9fe1a	0	120505	player	uade	Sonix Music Driver	0	7390	9579d0da	3c06dbf1	2/MUSICS/M168.DMS/scores/Nothing.smus
+1a93defc469211536bf24a57158796e4	1	122997	player	uade	Soundtracker II (31 instr.)	0	53620	83fb2668	e5196c05	1/Anim/A386.DMS/MUSICA
+1a93defc469211536bf24a57158796e4	1	122997	player	uade	Soundtracker II (31 instr.)	0	53620	83fb2668	e5196c05	1/Anim/A388.DMS/MUSICA
+1a93defc469211536bf24a57158796e4	1	122997	player	uade	Soundtracker II (31 instr.)	0	53620	83fb2668	e5196c05	1/Anim/A389.DMS/MUSICA
+1aa18d55ea640195a6bf814ecf323d07	0	0	nosound	libxmp	MED 2.00 MED3	4	3243	7d403c5b	fc2a8b12	1/ST-SAMPLES/ABERCOMBIE/Freestyle
+1b05cfa76e1dea447d31842d51e279ce	1	121088	player	uade	Protracker compatible	0	59804	2b220e6b	80e3ea32	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX4
+1bae0d26c3392b70a21ab293f23bc766	1	200118	player	uade	OctaMED MMD0	0	332820	54d66d09	371ddf82	2/MUSICS/M180.DMS/Digital-Dominator
+1baf9a167c4536a301492de051194ed3	1	219007	player	uade	Protracker	0	109110	de93a377	1df79a3f	2/MUSICS/M212.DMS/MODULES/mod.isometrica
+1c3b76c97570fd20d615f1ccdfbab40f	1	92272	player	uade	Protracker compatible	0	194512	6120c46e	f4c2129a	2/MUSICS/M102.DMS/MODULES/mod.beyond this sound
+1c51170bf17d163bac07db06fc156aea	0	83290	player	uade	Sonix Music Driver	0	3786	ccc68456	0e4ff52e	2/MUSICS/M168.DMS/scores/Blood....smus
+1cda6e9f2539e3fe16a2def1d2e719ec	1	249410	player	uade	Protracker compatible	0	102288	6f931a31	c576257a	1/MUSIC-MODULE/imponert.mod
+1d2f1fb75d296c8290705c33b9b2fce3	1	286950	player+silence	uade	Protracker	0	113772	b0109f8c	feffb7f1	2/MUSICS/M120.DMS/MODULES/MOD.3
+1d570f06fa8d925001d4b09cd646108c	1	276597	player	uade	Protracker compatible	0	110696	e710e766	fe393344	1/MUSIC-MODULE/arvid.mod
+1e08b3bbe7fecb8baedcfb1c05e4ecb9	0	237896	player	uade	Sonix Music Driver	0	10264	deba001f	e1af3465	2/MUSICS/M177.DMS/Scores/heart.smus
+1e4771a34d855ac9575f8407a33648ab	1	53511	player	uade	OctaMED MMD1	0	137472	33168828	7df94980	2/GAMES/G529.DMS/skidmarks/gfx/mod.skidmarks1
+1e48925796f48bccebbb67e3defa3b03	1	379018	player	uade	Noisetracker 1.x	0	109922	879f9c25	b4ffccf2	1/MUSIC-MODULE/thunders.mod
+1e64e29c55ee5beca69a65ca0175b265	0	78267	player	uade	Sonix Music Driver	0	3068	53d673fe	1a089bde	2/MUSICS/M276.DMS/Scores/Summer2.smus
+1ea7cf67692cfca0d8a1c3daa5adf76f	1	4652	player+silence	uade	Protracker	0	6108	b41c4cc9	33e89145	1/AGA/N.DMS/Deluxe_Galaga/GALAGA.JINGLE2
+1ec8912faedd02fdd0e50c9e0f8552f1	1	85400	player+silence	uade	MED4 (4ch)	0	269208	9a357b7a	66ca6b40	2/MUSICS/M260.DMS/EM1
+1ee52b27e7af1551d76794f8cb36b708	1	92915	player	uade	Noisetracker 1.x	0	67832	ff649b54	f187cdf3	2/MUSICS/M119.DMS/mod.Moonshine
+1eede6eaa2d644255f030b6628531636	1	179392	player+silence	uade	Protracker compatible	0	66328	31329174	5bd89a70	2/MUSICS/M082.DMS/greysong
+1f2b32c1bec93d46a569994669c91d2f	0	61548	player	uade	Amos Music Bank	0	68892	ffcf84ea	b99448fd	2/GAMES/G199.DMS/music/m5.abk
+1f323f0e3fb3459aab13f24452b9b10e	1	122997	player	uade	Soundtracker II (15 instr.)	0	72064	0c6679a1	84e671a8	2/GAMES/G102.DMS/PipeLine/data/Pipesong.MUS
+1f323f0e3fb3459aab13f24452b9b10e	1	122997	player	uade	Soundtracker II (15 instr.)	0	72064	0c6679a1	84e671a8	2/GAMES/G230.DMS/Pipeline/data/Pipesong.MUS
+202534abe67f1e464834d2e5515f6dd9	0	30844	player	uade	Amos Music Bank	0	21040	30079a00	3d25b0ac	1/utilities/U530.DMS/AMOS_Music/Hiscore2.Abk
+213cd172e5d9437b7e5b1c574e0983c1	0	296390	player	uade	Sonix Music Driver	0	11328	eced717f	3d849273	2/MUSICS/M293.DMS/SCORES/Brandenburg6_3.smus
+216dc271df4b7cf0052c02d61d3a375c	0	185429	player	uade	Sonix Music Driver	0	8038	512e418f	0162b8bf	2/MUSICS/M168.DMS/scores/Welcome.smus
+2174ff2a6ebaa6d0faa2b3707039ef67	1	384122	player	uade	Protracker	0	128920	e3a9453f	8af9a2a3	1/MUSIC-MODULE/exercize.mod
+21c3ca9d0d54d683e708618a7e800be8	1	161698	player	uade	Protracker	0	358436	a8daa8fd	73ebbb05	1/ST-SAMPLES/TECHNO B/mod.2_unlimited
+220237509cade92bdefa2fb39618cfc6	1	179043	player+silence	uade	Protracker compatible	0	137148	9b89fede	12f67d20	1/MUSIC-MODULE/xenophone.mod
+2354c33d791e7311e7aa810881e76ce7	0	341984	player	uade	Sonix Music Driver	0	16748	f5ef7271	3e4b65c1	2/MUSICS/M084.DMS/Scores/MEGAAPOCALYPSE.smus
+241a6308d19f9ed544046f5afb3da425	1	255498	player	uade	Protracker compatible	0	105104	f670e40b	ff1d5d03	1/MUSIC-MODULE/jambore.mod
+246727ad8ba2d49cc4dcbe7f9d606d31	0	268037	player	uade	Sonix Music Driver	0	13538	6238298e	33400d78	2/MUSICS/M276.DMS/Scores/Summer1.smus
+250904ae6b8e9bf67809a593084f911c	1	173766	player+silence	uade	Protracker compatible	0	34688	418b4714	da679eb6	1/EDUCATION/E121.DMS/Modules/mod.emptyspace
+25315c078033d7d5591d0601776b07b2	0	193588	player	uade	Sonix Music Driver	0	10538	fc6bd2ee	79f922b9	2/MUSICS/M251.DMS/SCORES/Italian3.smus
+26d12c69bc25bed40e509526a3c0c63d	0	78126	player	uade	Sonix Music Driver	0	2056	cd415978	14717ce8	2/MUSICS/M153.DMS/Scores/GoodKingWnsls.smus
+26f2df063a0a03c95c8e2d47d748a68c	1	128764	player	uade	MED4 (4ch)	0	36107	2aefb9d8	7aae784e	1/Anim/A193.DMS/Nemesis
+2828c846ffa40622447898aacf759131	1	341903	player	uade	Startrekker (4ch)	0	142142	76ce0f2e	918c49b0	1/MUSIC-MODULE/landscape.mod
+287ea6b623a9e18dcfdf792fb5b04853	1	184445	player	uade	Soundtracker II (15 instr.)	0	56964	d11d8bdd	6aef7856	1/utilities/U302B.DMS/1
+287ea6b623a9e18dcfdf792fb5b04853	1	184445	player	uade	Soundtracker II (15 instr.)	0	56964	d11d8bdd	6aef7856	2/DEMOS/D022.DMS/MUSIC1
+29304421ccb60774d136e1ba35db6720	0	150727	player	uade	Sonix Music Driver	0	7296	f4962619	93a0c1d1	2/MUSICS/M187.DMS/Scores/Big-Standard.smus
+296a15f687c3f8697c114f7f03786ca5	1	166521	player	uade	Soundtracker II (15 instr.)	0	86864	ffd80a3a	0f10a460	2/MUSICS/M166.DMS/mod.ANARCHY
+29b1e116b6843f0bc7ab41dfbdc78eff	0	57469	player	uade	Sonix Music Driver	0	1144	d5c9d303	b4668971	2/MUSICS/M324.DMS/Scores/TGFA.smus
+29fd4fd01c7b130a5c3468f18807b4ed	0	122997	player	uade	Amos Music Bank	0	70228	7b2a424c	6a26755c	2/GAMES/G390.DMS/R
+2a06f3c90a42503831a45ea9bd458087	1	381410	player+silence	uade	Protracker compatible	0	110240	a487f988	95aff036	1/MUSIC-MODULE/devils2.mod
+2a0cb34cc2e164fb350108c4757ee314	0	261466	player	uade	Sonix Music Driver	0	9818	d2f7a3c8	712b4d1a	2/MUSICS/M292.DMS/SCORES/Brandenburg4_3.smus
+2a10078a27c253ec1d6f043dde0ff6df	0	30674	player	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	9816	a9ac0d92	d3118eb6	1/ST-SAMPLES/St-00.disk1-10/Birdy
+2b2d6491bc518d59f3c241f3cb00a55e	1	174631	player+silence	uade	Protracker compatible	0	154710	56bb99b2	550ed844	1/MUSIC-MODULE/laser1.mod
+2b6f3a40dd79253930404415fc2503d7	0	69244	player	uade	Amos Music Bank	0	13022	b681b6ec	a7dced1b	2/GAMES/G272.DMS/small_music.abk
+2c9a5f9903322e75fbbfb1346b741b8e	0	0	nosound	libxmp	MED 2.00 MED3	4	1483	8c4a4ab8	30ee1530	1/utilities/U091.DMS/Demos/DirtyOldTown
+2ca171da362347598196d8571d032513	1	188283	player	uade	Protracker compatible	0	49818	ec971489	186413f5	2/MUSICS/M281.DMS/MODULES/mod.7
+2dabd1c626d6f2762a3365d63145bdbe	0	61568	player	uade	Amos Music Bank	0	33298	d58a5163	95c2aabf	1/utilities/U530.DMS/AMOS_Music/Really_Funky.Abk
+2de3d886f3c4afd899d938047ae71123	1	127478	player	uade	Protracker compatible	0	182188	88e88452	c8c3f260	1/MUSIC-MODULE/ice-baby.mod
+2e7883c48ca8701eb0da97fb2e2b2ab7	1	230541	player	uade	Soundtracker II (15 instr.)	0	69440	4b69ed8c	02c9325b	1/utilities/U302A.DMS/2
+2eccd13d2c182f9201c7fb816c278654	1	234238	player	uade	Soundtracker II (31 instr.)	0	135768	8901476a	0476925a	1/MUSIC-MODULE/fire-work.mod
+2f3633f54c365898d8d31cd6fcc52b8b	0	0	nosound	libxmp	MED 2.00 MED3	4	1849	657d7f3e	3f9b707b	1/utilities/U091.DMS/Demos/Hot4
+2f38dabb1e5c1254c635827962c9024d	1	185643	player+silence	uade	Protracker compatible	0	93152	d62acbeb	5406cc4f	2/MUSICS/M321.DMS/mods/mod.groovy
+2f543603a7c40124f775fc9103c18a19	1	391818	player	uade	Protracker compatible	0	39412	49586625	c042a7f8	1/Anim/A328.DMS/mod.mnrfx
+2fe00b70382cfabd1ad3fc733ba9aeec	1	146045	player	uade	Noisetracker 1.x	0	55858	c02b3687	d77c308c	1/utilities/U230.DMS/music    /MOD.tennis
+3014e0db94a1482bf7b5bf882a244580	1	107645	player	uade	Protracker compatible	0	121736	5cdf6808	dcbdcfe9	1/Anim/A260.DMS/music
+3014e0db94a1482bf7b5bf882a244580	1	107645	player	uade	Protracker compatible	0	121736	5cdf6808	dcbdcfe9	2/MUSICS/M317.DMS/c/music
+30bb6d2fc8f3ea5ba0daffda7f72398d	1	192141	player	uade	Startrekker (4ch)	0	194316	06b49a01	7a09ae4d	1/MUSIC-MODULE/x-mas.mod
+30ca92cee5112ac075aff01cf977e76d	0	413459	player	uade	Sonix Music Driver	0	14842	7286ed63	82885ad1	1/Anim/A333.DMS/Instruments/NeverEnding.Smus
+313833c43d69af90f4d6a22786d5ab3d	1	88728	player+silence	uade	Protracker compatible	0	84146	f7acca55	3fd03fcc	2/MUSICS/M082.DMS/coca cola
+319b792fb73a15b8994ae6970ddc1dce	0	63377	player	uade	Ultimate-Soundtracker or compatible	0	40616	5b42778e	b765f208	1/Anim/A029.DMS/mod.nazazl.soundtrack
+31a3f2071d1e0c0690e2742287521f4d	0	0	nosound	libxmp	MED 2.00 MED3	4	1224	9b4a47c1	dee94b94	1/utilities/U091.DMS/Demos/Bebop
+31e2e0cba5eea9973e10bcb9f05dbf1f	1	70530	player	uade	Protracker	0	38596	7783db0a	32608e8c	2/GAMES/G370.DMS/modules/mod.twin2
+320f96e0915c18b9454f866bbbca71f5	1	184445	player	uade	Soundtracker II (15 instr.)	0	72128	60b5932f	838a1eb5	2/GAMES/G043.DMS/data/out_run
+32238fc4f1e4e359cf4f09c229820c9a	1	92272	player	uade	Protracker	0	110702	1ec13c71	49815d91	1/MUSIC-MODULE/x.mod
+32512180f478aa8837ff0c9a1df24ca8	1	203635	player	uade	Protracker compatible	0	162944	02900fc0	61c1f323	1/MUSIC-MODULE/softrock.mod
+32c1dcda6cc074952ac07b9179a23eda	1	161319	player+silence	uade	MED4 (8ch)	0	57860	4b779a5e	98efb603	2/MUSICS/M260.DMS/PTC
+330c82f5f803acc52f26da091f36c132	0	115028	player	libopenmpt	Game Music Creator	4	72832	333a4515	f6c50dae	2/GAMES/G520.DMS/FatalMission2/Music/Level1Music.DAT
+33379834a7679f862d40b2b8138e3eb9	1	240548	player	uade	MED4 (4ch)	0	136735	a1717dd5	1ce8f90f	2/GAMES/G124.DMS/Tu/Breath_Of_Life
+338f9336edcf95b128d5d5e02ff4c722	0	30844	player	uade	Amos Music Bank	0	33178	50d25060	ca5b6086	2/DEMOS/D163.DMS/jonts_3.abk
+3465b14040e16e0632b44e5fead73c11	0	7816	player	uade	Amos Music Bank	0	12872	af2778a5	666c8be5	1/utilities/U530.DMS/AMOS_Music/Startgame2.Abk
+3465b14040e16e0632b44e5fead73c11	0	7816	player	uade	Amos Music Bank	0	12872	af2778a5	666c8be5	2/GAMES/G366.DMS/Code/Startgame2.Abk
+349326e84ad73fdf83548449ff945a8a	1	23168	player	uade	Protracker compatible	0	104106	f60de502	c3e470aa	1/ST-SAMPLES/SPECIAL FX.vol9/effects/basicssn.snd
+34a9b4befb338333ee94d0e48088f870	0	157699	player	uade	Sonix Music Driver	0	5444	e04ae1b3	8602e16d	2/MUSICS/M177.DMS/Scores/Hit-Music.smus
+35c3edde6484c621d8380318b1a62c61	0	271614	player	uade	Sonix Music Driver	0	16048	c58bef1d	e2c48d10	2/MUSICS/M293.DMS/SCORES/Brandenburg5_3.smus
+35dae6545119c898c5273802fd7d8dce	0	76920	player	uade	Amos Music Bank	0	36290	408ed5ab	3345e660	2/GAMES/G177.DMS/Titune.abk
+364e39f15911854e522e5aa686c9a5b7	1	214542	player+silence	uade	Protracker	0	70760	fc18444b	3d506e0a	2/MUSICS/M212.DMS/MODULES/mod.dictator
+369ae98a0253ac87dad61fc2dbef5bed	1	192141	player	uade	Protracker compatible	0	39228	7aed98bd	710eed33	2/MUSICS/M281.DMS/MODULES/mod.6
+36de751d1e76b11c1efe6365e67a2121	1	249078	player+silence	uade	Protracker compatible	0	80044	95ee4d10	800a862c	2/MUSICS/M281.DMS/MODULES/mod.1
+3711bcf86d8521fc94bc9be0fe09fa2d	0	146004	player	uade	Sonix Music Driver	0	5696	b411c4b1	51023755	2/MUSICS/M084.DMS/Scores/CONFUZION.smus
+3826dd70677258bb8f1fd9ae7ea9c76b	1	108770	player	uade	Noisetracker 1.x	0	107382	e5a7c381	b962afe1	1/MUSIC-MODULE/paranoid.mod
+38c196fe9625d664f8fbdb994292da34	0	243000	player	uade	Sonix Music Driver	0	2428	330dffba	66b42836	1/Anim/A272.DMS/Scores/NT.smus
+39e934c91589b22474ac7f12d1bf362b	0	215122	player+volume	uade	Sonix Music Driver	0	10156	e730b47f	2132109e	2/MUSICS/M251.DMS/SCORES/Italian1.smus
+3a8120e21f4f03e37bf07efc745c5b1f	0	30824	player	uade	Amos Music Bank	0	13650	ee09f3d8	565a3fa7	1/EDUCATION/E033.DMS/quickintro.abk
+3ad791d7b8856a1030ed09c7cdd16bf0	0	7816	player	uade	Amos Music Bank	0	8296	a70873d8	2f74650f	1/utilities/U530.DMS/AMOS_Music/Explosion2.Abk
+3b1b506eeb6066c04a8805285998a857	0	92011	player	uade	JamCracker	0	29066	55d5772d	18c94b1f	1/utilities/U080.DMS/Songs/DemoSong3
+3c06780b691a344147ab8032ac6753d1	1	207493	player	uade	Protracker	0	269512	06fd7c17	8161b182	1/MUSIC-MODULE/crime zoh.mod
+3c70f44a5f899a572b267d1bf6208e37	1	283992	player	uade	Protracker	0	134278	62c1d5f3	92a86a34	1/MUSIC-MODULE/son.mod
+3c8b81ce59264057dc030f17accb7177	1	158845	player	uade	Protracker compatible	0	120558	8238cad4	91d2bd52	1/MUSIC-MODULE/special.mod
+3cd27b9549989f5cf6644515dfa1b01a	0	222388	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	364928	69354bd1	87dcb9ae	2/GAMES/G052.DMS/HoeHoe
+3db93b22810c2e5e2942f504122abcc0	0	176769	player	uade	Amos Music Bank	0	94154	aab6768e	7a4144b1	2/GAMES/G039.DMS/idea.abk
+3e396a8061dbf8d88cb7ecf4b757ab8a	1	53872	player	uade	Noisetracker 1.x	0	50650	dd04dec9	6ef28c99	2/DEMOS/D174.DMS/mod.hm
+3e5a8ee7beb2839ec367def74ad48e29	1	153160	player+silence	uade	Noisetracker 1.x	0	71522	e0ac63d1	e0420860	2/MUSICS/M145.DMS/Modules/MOD.Oxygene II
+3e5ac6d98616938997c596ce2bd67802	0	30844	player	uade	Amos Music Bank	0	8742	fe9f10f4	e65757e2	1/EDUCATION/E109A.DMS/sound.fx/crowd.abk
+3eee2c64a7b0a8e5532125db7f84df7f	1	315258	player	uade	Protracker compatible	0	128020	431f4d1b	c7a4ad63	1/MUSIC-MODULE/hallucin.mod
+3f436602e6afc579d00c0f7e27a024b8	1	146045	player	uade	Protracker compatible	0	85834	62a37fd5	45c221d8	1/Anim/A297.DMS/mod.andrew
+3fa16e33774736700e77f31d3731950d	0	30844	player	uade	Amos Music Bank	0	17146	446154e5	48a10ad4	1/EDUCATION/E057.DMS/Music/Magic_Forest_end.Abk
+40090e24b7df4da62d8250523ec1c2a3	0	87835	player+volume	uade	Sonix Music Driver	0	3726	496e6798	26227324	2/MUSICS/M251.DMS/SCORES/Tambourin.smus
+404427fbc6596f04fa359272a3807143	1	252778	player+silence	uade	Protracker compatible	0	170610	4c4aef83	f5b08cb1	1/Anim/A335.DMS/M/Music
+40690c10ca5dc787c89cc1c1e4ea53c9	0	274548	player	libxmp	MED 1.12 MED2	4	23162	55d56e3c	7af6ab9e	2/MUSICS/M122.DMS/t
+40f32cbcd70fcc8c3f81e2b733472298	1	267257	player+silence	uade	OctaMED MMD1	0	324186	5b2ddf50	560da8be	1/AGA/AGA172.DMS/VideoTracker/Modules/mod.bonzai
+40f7f416cf6460d7e76eb0276a1c2502	0	61568	player	uade	Amos Music Bank	0	44828	ef317140	a9364df7	1/EDUCATION/E021.DMS/music3.abk
+412525fc30f8628cae3efcfab085c367	0	164310	player	uade	Sonix Music Driver	0	7622	5a08cddb	7d48e996	2/MUSICS/M251.DMS/SCORES/Villageoise.smus
+413b32bb22500d4572698ee7d88497a0	1	293396	player+silence	uade	Protracker compatible	0	94396	312099e1	03bd93db	1/Anim/A297.DMS/MOD.4MAT
+41cc61a244bff5c41afa0d2d8bf61f55	1	22527	player+volume	uade	Protracker	0	25884	6b975b36	8bc47d5d	1/Anim/A398.DMS/dat14
+41da7e60c05a6edf51ff8665ff822dba	1	89720	player	uade	Protracker	0	50254	0a283855	0c817682	1/utilities/U360.DMS/mod.frac1
+4234f3880c9c7f0e58bea4f9ba622bee	0	7816	player	uade	Amos Music Bank	0	8936	d4fa7e03	a9984b6f	1/utilities/U530.DMS/AMOS_Music/Gameover4.Abk
+42561c6f10b1178142b23a593f1a9317	1	161397	player	uade	Noisetracker 1.x	0	252760	cbff7bf9	e12dcdae	1/MUSIC-MODULE/spell.mod
+426ca71b4bcbba41d0e01daec9da1671	1	464901	player	uade	Protracker compatible	0	66478	d02d8b27	da24d6c9	1/ST-SAMPLES/TECHNO C/mod.KNARKA
+42ba0ab00fbde9071df36009804388b4	1	184686	player	uade	Soundtracker II (31 instr.)	0	248994	f84e8aff	f5c81f91	2/MUSICS/M119.DMS/mod.TKG
+42dc443af03ac4c126fff7351e6fe1a6	0	63538	player	uade	Sonix Music Driver	0	3512	cb6426a9	62c935db	2/MUSICS/M275.DMS/SCORES/298-337.smus
+4303ef10bf4a0fe0077a3fe36e688872	1	222845	player	uade	Protracker compatible	0	167888	3d82d40c	47e56c11	1/MUSIC-MODULE/thedark.mod
+4303f983f3fd586f8e129f06c256649f	0	259319	player+silence	uade	TFMX	0	7996	8610acb4	692926a1	2/MUSICS/M195.DMS/mdat.a
+4303f983f3fd586f8e129f06c256649f	1	60585	player+silence
+431751d5ab7871bec8e49b97b777bd7f	1	217805	player+silence	uade	Startrekker (4ch)	0	91482	7e218dd3	7248fac0	2/MUSICS/M148.DMS/7
+434c0a2d09b7725936179a0cc3aaed2c	1	242055	player	uade	Protracker compatible	0	54322	3225bc09	57b167ae	1/AGA/O.DMS/Son_Of_Blagger/jomus
+4367008631aefecad3885a66ba50ba99	1	326531	player	uade	Soundtracker II (31 instr.)	0	130810	b594ffa1	d64057b7	2/MUSICS/M192.DMS/hello rob
+4373de54dee8d68bf1a848c5f962fa02	1	61568	player	uade	Soundtracker II (31 instr.)	0	39752	5e5ea22f	396d252b	2/GAMES/G174.DMS/llama-2.LZH/mod.tnt2
+43a051535d732879ea42bf31b1fafbcf	1	112126	player	uade	Protracker	0	69894	5fdf04bd	d0640dd5	1/Anim/A280.DMS/MODULES/MOD.Lyon
+44850d953dfa22ea3daedc889294c9b3	1	476294	player	uade	Protracker	0	135678	32405138	5a6a933c	2/MUSICS/M119.DMS/MOD.DECORE
+44a39030731a5c61adfe1422f9541f4c	1	206420	player+silence	uade	OctaMED MMD0	0	157262	e0ba28e9	d17a84a1	2/MUSICS/M207.DMS/HolyNoise
+44fdfd7b58c1559c2ce2b3c5a9572b5e	0	161658	player	uade	Sonix Music Driver	0	10050	f214ee39	cd6e384a	2/MUSICS/M168.DMS/scores/Dep..smus
+451adbd7841e03186005ef4d54002fe1	1	276065	player+silence	uade	Protracker compatible	0	134294	ea81f32f	40c178ef	1/Anim/A297.DMS/MOD.BLACKORWHITE
+45555cada10af2471503ad5b29bcd631	0	7816	player	uade	Amos Music Bank	0	5692	959d8a61	e8992a26	1/utilities/U530.DMS/AMOS_Music/Timewarp2.Abk
+456dd3e57a0235f41865193a3b601df1	1	316263	player	uade	OctaMED MMD0	0	121236	1d3453a1	04de136b	2/GAMES/G361.DMS/Columns/song.1
+46bda979f9a6d008eb605d7b10286128	0	46397	player	uade	Sonix Music Driver	0	2848	82a6d927	d0894cc6	2/MUSICS/M168.DMS/scores/TimeAgo.smus
+480a00012c3e0291a1d963bbda796a95	0	157277	player	uade	Sonix Music Driver	0	1724	1ef9b799	e31a74cc	2/MUSICS/M048.DMS/Scores/tb.smus
+481182b3ff15f38acec75e01cd4ee3dc	1	228130	player	uade	Protracker	0	164518	ec865115	1bc4370c	1/MUSIC-MODULE/abraxasphone.mod
+4861a961c62d5e46914cbd972547da26	1	290020	player+silence	uade	Protracker compatible	0	134150	aed0f665	29e7e83c	1/MUSIC-MODULE/techno.mod
+4994ebba308165428300d749aaa12a4d	1	36852	player	uade	Protracker compatible	0	41240	e2b508db	4c236859	1/Anim/A330.DMS/6
+49cb934a65c37416f32c3bca924ff4e7	1	327194	player	uade	Noisetracker 1.x	0	233264	400b221a	992c2814	1/MUSIC-MODULE/trazzan.mod
+49cfd6be87936d8ede059b64397fe308	1	205236	player+silence	uade	Protracker compatible	0	199926	e62e1392	9e927426	1/MUSIC-MODULE/tonight.mod
+4a0b47a956d25da66ad80f6470b40e56	1	99968	player	uade	Protracker	0	81948	971b929c	cf55df9b	1/AGA/AGA062.DMS/MoD.BoDYBeaT
+4a4a66a7c79480a6f28cb45540d718ba	1	122997	player	uade	Soundtracker II (15 instr.)	0	103926	2a9cec41	7d0d28a6	2/MUSICS/M167.DMS/giles-rap
+4a4a66a7c79480a6f28cb45540d718ba	1	122997	player	uade	Soundtracker II (15 instr.)	0	103926	2a9cec41	7d0d28a6	2/MUSICS/m167b.DMS/giles-rap
+4a90f091797ecfb39985e77205900eca	0	0	nosound	libxmp	MED 1.12 MED2	4	30358	696d57c8	2036cea9	2/MUSICS/M252.DMS/Yontoon
+4b2df68b0b36c43eb94f8b1bd7048a5e	1	209700	player+silence	uade	Protracker compatible	0	104794	f5c88021	d99713b2	2/MUSICS/M145.DMS/Modules/MOD.Oxygene IV
+4b93b79002d85d032bbe38ec877df16e	0	22184	player	uade	Sonix Music Driver	0	1854	1b537fec	bd4b1cc9	2/MUSICS/M275.DMS/SCORES/559-573.smus
+4ba7aa8ef6d6d3ae845700ae3f66a7c6	1	106821	player	uade	Protracker	0	72734	30a22642	366f19d8	1/AGA/N.DMS/Deluxe_Galaga/GALAGA.MUSIC
+4bbef7e6fbf3d0b66da52ab208c9dfbe	0	88776	player	uade	Sonix Music Driver	0	2334	f76738a6	468814c6	2/MUSICS/M153.DMS/Scores/goodChrstnMen.smus
+4c526a018e4f1fcda50f3cec8d2542ae	0	210065	player	uade	Sonix Music Driver	0	3342	a144e1ed	88fc296a	2/MUSICS/M187.DMS/Scores/save-me.smus
+4d834e0fbf46ecc924950452955ae3ff	0	0	nosound	libxmp	MED 2.00 MED3	4	3876	e145f537	0c31f910	1/utilities/U091.DMS/Demos/Song
+4dec6ca9d866817ba2245068bf61cc50	0	163969	player	uade	Amos Music Bank	0	47216	730af225	cca2ca31	2/GAMES/G446.DMS/Oblidox/Music/Music3.abk
+4e126de00c9f56da21e1d48aa87799f6	1	291969	player	uade	Protracker compatible	0	100002	a820cd8e	baae7e02	1/MUSIC-MODULE/house2.mod
+4e126de00c9f56da21e1d48aa87799f6	1	291969	player	uade	Protracker compatible	0	100002	a820cd8e	baae7e02	1/MUSIC-MODULE/housebeat.mod
+4e4fd2477beeb859e6e5d5a5f1849c36	1	213622	player+silence	uade	Protracker compatible	0	129219	4da5af53	dcb5dae4	1/MUSIC-MODULE/ecstasy.mod
+4ec6de35d7ef574bebae2a43bf92bcc6	1	146045	player	uade	Soundtracker II (15 instr.)	0	84864	2ba324aa	db7f447a	2/GAMES/G427.DMS/Rescue/Rescue.Song3
+4ee1760f498c6582c01ceb1c7cb08e7d	1	430218	player	uade	Protracker	0	100368	6aae4db8	dd4479ec	1/MUSIC-MODULE/Jamebonds.mod
+4fbd0fba9d0cfb470a03d5cfe2dc8607	0	594046	player	uade	FutureComposer 1.3	0	25398	6bf40691	18ab6bb3	1/utilities/U294.DMS/modules/mod.astaroth.2-4
+50ddce6f1b8c760ee89505cfca4c2266	0	136319	player	libxmp	NoisePacker v3	4	155234	eb58ed60	52218044	2/MUSICS/M330A.DMS/MOD.Interceptia.CNP
+51606700cc040ad508b98540afd5fa2a	0	93920	player	uade	Sonix Music Driver	0	2972	99a35e78	27142677	2/MUSICS/M177.DMS/Scores/It's-A-Sin.smus
+51e5c76643ff254ed105dee5cb9a22ba	1	119179	player	uade	Protracker compatible	0	42720	7d5786a2	07a7ff5a	2/GAMES/G112.DMS/snd/mod.laidback4
+51ed965fcf3eb2564113fc852f5d6b67	1	172931	player	uade	Protracker compatible	0	149786	5d4d305c	89d7e814	2/MUSICS/M321.DMS/mods/mod.dentistry
+5233c4fe2db349e9cbc89d6547595d8f	1	38520	player	uade	Protracker compatible	0	116086	7a530046	8f52d919	1/MUSIC-MODULE/getup.mod
+5237848751a86d9d6f771dcd64afc772	0	57730	player	uade	Amos Music Bank	0	74342	bfe255bc	3f6390c0	2/GAMES/G185.DMS/LamerMuzax.abk
+524485a64c2bf6f5887145623ce55770	0	241975	player	uade	TFMX	0	8272	e2a4ad79	a50e3049	1/utilities/U011.DMS/c/mdat.Timedance
+524485a64c2bf6f5887145623ce55770	1	38440	player
+52f66d2b1d3bcf416495f5b3b6984d89	1	245893	player	uade	Protracker compatible	0	53886	dd896a11	99ee04dd	2/GAMES/G082.DMS/zonfile.09
+5393895cc6bef730eff6a476ee3afda6	1	174816	player+silence	uade	Protracker compatible	0	114128	d0fe6d8c	7fa7d6c5	1/MUSIC-MODULE/factry.mod
+53d0489eb1f556d39cd866c147abf8a6	1	225960	player	uade	Protracker	0	241640	223b5d77	7d11b0f4	1/ST-SAMPLES/TECHNO A/Mod.HumanTarget
+53fe966e73280fe3a4b40f46e95bba68	1	107645	player	uade	Noisetracker 1.x	0	63456	daf71313	98e7fbb4	1/Anim/A278.DMS/Song
+543e2822f4e98aeeb2b18764abc8698d	0	210045	player	uade	TFMX	0	10696	28a06357	76239a16	2/MUSICS/M195.DMS/mdat.8
+543e2822f4e98aeeb2b18764abc8698d	1	254051	player
+543e2822f4e98aeeb2b18764abc8698d	10	210045	player
+543e2822f4e98aeeb2b18764abc8698d	11	254051	player
+543e2822f4e98aeeb2b18764abc8698d	12	210045	player
+543e2822f4e98aeeb2b18764abc8698d	13	254051	player
+543e2822f4e98aeeb2b18764abc8698d	14	210045	player
+543e2822f4e98aeeb2b18764abc8698d	15	254051	player
+543e2822f4e98aeeb2b18764abc8698d	16	210045	player
+543e2822f4e98aeeb2b18764abc8698d	17	254051	player
+543e2822f4e98aeeb2b18764abc8698d	18	210045	player
+543e2822f4e98aeeb2b18764abc8698d	19	254051	player
+543e2822f4e98aeeb2b18764abc8698d	2	210045	player
+543e2822f4e98aeeb2b18764abc8698d	20	210045	player
+543e2822f4e98aeeb2b18764abc8698d	21	254051	player
+543e2822f4e98aeeb2b18764abc8698d	22	210045	player
+543e2822f4e98aeeb2b18764abc8698d	23	254051	player
+543e2822f4e98aeeb2b18764abc8698d	24	210045	player
+543e2822f4e98aeeb2b18764abc8698d	25	254051	player
+543e2822f4e98aeeb2b18764abc8698d	26	210045	player
+543e2822f4e98aeeb2b18764abc8698d	27	254051	player
+543e2822f4e98aeeb2b18764abc8698d	28	210045	player
+543e2822f4e98aeeb2b18764abc8698d	29	254051	player
+543e2822f4e98aeeb2b18764abc8698d	3	254051	player
+543e2822f4e98aeeb2b18764abc8698d	30	210045	player
+543e2822f4e98aeeb2b18764abc8698d	31	10067	player
+543e2822f4e98aeeb2b18764abc8698d	4	210045	player
+543e2822f4e98aeeb2b18764abc8698d	5	254051	player
+543e2822f4e98aeeb2b18764abc8698d	6	210045	player
+543e2822f4e98aeeb2b18764abc8698d	7	254051	player
+543e2822f4e98aeeb2b18764abc8698d	8	210045	player
+543e2822f4e98aeeb2b18764abc8698d	9	254051	player
+5455d2da6e3b5422dd04c5c747608879	1	223809	player	uade	Protracker	0	159976	223eb807	c61d00c3	1/MUSIC-MODULE/enlight.mod
+54942d21406c91d5b10d3f4864ee895d	1	192141	player	uade	Soundtracker II (15 instr.)	0	54840	9bd7da91	298dd5d7	2/GAMES/G470.DMS/m0
+5504aa02c5d301829040835aac769bd8	1	141709	player+silence	uade	Protracker compatible	0	102562	f2565385	8fc79eb2	1/MUSIC-MODULE/airwolf.mod
+5504d2952391b61c8db379dff481b94a	1	265184	player	uade	Protracker	0	110600	c3238770	8edfe773	1/MUSIC-MODULE/evil.mod
+55e2de544796b08cc356f41f5891cdc6	1	207493	player	uade	Protracker compatible	0	133732	d1404cce	bdd1e399	1/MUSIC-MODULE/xiphoone.mod
+5612d5612006272ebdee724b73f2b670	1	7796	player	uade	Protracker compatible	0	38276	6141c1c6	005a9478	2/GAMES/G082.DMS/zonfile.03
+562dce350fd7b18853d9d1c36989283e	1	107645	player	uade	Protracker	0	125054	47f8c731	5991a432	1/MUSIC-MODULE/sunwind.mod
+563887f657b8368d8a26c5ca34565f53	0	7816	player	uade	Amos Music Bank	0	3616	84671f1a	332ed649	1/utilities/U530.DMS/AMOS_Music/Laser1.Abk
+56554c8790d82595556a4738af018501	1	152435	player	uade	Protracker	0	146304	58907061	33329c2c	1/ST-SAMPLES/TECHNO A/mod.dontyouwantme.remix
+56e3ab3e561076b18f6829fee2710a29	1	173528	player+silence	uade	Noisetracker 1.x	0	107184	f50ec440	c4d3a70b	1/MUSIC-MODULE/it5.mod
+576178200503121200a3dcbbe4a5030b	1	222845	player	uade	Soundtracker II (31 instr.)	0	97204	129a4ede	3bbc09c8	2/MUSICS/M145.DMS/Modules/MOD.Rendez Vous IV
+57ad4e8373c0bc50447ffde9a96105d2	0	149139	player	uade	SoundFX	0	27220	98d7ca78	23805184	2/GAMES/G105.DMS/GAME.SND
+581ded4988f13fd4bde11b29ad0a0065	1	107645	player	uade	Protracker	0	18114	fb62168c	3a3b807a	1/Anim/a281.DMS/MODULES/mod.starworx
+58439fae67fdc625370ded43c010b2bf	0	93920	player	uade	Sonix Music Driver	0	6588	a8270c10	65805d3e	2/MUSICS/M168.DMS/scores/Earth.smus
+59178f80bed4c60fd67080cb1e636876	0	61568	player	uade	Amos Music Bank	0	54758	fca48811	700f8df9	2/GAMES/G390.DMS/E
+5948898bdf4b49aacaddc8f2a15d7424	0	7816	player	uade	Amos Music Bank	0	9414	0fc69fb1	637e2f04	1/utilities/U530.DMS/AMOS_Music/Gameover5.Abk
+5a005c3d707d1517024307c457662ef3	1	254333	player	uade	OctaMED MMD0	0	25794	b86c7961	28245d6c	2/GAMES/G361.DMS/Columns/song.3
+5a13356ba72e673bffc548928cbd0495	1	242740	player+silence	uade	OctaMED MMD0	0	95724	1a670ff9	ca5101a4	2/GAMES/G361.DMS/Columns/song.2
+5a4860c5f756038c5e7273c90f622b4b	1	238197	player	uade	Protracker compatible	0	115724	3eaf0534	e9c21562	1/MUSIC-MODULE/irontear.mod
+5aac07e72f570f53fbcc0a6bd606a318	1	203313	player	uade	Soundtracker II (15 instr.)	0	77676	22e59d07	5d83af4f	2/MUSICS/M128.DMS/equinoxe5
+5ab90de4c063da9ceed4e3673f61f221	0	275512	player	uade	Sonix Music Driver	0	10888	fdf76910	3f597f92	2/MUSICS/M251.DMS/SCORES/Chromatic2.smus
+5ae4ba937196e6f9f5c39f0ac3527497	0	69017	player	libopenmpt	Game Music Creator	4	16566	d0988d7c	8bbe2716	2/GAMES/G520.DMS/FatalMission2/Music/Level6Music.DAT
+5b02c193f764af192b28fc63fb11e365	0	233831	player	libopenmpt	Game Music Creator	4	77806	75abc643	f02bebda	2/DEMOS/D014.DMS/AMOS_MUSIC
+5b3182d88f496294ac25a96b87e8e3d2	1	253569	player	uade	Protracker compatible	0	210108	2ca69b89	f187d7f5	2/MUSICS/M321.DMS/mods/mod.godsremix
+5b940ba2a8381f2cadbed1592201c27a	1	299645	player	uade	Protracker compatible	0	74292	f62ef494	25d33cee	2/MUSICS/M321.DMS/mods/mod.margarine
+5bb15d2da978dc00feec8870aefeeb66	0	223367	player	uade	Sonix Music Driver	0	8274	46a29467	5b2c3219	2/MUSICS/M251.DMS/SCORES/K491.smus
+5bb5c4eb0d580f5523b41eb461604159	0	81502	player	uade	JamCracker	0	33856	032aa7ac	1690615e	1/utilities/U080.DMS/Songs/DemoSong4
+5c7ee9a6cf66c7b46221f85b8367e582	1	30824	player	uade	Noisetracker 1.x	0	30456	963a8478	e001e91a	1/MUSIC-MODULE/arkanoid.mod
+5ce16ef0d02cee85d70cd657256c6b59	1	181451	player+silence	uade	Protracker compatible	0	116882	94cf0fe2	a3d9550b	1/MUSIC-MODULE/first-s.mod
+5d43bb3f32f5d7d4967aafeea99ed645	0	190111	player	uade	Sonix Music Driver	0	9542	ac042d41	06d51020	2/MUSICS/M168.DMS/scores/Itsnottoolate.smus
+5de6469eed137ecb0f5bd09d78f05866	1	242055	player	uade	Protracker compatible	0	123210	56175a83	01cb0949	1/MUSIC-MODULE/cream.mod
+5dede913c0b23d432e40d269b85fc16d	1	176769	player	uade	Startrekker (4ch)	0	89524	8987f647	fd962248	1/EDUCATION/E121.DMS/Modules/mod.estra
+5df6b2a79701e44899c9df11c528e29f	1	361073	player	uade	Noisetracker 1.x	0	129076	0aace62b	cb59426b	1/AGA/AGA282A.DMS/c/MOD
+5e1fdd6aa03576846e0ae9cce0afce74	0	404135	player	uade	Sonix Music Driver	0	8308	2ebca0b8	19ec9d5d	2/MUSICS/M290.DMS/Scores/ADAGIO_K313.smus
+5e5411694cd28c5d4710666f90112bc3	0	92292	player	uade	Amos Music Bank	0	32768	62021345	1a4d0b1c	1/Anim/A037.DMS/Winter.Abk
+5e6330f627e0a74183a2fdaa73d2592e	1	180607	player	uade	Protracker compatible	0	66040	d39b4711	15f165fa	1/Anim/A320.DMS/MUSIC
+5e6b60d4191c9c4fdba651c4edb60669	1	283992	player	uade	Protracker compatible	0	135520	2ef77fd0	b131aa8d	2/MUSICS/M082.DMS/mod.sauron
+5e725e2e7c39e37d4f53f67a11b1a3ff	0	254313	player	uade	Sonix Music Driver	0	4492	5a64f406	7656b061	2/MUSICS/M293.DMS/SCORES/Brandenburg6_2.smus
+5e92ab342c1ebf2baccb054548aad5d1	1	225075	player	uade	Protracker	0	151434	6fae5b6f	3d076d55	1/MUSIC-MODULE/heavyball.mod
+5ecdfb63137f4fa30443cda406d20341	1	372617	player+volume	uade	Protracker	0	172426	5e76af56	ac118d49	1/MUSIC-MODULE/space-del.mod
+5f314fc2889a6714a5b43fa90843303e	1	180409	player+silence	uade	Protracker compatible	0	158428	b0b9b9c9	22dba23d	1/MUSIC-MODULE/ghost2.mod
+5f314fc2889a6714a5b43fa90843303e	1	180409	player+silence	uade	Protracker compatible	0	158428	b0b9b9c9	22dba23d	2/GAMES/G502.DMS/D1
+5f9a4cdf370fe5f00d83c55bb90bf96b	0	269162	player	uade	Amos Music Bank	0	144544	028180f9	027e32bb	1/EDUCATION/E059.DMS/VerbsMusic.abk
+5fe3498b29fd0bf59c8571238428bc37	0	290824	player	uade	Sonix Music Driver	0	13946	ca7f97ac	a4242fb9	2/MUSICS/M084.DMS/Scores/ACE2.smus
+60754367f87e65acb7b7974cd312bcbe	0	233877	player	uade	Sonix Music Driver	0	6260	0f1fb422	3abfe755	2/MUSICS/M168.DMS/scores/StringsII.smus
+60fbacd65909f4122a17ee5266809009	1	72549	player+silence	uade	Protracker	0	41924	61bcf219	4545f1f9	2/MUSICS/M331A.DMS/Mod.Intro
+610e9f00edde5958723ed561d6a71f07	1	315017	player	uade	Protracker compatible	0	180642	d990c575	a73256c2	1/MUSIC-MODULE/hardcore.mod
+613b61f4e47dbd541a2faaf1d580896a	0	7816	player	uade	Amos Music Bank	0	972	f9dab7d3	a321c4d1	1/utilities/U530.DMS/AMOS_Music/Drip.Abk
+61a0acf2827227f6c132d5d0e05d197e	0	215169	player	uade	Amos Music Bank	0	84742	b99569a7	0e906176	2/GAMES/G039.DMS/happy.abk
+61c173cf5676c4db149021efecdbbc35	1	146045	player	uade	Protracker compatible	0	150474	20b64fa0	c841bd82	2/GAMES/G370.DMS/modules/mod.kaos
+61d9b13f8a0502f1549cc2bf16bf9e8c	1	192141	player	uade	Noisetracker 1.x	0	143100	080253dc	f8500c86	1/MUSIC-MODULE/jack.mod
+61dd23faac05de0f8a430f5b52aa4bf2	0	76920	player	uade	Amos Music Bank	0	31502	9aed0264	5288147d	2/DEMOS/D163.DMS/jonts_4.abk
+62246509febf100af2f988100bef376b	0	101978	player	uade	Sonix Music Driver	0	5122	876fc70c	c75be8f8	2/MUSICS/M275.DMS/SCORES/338-402.smus
+62e5889862b4060a2e1f5f91639cf6a0	1	152429	player+volume	uade	Protracker compatible	0	144204	8c2227a7	1bedd91f	1/MUSIC-MODULE/asph.mod
+6358fbaf2ed1151e0d24b4062cb2e838	1	129485	player+silence	uade	Protracker	0	119730	3161c14c	c9ef58de	1/utilities/U306.DMS/MOD.POO
+637b13fd49c598568e533e91ad1730b6	1	249490	player	uade	Noisetracker 1.x	0	212870	61fc2aee	85d09d26	1/MUSIC-MODULE/riseup.mod
+6398f859f7e2756a99e832cf357bad0b	1	276359	player+volume	uade	Protracker	0	194072	fc6c1814	3ac1ba97	1/utilities/U188.DMS/mod.occ san geen
+646d94cd57a4fb5a73e2f0d89c128a29	1	315258	player	uade	Protracker compatible	0	128020	820f0246	bdfd2d63	2/DEMOS/D174.DMS/mod.h
+648a982963f2f1b413904d7916f2a339	1	341903	player	uade	Protracker compatible	0	113664	25c250e9	3d2ffb40	1/MUSIC-MODULE/spirit.mod
+64a6f8d69c6965c264cb4d3ff7d29b0a	1	391818	player	uade	Protracker	0	65682	dd62d932	ab9a18bd	2/MUSICS/M120.DMS/MODULES/MOD.7
+64da243105fc4caac8720e866dd8f6df	1	245893	player	uade	Startrekker (4ch)	0	118444	e05840a3	8d4733a9	1/Anim/A411.DMS/tune
+64da243105fc4caac8720e866dd8f6df	1	245893	player	uade	Startrekker (4ch)	0	118444	e05840a3	8d4733a9	1/Anim/A414.DMS/tune
+64ded63ad5cf6ea0098fe5b935b02837	0	265405	player	uade	Sonix Music Driver	0	12748	32895117	6c3acee4	2/MUSICS/M084.DMS/Scores/LIGHTFORCE.smus
+64ead0dbdeaa750b688363d618ac2ff1	1	423486	player	uade	Protracker compatible	0	143252	ec35d7c7	4d650841	1/MUSIC-MODULE/signa.mod
+64f6e04ad597d632e1a1184c812a4557	1	209422	player	uade	OctaMED MMD0	0	279254	a3854d49	d5426abe	2/MUSICS/M180.DMS/PUMPIN-X-Ta-C
+650720858e72737e13e408b4f93fa1ac	1	117872	player	uade	Protracker	0	87490	ef7884f8	ee5b2bee	1/AGA/AGA112.DMS/MUSIC
+65272342818f1687038932b53e33df49	1	84717	player	uade	OctaMED MMD1	0	261368	f1b6f0ad	1267ebe6	1/AGA/AGA010.DMS/Default.WINM
+658918f433f8c4c66ba7e920963d7ebf	1	232057	player+silence	uade	Protracker	0	73018	e643be22	c9577adc	2/MUSICS/M120.DMS/MODULES/MOD.5
+6686c963aec9f2c9105e4705b647c19b	1	176769	player	uade	Soundtracker II (31 instr.)	0	154140	b5a326e6	de613d1c	2/MUSICS/M145.DMS/Modules/MOD.Jarre Live
+6690607d16f93eaf857b8836d740d872	1	99968	player	uade	Startrekker (4ch)	0	33084	47d88d38	6d1ac562	2/MUSICS/M148.DMS/9
+669e54595ed66a85a9e0a977caf89c2b	1	192141	player	uade	Protracker	0	101094	4ae6340d	f94ad2ef	1/MUSIC-MODULE/lies.mod
+677e6d317a5e5e5d489a1763a2792a19	1	301313	player	uade	Protracker compatible	0	209944	3c68194c	a3b6ef8f	1/MUSIC-MODULE/elggent.mod
+67896bbaa269f5853e159167522b753a	1	91308	player	uade	Protracker	0	73378	cd33205b	14ee8f4c	1/AGA/AGA084A.DMS/MOD.Music
+68dd096ec04e470bc742b364950af9d3	1	199797	player	uade	Noisetracker 1.x	0	88404	25abc149	4a81d997	1/MUSIC-MODULE/ghost.mod
+69a25edfd0f34742119ddd05d42f855f	1	159204	player+silence	uade	Noisetracker 1.x	0	146880	ab2f544c	7d587ea5	1/utilities/U109.DMS/mod.ecstacy
+69a8baf3de110345448f746f5b19c45a	1	165054	player	uade	Protracker	0	118748	175cf55b	e9e2384a	1/MUSIC-MODULE/funeral.mod
+69b22693e3e49d8603bc818a512277c7	1	208457	player	uade	Protracker compatible	0	60492	55b4a6da	76884cc6	1/EDUCATION/E125.DMS/MOD.1
+6a74e5b326c9b3c9bcfdcdcbc25c349d	1	218464	player	uade	Protracker	0	124674	d13ae961	5c7bd693	1/MUSIC-MODULE/japanese.mod
+6a93ed8b57eb79705f7ac926eab420b8	1	84616	player	uade	Protracker compatible	0	181498	1ebd527b	b9fc7ff3	1/ST-SAMPLES/TECHNO B/!ONHCET.MOD
+6a93ed8b57eb79705f7ac926eab420b8	1	84616	player	uade	Protracker compatible	0	181498	1ebd527b	b9fc7ff3	2/MUSICS/M102.DMS/MODULES/mod.get into techno
+6bc1dde3ce8679cb5f11a6ba55b54318	1	181853	player	uade	Soundtracker II (15 instr.)	0	38744	ee05868b	3500eaa4	2/MUSICS/M128.DMS/rendezvous3
+6c4be7aebaa222959d73c65a1421c353	0	7816	player	uade	Amos Music Bank	0	6928	0d496790	3674d776	1/utilities/U530.DMS/AMOS_Music/Bonus.Abk
+6cd145bb8caa821b9c0c36ab72687eed	1	215982	player+silence	uade	Protracker	0	174772	764865c6	9a0c8a59	1/MUSIC-MODULE/free-space.mod
+6d1b9fa0c7dc03ef917a374fcd41f767	0	0	nosound	libxmp	MED 2.00 MED3	4	4789	1faa47fb	3f4a9a55	1/utilities/U091.DMS/Demos/Starworx
+6d30494f4b308c99c321ffdbb5b91cb8	0	194211	player	uade	Sonix Music Driver	0	7120	7f05bd38	3351ea73	2/MUSICS/M084.DMS/Scores/RICCOCHET.smus
+6d56bcfad4a4550a0565ab9a0db2c5d8	0	159226	player	uade	Sonix Music Driver	0	7432	067abfc1	974daa80	2/MUSICS/M084.DMS/Scores/DELTA.smus
+6d6cb5f5b539d93903b405359c4e1fae	1	166521	player	uade	Protracker	0	93796	8cded47f	364d6372	1/AGA/AGA210A.DMS/dance
+6d743a5086d23d44778f1fe4bbcb3eca	0	86847	player	uade	Sonix Music Driver	0	4626	2a35ed92	a37ea4c2	2/MUSICS/M048.DMS/Scores/It`s a sin preview.smus
+6d7483bd0e9d5651c743b58a9a77775c	0	146045	player	uade	Amos Music Bank	0	31662	3051987b	e3eb295e	2/GAMES/G163.DMS/lament.abk
+6d7483bd0e9d5651c743b58a9a77775c	0	146045	player	uade	Amos Music Bank	0	31662	3051987b	e3eb295e	2/GAMES/G165.DMS/lament.abk
+6de045c8946feb1c84b93f85a4e162ce	1	491124	player	uade	Protracker	0	436412	5c00f686	fad8ce5b	1/ST-SAMPLES/TECHNO D/mod.jump!
+6de045c8946feb1c84b93f85a4e162ce	2	530287	player
+6de045c8946feb1c84b93f85a4e162ce	3	530287	player
+6dffa2664b0b19629ecc441cd53a7554	1	203896	player	uade	Protracker compatible	0	219132	4a42bc8d	d1140726	2/DEMOS/D174.DMS/mod.asm
+6e45622638b432c02874c18aa0b6badf	1	274359	player+silence	uade	Protracker	0	341756	7e7e43bf	941ee624	1/ST-SAMPLES/TECHNO C/mod.rave_on_the_floor
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/AGA/aga278a.DMS/music
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/AGA/AGA280B.DMS/music
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/Anim/A174.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/Anim/A232.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/Anim/A232.DMS/MOD.FANTASYl
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/Anim/A300.DMS/mod.fantasy
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/EDUCATION/E002.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/EDUCATION/E023.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/EDUCATION/E024.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/EDUCATION/E026.DMS/mod.fantasy
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/EDUCATION/E027.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U028.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U059.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U187.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U195.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U198.DMS/mod.fantasy
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U210.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U227.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U238.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	1/utilities/U313.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G143.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G175.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G236.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G245.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G314.DMS/MOD.FANTASY
+6e5d276757bc4b4703bd93f6b96e9b54	1	191346	player+silence	uade	Protracker	0	118996	a7f6e396	1bf07e00	2/GAMES/G355.DMS/d.music
+6eefcdb8176d92fd9ea3bee7df546a85	1	188283	player	uade	Protracker compatible	0	43400	bfd6e379	50defde5	2/GAMES/G112.DMS/snd/mod.laidback5
+6f40842b04de573e04ba1ed3d427839c	1	181893	player	uade	Protracker compatible	0	253588	6b56aeca	f6bd5c1e	1/ST-SAMPLES/TECHNO D/MOD.POWER
+6f988cfdb859a8317ae06a8dfd44b3b8	0	253282	player+silence	uade	Amos Music Bank	0	30142	2734ec14	18472dc6	1/EDUCATION/E021.DMS/music1.abk
+6f988cfdb859a8317ae06a8dfd44b3b8	0	253282	player+silence	uade	Amos Music Bank	0	30142	2734ec14	18472dc6	1/EDUCATION/E057.DMS/Music/Amosteroids_Title.Abk
+7033f5c9ff5aefb97a36505315bb7d37	1	3716	player+silence	uade	Protracker	0	12032	4564a2b3	388a0ef6	1/EDUCATION/E148.DMS/J.I.ULTIMATE-CHESS/mod.sample3
+709616c318935e3c111248d2b110c6f2	1	404919	player	uade	Protracker compatible	0	179008	93594d61	655da9d3	1/MUSIC-MODULE/thrash.mod
+712bb190aacfb6ef35992593e296222b	1	214325	player	uade	Protracker compatible	0	114112	9f04e019	ccc5a31a	1/MUSIC-MODULE/freak-out.mod
+71c6bde921139e506a5c4f686d38b715	1	99968	player	uade	Soundtracker II (31 instr.)	0	86672	3e374fd3	3ce3c166	1/MUSIC-MODULE/equinox.mod
+72b011cb9f39c6e93543dbd0a3755280	1	238197	player	uade	Noisetracker 1.x	0	78748	d7a7993d	22f6d73d	2/GAMES/G370.DMS/modules/mod.tune1
+731f8a3be716e40707dce4898f149161	1	316792	player+silence	ft2play	Fasttracker (M.K.)	4	101622	0539b33c	b43f9a14	1/MUSIC-MODULE/sand-man.mod
+73a5f9660029e8f2bc207fbdbd8491bc	1	138369	player	uade	Protracker compatible	0	104780	34e450d4	b53d754b	1/Anim/A329.DMS/6
+73b15fc4c3098b3bfe435919d79b2112	1	184445	player	uade	Protracker	0	55512	8efc48f8	8edaa5dc	2/GAMES/G370.DMS/modules/mod.tune2
+742a0e5b4dde6def4cda5778b1337a03	1	138369	player	uade	Protracker compatible	0	110640	13cb31c2	5e0584d9	1/MUSIC-MODULE/icno-ship.mod
+74788e1680ab83abd304f65c97c26838	1	138369	player	uade	Protracker compatible	0	126436	ba39f9df	0e96894e	1/MUSIC-MODULE/arts.mod
+74991187f21fdbab39c437fd4186a7a5	1	137167	player+silence	uade	Protracker	0	220878	adfa5293	8e58edc9	1/MUSIC-MODULE/freshhound.mod
+74def885c4c80a8771bb8a63f156b4b0	1	138690	player	uade	OctaMED MMD0	0	74070	65c3cd2f	d39d6905	1/AGA/AGA200.DMS/SCRIPT/5.1
+75679f2d3799efc79a2cf49554a4434b	1	161397	player	uade	Protracker compatible	0	46616	6148fae3	92ae8120	2/GAMES/G112.DMS/snd/mod.laidback2
+75686821180485901ad25b7866ad6f60	1	703339	player	uade	Protracker compatible	0	141118	158e7581	f087a236	1/MUSIC-MODULE/prg-funk.mod
+7599503b8a8a6d4d5a6dcb0a6e3c5dca	0	42539	player	uade	Sonix Music Driver	0	2454	4dce9689	ded7a782	2/MUSICS/M168.DMS/scores/HeIsCrying.smus
+76256c63360043c8510d39b6bd16625a	1	50336	player	uade	OctaMED MMD1	0	65784	3c475d9d	80381556	1/Anim/A390.DMS/TUNE
+764a27b9d3809016ed4b185b35fd7d38	0	303718	player+silence	uade	JamCracker	0	261738	60bbd974	9a990d9b	1/utilities/U080.DMS/one
+769211422fa798f706770d32437b9608	1	414866	player	uade	Noisetracker 1.x	0	214704	9a468fed	ffca1006	1/MUSIC-MODULE/rain.mod
+76c2aa62acaa8c491de2225b8d01a58a	1	289716	player+silence	uade	Protracker compatible	0	107444	63ea4452	0d606197	1/MUSIC-MODULE/in-life.mod
+76c66622ed74be810bd269613830dbba	0	205785	player	uade	Sonix Music Driver	0	11454	958f98eb	b7cd2526	2/MUSICS/M084.DMS/Scores/GERRY2.smus
+7768ce9fcd0c95635822f0c6a34178ed	1	422240	player	uade	Soundtracker II (31 instr.)	0	129732	05cd900b	78955f02	1/MUSIC-MODULE/earth.mod
+777aa8e8fbddc18e0a527bb6ffdcbc25	0	145502	player	uade	Sonix Music Driver	0	3846	4f1cb501	eadf9ed3	2/MUSICS/M276.DMS/Scores/Spring2.smus
+7812f19a33399c1ec18a6e5c865e6f99	0	176990	player	uade	Sonix Music Driver	0	6592	5dd69155	22437d28	2/MUSICS/M048.DMS/Scores/HR4.smus
+7812f19a33399c1ec18a6e5c865e6f99	0	176990	player	uade	Sonix Music Driver	0	6592	5dd69155	22437d28	2/MUSICS/M168.DMS/scores/HR4EchoRemix.smus
+782ce3f5675f67e1683826217eb59be1	0	222142	player	uade	Amos Music Bank	0	60900	ede4fbfb	2f56e5c6	1/EDUCATION/E024.DMS/Hip.abk
+79be9a1ecfbdd890aebc1110827a6e45	0	107645	player	uade	Amos Music Bank	0	46204	e4aeab03	33bd2ca7	2/GAMES/G199.DMS/music/m2.abk
+7aa01f81f7f7ef6e1945e66fdca60168	0	7796	player	uade	Amos Music Bank	0	25892	343a0828	da2e16ac	1/utilities/U530.DMS/AMOS_Music/Gameover1.Abk
+7acd3615355ead9fe8d32bb113b197db	0	357195	player	uade	Sonix Music Driver	0	13204	ba77c24f	88ac590b	2/MUSICS/M293.DMS/SCORES/Brandenburg6_1.smus
+7b806b291a2f12176fdf912620c3e463	0	7816	player	uade	Amos Music Bank	0	2962	a1bda527	ef53a393	1/utilities/U530.DMS/AMOS_Music/Pop1.Abk
+7bab5f585b5781895a6f346c5eafce5d	1	231362	player+silence	uade	Protracker compatible	0	172364	5326ab49	aa808b3a	2/MUSICS/M069.DMS/mod.blood
+7be862859c88efcfa450b004405f5d1e	0	185228	player	uade	Sonix Music Driver	0	6950	be7f74ac	783154e2	2/MUSICS/M084.DMS/Scores/GERRY1.smus
+7bf820acd91aefddf8bfa8905cf23437	1	180142	player+silence	uade	Protracker compatible	0	187734	6ba9a7b6	be43c0a7	1/MUSIC-MODULE/hijourney.mod
+7bf820acd91aefddf8bfa8905cf23437	1	180142	player+silence	uade	Protracker compatible	0	187734	6ba9a7b6	be43c0a7	2/GAMES/G510.DMS/M1
+7c56fe503f90de625e0a6820e44775d2	1	254004	player+silence	uade	Protracker compatible	0	108090	afb365ea	3b96b0fa	1/MUSIC-MODULE/dev.mod
+7cb8859c8d9248862400001962a13af9	1	89278	player	uade	Protracker compatible	0	102626	bce3f091	7f63802a	1/MUSIC-MODULE/title.mod
+7cfe709f2b494bd44a69921a924933a9	1	326531	player	uade	Protracker compatible	0	165818	c17f8f63	c8b5ac9f	1/MUSIC-MODULE/crazy.mod
+7d5fccb5a27242682a0214c82f64c674	0	143533	player	uade	Sonix Music Driver	0	2260	744ac794	f3552d00	2/MUSICS/M153.DMS/Scores/OComeAllYeFthfl.smus
+7d94e315320a9adb8e3fb712a807d4cd	0	12619	player	uade	Amos Music Bank	0	5266	546b42d7	62da5240	2/GAMES/G521.DMS/MUSIC/MUSIC2.BIN
+7df3b23adf8bb003321a6da6912e9bd9	1	259919	player	uade	Noisetracker 1.x	0	102162	9e84d226	3f873373	1/MUSIC-MODULE/helico.mod
+7e02905989b31221ad9b2423dbfa975c	0	3481	player+silence	uade	Amos Music Bank	0	4902	982f8931	88a23811	1/utilities/U530.DMS/AMOS_Music/Laser3.Abk
+7e1615bb17b463b18cd6dfa162ae2906	1	161397	player	uade	Protracker compatible	0	204488	55dd8772	a95ba014	1/MUSIC-MODULE/de-feat.mod
+7e61f26c4fd96dcb252139836e0c8808	0	81703	player	uade	Sonix Music Driver	0	5014	9f0d4496	6648014d	2/MUSICS/M275.DMS/SCORES/479-530.smus
+7e8b33007f03e89a7d54c2cd34691273	1	293927	player+silence	uade	Protracker	0	70822	91533d3b	fadb40bc	2/MUSICS/M120.DMS/MODULES/MOD.2
+7e8b6cd6f2f62364182d19831966aa20	1	268921	player	uade	Protracker	0	107514	d513efe1	ad87335f	1/MUSIC-MODULE/stories.mod
+7e94caac2958c67253b6182ee6d172ef	0	215374	player+silence	uade	Amos Music Bank	0	60762	fd823380	a106959f	2/GAMES/G039.DMS/queen.abk
+7eb239c33fb57d504d63650ebdc2314b	1	146045	player	uade	Soundtracker II (15 instr.)	0	43168	e60ac659	ade2d744	1/utilities/U302A.DMS/3
+7f2950b88d552c8d3947fab9f5b04399	0	444726	player	uade	Sonix Music Driver	0	16904	74d9cdd3	d5bb80d9	2/MUSICS/M290.DMS/Scores/RONDO_K313.smus
+7f387deb87b77a868e3588c6ea246356	0	30674	player	libopenmpt	Startrekker	4	9996	cec3cf5a	0f667ec7	2/MUSICS/M148.DMS/4
+7f562dc047d608f575f0ba199b635cb0	1	130713	player	uade	Protracker	0	57572	c1885b7d	48623921	1/AGA/AGA111.DMS/MUSIC
+7f6dcfa4c2ced2bd696fc74c75cd69ab	0	31105	player	uade	Sonix Music Driver	0	1304	604b65c9	4b754e3c	2/MUSICS/M275.DMS/SCORES/595-fin.smus
+7f6ee6c217aae28a8eae87e8b3ff43ca	0	234279	player	uade	Amos Music Bank	0	68326	758666bd	a75ada8c	1/utilities/U530.DMS/AMOS_Music/Maintune.Abk
+7f6ee6c217aae28a8eae87e8b3ff43ca	0	234279	player	uade	Amos Music Bank	0	68326	758666bd	a75ada8c	2/GAMES/G484.DMS/god.abk
+7fa28e2797e055dfaed0a07ec31fd851	1	307321	player	uade	Protracker	0	162446	cf108a3a	01f1d3cc	1/MUSIC-MODULE/hammer.mod
+80a92c78ed03a696e18c2812a2961466	1	270308	player	uade	Protracker	0	130150	1d038088	edd203f0	2/DEMOS/D040.DMS/Virtual/modules/mod.(((((apocalypse))))
+80ce0a38fa81f726d7257f42a7c58997	0	181672	player	uade	Sonix Music Driver	0	3040	73f21943	8cf3d1eb	2/MUSICS/M187.DMS/Scores/iris2.smus
+80d605112e1e78e363e8f00c036e8661	1	138369	player	uade	Startrekker (4ch)	0	96294	b28c06d8	171de6e5	2/MUSICS/M090.DMS/mod.esp
+80dfd9199d673e5354f8f19b4b9bbc21	1	230541	player	uade	Protracker compatible	0	210850	46facb18	71daa630	1/MUSIC-MODULE/crunch.mod
+815b92804315f213817e5413c215687e	0	316866	player	uade	Sonix Music Driver	0	15386	3f7c3e60	ed1060bb	2/MUSICS/M168.DMS/scores/VoiceAfterVoice.smus
+8200a45ef6d20a1865b91f88e92d5067	0	60925	player	uade	Sonix Music Driver	0	1950	f2e3ad0c	b6f73b87	2/MUSICS/M153.DMS/Scores/HollyAndIvy.smus
+82254847c623922aef683b8600588d01	1	166030	player+volume	uade	Protracker compatible	0	87580	e1631713	5db5c877	2/MUSICS/M145.DMS/Modules/MOD.Equinoxe II
+822945524578ff74bc948744e70ab23d	1	237554	player	uade	Protracker compatible	0	146554	14b7bd35	f75490dd	1/MUSIC-MODULE/tunafish.mod
+82622ba5405476b0efa369a2420db639	1	61689	player	uade	Protracker	0	92908	a8f7c21c	1178bf48	2/MUSICS/M128.DMS/magneticfields
+82622ba5405476b0efa369a2420db639	2	59097	player
+82b3c9ebf07e18e9e571f9bd4bb4a8cc	1	68050	player+silence	uade	MED4 (4ch)	0	19701	57822a08	132b3abc	2/MUSICS/M260.DMS/GL
+82d96e55271db61a6d7cc757e40cf0d3	1	242055	player	uade	Protracker compatible	0	130382	c4649b8f	c0ac8a62	2/MUSICS/M082.DMS/cream of the earth
+830ec2d5006cd1313150c6ece0b7d150	1	15110	player	uade	Protracker compatible	0	36314	ac587190	ea408ffe	1/ST-SAMPLES/SPECIAL FX.vol10/effects/evil.snd
+831b0ec3be75e020fb37ddf96992ca81	1	294413	player+silence	uade	Soundtracker II (31 instr.)	0	144308	747a878e	7f8fedef	2/MUSICS/M192.DMS/the palace
+83c20ee3d14a166ed22574bbf5e6f002	0	42539	player	uade	Sonix Music Driver	0	2424	1948afd2	5f8a5832	2/MUSICS/M168.DMS/scores/Tonight
+83c20ee3d14a166ed22574bbf5e6f002	0	42539	player	uade	Sonix Music Driver	0	2424	1948afd2	5f8a5832	2/MUSICS/M168.DMS/scores/Tonight.smus
+8416482fc10f95d112b5a9b50d28b897	1	238197	player	uade	Protracker compatible	0	161922	621a760b	43a947f0	1/MUSIC-MODULE/pump-up-the-jam.mod
+8416482fc10f95d112b5a9b50d28b897	1	238197	player	uade	Protracker compatible	0	161922	621a760b	43a947f0	1/ST-SAMPLES/TECHNO C/mod.pumpupjam
+84a890faacd52a8f1aae98d34e7c2754	0	122796	player	uade	JamCracker	0	33736	5333ede5	6dc95a50	1/utilities/U080.DMS/Songs/DemoSong1
+84e635e53853463fb59e7111518379c9	1	190750	player+silence	uade	Noisetracker 1.x	0	168392	61e24bdf	0c816d55	1/MUSIC-MODULE/harryhound.mod
+8500e47f317bce108b72b3e7b8a20b37	1	219007	player	uade	Protracker compatible	0	162772	db983a38	26af9e29	1/MUSIC-MODULE/scoopex.mod
+852ff1b70c3ed2c37f018d131dc0a20e	1	146386	player	uade	MED4 (4ch)	0	28394	1de651dc	a1c7b914	1/Anim/A262.DMS/Stars
+853ca2993634af77d5d64e0351434730	0	7816	player	uade	Amos Music Bank	0	8292	8b15f168	c33cd720	1/utilities/U530.DMS/AMOS_Music/Explosion1.Abk
+8551ce8f9fad04903f83ca07c9f7b97c	1	345561	player	uade	Protracker compatible	0	99798	79302802	8e8634c3	2/MUSICS/M069.DMS/mod.impossamole
+85afd8b5bcf57e9e6cc56dd704334d2c	1	258205	player+silence	uade	Protracker compatible	0	116594	e3c088b2	acdd9e55	1/MUSIC-MODULE/magic-tub.mod
+862f7c25e5d910bcd15d38256fde86c4	0	199013	player	uade	Sonix Music Driver	0	5210	a800e9f7	d1303990	2/MUSICS/M324.DMS/Scores/Acid Malm.smus
+866213e3b92b874ee465734fd728aebe	1	255498	player	uade	Protracker compatible	0	105368	0c20adac	acbfb86e	2/MUSICS/M082.DMS/jamboree
+86c62eca11b03320ad78c8339b367bf4	0	321689	player	uade	Sonix Music Driver	0	4602	4bf0822a	2d1136d5	2/MUSICS/M293.DMS/SCORES/Brandenburg5_2.smus
+86eba4190c26331d8fbf837949056eea	1	355616	player+silence	uade	Protracker	0	84158	359d07fd	d1268fb9	2/DEMOS/D040.DMS/Virtual/modules/mod.hysteria
+876d31497378ebad6e1b20d5b8ad3d6b	0	95912	player+silence	uade	Amos Music Bank	0	58102	c8227a83	1785a309	2/GAMES/G390.DMS/H
+878ad93c41d0c21b4e22d124cf4ad654	1	252522	player+silence	uade	Protracker	0	114276	c668763e	76816e27	2/MUSICS/M120.DMS/MODULES/MOD.0
+879e85f67b8aae53dd874c3b8c171fdf	1	107645	player	uade	Soundtracker II (31 instr.)	0	54176	3e183aa3	c0a25e23	1/Anim/A331.DMS/M/MUSIC
+87a5083acdc5e9256f203c85cafae0ec	0	0	nosound	libxmp	MED 2.00 MED3	4	1394	b2b476f9	4d2cdaea	2/MUSICS/M085.DMS/s/colours
+87aa504f76cf0914350861cd75980fc2	1	391818	player	uade	Protracker compatible	0	156338	bbe0614c	c711b336	1/MUSIC-MODULE/psychop.mod
+87c3e9de720e201a4dcc790890b64cba	0	58152	player	uade	Sonix Music Driver	0	3806	b341afdd	e83d9877	2/MUSICS/M275.DMS/SCORES/97-132.smus
+87de9b277ada5039487d57890aa61b4a	0	175402	player	uade	Sonix Music Driver	0	7614	8d5bb87c	8bf615af	2/MUSICS/M168.DMS/scores/Rainbow.smus
+87f17ade87c3ad64c95b8b543fe57af9	0	66451	player	uade	Sonix Music Driver	0	2372	67a94ef2	1ae0e6c7	2/MUSICS/M153.DMS/Scores/ISawThreeShips.smus
+88d3096147268d95fddc1527baa787b3	1	376466	player	uade	Noisetracker 1.x	0	105562	9a82a752	eefffcfe	1/MUSIC-MODULE/sera.mod
+89316f00bc21afa314b79b8d32ab745a	1	192844	player	uade	Noisetracker 1.x	0	175414	5a80d5cf	4a815efa	2/MUSICS/M069.DMS/mod.datastorm
+896ed4cb9eb27b6e15f0dba2c239dca7	0	286564	player	uade	Sonix Music Driver	0	6596	a98d86cf	e184a361	2/MUSICS/M187.DMS/Scores/FOREVER-autumn.smus
+89819272a8c487b3a253cd1683476f1f	1	84616	player	uade	Noisetracker 1.x	0	133456	8b2e26b9	dab40305	1/MUSIC-MODULE/spikemix.mod
+89819272a8c487b3a253cd1683476f1f	1	84616	player	uade	Noisetracker 1.x	0	133456	8b2e26b9	dab40305	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX2
+899b8982cebd497a339b1b3e5bf40956	0	263697	player	uade	Sonix Music Driver	0	13586	c465c6ad	53cbcf00	2/MUSICS/M084.DMS/Scores/STARPAWS.smus
+89a2cdb8f25c3911ea3a532b3343cf4d	0	404356	player	uade	Sonix Music Driver	0	16512	0954ac94	99ba4979	2/MUSICS/M292.DMS/SCORES/Brandenburg4_1.smus
+89fbf66c13ef3c37e2bce47adbf3426f	1	24836	player	uade	Protracker compatible	0	59980	7a9be9d0	3706b774	1/Anim/A209.DMS/potblack
+8a22bf1e04057ffd158ccde2ba5eda54	1	223252	player+silence	uade	Protracker compatible	0	127582	383005d6	8961db46	1/MUSIC-MODULE/fastfood.mod
+8a25c842b1f7d8cc6aea79b442af9a19	0	102520	player	uade	Amos Music Bank	0	113584	0d0f67a2	32252a69	2/GAMES/G462.DMS/mu.two
+8abba6d4f501fb4225a1841d3ae2ed06	1	309210	player	uade	Noisetracker 1.x	0	236448	94a8c205	8cfa2964	1/MUSIC-MODULE/old-romeo.mod
+8ad29522efeac6526f93a809456733b5	1	242055	player	uade	Protracker compatible	0	106026	e4ee9063	456aae5c	1/MUSIC-MODULE/chicagoblue.mod
+8affd259e1b9f87514c8eec1dd2418a8	1	256987	player+silence	uade	Noisetracker 1.x	0	157512	d9ef7306	ad19f687	2/MUSICS/M192.DMS/face in the water
+8bbc599fd5abccd20ae6b5c7388a3cee	0	41072	player	uade	Amos Music Bank	0	19224	0367bb15	ce197f67	1/EDUCATION/E057.DMS/Music/Music.Abk
+8be70fc8f242961f1fab0718ea8d60e1	0	92292	player	uade	Amos Music Bank	0	44740	5de86900	27c48567	1/EDUCATION/E057.DMS/Music/Funkey.Abk
+8bedbf86f8718981546714a9e9ae2198	0	235725	player	uade	Sonix Music Driver	0	7804	56c40b25	43149554	2/MUSICS/M324.DMS/Scores/House of God(brain).smus
+8c141c0973c9653a607fd9a1f2dca60c	0	15492	player	uade	Amos Music Bank	0	25320	905ddaa8	a96a645d	2/GAMES/G315.DMS/music.abk
+8c4fd30efac1d53b4f5a02661553d2c3	1	271312	player	uade	Protracker compatible	0	547280	645534b7	db691ebd	2/DEMOS/D076.DMS/Contact-Has-Been-Made
+8d044832fb11860afd42bebaabc595e9	1	180901	player+silence	uade	Soundtracker II (15 instr.)	0	47740	8ca669ae	50b9c4f3	1/utilities/U046.DMS/OTHERS/MODULE
+8d1233f1438e5611dbd47c75e814c747	0	154585	player	uade	Sonix Music Driver	0	1932	af5b1067	6c13793b	2/MUSICS/M190.DMS/SCORES/lashings.smus
+8dabf92c853a63d8a3df7a5545e94732	0	166581	player	uade	Sonix Music Driver	0	2230	1a78e7a4	aa8be3c9	2/MUSICS/M006.DMS/Scores/BatDance2.smus
+8de1c1da6f3fd9f7aa1ea7bfd1af55fb	1	204459	player	uade	OctaMED MMD0	0	75180	9773e745	87c5842b	2/GAMES/G361.DMS/Columns/song.6
+8dfd1bccb2172548918469a0a6bc4e89	1	357256	player	uade	Protracker	0	117478	413e0984	608b3f1b	1/MUSIC-MODULE/tery.mod
+8e50a58ccbf9be6f65ae699d7b90c920	1	146045	player	uade	Noisetracker 1.x	0	36776	7f41b0d7	021bcf77	1/Anim/A235.DMS/music/mod.blood
+8e51051ecd345d48f975d315b29843a9	1	213527	player+volume	uade	Protracker	0	126310	34a9735c	28d27a71	1/MUSIC-MODULE/alone.mod
+8ea7c3e7d3b1ffc0f3f701b339d70d95	0	229677	player	libxmp	MED 2.00 MED3	4	3231	05c17009	d96da736	2/MUSICS/M085.DMS/Cesspit
+8ebe0b7e6f945f8e7fa9b1f9f9178610	1	219007	player	uade	Soundtracker II (31 instr.)	0	162772	c1d5d175	765f1d08	2/GAMES/G158.DMS/MUSIC/MOD.MUSIC
+8fb47b2c132389ba7647dfd55633fc4f	0	233877	player	uade	Sonix Music Driver	0	6260	954208fe	c29b9707	2/MUSICS/M048.DMS/Scores/strings.smus
+8fc419f5d9ff329183b213c0a40f6517	0	182496	player	uade	Sonix Music Driver	0	9874	9cefd7af	d5479190	2/MUSICS/M084.DMS/Scores/SABOTEUR2.smus
+8ff46d461fe3345207c8024a688ccd92	0	194793	player	uade	Sonix Music Driver	0	3558	f2f7f296	f620a0e5	2/MUSICS/M292.DMS/SCORES/Brandenburg4_2.smus
+901219a74fa3d0f920caf3c8abd84b52	1	310737	player	uade	Protracker compatible	0	131218	c992308c	f27ccecd	2/GAMES/G112.DMS/snd/mod.moongazer
+9017c4c5edc8935c1480819f500f08d3	0	192121	player	uade	Amos Music Bank	0	60690	052b3f2c	4de16f64	1/EDUCATION/E073.DMS/lucky.abk
+905858b7529ca12c67e3e00c5524a5eb	1	160586	player+silence	uade	Protracker compatible	0	166936	ace83c49	c0b1ca78	2/MUSICS/M281.DMS/MODULES/mod.5
+90f5de42f5317a5e2498750b1151b15a	0	87450	player	uade	Sonix Music Driver	0	1814	5deff80c	19b88cf3	2/MUSICS/M153.DMS/Scores/WhiteXmasSYNTH.smus
+91c6bdbb131a2e79123ac5dabd6359b2	0	7816	player	uade	Amos Music Bank	0	15886	d256dd6e	5326fe94	2/GAMES/G484.DMS/musicwater.abk
+9221a6cff2786f32ba58a6d8af467b43	1	324602	player	uade	Protracker	0	112586	21c4e1e3	9649836e	1/MUSIC-MODULE/ground.mod
+923c01571d2245589d765f879ee65e8c	1	156471	silence	uade	Protracker compatible	0	303942	fbe5bb44	c4d6ced3	1/Anim/A151.DMS/mod.topgunremix
+92545a847a2c6ec9e8ae5400ba24dec7	1	457084	player	uade	Soundtracker II (31 instr.)	0	74304	6ee6d74a	e1503919	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX6
+926d6ae2874a2e792e878e1a6ec7a1d7	1	146386	player	uade	OctaMED MMD0	0	36910	d314d1c5	68353dfb	2/GAMES/G361.DMS/Columns/song.4
+929fa0688701cb0e26ac35fbb5faa38c	1	128522	player	uade	Soundtracker II (15 instr.)	0	101974	c0974e25	f37b25b6	2/MUSICS/M145.DMS/Modules/MOD.Revolution
+92b4a57d47d6b204e4faafdfbdcd02e8	1	317856	player+silence	uade	Protracker compatible	0	122580	a729725d	10d4d352	1/MUSIC-MODULE/graveydance.mod
+930bc96b90d7add6146708503cf8a47a	0	61548	player	uade	Amos Music Bank	0	14626	75dbf760	63ccb28d	1/EDUCATION/E097.DMS/Style/Music.Abk
+931ee839ed4c8f6e863726c8a43f7d7f	0	71314	player	uade	Ultimate-Soundtracker or compatible	0	39332	4eba81dc	fef5cb70	1/Anim/A333.DMS/C/Music
+939892f15bae9033a701e6c3864b799c	1	388277	player+silence	uade	Protracker compatible	0	182594	c974a8be	74ba891c	1/MUSIC-MODULE/abaca.mod
+93b235103485042c3efb84fe5c67edc8	1	350620	player+silence	uade	Soundtracker II (31 instr.)	0	120400	04314538	442129ca	1/MUSIC-MODULE/outrun.mod
+94584416381582251fb678eaefea2a76	1	327576	player	uade	OctaMED MMD0	0	71620	6c9eacfb	e3a46fab	2/GAMES/G162.DMS/15
+9465cfeae0f744eabf05df114763297c	0	7816	player	uade	Amos Music Bank	0	15394	dba624d4	c582448f	1/EDUCATION/E122.DMS/music/wrong.abk
+94911f2ee6d29e653d10db75f87ca25c	1	184606	player	uade	Protracker	0	171742	0a880256	f98c1acf	1/Anim/A416.DMS/mod.zool (acid batmix)
+94911f2ee6d29e653d10db75f87ca25c	2	209402	player
+94911f2ee6d29e653d10db75f87ca25c	3	180607	player
+94d86683cb61e13f059de4edb6124710	1	99968	player	uade	Noisetracker 1.x	0	103126	ae3a6817	793e7f9d	1/MUSIC-MODULE/tritax.mod
+94f689bfaa7bd06ae70630b68bf0b2cc	1	53872	player	uade	Soundtracker II (15 instr.)	0	49938	7b671753	db004b55	1/utilities/U302B.DMS/2
+94f689bfaa7bd06ae70630b68bf0b2cc	1	53872	player	uade	Soundtracker II (15 instr.)	0	49938	7b671753	db004b55	2/DEMOS/D022.DMS/MUSIC2
+95182d87a91a3880e1efffc133d6f25d	1	160131	player	uade	Protracker compatible	0	115114	2f57783c	32db137e	1/MUSIC-MODULE/anarchy2.mod
+9611407db37a9608387b5150217add1c	1	84616	player	uade	Soundtracker II (15 instr.)	0	39470	ce89e4f3	c75d0460	1/utilities/U165.DMS/song2
+96d139b85a5382266af96a0c7782d8bf	0	61568	player	uade	Amos Music Bank	0	34760	2e05a767	5830f9f3	2/GAMES/G049.DMS/Dynamite_Dick/Music.ABK
+9766e3d6a378b106ab17209370b59be9	0	29930	silence	uade	TFMX	0	9648	a9ea21ef	1c603a45	2/MUSICS/M195.DMS/mdat.9
+9766e3d6a378b106ab17209370b59be9	1	9000	repeat
+9766e3d6a378b106ab17209370b59be9	2	9000	repeat
+9766e3d6a378b106ab17209370b59be9	3	9000	repeat
+9766e3d6a378b106ab17209370b59be9	4	9000	repeat
+977e00cd01e97dcf119cd657b104fda1	1	99968	player	uade	Startrekker (4ch)	0	69578	9ffea9d4	7001e0e7	2/MUSICS/M148.DMS/8
+97933c81d5bd81b3b46d43b01a50d800	1	264350	player+silence	uade	Startrekker (4ch)	0	130884	e14aab4f	794c6029	2/MUSICS/M148.DMS/2
+97962e98d7c28e5eab79b01e6ceccb3a	0	0	nosound	libxmp	MED 2.00 MED3	4	1541	10667210	e47cdd98	1/ST-SAMPLES/ABERCOMBIE/Dreamtime
+97ed5448dfe91da3d04036d1cf89edc1	1	139393	player	uade	Protracker compatible	0	88596	2570671d	507db08f	1/Anim/A124.DMS/M/music
+9898d2e7008e74b42b2d8cb554a55207	0	63799	player	uade	Sonix Music Driver	0	798	cf5cedc4	59c582d2	2/MUSICS/M153.DMS/Scores/SilentNight.smus
+9931ade367f087a9528458fd3fb5a843	0	124443	player	uade	Amos Music Bank	0	32736	a927f11d	602c1fdf	1/utilities/U305.DMS/revs.abk
+99daec381e4d97b5be386f1036579b8c	0	305886	player+volume	uade	TFMX	0	10768	641034ab	eec1c2ef	2/MUSICS/M195.DMS/mdat.7
+9a092ad19d9f42a9648192ba8e9007e2	0	46196	player	uade	Amos Music Bank	0	22310	be8d7e5c	7a6efc1f	2/GAMES/G163.DMS/chaos.abk
+9a092ad19d9f42a9648192ba8e9007e2	0	46196	player	uade	Amos Music Bank	0	22310	be8d7e5c	7a6efc1f	2/GAMES/G165.DMS/chaos.abk
+9a6211670b9ba7cecfd166e7bec9a730	0	7796	player	uade	Amos Music Bank	0	13664	56449827	73191e0f	2/GAMES/G462.DMS/mu.three
+9a80fba5448c1b42f218b13368a6917d	0	0	nosound	libxmp	MED 2.00 MED3	4	512	3ac697b4	dfbe4198	1/utilities/U091.DMS/Demos/Mix
+9ab6be870d4e1c6fb8810ffb99df7d55	0	0	nosound	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	1/utilities/U091.DMS/Demos/Sunset Blues
+9acc66bba3c2d630313a127f996be94d	0	7796	player	uade	Amos Music Bank	0	36556	5684c779	ce5ddebb	1/EDUCATION/E122.DMS/music/truckmusic.abk
+9aea7ff1e83a9d8170c5befb05bd98f4	0	61568	player	uade	Amos Music Bank	0	22758	cc382a2e	ae53ac8b	2/GAMES/G163.DMS/broken.abk
+9aea7ff1e83a9d8170c5befb05bd98f4	0	61568	player	uade	Amos Music Bank	0	22758	cc382a2e	ae53ac8b	2/GAMES/G165.DMS/broken.abk
+9b290d997fd430e34eaa2ff919570ce2	1	138369	player	uade	Startrekker (4ch)	0	124224	97f5a824	391c4483	2/MUSICS/M090.DMS/mod.power
+9b3584fac6171317bc8664def553dcb9	1	207169	player+silence	uade	Protracker	0	230652	8722add8	baa71a4f	1/ST-SAMPLES/TECHNO A/mod.condom_corruption
+9b7dfada17483eb0a1cf742b7931f00f	1	263518	player+silence	uade	Protracker compatible	0	178954	8700f548	516ff258	1/MUSIC-MODULE/inthehan.mod
+9b7e50f6245078d9d52d3f1b823d5635	1	226557	player+silence	uade	Soundtracker II (31 instr.)	0	109710	831c63b0	76a76658	1/MUSIC-MODULE/deep-red.mod
+9b9fa2951e65e0785c89e7b289b7cc26	0	85943	player	uade	Sonix Music Driver	0	4194	59cfa8b9	3e35ba2d	2/MUSICS/M275.DMS/SCORES/133-186.smus
+9c076c584a54fbc0a20adbae562396bf	1	215149	player	uade	Protracker	0	79852	0003932c	423c72e6	1/ST-SAMPLES/TECHNO B/mod.i.l.y.s.h-techno
+9c36f0025ca691f98a64d8da7aa9e202	1	7796	player	uade	Noisetracker 1.x	0	21748	eff9c614	34f56a50	2/GAMES/G082.DMS/zonfile.04
+9cf6dd6b85c9b1b21a3d99b7d2ff611f	1	251126	player+silence	uade	Protracker compatible	0	48916	78334afc	16a3b4c4	1/Anim/A273.DMS/theme
+9d98aeceb181845eb62e41625f85672f	0	25720	player	uade	Amos Music Bank	0	73494	82806c65	9f0a727a	2/GAMES/G462.DMS/mu.four
+9e3f35996bdb546088e1aa225fc7ee71	0	7816	player	uade	Amos Music Bank	0	3964	7f4a3150	728bc29d	1/utilities/U530.DMS/AMOS_Music/Footstep.Abk
+9e8741fda45d2e1cbd7c33235a6e3103	1	122997	player	uade	Noisetracker 1.x	0	149166	452421f5	7d5c61c9	1/MUSIC-MODULE/m1song.mod
+9edffc4f8fabf4679b22da69c36b7735	1	107645	player	uade	Protracker compatible	0	99702	9fab08c0	4526a343	2/MUSICS/M102.DMS/MODULES/mod.baseline squad
+9f9222e5e0611eb4895ffc70d29aea04	1	230019	player	uade	OctaMED MMD1	0	190306	f8bab03e	07077754	1/utilities/U607.DMS/ravesong
+a0087a358cb2db07d0e3ba3b59782492	0	143473	player	uade	Amos Music Bank	0	34702	ba75fe05	37eaaba9	2/GAMES/G446.DMS/Oblidox/Music/Music1.abk
+a020f5368bf12adb5c54a7b2774ba640	1	238880	player	uade	OctaMED MMD1	0	253456	90c42b8a	1c9a53be	1/Anim/A378.DMS/sounds2
+a020f5368bf12adb5c54a7b2774ba640	1	238880	player	uade	OctaMED MMD1	0	253456	90c42b8a	1c9a53be	1/Anim/A399.DMS/sounds2
+a04b053dd77bcabbc5bea3c666668636	1	176769	player	uade	Soundtracker II (31 instr.)	0	154140	a90e93ee	55be53ed	1/MUSIC-MODULE/jarre.mod
+a04b053dd77bcabbc5bea3c666668636	1	176769	player	uade	Soundtracker II (31 instr.)	0	154140	a90e93ee	55be53ed	2/GAMES/G534.DMS/DAT1
+a08b112c1e28821b6d4d1e2615a51a3d	0	337483	player	uade	Sonix Music Driver	0	17632	3af9a6df	a7ea89a7	2/MUSICS/M084.DMS/Scores/MONTYONTHERUN.smus
+a0955a0008c204a95f09a9f3f62d12ad	0	143091	player	uade	Sonix Music Driver	0	2564	b5a042b4	d26f070c	2/MUSICS/M153.DMS/Scores/OLittleTown.smus
+a0c66c7d883c2d1ebb7fa1c347bbda73	0	83330	player	uade	Amos Music Bank	0	15056	89363ad5	c927466a	2/GAMES/G443.DMS/Samples/music.abk
+a12e5245a98e9f8256874eb45b8d5fd7	1	176769	player	uade	Protracker compatible	0	84498	a5fb6d28	0b280ee9	1/Anim/A168.DMS/THIS
+a1427da886e87caff6c882ba858a0850	1	264213	player+silence	uade	Noisetracker 1.x	0	112676	6b99729e	404574c2	1/MUSIC-MODULE/deepss.mod
+a142e48c89b8c6fdbe52990e00712eca	1	92272	player	uade	Protracker	0	111184	f4bdb2cb	335a26ac	2/GAMES/G411.DMS/mod.bcarsong
+a16cdaf2d28ed8d06d67ae4b59e624f1	1	146045	player	uade	Protracker compatible	0	69292	9e8d71ab	3acf8e72	2/MUSICS/M082.DMS/mod.week-days
+a1a047ebace5e22841da91c22cdf0f63	1	337885	player	uade	Protracker	0	185224	4632f1c3	509dca46	1/MUSIC-MODULE/tsl1990.mod
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	1/MUSIC-MODULE/dark-dance.mod
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G449.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G450A.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G451.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G453.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G455.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G456.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G457.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G467.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G468.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G474.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G482.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G488.DMS/dat
+a1cca1d0c69fddd0fd1b71c34d6ff9fc	1	138369	player	uade	Protracker	0	119156	5d62d4b7	965536e6	2/GAMES/G519.DMS/dat
+a1dbd5effc5457e511fe940712d3970d	0	217299	player	uade	Sonix Music Driver	0	7432	921120ab	427862ad	2/MUSICS/M276.DMS/Scores/Spring3.smus
+a1decf70fc66186493fdf3f2c9514720	0	205423	player	libxmp	NoisePacker v3	4	235134	2a122b96	7524bbce	2/MUSICS/M330B.DMS/MOD.Pastel.CNP
+a21bfebdc6d646278044435a5b6ef9f0	1	107645	player	uade	Protracker compatible	0	85766	8319edcf	a96ff1f6	1/MUSIC-MODULE/ghetto-blast.mod
+a252dae8608aca74b95ff6bb232f2224	0	95367	player	uade	Sonix Music Driver	0	1812	7b20921a	34838a4a	2/MUSICS/M153.DMS/Scores/WhiteXmas.smus
+a28af4c53a08b08f56644fcc7bd0dadc	0	66270	player	uade	Sonix Music Driver	0	1718	46519c74	5e461b9c	2/MUSICS/M153.DMS/Scores/MerryXmas.smus
+a36bc71852174664428fa551ee508a3a	1	304071	player+silence	uade	OctaMED MMD0	0	97578	314d0304	96863e16	1/Anim/A397.DMS/C/mod.hard-rockin
+a3a086ed0b0f9b848659cd1665f9032a	1	262451	player	uade	Protracker	0	195984	6f4f8f16	f97e5756	1/MUSIC-MODULE/inrock.mod
+a3a086ed0b0f9b848659cd1665f9032a	2	149802	player
+a4849bcc58ad6b74007bbb66e43de50f	0	153741	player	uade	Amos Music Bank	0	64056	301bb5ce	12f55609	2/GAMES/G402.DMS/C/Data3
+a4dfab421b9406d15f7e451a5151c255	1	253569	player	uade	Protracker compatible	0	210266	24ba5745	a8fbfa60	1/utilities/U393.DMS/MOD.1989
+a5226e06399ac1837c7eeed4bfdbe0e6	1	64120	player	uade	Protracker	0	45382	dc0a84a0	fac51d03	2/GAMES/G370.DMS/modules/mod.twin1
+a5402e64cc1f3ada47d275c816eadbaf	1	122997	player	uade	Protracker compatible	0	136000	bafea637	45c29611	1/MUSIC-MODULE/house.mod
+a5402e64cc1f3ada47d275c816eadbaf	1	122997	player	uade	Protracker compatible	0	136000	bafea637	45c29611	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX1
+a5e9ca90ef0e62738b6021152142247a	1	327817	player	uade	Protracker	0	153014	7468fde7	7a116948	1/MUSIC-MODULE/jam-bug.mod
+a62c3bb102a359060b4d33518b9aee0a	1	323316	player	uade	Protracker	0	251484	cb50a3c7	0e696dcd	2/MUSICS/M331B.DMS/mod.all_love_used
+a63fbcae532774c63847a18a51f2426e	0	160894	player	uade	Sonix Music Driver	0	12588	afc5cf39	a582d0c0	2/MUSICS/M276.DMS/Scores/Summer3.smus
+a697ff5ed6c0aa30a7d073a185f4e4f5	1	314011	player+silence	uade	Protracker	0	104600	94530bbc	db112338	1/MUSIC-MODULE/mag-rust.mod
+a738b9d8bb782c716fca617285679966	1	315017	player	uade	Soundtracker II (15 instr.)	0	111384	7b8c64e2	b4270296	1/utilities/U302A.DMS/4
+a76c244ff2d0b004e2458a7481913897	1	143493	player	uade	Protracker compatible	0	39408	b8417c1e	d6a7ce67	2/GAMES/G112.DMS/snd/mod.laidback1
+a76fb9ce389c765d4fef619f419240d7	0	122697	player	libopenmpt	Game Music Creator	4	36822	e44bb644	b94bd520	2/GAMES/G520.DMS/FatalMission2/Music/EtherReal.DAT
+a78f142f553b69867c2cb75e0dbf2b12	0	1581482	silence	uade	Amos Music Bank	0	197126	8b949962	aac742f7	1/Anim/A296.DMS/CYCLIC.MSC
+a7b60d00d63f5bda4e840d883a30f939	0	7816	player	uade	Amos Music Bank	0	8268	034f528e	d9931ce5	1/utilities/U530.DMS/AMOS_Music/Stereobang.Abk
+a7ee1a90f6e454ae7d6b8e2b858fbb49	1	1808	player	uade	Protracker	0	7784	8e05b149	e2b6c9cb	1/AGA/N.DMS/Deluxe_Galaga/GALAGA.JINGLE1
+a858159914242bbd02958283ff0d0558	0	230521	player	uade	Amos Music Bank	0	98266	1f635714	c675613d	2/GAMES/G303.DMS/00001.abk
+a8f6114c0304fa4c28072749acf7b03c	0	46638	player	uade	Oktalyzer	0	46148	41b57087	e71404ca	1/utilities/U294.DMS/ok-songs/grundlagen-demo-song
+aa09f37304dfd39e96fc7a3aaa8ae2cc	1	159543	player+silence	uade	MED4 (4ch)	0	155621	8570b0b1	fe262690	2/MUSICS/M207.DMS/PlatformOne
+aa1175e8d1a4161d923e03cc6446116e	0	85059	player	uade	Sonix Music Driver	0	2718	c2caae83	f0dc1049	2/MUSICS/M168.DMS/scores/UpInTheSky.smus
+aa5b36c5ad5b32a26ed705b35bebbe02	1	121731	player	uade	Protracker compatible	0	86670	45378d07	3596b3fd	1/utilities/U033.DMS/mod.amrock
+ab2b811d407e57221ed20eb4bd7ee575	1	222845	player	uade	Protracker	0	130006	125254ad	6f0fd8bf	1/MUSIC-MODULE/elysium.mod
+ababb2abd36d49bae7112cf2e5700ffc	1	138369	player	uade	Protracker compatible	0	164534	0975a321	ac35ba99	1/MUSIC-MODULE/psy.mod
+ac5db86e2d0d48fd6d1c41df1ab4b546	1	288392	player	uade	Protracker compatible	0	210714	00fa9d08	da3b7491	1/MUSIC-MODULE/daisy.mod
+acab3c4c71ca5b7eee63f919429f529c	1	171785	player	uade	OctaMED MMD0	0	329314	f30a283b	504a566c	2/MUSICS/M109.DMS/HAMMER
+ad146c67958e07ccd1e20446f6de8256	0	432328	player	uade	Sonix Music Driver	0	10910	b6a3cebe	b9768d38	2/MUSICS/M187.DMS/Scores/blue.smus
+ae3be1725fa81862fa2802dee18c766f	1	379934	player+silence	uade	Protracker	0	114326	07d7035b	c1785fb5	2/MUSICS/M120.DMS/MODULES/MOD.8
+ae820cf6edf8ae187f0f2c7edf811ff2	1	140917	player+silence	uade	MED4 (8ch)	0	66962	29ead5bf	7e0be41f	2/MUSICS/M260.DMS/HCTH
+af07497543f0dd3a3e3dfc7e082bfa78	1	177906	player+silence	uade	Protracker	0	173126	2f3cbfc7	153416c8	2/MUSICS/M330B.DMS/MOD.Joysticks.C
+af93db9d5733092f5bbf64a232dd08a1	1	170580	player	uade	Protracker compatible	0	197674	4afca2d4	e909042f	2/GAMES/G370.DMS/modules/mod.africa
+afb9b02a1e5b88c6c6f5f8b3cd282907	1	255016	player	uade	Noisetracker 1.x	0	153998	d7302e30	15b5ac96	2/MUSICS/M192.DMS/life in the jungle
+afc24018db0b4eff2742e0235a72fa42	1	4661	player+silence	uade	Protracker	0	36708	2e1ee519	f6483ae4	1/EDUCATION/E148.DMS/J.I.ULTIMATE-CHESS/mod.sample1
+afdee3902674c5810fadf2932d0d4c09	0	92022	player	libopenmpt	Game Music Creator	4	42446	aa88b9a0	6e5ebc62	2/GAMES/G520.DMS/FatalMission2/Music/Level4Music.DAT
+aff8e8008dbdfb6f9780c27f5084ce59	1	62834	player	uade	Startrekker (4ch)	0	34630	c04347f1	022973e5	2/MUSICS/M148.DMS/3
+b01c564e16d3d99236ac17324f512fb9	1	165235	player	uade	Noisetracker 1.x	0	112736	327b5b55	095d6f9e	1/Anim/A379.DMS/MOD.SPECTRA
+b01c564e16d3d99236ac17324f512fb9	1	165235	player	uade	Noisetracker 1.x	0	112736	327b5b55	095d6f9e	1/Anim/A380.DMS/MOD.SPECTRA
+b11f8dc23b90c90cd261fe5f4c30bdc0	0	7816	player	uade	Amos Music Bank	0	9866	06e8f73b	a4418041	1/utilities/U530.DMS/AMOS_Music/Gameover2.Abk
+b31b044c570077d28f06010edb92ff31	1	23028	player	uade	OctaMED MMD0	0	83252	cd399ff9	534a493e	1/AGA/AGA200.DMS/SCRIPT/6.3
+b3978e1ed11169c2bdd5809a89024db5	0	7816	player	uade	Amos Music Bank	0	13694	0b7f08bf	a00965d2	1/EDUCATION/E122.DMS/music/correct.abk
+b3f36d6f48b1618cbfc05687dbd1fae6	0	7816	player	uade	Amos Music Bank	0	4886	f0ce991c	71b7ea86	1/utilities/U530.DMS/AMOS_Music/Laser2.Abk
+b440a434bbc8b68631bc22f235553acb	0	7816	player	uade	Amos Music Bank	0	5694	8529c91c	35e81089	1/utilities/U530.DMS/AMOS_Music/Timewarp1.Abk
+b4457fe4d7a607fde8a30be1204d7956	1	23610	player	uade	Protracker	0	109454	b0928407	1fbb38a5	2/DEMOS/D072.DMS/data/anim.sound
+b4b2b823b35512ce239a60242a5f7beb	1	288171	player	uade	Protracker compatible	0	109936	2d684029	b156012c	1/MUSIC-MODULE/dirt.mod
+b51728fd7ecd0b8550ab46e22534791e	1	138369	player	uade	Protracker	0	58678	0875f571	445f3774	1/AGA/AGA064A.DMS/Music
+b51728fd7ecd0b8550ab46e22534791e	1	138369	player	uade	Protracker	0	58678	0875f571	445f3774	1/AGA/AGA070A.DMS/Music
+b54e9d32ff9ae23616835b0761d4a843	0	7816	player	uade	Amos Music Bank	0	3202	fb1ad374	e6a5ff3e	1/utilities/U530.DMS/AMOS_Music/Gunshot1.Abk
+b5c2459307703a57abec2b238288a677	1	118481	player+silence	uade	Protracker compatible	0	96288	bfb571a1	1ff0d54c	2/MUSICS/M082.DMS/nuclear
+b5ea2af6109c58cfaed218aa2695870b	1	211331	player	uade	Protracker	0	120544	a640b36c	5eb9f33b	1/MUSIC-MODULE/redrock.mod
+b609b852bfe3b9217d2df8ad12d5c8c6	1	266691	player	uade	Protracker	0	141450	d5f3eaa1	c3438508	2/MUSICS/M330B.DMS/MOD.Time.C
+b62683f88ad96544e3d207e518c644e8	0	12350	player+silence	libopenmpt	Startrekker	4	51594	0a9aeb55	9acf1633	2/MUSICS/M090.DMS/mod.20 seconds
+b65b28f1b8d1e5cf9cd47fdef6b3169f	0	248877	player+silence	uade	Soundtracker II - V or compatible	0	71038	319a1a6d	36aa6b66	2/MUSICS/M128.DMS/oxygene2
+b667369ace126c6ec2d03043604444a7	1	218987	player	uade	OctaMED MMD1	0	307918	14f9e126	df68d400	1/AGA/AGA010.DMS/Default.MUSX
+b6737705cabf15084e1f66ef41e9b65b	0	107645	player	uade	Amos Music Bank	0	43870	df75d04d	aae56d2a	2/GAMES/G368.DMS/M/t2
+b6866a99be096f18b07562ccdb9e6a9b	1	255498	player	uade	Protracker	0	110124	60ae4d8c	1ef03433	2/MUSICS/M120.DMS/MODULES/mod.9
+b6f7e2baf48ff1e6377b9aff34621e54	0	0	nosound	libxmp	MED 1.12 MED2	4	22134	b4be76a3	3219677c	2/MUSICS/M252.DMS/barbara
+b74b08200fd92ab58d2afeee84ad161f	0	76920	player	uade	Amos Music Bank	0	15040	643618e8	f9ba43f8	1/utilities/U028.DMS/MUSIC/Song1.abk
+b75f0f471b0ae400185585ca05bf7fe8	0	176231	player+silence	libopenmpt	Master Soundtracker 1.0	4	112150	0d6e92ac	a181c7de	1/MUSIC-MODULE/razor.mod
+b7bd6b5c83f2c714f91682fa51ae56ec	0	7796	player	uade	Amos Music Bank	0	24760	c96e8724	4edda6a3	1/utilities/U530.DMS/AMOS_Music/Gameover3.Abk
+b7bd6b5c83f2c714f91682fa51ae56ec	0	7796	player	uade	Amos Music Bank	0	24760	c96e8724	4edda6a3	2/GAMES/G484.DMS/over.Abk
+b7c8b826bc8df6e16bfe3ba58afbdde1	1	161397	player	uade	Soundtracker II (31 instr.)	0	44410	f313c1ce	abbc3811	1/EDUCATION/E121.DMS/Modules/Mod.Echoing
+b7d4eecb428df9d24621273e16d7a17b	0	288875	player	uade	TFMX	0	8260	5436c579	1c8f2618	2/MUSICS/M195.DMS/mdat.5
+b7d4eecb428df9d24621273e16d7a17b	1	9683	player+volume
+b7d4eecb428df9d24621273e16d7a17b	2	0	nosound
+b7d4eecb428df9d24621273e16d7a17b	3	0	nosound
+b7d4eecb428df9d24621273e16d7a17b	4	0	nosound
+b8065df77164b789262898a1ce468d39	0	190353	player	uade	Sonix Music Driver	0	9574	21e4ea46	a8653934	2/MUSICS/M084.DMS/Scores/THING.smus
+b8e6ce727b945e09302e94fefec4f3be	1	153721	player	uade	Protracker	0	122142	771597d5	7529c6dc	1/MUSIC-MODULE/firelep.mod
+b8eed0020a10494765b847ad7db411f5	0	181833	player	uade	Amos Music Bank	0	25796	1e5ee858	cbf44b21	2/GAMES/G368.DMS/M/t1
+b91c3f36cc96c91baaa317b835feddf7	0	185630	player	uade	Sonix Music Driver	0	13760	6256b11c	3c9dd1bf	2/MUSICS/M251.DMS/SCORES/Prel_Fugue2.smus
+b931fec05176aeb4624365caee556879	1	208046	player+silence	uade	Protracker	0	255660	a8b307c7	cd1229a9	2/MUSICS/M331B.DMS/mod.the_bill
+b939ca600990678cae50b6dd9629a6e0	0	397786	player	uade	Sonix Music Driver	0	14164	4ee7336b	9637c315	2/MUSICS/M084.DMS/Scores/WARHAWK.smus
+b96d875d93b56acbfaf0d999efc4e386	0	637591	player	uade	Amos Music Bank	0	102862	92905e9e	efb0c5de	1/EDUCATION/E010.DMS/SMATHS/music.abk
+b99454ba2b94035a47a8373bb59d7c35	0	169073	player	uade	Amos Music Bank	0	75704	ed785337	0fc753af	2/MUSICS/M156.DMS/Songs/Forest_Woods
+ba0bd404cebdacec8e931fcfa1b272e7	1	161906	player+silence	uade	Protracker compatible	0	116230	c90cb911	0a433352	1/MUSIC-MODULE/gauntlet.mod
+ba77cc4e046036a09c83e82470433ce3	0	393666	player	uade	FutureComposer 1.3	0	28098	bbb92ddb	1f551554	1/utilities/U294.DMS/modules/mod.astaroth.1
+bae0af9d143c5e93776c06e4d05e47cb	1	210271	player+silence	uade	MED4 (4ch)	0	313556	d15448c6	5da803fe	2/MUSICS/M207.DMS/Assassins
+bb267714e0f113e47f4805300b55efe4	1	457084	player	uade	Protracker compatible	0	126104	2c19e7df	0c138652	2/MUSICS/M082.DMS/dimensions
+bb37ecddb2003787b4438e9b5cdfb4b8	0	231206	player+silence	uade	Sonix Music Driver	0	4982	601d64f6	19c6c289	2/MUSICS/M251.DMS/SCORES/Italian2.smus
+bb5bf575ed603f42d217544efcd916a0	1	107645	player	uade	Soundtracker II (15 instr.)	0	109006	9147a09a	33d9ac79	2/GAMES/G427.DMS/Rescue/Rescue.Song2
+bbc18a46207cb7389967dc3142196f85	0	65145	player	uade	Amos Music Bank	0	78890	8bdb43cc	1ba77d0d	2/GAMES/G325.DMS/Niceman.abk
+bbe1c720decc5a299d0289c1e8285dda	1	240126	player	uade	Protracker	0	111714	a41bf03c	0352121e	1/MUSIC-MODULE/enchant.mod
+bbfa90445ae1a3cb89f3f0b97ece3795	0	324622	player	uade	Sonix Music Driver	0	18530	3488f4ca	4cc6fc79	2/MUSICS/M084.DMS/Scores/SANXION.smus
+bc52903bc143a222a150b0973c8d9fc3	1	153196	player+silence	uade	Soundtracker II (15 instr.)	0	155090	4c35d741	ab76281f	1/MUSIC-MODULE/tiedup.mod
+bcc0667b64fe10bdb579a59538098722	0	210547	player	uade	Sonix Music Driver	0	11056	e7a6b442	61be194e	2/MUSICS/M276.DMS/Scores/Spring1.smus
+bcdfe7263f4c28aeb4b19a3e7f05feb0	1	185992	player	uade	Protracker compatible	0	107992	3fa04c44	b246b132	1/MUSIC-MODULE/funkey.mod
+bd5c2a36a5b7987b01642ca10ba08fe9	0	321829	player	uade	SoundFX	0	336948	a95945ee	969f685c	1/utilities/U283.DMS/sfx.cubik(loudremix)
+bd68f6cb619dfb6c7ad982869c733224	0	138369	player	uade	G.M.C	0	78556	444de258	28d0f21d	1/utilities/U047.DMS/GMC.data
+bd68f6cb619dfb6c7ad982869c733224	0	138369	player	uade	G.M.C	0	78556	444de258	28d0f21d	1/utilities/U071.DMS/GMC.data
+bd6ce0020486f0c2da8abb83b9427bd6	1	152575	player	uade	MED4 (4ch)	0	56561	8d2d5f1f	9156a61a	2/MUSICS/M260.DMS/SB
+bdb8857cf1ced97ffd11e6c8c294746f	1	333966	player	uade	Protracker compatible	0	187012	2eef18e4	bb5126a8	1/MUSIC-MODULE/enigma.mod
+bdfae365f387702c540f7d519599e68b	1	284293	player	uade	Protracker compatible	0	133070	f18daf15	33b5d78f	2/GAMES/G526.DMS/s/aamusic
+be2d4d55865774978cbdfc3d7bd4bf4a	0	126935	player	uade	Amos Music Bank	0	73990	8a9931b6	92093ba3	1/EDUCATION/E073.DMS/black.abk
+be6207e8dba70126c237538f3ce68a13	0	3189	player+volume	uade	Amos Music Bank	0	1692	50384d55	8ecd9e14	1/utilities/U530.DMS/AMOS_Music/Swordswipe.Abk
+be6633d6738f606c6721061d479e9e2c	1	169655	player	uade	Protracker	0	379064	eae0ac59	a97f5c3e	2/MUSICS/M224.DMS/devs/printers/9a
+be9bedb68d054187e69f4addd83838f9	1	310737	player	uade	Protracker compatible	0	131218	51bdd330	02bb8784	1/Anim/A288.DMS/Modules/Moongazer
+beb227bf3ff602294ebd3c7adfa989b3	0	0	nosound	libxmp	MED 1.12 MED2	4	25218	66beba91	60f292da	2/MUSICS/M252.DMS/Jacquie
+bf5130e2cbbd7a5fcbf9109dc69b68e0	0	394149	player	uade	Sonix Music Driver	0	5846	8cdaa446	387d5943	2/MUSICS/M190.DMS/SCORES/Young1.smus
+bfcc2f2ccfb48ea2fe3648c9519a0006	0	326509	player+volume	uade	Sonix Music Driver	0	20218	feb5a10e	2cc94121	2/MUSICS/M251.DMS/SCORES/Chromatic1.smus
+bfd790cb97a38639d1902c46ad4ce4a7	0	141584	player	libxmp	NoisePacker v3	4	145456	8dba8fa0	eb1bb20a	2/MUSICS/M330B.DMS/MOD.Escapade.CNP
+bfe07404131775d0270521eb77d332de	1	211331	player	uade	Protracker	0	87024	4758265f	76bb8fd9	2/MUSICS/M212.DMS/MODULES/mod.digitania
+c026fd8343770d12cf2c523ff6f47eeb	0	135044	player+silence	libopenmpt	Game Music Creator	4	72510	92645abe	e2de633e	2/GAMES/G520.DMS/FatalMission2/Music/Level3Music.DAT
+c102d07ca9735ce96fc647932073ab87	0	23148	player	uade	Amos Music Bank	0	26910	68ea8aa9	4353b9f7	1/utilities/U530.DMS/AMOS_Music/Hiscore3.Abk
+c1a98f32f5243e09a42451b68da966c6	0	235183	player	uade	Sonix Music Driver	0	10970	1ca079bb	24d57c25	2/MUSICS/M168.DMS/scores/True.smus
+c1d9ff7d735bb4808f45c86e035683a9	0	77965	player	uade	Sonix Music Driver	0	5822	6e4f3059	9c876dca	2/MUSICS/M168.DMS/scores/Woodway.smus
+c234c342d54b6a51be11211fb75c863b	0	162301	player	uade	Sonix Music Driver	0	5084	349dbda0	f9b5badb	2/MUSICS/M168.DMS/scores/AxelF.smus
+c297921f443ed2d6c32494d80b06b3b3	1	490416	silence	uade	OctaMED MMD0	0	285522	b26ee682	29a6551e	2/DEMOS/D168.DMS/silence.song
+c29a829be5e0a2298788f2c6b88cb883	1	192141	player	uade	Protracker	0	108966	b648f3f5	8717c74e	2/MUSICS/M212.DMS/MODULES/mod.the visitor
+c2e0563c89e081f6ec89f5a1a7e5b099	0	46216	player	uade	Amos Music Bank	0	35874	d64ab9b9	56d1fff7	2/DEMOS/D163.DMS/jonts_2.abk
+c2f014d51e910c849714d4c979c43a87	0	283510	player	uade	Sonix Music Driver	0	13516	7b7c11c0	b41b73bf	2/MUSICS/M187.DMS/Scores/Grand-Mix.smus
+c30456d2913fbae133c1211d4491578e	0	0	nosound	libxmp	MED 1.12 MED2	4	20078	d2488502	a565dc42	2/MUSICS/M252.DMS/Lament
+c3414994096a00b3d3709072464871f7	1	176769	player	uade	Soundtracker II (15 instr.)	0	85680	372eee30	11b4fd2b	1/Anim/A199.DMS/MUSIC
+c348f27a5dc96dfbd5280b416635aaf4	0	268881	player	uade	FutureComposer 1.3	0	32050	ef992474	bd406f2d	1/utilities/U294.DMS/modules/mod.shaolin.7
+c375cef809be259f3fdbf3bbc2f8bae5	1	220936	player	uade	Protracker compatible	0	105440	8031baca	3e0ee95a	1/MUSIC-MODULE/comtores.mod
+c3d8952ad561d3252efbb90235f94e43	1	138369	player	uade	Protracker compatible	0	150620	ef4162db	e82a4c56	1/MUSIC-MODULE/topless.mod
+c3eaf2441956724585c1e0b97d2d056d	1	61568	player	uade	Protracker compatible	0	46804	b818704a	251325cb	1/AGA/C.DMS/Jumpy/jumpysong01
+c3eaf2441956724585c1e0b97d2d056d	1	61568	player	uade	Protracker compatible	0	46804	b818704a	251325cb	2/GAMES/G286.DMS/Jumpy/jumpysong01
+c3eaf2441956724585c1e0b97d2d056d	1	61568	player	uade	Protracker compatible	0	46804	b818704a	251325cb	2/GAMES/G437.DMS/jumpy/jumpysong01
+c3f34973166efb310238099ff6f33a65	0	240970	player	uade	Sonix Music Driver	0	7880	3fa7a1d3	315846da	2/MUSICS/M168.DMS/scores/LikeaBird.smus
+c4596cd0a0d7843a76df70fa412d60a4	1	209402	player	uade	Protracker compatible	0	138908	97212e8e	3f230675	1/Anim/A265.DMS/sounds!
+c48672c32fc9ff08ffb7fde7f5ea8880	1	314354	player	uade	Protracker compatible	0	60508	2fdd8d56	6e714384	1/AGA/AGA210B.DMS/c/toon
+c48672c32fc9ff08ffb7fde7f5ea8880	1	314354	player	uade	Protracker compatible	0	60508	2fdd8d56	6e714384	1/Anim/A306.DMS/mod.Bas
+c4b0e357ca4e234bc731ca16edbd62b6	1	92272	player	uade	Protracker	0	111270	085d8a76	5fa7cec7	1/MUSIC-MODULE/dance-day.mod
+c5a6bd053a155b0ee4ea91d9550f8422	1	148930	player+silence	uade	Noisetracker 1.x	0	108422	1bac0e1d	8d49fd2e	1/MUSIC-MODULE/hardstuff.mod
+c5ef2939312e76284840811e0adf64c2	1	252946	player	uade	Soundtracker II (15 instr.)	0	120248	7b83778f	bc4d4554	1/MUSIC-MODULE/fairlitght1.mod
+c61f1042978adb9f90cac13b700f34c2	1	238197	player	uade	Soundtracker II (31 instr.)	0	71206	fc362b2f	4457cc30	2/MUSICS/M082.DMS/mod.dawn
+c62b820b94102788bb0da015a0ea102b	1	249716	player+silence	uade	Soundtracker II (31 instr.)	0	101330	028fc2ef	b71da792	2/MUSICS/M192.DMS/teamwork
+c65518e4af26f5757529c15823b0456a	1	216274	player	uade	Protracker	0	278862	8d2f4c5e	d342bd69	2/MUSICS/M331A.DMS/Mod.Open_Your_Mind
+c78723ad9b291875ccb7c145391e20c5	0	15472	player	uade	Amos Music Bank	0	60196	0c076906	501deaa7	2/GAMES/G304.DMS/song.abk
+c78723ad9b291875ccb7c145391e20c5	0	15472	player	uade	Amos Music Bank	0	60196	0c076906	501deaa7	2/GAMES/G525.DMS/song.abk
+c88c25822c1a3d79813f8ba7a61207b3	0	61568	player	uade	Amos Music Bank	0	38236	b2e75c60	a81afcce	1/EDUCATION/E021.DMS/music2.abk
+c8d448416737694d40ed6cf6de11c80e	1	214187	player+silence	uade	Protracker compatible	0	109508	269f49ef	c10301f3	2/DEMOS/D174.DMS/mod.lc
+ca38761bfea170a89dfe7c8a873a7b04	0	240769	player	uade	Amos Music Bank	0	76798	0088233a	48e7bdb2	2/GAMES/G402.DMS/C/Data2
+cab46dc1ba5ca4d614bb8aadad67a481	1	200681	player	uade	OctaMED MMD0	0	41554	d0bdde39	7c7f2643	2/GAMES/G026.DMS/c/tune1
+cab46dc1ba5ca4d614bb8aadad67a481	1	200681	player	uade	OctaMED MMD0	0	41554	d0bdde39	7c7f2643	2/GAMES/G265.DMS/c/tune1
+cafbd9d5a258ac07c6b75544f20d9095	0	235725	player	uade	Sonix Music Driver	0	8194	c92ff7b0	885a6ad1	2/MUSICS/M177.DMS/Scores/Rent.smus
+cb750ba827a49ef5a8bc7c29374aa9f1	0	78026	player	uade	Sonix Music Driver	0	3832	bad271ba	33499a9f	2/MUSICS/M168.DMS/scores/Pass1.smus
+cb911edcc0f642186f081bb7644bb01e	0	0	nosound	libxmp	MED 1.12 MED2	4	40638	34ab63d8	d2b61ceb	2/MUSICS/M252.DMS/Jig
+cbcce923c9396f9447ef0f5601b6b1c8	1	122534	player	uade	Protracker compatible	0	37928	098dd85d	caa30eb7	1/EDUCATION/E121.DMS/Modules/mod.SPRING IN LENINGRAD
+cbd6fe0ac896bccbf8b00c75fb8cc024	0	65246	player	uade	Sonix Music Driver	0	2682	0c6712f4	89c7fe6a	2/MUSICS/M292.DMS/SCORES/Brandenburg3_2.smus
+cc6aa49c8aa7d03a9d37de26b74b9af5	1	163286	player	uade	Protracker	0	108720	28396140	de1fb13c	1/Anim/A412.DMS/MODULES/MOD.Lyon
+cca1cd6dc0e0ed7e372585ddec7f757b	0	108207	player	uade	Sonix Music Driver	0	6452	d19f9a7a	c0b4916b	2/MUSICS/M168.DMS/scores/ElectricDream.smus
+cca3e8e1862a7b9833cd93090aaddbc1	1	76920	player	uade	Soundtracker II (15 instr.)	0	89502	ecfdd6ee	0a9d7fb5	1/utilities/U302B.DMS/7
+cd4c88c6144340b26f27389d6deccfc2	1	156614	player	uade	Protracker compatible	0	130924	f9891ec8	6437f717	1/MUSIC-MODULE/jazz.mod
+cd7a47c18d6dccfeb008f79808b3b4a0	1	253569	player	uade	Protracker	0	178776	dd016165	a9a6aeae	1/MUSIC-MODULE/ironwork.mod
+cdc99214ade7313029a79791778b954b	1	193535	player+silence	uade	Protracker compatible	0	90430	664b2a32	9ef1b223	2/MUSICS/M145.DMS/Modules/MOD.Zoolook
+cdd99b9a84d0409175c74de636c2a588	1	199334	player+silence	uade	Startrekker (4ch)	0	116160	ca3637f2	eadd5a25	2/MUSICS/M148.DMS/5
+cdf70ceff62fd3cd06803bcc6323d261	0	122997	player	uade	Amos Music Bank	0	63922	d77158d8	dad352a7	1/utilities/U305.DMS/the_pits.abk
+ce28130751e9c13f586caed3cef71f82	1	631993	player+silence	uade	Soundtracker II (15 instr.)	0	115592	36d0cb19	69f94734	1/utilities/U302A.DMS/1
+ce8a64f70db76bd6273f062b17f28d0a	0	7816	player	uade	Amos Music Bank	0	16308	91be40ce	b65cf517	1/utilities/U530.DMS/AMOS_Music/Welldone2.Abk
+ce8a64f70db76bd6273f062b17f28d0a	0	7816	player	uade	Amos Music Bank	0	16308	91be40ce	b65cf517	2/GAMES/G366.DMS/Code/Welldone2.Abk
+ce8cee3cb8a93c4a829a603fc7eac1bd	0	161397	player	uade	Amos Music Bank	0	77126	d946b7db	a8f6c55e	2/DEMOS/D037.DMS/M1
+ceb5ec5ae1374bf8196ad3ae5ba311e3	0	116908	player	uade	Amos Music Bank	0	34392	3ce557a7	01bc6feb	1/Anim/A234.DMS/music2.abk
+cf84d5b38e2cc5172c1f26326126c5f7	1	310016	player+silence	uade	Soundtracker II (31 instr.)	0	78742	1b471194	3f2da3be	2/MUSICS/M145.DMS/Modules/MOD.Magnetic Fields IV
+cfaaa91187768dbffed3934298806299	0	341964	player	uade	Sonix Music Driver	0	13036	a543367d	c0df732b	2/MUSICS/M292.DMS/SCORES/Brandenburg3_1.smus
+cfe0d7d8f79b177b7c4b3b96da380db9	1	160064	player+silence	uade	Soundtracker II (15 instr.)	0	95294	df0b6f78	9fa976a6	1/utilities/U302B.DMS/4
+d007344e7ef554570e37bb87dabb5e83	0	322385	player+silence	uade	Sonix Music Driver	0	9348	b0a2d48f	7e90dbf9	2/MUSICS/M168.DMS/scores/Strings.smus
+d0db096bc2fce3e4351ed98495adc0f7	0	138369	player	uade	Amos Music Bank	0	63480	983aecad	e7ab9f23	1/EDUCATION/E057.DMS/song2
+d13682aff4adb4efe7b0bde330d20503	0	103425	player	uade	Sonix Music Driver	0	3806	4a217559	682990d0	2/MUSICS/M084.DMS/Scores/KNUCKLEBUSTERS.smus
+d1b12c273ff47f062e55474e0e330887	0	262451	player	uade	Soundtracker II - V or compatible	0	74656	65ba50a3	46a4f52c	1/utilities/U302B.DMS/8
+d1b12c273ff47f062e55474e0e330887	0	262451	player	uade	Soundtracker II - V or compatible	0	74656	65ba50a3	46a4f52c	2/MUSICS/M128.DMS/rendezvous2
+d207fb646d205396fbf384e3318f0b4c	1	135334	player	uade	OctaMED MMD1	0	335074	2cda7177	acfac085	1/AGA/AGA008.DMS/Intro.MUSX
+d213d71756823b42a1c8fec6c72916b4	1	247661	player	uade	Protracker compatible	0	125636	4321c796	4b622d34	1/Anim/A400.DMS/mod.daffy
+d26a7ae88207f45384eec7c79f2ded40	1	261081	player+silence	uade	Protracker compatible	0	114730	2011a2c1	421d30ae	1/MUSIC-MODULE/stress.mod
+d277cb2c025666489b27e9caa71b8778	1	212887	player+silence	uade	Protracker compatible	0	103536	36893b69	5a26ca4d	2/MUSICS/M119.DMS/MOD.SCOOPEXONG
+d2d55958aa45a1288d5679a3dd987fe8	1	184445	player	uade	Soundtracker II (31 instr.)	0	117050	529abb25	b54bf82d	1/MUSIC-MODULE/epic.mod
+d331a22615b344c54d59e22ba54ee26e	1	195537	player	uade	Protracker	0	48920	c9c9a309	62e6b4a1	2/MUSICS/M212.DMS/MODULES/mod.chopsticks revenge
+d37e642d458e3de90b85dd260d326904	1	126925	player+silence	uade	Protracker	0	156256	ac5ed8ea	e279b48c	2/MUSICS/M330B.DMS/MOD.Stormbringer.C
+d3c3ac9e139c79345125829ab5dd44b3	1	473539	silence	uade	Protracker	0	168958	d6a3c671	6ece8cbc	1/MUSIC-MODULE/synthone.mod
+d45cdf34f48e0f2e674cb7159ab4d07c	0	42680	player	uade	Sonix Music Driver	0	3208	b20c0fff	1dd00e8b	2/MUSICS/M275.DMS/SCORES/531-558.smus
+d4acf1b012174fa33838d4cb019ab300	0	122434	player	uade	Sonix Music Driver	0	3704	5d31c6a6	0e6d4a39	2/MUSICS/M275.DMS/SCORES/403-478.smus
+d4da7933a89ad451ac06e32253b4b71a	0	23168	player	uade	Amos Music Bank	0	25562	25d2d68b	6ec63a55	1/utilities/U530.DMS/AMOS_Music/Misc1.Abk
+d4edd1acd15f7c7849cb8226036e7657	1	259402	player+silence	uade	Protracker compatible	0	114378	38cbc948	3337f445	2/MUSICS/M281.DMS/MODULES/mod.2
+d4f5e7d61ef83099aacf40619ccd0034	0	409038	player	uade	FutureComposer 1.3	0	44868	19c0225f	450ceaa4	1/utilities/U294.DMS/modules/mod.shaolin.1
+d55c39b72835f0f2dfc163ad0c5e4c87	1	435804	player	uade	Soundtracker II (15 instr.)	0	108066	191eb89c	7588a903	1/utilities/U302B.DMS/3
+d562873e7a62a637e302a91911cf4158	1	184445	player	uade	Soundtracker II (31 instr.)	0	106240	6c0b9e09	bad74295	1/MUSIC-MODULE/spacejoust.mod
+d568f7c26d9a02b53bb31e6e66aba8f4	0	7816	player	uade	Amos Music Bank	0	5984	961f66cf	7b607d2b	1/utilities/U530.DMS/AMOS_Music/Swordclang.Abk
+d66ecb45bbf0a72bcc4788aae00255a2	1	492852	player	uade	Startrekker (4ch)	0	327928	1e38e9f3	e0ee2c75	1/MUSIC-MODULE/rap.mod
+d68f692b8d893dea1f0628eeb79f5672	0	161417	player	uade	Amos Music Bank	0	39968	92d65254	ce650cec	2/MUSICS/M156.DMS/Songs/ElecKnight
+d6c9d17f56d4531834b6ade12a1e62f5	0	254664	player+silence	uade	Sonix Music Driver	0	13634	d1a0189f	96ec9f8c	2/MUSICS/M168.DMS/scores/LostinSpace.smus
+d719589aab37d3d6b47d05b5febe987c	1	140921	player	uade	Protracker	0	106646	717b943c	2be97d0c	1/MUSIC-MODULE/thelast.mod
+d735840740ed26d14c1c226e34412a70	1	133273	player+silence	uade	Protracker	0	253812	035c6023	151e0bd8	2/MUSICS/M330A.DMS/MOD.Cool.C
+d75ae9314eba43697ba3d1b08f4a1572	1	280536	player	uade	Protracker	0	114170	0bc8118a	168bdba1	1/MUSIC-MODULE/inocent.mod
+d7e32480f0728d486b149b2c924bc722	0	217219	player	libxmp	MED 2.00 MED3	4	2094	b8a47e35	0097a1bf	2/MUSICS/M085.DMS/Colours
+d8256b807c0f4e835963ebd0dbf279f7	0	63819	player	uade	Sonix Music Driver	0	1744	cc22ca65	77fba85f	2/MUSICS/M048.DMS/Scores/UNKNOWN Space.smus
+d8422c613df5be9534f26a7a0bb30828	1	228110	player	uade	Protracker	0	176630	386d5bef	d5bedd63	1/MUSIC-MODULE/inleoparty.mod
+d84d43b92e1e89545789c347213e4bd7	0	168088	player	uade	Sonix Music Driver	0	6856	fc335b59	e7ed469b	2/MUSICS/M187.DMS/Scores/model.smus
+d8b33b4093022c235a9c74960415b700	1	325567	player	uade	Protracker	0	102266	fbcb69e1	f4604e01	1/MUSIC-MODULE/space.son.mod
+d8df49ac52bca3f63c384aa5cf978897	0	92272	player	uade	Amos Music Bank	0	21604	8504c034	9fe1a62e	2/GAMES/G390.DMS/A
+d926dc28e6acfa76b70f21c2f7819d4f	1	199797	player	uade	Protracker compatible	0	78758	2bfe68a6	56ce32a2	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX7
+d94042746e27e0f7755f9f580f555310	1	48085	player	uade	OctaMED MMD0	0	58610	85257150	e8577e7e	1/EDUCATION/E001.DMS/bog
+da0c80c2b3472bd47a37710d51524c61	1	161397	player	uade	Noisetracker 1.x	0	176622	2e49623d	d20d525c	2/GAMES/G311.DMS/SPELL
+da19193ab374c8225f7c6e20ef5e317e	1	224131	player	uade	Noisetracker 1.x	0	123304	59692ab9	7d31d827	1/MUSIC-MODULE/galactic.mod
+da5ed7b6126483363b7467dc21087348	1	215149	player	uade	Protracker compatible	0	71526	9a662c68	a2d448f5	1/AGA/AGA110.DMS/MUSIC
+db2aea4dfa4e209f470675ac561eda17	0	207754	player	uade	Sonix Music Driver	0	12640	1e582ca2	5f25125e	2/MUSICS/M168.DMS/scores/LittlePeople.smus
+db2bcca4bd115c65045131a566096b59	1	98682	player	uade	Protracker compatible	0	61956	f75c2386	43d74438	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX3
+db57dbde9bd8cc37643c6fe8085370ff	1	18044	player	uade	Soundtracker II (15 instr.)	0	11716	1ad82b74	b93bc4cf	2/GAMES/G242.DMS/fil8
+dbabd921c4dfe0befbd53bdf9b167efc	1	376466	player	uade	Protracker	0	142986	3c1601aa	72cc5141	2/MUSICS/M120.DMS/MODULES/MOD.1
+dc1a0de9f884f77bb77acf3ad5f895cd	0	174217	player	uade	Amos Music Bank	0	67792	29d15c60	04063ab2	2/MUSICS/M156.DMS/Songs/Future
+dc4b8b1be6249fb5aac575b9fd803a7b	1	243341	player	uade	Protracker compatible	0	148282	9927dd0b	d74f85dc	1/MUSIC-MODULE/caroline.mod
+dcb1fa306c95df2472935001da0e56db	1	276597	player	uade	Protracker compatible	0	122618	58fe1226	56fcd414	1/MUSIC-MODULE/laser2.mod
+dcc02e11ac669b442d94d2f2a56ebf6b	1	207252	player	uade	Protracker compatible	0	72558	efcad9e2	ffc52ccf	2/MUSICS/M082.DMS/mod.it can't bE
+ddb3b3251aa1940d761cefbc251d9f87	0	15492	player	uade	Amos Music Bank	0	25480	f79bea98	68b621a4	1/utilities/U530.DMS/AMOS_Music/Hiscore1.Abk
+ddb3b3251aa1940d761cefbc251d9f87	0	15492	player	uade	Amos Music Bank	0	25480	f79bea98	68b621a4	2/GAMES/G484.DMS/end.Abk
+ddba6606404f75e62947ca355ecb1d69	1	253480	player+silence	uade	Protracker compatible	0	123264	b84af2e3	c16378a1	1/MUSIC-MODULE/andant.mod
+de50693a4dbd1c74d10f948acb5e58a7	1	122997	player	uade	Protracker compatible	0	191824	63d257f6	07de1947	2/MUSICS/M102.DMS/MODULES/mod.wheels of steel
+deffffec5c41e78e037b62bbd2f804ed	0	30844	player	uade	Amos Music Bank	0	87210	1850660b	4a30ea59	2/GAMES/G034.DMS/Music.Abk
+df4c55740e0b1513d07d72e75d1210f3	1	255016	player	uade	Noisetracker 1.x	0	153998	1ec52b24	628d868d	1/MUSIC-MODULE/life.mod
+df5ef967e506d93723e433e73e94b64e	1	46832	silence	uade	Protracker	0	32768	d15739eb	7ccba7ba	2/MUSICS/M224.DMS/devs/printers/3a
+df6f3fa16627660429a20ecfb27b27e7	1	92915	player	uade	Protracker compatible	0	104666	aa8a7727	ba73a784	1/MUSIC-MODULE/concerto.mod
+df70a49e86733f947d757d07c48a50a9	0	7684	player+silence	uade	Amos Music Bank	0	5588	72a75393	3b41e892	1/EDUCATION/E057.DMS/Music/Mfriff.Abk
+df7495a9ec20c2e428301d3e3339c3e0	0	53872	player	uade	Amos Music Bank	0	19744	afff7f5f	2a508f72	2/GAMES/G484.DMS/introtune.abk
+dfaefb8efc75d29e42c0da20d686ff92	1	395053	player	uade	Protracker compatible	0	131486	e7922836	98075dac	1/MUSIC-MODULE/polarcha.mod
+dfafddf94360d0d976fdd112be0512fe	1	130693	player	uade	Protracker compatible	0	23452	5a663ffa	b7e05a4d	2/GAMES/G326.DMS/mus.b
+e06748a6af33fca964d5cc073a8b5b85	1	197245	player	uade	Protracker	0	138366	dd941b4e	8ffc206e	1/MUSIC-MODULE/on-ice-a-gain.mod
+e12edaace8ffee65e0c3a8a52f5cbe1f	1	202731	player	uade	Protracker	0	129656	505e7c2a	2e9b516b	1/MUSIC-MODULE/complexh.mod
+e182581e5dccac8169984523f57a567d	1	161432	player+silence	uade	Protracker compatible	0	198156	bde3f49b	a48ff588	2/MUSICS/M321.DMS/mods/mod.dindaadaa
+e18631df577c595633f6d90874faee74	1	230541	player	uade	Protracker	0	81156	505fa488	b721fe98	2/MUSICS/M120.DMS/MODULES/MOD.6
+e186b706b1666fdec9a76aae0f61f456	0	174105	player+silence	libopenmpt	Game Music Creator	4	57746	305a44db	52943563	2/GAMES/G520.DMS/FatalMission2/Music/Level5Music.DAT
+e24306aca2567206a848a6c45b65efe9	1	138369	player	uade	Soundtracker II (15 instr.)	0	67286	a29ca8d5	3b244043	1/utilities/U165.DMS/song1
+e297022e75d0f3ba3b0707d7f94ddd3a	1	235565	player	uade	Protracker compatible	0	127102	86af862a	88d8938d	1/MUSIC-MODULE/softsyn.mod
+e29ae5ec60f271e1f9ee1bb1309fb6b3	1	258693	player	uade	Protracker compatible	0	119184	08e71a55	7492b8de	1/MUSIC-MODULE/cool.mod
+e39720a4a8daded5504b5bd8dfe527ef	1	84717	player	uade	OctaMED MMD0	0	143180	4702203c	81a02c60	2/MUSICS/M180.DMS/Utah-Saints
+e43ef1fc09ac817f74fea644d8a1cf00	1	211331	player	uade	Noisetracker 1.x	0	55806	21513d98	a74c3db6	1/utilities/U367.DMS/MODULES/mod.cj #18
+e4407944252bec291b474854cd320980	1	355924	player+silence	uade	Protracker compatible	0	252282	be6533ee	94ddbf66	1/MUSIC-MODULE/light2.mod
+e45faab5027b41996284d6e991b28b29	1	172931	player	uade	Protracker compatible	0	133108	68b7bd95	06402695	1/MUSIC-MODULE/field.mod
+e47885135e03f78d73b14beb2bb1a3ed	0	7816	player	uade	Amos Music Bank	0	5040	626e10ba	6d03d767	1/utilities/U530.DMS/AMOS_Music/Collect1.Abk
+e47970b373e50d0715af0afb679e5790	0	989924	player	uade	Sonix Music Driver	0	41514	0d97ce10	44973b99	2/MUSICS/M275.DMS/SCORES/Rhapsody.smus
+e47e420dc88c2cac7564088565dd12b5	1	217098	player	uade	Startrekker (4ch)	0	56710	aadb69b0	70354fdb	2/MUSICS/M148.DMS/1
+e4ea91104a6669ac2368fd397423c4a6	1	38440	player	uade	OctaMED MMD1	0	50568	0e7f575e	2bdd613a	1/EDUCATION/E116.DMS/song
+e5882e1c7465173dc98a6644d15d85d6	0	174036	player	uade	Sonix Music Driver	0	10100	55cb6ffa	ce425b4d	2/MUSICS/M168.DMS/scores/BREAKER.smus
+e5ca1f3786054c00d5b57cb3c8165175	1	278526	player	uade	Protracker compatible	0	122918	db1739b3	b58d661e	1/MUSIC-MODULE/freefall.mod
+e6b08eaf1113c927f629048bfdbf6150	1	80135	player	uade	Protracker	0	104814	210b7619	19098dbe	1/MUSIC-MODULE/teddy.mod
+e705de7b71964708f6c92bad3b592422	1	236987	player+silence	uade	MED4 (4ch)	0	32475	72abe186	1ea728af	1/utilities/U367.DMS/MED.Demos/SynthSong2
+e72b50f677a2d6bb57e61604a3845550	1	161397	player	uade	Protracker	0	164366	74ea4896	60c4f18c	2/GAMES/G411.DMS/mod.bass_2.mod
+e7e912dd2c2c333e642c57e2ccb200bd	1	187415	player+silence	uade	Protracker compatible	0	124188	258a2725	fcd218ac	2/MUSICS/M281.DMS/MODULES/mod.4
+e80074da97aaa013a7faa759002e24d1	1	188926	player	uade	Soundtracker II (15 instr.)	0	60410	cbee0b53	ed535bd4	2/MUSICS/M128.DMS/rendezvous4
+e8ea9ad145986ca30f410ed521d7265f	0	61568	player	uade	Amos Music Bank	0	33298	19025a5f	47d7fc43	2/GAMES/G521.DMS/MUSIC/MUSIC1.BIN
+e983b2fc184dfcf4beffc5f6f44b28c1	0	7816	player	uade	Amos Music Bank	0	2938	cff5fbbf	3a685a51	1/utilities/U530.DMS/AMOS_Music/Pop2.Abk
+e9f24b261a8d35900ecf1bd02b7729f1	0	69017	player	libopenmpt	Game Music Creator	4	16652	d0f6cded	a8623fae	2/GAMES/G206.DMS/Knightsdata
+e9f7cfb9e4cc71c919429892f717ead0	0	305010	player	uade	Sonix Music Driver	0	14336	8b65a617	e7c69443	2/MUSICS/M292.DMS/SCORES/Brandenburg3_3.smus
+ea15fbc929fe23a038a94c4ce960a36c	1	210065	player+silence	uade	Protracker	0	257682	58cf0cc8	a4931d7c	2/MUSICS/M331B.DMS/mod.sail_away
+ea5f1b72b17a7b4fcb1006c87cf845ad	1	159166	player	uade	Protracker compatible	0	118130	7a669230	54897907	1/MUSIC-MODULE/hitfido2.mod
+ea952cabf8afe5d82e16f30f782d2ff5	1	161397	player	uade	Protracker compatible	0	284728	aa1cdc17	f31cd863	2/GAMES/G083.DMS/MegaBall/MegaBall.Music
+ea952cabf8afe5d82e16f30f782d2ff5	1	161397	player	uade	Protracker compatible	0	284728	aa1cdc17	f31cd863	2/GAMES/G490.DMS/MEGABALL.MUSIC
+eaf7235285060afdc94b531e62c7357b	1	146045	player	uade	Protracker	0	141372	91203d97	a529e85d	1/MUSIC-MODULE/rocket-up.mod
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	1/MUSIC-MODULE/demo-compo.mod
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G446.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G450A.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G453.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G455.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G457.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G462.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G463.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G465.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G467.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G468.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G470.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G472.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G480.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G482.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G493.DMS/g1
+eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	2/GAMES/G494.DMS/g1
+eb7eea3e60de9fd65b5b911aded5a7ed	1	147974	player	uade	Protracker compatible	0	162168	803c0a66	25b7f7d2	1/MUSIC-MODULE/outzide.mod
+eb9cc627dd942045501dcaff7134e836	1	188076	player+silence	uade	Startrekker (4ch)	0	51278	f1f7cfbc	f2f11fbb	2/MUSICS/M148.DMS/6
+ec277fdfe31acf6c1d217b583f95cce6	1	244747	player+silence	uade	Protracker compatible	0	139824	23f0e9dc	39ee415b	2/MUSICS/M052.DMS/Modules/MOD.transylvania
+ec35ea7713fdf08809759129c890c089	0	6530	player	uade	Amos Music Bank	0	14028	3ab9fe5e	f0fca517	2/GAMES/G325.DMS/Action.abk
+ec42eca929f94c17eabeb8e0ba6e83a0	0	46216	player	uade	Amos Music Bank	0	29072	c8f9e254	262f4590	1/utilities/U530.DMS/AMOS_Music/Funky1.Abk
+ee24ca9c50e0c3f878855ca716852129	0	15492	player	uade	Amos Music Bank	0	15056	26885a57	1159736c	1/EDUCATION/E057.DMS/Music/Amosteroids_Intermediate.Abk
+ee86fc9b00fa98fbf619383618e6c622	1	138369	player	uade	Protracker compatible	0	59062	6cc6d660	3506de56	1/Anim/A173.DMS/MUSIC
+eee2959666e68ddf0b05d6aaa0071d9d	1	238197	player	uade	Protracker compatible	0	109540	6d16cff7	e53218aa	1/MUSIC-MODULE/adorem.mod
+eef6cbf51aa2dce0bb25eeae8c4b63d6	0	142769	player	uade	Sonix Music Driver	0	7298	99577685	4df0fbe2	2/MUSICS/M168.DMS/scores/TheSignOfTheDeath.smus
+ef3ef716e0eee0bc66cdafa2a5520960	1	141644	player	uade	Protracker	0	170452	f0595f4c	2a08d08c	1/MUSIC-MODULE/funky2.mod
+ef55181936a59253d506f420523746d7	1	3513	player+silence	uade	Protracker	0	11996	8eb47d71	d2958f36	1/EDUCATION/E148.DMS/J.I.ULTIMATE-CHESS/mod.sample2
+ef7473e92ac44e20962c35ff76b5bc10	1	170379	player	uade	Protracker	0	127840	1f94e8fd	a0a56df1	2/MUSICS/M330A.DMS/MOD.Darkside.C
+ef9b534ce64f5dff992154668b23dd3e	0	66150	player	uade	JamCracker	0	25964	95b20cec	5209e23d	1/utilities/U080.DMS/Songs/DemoSong2
+efa92ea36d5c34ee7c883b71ecd0449c	1	76920	player	uade	Protracker compatible	0	104264	cd335cbb	a3c9a7cf	2/MUSICS/M102.DMS/MODULES/mod.cruelty of house
+f00cb1a64f488945cfdd86ab6f4ee6be	0	69244	player	uade	Amos Music Bank	0	121848	cd02dcae	9f0da179	2/GAMES/G390.DMS/P
+f02fa0f803f551ffdb07732121340023	1	38520	player	uade	Protracker compatible	0	116418	e3fab3c0	e7f4e81f	1/MUSIC-MODULE/intro.mod
+f1395d71e341b448c74a17edc0312d5d	1	362643	player+silence	uade	Protracker compatible	0	138120	57795cbb	7ab5c3a3	1/MUSIC-MODULE/colour-is.mod
+f1726e2cb1155194ec2a81d5197ad25e	1	283489	player	uade	Noisetracker 1.x	0	168296	ff19382b	a0bc0eab	1/MUSIC-MODULE/the-adventure.mod
+f1a8fe19a4944b9b2020705b54db99d8	0	70530	player	uade	Sonix Music Driver	0	1234	66c8495c	8ec3b727	2/MUSICS/M153.DMS/Scores/AwayInAManger.smus
+f1ca8093de2cc49255d0c8c74ab2c4f5	1	268921	player	uade	Noisetracker 1.x	0	151152	2cde5498	d7522a8f	1/MUSIC-MODULE/j.hansen.mod
+f1ca8093de2cc49255d0c8c74ab2c4f5	1	268921	player	uade	Noisetracker 1.x	0	151152	2cde5498	d7522a8f	2/GAMES/G534.DMS/DAT2
+f1e27090795ffcc58a8b49ea011d9e42	0	193598	player+silence	uade	Amos Music Bank	0	82016	c9b3157f	0fa6bc49	2/MUSICS/M156.DMS/Songs/ZooLook
+f23435c497a00bc64a3d03b2934fd51f	1	309337	player+volume	uade	Noisetracker 1.x	0	111868	c8e0da71	618ca0f5	1/AGA/AGA206A.DMS/mod
+f2d31ab5c257a22e51089eb70ec834e1	1	322693	player	uade	Protracker compatible	0	148440	be628180	84e9481a	1/MUSIC-MODULE/omen.mod
+f2e11720fc1f4b4dc42bf5ae16d3f817	1	130693	player	uade	Soundtracker II (15 instr.)	0	62160	cfa8978e	8648b9b1	2/GAMES/G427.DMS/Rescue/Rescue.Song4
+f36d6269b4fcfaa74384fff149a5ca2d	1	173703	player+silence	uade	OctaMED MMD0	0	28992	79a65175	2601c684	2/GAMES/G361.DMS/Columns/song.0
+f478c6b5d99b0d96331de9dbfecd4892	0	15492	player	uade	Amos Music Bank	0	9028	f8be41fe	e704b7d2	2/GAMES/G484.DMS/musicingame.abk
+f48fc41faff7d400d1e8ff64958924f4	0	169093	player	uade	Amos Music Bank	0	88854	52f2086a	c3c51223	2/GAMES/G272.DMS/big_music.abk
+f4a167451db187fb98da68742942491c	0	311963	player	uade	Sonix Music Driver	0	12414	413c7f13	dad135d4	2/MUSICS/M084.DMS/Scores/MASTEROFMAGIC.smus
+f4acde78e5e414e8b97568f5e15779a8	1	192764	player	uade	Soundtracker II (15 instr.)	0	103068	37c9b8ce	6e50fa57	1/MUSIC-MODULE/rat-trash.mod
+f4b900ca9356de1318a9c9dce5394596	1	82044	player	uade	Protracker compatible	0	85956	808ab65c	18f96a45	2/MUSICS/M255.DMS/MODULES/MOD.MUSIX8
+f53de09941ffa2482d69b8a0401a6769	0	3542	player+silence	uade	Amos Music Bank	0	1742	7189f4e9	419bf292	1/utilities/U530.DMS/AMOS_Music/EchoSwish.Abk
+f5b042a20bec1227a03df94b4b7f4c81	0	61568	player	uade	Amos Music Bank	0	151244	72b4fe62	5fba4d1e	2/GAMES/G317.DMS/music.abk
+f5b159f5068b118d5c42dd0b59dd37fc	0	184445	player	uade	Amos Music Bank	0	52790	9b74025b	6f5889a7	2/GAMES/G049.DMS/music.abk
+f5d26e656b097c780dcabe839607f5af	0	55319	player	uade	Sonix Music Driver	0	1672	c94bb1af	2a513f19	2/MUSICS/M153.DMS/Scores/WeThreeKings.smus
+f5eabca76892c2fc547dc33be4ecf917	0	15492	player	uade	Amos Music Bank	0	23274	211df33e	c14d8c7e	2/GAMES/G029.DMS/DumptyDum.abk
+f64b2866575650c31d82912932737845	0	461042	player	uade	Sonix Music Driver	0	17672	b2ab3087	5fa1ee89	2/MUSICS/M290.DMS/Scores/ALLEGRO_K313.smus
+f671933048f32ce08628fb02e6bfcc22	0	123017	player	uade	Amos Music Bank	0	44642	82667955	18465008	2/GAMES/G535.DMS/megamusic.abk
+f701e58c3d2840e10433a52e55af43d2	1	182634	player+silence	uade	Protracker compatible	0	161976	cdfcdb62	29812919	2/MUSICS/M052.DMS/Modules/MOD.running free
+f7d1608e49661cb154becc4aabb7d9f5	0	46216	player	uade	Amos Music Bank	0	19550	287b9613	419150b6	2/DEMOS/D163.DMS/jonts_1.abk
+f7f4dfa7c61f9624aa5a09d2d42c1925	0	123017	player	uade	Amos Music Bank	0	49560	61327373	8bf2fd48	2/DEMOS/D008.DMS/music2.abk
+f7f515db5c390ccb25060f0ee865cb42	1	230541	player	uade	Soundtracker II (15 instr.)	0	59140	5a5de832	dd389f0b	2/MUSICS/M128.DMS/zoolook
+f7fceb8f862bef8a2fdec8d5c3e23bd9	0	99968	player	uade	Amos Music Bank	0	93264	22bee03a	bea15c8f	2/MUSICS/M156.DMS/Songs/IceBaby
+f802eb68ed1decb41e4ccf627e4b7a22	1	240721	player+silence	uade	Protracker compatible	0	107870	dfe6e9d0	f0843bcc	1/MUSIC-MODULE/days-off.mod
+f80802e308d6bab293e599a66fd136ac	0	82748	player	uade	Sonix Music Driver	0	3686	b45855c4	f711f7af	2/MUSICS/M168.DMS/scores/Chor.smus
+f8204acca80df4f0a97b591ae838012e	1	183670	player+silence	uade	Startrekker (4ch)	0	112020	2d110c0b	be2e6c12	1/MUSIC-MODULE/spacetrash.mod
+f8978a077fb2886222eb6d25d983b3f2	1	92272	player	uade	Protracker	0	100990	7cecb724	210eb51b	2/MUSICS/M119.DMS/mod.justspankit
+f9775be42e456fda2f065447b9d17d31	1	205564	player	uade	Protracker compatible	0	93586	f8dde04a	6973f2ad	2/MUSICS/M145.DMS/Modules/MOD.Calypso
+f99d49e0885b1170d932f59a7cd3387d	1	163969	player	uade	Protracker compatible	0	48710	6e330fbf	004b57cc	2/GAMES/G112.DMS/snd/mod.laidback3
+f9e65cc548d2ad769d72d7789e3259b3	0	128129	player	libopenmpt	Game Music Creator	4	39828	eca0ec89	3631db1e	2/GAMES/G520.DMS/FatalMission2/Music/FM2Funky1.DAT
+f9e65cc548d2ad769d72d7789e3259b3	1	15337	player
+fa4e8cdf01e4456452757bf693275f36	1	42358	player	uade	Protracker	0	54626	391a0ab4	e5c8e72a	1/AGA/AGA199A.DMS/tune
+fafc1e977b6a7d815692e54e88fff1ac	0	278225	player	uade	Sonix Music Driver	0	3964	982ef131	a9e2e0db	2/MUSICS/M168.DMS/scores/Trance.smus
+fba5f42461ddafc5ce74541a9281c8cc	1	76920	player	uade	Protracker compatible	0	176152	1a8a42ef	2d4ed069	1/MUSIC-MODULE/in-sanity.mod
+fbabd95b05b990c6740ccd7d4ecfa14f	1	276597	player	uade	Protracker compatible	0	83434	11147735	33284746	2/MUSICS/M281.DMS/MODULES/mod.8
+fbb2805ab84774b1fc048d243d4623f2	1	230541	player	uade	Protracker	0	161130	7a9fb8e6	7c6c6ccf	1/MUSIC-MODULE/highland.mod
+fbb2805ab84774b1fc048d243d4623f2	1	230541	player	uade	Protracker	0	161130	7a9fb8e6	7c6c6ccf	2/GAMES/G510.DMS/FISHY
+fc139889fcbec3ab449cb12c884f00a9	0	193146	player	uade	Sonix Music Driver	0	7986	0fe325cc	74b86378	2/MUSICS/M006.DMS/Scores/BatDance1.smus
+fcaf8f64a8599caaa3493eb469e6ec7e	0	301836	player	uade	Sonix Music Driver	0	10484	fb7bbc3d	bf6d5062	1/Anim/A129.DMS/Scores/Lighthouse Rok 3.smus
+fed4808cf52ac3b83be483f6fb5fb21c	1	229678	player+silence	uade	OctaMED MMD1	0	633050	9ed54e3a	84b53fe8	2/MUSICS/M333.DMS/Workaholic
+ff4f14d2d4bf948b9a571f363afce7f1	1	316800	player+silence	uade	Protracker	0	186434	2e45118a	5beadf3e	1/ST-SAMPLES/TECHNO C/NOLIMIT.MOD
+ff5c3434ef4e0fc43f4c1e704eb4df14	1	318593	player+silence	uade	MED4 (8ch)	0	108108	11b46e25	ce23b406	2/MUSICS/M260.DMS/IGBWW
+ff6f08bc19d6886590d4a41fb9a643d2	1	128121	player	uade	Protracker compatible	0	123742	be9524ae	69a8bfe4	1/MUSIC-MODULE/freezing.mod
+ff8884e0fe7f484d812a9d00ec5bd658	1	153721	player	uade	Soundtracker II (15 instr.)	0	39144	e90c10be	259154d2	2/GAMES/G396.DMS/Efj/source/mod.neger
