@@ -1292,7 +1292,6 @@ def combineMetadata(
                     */
                     }
                   } else {
-                    debug(s"Overriding meta data for md5 ${hash} with ${best}")
                     // candidate-specific author-only override
                     if (meta.isDefined) {
                       if ((meta.get.authors.isEmpty && candAuthors.nonEmpty) || (
@@ -1668,7 +1667,6 @@ def combineMetadata(
         }
         debug(s"Filling authors for key: ${key}, meta: ${meta}, source: ${cmp}, authenticCMPs: ${authenticCMPs.mkString(" | ")}, authenticCMPsWithAlbum: ${authenticCMPsWithAlbum.mkString(" | ")}, metas: ${metas.mkString(" | ")}")
       }
-    meta
       meta
     ).toBuffer.sortBy(_.hash).distinct
   }
