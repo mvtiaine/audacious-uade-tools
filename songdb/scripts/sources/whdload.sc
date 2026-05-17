@@ -35,7 +35,7 @@ final case class WHDLoadMeta(
 
 val whdloaddb_csv = System.getProperty("user.home") + "/sources/whdload/WHDLoad_Database.csv"
 
-lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.par.map { line =>
+lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.par.map { line =>
   val l = line.split(";")
   WHDLoadMeta(
     fullName = l(0).trim,
@@ -57,7 +57,7 @@ lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Co
 
 lazy val articlePattern = """^(.*), (The|A|An)\b(.*)""".r
 
-def normalize(s: String): String = {
+private def normalize(s: String): String = {
   // Remove any text inside parentheses
   val withoutParens = s.replaceAll("""\([^)]*\)""", "").trim
   // Move trailing article to front
@@ -71,6 +71,10 @@ lazy val whdloadMetas = metas.par.flatMap(m =>
   val publishers = Buffer(m.producer, m.developer).map(normalize).flatMap(p =>
     p.split("  ")
   ).map(_.trim).filter(_.nonEmpty).distinct.sorted
+  val _type =
+    if (m._type == "Beta")
+      if (m.genre == "Demo") "Demo" else "Game"
+    else m._type
   Seq(normalize(m.shortName), normalize(m.fullName)).distinct.map(name =>
     val meta = MetaData(
       hash = "",
@@ -78,7 +82,7 @@ lazy val whdloadMetas = metas.par.flatMap(m =>
       album = name.trim,
       publishers = publishers.sorted.distinct.toBuffer,
       year = m.year,
-      _type = m._type.trim,
+      _type = _type.trim,
       _platform = "Amiga",
     )
     meta

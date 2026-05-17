@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx8G
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx8G
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -77,9 +77,10 @@ val fingerprint = if (input == "-") {
 val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
 val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
-val Right(algo,data) = FingerprintDecompressor(fingerprint) : @unchecked
+val fp = decodeChromaprint(fingerprint)
+val algo = fp.algo
 
-if (isSilentFingerprint(data)) {
+if (isSilentFingerprint(fp.data)) {
   System.err.println("Input fingerprint appears to be from silence/very quiet audio - check your audio source")
   sys.exit(1)
 }
@@ -114,10 +115,14 @@ var results = Buffer.empty[Result]
   results ++= audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
     val Right(a,d) = FingerprintDecompressor(af.audioChromaprint) : @unchecked
     assert(a == algo)
-    val score = chromaSimilarity(a, d, algo, data, 0.7)
-    if (score >= minscore) {
-      Some(Result(af.md5, af.subsong, score))
-    } else None
+    if (isSilentFingerprint(d)) {
+      None
+    } else {
+      val score = chromaSimilarity(a, d, algo, fp.data, 0.7)
+      if (score >= minscore) {
+        Some(Result(af.md5, af.subsong, score))
+      } else None
+    }
   })
 }
 results = results.sortBy(_.score).reverse.distinct.take(maxresults)
@@ -182,37 +187,6 @@ if (results.isEmpty) {
   println()
 }
 
-def isSilentFingerprint(data: Array[Int]): Boolean = {
-  if (data.isEmpty) return true
-  
-  // Count total number of set bits
-  var totalBits = 0
-  var zeroCount = 0
-  var i = 0
-  while (i < data.length) {
-    totalBits += Integer.bitCount(data(i))
-    if (data(i) == 0) zeroCount += 1
-    i += 1
-  }
-  val totalPossibleBits = data.length * 32
-  
-  // More aggressive silence detection
-  val setBitRatio = totalBits.toDouble / totalPossibleBits
-  
-  // Check for patterns that indicate silence or bogus data
-  val uniqueValues = data.distinct.length
-  val repetitionRatio = uniqueValues.toDouble / data.length
-  
-  // Check for all-zero or near-zero fingerprints
-  val zeroRatio = zeroCount.toDouble / data.length
-  
-  // Detect silence, near-silence, or bogus patterns
-  setBitRatio < 0.005 || // Less than 0.5% bits set
-  zeroRatio > 0.9 || // More than 90% zero values
-  (setBitRatio < 0.02 && repetitionRatio < 0.05) || // Low diversity
-  uniqueValues <= 2 // Only 1-2 unique values
-}
-
 def chromaSimilarity(
   algo1: Int,
   knownFullData: Array[Int],
@@ -242,6 +216,7 @@ def chromaSimilarity(
 
   val maxSearchOffset = knownLength - (unknownLength / 2)
   
+  var maxPossibleScore = 0.0
   var offset = 0
   while (offset <= maxSearchOffset) {
     var currentScore = 0
@@ -251,7 +226,9 @@ def chromaSimilarity(
     
     var i = 0
     while (i < endIdx) {
-      currentScore += (32 - Integer.bitCount(unknownData(i) ^ knownFullData(i + offset)))
+      val v1 = unknownData(i)
+      val v2 = knownFullData(i + offset)
+      currentScore += (32 - Integer.bitCount(v1 ^ v2))
       overlap += 1
       i += 1
     }

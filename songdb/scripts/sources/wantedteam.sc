@@ -35,52 +35,69 @@ lazy val wantedteam_customs_by_path =
   sources.wantedteam.filter(_.path.startsWith("customs/"))
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
+lazy val customshtml = Paths.get(wantedteam_path + "customs.html").toFile
 lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl.lha/WT_Customs.txt").toFile
-lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.drop(3).par.flatMap { line =>
-  val parts = line.split("\\s+")
-  val path = parts(0)
-  val size = parts(1).toIntOption.getOrElse(0)
-  val ver = parts(2).toInt
-  val title = parts.drop(3).mkString(" ")
-    .replace(" (c1) "," (c) ")
-    .replace(" (c) (c) "," (c) ")
+lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(f => {
+  val doc = JsoupBrowser().parseFile(customshtml)
+  val rows = doc >> elementList("li")
+  val pathToType = rows.par.flatMap(r =>
+    var txt = r.text.trim
+    val path = txt.split(" ").head
+    val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
+    txt = (txt.split(" - ").tail.mkString(" - ").trim).toLowerCase
+    val _type =
+      if (txt.contains(" game")) "Game"
+      else if (txt.contains(" demo") || txt.contains(" intro")) "Demo"
+      else ""
+    if (_type.nonEmpty) Some(path -> _type)
+    else None
+  ).toMap
+  f.getLines().toBuffer.drop(3).par.flatMap { line =>
+    val parts = line.split("\\s+")
+    val path = parts(0)
+    val size = parts(1).toIntOption.getOrElse(0)
+    val ver = parts(2).toInt
+    val title = parts.drop(3).mkString(" ")
+      .replace(" (c1) "," (c) ")
+      .replace(" (c) (c) "," (c) ")
 
-  var album: String = ""
-  var year: Option[Int] = None
-  var publishers = Buffer.empty[String]
+    var album: String = ""
+    var year: Option[Int] = None
+    var publishers = Buffer.empty[String]
 
-  if (title.endsWith(" year)")) {
-    album = title.substring(0, title.indexOf(" ("))
-    year = title.substring(title.indexOf(" (")+2, title.indexOf(" (")+6).toIntOption
-  } else if (title.contains(" (c) by ")) {
-    album = title.substring(0, title.indexOf(" (c) by "))
-    year = title.substring(title.indexOf(" (c) by ")+8, title.indexOf(" (c) by ")+12).toIntOption
-    publishers = title.substring(title.indexOf(" (c) by ")+12).split("/").map(_.trim).toBuffer
-  } else if (title.contains(" by ") && (title.contains(" (c) 1") || title.contains(" (c) 2"))) {
-    album = title.split(" \\(c\\) ").head
-    year = title.split(" \\(c\\) ").drop(1).head.split(" by ").head.trim.toIntOption
-    publishers = title.split(" \\(c\\) ").drop(1).head.split(" by ").drop(1).head.trim.split("/").toBuffer
-  } else if (title.contains(" (c) 1") || title.contains(" (c) 2")) {
-    album = title.split(" \\(c\\) ").head
-    year = title.split(" \\(c\\) ").drop(1).head.substring(0, 4).toIntOption
-    publishers = title.split(" \\(c\\) ").drop(1).head.substring(5).split("/").map(_.trim).toBuffer
-  } else if (title.contains(" (c) ")) {
-    album = title.substring(0, title.indexOf(" (c) "))
-    publishers = title.substring(title.indexOf(" (c) ")+5).split("/").map(_.trim).toBuffer
-  } else if (title.endsWith(" (?) year")) {
-    album = title.substring(0, title.indexOf(" (?) year")-5)
-    year = title.substring(title.indexOf(" (?) year")-4, title.indexOf(" (?) year")).toIntOption
-  } else {
-    System.err.println(s"WARN: wantedteam customs ignoring metadata for $path")
+    if (title.endsWith(" year)")) {
+      album = title.substring(0, title.indexOf(" ("))
+      year = title.substring(title.indexOf(" (")+2, title.indexOf(" (")+6).toIntOption
+    } else if (title.contains(" (c) by ")) {
+      album = title.substring(0, title.indexOf(" (c) by "))
+      year = title.substring(title.indexOf(" (c) by ")+8, title.indexOf(" (c) by ")+12).toIntOption
+      publishers = title.substring(title.indexOf(" (c) by ")+12).split("/").map(_.trim).toBuffer
+    } else if (title.contains(" by ") && (title.contains(" (c) 1") || title.contains(" (c) 2"))) {
+      album = title.split(" \\(c\\) ").head
+      year = title.split(" \\(c\\) ").drop(1).head.split(" by ").head.trim.toIntOption
+      publishers = title.split(" \\(c\\) ").drop(1).head.split(" by ").drop(1).head.trim.split("/").toBuffer
+    } else if (title.contains(" (c) 1") || title.contains(" (c) 2")) {
+      album = title.split(" \\(c\\) ").head
+      year = title.split(" \\(c\\) ").drop(1).head.substring(0, 4).toIntOption
+      publishers = title.split(" \\(c\\) ").drop(1).head.substring(5).split("/").map(_.trim).toBuffer
+    } else if (title.contains(" (c) ")) {
+      album = title.substring(0, title.indexOf(" (c) "))
+      publishers = title.substring(title.indexOf(" (c) ")+5).split("/").map(_.trim).toBuffer
+    } else if (title.endsWith(" (?) year")) {
+      album = title.substring(0, title.indexOf(" (?) year")-5)
+      year = title.substring(title.indexOf(" (?) year")-4, title.indexOf(" (?) year")).toIntOption
+    } else {
+      System.err.println(s"WARN: wantedteam customs ignoring metadata for $path")
+    }
+    val entries = wantedteam_customs_by_path.getOrElse(path, Seq.empty)
+    if (entries.isEmpty) {
+      System.err.println(s"WARN: wantedteam customs missing md5s for $path")
+    }
+    entries.map(e =>
+      val isAtari = title.contains(" ST ") || e.path.contains(" ST") || e.path.endsWith("ST") || e.path.contains("MYST_") || publishers.contains("Inner Circle")
+      WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted.distinct, year, pathToType.getOrElse(path, ""), if (isAtari) "Atari" else "Amiga")
+    )
   }
-  val entries = wantedteam_customs_by_path.getOrElse(path, Seq.empty)
-  if (entries.isEmpty) {
-    System.err.println(s"WARN: wantedteam customs missing md5s for $path")
-  }
-  entries.map(e =>
-    val isAtari = title.contains(" ST ") || e.path.contains(" ST") || e.path.endsWith("ST") || e.path.contains("MYST_")
-    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year, "", if (isAtari) "Atari" else "Amiga")
-  )
 }).get.distinct.seq
 
 lazy val wantedteam_examples_by_path =
@@ -247,9 +264,9 @@ lazy val examples = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE.lzx/") || e.path.contains("ST.lzx/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_")
+        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE.lzx/") || e.path.contains("ST.lzx/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_") || publishers.contains("Inner Circle")
         val isPC = e.path.endsWith("PC")
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
+        WantedTeamMeta(e.md5, e.path, filesize, authors.sorted.distinct, album, publishers.sorted.distinct, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty
@@ -314,15 +331,17 @@ lazy val rips = {
     } else {
       // no available metadata or ambiguous
     }
+    // XXX
+    authors = authors.map(_.replace("Gian Luca0Gaiba", "Gian Luca Gaiba"))
     val entries = wantedteam_rips_by_path.getOrElse(path, Seq.empty)
     if (entries.isEmpty) {
         System.err.println(s"WARN: wantedteam rips missing md5s for $path")
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST")
+        val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST") || publishers.contains("Inner Circle")
         val isPC = e.path.contains("MOD_StarControl2")
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
+        WantedTeamMeta(e.md5, e.path, filesize, authors.sorted.distinct, album, publishers.sorted.distinct, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty

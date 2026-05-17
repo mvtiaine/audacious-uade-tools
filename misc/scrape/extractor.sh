@@ -226,7 +226,7 @@ manage_pids_wait _pids 1
 # ancient (single file)
 for i in {1..2}; do
   echo "Extracting ancient ($i/2) ..."
-  gfind -L . -type f -size +0c -print0 | xargs -0 -P "$NPROC" -n 1 ancient i 2>&1 \
+  gfind -L . -type f -size +0c -print0 | xargs -0 -P "$NPROC" -n 1 sh -c 'ancient i "$1" || true' _ 2>&1 \
   | grep \
     -e '^Compression of ' \
   | gsed \

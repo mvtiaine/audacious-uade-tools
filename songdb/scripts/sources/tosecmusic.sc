@@ -95,8 +95,22 @@ final case class TosecMeta(
   publishers: Buffer[String],
   album: String,
   year: Int,
-  _type: String
+  _type: String,
+  _platform: String
 )
+
+def ignoreAuthors(path: String): Boolean = {
+  path.startsWith("Games - AON") ||
+  path.startsWith("Games - BP") ||
+  path.startsWith("Games - FRED") ||
+  path.startsWith("Games - MED") ||
+  path.startsWith("Games - MOD") ||
+  path.startsWith("Music - Games - ML") ||
+  path.startsWith("Music - Games - OKT") ||
+  path.startsWith("Music - Games - Covers") ||
+  path.startsWith("Music - Games - Cracktro") ||
+  path.split("/").last.startsWith("ZZZ")
+}
 
 def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   val authors = Buffer.empty[String]
@@ -121,7 +135,8 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   */
 
   val isSceneMusic = path.startsWith("Music - Scene")
-  val isCovers = path.startsWith("Music - Games - Covers/")
+  val isCovers = path.startsWith("Music - Games - Covers")
+  val isCracktro = path.startsWith("Music - Games - Cracktro")
   
   // Extract all parentheses content
   val allMatches = allParenthesesPattern.findAllMatchIn(path).map(_.group(1)).toList
@@ -244,17 +259,17 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
         // Album is only the part before first ( or [
         val cleanAlbum = rawAlbum.split("[\\(\\[]")(0).trim
         val normalizedAlbum = normalizeAlbumName(cleanAlbum)
-        // Add "(cracktro)" suffix if path contains "/Cracktro/"
-        album = if (path.startsWith("Music - Games - Cracktro/")) {
-          s"$normalizedAlbum (cracktro)"
+        // Add "[cracktro]" suffix if path contains "/Cracktro/"
+        album = if (isCracktro) {
+          s"$normalizedAlbum [cracktro]"
         } else {
           normalizedAlbum
         }
       case None =>
         albumNoSeparatorPattern.findFirstMatchIn(filename).foreach { m =>
           val normalizedAlbum = normalizeAlbumName(m.group(1).trim)
-          album = if (path.startsWith("Music - Games - Cracktro/")) {
-            s"$normalizedAlbum (cracktro)"
+          album = if (isCracktro) {
+            s"$normalizedAlbum [cracktro]"
           } else {
             normalizedAlbum
           }
@@ -268,12 +283,12 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   }
 
   if (publishers.size == 1 && publishers.head == "JMP") {
-    publishers.clear
+    publishers.clear()
     authors += "JMP"
   }
   
   if (authors.size == 1 && authors.head == "Fire by HMW") {
-    authors.clear
+    authors.clear()
     authors += "HMW"
   }
 
@@ -290,8 +305,12 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
     album = ""
   }
 
-  val meta = TosecMeta(authors.filterNot(_.trim.isEmpty).sorted.distinct, composers.filterNot(_.trim.isEmpty).sorted.distinct, publishers.filterNot(_.trim.isEmpty).sorted.distinct, album.trim, year, _type = if (path.contains("Games -")) "Game" else "Demo")
-  
+  val _authors = if (ignoreAuthors(path)) Buffer.empty else authors.filterNot(_.trim.isEmpty).sorted.distinct
+  val _composers = composers.filterNot(_.trim.isEmpty).sorted.distinct
+  val _type = if (path.contains("Games -") && !isSceneMusic && !isCovers && !isCracktro) "Game" else if (path.contains("Demos -")) "Demo" else ""
+  val _platform = if (path.contains("Demos - XM") || path.contains("Demos - 669") || path.contains("Demos - IT") || path.contains("Demos - S3M")) "PC" else if (path.contains("Demos - ") || _type == "Game") "Amiga" else ""
+  val _publishers = publishers.filterNot(_.trim.isEmpty).sorted.distinct
+  val meta = TosecMeta(_authors, _composers, _publishers, album.trim, year, _type, _platform)
   if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
     return None
   } else {

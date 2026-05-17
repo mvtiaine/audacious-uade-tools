@@ -131,13 +131,17 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
   metas
 ).distinct.seq
 
-def transformAuthors(meta: OldExoticaMeta): Buffer[String] = {
+def transformAuthors(meta: OldExoticaMeta, _type: String): Buffer[String] = {
   var author = meta.author_handle
   if (author.endsWith("N/A") || author.endsWith("?") || author.endsWith("Various")) return Buffer.empty
+  // XXX
+  if (author == "Jumping Jack Flash") return Buffer.empty
   if (author.startsWith("(") && author.endsWith(")")) {
     author = author.substring(1, author.length - 1).trim
   }
-  if (author.contains(" (") && author.endsWith(")")) {
+  if (_type == "Game" && author.contains(" (") && author.endsWith(")")) {
+    author = author.split(" \\(").head.trim
+  } else if (author.contains(" (") && author.endsWith(")")) {
     author = author.split(" \\(").tail.head.replaceAll("\\)", "").trim
   }
   if (author.split("/").length > 1) {
@@ -173,6 +177,8 @@ def transformPublishers(meta: OldExoticaMeta): Buffer[String] = {
     publisher = "Motorola Inside";
   } else if (meta.name_source == "THX IRC Compo") {
     publisher = "THX IRC Compo";
+  } else if (meta.name_source == "Jumping Jack Flash") {
+    publisher = "Jumping Jack Flash";
   }
   if (publisher.endsWith("N/A") ||
       publisher.endsWith("?") ||
@@ -263,6 +269,10 @@ def transformAlbum(meta: OldExoticaMeta): String = {
     album = ""
   } else if (album == "THX IRC Compo") {
     album = ""
+  // XXX
+  } else if (album == "Sonolumineszenz") {
+    album = ""
   }
+  
   album
 }

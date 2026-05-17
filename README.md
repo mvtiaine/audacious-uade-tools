@@ -1,12 +1,10 @@
-:warning: Repository history was recently filtered with git-filter-repo to reduce size, so recloning is needed. Also audio fingerprint TSVs are now separate downloads. Sorry for any inconvenience.
-
 # audacious-uade-tools
 
 This repo contains Scala CLI scripts for generating songdb TSV files used by [audacious-uade](https://github.com/mvtiaine/audacious-uade).
 
 Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
-The database contains songlengths and module infos for around 440000 unique MD5s, and metadata (authors/album/publishers/year) for 350000, coming from 1.6M+ files in over 100 sources.
+The database contains songlengths and module infos for around 460000 unique MD5s, and metadata (authors/album/publishers/year) for 360000, processed from over 380 sources.
 
 ## Directories
 

@@ -25,7 +25,9 @@ final case class ModsAnthologyMeta (
   authors: Buffer[String],
   publishers: Buffer[String],
   album: String,
-  year: Option[Int]
+  year: Option[Int],
+  _type: String,
+  _platform: String
 )
 
 val authorPatterns = Seq(
@@ -780,6 +782,14 @@ val albumPatterns = Seq(
   "^[Bb]y \\?\\?\\?/\\w+ [Ff]rom (\\w+ \\w+) [Ll]oader$".r,
 )
 
+def isGame(comment: String) = {
+  comment.contains("From the game \"") ||
+  comment.contains("Used in the game ") ||
+  comment.contains("Initially for a game ") ||
+  comment.contains("little game ") ||
+  comment.contains("made for a game")
+}
+
 def parseAlbum(_album: String, _publishers: Buffer[String], comment: String) = {
   var album = _album
   var publishers = _publishers
@@ -1372,7 +1382,7 @@ def parsePartyYear(_year: Option[Int], comment: String) = {
 def parseParty(_album: String, publishers: Buffer[String], _publisherPattern: String, _year: Option[Int], comment: String)
   : (String, Buffer[String], String, Option[Int]) = {
   var album = _album
-  var album_ = " "
+  var album_ = ""
   var year = _year
   var publisherPattern = _publisherPattern
   if (publishers.isEmpty && !comment.toLowerCase.contains(" demo ") && !comment.toLowerCase.contains(" intro ") &&
@@ -1774,9 +1784,57 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     album = ""
     //publishers = Buffer.empty
   }
-  if (album == "Sound of Gnome") {
+  if (album == "Sound of Gnome")
     album = "Sounds of Gnome"
+  if (album == "Conscience")
+    album = "Where Is My Conscience?"
+  if (album == "Sounds of Silents")
+    album = "Sound of Silents"
+  if (album == "Gen 4")
+    album = "Generation 4 Demo"
+  if (album == "Human Excrement")
+    album = "Toilet Human Excrement"
+  if (album == "Pig")
+    album = "Little Pig"
+  if (album == "The Basement Material")
+    album = "The Basement Material - Volume 1"
+  if (album == "Endless-Melodies")
+    album = "Endless Melodies"
+  if (album == "Fool's Gold")
+    year = Some(1991)
+  if (album == "Imphobia 11")
+    year = Some(1995)
+  if (album == "Chip in Paris 1")
+    year = Some(1995)
+  if (album == "Chromagic #1")
+    year = Some(1993)
+  if (album == "Outlaw #2")
+    year = Some(1994)
+  if (album == "Non Sense")
+    year = Some(1996)
+  if (album == "Mirror")
+    year = Some(1992)
+  if (album == "Grapevine #19")
+    year = Some(1994)
+  if (album == "Grapevine 20")
+    year = Some(1994)
+  if (album == "Music Land 1")
+    year = Some(1993)
+  if (album == "R.A.W 2")
+    year = Some(1992)
+  if (album == "Tune-Disk")
+    year = Some(1991)
+  if (album == "Megademo IV")
+    year = Some(1990)
+  if (album == "Chromagic #2") {
+    album = ""
+    publishers = Buffer.empty
   }
+  if (album == "Journey 3")
+    album = ""
+  if (album == "Dizzy Tunes 2" && publishers.contains("Rendezvous"))
+    album = ""
+
   authors = authors
     .filterNot(_.toLowerCase == "the")
     .filterNot(_ == "Jimi Hendrix")
@@ -1792,6 +1850,7 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     .map(a => if (a == "Night") "Night of Sounds" else a)
     .map(a => if (a == "Raazzzzzmmmoooooo") "Razmo" else a)
     .map(a => if (a == "Trap Bonzai") "Trap" else a)
+    .map(a => if (a == "Fasjer") "Fajser" else a)
   (authors, album, publishers, year)
 }
 
@@ -1804,7 +1863,7 @@ lazy val maz2txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ2-Autho
 lazy val maz3txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ3-Authors(R-Z).txt").toFile
 
 def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
-  val lines = s.getLines
+  val lines = s.getLines()
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
   }
@@ -1880,7 +1939,9 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
           authors.sorted,
           publishers = Buffer.empty,
           album = "",
-          year = None
+          year = None,
+          _type = "",
+          _platform = ""
         )
         break()
       }
@@ -1951,14 +2012,17 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
       year = parsePartyYear(year, comment)
 
       val (album_, publishers__, publisherPattern__, year_) = parseParty(album, publishers, publisherPattern, year, comment)
+      var isParty = album_.isEmpty && publishers__.nonEmpty
       album = album_
       publishers = publishers__
       publisherPattern = publisherPattern__
       year = year_
 
       val (album__, albumPattern, publishers___) = parseAlbum(album, publishers, comment)
+      isParty = isParty && album__.isEmpty
       album = album__
       publishers = publishers___
+      if (album.nonEmpty && isParty) publishers --= publishers__
  
       // quirks
 
@@ -1979,7 +2043,17 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
         authors_.sorted,
         publishers.sorted,
         album,
-        year
+        year,
+        _type =
+          if (isGame(comment)) "Game"
+          else if (album.isEmpty && isParty) "Compo"
+          else if (album.nonEmpty) "Demo"
+          else "",
+        _platform =
+          if (album.nonEmpty)
+            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            else "Amiga"
+          else ""
       )
     } else {
       //println(s"Skipping: $line")
@@ -1991,7 +2065,7 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
 lazy val maz4txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ4-Groups.txt").toFile
 
 def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
-  val lines = s.getLines
+  val lines = s.getLines()
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
   }
@@ -2245,6 +2319,8 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
           publishers = normalizePublishers(publishers, authors, None).sorted,
           album,
           year,
+          _type = if (album.nonEmpty) "Demo" else "",
+          _platform = if (album.nonEmpty) "Amiga" else ""
         )
         break()
       }
@@ -2295,8 +2371,10 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
       val (album_, albumPattern, _) = parseAlbum(album, Buffer.empty, comment)
       album = album_
   
+      var isParty = false
       if (album.isEmpty) {
         val (album__, publishers_, publisherPattern_, year_) = parseParty(album, Buffer.empty, publisherPattern, year, comment)
+        isParty = album__.isEmpty && publishers_.nonEmpty
         album = album__.trim
         publishers = if (publishers_.isEmpty) publishers else publishers_
         publisherPattern = publisherPattern_
@@ -2321,7 +2399,17 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
         authors.sorted,
         publishers.sorted,
         album,
-        year
+        year,
+        _type =
+          if (isGame(comment)) "Game"
+          else if (album.isEmpty && isParty) "Compo"
+          else if (album.nonEmpty) "Demo"
+          else "",
+        _platform =
+          if (album.nonEmpty)
+            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            else "Amiga"
+          else ""
       )
     } else {
       //println(s"Skipping: $line")
@@ -2332,7 +2420,7 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
 
 lazy val maz5txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ5-Misc.txt").toFile
 def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
-  val lines = s.getLines
+  val lines = s.getLines()
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
   }
@@ -2349,10 +2437,12 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
   var pathPrefix = ""
   var stickyPublishers = Buffer.empty[String]
   var stickyYear: Option[Int] = None
+  var isParty = false
   while (lines.hasNext) boundary {
     val line = lines.next().trim
 
     if (line.startsWith("MAZ5:Compos")) {
+      isParty = true
       pathPrefix = line.split(":")(1).split("/").drop(1).mkString("/")
       line match {
         case "MAZ5:Compos/20mc" => stickyPublishers = Buffer("20 Minute ChipTune Compo")
@@ -2413,6 +2503,7 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
       pathPrefix = line.split(":")(1)
       stickyPublishers = Buffer.empty
       stickyYear = None
+      isParty = false
 
     } else if (line.matches(".*\\..*\\s+[0-9]+.*")) {
       var parts = line.split("\\s+")
@@ -2465,6 +2556,8 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
             publishers = normalizePublishers(publishers, authors, None).sorted,
             album,
             year,
+            _type = if (album.isEmpty && isParty) "Compo" else if (album.nonEmpty) "Demo" else "",
+            _platform = if (album.nonEmpty) "Amiga" else ""
           )
         }
         break()
@@ -2534,8 +2627,10 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
       val (album_, albumPattern, _) = parseAlbum(album, Buffer.empty, comment)
       album = album_
   
+      isParty = false
       if (album.isEmpty) {
         val (album__, publishers_, publisherPattern_, year_) = parseParty(album, Buffer.empty, publisherPattern, year, comment)
+        isParty = album__.isEmpty && publishers_.nonEmpty
         album = album__.trim
         publishers = if (publishers_.isEmpty) publishers else publishers_
         publisherPattern = publisherPattern_
@@ -2560,7 +2655,17 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
         authors.sorted,
         publishers.sorted,
         album,
-        year
+        year,
+        _type =
+          if (isGame(comment)) "Game"
+          else if (album.isEmpty && isParty) "Compo"
+          else if (album.nonEmpty) "Demo"
+          else "",
+        _platform =
+          if (album.nonEmpty)
+            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            else "Amiga"
+          else ""
       )
     } else {
       //println(s"Skipping: $line")
@@ -2571,7 +2676,7 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
 
 lazy val maz6txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ6-Synth.txt").toFile
 def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using scala.io.Codec.ISO8859))(s =>
-  val lines = s.getLines
+  val lines = s.getLines()
   boundary {
     for (line <- lines) if (line.startsWith("==> Directory of Mods-")) break()
   }
@@ -2701,8 +2806,10 @@ def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using 
       val (album_, albumPattern, _) = parseAlbum(album, Buffer.empty, comment)
       album = album_
   
+      var isParty = false
       if (album.isEmpty) {
         val (album__, publishers_, publisherPattern_, year_) = parseParty(album, Buffer.empty, publisherPattern, year, comment)
+        isParty = album__.isEmpty && publishers_.nonEmpty
         album = album__.trim
         publishers = if (publishers_.isEmpty) publishers else publishers_
         publisherPattern = publisherPattern_
@@ -2728,7 +2835,17 @@ def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using 
           authors.sorted,
           publishers.sorted,
           album,
-          year
+          year,
+          _type =
+            if (isGame(comment)) "Game"
+            else if (album.isEmpty && isParty) "Compo"
+            else if (album.nonEmpty) "Demo"
+            else "",
+          _platform =
+            if (album.nonEmpty)
+              if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+              else "Amiga"
+            else ""
         )
       } else {
         //println(s"Skipping: $line")

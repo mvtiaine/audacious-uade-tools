@@ -33,7 +33,8 @@ final case class TosecMeta(
   publishers: Buffer[String],
   year: Int,
   _type: String = "",
-  platform: String = "",
+  _platform: String = "",
+  _demoVersion: Boolean = false,
 )
 
 val tosecDir = System.getProperty("user.home") + "/sources/tosec/TOSEC/"
@@ -122,7 +123,7 @@ lazy val cuesDirs = Seq(
   //"Sony/PlayStation/Homebrew/Games/"
 )
 
-def normalizePlatform(platform: String): String = {
+private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Atari")) "Atari"
   else if (platform.startsWith("Commodore")) "Amiga"
   else if (platform.startsWith("IBM")) "PC"
@@ -134,7 +135,7 @@ lazy val titleSuffixPattern = """\s*\((demo-playable)\)\s*$""".r
 lazy val articlePattern = """^(.*), (The|A|An)\b(.*)""".r
 lazy val namePattern = """^([^,]+),\s*(.+)$""".r
 
-def normalizeTitle(title: String): String = {
+private def normalizeTitle(title: String): String = {
   // Remove demo-related suffixes
   val cleaned = titleSuffixPattern.replaceFirstIn(title, "").trim
   
@@ -144,7 +145,7 @@ def normalizeTitle(title: String): String = {
   }
 }
 
-def normalizePublisher(publisher: String): String = {
+private def normalizePublisher(publisher: String): String = {
   // Check if it's in "LastName, FirstName" format
   namePattern.findFirstMatchIn(publisher) match {
     case Some(m) => s"${m.group(2)} ${m.group(1)}"
@@ -161,7 +162,7 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
     val dat = XML.loadFile(f.toFile)
     (dat \ "game").flatMap(g =>
       val name = (g \ "@name").text.trim
-      val (title, year, publishers) = tosecPattern.findFirstMatchIn(name) match {
+      val (title, year, publishers, demoVersion) = tosecPattern.findFirstMatchIn(name) match {
         case Some(m) =>
           val rawTitle = m.group(1).trim
           val title = normalizeTitle(rawTitle)
@@ -172,10 +173,10 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
             .sorted.distinct
             .toBuffer
           val year = date.take(4).toIntOption.getOrElse(0)
-          if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
-          else (title, year, publishers)
+          if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty, false)
+          else (title, year, publishers, rawTitle.contains("(demo-playable)"))
         case None =>
-          ("", 0, Buffer.empty)
+          ("", 0, Buffer.empty, false)
       }
       if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
         val _type = if (f.getFileName.toString.contains(" - Games ")) "Game"
@@ -186,7 +187,8 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
           publishers,
           year,
           _type,
-          normalizePlatform(f.getFileName.toString)
+          normalizePlatform(f.getFileName.toString),
+          demoVersion
         )
         Some(meta)
       } else None
@@ -211,7 +213,7 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
   }
   files.flatMap(filename =>
     val name = filename.trim
-    val (title, year, publishers) = tosecPattern.findFirstMatchIn(name) match {
+    val (title, year, publishers, demoVersion) = tosecPattern.findFirstMatchIn(name) match {
       case Some(m) =>
         val rawTitle = m.group(1).trim
         val title = normalizeTitle(rawTitle)
@@ -222,10 +224,10 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
           .sorted.distinct
           .toBuffer
         val year = date.take(4).toIntOption.getOrElse(0)
-        if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
-        else (title, year, publishers)
+        if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty, false)
+        else (title, year, publishers, rawTitle.contains("(demo-playable)"))
       case None =>
-        ("", 0, Buffer.empty)
+        ("", 0, Buffer.empty, false)
     }
     if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
       val _type = if (dir.contains("/Games/")) "Game"
@@ -236,7 +238,8 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
         publishers,
         year,
         _type,
-        normalizePlatform(dir)
+        normalizePlatform(dir),
+        demoVersion
       )
       Some(meta)
     } else None
@@ -244,7 +247,20 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
 ).toSet.seq
 
 lazy val metas = datMetas ++ cuesMetas
-lazy val tosecMetas = metas.map(m =>
+lazy val tosecMetas = metas.flatMap(m =>
+  lazy val publishers = m.publishers.toSet
+  val dupes = metas.filter(d =>
+    m._demoVersion && !d._demoVersion &&
+    m.title == d.title &&
+    m._platform == d._platform &&
+    m._type == d._type &&
+    ((m.year != 0 && d.year != 0 && m.year != d.year) || (publishers.nonEmpty && d.publishers.nonEmpty && publishers.intersect(d.publishers.toSet).isEmpty))
+  )
+  if (dupes.nonEmpty) {
+    None
+  } else Some(m)
+)
+.map(m =>
   MetaData(
     hash = "",
     authors = Buffer.empty,
@@ -252,6 +268,6 @@ lazy val tosecMetas = metas.map(m =>
     album = m.title.trim,
     year = m.year,
     _type = m._type.trim,
-    _platform = m.platform.trim,
+    _platform = m._platform.trim,
   )
 )

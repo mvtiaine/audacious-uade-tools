@@ -39,7 +39,7 @@ final case class eXoDOSMeta(
 
 val dosmaster_tsv = System.getProperty("user.home") + "/sources/exodos/DOS_Master - DOS_Master.tsv"
 
-lazy val metas = Using(scala.io.Source.fromFile(dosmaster_tsv)(using scala.io.Codec.UTF8))(_.getLines.toBuffer.par.map { line =>
+lazy val metas = Using(scala.io.Source.fromFile(dosmaster_tsv)(using scala.io.Codec.UTF8))(_.getLines().toBuffer.par.map { line =>
   val l = line.split("\\t")
   eXoDOSMeta(
     game = l(2).trim,
@@ -55,7 +55,7 @@ lazy val articlePattern3 = """^(.*), (The|A|An|El) - (.*)""".r
 lazy val articlePattern4 = """^(.*), (The|A|An|El) / (.*)""".r
 lazy val articlePattern5 = """^(.*), (The|A|An|El): (.*)""".r
 
-def normalizeGame(s: String): String = {
+private def normalizeGame(s: String): String = {
   // Remove any text inside parentheses
   var normalized = s.trim.replaceAll("""\([^)]*\)""", "").trim
   // Move trailing article to front
@@ -82,7 +82,7 @@ def normalizeGame(s: String): String = {
   normalized
 }
 
-def normalize(s: String): Buffer[String] = {
+private def normalize(s: String): Buffer[String] = {
   // Remove any text inside parentheses
   var normalized = normalizeGame(s)
  

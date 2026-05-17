@@ -7,6 +7,9 @@
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
+import scala.concurrent.{Future, Await}
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.Using
 import java.io.File
 import java.io.FileInputStream
@@ -276,6 +279,7 @@ lazy val prods_metas = {
   }
 
   def parseMetas(prefix: String, prodRows: Buffer[ProdRow], index: Int) = {
+    val blacklist = Seq(("ST/", "racer.zip"))
     val metas = Buffer[FujiologyMeta]()
     val prodsByFilename = prodRows.groupBy(_.filename)
     sources.fujiology.filter(e => e.path.startsWith(prefix)).foreach{ e =>
@@ -285,7 +289,9 @@ lazy val prods_metas = {
       }
       var filename = e.path.split("/")(i).toLowerCase
       val prods = prodsByFilename.getOrElse(filename, Seq())
-      if (prods.size == 1) {
+      if (blacklist.contains((prefix, filename))) {
+        System.err.println(s"WARN: Fujiology ${prefix} PRODS ignoring blacklisted filename '${filename}'")
+      } else if (prods.size == 1) {
         val prod = prods.head
         metas += FujiologyMeta(
           md5 = e.md5,
@@ -395,7 +401,7 @@ lazy val mags_metas = {
   metas
 }
 
-lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).flatMap { e =>
+lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).par.flatMap { e =>
   val dirs = e.path.split("/")
   val competitions = Seq("CHIPTUNE", "F030MSX", "M1CH", "M4CH", "M8CH", "MMUL", "MP3", "MSX", "NONMUSIC", "ST-00")
   val compo = dirs(3)
@@ -412,4 +418,18 @@ lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).f
   } else None
 }
 
-lazy val metas = (music_metas ++ prods_metas ++ party_metas ++ mags_metas)
+lazy val metas = {
+  val musicFuture = Future { music_metas }
+  val prodsFuture = Future { prods_metas }
+  val partyFuture = Future { party_metas }
+  val magsFuture = Future { mags_metas }
+  
+  val combined = for {
+    m <- musicFuture
+    p <- prodsFuture
+    pa <- partyFuture
+    ma <- magsFuture
+  } yield m ++ p ++ pa ++ ma
+  
+  Await.result(combined, Duration.Inf)
+}

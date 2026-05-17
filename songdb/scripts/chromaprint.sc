@@ -41,9 +41,63 @@ object FpChunker {
   }
 }
 
+def isSilentChunk(chunk: Array[Int], len: Int, offset: Int = 0): Boolean = {
+  var totalBits = 0
+  var zeroCount = 0
+  val uniqueValuesSet = scala.collection.mutable.HashSet[Int]()
+  var i = 0
+  while (i < len) {
+    val v = chunk(offset + i)
+    totalBits += Integer.bitCount(v)
+    if (v == 0) zeroCount += 1
+    uniqueValuesSet += v
+    i += 1
+  }
+  val totalPossibleBits = len * 32
+  val setBitRatio = totalBits.toDouble / totalPossibleBits
+  val uniqueValues = uniqueValuesSet.size
+  val repetitionRatio = uniqueValues.toDouble / len
+  val zeroRatio = zeroCount.toDouble / len
+  setBitRatio < 0.005 || zeroRatio > 0.9 || (setBitRatio < 0.02 && repetitionRatio < 0.05) || uniqueValues <= 2
+}
+
+def isSilentFingerprint(length: Int, chunks: Array[Array[Int]]): Boolean = {
+  if (length == 0) return true
+  var c = 0
+  while (c < chunks.length) {
+    val chunk = chunks(c)
+    val len = if (c == chunks.length - 1) length - c * FpChunker.chunkSize else chunk.length
+    if (!isSilentChunk(chunk, len)) return false
+    c += 1
+  }
+  true
+}
+
+def isSilentFingerprint(data: Array[Int]): Boolean = {
+  if (data.isEmpty) return true
+  val chunkSize = FpChunker.chunkSize
+  var start = 0
+  while (start < data.length) {
+    val len = math.min(chunkSize, data.length - start)
+    if (!isSilentChunk(data, len, start)) return false
+    start += chunkSize
+  }
+  true
+}
+
 final class FP (val algo: Int, rawData: Array[Int]) {
   val length: Int = rawData.length
   val chunks: Array[Array[Int]] = FpChunker.chunkify(rawData)
+  lazy val isSilent: Boolean = isSilentFingerprint(length, chunks)
+  
+  lazy val contentBounds: (Int, Int) = {
+    val chunkSize = FpChunker.chunkSize
+    var s = 0
+    while (s < chunks.length && isSilentChunk(chunks(s), if (s == chunks.length - 1) length - s * chunkSize else chunks(s).length)) s += 1
+    var e = chunks.length - 1
+    while (e >= s && isSilentChunk(chunks(e), if (e == chunks.length - 1) length - e * chunkSize else chunks(e).length)) e -= 1
+    if (s > e) (0, 0) else (s * chunkSize, math.min(length, (e + 1) * chunkSize))
+  }
   
   def data: Array[Int] = {
     val arr = new Array[Int](length)
@@ -90,29 +144,39 @@ final class StringPair(val a: String, val b: String) {
 }
 val similarityCache = new ConcurrentHashMap[StringPair, java.lang.Double]()
 
-def chromaSimilarity(chromaprint1: String, chromaprint2: String): Double = {
+def chromaSimilarity(chromaprint1: String, chromaprint2: String, matchSilence: Boolean = false): Double = {
   if (chromaprint1 == chromaprint2) {
     return 1.0
   }
-  val cp1 = if (chromaprint1 < chromaprint2) chromaprint1 else chromaprint2
-  val cp2 = if (chromaprint1 < chromaprint2) chromaprint2 else chromaprint1
+  val isLess = chromaprint1 < chromaprint2
+  val cp1 = if (isLess) chromaprint1 else chromaprint2
+  val cp2 = if (isLess) chromaprint2 else chromaprint1
   val key = new StringPair(cp1, cp2)
   val cached = similarityCache.get(key)
-  if (cached != null) return cached.doubleValue
-  similarityCache.computeIfAbsent(key, _ => {
+  val sim: Double = if (cached != null) cached.doubleValue else similarityCache.computeIfAbsent(key, _ => {
     val fp1 = decodeChromaprint(cp1)
     val fp2 = decodeChromaprint(cp2)
     assert(fp1.algo == fp2.algo)
-    chromaSimilarityFast(fp1.algo, fp1.length, fp1.chunks, fp2.algo, fp2.length, fp2.chunks)
+    val (s1, e1) = fp1.contentBounds
+    val (s2, e2) = fp2.contentBounds
+    chromaSimilarityFast(fp1.algo, s1, e1, fp1.chunks, fp2.algo, s2, e2, fp2.chunks)
   })
+  
+  if (!matchSilence && (decodeChromaprint(cp1).isSilent || decodeChromaprint(cp2).isSilent)) {
+    0.0
+  } else {
+    sim
+  }
 }
 
 def chromaSimilarityFast(
   algo1: Int,
-  len1: Int,
+  start1: Int,
+  end1: Int,
   data1: Array[Array[Int]],
   algo2: Int,
-  len2: Int,
+  start2: Int,
+  end2: Int,
   data2: Array[Array[Int]],
   fuzziness: Int = 3
 ): Double = {
@@ -129,8 +193,8 @@ def chromaSimilarityFast(
     var prevSimilarity = zeroSimilarity
     while (oi <= fuzziness && (maxSimilarity <= 0.0 || (maxSimilarity > 0.6 && maxSimilarity < 0.99))) {
       val offset = if (pass == 0) oi else -oi
-      val iStart = Math.max(0, -offset)
-      val iEnd = Math.min(len1, len2 - offset)
+      val iStart = Math.max(start1, start2 - offset)
+      val iEnd = Math.min(end1, end2 - offset)
       var totalScore = 0
       var overlap = 0
       var i = iStart
@@ -144,7 +208,8 @@ def chromaSimilarityFast(
         i += 1
       }
 
-      if (overlap > 0) {
+      val minOverlap = math.min(8, math.min(end1 - start1, end2 - start2) / 2)
+      if (overlap >= minOverlap && overlap > 0) {
         val similarity = totalScore.toDouble / (overlap * 32.0)
         if (similarity < prevSimilarity) {
           oi = fuzziness // break early

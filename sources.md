@@ -4,21 +4,30 @@ Sources used for the database:
 
 #### Site
 
+- **Amegas** - https://www.exotica.org.uk/mirrors/amegas/
+- **AMI Sector One** - https://www.exotica.org.uk/mirrors/ami_sector_one/
 - **Amiga Music Preservation (AMP)** - https://amp.dascene.net/
 - **AmigaMega** - https://amigamega.com/
 - **AmigaMuseum** - http://amiga.art.free.fr/
 - **amigascne.org** - https://www.amigascne.org/
 - **Aminet** - https://aminet.net/
+- **arcade.demon.co.uk** - https://archive.org/details/ftpsites_arcade.demon.co.uk_2013.06.17
+- **archives.thebbs.org** - https://archive.org/details/archives_thebbs_org
 - **artpacks.acid.org** - https://files.scene.org/browse/mirrors/artpacks/
 - **artscene.textfiles.com** - http://artscene.textfiles.com/
+- **Atari FTP** - https://archive.org/details/ATARI_FTP_0693
 - **chiptune.com** - http://chiptune.com/
 - **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
 - **Demodulate** - https://demodulate.scene.org/
 - **Demozoo** - https://demozoo.org/
 - **ExoticA (old)** - http://old.exotica.org.uk/
 - **flerp.scene.hu** - https://files.scene.org/browse/mirrors/flerp/
+- **ftp.funet.fi** - https://www.nic.funet.fi/
 - **ftp.klosz.art.pl** - https://files.scene.org/browse/mirrors/ftp_klosz_art_pl/
 - **Fujiology** - https://fujiology.untergrund.net/
+- **Hacked Amiga Music (HAM)** - https://www.exotica.org.uk/mirrors/hackedamigamusic/
+- **Hobbes OS/2 Archive** - https://hobbes.infania.net/
+- **jPV Scene Releases** - https://web.archive.org/web/20251124170924/http://jpv.wmhost.com/releases/
 - **Modland** - http://ftp.modland.com/
 - **modules.pl** - https://www.modules.pl/
 - **mod.haxor.fi** - https://mod.haxor.fi/
@@ -26,6 +35,7 @@ Sources used for the database:
 - **Retro eXo** - https://www.retro-exo.com/
 - **scenesp.org** - https://files.scene.org/browse/mirrors/scenesp.org/
 - **Scene.org** - https://scene.org/
+- **Sembiance** - https://sembiance.com/
 - **Stone Oakvalley's Amiga Music Collection (SOAMC=)** - https://www.paula8364.com
 - **The Hornet Archive** - https://www.hornet.org/
 - **The Mod Archive** - https://modarchive.org/
@@ -37,32 +47,43 @@ Sources used for the database:
 #### Archive / Collection / Pack
 
 - **1996MODS** - https://archive.org/details/1996MODS
+- **ACCUG Archive** - https://archive.org/details/ACCUG_ARCHIVE
 - **Altered Perception Archive** - https://ftp.modland.com/incoming/delivery%20bay/2023-10-20_Altered_Perception_Archive/
 - **Ambmod** - https://files.scene.org/browse/mirrors/scenesp.org/compilations/ambmod/
 - **Amiga - Play It By Year Collection** - https://archive.org/details/amiga-play-it-by-year-collection
+- **Amiga Nuts Crunched Modules** - https://grandis.nu/turran/FTP/Collection/Compilation/Disk/Amiga%20Nuts%20Crunched%20Modules/
+- **AOL File Library** - https://archive.org/details/aol-file-protocol-4400-2501-to-2600 + 2901-to-3000 + 3101-to-3300 + 3601-to-3700
 - **Celic Modules** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Moduly/
+- **DemonHellraiser Modules** - https://grandis.nu/turran/FTP/Collection/Music/Mod/
 - **DFX Collection** - https://archive.org/details/amiga_iso_collection
+- **Esprit de Apple Corps** - https://archive.org/details/esprit-de-apple-corps
 - **Fred / The Gang 2014 Amiga Collection** - https://grandis.nu/turran/FTP/Collection/Compilation/Fred_TheGang_2014_Amiga_Collection/Music%20-%20Unsorted/
+- **JBB Soft Modules (1-206)** - https://grandis.nu/turran/FTP/Collection/PD/RiSe%20PD%20Collection/JBB%20Soft%20Modules%20(1-206)/
 - **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
-- **Mazzive Injection tracked worx '98** - https://ftp.scene.org/pub/demos/compilations/mazzive_injection_traxed_worx/
 - **melcom's Chiptune Archive** - https://files.scene.org/browse/music/compilations/
-- **modiromppu** - https://archive.org/details/modiromppu
-- **Modplanet** - https://files.scene.org/browse/mirrors/scenesp.org/compilations/modplanet/
+- **Metin Seven's Amiga module collection** - https://archive.org/details/amiga-music-module-collection
+- **Mods Collection By Deck/Scoopex v1.31** - https://www.sitkee.com/mods.zip
 - **Modules in JP** - https://archive.org/details/jp-mod-music
 - **Moduly PL** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Scena/Modules/
 - **mod_jp** - https://archive.org/details/jp-mod-music
 - **Mr.Oherd Tracker Music Pack** - https://archive.org/details/mytrackermusicpack
 - **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
 - **Retroplay WHDLoad Packs** - https://grandis.nu/turran/FTP/Retroplay%20WHDLoad%20Packs/
+- **Sonix CD Player** - https://grandis.nu/turran/FTP/Collection/PD/RiSe%20PD%20Collection/sonixcd_archived/
+- **TCD Game Mods** - https://grandis.nu/turran/FTP/Collection/Music/Mod/
 - **The Scene Archives** - https://files.scene.org/browse/mirrors/the_scene_archives/
+- **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
+- **Terry Green PD Library** - https://grandis.nu/turran/FTP/Collection/PD/
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
+- **Wanted Team DAT Tapes** - https://grandis.nu/turran/FTP/Collection/Polish/Compilation/Wanted%20Team%20DAT%20Tapes/
 
-- **Unnamed** - `Amiga_Cracktros_Modules.rar`, `Amiga_Cracktros_Modules2.zip`, `Amiga_GameMusic.rar`, `Amiga_Games_Modules.rar`, `Amiga.Music`, `Other Amiga Music.7z` - https://amigamuseum.emu-france.info/Fichiers/Musiques/Modules/ - https://grandis.nu/turran/FTP/Collection/Music/Misc/
+- **Unnamed** - `Amiga_Cracktros_Modules.rar`, `Amiga_Cracktros_Modules2.zip`, `Amiga_GameMusic.rar`, `Amiga_Games_Modules.rar`, `Amiga.Music`, `Other Amiga Music.7z`, `Modules.zip`, `Muzyka.zip` - https://amigamuseum.emu-france.info/Fichiers/Musiques/Modules/ - https://grandis.nu/turran/FTP/Collection/Music/Misc/ - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/AmigaScene/
 
 And my old Amiga mod collection.
 
 #### Group / Label
 
+- **Chill Productions** - https://www.chillproductions.com/
 - **dA JoRMaS** - http://www.jormas.com
 - **kosmic.darkscape.net** - https://files.scene.org/browse/mirrors/kosmic/
 - **Netlabel Archive** - https://netlabelarchive.org/
@@ -73,59 +94,204 @@ And my old Amiga mod collection.
 
 - **BlasterSound BBS** - https://demozoo.org/bbs/507/
 - **MBnet Apaja** - https://archive.org/details/modit
+- **Rat's Nest** - https://archive.org/details/ratsnest1
+- **Russian BBS archive** - https://archive.org/details/rusbbsa
+- **Starport BBS** - https://files.mpoli.fi/skene/
+- **The Arcade BBS** - http://cd.textfiles.com/arcadebbs/
 - **The Dark Corner BBS** - https://demozoo.org/bbs/13215/
+- **The Equalizer BBS** - https://archive.org/details/equalizer_bbs
 - **The MIDI and Multimedia Exchange BBS** - https://archive.org/details/digitaldataarchivemegamodmaddness
 
 #### CD / DVD
 
+- **17 Bit Software 1-2: Collection for Amiga CDTV** - https://archive.org/details/commodore_amiga_cdtv
+- **17 Bit Software 3: The Continuation Disc** - https://archive.org/details/commodore_amiga_cdtv
+- **17 Bit Software 4: Phase Four** - https://archive.org/details/17Bit_Phase_Four
+- **17 Bit Software 5: The Fifth Dimension** - https://archive.org/details/17-bit-the-fifth-dimension
+- **17 Bit Software 6: Level 6** - https://archive.org/details/17-bit-level-6
+- **500 MB Nyheder Direkte Fra Internet 1-8,11** - https://archive.org/details/500-mb-nyheder-direkte-fra-internet-cd-1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 11
+- **9000 Sounds** - https://archive.org/details/9000_Sounds_Chicago_Computer_Broker_CDRM1105170
+- **AB20 Amiga CDROM** - https://ftp2.grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/AB20/
+- **ACE Demo Collection Volume 1-4** - https://ftp.scene.org/pub/demos/compilations/ace_demo_collection_volume_1/ + 2 + 3 + 4
+- **Actor Sound & Graphics** - https://archive.org/details/kultcds_314
+- **Adventures In Heaven** - https://archive.org/details/cdrom-adventuresinheaven
+- **Amiga Aktuell** - https://archive.org/details/amiga-aktuell
+- **Amiga FD Inside!** - https://archive.org/details/amiga-fd-inside
+- **Amiga Tools 1-6** - https://archive.org/details/AmigaTools - https://archive.org/details/amiga-tools-2 + 3 + 4 + 5 - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
+- **AMOS PD CD** - https://archive.org/details/cdrom-amospdcd
+- **APDL Public Domain 2** - https://archive.org/details/cdrom-riscos-apdl-pd2a
+- **Assassins - Ultimate Games 1-4** - https://archive.org/details/assassins-ultimate-games-1 + 2 + 3 + 4
+- **Atari Forever Volume 1-2** - https://archive.org/details/atari-forever-1 + 2
+- **Atari Mega Archive Volume 1-2** - https://archive.org/details/atari-mega-archive-volume-1 + 2
+- **Audio MIDI - Collection of Audio Programs** - https://archive.org/details/ppcdcol-MULTINED98
+- **Audio vers 4.94** - https://archive.org/details/cdrom-audio-11000
+- **BCI NET 1-2** - https://archive.org/details/bci-net-dec-94 -  https://archive.org/details/bci-net-2
+- **Boston II** - https://archive.org/details/boston-2
+- **CD Exchange Volume 1** - https://archive.org/details/cd-exchange-volume-1
+- **CD Player numéro 6** - https://archive.org/details/Nova_CDPlayer6_FRA
+- **CD Ware Multimedia #3 (12/1994)** - https://archive.org/details/cd-ware-multimedia-3-12-1994
+- **CD-ROM Aktiv No 5 Sound Studio** - https://archive.org/details/cdm-5-96
+- **CEUS Online** - https://archive.org/details/ceus-online
+- **Chip Special: Sound Und Midi Auf Dem PC** - https://archive.org/details/chipspecialsoundcd
+- **Club Amiga de Montreal (CAM)** - https://archive.org/details/CAMCD/
+- **Creative Computers CD-ROM Volume 1** - https://archive.org/details/creativecomputerscdrom_vol1
 - **Da Capo Volume 1** - https://archive.org/details/cdrom-dacapo-1-amiga
+- **Der MediaPlex Sampler - Die 6 von Plex** - https://archive.org/details/6-v-plex
+- **Die Multimedia Power-CD** - https://archive.org/details/die-multimedia-power-cd
+- **Die Plex CD Vol.1-6** - https://archive.org/details/plex-cd-1 + 2 + 3 + 4 + 5 + 6
+- **Digital Symphony Masterpieces Collection** - https://archive.org/details/DigitalSymphonyMasterpiecesCollection
 - **Dr. Music** - https://archive.org/details/drmusic
 - **Dr. Music Lab I** - https://archive.org/details/dr-musiclab
 - **Dynamic Music Station** - https://archive.org/details/dynamic-music-station
-- **Euroscene 1** - https://aminet.net/package/demo/funet/Euroscene_1
-- **Euroscene 2** - https://aminet.net/package/demo/funet/Euroscene_2
+- **E.M.Computergraphic Phase 4** - https://archive.org/details/phase4
+- **Epic Collection 1** - https://archive.org/details/epic-collection
+- **Epic Collection 3** - https://archive.org/details/epic-collection-3
+- **EuroCD 3** - https://archive.org/details/euro-cd-3
+- **Euroscene 1-2** - https://aminet.net/package/demo/funet/Euroscene_1 + 2
+- **Explossion 3** - https://archive.org/details/experimental-bbs-explossion-iii
+- **Express Pd Galore: The Amiga PD & Shareware CD** - https://archive.org/details/express-pd-galore
+- **F1 Licenseware Volume One** - https://archive.org/details/f1-licenseware-volume-1
+- **Falcon 030 Power Volume 1-2** - https://archive.org/details/atarist-tce-f030-powercd-1 - https://archive.org/details/atarist-tce-f030-powercd-2
+- **Fish 'n' More 1-3** - https://archive.org/details/cdrom-fishnmore-1 + 3 - https://archive.org/details/cdrom-fishmorevolii
+- **Floppyshop 3-4,6-7,Select** - https://archive.org/details/floppyshop-3 + 4 + 6 + 7 + select
 - **Freedom CD** - https://ftp.scene.org/pub/demos/compilations/freedom_cd/
+- **French Storm Volume 1** - https://archive.org/details/french-storm-volume-1
+- **Fun & Games 2,4,9,10,13-15,19-21,30** - https://archive.org/details/fun-games-2 + 04 + 10 + 13 + 14 + 15 + 19 + 20 + 21 - https://archive.org/details/fun_games_nr_9 + 30
+- **GigaPD V2.1** - https://archive.org/details/gigapd-2-1
+- **GigaPD V3.0** - https://archive.org/details/AmigaGigaPDV3
+- **Grand Slam** - https://archive.org/details/grandslamvolume1
+- **Grand Slam Vol. 3** - https://archive.org/details/GrandSlam3
 - **Groovy Bytes Chapter One** - https://ftp.scene.org/pub/demos/compilations/groovy_bytes_chapter_1/
-- **Hot Sound & Vision** - https://archive.org/details/unica-hot-sound-and-vision
-- **Hot Sound & Vision 2** - https://archive.org/details/unica-hot-sound-and-vision-2
-- **Imphobia: Dreams** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams/
-- **Imphobia: Dreams 2** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams2/
+- **Hacker Chronicles vol 2** - https://archive.org/details/hackerchroniclesvol12-cd-rom
+- **Horror Sensation** - https://archive.org/details/horror_20200826
+- **Hot Scenestuff** - https://archive.org/details/cdrom-hotscenestuffzyklop1996
+- **Hot Shareware 1,17-18,34-36,38** - https://archive.org/details/hot-shareware-01 - https://archive.org/details/cd-hot-shareware-17 - https://archive.org/details/hot-18 - https://archive.org/details/hot-shareware-cd34 + 35 + 36 + 38
+- **Hot Sound & Vision 1-2** - https://archive.org/details/unica-hot-sound-and-vision - https://archive.org/details/unica-hot-sound-and-vision-2
+- **Hottest 4-6** - https://archive.org/details/cdrom-hottest4amigapd - https://archive.org/details/hottest-5 + 6
+- **Imphobia: Dreams 1-2** - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams/ - https://ftp.scene.org/pub/demos/compilations/imphobia_dreams2/
+- **Informatica Multimedia 1/96** - https://archive.org/details/cd-informatica-multimedia-enero-1996
+- **In’side Shareware 2/96** - https://archive.org/details/ish_2_96
+- **Koop Ook PC-Consument - Met Gratis** - https://archive.org/details/pcaktief
+- **Lazarus Amiga Decade** - https://archive.org/details/cd-2_20250828
+- **Leisure Game Pak 1-2** - https://archive.org/details/LeisureGamePakI - https://archive.org/details/lgp1ver2
+- **LSD and 17 Bit: Compendium Deluxe Vol 1-3** - https://archive.org/details/lsd-compendium-deluxe-1 + 2 + 3
+- **Magazyn Amiga CD1-11** - https://grandis.nu/turran/FTP/Collection/Polish/Non%20TOSEC-ISO%20CDs/AmigaCD/CoverCD/Magazyn%20Amiga%20CD/ - https://archive.org/details/macd-2 + 4 + 5 + 6 + 7 + 8 + 9
 - **Massive MOD Collection** - https://archive.org/details/massive-mod-collection
+- **Master of Music** - https://archive.org/details/1996_20211029
+- **MAX CD Sounds** - http://cd.textfiles.com/maxsounds/
 - **Maximum MODS** - https://archive.org/details/MaximumMODS_4200_MOD_Musical_Files
+- **Mazzive Injection Tracked Worx '97** - https://archive.org/details/mazzive-injection-tracked-worx.-7z
+- **Mazzive Injection Tracked Worx '98** - https://ftp.scene.org/pub/demos/compilations/mazzive_injection_traxed_worx/
+- **Mazzive Injection Tracked Worx '2k** - https://archive.org/details/mazzive-injection-tracked-worx-2k-disc-2
+- **Media Share 8** - https://archive.org/details/mediashare-08
+- **Mega A/V** - https://archive.org/details/megapack_3CD
+- **Mega CD-ROM 1-3** - https://archive.org/details/megacd_rom_1 - https://archive.org/details/megapack_3CD/ - https://archive.org/details/megapack2
+- **Mega Demo 1** - https://archive.org/details/MegaDemoCDRom1
+- **Mega Games 1** - https://archive.org/details/megapack2
+- **Megahits 1-5,6-7** - https://archive.org/details/MegaHitsVol.1 + 2 + 4 - https://archive.org/details/megahits-3 + 6 + 7
 - **MegaMODMadness** - https://archive.org/details/digitaldataarchivemegamodmaddness
+- **Megashare 2** - https://archive.org/details/megashare-2
+- **Megaware 19** - https://archive.org/details/megaware-19
+- **Midi & Wave WorkShop** - https://archive.org/details/Midi_and_Wave_Workshop_Powersource_Inc.
+- **Millennium Gold 2000** - https://archive.org/details/MillenniumGold2000
+- **Minerva II-IV** - https://archive.org/details/minerva2 + 3 + 4
+- **Mission 1,3** - https://archive.org/details/mission-1 + 3
+- **Mod4Win 2.30** - https://discmaster.textfiles.com/browse/14700
+- **modiromppu** - https://archive.org/details/modiromppu
+- **Modplanet** - https://files.scene.org/browse/mirrors/scenesp.org/compilations/modplanet/
 - **Mods Anthology** - https://archive.org/details/cdrom-amiga-mods-anthology-1 + 2 + 3 + 4
+- **Monkey Grafik & Sound** - https://archive.org/details/monkey-audio-06-1994
 - **Monstro** - http://web.archive.org/web/20021031112739fw_/http://members.easyspace.com/starman/freecd/monstro.htm
+- **MS DOS World Volume 2** - https://archive.org/details/EU-7035
+- **Multimedia-Galerie** - https://archive.org/details/MultimediaGalerieCarstenScheibe1993
+- **Multimedia Classic** - https://archive.org/details/multimedia-classic-cd
+- **Multimedia Explosion** - https://archive.org/details/100-4013
+- **MultiMedia EXPLOSION Shareware** - https://archive.org/details/MultiMediaExplosionShareware
+- **Multimédia la Compil' 2** - https://archive.org/details/sybex-multimedia-la-compil-2
+- **MultiMedia MegaHits Vol. 1** - https://archive.org/details/mmmh-v-01-1
+- **Multimedia Musicbox** - https://archive.org/details/multimedia-musicbox
+- **Multimedia Plus** - https://archive.org/details/multimedia-plus_202505
 - **Multimedia Sound Factory** - https://archive.org/details/usn-70-multimedia-sound-factory-the-ultimate-sound-cd-for-your-pc
+- **Multimedia Toolkit (Powersource)** - https://archive.org/details/multimedia-toolkit
+- **Multimedia Toolkit 1-2 (Weird Science)** - https://archive.org/details/TheWeirdScienceMultimediaToolkitAmigaComputingCoverdiscCDRom - https://archive.org/details/multimedia-toolkit-2
 - **Music 95** - https://archive.org/details/music95_uk_action/
 - **Music Box 1994** - https://archive.org/details/MusicBox1994
 - **Music Box PC** - https://archive.org/details/MusicBoxPC1995
 - **Music Mod & Sound Effect CD** - https://archive.org/details/noaen-tosec-iso-commodore-amiga
+- **Music Win 95 2** - https://archive.org/details/mwin952
+- **Network CD 1-2** - https://archive.org/details/network-cd - https://archive.org/details/network-cd-volume-2
+- **Newsflash CD ROM Issue 1-2** - https://archive.org/details/newsflashcd1 + 2
 - **Nightshift Sound & Vision** - https://archive.org/details/nightshift-sound-vision
-- **Power Modul Vol. 1** - https://archive.org/details/power-modul-1
-- **Power Modul Vol. 2** - https://archive.org/details/power-modul-2
+- **Octamed 6** - https://archive.org/details/octamed-6
+- **OctaMED SoundStudio v1** - https://archive.org/details/octa-med-sound-studio-v-1
+- **Otherware 1** - https://archive.org/details/Otherware_1_SB_Development
+- **PC Consument 1995 March** - https://archive.org/details/pcc2_95
+- **PC Magazine Cover #?** - https://archive.org/details/right_202310
+- **PD/Shareware 14000 Programs** - https://archive.org/details/PDShareware14000ProgramsPowersource1992
+- **Perseus** - https://archive.org/details/perseus_inlet_front
+- **Phoenix-CD Version 3.0-5.0** - https://archive.org/details/cdrinc_Phoenix_CD_Version_3.0 - https://archive.org/details/Phoenix_CD_40 - https://archive.org/details/PhoenixCD50
+- **Power Modul Vol. 1-2** - https://archive.org/details/power-modul-1 + 2
+- **Power On! Sound & Grafix Overdrive** - https://archive.org/details/power-onsago
+- **Prima Shareware 3** - https://archive.org/details/ducom-ps3
+- **Red Hot Shareware 93** - https://archive.org/details/redhot93_3cd
+- **Resource Library: Multimedia** - https://archive.org/details/ResourceLibraryMultimedia
+- **Scena PL EXE** - https://archive.org/details/cdrom-scenapl-1995-exe
 - **Scene 96** - https://ftp.scene.org/pub/demos/compilations/scene_96_international_edition/
+- **Scene Releases 1980 - 1995** - https://archive.org/details/scene-releases-1980-1995
 - **Scene Storm** - https://archive.org/details/cdrom-amigaformatcd13B-scene-storm
-- **Scene Xplorer 1** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
-- **Scene Xplorer 2** - https://archive.org/details/cdrom-scenexplorer2
+- **Scene Xplorer 1-2** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/ - https://archive.org/details/cdrom-scenexplorer2
+- **SCI-FI Sensation v2** - https://archive.org/details/sci-fi-sensation-v2_2
+- **Shareware Extravaganza** - https://archive.org/details/ShareWare_Extravaganza_1_of_4_The_Ultimate_Shareware_Company - https://archive.org/details/Shareware_Extravaganza_Over_25000_Programs_The_Ultimate_Shareware_Company_Disc_2 + 3 + 4
+- **Shareware Universe - The Gold Collection** - https://archive.org/details/shareware-universe-the-gold-collection
+- **Sights & Sounds 2 The Maxx** - https://archive.org/details/Maxx_Productions_Sights_And_Sounds_2_The_Maxx_Sharewares_Win31MSDOS_1993_Eng
+- **So Much Shareware! 1-3,5** - https://archive.org/details/so-much-shareware-v-1-1991/ - https://archive.org/details/SoMuchShareware2 - https://archive.org/details/So_Much_Shareware_3_Power_User_Software  - https://archive.org/details/So_Much_Shareware_5_CD-ROM_Power_User_Software_1995
+- **Software 2000** - https://archive.org/details/software-2000-cds
+- **Software Explosion** - https://archive.org/details/software-explosion
+- **Sound 1** - https://archive.org/details/cdrom_sound1
 - **Sound, Music & MIDI Collection 2** - https://archive.org/details/smmvol-2
-- **SoundMOD Volume One** - https://archive.org/details/soundmod-volume-1-pc-canada
-- **SoundMOD Volume Two** - https://archive.org/details/soundmod-volume-ii-pc-canada
-- **Sounds Terrific** - https://archive.org/details/sounds-terrific-1
-- **Sounds Terrific II** - https://archive.org/details/sounds-terrific-2
+- **Sound Collection** - https://archive.org/details/sound-collection
+- **Sound Software** - https://archive.org/details/ppcdcol-Sound
+- **Sound Studio** - https://archive.org/details/SoundStudioARI1995
+- **Soundblaster nr.17** - https://archive.org/details/sbcd-17
+- **SoundMOD Volume 1-2** - https://archive.org/details/soundmod-volume-1-pc-canada - https://archive.org/details/soundmod-volume-ii-pc-canada
+- **Sounds 1996** - https://archive.org/details/sounds-1996
+- **Sounds Terrific I-II** - https://archive.org/details/sounds-terrific-1 + 2
 - **SoundWare Collection** - https://archive.org/details/SoundWare_Collection_CMS_Software_Distributing_1993
+- **SPACE Library 1** - https://archive.org/details/space-library-1-volume-1
+- **TCE Demo CD #2** - https://archive.org/details/atarist-tce-democd-2
+- **TEKNO 1996 #5** - https://archive.org/details/tekno-5-1996
+- **TEKNO 1996 #6** - https://archive.org/details/tekno-6-1996
+- **TEKNO 1997 #1** - https://archive.org/details/tekno-1-1997
+- **TEKNO 1997 #4** - https://archive.org/details/tekno-4-1997
+- **TEKNO 1998 Music Mania** - https://archive.org/details/tekno-1998-music-mania
 - **Terra Sound Library** - https://archive.org/details/terra-sound-library
+- **The Best From The World Of Shareware** - https://archive.org/details/wosw_3
+- **The Best of Select: Multimedia Nr. 3-6**- https://archive.org/details/tbosmm3cd - https://archive.org/details/tbosmm4 - https://archive.org/details/mmcd-5 - https://archive.org/details/tbosmm6cd
+- **The Best of Select: Multimedia 15**- https://archive.org/details/bestofselectmm15
+- **The Best of Select: Multimedia 20**- https://archive.org/details/TheBestofSelectMultimedia20
+- **The CDPD Public Domain Collection for CDTV 1-2** - https://archive.org/details/cdrom-cdpd-vol1 + 2
+- **The Datafile PD CD 1B-4** - https://archive.org/details/datafile-pdcd-1-b - https://archive.org/details/cdrom-riscos-datafile-pdcd2 + 3 + 4
+- **The Demo Collection for Amiga CDTV Vol 1-2** - https://archive.org/details/commodore_amiga_cdtv
+- **The Elysian Archive** - https://archive.org/details/amiga-elysian-archive
+- **The Learning Curve** - https://archive.org/details/TheLearningCurve
 - **The Module Collection** - https://archive.org/details/TheModuleCollection1 + 2 + 3
 - **The Sound Library & Graphics Workshop** - https://grandis.nu/turran/FTP/TOSEC-ISO/CD/Commodore%20Amiga%20-%20CD%20-%20Multimedia%20-%20[ISO]/
-- **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
-- **The Ultimate Music & Sound Collection Vol. 1** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-1
-- **The Ultimate Music & Sound Collection Vol. 2** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-2
-- **The Weird Science Multimedia Toolkit** - https://archive.org/details/TheWeirdScienceMultimediaToolkitAmigaComputingCoverdiscCDRom
-- **The Weird Science Multimedia Toolkit 2** - https://grandis.nu/turran/FTP/TOSEC-ISO/CD/Commodore%20Amiga%20-%20CD%20-%20Multimedia%20-%20[ISO]/
-- **UGA Mod Collection 1** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
-- **UGA Mod Collection 2** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
+- **The Sound Site CDROM** - https://archive.org/details/The_Sound_Site_CD-ROM_Music_Files_from_the_Sound_Site_Archive_Island_CD_Creation
+- **The Soundblaster Multi Media Experience vol. 3-4** - https://archive.org/details/the-soundblaster-multimedia-experience-vol-3 + 4
+- **The Ultimate Music & Sound Collection Vol. 1-2** - https://archive.org/details/diamond-data-productions-the-ultimate-music-sound-collection-vol.-1 + 2
+- **Tools Unlimited Volume 1: The Blanker Collection** - https://archive.org/details/tools-unlimited-vol-1-the-blanker-collection
+- **UGA Mod Collection 1-2** - https://grandis.nu/turran/FTP/Non%20TOSEC-ISO%20CDs/AmigaCD/Compilation/
 - **Ultra Sounds 1** - https://www.wtsretro.dk/shop/andet/apple/spil-og-software-mac/ultra-sounds-1-pc-jewelcase/
-- **World of Sound** - https://archive.org/details/WorldofSound_1671503536330
-- **World of Sound volume II** - https://archive.org/details/us-dreams-usd-066-world-of-sound-volume-ii
+- **United Public Domain Gold 1-4** - https://archive.org/details/united-public-domain-gold-1 + 2 + 3 + 4
+- **Univers Interactif** - https://archive.org/details/universe-mac-interactif-cd-rom-box
+- **Utilities Professional 1-1500** - https://archive.org/details/utilities-professional-1-1500
+- **VGA Spectrum I-II** - https://archive.org/details/UGASpectrum - https://archive.org/details/VGAII_Spectrum
+- **Vrtulník 1-3** - https://archive.org/details/mt-vrtulnik + 2 + 3
+- **Whiteline: Transmission** - https://archive.org/details/whiteline-cd-series-transmission
+- **Workbench Add-On Volume 1** - https://archive.org/details/workbench-add-on-volume-1
+- **World of A1200** - https://archive.org/details/cdrom-world-of-a1200
+- **World of Amiga** - https://archive.org/details/world-of-amiga
+- **World of Sound volume I-II** - https://archive.org/details/WorldofSound_1671503536330 - https://archive.org/details/us-dreams-usd-066-world-of-sound-volume-ii
 
 #### Metadata only
 

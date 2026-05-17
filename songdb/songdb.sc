@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx56G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx64G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -10,6 +10,7 @@
 //> using file scripts/combine.sc
 //> using file scripts/xxh32.sc
 //> using file scripts/chromaprint.sc
+//> using file scripts/normalization.sc
 
 //> using file scripts/songlengths.sc
 //> using file scripts/sources/sources.sc
@@ -36,6 +37,7 @@ import scala.collection.parallel.CollectionConverters._
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 import scala.concurrent.Future
+import scala.jdk.CollectionConverters._
 import scala.util.Success
 import scala.util.Failure
 
@@ -75,31 +77,46 @@ var modsanthologydata: Buffer[MetaData] = Buffer.empty
 var tosecmusicdata: Buffer[MetaData] = Buffer.empty
 var fujiologydata: Buffer[MetaData] = Buffer.empty
 
-def dedupMeta(entries: Buffer[MetaData], name: String) = {
-  val dedupped = entries.groupBy(_.hash).flatMap { case (hash, metas) =>
+val globalLeftovers = new java.util.concurrent.ConcurrentLinkedQueue[MetaData]()
+
+def dedupMeta(entries: Buffer[MetaData], name: String): Buffer[MetaData] = {
+  val allMetas = entries.groupBy(_.hash).flatMap { case (hash, metas) =>
     if (metas.size > 1) {
       System.err.println(s"WARN: removing duplicate entries in ${name}, hash: ${metas.head.hash} entries: ${metas}")
     }
+    
+    val scoredMetas = metas.map(e => 
+      (e, (if (e.authors.nonEmpty) 1 else 0) + (if (e.publishers.nonEmpty) 1 else 0) + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))
+    )
+    val bestscore = scoredMetas.map(_._2).max
+    val bestMetasForScore = scoredMetas.filter(_._2 == bestscore).map(_._1)
+
     val SORT = "\u0001"
-    val meta = metas.sortBy(m => ("" +
+    val bestMeta = bestMetasForScore.sortBy(m => ("" +
      (if (m.year == 0) 9999 else m.year) + SORT +
      (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) + SORT +
      (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
      (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
     )).head
-    if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
+
+    val leftovers = metas.filter(_ != bestMeta)
+    leftovers.foreach(globalLeftovers.add)
+
+    val bestOpt = if (bestMeta.authors.isEmpty && bestMeta.publishers.isEmpty && bestMeta.album.isEmpty && bestMeta.year == 0) {
       None
     } else {
-      Some(MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year, meta._type, meta._platform))
+      Some(MetaData(hash, bestMeta.authors, bestMeta.publishers, bestMeta.album, bestMeta.year, bestMeta._type, bestMeta._platform))
     }
+    
+    bestOpt.toSeq
   }.toBuffer
-  dedupped
+  allMetas
 }
 
-def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false) = {
-  val entries = dedupMeta(_entries, name)
+def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false): Buffer[MetaData] = {
+  val dedupped = dedupMeta(_entries, name)
   // encoding does also deduplication
-  val encoded = encodeMetaTsv(entries, name, _md5idx)
+  val encoded = encodeMetaTsv(dedupped, name, _md5idx)
   val decoded = decodeMetaTsv(encoded, idx2md5)
   val pretty = createPrettyMetaTsv(decoded)
 
@@ -121,7 +138,7 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
   }
 
-  entries
+  dedupped
 }
 
 def _try[T](f: => T) = try {
@@ -226,26 +243,27 @@ lazy val modinfosTsvs = Future(_try {
 })
 
 lazy val ampTsvs = Future(_try {
-  val entries = amp.metas.groupBy(m => (m.md5, m.path)).par.map { case ((md5, path), m) =>
-    var best = m.head
-    if (m.size > 1) {
-      best = m.maxBy(_.extra_authors.size)
-    }
-    best
-  }.par.flatMap(m =>
-    val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
-    if (!(m.extra_authors.isEmpty && m.album.isEmpty)) {
-      Some(MetaData(
-        m.md5.take(12),
-        m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
-        Buffer.empty,
-        m.album,
-        0,
-        m._type,
-        if (m.album.endsWith(" PC")) "PC" else "",
-      ))
-    } else None
-  ).toBuffer.distinct
+  val entries = amp.details.par.flatMap(detail =>
+    detail.metas.groupBy(m => (m.md5, m.path)).map { case ((md5, path), m) =>
+      var best = m.head
+      if (m.size > 1) {
+        best = m.maxBy(_.extra_authors.size)
+      }
+      best
+    }.flatMap(m =>
+      val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
+      if (!(m.extra_authors.isEmpty && m.album.isEmpty)) {
+        Some(MetaData(
+          m.md5.take(12),
+          amp.transformAuthors(m, detail),
+          Buffer.empty,
+          m.album,
+          0,
+          m._type,
+          if (m.album.endsWith(" PC")) "PC" else "",
+        ))
+      } else None
+    )).toBuffer.distinct
 
   ampdata = processMetaTsvs(entries, "amp.tsv")
 })
@@ -260,7 +278,7 @@ lazy val modlandTsvs = Future(_try {
     val format = path.substring(0, path.indexOf("/"))
     // XXX Ashley Hogg
     if (path.indexOf("/") == path.lastIndexOf("/")) {
-      path = path.substring(path.indexOf("/") + 1)
+      path = "_unknown"
     } else {
       path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     }
@@ -292,18 +310,16 @@ lazy val unexoticaTsvs = Future(_try {
   val entries = unexotica.metas.par.map { m =>
     val md5 = m._1
     val path = m._2
-    val authorAlbum = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/")).split("/")
-    val authors = Buffer(unexotica.transformAuthors(authorAlbum(0)))
-    val filesize = m._3
     val meta = m._4
-    val album = unexotica.transformAlbum(meta, authorAlbum)
+    val authors = unexotica.transformAuthors(meta, path)
+    val album = unexotica.transformAlbum(meta, path)
     val publishers = unexotica.transformPublishers(meta)
     val year = meta.year.fold(_.toString, _.toString)
     MetaData(
       md5.take(12),
-      authors,
+      authors.sorted.distinct.toBuffer,
       publishers,
-      album,
+      album.trim,
       if (year != "Unknown") year.toInt else 0,
       meta.`type`,
       "Amiga",
@@ -320,11 +336,11 @@ lazy val demozooTsvs = Future(_try {
 
 lazy val oldexoticaTsvs = Future(_try {
   val entries = oldexotica.metas.par.flatMap { m =>
-    val authors = oldexotica.transformAuthors(m)
+    val _type = m.info.replaceAll("\\(.*\\)$","").trim
+    val authors = oldexotica.transformAuthors(m, _type)
     val publishers = oldexotica.transformPublishers(m)
     val album = oldexotica.transformAlbum(m)
     val year = m.year.getOrElse(0)
-    val _type = m.info.replaceAll("\\(.*\\)$","").trim
     if (authors.isEmpty && publishers.isEmpty && album.isEmpty && year == 0) None
     else Some(MetaData(
       m.md5.take(12),
@@ -332,8 +348,8 @@ lazy val oldexoticaTsvs = Future(_try {
       publishers,
       album,
       year,
-      if (_type != "N/A") _type else "",
-      "Amiga",
+      if (_type != "N/A" && _type != "?") _type else "",
+      if (album.nonEmpty) if (m.info.contains("Falcon")) "Atari" else "Amiga" else "",
     ))
   }.toBuffer.distinct
 
@@ -366,6 +382,8 @@ lazy val modsanthologyTsvs = Future(_try {
       m.publishers,
       m.album,
       m.year.getOrElse(0),
+      m._type,
+      m._platform,
     ))
   }.toBuffer.distinct
 
@@ -382,7 +400,8 @@ lazy val tosecmusicTsvs = Future(_try {
         meta.publishers,
         meta.album,
         meta.year,
-        meta._type
+        meta._type,
+        meta._platform,
       )
     }
   }.toBuffer.distinct
@@ -447,6 +466,7 @@ val future = Future.sequence(
       modsanthologydata,
       fujiologydata,
       tosecmusicdata,
+      globalLeftovers.asScala.toBuffer
     )
     processMetaTsvs(combined, "metadata.tsv", true)
 }

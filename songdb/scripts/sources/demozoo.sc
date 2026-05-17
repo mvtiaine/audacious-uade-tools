@@ -15,6 +15,8 @@ import scala.util.Using
 import convert.MetaData
 import oldexotica.metas
 import sources.SourceDBEntry
+import normalization._
+
 
 enum Precision:
   case UNKNOWN, YEAR, MONTH, DATE
@@ -60,9 +62,9 @@ final case class DemozooMeta (
 // XXX
 def fix(name: String) = name.replace(" - FIXME! This scener is a merge of two sceners!","")
 
-def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
+private def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
 
-def normalizePlatform(platform: String): String = {
+private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Amiga")) "Amiga"
   else if (platform.startsWith("Atari")) "Atari"
   else if (platform.startsWith("Windows")) "PC"
@@ -73,8 +75,8 @@ def normalizePlatform(platform: String): String = {
 val modland_by_path = sources.modland.groupBy(_.path.toLowerCase)
 val aminet_by_path = sources.aminet.groupBy(_.path
   .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx",""))
-val demozoo_leftovers_by_path = sources.demozoo_leftovers.groupBy(_.path.toLowerCase)
-val modarchive_by_id = sources.demozoo_leftovers
+val demozoo_music_leftovers_by_path = sources.demozoo_music_leftovers.groupBy(_.path.toLowerCase)
+val modarchive_by_id = sources.demozoo_music_leftovers
   .filter(_.path.startsWith("api.modarchive.org")).groupBy(_.path.split("/").take(2).last)
 val wantedteam_by_path = sources.wantedteam.groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
 val unexotica_by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
@@ -110,6 +112,7 @@ def split(s: String) = s
   .replace("Revelation Crew, The", "The Revelation Crew") // XXX
   .split(",")
   .filterNot(s => s == "NULL" || s.isEmpty)
+  .toBuffer
 def precision(s: String) = s match {
   case "y" => Precision.YEAR
   case "m" => Precision.MONTH
@@ -127,7 +130,7 @@ def maybe(s: String) = {
   else Some(trimmed)
 }
 
-lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.tsv"))(_.getLines.toSeq.par.flatMap(line =>
+lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.tsv"))(_.getLines().toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val id = l(0).toInt
   val title = l(1)
@@ -169,7 +172,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     matches
   }
 
-  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_leftovers_by_path) = {
+  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
     var entries = Buffer.empty[SourceDBEntry]
     val iter = paths.iterator
     while (iter.hasNext) {
@@ -188,7 +191,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     }
   }
 
-  def findLeftovers(path: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_leftovers_by_path) = {
+  def findLeftovers(path: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
     if (paths.contains(path)) {
       val md5 = paths(path).head.md5
       Buffer((md5, meta))
@@ -224,6 +227,20 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     if (modland_by_path.contains(path)) {
       val md5 = modland_by_path(path).head.md5
       Buffer((md5, meta))
+    // XXX /pub/modules/Fabian/dlm4-shortcutted.mod  etc.
+    } else if (path.endsWith(".mod") && !path.startsWith("protracker/")) {
+      val altPath = "protracker/" + path
+      if (modland_by_path.contains(altPath)) {
+        val md5 = modland_by_path(altPath).head.md5
+        Buffer((md5, meta))
+      } else Buffer.empty
+    // XXX /pub/modules/Protracker/Karsten%20Obarski/sleepwalk.mod etc.
+    } else if (path.endsWith(".mod") && path.startsWith("protracker/")) {
+      val altPath = path.replaceFirst("protracker/", "soundtracker/")
+      if (modland_by_path.contains(altPath)) {
+        val md5 = modland_by_path(altPath).head.md5
+        Buffer((md5, meta))
+      } else Buffer.empty
     } else Buffer.empty
   } else if (linkClass == "PaduaOrgFile") {
     val path = "ftp.padua.org/pub/c64" + url
@@ -474,7 +491,23 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   .map((md5, _, prodCount, maxMonthDiff))
 }).toSeq
 
-lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_prods.tsv"))(_.getLines.toSeq.par.flatMap(line =>
+final case class DemozooSoundtrack (
+  id: Int,
+  title: String,
+  authors: Buffer[String],
+)
+
+val soundtracksByProdId = Using(scala.io.Source.fromFile("sources/metadata/demozoo_soundtracks.tsv"))(_.getLines().toSeq.par.map(line =>
+  val l = line.split("\t")
+  val id = l(0).toInt
+  val title = l(1)
+  val authors = (split(l(2)) map trim map fix).sorted.distinct.toBuffer
+  val prodIds = split(l(3)).flatMap(_.toIntOption)
+
+  prodIds.map(prodId => (prodId, DemozooSoundtrack(id, title, authors)))
+)).get.flatten.groupBy(_._1).par.mapValues(_.map(_._2).distinct.seq).seq
+
+lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_prods.tsv"))(_.getLines().toSeq.par.flatMap(line =>
   val l = line.split("\t")
   val prodId = l(0).toInt
   val prodDate = l(1)
@@ -482,18 +515,31 @@ lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo
   var prod = l(3)
   val prodPlatforms = split(l(4)) map trim
   val prodPublishers = split(l(5)) map trim map fix
-  val musicAuthors = split(l(6)) map trim map fix
+  val prodMusicAuthors = (split(l(6)) map trim map fix).sorted.distinct.toBuffer
   val party =  maybe(l(7))
-  val partyDate = maybe(l(8))
-  val partyDatePrecision = precision(l(9))
-  val prodType = split(l(10))
-
-  val authors = musicAuthors.sorted.distinct.toBuffer
+  val partyShownDate = maybe(l(8))
+  val partyShownDatePrecision = precision(l(9))
+  val partyStartDate = maybe(l(10))
+  val partyStartDatePrecision = precision(l(11))
+  val prodType = split(l(12))
+  val soundtrackIds = split(l(13))
+  val linkClass = l(14)
+  val url = l(15).toLowerCase
 
   if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E"))) {
+
+    val soundtracks = soundtracksByProdId.getOrElse(prodId, Seq.empty)
+    val soundtrackCount = soundtracks.map(_.id).distinct.size
+    val authors =
+      if ((soundtrackCount == 1 || (soundtracks.nonEmpty && soundtracks.forall(_.authors == soundtracks.head.authors))) &&
+      (prodMusicAuthors.isEmpty || prodMusicAuthors.forall(a => soundtracks.exists(_.authors.contains(a)))))
+        soundtracks.head.authors
+      else if (prodMusicAuthors.size <= 2 && soundtrackCount == 0) prodMusicAuthors
+      else Buffer.empty
+    
     val meta = MetaData(
       hash = "",
-      authors = if (authors.size > 2) Buffer.empty else authors,
+      authors = authors,
       album = prod.trim,
       publishers = prodPublishers.sorted.distinct.toBuffer,
       year = prodDate.take(4).toIntOption.getOrElse(0),
@@ -503,6 +549,20 @@ lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo
     Some(meta)
   } else None
 )).get.toSet
+
+lazy val all_aliases = Using(scala.io.Source.fromFile("sources/metadata/demozoo_authors.tsv"))(_.getLines().toSeq.par.flatMap(line =>
+    // For each handle, collect all normalized aliases, then map each alias to the full set
+  val l = line.split("\t")
+  val releaser_name = l(1).trim
+  val nicks = split(l(2)).map(trim).filter(_.nonEmpty)
+  val nick_variants = split(l(3)).map(trim).filter(_.nonEmpty)
+
+  val names = (Seq(releaser_name) ++ nicks ++ nick_variants).distinct
+  if (names.size > 1) {
+    val normalized = names.map(normalizeAuthor)
+    normalized.map(n => n -> names.distinct.toBuffer)
+  } else Iterable.empty[(String, Buffer[String])]
+)).get.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer).toMap
 
 def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int): Option[MetaData] = {
   val dates = Seq(m.modDate, m.prodDate, Seq(m.partyShownDate.getOrElse(""), m.partyStartDate.getOrElse("")).max).filterNot(_.isEmpty)
@@ -582,7 +642,7 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
     }).sorted,
     album = if (useProd) m.prod.trim else "",
     year = if (!publishDate.isEmpty) publishDate.substring(0,4).toInt else 0,
-    _type = if (useProd) m.prodType.sorted.headOption.getOrElse("") else "",
+    _type = if (useProd) m.prodType.sorted.headOption.getOrElse("") else if (useParty) "Compo" else "",
     _platform = if (!useProd || m.prodPlatforms.isEmpty || m.prodPlatforms.size > 1) "" else demozoo.normalizePlatform(m.prodPlatforms.head)
   )
   info match {
