@@ -1673,9 +1673,11 @@ final case class SourceDBEntry (
 
 def readSourceDB(source: Source) = {
   tsvs.filter(_._1 == source).par.flatMap(_._2).map({case (md5,subsongs) =>
+    /*
     if (subsongs.groupBy(_.subsong).exists(_._2.size > 1)) {
       System.err.println("DEBUG: duplicate files in " + source + " for " + md5 + ": " + subsongs)
     }
+    */
     subsongs.filter(_.path != "").map(e =>
       SourceDBEntry(md5, e.path, e.filesize, e.xxh32, e.crc32)
     )

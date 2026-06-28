@@ -3,12 +3,6 @@
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
-// TODO remove
-//> using file ../convert.sc
-//> using file ../dedup.sc
-//> using file ../md5.sc
-//> using file sources.sc
-
 import java.nio.file.Files
 import java.nio.file.Paths
 import scala.collection.mutable
@@ -215,7 +209,6 @@ lazy val exodosMetas = metas.par.map(m =>
     _type = "Game",
     _platform = "PC",
   )
-  println(s"EXODOS META: ${meta}")
   meta
 ).toSet
 
@@ -256,13 +249,8 @@ val exodosExtras = metas
     ))
   }
   if (metas.isEmpty) {
-    println(s"RETROEXO EXTRA: no meta for MD5 ${md5} metas: ${_metas}")
     None
   } else {
     Some(metas.sortBy(_._1).head)
   }
 }.seq.toBuffer.distinct
-
-for ((file, meta) <- exodosExtras) {
-  println(s"EXODOS EXTRA META: $file - ${meta}")
-}

@@ -5,17 +5,6 @@
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 //> using dep net.ruippeixotog::scala-scraper::3.1.0
 
-// TODO remove
-/*
-//> using file ../convert.sc
-//> using file ../dedup.sc
-//> using file ../md5.sc
-//> using file ../normalization.sc
-//> using file ../songlengths.sc
-//> using file oldexotica.sc
-//> using file sources.sc
-*/
-
 import java.net.URLDecoder
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -35,13 +24,6 @@ import net.ruippeixotog.scalascraper.model._
 
 import convert._
 import normalization._
-
-// TODO
-// handle wrong amp.dascene.net/modules/ which should be actually modland
-// also for demozoo (+ ftp.amigascne.org/pub/amiga/modules/ -> AMP)
-// TODO handle Music-Exe -> Music (+ party)
-// TODO music-exe -> music/mod mäppäys (myös demozoo), infer from name + author jos ei modia (virgill mod.nihil admiri etc.)
-// TODO parse evolution tree (use in audio fingerprint matching to keep md5s separated/non-dups)
 
 final case class KestraReleaseRef(
   id: Option[Int],
@@ -124,7 +106,6 @@ final case class KestraAuthorMeta (
 final case class KestraMeta (
   id: Int,
   title: String,
-  // TODO drop, same as categories
   types: Seq[String],
   categories: Seq[String],
   party: Option[KestraParty],
@@ -500,11 +481,6 @@ Connections: ${meta.connections.length}
     meta
   } else None
 ).seq.groupBy(_.id).mapValues(_.head).toMap
-/*
-for ((id, meta) <- releases) {
-  println(s"KESTRA RELEASE: ${meta}")
-}
-*/
 
 def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
   val h1 = elem.select("h1").headOption
@@ -698,12 +674,6 @@ Published Series: ${if (meta.publishedSeries.nonEmpty) meta.publishedSeries.map(
   } else None
 ).groupBy(_.id).seq
 
-/*
-for ((id, author) <- authors) {
-  println(s"KESTRA AUTHOR: ${author}")
-}
-*/
-
 val composer_handles = authors.values.par.flatMap(_.filter(a => a.realName.isDefined && a.entityType == "Author" && a.roles.contains("Music Artist") && a.realName.get.contains(" ")).flatMap(author =>
   val realName = normalizeRealName(author.realName.get.trim, author.name.trim).getOrElse("")
   if (realName.nonEmpty) {
@@ -714,10 +684,6 @@ val composer_handles = authors.values.par.flatMap(_.filter(a => a.realName.isDef
     else None
   } else None
 )).seq.toMap
-
-for (ch <- composer_handles) {
-  println(s"KESTRA COMPOSER HANDLE: ${ch._1} -> ${ch._2}")
-}
 
 val all_aliases = authors.values.flatMap(_.filter(a => a.entityType == "Author" && a.roles.contains("Music Artist")).flatMap(author =>
   val handle = author.name.trim
@@ -734,10 +700,6 @@ val all_aliases = authors.values.flatMap(_.filter(a => a.entityType == "Author" 
     normalizedNames.map(n => n -> rawNames.distinct.toBuffer)
   } else Iterable.empty[(String, Buffer[String])]
 )).groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
-
-for ((nick, aliases) <- all_aliases) {
-  println(s"KESTRA ALIASES: ${nick} -> ${aliases.mkString(", ")}")
-}
 
 def _date(d: Option[String]) = d.map(_.length).getOrElse(0) match {
   case 4 => d.get + "-99-99"
@@ -766,26 +728,15 @@ val metas = releases.filter { case (id, meta) =>
   var year = 0
   var _type = ""
   var _platform = ""
-  // TODO check multiple featured in? (sort by release date)
-  // TODO use prod release date? (paitsi jos mod release date <= x months)
-  // TODO madeOrFinished fallback (tai <= x months released)
-  // https://janeway.exotica.org.uk/release.php?id=58565
-  // TODO year without release?
-  // TODO https://janeway.exotica.org.uk/release.php?id=84451
-  // fix "Evolution Tree" parsing (Party, refs to self)
-  // TODO https://janeway.exotica.org.uk/release.php?id=63019 https://janeway.exotica.org.uk/release.php?id=28464
-  // no release date, but only party -> party release date
   val preferred = Seq("Demo","Game","Intro","Megademo","Trackmo")
   val connections = meta.connections
     .filterNot(_.group == "Evolution Tree")
     .filter(_.id.isDefined)
     .map(c => (c, releases(c.id.get)))
     .sortBy(c => _date(c._2.released) + (if (preferred.intersect(c._2.types).nonEmpty) "-0" else "-1"))
-    // TODO threshold (<= x months)
     .filter(c => _date(c._2.released).take(4).toInt <= _date(meta.released).take(4).toInt + 1)
   val mindate = _date(connections.map(c => _date(c._2.released)).minOption)
   val featuredIn = connections.filter(_._1.group == "Featured In")
-  //var release = featuredIn.filter(_.released == meta.released).headOption.orElse(featuredIn.headOption)
   var release = featuredIn.headOption.orElse(connections.headOption).map(_._2)
   if (_date(release.flatMap(_.released)) > mindate && connections.find(c => _date(c._2.released) <= mindate).isDefined) {
     val better = connections.find(c => _date(c._2.released) <= mindate).get
@@ -817,10 +768,8 @@ val metas = releases.filter { case (id, meta) =>
     if (other.isDefined)
       release = Some(other.get)
   }
-  //val release = meta.connections.find(_.group == "Featured In").map(c => releases(c.id.get))
   if (meta.madeOrFinished.isDefined && (release.isEmpty || release.get.released.isEmpty || _date(meta.madeOrFinished).take(4).toInt + 1 <= _date(release.get.released).take(4).toInt) && (meta.released.isEmpty || _date(meta.madeOrFinished).take(4).toInt + 1 < _date(meta.released).take(4).toInt)) {
     year = meta.madeOrFinished.get.take(4).toInt
-    // TODO tarkista rank/unselected? (myös demozoo)
   } else if (meta.released.isDefined && meta.party.isDefined &&
      (release.isEmpty || release.get.released.isEmpty || _date(meta.released) < _date(release.get.released) ||
      (_date(meta.released) <= _date(release.get.released) && Seq("Music-Exe", "Musicdisk").intersect(release.get.types).nonEmpty))) {
@@ -867,16 +816,6 @@ val metas = releases.filter { case (id, meta) =>
     ((meta.soundFormat.getOrElse("") == "Audio Sculpture" || meta.soundFormat.getOrElse("") == "Startrekker AM/FM")&& (d.filename.toLowerCase.endsWith(".mod.nt") || d.filename.toLowerCase.endsWith(".mod.as"))) ||
     d.fileType.getOrElse("") == "exec" || d.fileType.getOrElse("") == "disk"
   ).flatMap(d =>
-    // TODO both path and crc32 match, then by crc32 only, then by path only? (crc32 + filesize?)
-    // TODO format/<x>/filename + filesize match? (modland moved) (jos ei crc32 saatavilla) (myös demozoo?)
-    // TODO tarkista onko crc32 tai filesize linkeille demozoo sql:ssä (tai md5)
-    // https://janeway.exotica.org.uk/release.php?id=97582
-    // https://janeway.exotica.org.uk/release.php?id=98871
-    // https://janeway.exotica.org.uk/release.php?id=63494
-    // https://janeway.exotica.org.uk/release.php?id=88656
-    // TODO Protracker -> Soundtracker/Noisetracker myös (filesize ei mätsää)
-    // https://janeway.exotica.org.uk/release.php?id=32595
-    // https://janeway.exotica.org.uk/release.php?id=54832
     val md5 = d.md5.getOrElse("").toLowerCase
     val crc32 = d.crc.map(_.toLowerCase).getOrElse("")
     val filesize = d.filesize.getOrElse(0)
@@ -885,22 +824,6 @@ val metas = releases.filter { case (id, meta) =>
       d.url.replace("%%20", "%20"),
       "UTF-8"
     )
-    // XXX TODO https://janeway.exotica.org.uk/release.php?id=103829
-    //.replace("http://amp.dascene.net/modules/W/Wookie/http://amp.dascene.net/modules/W/Wookie/MED.%22Where-Sanity-Survives%22.gz")
-    // TODO check others (unexotica, wt.exotica.org.uk, amigascne, jormas.com, insane.demoscene.se)
-    // TODO unexotica archive with multiple matches?
-    // TODO MOD.(Xiphos)xiphosfinal.gz vs MOD.xiphosfinal.gz (AMP), check also demozoo (tai crc32)
-    // TODO handle/check AMP MOD.mod.foo.gz, MOD.foo.mod.gz (myös demozoo) (tai crc32 + filesize)
-    // TODO ignore wav, smpl., PSID etc.
-    // https://janeway.exotica.org.uk/release.php?id=71424
-    // https://janeway.exotica.org.uk/release.php?id=102317
-    // https://janeway.exotica.org.uk/release.php?id=65608
-    // https://janeway.exotica.org.uk/release.php?id=52263
-    // TODO check all "non-listed" links to AMP (wav files etc.) (kestra leftovers?)
-    // https://janeway.exotica.org.uk/release.php?id=50113
-    // "removed by authors request" (guess all filenames for AMP?)
-    // https://amp.dascene.net/detail.php?detail=modules&view=649
-    // TODO find all path matches and crc32+filesize matches over all sources
     val _md5s = Buffer.empty[String]
     if (crc32.nonEmpty && sources.by_crc32_filesize.contains((crc32, filesize))) {
       val candidates = sources.by_crc32_filesize((crc32, filesize))
@@ -912,7 +835,6 @@ val metas = releases.filter { case (id, meta) =>
       println(s"DEBUG: CRC32+filesize not found for URL: ${d.url} (parsed crc32: ${crc32}, filesize: ${filesize}) meta: ${meta}")
     }
     
-    // TODO if _md5.isEmpty -> only then check urls?
     def filesizeOk(e: sources.SourceDBEntry): Boolean = {
       if (filesize == 0) false else Math.abs(e.filesize - filesize) / filesize.toDouble <= 0.00025
     }
@@ -1075,7 +997,6 @@ val metas = releases.filter { case (id, meta) =>
         .toLowerCase
       if (sources.unexotica_by_path.contains(path)) {
         val entries = sources.unexotica_by_path(path)
-        // TODO filesize/crc32 ?
         if (entries.size > 1) {
           println(s"WARN: Multiple UnExoticA matches for URL: ${d.url} (parsed path: ${path}) meta: ${meta} candidates: ${entries}")
         }
@@ -1149,10 +1070,6 @@ val metas = releases.filter { case (id, meta) =>
   })
 }.flatten.seq.toSeq.distinct
 
-for ((id, meta) <- metas) {
-  println(s"KESTRA META: $id - ${meta}")
-}
-
 val typeBlacklist = Set(
   "ASCII art .diz file",
   "Charset",
@@ -1169,8 +1086,6 @@ val typeBlacklist = Set(
 val kestraMetas = releases.filterNot { case (id, meta) =>
   meta.types.forall(typeBlacklist.contains) || meta.tags.contains("no music")
 }.par.map { case (id, meta) =>
-  // TODO handle multiple files / downloads
-  // TODO separate meta for each music feature if different authors
   var authors = Seq.empty[Seq[String]]
   val prodMusicAuthors = meta.credits.filter(_.role == "Music").map(a => a.name.trim)
   val musicFeatures = meta.features.filter(_._type == "Music").map(f => releases(f.id.get))
@@ -1221,10 +1136,6 @@ val kestraMetas = releases.filterNot { case (id, meta) =>
   }
 }.flatten.seq.toSet
 
-for ((id, meta) <- kestraMetas) {
-  println(s"KESTRA PROD META: $id - ${meta}")
-}
-
 val kestraExtras = releases.filterNot { case (id, meta) =>
   meta.types.forall(typeBlacklist.contains) || meta.types.forall(Set("Packdisk").contains)
 }.par.map { case (id, meta) =>
@@ -1242,9 +1153,6 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     } else Buffer.empty
   )
 }.flatten.seq.groupBy(_._1).mapValues(_.map(_._2)).par.flatMap { case (md5, _metas) =>
-  // TODO match filenames (-> author), check "from" field (-> override meta)
-  // ignoraa kokonaan jos feature music id -> download löytyy?
-  // TODO ignore authors jos musicFeatures.size > downloads.size?
   val mindate = _metas.map(m => _date(m._1.released)).min
   val metas = _metas.filter(m => _date(m._1.released) <= mindate).flatMap { case (meta, md5s) =>
     val prodMusicAuthors = meta.credits.filter(_.role == "Music").map(a => a.name.trim).sorted.distinct
@@ -1288,8 +1196,6 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     println(s"KESTRA EXTRA: no meta for MD5 ${md5} metas: ${_metas}")
     None
   } else {
-    // TODO include all and scoring in combine.sc?
-    // TODO consistent scoring
     val scoredMetas = metas.map(e =>
       (e, (if (e._2._platform.toLowerCase == "amiga") 1 else 0) + (if (e._2._type.toLowerCase == "game") 1 else 0) + (if (e._2.authors.nonEmpty) 1 else 0) + (if (e._2.publishers.nonEmpty) 1 else 0) + (if (e._2.album.nonEmpty) 1 else 0) + (if (e._2.year > 0) 1 else 0))
     )
@@ -1310,7 +1216,3 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     Some(bestMeta)
   }
 }.seq.toBuffer.distinct
-
-for ((id, meta) <- kestraExtras) {
-  println(s"KESTRA EXTRA META: $id - ${meta}")
-}

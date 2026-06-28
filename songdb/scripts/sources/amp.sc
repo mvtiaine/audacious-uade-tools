@@ -220,7 +220,6 @@ val all_aliases: Map[String, Buffer[String]] = {
     .toMap
 }
 
-}
 val _metas = _details.flatMap(_.metas).distinct
 val _byAlbum: Map[String, Buffer[AMPMeta]] = _metas.filter(_.album.nonEmpty).toBuffer.groupBy(_.album)
 val details = _details.par.map(detail =>
