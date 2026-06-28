@@ -782,7 +782,8 @@ val albumPatterns = Seq(
   "^[Bb]y \\?\\?\\?/\\w+ [Ff]rom (\\w+ \\w+) [Ll]oader$".r,
 )
 
-def isGame(comment: String) = {
+def isGame(album: String, comment: String) = {
+  album == "Fears" ||
   comment.contains("From the game \"") ||
   comment.contains("Used in the game ") ||
   comment.contains("Initially for a game ") ||
@@ -794,6 +795,7 @@ def parseAlbum(_album: String, _publishers: Buffer[String], comment: String) = {
   var album = _album
   var publishers = _publishers
   var albumPattern = ""
+  var matchedNoAlbum = false
   if (album.isEmpty &&
       !comment.toLowerCase.contains("adapted from ") &&
       !comment.toLowerCase.contains("adaptation from ") &&
@@ -1772,6 +1774,9 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
   if (album == "Mystic" && publishers.size == 1 && publishers.head == "Mystic") {
     album = "The Demo"
   }
+  if (album == "Roots" && comment.endsWith("v2.0 update!")) {
+    album = "Roots v2.0"
+  }
   if (authors.size == 1 && authors.head == "MCO" && publishers.size == 1 && publishers.head == "HMC") {
     authors = Buffer("Homicide")
     publishers = Buffer.empty
@@ -1794,12 +1799,22 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     album = "Generation 4 Demo"
   if (album == "Human Excrement")
     album = "Toilet Human Excrement"
-  if (album == "Pig")
+  if (album == "Pig") {
     album = "Little Pig"
+    year = Some(1995)
+  }
   if (album == "The Basement Material")
     album = "The Basement Material - Volume 1"
   if (album == "Endless-Melodies")
     album = "Endless Melodies"
+  if (album == "La Brosse à Dents Demo 3")
+    album = "Toothbrush Part 3"
+  if (album.startsWith("pHluid MD #"))
+    album = album.replace("pHluid MD #", "pHluid Music Disk #")
+  if (album == "Temple of Dicease") {
+    album = "Temple of Decease"
+    year = Some(1995)
+  }
   if (album == "Fool's Gold")
     year = Some(1991)
   if (album == "Imphobia 11")
@@ -1822,10 +1837,73 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     year = Some(1993)
   if (album == "R.A.W 2")
     year = Some(1992)
-  if (album == "Tune-Disk")
-    year = Some(1991)
   if (album == "Megademo IV")
     year = Some(1990)
+  if (album == "Behind The Window")
+    year = Some(1994)
+  if (album == "Hymns of Logic")
+    year = Some(1994)
+  if (album == "Celium")
+    year = Some(1991)
+  if (album == "The Charts 16")
+    year = Some(1995)
+  if (album == "Luminous")
+    year = Some(1995)
+  if (album == "Sun")
+    year = Some(1995)
+  if (album == "Big Time Sensuality")
+    year = Some(1994)
+  if (album == "MindFlow")
+    year = Some(1994)
+  if (album == "ROM-4" || album == "ROM 4")
+    year = Some(1995)
+  if (album == "Chip in Paris 02")
+    year = Some(1995)
+  if (album == "Crash Test")
+    year = Some(1994)
+  if (album == "Starlight")
+    year = Some(1994)
+  if (album == "The Basement Material")
+    year = Some(1996)
+  if (album == "Chip's #3")
+    year = Some(1995)
+  if (album == "Birthday")
+    year = Some(1995)
+  if (album == "Tetris")
+    year = Some(1992)
+  if (album == "Gasp '95 Invitation")
+    year = Some(1995)
+  if (album == "Gathering '95 Resultro")
+    year = Some(1995)
+  if (album == "The Animals")
+    year = Some(1994)
+  if (album == "EGG #2")
+    year = Some(1995)
+  if (album == "Doskpop")
+    year = Some(1994)
+  if (album == "Christies")
+    year = Some(1995)
+  if (album == "Chaotic Mind")
+    year = Some(1994)
+  if (album == "The Charts #9")
+    year = Some(1994)
+  if (album == "The Charts #10")
+    year = Some(1994)
+  if (album == "Chaos Maze")
+    year = Some(1994)
+  if (album == "Impossible Possibility")
+    year = Some(1995)
+  if (album == "XPose") {
+    album = "Xpose"
+    year = Some(1992)
+  }
+  if (album == "Tune-Disk") {
+    publishers = Buffer.empty
+    album = ""
+    year = None
+  }
+  if (album == "wind")
+    album = "Wind"
   if (album == "Chromagic #2") {
     album = ""
     publishers = Buffer.empty
@@ -1851,12 +1929,13 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     .map(a => if (a == "Raazzzzzmmmoooooo") "Razmo" else a)
     .map(a => if (a == "Trap Bonzai") "Trap" else a)
     .map(a => if (a == "Fasjer") "Fajser" else a)
+    .map(a => if (a == "Powerlaxen") "Laxity" else a)
   (authors, album, publishers, year)
 }
 
 val SEPARATOR = "==============================================================================="
 
-val modsanthology_by_path = sources.modsanthology.groupBy(_.path.split("/").takeRight(2).mkString("/"))
+val modsanthology_by_path = sources.sourceDB(sources.Source.ModsAnthology).groupBy(_.path.split("/").takeRight(2).mkString("/"))
 
 lazy val maz1txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ1-Authors(A-F).txt").toFile
 lazy val maz2txt = Paths.get(modsanthology_path + "Mods-1/Lists/Ascii/MAZ2-Authors(G-Q).txt").toFile
@@ -1979,6 +2058,10 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
           }
         }
       }
+      if (comment.endsWith(" ?") || comment.endsWith(" ??") || comment.endsWith(" ???")) {
+        authors_ = Buffer.empty
+      }
+      
       authors_ = authors_.distinct
 
       var album = ""
@@ -2012,7 +2095,7 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
       year = parsePartyYear(year, comment)
 
       val (album_, publishers__, publisherPattern__, year_) = parseParty(album, publishers, publisherPattern, year, comment)
-      var isParty = album_.isEmpty && publishers__.nonEmpty
+      var isParty = album_.isEmpty && publishers__.nonEmpty && publishers_.isEmpty
       album = album_
       publishers = publishers__
       publisherPattern = publisherPattern__
@@ -2045,13 +2128,13 @@ def parseMazAuthorsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(usin
         album,
         year,
         _type =
-          if (isGame(comment)) "Game"
+          if (isGame(album, comment)) "Game"
           else if (album.isEmpty && isParty) "Compo"
           else if (album.nonEmpty) "Demo"
           else "",
         _platform =
           if (album.nonEmpty)
-            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            if (album == "S.C.Out" || comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
             else "Amiga"
           else ""
       )
@@ -2222,7 +2305,7 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
       }
       if (group == "Force Ten" && filename.matches("^[0-9]_.*")) {
         album = "Force Ten Music Pack #" + filename(0)
-        year = if (filename(0).toInt <= 4) Some(1994) else Some(1995)
+        year = if (filename(0).toString.toInt <= 4) Some(1994) else Some(1995)
       }
       if (group == "Fashion") {
         album = "Musicdisk"
@@ -2345,6 +2428,9 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
           }
         }
       }
+      if (comment.endsWith(" ?") || comment.endsWith(" ??") || comment.endsWith(" ???"))
+        authors = Buffer.empty
+
       authors = authors.distinct
 
       var yearPattern = ""
@@ -2401,13 +2487,13 @@ def parseMazGroupsTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using
         album,
         year,
         _type =
-          if (isGame(comment)) "Game"
+          if (isGame(album, comment)) "Game"
           else if (album.isEmpty && isParty) "Compo"
           else if (album.nonEmpty) "Demo"
           else "",
         _platform =
           if (album.nonEmpty)
-            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            if (album == "S.C.Out" ||comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
             else "Amiga"
           else ""
       )
@@ -2583,6 +2669,9 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
           }
         }
       }
+      if (comment.endsWith(" ?") || comment.endsWith(" ??") || comment.endsWith(" ???"))
+        authors = Buffer.empty
+
       authors = authors.distinct
 
       var coopPattern = ""
@@ -2657,13 +2746,13 @@ def parseMazMiscTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using s
         album,
         year,
         _type =
-          if (isGame(comment)) "Game"
+          if (isGame(album, comment)) "Game"
           else if (album.isEmpty && isParty) "Compo"
           else if (album.nonEmpty) "Demo"
           else "",
         _platform =
           if (album.nonEmpty)
-            if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+            if (album == "S.C.Out" || comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
             else "Amiga"
           else ""
       )
@@ -2762,6 +2851,9 @@ def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using 
           }
         }
       }
+      if (comment.endsWith(" ?") || comment.endsWith(" ??") || comment.endsWith(" ???"))
+        authors = Buffer.empty
+
       authors = authors.distinct
 
       var coopPattern = ""
@@ -2837,13 +2929,13 @@ def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using 
           album,
           year,
           _type =
-            if (isGame(comment)) "Game"
+            if (isGame(album, comment)) "Game"
             else if (album.isEmpty && isParty) "Compo"
             else if (album.nonEmpty) "Demo"
             else "",
           _platform =
             if (album.nonEmpty)
-              if (comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
+              if (album == "S.C.Out" || comment.contains(" PC ") || comment.contains("Imphobia") || comment.contains(" ch - ")) "PC"
               else "Amiga"
             else ""
         )
@@ -2857,7 +2949,7 @@ def parseMazSynthTxt(f: java.io.File) = Using(scala.io.Source.fromFile(f)(using 
   metas
 ).get
 
-lazy val metas = Seq(
+lazy val _metas = Seq(
   (maz1txt, parseMazAuthorsTxt),
   (maz2txt, parseMazAuthorsTxt),
   (maz3txt, parseMazAuthorsTxt),
@@ -2865,3 +2957,17 @@ lazy val metas = Seq(
   (maz5txt, parseMazMiscTxt),
   (maz6txt, parseMazSynthTxt)
 ).par.flatMap(m => m._2(m._1)).seq.distinct
+
+lazy val metas = _metas.groupBy(m => (m.album, m.publishers)).par.map { case ((album, publishers), group) =>
+  // fix conflicting album/publisher -> year
+  lazy val maxYear = group.filter(_.year.isDefined).maxByOption(_.year.get).map(_.year.get).getOrElse(0)
+  if (album.nonEmpty && publishers.nonEmpty && maxYear != 0) {
+    group.map(meta => {
+      if (meta.year.exists(year => year > 0 && year != maxYear) && meta.year.get + 1 < maxYear) {
+        meta.copy(album = "", publishers = Buffer.empty)
+      } else {
+        meta.copy(year = Some(maxYear))
+      }
+    })
+  } else group
+}.flatten.seq.toBuffer.distinct

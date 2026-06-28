@@ -7,6 +7,8 @@ import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.util.Using
 
+import convert._
+
 enum Source:
   case
     NONE,
@@ -46,6 +48,7 @@ enum Source:
     AmigaMuseum,
     AmigaMegaDemos,
     AmigaMegaGames,
+    AmigaModulesFreeFr,
     AmigaNuts,
     AmigaScne,
     AmigaTools1,
@@ -112,6 +115,7 @@ enum Source:
     DfxCollection,
     DieMultimediaPower,
     DigitalSymphony,
+    Dim13,
     DrMusic,
     DrMusicLab,
     DynamicMusicStation,
@@ -185,6 +189,7 @@ enum Source:
     InsideShareware296,
     JBB,
     jPVSceneReleases,
+    KeygenMusicPack202003,
     KoopOokPCConsument,
     Kosmic,
     LazarusAmigaDecade,
@@ -310,6 +315,7 @@ enum Source:
     RusBBSArchive,
     ScenaPLEXE,
     Scene96,
+    SceneCat,
     SceneOrg,
     SceneOrgLostFound,
     SceneReleases8095,
@@ -346,6 +352,7 @@ enum Source:
     SoundwareCollection,
     SPACELib1,
     StarportBBS,
+    SXIIIKeygenMusic,
     TCDGameMods,
     TCEDemo2,
     TEKNO51996,
@@ -471,6 +478,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   AmigaMuseum -> Seq(C(_type = "Game", _platform = "Amiga", year = 2004)),
   AmigaMegaDemos -> Seq(C(_type = "Demo", _platform = "Amiga")), // TODO not really only demos?
   AmigaMegaGames -> Seq(C(_type = "Game", _platform = "Amiga")),
+  // AmigaModulesFreeFr
   AmigaNuts -> Seq(C(year = 1992)),
   AmigaScne -> Seq(
     C(path = "Parties/"),
@@ -557,6 +565,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   ),
   DieMultimediaPower -> Seq(C(year = 1993)),
   DigitalSymphony -> Seq(C(year = 1995)),
+  // Dim13
   DrMusic -> Seq(
     C(path = "DEMOS/", _type = "Demo", _platform = "PC", year = 1993),
     C(year = 1993)
@@ -756,6 +765,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
     C(path = "Unlisted_stuff/2020", _type = "Demo", _platform = "Amiga", year = 2020),
     C( _type = "Demo", _platform = "Amiga", year = 2024)
   ),
+  // KeygenMusicPack202003
   KoopOokPCConsument -> Seq(C(year = 1994)),
   Kosmic -> Seq(
     C(path = "1996/", year = 1996),
@@ -996,6 +1006,12 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
     C(path = "2/MUSICDSK/", _type = "MusicDisk", _platform = "PC", year = 1997),
     C(year = 1997)
   ),
+  SceneCat -> Seq(
+    C(path = "Demotunez/", _type = "Demo"),
+    C(path = "games/", _type = "Game"),
+    C(path = "SceneCAT_Select/game/", _type = "Game"),
+    C(path = "SceneCAT_Select/Various_BestofAmigaGameMusic/", _type = "Game", _platform = "Amiga"),
+  ),
   SceneOrg -> Seq(
     C(path = "demos/", _type = "Demo"),
     C(path = "mags/", _type = "Mag"),
@@ -1122,6 +1138,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   SoundwareCollection -> Seq(C(year = 1993)),
   SPACELib1 -> Seq(C(year = 1993)),
   StarportBBS -> Seq(C(year = 1999)),
+  // SXIIIKeygenMusic
   TCDGameMods -> Seq(C(_platform = "Amiga")),
   TCEDemo2 -> Seq(C(year = 1997)),
   TEKNO51996 -> Seq(C(year = 1996)),
@@ -1545,6 +1562,7 @@ val tsvfiles = Buffer(
   ("collection/espritdeapplecorps.tsv", EspritDeAppleCorps),
   ("collection/fredthegang2014.tsv", FredTheGang2014),
   ("collection/jbb.tsv", JBB),
+  ("collection/keygenmusicpack202003.tsv", KeygenMusicPack202003),
   ("collection/lemonamiga.tsv", LemonAmiga),
   ("collection/melcom.tsv", Melcom),
   ("collection/metinseven.tsv", MetinSeven),
@@ -1555,6 +1573,7 @@ val tsvfiles = Buffer(
   ("collection/playitbyyear.tsv", PlayItByYear),
   ("collection/protrackermodulesgpack.tsv", ProTrackerModulesGPack),
   ("collection/retroplaywhdloadpacks.tsv", RetroPlayWHDLoadPacks),
+  ("collection/scenecat.tsv", SceneCat),
   ("collection/sonixcd.tsv", SonixCD),
   ("collection/tcdgamemods.tsv", TCDGameMods),
   ("collection/terrygreenpd.tsv", TerryGreenPD),
@@ -1574,6 +1593,7 @@ val tsvfiles = Buffer(
   ("site/amegas.tsv", Amegas),
   ("site/amigamega_demos.tsv", AmigaMegaDemos),
   ("site/amigamega_games.tsv", AmigaMegaGames),
+  ("site/amigamodulesfreefr.tsv", AmigaModulesFreeFr),
   ("site/amigamuseum.tsv", AmigaMuseum),
   ("site/amigascne.tsv", AmigaScne),
   ("site/aminet.tsv", Aminet),
@@ -1588,6 +1608,7 @@ val tsvfiles = Buffer(
   ("site/demodulate.tsv", Demodulate),
   ("site/demozoo_music_leftovers.tsv", DemozooMusicLeftovers),
   ("site/demozoo_prod_leftovers.tsv", DemozooProdLeftovers),
+  ("site/dim13.tsv", Dim13),
   ("site/flerp.tsv", Flerp),
   ("site/ftpkloszartpl.tsv", FTPKloszArtPL),
   ("site/fujiology.tsv", Fujiology),
@@ -1609,6 +1630,7 @@ val tsvfiles = Buffer(
   ("site/scenesporg.tsv", SceneSporg),
   ("site/sembiance.tsv", Sembiance),
   ("site/soamc.tsv", SOAMC),
+  ("site/sxiiikeygenmusic.tsv", SXIIIKeygenMusic),
   ("site/thebbsorgarchive.tsv", TheBBSOrgArchive),
   ("site/unexotica.tsv", UnExotica),
   ("site/wantedteam.tsv", WantedTeam),
@@ -1660,67 +1682,97 @@ def readSourceDB(source: Source) = {
   }).flatten.seq
 }.toSeq
 
-lazy val amigascne = readSourceDB(AmigaScne)
-lazy val aminet = readSourceDB(Aminet)
-lazy val amp = readSourceDB(AMP)
-lazy val artpacksacidorg = readSourceDB(ArtPacksAcidOrg)
-lazy val blastersoundbbs = readSourceDB(BlasterSoundBBS)
-lazy val demodulate = readSourceDB(Demodulate)
-lazy val demozoo_music_leftovers = readSourceDB(DemozooMusicLeftovers)
-lazy val flerp = readSourceDB(Flerp)
-lazy val fujiology = readSourceDB(Fujiology)
-lazy val hornet = readSourceDB(Hornet)
-lazy val modland = readSourceDB(Modland)
-lazy val modplanet = readSourceDB(ModPlanet)
-lazy val modsanthology = readSourceDB(ModsAnthology)
-lazy val modsoulbrother = readSourceDB(ModSoulBrother)
-lazy val oldexotica = readSourceDB(OldExotica)
-lazy val sceneorg = readSourceDB(SceneOrg)
-lazy val sceneorg_lostfound = readSourceDB(SceneOrgLostFound)
-lazy val scenesporg = readSourceDB(SceneSporg)
-lazy val tosecmusic = readSourceDB(TOSECMusic)
-lazy val tosecmusic_unknown = readSourceDB(TOSECMusicUnknown)
-lazy val unexotica = readSourceDB(UnExotica)
-lazy val wantedteam = readSourceDB(WantedTeam)
+val sourceDB = Source.values.filter(_ != Source.NONE).par.map(s => (s, readSourceDB(s))).seq.toMap
+val by_crc32_filesize = sourceDB.values.flatten.groupBy(e => (e.crc32, e.filesize))
+by_crc32_filesize.foreach(group => {
+  if (group._2.size > 1 && group._2.exists(_.md5 != group._2.head.md5)) {
+    System.err.println("WARN: duplicate files in sourceDB for crc32 " + group._1._1 + " and filesize " + group._1._2 + ": " + group._2)
+  }
+})
+
 val yearPattern1 = """\/(\d{4})\/""".r
 val yearPattern2 = """^(\d{4})[\/|\.]""".r
 val yearPattern3 = """[ \)]\((\d{4})\)[\.\/\(]""".r
 val yearPattern4 = """\((\d{4})-\d{2}-\d{2}\)""".r
 val yearRangePattern1 = """[\/|^](\d{4})-(\d{4})\/""".r
 val yearRangePattern2 = """[\/](\d{4})-(\d{2})\/""".r
-val blacklist = Seq(Hornet, NostalgicPlayer, TOSECMusic, TOSECMusicUnknown)
-lazy val sourceYearConstraints = tsvs.par.flatMap({case (source, entries) =>
-  if (!blacklist.contains(source)) {
+val blacklist = Map(
+  Hornet -> Set("music/songs/1995/a/agenda.zip","music/songs/1995/p/palli.zip","music/songs/1995/w/wierdtow.zip"),
+  LemonAmiga -> Set("1987/"),
+  NostalgicPlayer -> Set("format/MED210MMD0.zip/MED 2.10 (MMD0)/1990/"),
+  PlayItByYear -> Set(
+    "1986.zip/ADF/_misc/",
+    "1987.zip/ADF/_misc/",
+    "1988.zip/ADF/_misc/",
+    "1989.zip/ADF/_misc/",
+    "1990.zip/ADF/_misc/",
+    "1991.zip/ADF/_misc/",
+    "1992.zip/ADF/_misc/",
+    "1993.zip/ADF/_misc/",
+    "1994.zip/ADF/_misc/",
+    "1995.zip/ADF/_misc/",
+    "1995.zip/ADF/_misc/",
+  ),
+  RetroExo -> Set(
+    "exodos/Arcade Trivia Quiz (1989).zip",
+    "exodos/Crazy Sue (1990).zip",
+    "exodos/CD-Man Version 2.0 (1989).zip",
+  ),
+  SceneReleases8095 -> Set(
+    "1990/CD_Man_2-DPS.zip"
+  ),
+  TOSECMusic -> Set(),
+  TOSECMusicUnknown -> Set()
+)
+val _sourceYears = tsvs.par.flatMap({case (source, entries) =>
+  if (!blacklist.contains(source) || blacklist(source).nonEmpty) {
+    val blacklistedPaths = blacklist.getOrElse(source, Set.empty)
     entries.flatMap({case (md5, subsongs) =>
-      subsongs.filter(_.path != "").flatMap(e => {
+      subsongs
+      .filter(e => e.path != "" && !blacklistedPaths.exists(e.path.startsWith))
+      .flatMap(e => {
         val path = e.path
         lazy val year1 = yearPattern1.findFirstMatchIn(path).map(_.group(1)).getOrElse("").toIntOption.getOrElse(0)
         lazy val year2 = yearPattern2.findFirstMatchIn(path).map(_.group(1)).getOrElse("").toIntOption.getOrElse(0)
         lazy val year3 = yearPattern3.findFirstMatchIn(path).map(_.group(1)).getOrElse("").toIntOption.getOrElse(0)
         lazy val year4 = yearPattern4.findFirstMatchIn(path).map(_.group(1)).getOrElse("").toIntOption.getOrElse(0)
+        if (year1 >= 1985 && year1 <= 2026) {
+          Some(md5, year1, source, path)
+        } else if (year2 >= 1985 && year2 <= 2026) {
+          Some(md5, year2, source, path)
+        } else if (year3 >= 1985 && year3 <= 2026) {
+          Some(md5, year3, source, path)
+        } else if (year4 >= 1985 && year4 <= 2026) {
+          Some(md5, year4, source, path)
+        } else None
+      })
+    })
+  } else Seq.empty
+})
+
+val _sourceYears2 = tsvs.par.flatMap({case (source, entries) =>
+  if (!blacklist.contains(source) || blacklist(source).nonEmpty) {
+    val blacklistedPaths = blacklist.getOrElse(source, Set.empty)
+    entries.flatMap({case (md5, subsongs) =>
+      subsongs
+      .filter(e => e.path != "" && !blacklistedPaths.exists(e.path.startsWith))
+      .flatMap(e => {
+        val path = e.path
         lazy val yearRange1 = yearRangePattern1.findFirstMatchIn(path).map(m => (m.group(1).toInt, m.group(2).toInt))
         lazy val yearRange2 = yearRangePattern2.findFirstMatchIn(path).map(m => (m.group(1).toInt, m.group(2).toInt))
-        if (year1 >= 1985 && year1 <= 2026) {
-          Some(md5, year1, source)
-        } else if (year2 >= 1985 && year2 <= 2026) {
-          Some(md5, year2, source)
-        } else if (year3 >= 1985 && year3 <= 2026) {
-          Some(md5, year3, source)
-        } else if (year4 >= 1985 && year4 <= 2026) {
-          Some(md5, year4, source)
-        } else if (yearRange1.isDefined) {
+        if (yearRange1.isDefined) {
           val (start, end) = yearRange1.get
           if (start >= 1985 && end <= 2026 && start < end) {
-            Some(md5, end, source)
+            Some(md5, end, source, path)
           } else {
             None
           }
         } else if (yearRange2.isDefined) {
           val (start, end) = yearRange2.get
           if (start >= 1985 && start < 2000 && end >= 85 && end <= 99) {
-            Some(md5, 1900 + end.toInt, source)
+            Some(md5, 1900 + end.toInt, source, path)
           } else if (start >= 2000 && start <= 2026 && end >= 0 && end <= 26) {
-            Some(md5, 2000 + end.toInt, source)
+            Some(md5, 2000 + end.toInt, source, path)
           } else {
             None
           }
@@ -1728,11 +1780,41 @@ lazy val sourceYearConstraints = tsvs.par.flatMap({case (source, entries) =>
       })
     })
   } else Seq.empty
-}).groupBy(_._1).mapValues(_.map(t => (t._2, t._3)).minBy(_._1)).map({case (md5, (year, source)) =>
-  var _year = year
-  // XXX
-  if (Set(RetroExo, LemonAmiga, PlayItByYear).contains(source)) {
-    _year = year + 1
-  }
-  md5.take(12) -> (_year, source)
+})
+
+val sourceYearConstraints = (_sourceYears ++ _sourceYears2).groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).map({case (md5, (year, source, _)) =>
+  md5.take(12) -> (year, source)
 }).seq
+
+val blacklist2 = Map(
+  Funet -> Set("amiga/audio/modules/med/199","amiga/audio/modules/misc/199"),
+  Hornet -> Set("music/songs/","tla/songs/","music/disks/")
+)
+val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).flatMap({case (md5, (year, source, path)) =>
+  if (blacklist2.contains(source) && blacklist2(source).exists(path.startsWith)) {
+    None
+  } else
+    Some(MetaData(hash = md5.take(12), authors = Buffer.empty, publishers = Buffer.empty, album = "", year = year))
+}).seq.toBuffer.distinct
+
+lazy val amp_by_path = sourceDB(Source.AMP).groupBy(_.path.toLowerCase)
+lazy val modland_by_path = sourceDB(Source.Modland).groupBy(_.path.toLowerCase)
+lazy val unexotica_by_path = sourceDB(Source.UnExotica).groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
+lazy val wantedteam_by_path = sourceDB(Source.WantedTeam).groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
+lazy val amigascne_by_path = sourceDB(Source.AmigaScne).groupBy(_.path.toLowerCase)
+
+def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]]) = {
+  var entries = Buffer.empty[SourceDBEntry]
+  val iter = paths.iterator
+  while (iter.hasNext) {
+    val (k, v) = iter.next()
+    if (k.startsWith(archivePath+"/")) {
+      entries ++= v
+    }
+  }
+  if (entries.isEmpty) {
+    Buffer.empty[(String, String)]
+  } else {
+    entries.map(e => (e.md5, e.path)).distinct
+  }
+}

@@ -7,6 +7,7 @@ Sources used for the database:
 - **Amegas** - https://www.exotica.org.uk/mirrors/amegas/
 - **AMI Sector One** - https://www.exotica.org.uk/mirrors/ami_sector_one/
 - **Amiga Music Preservation (AMP)** - https://amp.dascene.net/
+- **amiga.modules.free.fr** - http://amiga.modules.free.fr/
 - **AmigaMega** - https://amigamega.com/
 - **AmigaMuseum** - http://amiga.art.free.fr/
 - **amigascne.org** - https://www.amigascne.org/
@@ -22,12 +23,14 @@ Sources used for the database:
 - **Demozoo** - https://demozoo.org/
 - **ExoticA (old)** - http://old.exotica.org.uk/
 - **flerp.scene.hu** - https://files.scene.org/browse/mirrors/flerp/
+- **ftp.dim13.org** - https://ftp.dim13.org/pub/mod/
 - **ftp.funet.fi** - https://www.nic.funet.fi/
 - **ftp.klosz.art.pl** - https://files.scene.org/browse/mirrors/ftp_klosz_art_pl/
 - **Fujiology** - https://fujiology.untergrund.net/
 - **Hacked Amiga Music (HAM)** - https://www.exotica.org.uk/mirrors/hackedamigamusic/
 - **Hobbes OS/2 Archive** - https://hobbes.infania.net/
 - **jPV Scene Releases** - https://web.archive.org/web/20251124170924/http://jpv.wmhost.com/releases/
+- **Keygen Music Opensource Radio Repository** - https://github.com/sxiii/keygen-music
 - **Modland** - http://ftp.modland.com/
 - **modules.pl** - https://www.modules.pl/
 - **mod.haxor.fi** - https://mod.haxor.fi/
@@ -59,6 +62,7 @@ Sources used for the database:
 - **Esprit de Apple Corps** - https://archive.org/details/esprit-de-apple-corps
 - **Fred / The Gang 2014 Amiga Collection** - https://grandis.nu/turran/FTP/Collection/Compilation/Fred_TheGang_2014_Amiga_Collection/Music%20-%20Unsorted/
 - **JBB Soft Modules (1-206)** - https://grandis.nu/turran/FTP/Collection/PD/RiSe%20PD%20Collection/JBB%20Soft%20Modules%20(1-206)/
+- **keygenmusic_musicpack_2020-03-full** - https://archive.org/details/keygenmusic_musicpack_2020-03-full
 - **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
 - **melcom's Chiptune Archive** - https://files.scene.org/browse/music/compilations/
 - **Metin Seven's Amiga module collection** - https://archive.org/details/amiga-music-module-collection
@@ -72,6 +76,7 @@ Sources used for the database:
 - **Sonix CD Player** - https://grandis.nu/turran/FTP/Collection/PD/RiSe%20PD%20Collection/sonixcd_archived/
 - **TCD Game Mods** - https://grandis.nu/turran/FTP/Collection/Music/Mod/
 - **The Scene Archives** - https://files.scene.org/browse/mirrors/the_scene_archives/
+- **The SceneCat Collection** - https://www.patreon.com/AmigaBill/posts/rest-in-peace-162302204
 - **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
 - **Terry Green PD Library** - https://grandis.nu/turran/FTP/Collection/PD/
 - **TOSEC Music** - https://www.nzbking.com/details:5191a2da123c8c751b3ffcbb/
@@ -295,6 +300,7 @@ And my old Amiga mod collection.
 
 #### Metadata only
 
+- **Kestra / Bitworld** - https://janeway.exotica.org.uk/
 - **TOSEC** - https://www.tosecdev.org/
 - **WHDLoad-Database** - https://github.com/MrV2K/WHDLoad-Database
 - **Wikipedia** - https://wikipedia.org

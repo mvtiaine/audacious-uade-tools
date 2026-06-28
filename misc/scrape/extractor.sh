@@ -56,6 +56,7 @@ run_extract() {
           rm -rf -- "$tmpdir/       >>>      Iceman      <</"
           rm -rf -- "$tmpdir/     >>> TMF Crunchdisk 2.0 <</"
           rm -rf -- "$tmpdir/ ** THE BITSTOPPERS ** /"
+          rm -rf -- "$tmpdir/-=> The Bitstoppers <=-/"
           rm -f -- "$src"
           mv -- "$tmpdir" "$src" >/dev/null 2>&1
           chmod -R 755 "$src" >/dev/null 2>&1

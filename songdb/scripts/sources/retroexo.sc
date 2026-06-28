@@ -14,13 +14,14 @@ import scala.util.Using
 import scala.util.boundary, boundary.break
 
 import convert._
+import sources.Source
 
 // eXoID   MobyID  Game    File    Folder  Year    Publisher       Developer       Genre   Perspective     Misc    Series  URL     Collection      Notes   Compilation?    Foreign?        Add-On Included?
 final case class eXoDOSMeta(
     //exoID: Int,
     //mobyID: Int,
     game: String,
-    //file: String,
+    file: String,
     //folder: String,
     year: Int,
     publisher: String,
@@ -41,9 +42,15 @@ val dosmaster_tsv = System.getProperty("user.home") + "/sources/exodos/DOS_Maste
 
 lazy val metas = Using(scala.io.Source.fromFile(dosmaster_tsv)(using scala.io.Codec.UTF8))(_.getLines().toBuffer.par.map { line =>
   val l = line.split("\\t")
+  var year = l(5).trim.toIntOption.getOrElse(0)
+  val file = l(3).trim
+    // XXX quirks
+  if (file == "Arcade Trivia Quiz (1989).zip") year = 1993
+  else if (file == "Crazy Sue (1990).zip") year = 1991
   eXoDOSMeta(
     game = l(2).trim,
-    year = l(5).toIntOption.getOrElse(0),
+    file = file,
+    year = year,
     publisher = l(6).trim,
     developer = l(7).trim,
   )
@@ -192,14 +199,58 @@ lazy val exodosMetas = metas.par.map(m =>
   val publishers_ = normalize(m.publisher)
   val developers = normalize(m.developer)
   val publishers = (publishers_ ++ developers).sorted.distinct
+  var year = m.year
   val meta = MetaData(
     hash = "",
     authors = Buffer.empty,
     album = normalizeGame(m.game).trim,
     publishers = publishers,
-    year = m.year,
+    year = year,
     _type = "Game",
     _platform = "PC",
   )
   meta
 ).toSet
+
+val retroexo_by_path = sources.sourceDB(Source.RetroExo).groupBy(_.path.toLowerCase)
+
+// XXX quirks or random unrelated files included (cractro musics etc.)
+val fileBlacklist = Set(
+  "CD-Man Version 2.0 (1989).zip",
+  "Cell Block A (1999).zip",
+  "Color Buster (1992).zip",
+  "Crazy Sue (1990).zip",
+  "Pinball Illusions (1995).zip",
+  "Spaceward Ho! (1992).zip",
+)
+val exodosExtras = metas
+.par
+.filterNot(m => m.year > 0 && m.year <= 1991)
+.filterNot(m => fileBlacklist.contains(m.file)
+)
+.map(meta =>
+  val path = "exodos/" + meta.file.toLowerCase
+  val md5s = sources.findArchive(path, retroexo_by_path).map(_._1).sorted.distinct
+  md5s.distinct.map((_, (meta, md5s.distinct)))
+).flatten.seq.groupBy(_._1).mapValues(_.map(_._2)).par.flatMap { case (md5, _metas) =>
+  val minyear = _metas.map(m => if (m._1.year > 0) m._1.year else 9999).min
+  val metas = _metas.filter(_._1.year <= minyear).map { case (meta, _) =>
+    val publishers_ = normalize(meta.publisher)
+    val developers = normalize(meta.developer)
+    val publishers = (publishers_ ++ developers).sorted.distinct
+    (meta.file, MetaData(
+      hash = md5.take(12),
+      authors = Buffer.empty,
+      album = normalizeGame(meta.game).trim,
+      publishers = publishers,
+      year = meta.year,
+      _type = "Game",
+      _platform = "PC",
+    ))
+  }
+  if (metas.isEmpty) {
+    None
+  } else {
+    Some(metas.sortBy(_._1).head)
+  }
+}.seq.toBuffer.distinct

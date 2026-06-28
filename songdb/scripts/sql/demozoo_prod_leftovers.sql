@@ -119,7 +119,6 @@ COPY (
             OR a.parameter LIKE 'http%://wt.exotica.org.uk/files/%'
             OR a.parameter LIKE 'http%://files.exotica.org.uk/?file=exotica/media/audio/UnExoticA/%'
             OR a.parameter LIKE 'http%://www.exotica.org.uk/download.php?file=media/audio/UnExoticA/%'
-            OR a.parameter LIKE 'http%://media.demozoo.org/%'
         )
         AND a.production_id = b.id
         AND c.production_id = b.id

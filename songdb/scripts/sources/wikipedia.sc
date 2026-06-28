@@ -251,6 +251,13 @@ lazy val wikipediaMetas = ((dos_metas ++ windows_metas ++ windows_3x_metas ++ pc
     _platform = "Atari",
   )
 ))
-.map(m => if (m.publishers.forall(_ == m.album)) m.copy(publishers = Buffer.empty) else m) // XXX
-.map(m => m.copy(publishers = m.publishers.map(_.replace("Entertaient", "Entertainment")).sorted.distinct)) // XXX
+// XXX
+.map(m => if (m.publishers.forall(_ == m.album)) m.copy(publishers = Buffer.empty) else m)
+.map(m => m.copy(publishers = m.publishers.map(_.replace("Entertaient", "Entertainment")).sorted.distinct))
+.map(m =>
+  if (m._platform == "Amiga" && m.album == "James Pond 2: Codename RoboCod") m.copy(year = 1991)
+  else if (m._platform == "Amiga" && m.album == "Fire Force") m.copy(year = 1992)
+  else m
+)
+.map(m => if (m.publishers == Buffer("Atari Corporation Mumin Corporation (JP)","Imagitec Design")) m.copy(publishers = Buffer("Atari Corporation", "Imagitec Design", "Mumin Corporation (JP)")) else m)
 .toSet.seq

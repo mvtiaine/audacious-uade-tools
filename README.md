@@ -4,7 +4,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by [au
 
 Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
-The database contains songlengths and module infos for around 460000 unique MD5s, and metadata (authors/album/publishers/year) for 360000, processed from over 380 sources.
+The database contains songlengths and module infos for around 470000 unique MD5s, and metadata (authors/album/publishers/year) for 370000, processed from over 380 sources.
 
 ## Directories
 
@@ -34,6 +34,7 @@ Hashes are calculated from decompressed files, even if the original source files
 - `tsv/pretty/*/amp.tsv` - author/album metadata sourced from AMP
 - `tsv/pretty/*/demozoo.tsv` - author/publisher/album/year metadata sourced from Demozoo
 - `tsv/pretty/*/fujiology.tsv` - author/publisher/album/year metadata sourced from Fujiology
+- `tsv/pretty/*/kestra.tsv` - author/publisher/album/year metadata sourced from Kestra / Bitworld
 - `tsv/pretty/*/modland.tsv` - author/album metadata sourced from Modland
 - `tsv/pretty/*/modsanthology.tsv` - author/publisher/album/year metadata sourced from Mods Anthology
 - `tsv/pretty/*/oldexotica.tsv` - author/publisher/album/year metadata sourced from ExoticA (old)
@@ -43,9 +44,7 @@ Hashes are calculated from decompressed files, even if the original source files
 ## Raw TSV Source Files
 
 - `songdb/sources/*/*.tsv` - module infos and songlengths for each site/source
-- `songdb/sources/site/demozoo_leftovers.tsv` - module infos and songlengths for Demozoo downloads (excluding duplicated sources). Link list is generated with `songdb/scripts/sql/demozoo_leftovers.sql`
-- `songdb/sources/metadata/demozoo_music.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_music.sql`) from Demozoo postgres database dump
-- `songdb/sources/metadata/demozoo_prods.tsv` - Demozoo metadata generated with SQL query (`songdb/scripts/sql/demozoo_prods.sql`) from Demozoo postgres database dump
+- `songdb/sources/metadata/demozoo_*.tsv` - Demozoo metadata generated with SQL queries in (`songdb/scripts/sql/demozoo_*.sql`) from Demozoo postgres database dump
 - `songdb/sources/audio/*.tsv` - audio fingerprints (chromaprint), separate download. See `scripts/sources/audio.sc` for format.
 
 The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
@@ -181,7 +180,7 @@ See [sources.md](sources.md) for sources used for the database.
 This database is also used by:
 
 - **HippoPlayer** - https://github.com/koobo/HippoPlayer
-
+- **LMS Game Music / Tracker MOD/MIDI Player** - https://nexus0.net/pub/sw/lmsmodplay/
 
 ## Contact
 

@@ -30,11 +30,11 @@ final case class OldExoticaMeta (
   year: Option[Int],
 )
 
-lazy val oldexotica_mods_by_path = sources.oldexotica
+lazy val oldexotica_mods_by_path = sources.sourceDB(sources.Source.OldExotica)
   .filter(_.path.startsWith("tunes/archive/"))
   .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(2).mkString("/"))
-lazy val oldexotica_mods_by_dir = sources.oldexotica
+lazy val oldexotica_mods_by_dir = sources.sourceDB(sources.Source.OldExotica)
   .filter(_.path.startsWith("tunes/archive/"))
   .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
@@ -113,11 +113,23 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
                     !name.endsWith(".readme") &&
                     !meta.path.startsWith("DOCUMENTS")
                 ) {
-                    System.err.println(s"WARN: oldexotica missing md5 for '${meta.path}' (${meta.archive})")
+                  System.err.println(s"WARN: oldexotica missing md5 for '${meta.path}' (${meta.archive})")
                 }
               } else {
-                  meta = meta.copy(md5 = md5.get, year = txt.toIntOption)
-                  metas.append(meta)
+                var name_source = meta.name_source
+                var year = txt.toIntOption
+                // XXX quirks
+                if (name_source == "Motor Head") {
+                  name_source = "Motörhead"
+                  year = Some(1992)
+                } else if (name_source == "Ugh!") year = Some(1992)
+                else if (name_source == "Agony") year = Some(1992)
+                else if (name_source == "Carribean Disaster")  {
+                  name_source = "Caribbean Disaster"
+                  year = Some(1996)
+                }
+                meta = meta.copy(md5 = md5.get, name_source = name_source, year = year)
+                metas.append(meta)
               }
               meta = OldExoticaMeta(meta.archive, "", "", 0, "", "", "", None)
             }
@@ -130,6 +142,8 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
   )
   metas
 ).distinct.seq
+
+lazy val oldexotica_by_archive = metas.groupBy(_.archive.toLowerCase)
 
 def transformAuthors(meta: OldExoticaMeta, _type: String): Buffer[String] = {
   var author = meta.author_handle

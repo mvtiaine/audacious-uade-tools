@@ -33,15 +33,13 @@ final case class AMPMod (
   filesize: Int,
 )
 
-val amp_by_path = sources.amp.groupBy(_.path.toLowerCase)
-
 val amp_mods = Files.list(Paths.get(amp_path + "downmod/")).toScala(Buffer).par.map(f =>
   val loc = Using(scala.io.Source.fromFile(f.toFile())(using scala.io.Codec.UTF8))( _.getLines().find(_.startsWith("location:"))).get
   if (loc.isDefined) {
     val url = loc.get.replace("location: ","")
     val path = java.net.URLDecoder.decode(url,"UTF-8").replaceAll("http[s]?://amp.dascene.net/modules/","")
-    if (amp_by_path.contains(path.toLowerCase)) {
-      val e = amp_by_path(path.toLowerCase).head
+    if (sources.amp_by_path.contains(path.toLowerCase)) {
+      val e = sources.amp_by_path(path.toLowerCase).head
       Some(AMPMod(f.toString().split("=").last.toInt, e.md5, path, e.filesize))
     } else None
   } else None
@@ -68,23 +66,6 @@ final case class AMPDetail (
 )
 
 val amp_mods_by_id = amp_mods.groupBy(_.id)
-
-def realName(realName: String, handle: String): Option[String] = {
-  val handleparts = handle.split(" ").map(_.toLowerCase)
-  var realnameparts = realName.split(" ")
-  if (realnameparts.last == "Jr.")
-    realnameparts = realnameparts.dropRight(1)
-  val lcrealnameparts = realnameparts.map(_.toLowerCase)
-  var realname =
-    if (handleparts.last == lcrealnameparts.last && (handle.length != (realnameparts.head + " " + realnameparts.last).length || realnameparts.exists(_.contains("."))))
-      None
-    else if (lcrealnameparts.length >= 3 && !lcrealnameparts.contains("van") && !lcrealnameparts.contains("del") && !lcrealnameparts.exists(_.contains(".")))
-      Some(realnameparts.head + " " + realnameparts.last)
-    else Some(realName)
-  // XXX
-  if (realname == Some("Haikko Ruttmann")) realname = Some("Haiko Ruttmann")
-  realname
-}
 
 val seenIds = scala.collection.mutable.Set[Int]()
 val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.map(f =>
@@ -143,6 +124,8 @@ val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.m
               .replaceAll(" \\[DFC\\]$","") // ???
               .replaceAll(" - DFC$","") // ???
               .replaceAll(" DFC$","") // ???
+              // XXX
+              .replace("Roat Riot 4WD", "Road Riot 4WD")
               .trim
           else ""
         val format = filename.split("\\.").head
@@ -160,34 +143,51 @@ val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.m
       } else None
     }).toBuffer
     if (metas.nonEmpty || (handle.toLowerCase != "n/a" && realNames.nonEmpty)) {
-      Some(AMPDetail(id, handle, realNames.headOption.flatMap(rn => realName(rn, handle)), realNames, country, exHandles, groups, metas))
+      Some(AMPDetail(id, handle, realNames.headOption.flatMap(rn => normalizeRealName(rn, handle)), realNames, country, exHandles, groups, metas))
     } else None
   } else Iterable.empty[AMPDetail]
 ).flatten.distinct.seq
 
 val details_by_id = _details.groupBy(_.id)
+private val details_by_realname = _details
+  .filterNot(_.handle.toLowerCase == "n/a")
+  .filter(d => d.realNames
+    .filterNot(_.toLowerCase == d.handle.toLowerCase)
+    .filterNot(_.contains("?"))
+    .filter(_.contains(" "))  
+    .nonEmpty)
+  .groupBy(_.realNames.head)
+
+// XXX special cases
+val amp_special_cases = Map(
+  "Per Almered" -> "Excellence In Art"
+)
 
 val composer_handles = _details.flatMap(detail =>
-  if (detail.handle.toLowerCase != "n/a")
-    detail.realNames
+  if (detail.handle.toLowerCase != "n/a") {
+    val rns = detail.realNames
       .filterNot(_.toLowerCase == detail.handle.toLowerCase)
+      .filterNot(_.contains("?"))
       .filter(_.contains(" "))
-      .flatMap(rn => {
-        realName(rn, detail.handle) match {
+    if (rns.nonEmpty && (detail.metas.nonEmpty || details_by_realname(detail.realNames.head).size == 1)) {
+      rns.flatMap(rn => {
+        normalizeRealName(rn, detail.handle) match {
           case Some(rn) => Some(rn -> detail.handle)
           case None => None
         }
       })
-  else Iterable.empty[(String, String)]
+    } else None
+  } else Iterable.empty[(String, String)]
 ).groupBy(_._1)
   .filter { case (_, pairs) => pairs.map(_._2.toLowerCase).distinct.size == 1 }
   .map { case (name, pairs) => name -> pairs.head._2 }
   .toMap
+  ++ amp_special_cases
 
 val normalizeHandlePattern = Pattern.compile(" \\[.*\\]$")
 val all_aliases: Map[String, Buffer[String]] = {
   // For each composer, collect all normalized aliases, then map each alias to the full set
-  _details.par.flatMap { detail =>
+  val detail_aliases = _details.par.flatMap { detail =>
     val handle = detail.handle.trim
     if (handle.toLowerCase != "n/a" && handle.nonEmpty) {
       val realNames = detail.realNames.map(_.trim).filter(_.nonEmpty)
@@ -201,12 +201,25 @@ val all_aliases: Map[String, Buffer[String]] = {
         .map(name => normalizeHandlePattern.matcher(name).replaceAll("").trim)
         .filter(_.nonEmpty)
         .distinct
-      if (validNames.size > 1) {
+      if (validNames.nonEmpty) {
         val normalizedNames = validNames.map(normalizeAuthor)
         normalizedNames.map(n => n -> validNames.distinct.toBuffer)
       } else Iterable.empty[(String, Buffer[String])]
     } else Iterable.empty[(String, Buffer[String])]
-  }.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer).toMap
+  }.seq
+
+  val special_aliases = amp_special_cases.toSeq.flatMap { case (rn, h) =>
+    val names = Buffer(rn, h)
+    Seq(normalizeAuthor(rn) -> names, normalizeAuthor(h) -> names)
+  }
+
+  (detail_aliases ++ special_aliases)
+    .groupBy(_._1)
+    .view
+    .mapValues(_.flatMap(_._2).toBuffer.distinct)
+    .toMap
+}
+
 }
 val _metas = _details.flatMap(_.metas).distinct
 val _byAlbum: Map[String, Buffer[AMPMeta]] = _metas.filter(_.album.nonEmpty).toBuffer.groupBy(_.album)
@@ -226,7 +239,6 @@ val details = _details.par.map(detail =>
     _meta =
       if (!_meta.album.isEmpty && _meta.album.toLowerCase == _meta.album) _meta.copy(album = WordUtils.capitalize(_meta.album))
       else _meta
-    _meta = if (_meta.album.endsWith(" Aga")) _meta.copy(album = _meta.album.replaceAll(" Aga$", " AGA")) else _meta
     _meta
   ).distinct)
 ).distinct.seq

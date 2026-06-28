@@ -22,7 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 // XXX corrupted fujiology excel file?
 org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
 val fujiology_xlsx = System.getProperty("user.home") + "/sources/fujiology/fujiology_archive_2_9_9.xlsx"
-lazy val fujiology_by_filename = sources.fujiology.groupBy(_.path.split("/").last.toLowerCase)
+lazy val fujiology_by_filename = sources.sourceDB(sources.Source.Fujiology).groupBy(_.path.split("/").last.toLowerCase)
 
 final case class FujiologyMeta (
   md5: String,
@@ -282,7 +282,7 @@ lazy val prods_metas = {
     val blacklist = Seq(("ST/", "racer.zip"))
     val metas = Buffer[FujiologyMeta]()
     val prodsByFilename = prodRows.groupBy(_.filename)
-    sources.fujiology.filter(e => e.path.startsWith(prefix)).foreach{ e =>
+    sources.sourceDB(sources.Source.Fujiology).filter(e => e.path.startsWith(prefix)).foreach{ e =>
       var i = index
       if (e.path.startsWith(s"${prefix}!BONUS/")) {
         i += 1
@@ -373,7 +373,7 @@ lazy val mags_metas = {
     }
   }
   val magsByFilename = magRows.groupBy(_.filename)
-  sources.fujiology.filter(_.path.startsWith("MAGS/")).foreach{ e =>
+  sources.sourceDB(sources.Source.Fujiology).filter(_.path.startsWith("MAGS/")).foreach{ e =>
     var filename = e.path.split("/")(2).toLowerCase
     if (filename == "falcon") {
       filename = e.path.split("/")(3).toLowerCase
@@ -401,7 +401,7 @@ lazy val mags_metas = {
   metas
 }
 
-lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).par.flatMap { e =>
+lazy val party_metas = sources.sourceDB(sources.Source.Fujiology).filter(_.path.startsWith("PARTIES/")).par.flatMap { e =>
   val dirs = e.path.split("/")
   val competitions = Seq("CHIPTUNE", "F030MSX", "M1CH", "M4CH", "M8CH", "MMUL", "MP3", "MSX", "NONMUSIC", "ST-00")
   val compo = dirs(3)
@@ -413,7 +413,7 @@ lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).p
       album = "",
       year = Some(dirs(1).toInt),
       system = "",
-      prodType = "",
+      prodType = "Compo",
     ))
   } else None
 }

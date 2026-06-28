@@ -5,6 +5,8 @@ COPY (
 SELECT DISTINCT
         a.soundtrack_id AS soundtrack_id,
         b.title as title,
+        b.release_date_date AS mod_date,
+        b.release_date_precision AS mod_date_precision,
         array_agg(DISTINCT e.name) AS authors,
         array_agg(DISTINCT c.id) AS prod_ids
     FROM
@@ -18,5 +20,5 @@ SELECT DISTINCT
     LEFT JOIN demoscene_nick e
         ON e.id = d.nick_id
     GROUP BY
-        a.soundtrack_id, b.title
+        a.soundtrack_id, b.title, b.release_date_date, b.release_date_precision
 ) TO '/tmp/demozoo_soundtracks.tsv' WITH NULL AS '';

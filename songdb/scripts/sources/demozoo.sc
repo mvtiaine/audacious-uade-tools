@@ -12,8 +12,8 @@ import scala.jdk.StreamConverters._
 import scala.util.Try
 import scala.util.Using
 
-import convert.MetaData
-import oldexotica.metas
+import convert._
+import sources.Source
 import sources.SourceDBEntry
 import normalization._
 
@@ -68,31 +68,29 @@ private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Amiga")) "Amiga"
   else if (platform.startsWith("Atari")) "Atari"
   else if (platform.startsWith("Windows")) "PC"
+  else if (platform.startsWith("Linux")) "PC"
   else if (platform.startsWith("MS-Dos")) "PC"
   else ""
 }
 
-val modland_by_path = sources.modland.groupBy(_.path.toLowerCase)
-val aminet_by_path = sources.aminet.groupBy(_.path
+val aminet_by_path = sources.sourceDB(Source.Aminet).groupBy(_.path
   .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx",""))
-val demozoo_music_leftovers_by_path = sources.demozoo_music_leftovers.groupBy(_.path.toLowerCase)
-val modarchive_by_id = sources.demozoo_music_leftovers
+val demozoo_music_leftovers_by_path = sources.sourceDB(Source.DemozooMusicLeftovers).groupBy(_.path.toLowerCase)
+val demozoo_prod_leftovers_by_path = sources.sourceDB(Source.DemozooProdLeftovers).groupBy(_.path.toLowerCase)
+val modarchive_by_id = sources.sourceDB(Source.DemozooMusicLeftovers)
   .filter(_.path.startsWith("api.modarchive.org")).groupBy(_.path.split("/").take(2).last)
-val wantedteam_by_path = sources.wantedteam.groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
-val unexotica_by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
-val fujiology_by_path = sources.fujiology.groupBy(_.path.toLowerCase)
-val oldexotica_by_archive = oldexotica.metas.groupBy(_.archive.toLowerCase)
-val amigascne_by_path = sources.amigascne.groupBy(_.path.toLowerCase)
-val sceneorg_by_path = sources.sceneorg.groupBy(_.path.toLowerCase)
-val sceneorg_lostfound_by_path = sources.sceneorg_lostfound.groupBy(_.path.toLowerCase)
-val demodulate_by_path = sources.demodulate.groupBy(_.path.toLowerCase)
-val artpacksacidorg_by_path = sources.artpacksacidorg.groupBy(_.path.toLowerCase)
-val flerp_by_path = sources.flerp.groupBy(_.path.toLowerCase)
-val hornet_by_path = sources.hornet.groupBy(_.path.toLowerCase)
-val modsoulbrother_by_path = sources.modsoulbrother.groupBy(_.path.toLowerCase)
-val scenesporg_by_path = sources.scenesporg.groupBy(_.path.toLowerCase)
-val blastersoundbbs_by_path = sources.blastersoundbbs.groupBy(_.path.toLowerCase)
-val modplanet_by_path = sources.modplanet.groupBy(_.path.toLowerCase)
+val fujiology_by_path = sources.sourceDB(Source.Fujiology).groupBy(_.path.toLowerCase)
+val sceneorg_by_path = sources.sourceDB(Source.SceneOrg).groupBy(_.path.toLowerCase)
+val sceneorg_lostfound_by_path = sources.sourceDB(Source.SceneOrgLostFound).groupBy(_.path.toLowerCase)
+val demodulate_by_path = sources.sourceDB(Source.Demodulate).groupBy(_.path.toLowerCase)
+val artpacksacidorg_by_path = sources.sourceDB(Source.ArtPacksAcidOrg).groupBy(_.path.toLowerCase)
+val flerp_by_path = sources.sourceDB(Source.Flerp).groupBy(_.path.toLowerCase)
+val hornet_by_path = sources.sourceDB(Source.Hornet).groupBy(_.path.toLowerCase)
+val modsoulbrother_by_path = sources.sourceDB(Source.ModSoulBrother).groupBy(_.path.toLowerCase)
+val scenesporg_by_path = sources.sourceDB(Source.SceneSporg).groupBy(_.path.toLowerCase)
+val blastersoundbbs_by_path = sources.sourceDB(Source.BlasterSoundBBS).groupBy(_.path.toLowerCase)
+val modplanet_by_path = sources.sourceDB(Source.ModPlanet).groupBy(_.path.toLowerCase)
+val jpvscenereleases_by_path = sources.sourceDB(Source.jPVSceneReleases).groupBy(_.path.toLowerCase)
 
 def trim(s: String) = {
   val trimmed = s.trim
@@ -119,10 +117,11 @@ def precision(s: String) = s match {
   case "d" => Precision.DATE
   case _ => Precision.UNKNOWN
 }
-def date(date: String, precision: Precision) = precision match {
+def date(date: String, precision: Precision, emptyMissing: Boolean = true) = precision match {
   case Precision.YEAR => date.substring(0, 4) + "-99-99"
   case Precision.MONTH => date.substring(0, 7) + "-99"
-  case _ => date
+  case Precision.DATE => date
+  case _ => if (emptyMissing) "" else "9999-99-99"
 }
 def maybe(s: String) = {
   val trimmed = trim(s)
@@ -153,7 +152,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   val partyShownDate = (if (l.length > 16) maybe(l(16)) else None).map(d => date(d, partyShownDatePrecision.getOrElse(Precision.UNKNOWN)))
   val partyStartDatePrecision = (if (l.length > 19) maybe(l(19)).map(precision) else None)
   val partyStartDate = (if (l.length > 18) maybe(l(18)) else None).map(d => date(d, partyStartDatePrecision.getOrElse(Precision.UNKNOWN)))
-  val prodType = if (l.length > 20) split(l(20)).toSeq else Seq.empty
+  val prodType = if (l.length > 20) split(l(20)).map(trim).toSeq else Seq.empty
 
   val meta = DemozooMeta(id, title, prodId, modDate, modDatePrecision, prodDate, prodDatePrecision,
     modPlatform, prodPlatforms.toSeq, prod, authors.toSeq, modPublishers.toSeq, prodPublishers.toSeq, // imageUrls.toSeq,
@@ -172,24 +171,8 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     matches
   }
 
-  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
-    var entries = Buffer.empty[SourceDBEntry]
-    val iter = paths.iterator
-    while (iter.hasNext) {
-      val (k, v) = iter.next()
-      if (k.startsWith(archivePath)) {
-        entries ++= v
-      }
-    }
-    if (entries.isEmpty) {
-      Buffer.empty[(String, String)]
-    } else {
-      if (entries.size > 1) {
-        //System.err.println("WARN: demozoo archive " + archivePath + " - multiple entries - " + entries.mkString(", "))
-      }
-      entries.map(e => (e.md5, e.path)).distinct
-    }
-  }
+  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) =
+    sources.findArchive(archivePath, paths)
 
   def findLeftovers(path: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
     if (paths.contains(path)) {
@@ -216,29 +199,29 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   // non-url links
   if (linkClass == "AmigascneFile") {
     val path = (if (url.startsWith("/")) url.drop(1) else url)
-    findLeftovers(path, amigascne_by_path)
+    findLeftovers(path, sources.amigascne_by_path)
   } else if (linkClass == "ModarchiveModule") {
     if (modarchive_by_id.contains(url)) {
       val md5 = modarchive_by_id(url).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (linkClass == "ModlandFile" && url.startsWith("/pub/modules/")) {
-    val path = url.replaceFirst("/pub/modules/", "").replace("//","/")
-    if (modland_by_path.contains(path)) {
-      val md5 = modland_by_path(path).head.md5
+    val path = url.replaceFirst("/pub/modules//?", "").replace("//","/")
+    if (sources.modland_by_path.contains(path)) {
+      val md5 = sources.modland_by_path(path).head.md5
       Buffer((md5, meta))
     // XXX /pub/modules/Fabian/dlm4-shortcutted.mod  etc.
     } else if (path.endsWith(".mod") && !path.startsWith("protracker/")) {
       val altPath = "protracker/" + path
-      if (modland_by_path.contains(altPath)) {
-        val md5 = modland_by_path(altPath).head.md5
+      if (sources.modland_by_path.contains(altPath)) {
+        val md5 = sources.modland_by_path(altPath).head.md5
         Buffer((md5, meta))
       } else Buffer.empty
     // XXX /pub/modules/Protracker/Karsten%20Obarski/sleepwalk.mod etc.
     } else if (path.endsWith(".mod") && path.startsWith("protracker/")) {
       val altPath = path.replaceFirst("protracker/", "soundtracker/")
-      if (modland_by_path.contains(altPath)) {
-        val md5 = modland_by_path(altPath).head.md5
+      if (sources.modland_by_path.contains(altPath)) {
+        val md5 = sources.modland_by_path(altPath).head.md5
         Buffer((md5, meta))
       } else Buffer.empty
     } else Buffer.empty
@@ -288,16 +271,19 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   } else if (url.contains("://amp.dascene.net/modules/")) {
     // url should have been decoded already
     val path = url
-      .replaceAll("http[s]?://amp.dascene.net/modules/","")
+      .replaceAll("http[s]?://amp.dascene.net/modules//?","")
       .replace("//","/")
-    if (amp.amp_by_path.contains(path)) {
-      val md5 = amp.amp_by_path(path).head.md5
+    if (sources.amp_by_path.contains(path)) {
+      val md5 = sources.amp_by_path(path).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
-  } else if (url.contains("://aminet.net/")) {
+  } else if (url.contains("://aminet.net/") || url.contains(".aminet.net/")) {
     val path = url
-      .replaceAll("http[s]?://aminet.net/package/","")
-      .replaceAll("http[s]?://aminet.net/","")
+      .replaceAll("http[s]?://.*aminet.net/package//?","")
+      .replaceAll("http[s]?:/.*aminet.net//?","")
+      .replaceAll("ftp://.*aminet.net//?","")
+      .replace("pub/aminet/", "")
+      .replace("aminet/", "")
       .replace("//","/")
       .replace(".lzx","")
       .replace(".lha","")
@@ -320,10 +306,10 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     } else Buffer.empty
   } else if (url.contains("://wt.exotica.org.uk/files/")) {
     val path = url
-      .replaceAll("http[s]?://wt.exotica.org.uk/files/","")
+      .replaceAll("http[s]?://wt.exotica.org.uk/files//?","")
       .replace("//","/")
-    if (wantedteam_by_path.contains(path)) {
-      val md5 = wantedteam_by_path(path).head.md5
+    if (sources.wantedteam_by_path.contains(path)) {
+      val md5 = sources.wantedteam_by_path(path).head.md5
       Buffer((md5, meta))
     } else None
   } else if (url.contains("://files.exotica.org.uk/?file=exotica/media/audio/unexotica/") ||
@@ -331,12 +317,12 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
              url.contains("://www.exotica.org.uk/tunes/archive/authors/")
   ) {
     val path = url
-      .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/unexotica/","")
-      .replaceAll("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/unexotica/", "")
-      .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/authors/", "")
+      .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/unexotica//?","")
+      .replaceAll("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/unexotica//?","")
+      .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/authors//?","")
       .replace("//","/")
-    if (unexotica_by_path.contains(path)) {
-      val entries = unexotica_by_path(path)
+    if (sources.unexotica_by_path.contains(path)) {
+      val entries = sources.unexotica_by_path(path)
       if (entries.size > 1) {
         //System.err.println("WARN: unexotica path " + path + " - multiple entries - " + entries)
         val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
@@ -356,11 +342,11 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
              url.contains("://old.exotica.org.uk/tunes/archive/")
     ) {
       val archive = url
-        .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/","")
-        .replaceAll("http[s]?://old.exotica.org.uk/tunes/archive/","")
+        .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive//?","")
+        .replaceAll("http[s]?://old.exotica.org.uk/tunes/archive//?","")
         .replace("//","/")
-      if (oldexotica_by_archive.contains(archive)) {
-        val entries = oldexotica_by_archive(archive)
+      if (oldexotica.oldexotica_by_archive.contains(archive)) {
+        val entries = oldexotica.oldexotica_by_archive(archive)
         if (entries.size > 1) {
           //System.err.println("WARN: oldexotica path " + archive + " - multiple entries - " + entries)
           val matches = findMatches(meta, entries.map(e => (e.md5, e.path)).toBuffer)
@@ -380,6 +366,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   } else {
     val path = url
       .replaceAll("http[s]?://","")
+      .replaceAll("ftp://","")
       .replace("//","/")
     findLeftovers(path)
   }
@@ -481,7 +468,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
       if (m.prodDatePrecision.ordinal <= Precision.YEAR.ordinal || best.get.prodDatePrecision.ordinal <= Precision.YEAR.ordinal) {
         prodMonth = if (prodYear == bestYear) bestMonth else if (prodYear > bestYear) bestMonth + 1 else bestMonth - 1
       }
-      maxMonthDiff = math.min(maxMonthDiff, math.abs((prodYear - bestYear) * 12 + (prodMonth - bestMonth)))
+      maxMonthDiff = math.min(maxMonthDiff, math.abs((prodYear - bestYear) * 12 + Math.min(prodMonth - bestMonth, 11)))
     }
     if (m != best.get && m.prodId.nonEmpty)
       prodCount += 1
@@ -494,6 +481,8 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
 final case class DemozooSoundtrack (
   id: Int,
   title: String,
+  modDate: String,
+  modDatePrecision: Precision,
   authors: Buffer[String],
 )
 
@@ -501,54 +490,129 @@ val soundtracksByProdId = Using(scala.io.Source.fromFile("sources/metadata/demoz
   val l = line.split("\t")
   val id = l(0).toInt
   val title = l(1)
-  val authors = (split(l(2)) map trim map fix).sorted.distinct.toBuffer
-  val prodIds = split(l(3)).flatMap(_.toIntOption)
+  val modDatePrecision = precision(l(3))
+  val modDate = date(l(2), modDatePrecision)
+  val authors = (split(l(4)) map trim map fix).sorted.distinct.toBuffer
+  val prodIds = split(l(5)).flatMap(_.toIntOption)
 
-  prodIds.map(prodId => (prodId, DemozooSoundtrack(id, title, authors)))
+  prodIds.map(prodId => (prodId, DemozooSoundtrack(id, title, modDate, modDatePrecision, authors)))
 )).get.flatten.groupBy(_._1).par.mapValues(_.map(_._2).distinct.seq).seq
 
-lazy val demozooMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_prods.tsv"))(_.getLines().toSeq.par.flatMap(line =>
+final case class DemozooProdMeta (
+  id: Int,
+  date: String,
+  datePrecision: Precision,
+  title: String,
+  platforms: Buffer[String],
+  publishers: Buffer[String],
+  musicAuthors: Buffer[String],
+  party: Option[String],
+  partyShownDate: Option[String],
+  partyShownDatePrecision: Option[Precision],
+  partyStartDate: Option[String],
+  partyStartDatePrecision: Option[Precision],
+  prodType: Seq[String],
+  soundtrackIds: Seq[Int],
+  linkClass: String,
+  url: String
+) {
+  private val _partyDatePrecision: (Option[String], Option[Precision]) = {
+    if (partyShownDate.isEmpty && partyStartDate.isEmpty) {
+      (None, None)
+    } else if (partyShownDate.nonEmpty && partyStartDate.nonEmpty) {
+      val dates = Seq((partyShownDate.get, partyShownDatePrecision.get), (partyStartDate.get, partyStartDatePrecision.get))
+      (Some(dates.minBy(_._1)._1), Some(dates.minBy(_._1)._2))
+    } else if (partyShownDate.nonEmpty) {
+      (partyShownDate, partyShownDatePrecision)
+    } else {
+      (partyStartDate, partyStartDatePrecision)
+    }
+  }
+  val partyDate: Option[String] = _partyDatePrecision._1
+  val partyDatePrecision: Option[Precision] = _partyDatePrecision._2
+}
+
+private lazy val demozooProdMetas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_prods.tsv"))(_.getLines().toSeq.par.flatMap(line =>
   val l = line.split("\t")
-  val prodId = l(0).toInt
-  val prodDate = l(1)
-  val prodDatePrecision = precision(l(2))
-  var prod = l(3)
-  val prodPlatforms = split(l(4)) map trim
-  val prodPublishers = split(l(5)) map trim map fix
-  val prodMusicAuthors = (split(l(6)) map trim map fix).sorted.distinct.toBuffer
-  val party =  maybe(l(7))
+  val id = l(0).toInt
+  val date = l(1)
+  val datePrecision = precision(l(2))
+  val title = l(3)
+  val platforms = split(l(4)) map trim
+  val publishers = split(l(5)) map trim map fix
+  val musicAuthors = (split(l(6)) map trim map fix).sorted.distinct.toBuffer
+  val party = maybe(l(7))
   val partyShownDate = maybe(l(8))
-  val partyShownDatePrecision = precision(l(9))
+  val partyShownDatePrecision = maybe(l(9)).map(precision)
   val partyStartDate = maybe(l(10))
-  val partyStartDatePrecision = precision(l(11))
-  val prodType = split(l(12))
-  val soundtrackIds = split(l(13))
+  val partyStartDatePrecision = maybe(l(11)).map(precision)
+  val prodType = split(l(12)).map(trim)
+  val soundtrackIds = split(l(13)).flatMap(_.toIntOption)
   val linkClass = l(14)
   val url = l(15).toLowerCase
 
-  if (prodPlatforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E"))) {
+  if (platforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E")) || (platforms.isEmpty && !url.contains("/demos/compilations/lost_found_and_more/chip_module_collection_no1"))) {
+    Some(DemozooProdMeta(id, date, datePrecision, title, platforms.toBuffer, publishers.toBuffer, musicAuthors, party, partyShownDate, partyShownDatePrecision, partyStartDate, partyStartDatePrecision, prodType.toSeq, soundtrackIds.toSeq, linkClass, url))
+  } else {
+    None
+  }
+)).get.seq.groupBy(_.id)
 
-    val soundtracks = soundtracksByProdId.getOrElse(prodId, Seq.empty)
-    val soundtrackCount = soundtracks.map(_.id).distinct.size
-    val authors =
-      if ((soundtrackCount == 1 || (soundtracks.nonEmpty && soundtracks.forall(_.authors == soundtracks.head.authors))) &&
-      (prodMusicAuthors.isEmpty || prodMusicAuthors.forall(a => soundtracks.exists(_.authors.contains(a)))))
-        soundtracks.head.authors
-      else if (prodMusicAuthors.size <= 2 && soundtrackCount == 0) prodMusicAuthors
-      else Buffer.empty
+lazy val demozooMetas = demozooProdMetas.values.par.map(_.map(prod => {
+
+  val soundtracks = soundtracksByProdId.getOrElse(prod.id, Seq.empty)
+  val soundtrackCount = soundtracks.map(_.id).distinct.size
+  var authors = Seq.empty[Buffer[String]]
+
+  if (soundtrackCount > 0) {
+    authors = soundtracks.map(_.authors).filter(_.nonEmpty).distinct
+  }
+  if (prod.musicAuthors.size <= 2 && soundtrackCount == 0) {
+    authors = Seq(prod.musicAuthors)
+  } else if (prod.musicAuthors.exists(a => a.nonEmpty && !soundtracks.exists(_.authors.contains(a)))) {
+    prod.musicAuthors.filter(a => a.nonEmpty && !soundtracks.exists(_.authors.contains(a))).foreach(a => {
+      authors = (authors :+ Buffer(a)).distinct
+    })
+  }
     
-    val meta = MetaData(
+  val metas = if (authors.nonEmpty) {
+    authors.distinct.map(a => {
+      Buffer((prod.id, MetaData(
+        hash = "",
+        authors = a.sorted.distinct,
+        album = prod.title.trim,
+        publishers = prod.publishers.sorted.distinct.toBuffer,
+        year = prod.date.take(4).toIntOption.getOrElse(0)
+      )))
+    }).flatten
+  } else {
+    Buffer((prod.id, MetaData(
       hash = "",
-      authors = authors,
-      album = prod.trim,
-      publishers = prodPublishers.sorted.distinct.toBuffer,
-      year = prodDate.take(4).toIntOption.getOrElse(0),
-      _type = prodType.sorted.headOption.getOrElse(""),
-      _platform = if (prodPlatforms.isEmpty || prodPlatforms.size > 1) "" else normalizePlatform(prodPlatforms.head)
-    )
-    Some(meta)
-  } else None
-)).get.toSet
+      authors = Buffer.empty,
+      album = prod.title.trim,
+      publishers = prod.publishers.sorted.distinct.toBuffer,
+      year = prod.date.take(4).toIntOption.getOrElse(0)
+    )))
+  }.toBuffer
+  var _types = if (prod.prodType.nonEmpty) prod.prodType.filter(_.nonEmpty).sorted.distinct else Buffer("")
+  var normPlatforms = (prod.platforms.map(normalizePlatform).filter(_.nonEmpty).sorted.distinct.nonEmpty match {
+    case true => prod.platforms.map(normalizePlatform).filter(_.nonEmpty).sorted.distinct
+    case false => Buffer("")
+  })
+  metas.map(meta => {
+    var metas = Buffer.empty[(Int, MetaData)]
+    for (t <- _types) {
+      for (p <- normPlatforms) {
+        metas = metas :+ (meta._1, meta._2.copy(_type = t, _platform = p))
+      }
+    }
+    metas
+  }).flatten
+}).flatten).flatten.seq.toSet
+
+for ((id, meta) <- demozooMetas) {
+  println(s"DEMOZOO PROD META: ${id}: ${meta}")
+}
 
 lazy val all_aliases = Using(scala.io.Source.fromFile("sources/metadata/demozoo_authors.tsv"))(_.getLines().toSeq.par.flatMap(line =>
     // For each handle, collect all normalized aliases, then map each alias to the full set
@@ -558,11 +622,11 @@ lazy val all_aliases = Using(scala.io.Source.fromFile("sources/metadata/demozoo_
   val nick_variants = split(l(3)).map(trim).filter(_.nonEmpty)
 
   val names = (Seq(releaser_name) ++ nicks ++ nick_variants).distinct
-  if (names.size > 1) {
+  if (names.nonEmpty) {
     val normalized = names.map(normalizeAuthor)
     normalized.map(n => n -> names.distinct.toBuffer)
   } else Iterable.empty[(String, Buffer[String])]
-)).get.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer).toMap
+)).get.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
 
 def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int): Option[MetaData] = {
   val dates = Seq(m.modDate, m.prodDate, Seq(m.partyShownDate.getOrElse(""), m.partyStartDate.getOrElse("")).max).filterNot(_.isEmpty)
@@ -605,9 +669,9 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
     val prodMonth = m.prodDate.drop(5).take(2).toInt
     val cmpYear = cmpDate.take(4).toInt
     val cmpMonth = cmpDate.drop(5).take(2).toInt
-    Math.abs(prodYear - cmpYear) * 12 + (prodMonth - cmpMonth)
+    Math.abs(prodYear - cmpYear) * 12 + Math.min(prodMonth - cmpMonth, 11)
   } else 0
-  if (!useParty && !useProd && !m.party.isDefined && !m.partyDate.isDefined && m.prodDate.nonEmpty && monthDiff < maxMonthDiff && monthDiff <= 12) {
+  if (!useParty && !useProd && !m.party.isDefined && !m.partyDate.isDefined && m.prodDate.nonEmpty && monthDiff <= maxMonthDiff && monthDiff <= 12) {
     useProd = true
   }
   if (!useParty && !useProd && m.prodId.nonEmpty && prodCount == 1 && monthDiff <= 36 &&
@@ -628,6 +692,7 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
     } else {
       earliestDate
     }
+  val normPlatforms = m.prodPlatforms.map(normalizePlatform).sorted.distinct
   val info = MetaData(
     hash = md5.take(12),
     authors = if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
@@ -643,10 +708,190 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
     album = if (useProd) m.prod.trim else "",
     year = if (!publishDate.isEmpty) publishDate.substring(0,4).toInt else 0,
     _type = if (useProd) m.prodType.sorted.headOption.getOrElse("") else if (useParty) "Compo" else "",
-    _platform = if (!useProd || m.prodPlatforms.isEmpty || m.prodPlatforms.size > 1) "" else demozoo.normalizePlatform(m.prodPlatforms.head)
+    _platform = if (!useProd || normPlatforms.isEmpty || normPlatforms.size > 1) "" else normPlatforms.head
   )
   info match {
     case MetaData(_, Buffer(), Buffer(), "", 0, "", "") => None
     case _ => Some(info)
   }
+}.map(m =>
+  // XXX 5th Gear (Amiga)
+  if (m.hash == "4a17ff0d3fb2" || m.hash == "a9199ea17a17") m.copy(year = 1990)
+  else m
+)
+val typeBlacklist = Set(
+  "Pack",
+  "Tool",
+)
+val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
+  metas.exists(_.prodType.forall(typeBlacklist.contains)) ||
+  // XXX
+  metas.exists(_.title == "Fading Twilight - Dual Layer DVD Edition") ||
+  metas.exists(_.title == "Tracker Hero") ||
+  prodId == 303858
+}.par.map { case (prodId, metas) =>
+  metas.flatMap { meta =>
+    var md5s = Buffer.empty[String]
+    val path = (if (meta.url.startsWith("/")) meta.url.drop(1) else meta.url).toLowerCase
+    if (meta.linkClass == "AmigascneFile") {
+      md5s = sources.findArchive(path, sources.amigascne_by_path).map(_._1).sorted.distinct
+    } else if (meta.linkClass == "ModlandFile" && meta.url.startsWith("/pub/modules/")) {
+      val path = meta.url.replaceFirst("/pub/modules//?", "").replace("//","/").toLowerCase
+      if (sources.modland_by_path.contains(path)) {
+        val md5 = sources.modland_by_path(path).head.md5
+        md5s = Buffer(md5)
+      }
+    } else if (meta.linkClass == "SceneOrgFile") {
+      if (path.startsWith("demos/compilations/lost_found_and_more/")) {
+        md5s = sources.findArchive(path.replace("demos/compilations/lost_found_and_more/",""), sceneorg_lostfound_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/artpacks/")) {
+        md5s = sources.findArchive(path.replace("mirrors/artpacks/",""), artpacksacidorg_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/flerp/")) {
+        md5s = sources.findArchive(path.replace("mirrors/flerp/",""), flerp_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/hornet/")) {
+        md5s = sources.findArchive(path.replace("mirrors/hornet/",""), hornet_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/scenesp.org/compilations/blastersound_bbs/")) {
+        md5s = sources.findArchive(path.replace("mirrors/scenesp.org/compilations/blastersound_bbs/",""), blastersoundbbs_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/scenesp.org/compilations/modplanet/normal/")) {
+        md5s = sources.findArchive(path.replace("mirrors/scenesp.org/compilations/modplanet/normal/",""), modplanet_by_path).map(_._1).sorted.distinct
+      } else if (path.startsWith("mirrors/scenesp.org/")) {
+        md5s = sources.findArchive(path.replace("mirrors/scenesp.org/",""), scenesporg_by_path).map(_._1).sorted.distinct
+      } else {
+        md5s = sources.findArchive(path, sceneorg_by_path).map(_._1).sorted.distinct
+      }
+    } else if (meta.linkClass == "UntergrundFile") {
+      val path = "ftp.untergrund.net" + meta.url.toLowerCase
+      md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
+    } else if (meta.linkClass == "WaybackMachinePage") {
+      val path = "web.archive.org/web/" + meta.url.toLowerCase
+      md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
+    } else if (meta.linkClass == "FujiologyFile") {
+      md5s = sources.findArchive(path, fujiology_by_path).map(_._1).sorted.distinct
+    } else if (meta.url.contains("://amp.dascene.net/downmod.php?index=") ||
+               meta.url.contains("://amp.dascene.net/analyzer2.php?idx=")) {
+      val id = meta.url.toLowerCase.replaceAll("&application=amp","").split("=").last.toInt
+      if (amp.amp_mods_by_id.contains(id)) {
+        val md5 = amp.amp_mods_by_id(id).head.md5
+        md5s = Buffer(md5)
+      }
+    } else if (meta.url.contains("://amp.dascene.net/modules/")) {
+      // url should have been decoded already
+      val path = meta.url
+        .toLowerCase
+        .replaceAll("http[s]?://amp.dascene.net/modules//?","")
+        .replace("//","/")
+      if (sources.amp_by_path.contains(path)) {
+        val md5 = sources.amp_by_path(path).head.md5
+        md5s = Buffer(md5)
+      }
+    } else if (meta.url.contains("://aminet.net/") || meta.url.contains(".aminet.net/")) {
+      val path = meta.url
+        .toLowerCase
+        .replaceAll("http[s]?://.*aminet.net/package//?","")
+        .replaceAll("http[s]?:/.*aminet.net//?","")
+        .replaceAll("ftp://.*aminet.net//?","")
+        .replace("pub/aminet/", "")
+        .replace("aminet/", "")
+        .replace("//","/")
+        .replace(".lzx","")
+        .replace(".lha","")
+      md5s = sources.findArchive(path, aminet_by_path).map(_._1).sorted.distinct
+    } else if (meta.url.contains("://files.exotica.org.uk/?file=jpvs_scene_releases/") ||
+               meta.url.contains("://malus.exotica.org.uk/pub/jpvs_scene_releases/")
+    ) {
+      val path = meta.url
+        .toLowerCase
+        .replaceAll("http[s]?://files.exotica.org.uk/\\?file=jpvs_scene_releases//?","")
+        .replaceAll("http[s]?://malus.exotica.org.uk/pub/jpvs_scene_releases//?","")
+        .replace("//","/")
+      md5s = sources.findArchive(path, jpvscenereleases_by_path).map(_._1).sorted.distinct
+    } else if (meta.url.contains("://defacto2.net/file/download/") ||
+              (meta.url.contains("://defacto2.net/d/") && meta.url.contains("?filename="))) {
+      val path = meta.url
+        .toLowerCase
+        .replaceAll("http[s]?://defacto2.net/d//?","defacto2.net/d/")
+        .replaceAll("http[s]?://defacto2.net/file/download//?","defacto2.net/d/")
+        .replace("//","/")
+        .replaceAll("defacto2.net/d/.*\\?filename=","defacto2.net/d/")
+      md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
+    } else {
+      val path = meta.url
+        .toLowerCase
+        .replaceAll("http[s]?://","")
+        .replaceAll("ftp://","")
+        .replace("//","/")
+      md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
+    }
+    md5s.distinct.map((_, (meta, md5s.distinct)))
+  }
+}.flatten.seq.groupBy(_._1).mapValues(_.map(_._2)).par.flatMap { case (md5, _metas) =>
+  val mindate = _metas.map(m => date(m._1.date, m._1.datePrecision, false)).min
+  val metas = _metas.filter(m => date(m._1.date, m._1.datePrecision, false) <= mindate).flatMap { case (meta, md5s) =>
+    var authors = Buffer.empty[String]
+    val soundtracks = soundtracksByProdId.getOrElse(meta.id, Seq.empty)
+    val prodMusicAuthors = meta.musicAuthors.filter(_.trim.nonEmpty).sorted.distinct
+    val soundtrackAuthors = soundtracks.flatMap(_.authors).filter(_.trim.nonEmpty).sorted.distinct
+    val allAuthors = prodMusicAuthors.union(soundtrackAuthors).sorted.distinct.filterNot(a => a.trim.isEmpty || a.trim == "?")
+    if (md5s.size > 1 && md5s.size > soundtracks.size) {
+      println(s"DEMOZOO EXTRA: multiple MD5s ${md5s} for meta ${meta} with soundtracks ${soundtracks}, skipping author matching")
+    } else if (allAuthors.size <= 2 && (soundtracks.isEmpty || soundtracks.forall(s => s.authors.sorted.distinct == allAuthors))) {
+      authors = allAuthors.toBuffer
+    }
+    var publishers = Buffer.empty[String]
+    var album = ""
+    var year = 0
+    var _type = ""
+    var _platform = ""
+    val countBefore = soundtracks.count(f => date(f.modDate, f.modDatePrecision, false).take(4) < date(meta.date, meta.datePrecision, false).take(4))
+    val countAfter = soundtracks.count(f => date(f.modDate, f.modDatePrecision, false).take(4) > date(meta.date, meta.datePrecision, false).take(4))
+    val minSoundtrackDate = if (soundtracks.isEmpty) "9999-99-99" else soundtracks.map(s => date(s.modDate, s.modDatePrecision, false)).min
+    if ((soundtracks.isEmpty && allAuthors.size <= 2) || ((countAfter >= countBefore || minSoundtrackDate.take(4).toInt >= date(meta.date, meta.datePrecision, false).take(4).toInt - 2) && (allAuthors.size <= 5 || countBefore == 0) && allAuthors.size <= soundtracks.size + 2)) {
+      album = meta.title.trim
+      publishers = meta.publishers.filter(_.trim.nonEmpty).sorted.distinct.toBuffer
+      year = meta.date.take(4).toIntOption.getOrElse(0)
+      _type = meta.prodType.sorted.headOption.getOrElse("")
+      val normPlatforms = meta.platforms.map(normalizePlatform).sorted.distinct
+      _platform = if (normPlatforms.isEmpty || normPlatforms.size > 1) "" else normPlatforms.head
+    } else {
+      //println(s"DEMOZOO EXTRA: skipping album/publisher/year/type/platform for md5 ${md5} meta ${meta} with soundtracks ${soundtracks}, allAuthors ${allAuthors.size}, countBefore ${countBefore}, countAfter ${countAfter}, minSoundtrackDate ${minSoundtrackDate}")
+    }
+    if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || (year > 0 && year < 9999)) {
+      Some((meta.id, MetaData(
+        hash = md5.take(12),
+        authors = authors,
+        album = album,
+        publishers = publishers,
+        year = if (year > 0 && year < 9999) year else 0,
+        _type = _type,
+        _platform = _platform
+      )))
+    } else None
+  }
+  if (metas.isEmpty) {
+    println(s"DEMOZOO EXTRA: no meta for MD5 ${md5} metas: ${_metas}")
+    None
+  } else {
+    val scoredMetas = metas.map(e =>
+      (e, (if (e._2._platform.toLowerCase == "amiga") 1 else 0) + (if (e._2._type.toLowerCase == "game") 1 else 0) + (if (e._2.authors.nonEmpty) 1 else 0) + (if (e._2.publishers.nonEmpty) 1 else 0) + (if (e._2.album.nonEmpty) 1 else 0) + (if (e._2.year > 0) 1 else 0))
+    )
+    val bestscore = scoredMetas.map(_._2).max
+    val bestMetasForScore = scoredMetas.filter(_._2 == bestscore).map(_._1).toSeq
+
+    // Fallback sorting for the "best" entry
+    val SORT = "\u0001"
+    val bestMeta = bestMetasForScore.sortBy(m => ("" +
+     (if (m._2._type.isEmpty) SEPARATOR else if (m._2._type.toLowerCase == "game") 0 else 1) + SORT +
+     (if (m._2._platform.isEmpty) SEPARATOR else if (m._2._platform.toLowerCase == "amiga") 0 else 1) + SORT +
+     (if (m._2.year == 0) 9999 else m._2.year) + SORT +
+     (if (m._2.authors.isEmpty) SEPARATOR else (10 - m._2.authors.size) + m._2.authors.mkString(SEPARATOR)) + SORT +
+     (if (m._2.album.isEmpty) SEPARATOR else m._2.album) + SORT +
+     (if (m._2.publishers.isEmpty) SEPARATOR else (10 - m._2.publishers.size) + m._2.publishers.mkString(SEPARATOR)) + SORT
+    )).head
+
+    Some(bestMeta)
+  }
+}.seq.toBuffer.distinct
+
+for ((id, meta) <- demozooExtras) {
+  println(s"DEMOZOO EXTRA META: $id - ${meta}")
 }

@@ -53,7 +53,7 @@ final case class UnExoticaMeta (
   `ripped by`: StringOrList,
   comments: Option[String],
 )
-val metas = sources.unexotica.par.flatMap(e =>
+val metas = sources.sourceDB(sources.Source.UnExotica).par.flatMap(e =>
   val txt = unexotica_path + e.path.split("/").take(3).map(_.replace(".lha", ".txt")).mkString("/")
 
   def parse(file: String) = {
@@ -87,6 +87,16 @@ val metas = sources.unexotica.par.flatMap(e =>
   if (title == "Wing Commander") m.copy(_4 = m._4.copy(year = Left(1992)))
   else if (title == "Operation Wolf") m.copy(_4 = m._4.copy(year = Left(1988)))
   else if (title == "Impérial") m.copy(_4 = m._4.copy(year = Left(1993)))
+  else if (title == "Simon the Sorcerer") m.copy(_4 = m._4.copy(year = Left(1993)))
+  else if (title == "Soccer Kid") m.copy(_4 = m._4.copy(year = Left(1993)))
+  else if (title == "Elvira II - The Jaws of Cerberus") m.copy(_4 = m._4.copy(year = Left(1992)))
+  else if (title == "Cardiaxx") m.copy(_4 = m._4.copy(year = Left(1991)))
+  else if (title == "Winter Olympics - Lillehammer'94") m.copy(_4 = m._4.copy(year = Left(1993)))
+  else if (title == "Psycho Santa") m.copy(_4 = m._4.copy(year = Left(1993)))
+  else if (title == "Elvira II - The Jaws of Cerberus") m.copy(_4 = m._4.copy(year = Left(1992)))
+  else if (title == "5th Gear") m.copy(_4 = m._4.copy(year = Left(1990)))
+  else if (title == "Pinball Illusions") m.copy(_4 = m._4.copy(year = Left(1995)))
+  else if (title == "Scorched Tanks") m.copy(_4 = m._4.copy(year = Left(1994)))
   else m
 })
 .seq.toSeq
@@ -263,10 +273,10 @@ val all_aliases: Map[String, Buffer[String]] = {
     val validNames = rawNames.filter(_.nonEmpty).distinct
     val normalizedNames = validNames.map(normalizeAuthor)
     normalizedNames.map(n => n -> validNames.distinct.toBuffer)
-  }.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer).toMap
+  }.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
 }
 
-val by_path = sources.unexotica.groupBy(_.path.split("/").take(3).mkString("/"))
+val by_path = sources.sourceDB(sources.Source.UnExotica).groupBy(_.path.split("/").take(3).mkString("/"))
 def transformAuthors(meta: UnExoticaMeta, path: String): Seq[String] = {
   val handleBlackList = Seq("Allister Brimble", "Tim Wright")
   // XXX Wiki typos etc.
@@ -347,7 +357,7 @@ def transformAlbum(meta: UnExoticaMeta, path: String): String = {
   // remove subtitle parts to try avoid overly long titles
   )
   val short = title.split(" - ").head.trim
-  if (!short.toIntOption.isDefined) title = short
+  if (!short.toIntOption.isDefined && !title.trim.takeRight(2).toIntOption.isDefined && (short.length > 3 || title.toLowerCase.endsWith(" game"))) title = short
   if (title.isEmpty) if (authorAlbum.size > 1) authorAlbum(1) else ""
   else title
 }
