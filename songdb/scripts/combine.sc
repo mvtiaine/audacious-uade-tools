@@ -2366,7 +2366,8 @@ def combineMetadata(
        !lcalbum.endsWith(" crack") &&
        !lcalbum.endsWith(" cracktro") &&
        !lcalbum.startsWith("cracktro ") &&
-       !lcalbum.contains(" cracktro ")
+       !lcalbum.contains(" cracktro ") &&
+       !(lcalbum == "cracktro")
     ) {
       updated = m.copy(album = m.album + " [cracktro]")
     } 

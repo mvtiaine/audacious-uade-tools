@@ -96,6 +96,7 @@ enum Source:
     CEUSOnline,
     ChillProductions,
     ChipSpecialSoundMidi,
+    ChiptuneApp,
     ChiptuneCom,
     ClassicGameSoundtracks,
     ClubAmigaDeMontreal,
@@ -540,6 +541,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   CEUSOnline -> Seq(C(year = 1995)),
   // ChillProductions
   ChipSpecialSoundMidi -> Seq(C(year = 1993)),
+  // ChiptuneApp
   // ChiptuneCom
   ClassicGameSoundtracks -> Seq(C(_platform = "Amiga")),
   ClubAmigaDeMontreal -> Seq(C(year = 1994)),
@@ -1603,6 +1605,7 @@ val tsvfiles = Buffer(
   ("site/artpacksacidorg.tsv", ArtPacksAcidOrg),
   ("site/artscene.tsv", ArtScene),
   ("site/atariftp.tsv", AtariFTP),
+  ("site/chiptuneapp.tsv", ChiptuneApp),
   ("site/chiptunecom.tsv", ChiptuneCom),
   ("site/classicgamesoundtracks.tsv", ClassicGameSoundtracks),
   ("site/demodulate.tsv", Demodulate),
@@ -1699,6 +1702,7 @@ val yearPattern4 = """\((\d{4})-\d{2}-\d{2}\)""".r
 val yearRangePattern1 = """[\/|^](\d{4})-(\d{4})\/""".r
 val yearRangePattern2 = """[\/](\d{4})-(\d{2})\/""".r
 val blacklist = Map(
+  ChiptuneApp -> Set("Game Mods/"),
   Hornet -> Set("music/songs/1995/a/agenda.zip","music/songs/1995/p/palli.zip","music/songs/1995/w/wierdtow.zip"),
   LemonAmiga -> Set("1987/"),
   NostalgicPlayer -> Set("format/MED210MMD0.zip/MED 2.10 (MMD0)/1990/"),

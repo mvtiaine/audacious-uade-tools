@@ -17,6 +17,7 @@ Sources used for the database:
 - **artpacks.acid.org** - https://files.scene.org/browse/mirrors/artpacks/
 - **artscene.textfiles.com** - http://artscene.textfiles.com/
 - **Atari FTP** - https://archive.org/details/ATARI_FTP_0693
+- **chiptune.app** - https://chiptune.app/
 - **chiptune.com** - http://chiptune.com/
 - **Classic Game Soundtracks** - https://www.nemmelheim.de/cgs_small/index2.php
 - **Demodulate** - https://demodulate.scene.org/
