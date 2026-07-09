@@ -107,12 +107,12 @@ run_uade() {
 mkdir -p /tmp/songdb
 
 export -f run_uade
-find -L  . -type f | sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 run_uade {%} {}
+gfind -L  . -type f | grep -v '\/usr\/' | sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 run_uade {%} {}
 
 cat /tmp/songdb/*/songdb.tsv | sort | uniq > /tmp/songdb/songdb.tsv
 cat /tmp/songdb/*/audio.tsv | sort | uniq > /tmp/songdb/audio.tsv
 cat /tmp/songdb/*/stderr > /tmp/songdb/stderr
 for i in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do
   mkdir -p /tmp/songdb/strings/$i
-  find -L /tmp/songdb -type f -path "*/strings/${i}*.strings" -exec mv -f -- "{}" /tmp/songdb/strings/"$i"/ \;
+  gfind /tmp/songdb -type f -path "*/strings/${i}*.strings" -exec mv -f -- "{}" /tmp/songdb/strings/"$i"/ \;
 done
