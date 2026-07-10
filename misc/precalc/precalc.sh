@@ -107,7 +107,7 @@ run_uade() {
 mkdir -p /tmp/songdb
 
 export -f run_uade
-gfind -L  . -type f | grep -v '\/usr\/' | sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 run_uade {%} {}
+gfind -L  . -type f | grep -v '/usr/' | sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 run_uade {%} {}
 
 cat /tmp/songdb/*/songdb.tsv | sort | uniq > /tmp/songdb/songdb.tsv
 cat /tmp/songdb/*/audio.tsv | sort | uniq > /tmp/songdb/audio.tsv
