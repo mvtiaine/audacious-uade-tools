@@ -8387,7 +8387,6 @@
 6df7d3928c576c9a08dff070c9ee4a0f	3	7676	player
 6e062b81ba4b835ee4b44e0b7ed2a9bd	1	226214	player+silence	ft2play	FastTracker v2.00	16	579208	32ade4f5	7fa89607	demos/1997/h/hjb_neon.zip/NEON.XM
 6e0686aa2e3551eb3e29bc9d37459e20	1	172440	player+silence	it2play	Impulse Tracker 2.11	15	241634	fcf88a33	a38db984	music/contests/cruel/cr09_vot.zip/CR9SONGS.EXE/ZEP-LGP.IT
-6e0bb0b9bd503ae51fd27fca8921dead	1	411570	player+silence	ft2play	FastTracker v2.00	4	871069	0eec3232	66dabcc8	music/songs/1996/a/alchemis.zip/ALCHEMIS.XM
 6e0bb0b9bd503ae51fd27fca8921dead	1	411570	player+silence	ft2play	FastTracker v2.00	4	871069	0eec3232	66dabcc8	music/songs/1996/a/alchemis.zip/Extended Module: The Old Alchemist   FastTracker v2.00   
 6e119c935e3e731305a1f77f75465678	1	226215	player+silence	it2play	Impulse Tracker 2.14+	19	241637	912049b4	1bfc0a13	music/disks/1997/misc.zip/Summer.it
 6e141df0f543691e6d38a8a6c75fcd87	1	247732	player+silence	uade	Protracker	0	177408	e51e1cb2	ff6e4d90	music/contests/mc3/rookie/o-67287.zip/O-67287.MOD
@@ -11458,7 +11457,6 @@
 966541f828a2c51ab802ab8d11129c19	1	115180	player	it2play	Impulse Tracker 2.13	14	57944	63cb6907	daebe3a4	music/songs/1997/a/autonom.zip/autonom.s3m
 96663adcbb8c139fafa0b07eaa517b6a	1	147190	player	it2play	Impulse Tracker 2.11	10	245316	d235a0d8	b42d7013	music/songs/1997/h/hnsunfel.zip/SUNDAYF.S3M
 966b720f879ec873df03d5d4f1b32c7c	1	198628	player+silence	st3play	Scream Tracker 3.2x (SB)	9	134994	8867ffed	1a838feb	tla/disks/1995/c/cr-txn1a.zip/Feel da' Pulse -XC.Coar! 
-966b720f879ec873df03d5d4f1b32c7c	1	198628	player+silence	st3play	Scream Tracker 3.2x (SB)	9	134994	8867ffed	1a838feb	tla/disks/1995/c/cr-txn1a.zip/XC-PULSE.S3M
 966c6f0535386c57bfea8fc4e0b0deea	1	102520	player	uade	Protracker	0	66146	977dcbd6	2647e393	music/songs/1997/n/namlyyrs.zip/NAMLYYRS.MOD
 966d3658a1b7c1724c6fcf6482079057	1	287578	player+volume	ft2play	FastTracker v2.00	18	320463	f8f9b90f	b3b259cd	music/songs/1998/r/roof-a06.zip/PLG---6.XM
 966f5a53ebc373aa4a4afc3efee4b8d3	1	143653	player	it2play	Impulse Tracker 2.10	10	256064	39dced7d	0cbacf45	music/songs/1997/k/k_breath.zip/k_breath.it
@@ -11731,7 +11729,6 @@
 999dd439b7da20622d4d8b2bfe96cdec	1	246074	player+silence	uade	Protracker	0	246158	dd201e35	1d831668	music/disks/1995/nc-mods3.zip/LOSTINET.MOD
 999e3b35ff5f1382a3f9383768d27cac	1	269322	player+silence	st3play	Scream Tracker 3.2x (GUS)	10	203256	ec88ff74	38f24c76	music/songs/1996/n/no-dirty.zip/SM-DIRTY.S3M
 999e6b6e25185076d1fa743502f66744	1	230019	player	st3play	Scream Tracker 3.2x (SB)	16	144385	9801751c	a3140590	tla/disks/1996/y/yak9604b.zip/Joust
-999e6b6e25185076d1fa743502f66744	1	230019	player	st3play	Scream Tracker 3.2x (SB)	16	144385	9801751c	a3140590	tla/disks/1996/y/yak9604b.zip/NI-JOUST.S3M
 99a38648c8dfa1d23057002b6fb2af8e	1	184184	player	st3play	Scream Tracker 3.2x (SB)	16	49438	b41b7fd8	e45bf220	tla/disks/1995/t/traxx37.zip/(G)UNACI.S3M
 99a41d10dcf9fe010aa76a76c8091179	1	41675	player	it2play	Impulse Tracker 2.11	5	185359	d8e490fe	eccc859d	music/songs/1997/c/cool.zip/COOL.IT
 99a700904dbe638e5c1147de21fbb2e9	1	306722	player	ft2play	FastTracker v2.00	20	963498	fe049513	146ce6d8	music/disks/1996/lbt_mind.zip/ALIENACJ.XM
@@ -13094,7 +13091,6 @@ ab82047a72b0ed6913566f1aa257dede	1	244694	player+silence	it2play	Impulse Tracker
 ab8815706d4d45c74cdb875c0dd60d3c	1	273189	player+silence	it2play	Impulse Tracker 2.11	12	1006087	26513c5c	896dc87e	music/songs/1997/b/bib-ice.zip/MOD/ORIGINAL/Bib-ice.it
 ab89f4c919cb0ba895f301b5f108faa7	1	343148	player	ft2play	Fasttracker	8	200010	d05d6ad5	9091e7da	party/reports/1997/cdx-b5rp.zip/SOUND.MOD
 ab8b52d40fe5707c5922c4b24139e8f5	1	59408	player	ft2play	FastTracker v2.00	16	357924	0acca1df	5864cf5d	demos/1997/e/endradio.zip/Extended Module: [tears in heaven]   FastTracker v2.00   
-ab8b52d40fe5707c5922c4b24139e8f5	1	59408	player	ft2play	FastTracker v2.00	16	357924	0acca1df	5864cf5d	demos/1997/e/endradio.zip/LAGARTO.DAT
 ab8e3dd9de0be8489e9732e800d3bd4a	1	293067	player+silence	it2play	Impulse Tracker 2.12	28	902252	785ad332	a0a66580	music/disks/1997/fm-hshad.zip/LOSTSAT.IT
 ab90c48d407b604e43c6fe8ab0546333	1	111222	player	ft2play	FastTracker v2.00	12	254807	887b27dc	698c1d65	music/songs/1997/j/jch-comr.zip/COMMRHYT.XM
 ab917f4a97e6ad84b2e7e328069e87a6	1	226843	player+silence	ft2play	FastTracker v2.00	16	543004	61a6fad4	2c6add2b	music/disks/1997/0l_shade.zip/IBELIEVE.XM
@@ -14511,7 +14507,6 @@ be7026d2d8591d01df595188d4d37eb7	1	310134	player	st3play	Scream Tracker 3.2x (SB
 be749495ff8fa2b74793b82bbdc9d9a5	1	235524	player	st3play	Scream Tracker 3.2x (GUS)	13	224032	7f2b0e56	6bafe2ae	music/songs/1995/d/dmk-xtrm.zip/X-TREME.S3M
 be75688f70e5c506b2c5940edab65b96	1	249832	player	st3play	Scream Tracker 3.2x (GUS)	16	255998	3d702e98	330b1a41	music/contests/mc4/veteran/m4v-gaja.zip/M4V-GAJA.S3M
 be7b8f0271fd3d577a96117d78700e1a	1	162770	player+silence	st3play	Scream Tracker 3.2x (SB)	16	198416	375058ee	5f1935f2	music/disks/1996/spl9612.zip/the good wallpaper designer
-be7b8f0271fd3d577a96117d78700e1a	1	162770	player+silence	st3play	Scream Tracker 3.2x (SB)	16	198416	375058ee	5f1935f2	music/disks/1996/spl9612.zip/WA-WALLP.S3M
 be83d1c98c4624ee358b0f1d32d4fe46	1	257060	player+silence	st3play	Scream Tracker 3.2x (GUS)	9	201882	78a761c6	aab30672	music/disks/1995/melvin.zip/LIFE.S3M
 be8551c5e4ae67165f071c4864f7ea29	1	146045	player	uade	Noisetracker 1.x	0	46858	fedb73da	9186b76a	music/disks/1997/npg-dllm.zip/EPWSWNPG.MOD
 be865402ea2a94a77cd1508f79a148a1	1	231006	player+silence	st3play	Scream Tracker 3.2x (GUS)	10	161893	80e6363f	ec665561	tla/songs/1995/s3m/0-9/2-para.zip/PARALLEL.S3M
@@ -16069,7 +16064,6 @@ d1d4c536cae756d955813464ffcd7faa	1	307844	player	ft2play	FastTracker v2.00	18	41
 d1d566e4790b32705407260a66243d1b	1	108586	player	ft2play	FastTracker v2.00	10	987707	9f015614	75641f7f	tla/disks/1996/t/trxds02b.zip/I_DS_VER.XM
 d1d5ac6aa10d431d0fc1ee5405ed4918	1	175820	player+silence	ft2play	FastTracker v2.00	10	473777	a36fdea1	c5fe8670	tla/songs/1995/xm/0-9/2days2.zip/2DAYS2.XM
 d1dc432a11155767c4086c189e17ee64	1	123599	player	it2play	Impulse Tracker 2.14	22	173400	a4b019f7	4a8f9976	music/songs/1997/j/jazzer.zip/Jazzer.it
-d1dcb61d1ad1b60b6f2285ddbf05302c	1	260819	player+silence	st3play	Scream Tracker 3.2x (SB)	13	204188	bf392065	b8184ee7	tla/disks/1996/s/spl9607b.zip/NI-UNDER.S3M
 d1dcb61d1ad1b60b6f2285ddbf05302c	1	260819	player+silence	st3play	Scream Tracker 3.2x (SB)	13	204188	bf392065	b8184ee7	tla/disks/1996/s/spl9607b.zip/Underground
 d1e073b613e1887589f6a97483a3c582	1	164695	player+silence	it2play	Impulse Tracker 2.14+	17	951608	fd373724	9b9a6932	music/contests/mc6/rookie/m6r-dlm.zip/m6r-dlm.it
 d1e2b9d20f674a3c54f87ac9a19c3f52	1	500342	player+silence	ft2play	FastTracker v2.00	22	1369421	30cc957d	b6b133d2	music/disks/1997/eamd7.zip/DAEMON.XM
@@ -16330,7 +16324,6 @@ d4e7b0d6df145cb1ab8b3295e5db5b45	0	149901	player+silence	libopenmpt	X-Tracker	17
 d4e9c8cac5c201b193b3a84d54c73c3e	1	48648	player	uade	Noisetracker 1.x	0	71256	c493845e	45e2e126	tla/songs/1996/mod/i/intmorbd.zip/INTMORBD.MOD
 d4e9f01969e104c1ab03935c5219c42b	1	267698	player+silence	st3play	Scream Tracker 3.2x (SB)	12	132660	1cfd574e	db9e694d	tla/disks/1995/m/maz-bob2.zip/EATEMMIX.S3M
 d4ec8f0ec4ed86e2c7fcd54cfbc901ff	1	173542	player+silence	ft2play	FastTracker v2.00	22	375732	f3045029	02b5aa4c	music/songs/1998/z/ze_gate.zip/ze_gate.xm
-d4eeb01802696a14a3b0643b7a70eb45	1	314094	player+silence	st3play	Scream Tracker 3.2x (SB)	8	220538	38b0b1f3	73fcdd84	tla/disks/1995/c/cr-txn1b.zip/JL-PORTL.S3M
 d4eeb01802696a14a3b0643b7a70eb45	1	314094	player+silence	st3play	Scream Tracker 3.2x (SB)	8	220538	38b0b1f3	73fcdd84	tla/disks/1995/c/cr-txn1b.zip/Portal to Reality
 d4f383ebd045ee924a4949aa41fdc56c	1	265089	player+silence	ft2play	FastTracker v2.00	24	1494610	2919869f	fab5098b	music/songs/1998/a/a3-wtcr.zip/a3-wtcr.xm
 d4f7cdeb0c9e41e7a9c9b7eca09a4bb1	1	276809	player+silence	it2play	Impulse Tracker 2.13	26	647071	6ef19b30	8cb3c361	music/disks/1997/red-lore.zip/G_VOODOO.IT
@@ -19325,7 +19318,7 @@ fd417879c4582924791ffe0931ce50fe	1	198953	player	uade	Protracker	0	132338	de894a
 fd417879c4582924791ffe0931ce50fe	1	198953	player	uade	Protracker	0	132338	de894afb	a3bd5feb	demos/1995/f/first.zip/WHAT/HCL.EXE/CESIUM.MOD
 fd42ddee9dc81362115e96c17262b9e3	1	145449	player+silence	st3play	Scream Tracker 3.2x (SB)	10	178276	d0889785	d9073714	tla/disks/1996/t/tl_mtvtn.zip/BM-SK.S3M
 fd4873994de48f7e6a02e728004d391c	1	37804	player+silence	st3play	Scream Tracker 3.2x (SB)	16	128108	c102b660	8346b2f6	demos/1995/v/vi_elite.zip/NEW00.S3M
-fd4d359b89a05009f74822ca5254631c	0	345713	player+silence	libopenmpt	UltraTracker 1.6	15	594019	0070343c	f4f4aebb	music/songs/1996/u/u_snowfl.zip/SNOWFLAK.ULT
+fd4d359b89a05009f74822ca5254631c	0	346014	player+silence	libopenmpt	UltraTracker 1.6	15	594019	0070343c	f4f4aebb	music/songs/1996/u/u_snowfl.zip/SNOWFLAK.ULT
 fd4db746f46ce1d8dcaad8239a367920	1	293965	player+silence	st3play	Scream Tracker 3.2x (GUS)	15	312134	d0245a3e	3ac910fd	music/disks/1995/aps-nyc.zip/LIQUID.S3M
 fd520dbf0f7e007ccbc4cc51aa300a2b	1	34308	player	ft2play	FastTracker v2.00	4	59484	c4ae534c	a9a95674	music/contests/tt/tt19vote.zip/JEVG.XM
 fd52f3db5efcf10efd77278ff3daddec	1	226050	player+silence	it2play	Impulse Tracker 2.14	45	154380	66731069	71da92d8	music/songs/1997/s/shpekov.zip/SHPEKOV.IT

@@ -82,7 +82,7 @@
 01a792201c4066d61ca2e716e7f9aefd	1	38520	player	uade	Protracker	0	10870	f91c39ad	5fa6ca4a	mod/other/cartoon-chips82.mod
 01afb9d02f98a91b50919e954a9e215c	0	202452	silence	uade	MusiclineEditor	0	33702	c12fc087	4bb61ef2	music_line_editor/krister_fundin/tango nr.3.ml
 01b23ceb5dafb5e80fafb7d020fc4df3	0	218927	player	uade	ArtOfNoise (4ch)	0	51296	cce1d186	31ebd149	art_of_noise/twice/AON.phantasm
-01bdf0235e48b16650ff0b2ff8202cbb	0	158375	player+silence	uade	TFMX Pro	0	10560	58ece0f1	67ed72df	tfmx/unknown/Transplant/mdat.Transplant-Title
+01bdf0235e48b16650ff0b2ff8202cbb	0	158382	player+silence	uade	TFMX Pro	0	10560	58ece0f1	67ed72df	tfmx/unknown/Transplant/mdat.Transplant-Title
 01c1602d5e13044b30ed5671a1b321ee	1	752711	player	uade	Wally Beben	0	62650	cb789323	74779585	wally_beben/WB.Dark_Side
 01c6cd00f05c24c4291ff832945d3904	0	99700	error	uade	VSS	0	18402	a6c23a93	a6cbc3f7	voodoo_surpreme_synthesizer/VSS.Voo6
 01d2ddd57efe64b8a1d99830ccc302fe	0	168008	player	uade	Mosh Packer	0	46046	dfc9c106	2974f4c0	mod_packer/mosh_packer/MOSH.FerryTales
@@ -1196,7 +1196,7 @@
 151da49dc2b09290e03efbcc49508181	0	76418	player	uade	MusicMaker8	0	4623	7b66dd54	8bff0f16	music_maker/music_maker_8/MM8.PianoSession.sdata
 1521605ba4c51262fae5eefcfe56e5ae	0	407069	player	uade	TFMX Pro	0	20340	b57d0892	443eb0bf	tfmx/jochen_hippel/MDAT.Turrican2 title_tfmxpro
 1521605ba4c51262fae5eefcfe56e5ae	1	193869	player
-1521605ba4c51262fae5eefcfe56e5ae	2	144842	player+silence
+1521605ba4c51262fae5eefcfe56e5ae	2	145064	player+silence
 1521605ba4c51262fae5eefcfe56e5ae	3	10268	player
 1521e15ba5ee2d510729ff6d0d474f23	0	48201	loop	uade	MusiclineEditor	0	4690	fad68fff	669120b0	music_line_editor/krister_fundin/high speed celebration.ml
 1530a5937a1f5657033992bcebc1d788	0	46799	player	uade	ArtOfNoise (4ch)	0	263416	7b2fd2fb	3a757542	art_of_noise/twice/AON.rainmain-hiphop
@@ -2744,7 +2744,7 @@
 2f263411e65e11a694a4ccc29c905816	1	57610	player	uade	Dave Lowe New	0	25857	d4bacdc0	2ea69074	dave_lowe/dln/SuperStreetFighter2/DLN.Blanka
 2f263411e65e11a694a4ccc29c905816	2	0	nosound
 2f2c9aceafcc4d1f68b2172c3d3bf49f	0	46096	player	uade	ArtOfNoise (4ch)	0	14398	c851408a	5b84d7c6	art_of_noise/twice_revolution/Twice-Revolution/AON.revolution-0031
-2f376920bf45875fc387586ce0a091d4	0	404442	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	tfmx/MasterBlazer/MDAT.MasterBlazer_Intro-CH
+2f376920bf45875fc387586ce0a091d4	0	405088	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	tfmx/MasterBlazer/MDAT.MasterBlazer_Intro-CH
 2f376920bf45875fc387586ce0a091d4	1	1004	player
 2f376920bf45875fc387586ce0a091d4	2	1004	player
 2f376920bf45875fc387586ce0a091d4	3	1004	player
@@ -5112,7 +5112,7 @@
 571bdf6ae3e6e5bb4815a6c8789ee165	5	1929	player
 571bdf6ae3e6e5bb4815a6c8789ee165	6	3637	player
 571bdf6ae3e6e5bb4815a6c8789ee165	7	5345	player
-571bdf6ae3e6e5bb4815a6c8789ee165	8	147275	loop
+571bdf6ae3e6e5bb4815a6c8789ee165	8	138113	loop
 571d1cc98e0845c0d6c56852316d7330	1	163969	player	uade	Protracker compatible	0	27598	5987d6e2	fcb8e2ab	mod/deck_collection/lff.mod
 571d1cc98e0845c0d6c56852316d7330	1	163969	player	uade	Protracker compatible	0	27598	5987d6e2	fcb8e2ab	mod/other/deck-collection/lff.mod
 571dca4052cbdfe37641ea2f9452718d	0	140225	silence	uade	UADE	0	89292	7bab9e60	afb28554	cust/cust.LED_Storm
@@ -5951,13 +5951,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 65804bd648fe3c1f648b058f79db0adf	1	64120	player	uade	Protracker	0	9884	2e3a3070	bef1c693	mod/other/braintumour&heywood-chip_o_hoy.mod
@@ -6889,13 +6889,13 @@
 76d5a786911252dc920c493a8e99345c	1	56324	player
 76d5a786911252dc920c493a8e99345c	10	15372	player
 76d5a786911252dc920c493a8e99345c	11	15372	player
-76d5a786911252dc920c493a8e99345c	12	5402	loop
+76d5a786911252dc920c493a8e99345c	12	3600000	timeout
 76d5a786911252dc920c493a8e99345c	2	20857	player
 76d5a786911252dc920c493a8e99345c	3	0	nosound
 76d5a786911252dc920c493a8e99345c	4	56324	player
 76d5a786911252dc920c493a8e99345c	5	2572	player
 76d5a786911252dc920c493a8e99345c	6	2572	player
-76d5a786911252dc920c493a8e99345c	7	9000	repeat
+76d5a786911252dc920c493a8e99345c	7	3600000	timeout
 76d5a786911252dc920c493a8e99345c	8	15372	player
 76d5a786911252dc920c493a8e99345c	9	15372	player
 76dc9ee45beb9f139c9b6b06207c295d	1	22344	player	uade	OctaMED MMD0	0	3558	3337ada8	d7260dfb	med/Civilization/MED.CIV_Ramses
@@ -7096,7 +7096,7 @@
 7a488725edb24a5493c1e15628a5f837	2	143392	player
 7a488725edb24a5493c1e15628a5f837	3	2572	player
 7a488725edb24a5493c1e15628a5f837	4	2572	player
-7a488725edb24a5493c1e15628a5f837	5	12943	silence
+7a488725edb24a5493c1e15628a5f837	5	12945	silence
 7a635e1da3a756c08a47143e522c5ff6	0	71133	player	uade	AHX v2	0	5079	5ac83f05	3d0207eb	ahx/Jerry/toycars.ahx
 7a7035266fa3ce3c636478d43f2324cb	1	52466	player	uade	Protracker compatible	0	29496	81735424	497c169e	mod/other/mr_death-red_velvet.mod
 7a7519af4cbeeb32017c3a3c9413527e	0	32072	player+volume	uade	Sonix Music Driver	0	5336	1d116d3c	4f6c3187	sonix/Rise_Of_The_Dragon/SNX.Deng Hwang's music 5
@@ -7379,7 +7379,7 @@
 804b0840a6dd9480784bdfa55f4291fd	1	112614	player+silence	uade	Protracker	0	115182	30909c22	a062b4c1	mod/deck_collection/jammin' for nothing.mod
 804c590244198a27a868c036050d8947	0	76820	player	uade	TFMX Pro	0	11372	7ae7bf58	4979cf35	tfmx/Z-Out/MDAT.Z-Out_Level-1
 804c590244198a27a868c036050d8947	1	51220	player
-804c590244198a27a868c036050d8947	2	5699	player+silence
+804c590244198a27a868c036050d8947	2	5701	player+silence
 804c590244198a27a868c036050d8947	3	1326	player
 804c590244198a27a868c036050d8947	4	5144	player
 805224e3e09871652da22ed995fd2636	1	99968	player	uade	Protracker compatible	0	15322	2c19fe2d	b624873b	mod/other/maktone-class5.mod
@@ -7773,7 +7773,7 @@
 87c873d678dd30a51713f7ea57cdd0c0	0	5787	player	uade	SunTronic	0	8528	2ec40efd	2692d78b	suntronic_custom/shadowfire-2.src
 87ca9d9e8f428d7f83c3406ca010840f	0	107544	player	uade	TFMX Pro	0	11964	dee70cac	d50cd621	tfmx/Z-Out/MDAT.Z-Out_Level-2
 87ca9d9e8f428d7f83c3406ca010840f	1	46116	player
-87ca9d9e8f428d7f83c3406ca010840f	2	5699	player+silence
+87ca9d9e8f428d7f83c3406ca010840f	2	5701	player+silence
 87ca9d9e8f428d7f83c3406ca010840f	3	1326	player
 87ca9d9e8f428d7f83c3406ca010840f	4	8982	player
 87d0a2e05784accf69f1873e7a6eb779	1	30824	player	uade	Protracker	0	10688	3629259e	baf60add	mod/other/beathawk-mitas_siita.mod
@@ -8640,7 +8640,7 @@
 95d0e3e4a377c4d690e37104a2ec367e	6	71140	loop
 95d407d68b5b327676ca4a752fb40970	0	70430	player	uade	TFMX Pro	0	10080	8439b143	426441af	tfmx/Z-Out/MDAT.Z-Out_Level-4
 95d407d68b5b327676ca4a752fb40970	1	35868	player
-95d407d68b5b327676ca4a752fb40970	2	5699	player+silence
+95d407d68b5b327676ca4a752fb40970	2	5701	player+silence
 95d407d68b5b327676ca4a752fb40970	3	1326	player
 95d407d68b5b327676ca4a752fb40970	4	35868	player
 95d65cee2cbf6cf051c460532ddf127f	0	122976	player	uade	FutureComposer 1.4	0	24672	2472afe2	4866b73d	fc/fc14.Beta5
@@ -9395,7 +9395,7 @@ a5bdc0281140e40b87c5dbd5a2445021	0	27408	player	uade	Sonix Music Driver	0	865	66
 a5bfe384052cbda4bfa84b84a84847df	0	51220	player	uade	TFMX Pro	0	7984	1c34461a	f847854a	tfmx/unknown/Crystal_Palace/mdat.Crystal_Palace-1
 a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
-a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
+a5bfe384052cbda4bfa84b84a84847df	3	4744	silence
 a5c563e29c16eb6521977b95f8148e83	1	0	nosound	uade	OctaMED MMD1	0	41204	0e280d7e	719e53e4	med/LethalWeapon/Med.SoundFX
 a5c787bd63487d08566f85b10e79009f	0	69144	player	uade	ArtOfNoise (4ch)	0	25022	22d34ca1	19daa336	art_of_noise/stc_packed/aon.cloud 9.stc
 a5c787bd63487d08566f85b10e79009f	0	69144	player	uade	ArtOfNoise (4ch)	0	25022	22d34ca1	19daa336	art_of_noise/twice/AON.cloud 9
@@ -10029,7 +10029,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b17f059de9d26257b2f09482a0bb5bf1	0	124903	loop	uade	DeltaMusic	0	9412	c30dd3d0	ef37d1e4	dlm/dlm1.angelscrack
 b183961d42a859d9d192152c230d1514	1	32110	player	uade	Protracker compatible	0	7004	1cde1f2c	31483604	mod/other/SAC13.MOD
 b18551a4cfec236e441eb5c47ce84d30	1	30824	player	uade	Protracker compatible	0	8408	8b13f056	6ba2efab	mod/other/beathawk-b-mita_viela.mod
@@ -10060,7 +10060,7 @@ b2536a80ab2995cf154298d53d5607d5	1	55701	player
 b2536a80ab2995cf154298d53d5607d5	2	63377	player
 b2536a80ab2995cf154298d53d5607d5	3	80658	player
 b2536a80ab2995cf154298d53d5607d5	4	57610	player
-b2536a80ab2995cf154298d53d5607d5	5	4537	player+silence
+b2536a80ab2995cf154298d53d5607d5	5	4548	player+silence
 b25646ca70c7fab9e7e1509c87977259	0	32827	loop	uade	MusiclineEditor	0	17361	61fd4377	dd20def0	music_line_editor/krister_fundin/accidental iii.ml
 b257cb601eeea4e67bf90fe60d4fb611	1	124725	player	uade	Protracker	0	15768	5fae9696	b777cfbf	mod/tdk/tdk-russian_theme.mod
 b265f4dbe5cc76814591f52b81b66d61	1	53872	player	uade	Protracker	0	11528	877b7ea6	cf9d0e45	mod/other/chromag-monty_hiscore.mod
@@ -10341,7 +10341,7 @@ b69647dbea2cf064dbf6866f7fed7a7d	1	12853	repeat
 b6973ea85fd0ea87493754587e754f88	0	67295	player	uade	AHX v2	0	2794	800047e3	5f8b4f6f	ahx/Kyzer/AHX.The last straw
 b69cdbd3f2b5809f3fe85004b940d94d	0	81944	player	uade	TFMX Pro	0	10608	768a81de	3a04e0d2	tfmx/Z-Out/MDAT.Z-Out_Level-6
 b69cdbd3f2b5809f3fe85004b940d94d	1	46116	player
-b69cdbd3f2b5809f3fe85004b940d94d	2	5699	player+silence
+b69cdbd3f2b5809f3fe85004b940d94d	2	5701	player+silence
 b69cdbd3f2b5809f3fe85004b940d94d	3	1326	player
 b6b09d351a41cd75b1f72fb9632fd681	0	61568	player	uade	SunTronic	0	8292	2d7fa1ba	969dc572	suntronic_custom/shades-short.src
 b6b2c8241809567ce52968f2b60607ee	1	159342	player+silence	uade	Protracker compatible	0	17484	47a36700	88b9fc82	mod/other/radix-rainy_summerdays.mod
@@ -10393,7 +10393,7 @@ b79c2135250ad01e5267113956091ed3	0	51260	player	uade	SunTronic	0	9612	36b64e59	3
 b79eac7e7e4bc6c5d76c4e623c47585c	0	61468	player	uade	Synth Pack	0	3096	50a91435	76fb0857	synthpack/CenterBase/OSP.CenterBase Act01
 b79f4aa3fc44621269fafcde2612dc9f	0	81944	player	uade	TFMX Pro	0	10966	cbbafc30	da7cdbdd	tfmx/Z-Out/MDAT.Z-Out_Level-3
 b79f4aa3fc44621269fafcde2612dc9f	1	51220	player
-b79f4aa3fc44621269fafcde2612dc9f	2	5699	player+silence
+b79f4aa3fc44621269fafcde2612dc9f	2	5701	player+silence
 b79f4aa3fc44621269fafcde2612dc9f	3	1326	player
 b7a74026656eacf8bf5f514c3cead736	0	205443	player	uade	AHX v2	0	10105	7349e02f	d79c823e	ahx/Geir Tjelta/robocop iii (j.tel).ahx
 b7a74026656eacf8bf5f514c3cead736	1	205443	player
@@ -10823,7 +10823,7 @@ bf76e0df7271d692b1f096caeac012ad	1	138369	player	uade	Protracker	0	27514	850b6f7
 bf889081fc82e842c8296a4bd2f0d277	0	9506	loop	uade	MusiclineEditor	0	3982	e26bde76	8031cea0	music_line_editor/krister_fundin/morning sun.ml
 bf8a95971b692da3a1a46b626873cf81	0	101777	player	uade	TFMX Pro	0	10420	50c9c08a	7bfd54d9	tfmx/Z-Out/MDAT.Z-Out_Level-5
 bf8a95971b692da3a1a46b626873cf81	1	26906	player
-bf8a95971b692da3a1a46b626873cf81	2	5699	player+silence
+bf8a95971b692da3a1a46b626873cf81	2	5701	player+silence
 bf8a95971b692da3a1a46b626873cf81	3	1326	player
 bf8af86d8011711a66e6c9df91d2b05c	0	42217	silence	uade	MusiclineEditor	0	216500	21a88962	6d173e9c	music_line_editor/krister_fundin/going crazy.ml
 bfac0ba568610f41ffc671cc9de9bab7	0	51139	player	uade	ChipTracker	0	46518	f506bc85	b19f89ec	mod_packer/kris_tracker/Premiere/KRIS.endlevel4
@@ -10961,8 +10961,8 @@ c15d7b2a92a2ce39d0433b500d706502	2	5509	silence
 c15d7b2a92a2ce39d0433b500d706502	3	4018	player
 c183a1db9f1160b4095d8c2913d794f1	0	89218	player	uade	Maximum Effect	0	6798	c87584e4	329f657f	maximum_effect/Dinosaur_Detective/MAX.DinosaurDetective music4
 c18b5e74e7bb5e7194525ad497ed5412	1	271111	player	uade	Protracker	0	324704	1f283b9f	c54d5b05	mod/deck_collection/flying with the rhytm.mod
-c19f70eb78cabf85ec2160ebdc6de826	0	158364	player+silence	uade	TFMX Pro	0	7528	4058edc8	de666a56	tfmx/MDAT.Transplant
-c19f70eb78cabf85ec2160ebdc6de826	1	158364	player+silence
+c19f70eb78cabf85ec2160ebdc6de826	0	158382	player+silence	uade	TFMX Pro	0	7528	4058edc8	de666a56	tfmx/MDAT.Transplant
+c19f70eb78cabf85ec2160ebdc6de826	1	158382	player+silence
 c19f70eb78cabf85ec2160ebdc6de826	2	38420	player
 c19f70eb78cabf85ec2160ebdc6de826	3	41615	player
 c1aac174e91c4c4ef731cb6548ec4ff8	1	124283	player	uade	Protracker compatible	0	18926	bf195c72	a60e0b25	mod/other/maktone-white_widow.mod
@@ -12762,7 +12762,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e399570b97b501ebceb9ac3adc6f4812	1	213308	player+volume	uade	Protracker	0	211278	933f5703	f59e099e	mod/deck_collection/sainahi circles-vd.mod
 e3a059119c492945ab869a45ba90f50f	0	77182	player	uade	TFMX Pro	0	9496	36a1bcbc	a853149d	tfmx/B.C.Kid/MDAT.BC-Kid_Coconut_Attack
 e3a059119c492945ab869a45ba90f50f	1	54133	player

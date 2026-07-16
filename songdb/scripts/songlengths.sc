@@ -4,13 +4,13 @@
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 
-case class Subsong (
+final case class Subsong (
   subsong: Int,
   songlength: Int,
   songend: String,
 )
 
-case class SonglengthEntry (
+final case class SonglengthEntry (
   md5: String,
   minsubsong: Int,
   maxsubsong: Int,

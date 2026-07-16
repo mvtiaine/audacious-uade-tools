@@ -15,7 +15,7 @@ import dedup._
 val SEPARATOR = "\u007E" // ~
 val SORT = "\u0001"
 
-case class SubsongInfo (
+final case class SubsongInfo (
   songlength: Int, // in ms
   songend: String,
   duplicate: Boolean,
@@ -26,7 +26,7 @@ trait BaseInfo {
   def copyWithHash(newHash: String): BaseInfo
 }
 
-case class SongInfo (
+final case class SongInfo (
   override val hash: String,
   minsubsong: Int,
   subsongs: Buffer[SubsongInfo],
@@ -35,7 +35,7 @@ case class SongInfo (
   override def toString = s"SongInfo(${hash},${minsubsong},${subsongs.mkString(",")})"
 }
 
-case class ModInfo (
+final case class ModInfo (
   override val hash: String,
   format: String, // tracker or player name (freeform)
   channels: Int, // channels or 0 if not known/defined
@@ -43,7 +43,7 @@ case class ModInfo (
   override def copyWithHash(newHash: String) = copy(hash = newHash)
 }
 
-case class MetaData (
+final case class MetaData (
   override val hash: String,
   authors: Buffer[String],
   publishers: Buffer[String],

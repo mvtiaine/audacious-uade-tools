@@ -17,9 +17,9 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val wantedteam_path = System.getProperty("user.home") + "/sources/wantedteam/"
+val wantedteam_path = System.getProperty("user.home") + "/sources/metadata/wantedteam/"
 
-case class WantedTeamMeta (
+final case class WantedTeamMeta (
   md5: String,
   path: String,
   filesize: Int,
@@ -32,59 +32,80 @@ case class WantedTeamMeta (
 )
 
 lazy val wantedteam_customs_by_path =
-  sources.wantedteam.filter(_.path.startsWith("customs/"))
+  sources.sourceDB(sources.Source.WantedTeam).filter(_.path.startsWith("customs/"))
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
+lazy val customshtml = Paths.get(wantedteam_path + "customs.html").toFile
 lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl.lha/WT_Customs.txt").toFile
-lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(_.getLines.toBuffer.drop(3).par.flatMap { line =>
-  val parts = line.split("\\s+")
-  val path = parts(0)
-  val size = parts(1).toIntOption.getOrElse(0)
-  val ver = parts(2).toInt
-  val title = parts.drop(3).mkString(" ")
-    .replace(" (c1) "," (c) ")
-    .replace(" (c) (c) "," (c) ")
+lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(f => {
+  val doc = JsoupBrowser().parseFile(customshtml)
+  val rows = doc >> elementList("li")
+  val pathToType = rows.par.flatMap(r =>
+    var txt = r.text.trim
+    val path = txt.split(" ").head
+    val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
+    txt = (txt.split(" - ").tail.mkString(" - ").trim).toLowerCase
+    val _type =
+      if (txt.contains(" game")) "Game"
+      else if (txt.contains(" demo") || txt.contains(" intro")) "Demo"
+      else ""
+    if (_type.nonEmpty) Some(path -> _type)
+    else None
+  ).toMap
+  f.getLines().toBuffer.drop(3).par.flatMap { line =>
+    val parts = line.split("\\s+")
+    val path = parts(0)
+    val size = parts(1).toIntOption.getOrElse(0)
+    val ver = parts(2).toInt
+    val title = parts.drop(3).mkString(" ")
+      .replace(" (c1) "," (c) ")
+      .replace(" (c) (c) "," (c) ")
 
-  var album: String = ""
-  var year: Option[Int] = None
-  var publishers = Buffer.empty[String]
+    var album: String = ""
+    var year: Option[Int] = None
+    var publishers = Buffer.empty[String]
 
-  if (title.endsWith(" year)")) {
-    album = title.substring(0, title.indexOf(" ("))
-    year = title.substring(title.indexOf(" (")+2, title.indexOf(" (")+6).toIntOption
-  } else if (title.contains(" (c) by ")) {
-    album = title.substring(0, title.indexOf(" (c) by "))
-    year = title.substring(title.indexOf(" (c) by ")+8, title.indexOf(" (c) by ")+12).toIntOption
-    publishers = title.substring(title.indexOf(" (c) by ")+12).split("/").map(_.trim).toBuffer
-  } else if (title.contains(" by ") && (title.contains(" (c) 1") || title.contains(" (c) 2"))) {
-    album = title.split(" \\(c\\) ").head
-    year = title.split(" \\(c\\) ").drop(1).head.split(" by ").head.trim.toIntOption
-    publishers = title.split(" \\(c\\) ").drop(1).head.split(" by ").drop(1).head.trim.split("/").toBuffer
-  } else if (title.contains(" (c) 1") || title.contains(" (c) 2")) {
-    album = title.split(" \\(c\\) ").head
-    year = title.split(" \\(c\\) ").drop(1).head.substring(0, 4).toIntOption
-    publishers = title.split(" \\(c\\) ").drop(1).head.substring(5).split("/").map(_.trim).toBuffer
-  } else if (title.contains(" (c) ")) {
-    album = title.substring(0, title.indexOf(" (c) "))
-    publishers = title.substring(title.indexOf(" (c) ")+5).split("/").map(_.trim).toBuffer
-  } else if (title.endsWith(" (?) year")) {
-    album = title.substring(0, title.indexOf(" (?) year")-5)
-    year = title.substring(title.indexOf(" (?) year")-4, title.indexOf(" (?) year")).toIntOption
-  } else {
-    System.err.println(s"WARN: wantedteam customs ignoring metadata for $path")
+    if (title.endsWith(" year)")) {
+      album = title.substring(0, title.indexOf(" ("))
+      year = title.substring(title.indexOf(" (")+2, title.indexOf(" (")+6).toIntOption
+    } else if (title.contains(" (c) by ")) {
+      album = title.substring(0, title.indexOf(" (c) by "))
+      year = title.substring(title.indexOf(" (c) by ")+8, title.indexOf(" (c) by ")+12).toIntOption
+      publishers = title.substring(title.indexOf(" (c) by ")+12).split("/").map(_.trim).toBuffer
+    } else if (title.contains(" by ") && (title.contains(" (c) 1") || title.contains(" (c) 2"))) {
+      album = title.split(" \\(c\\) ").head
+      year = title.split(" \\(c\\) ").drop(1).head.split(" by ").head.trim.toIntOption
+      publishers = title.split(" \\(c\\) ").drop(1).head.split(" by ").drop(1).head.trim.split("/").toBuffer
+    } else if (title.contains(" (c) 1") || title.contains(" (c) 2")) {
+      album = title.split(" \\(c\\) ").head
+      year = title.split(" \\(c\\) ").drop(1).head.substring(0, 4).toIntOption
+      publishers = title.split(" \\(c\\) ").drop(1).head.substring(5).split("/").map(_.trim).toBuffer
+    } else if (title.contains(" (c) ")) {
+      album = title.substring(0, title.indexOf(" (c) "))
+      publishers = title.substring(title.indexOf(" (c) ")+5).split("/").map(_.trim).toBuffer
+    } else if (title.endsWith(" (?) year")) {
+      album = title.substring(0, title.indexOf(" (?) year")-5)
+      year = title.substring(title.indexOf(" (?) year")-4, title.indexOf(" (?) year")).toIntOption
+    } else {
+      System.err.println(s"WARN: wantedteam customs ignoring metadata for $path")
+    }
+    // XXX quirks
+    if (album == "World Games") year = Some(1987)
+    else if (album == "Joe & Mac - Caveman Ninja") year = Some(1993)
+
+    val entries = wantedteam_customs_by_path.getOrElse(path, Seq.empty)
+    if (entries.isEmpty) {
+      System.err.println(s"WARN: wantedteam customs missing md5s for $path")
+    }
+    entries.map(e =>
+      val isAtari = title.contains(" ST ") || e.path.contains(" ST") || e.path.endsWith("ST") || e.path.contains("MYST_") || publishers.contains("Inner Circle")
+      WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted.distinct, year, pathToType.getOrElse(path, ""), if (isAtari) "Atari" else "Amiga")
+    )
   }
-  val entries = wantedteam_customs_by_path.getOrElse(path, Seq.empty)
-  if (entries.isEmpty) {
-    System.err.println(s"WARN: wantedteam customs missing md5s for $path")
-  }
-  entries.map(e =>
-    val isAtari = title.contains(" ST ") || e.path.contains(" ST") || e.path.endsWith("ST") || e.path.contains("MYST_")
-    WantedTeamMeta(e.md5, e.path, size, Buffer(), album, publishers.sorted, year, "", if (isAtari) "Atari" else "Amiga")
-  )
 }).get.distinct.seq
 
 lazy val wantedteam_examples_by_path =
-  sources.wantedteam.filter(_.path.startsWith("examples/"))
+  sources.sourceDB(sources.Source.WantedTeam).filter(_.path.startsWith("examples/"))
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
 lazy val exampleshtml = Paths.get(wantedteam_path + "examples.html").toFile
@@ -101,6 +122,7 @@ lazy val examples = {
     var authors = Buffer.empty[String]
     var publishers = Buffer.empty[String]
     var year: Option[Int] = None
+    val isGame = txt.toLowerCase.contains(" game")
 
     if (txt.startsWith("different modules converted to ") ||
         txt.startsWith("source of ") ||
@@ -116,9 +138,19 @@ lazy val examples = {
     ) {
       album = txt.substring(txt.indexOf("\""), txt.indexOf("\"", txt.indexOf("\"")+1)).replace("\"","").trim + " (demo)"
       if (txt.matches(".* composed [BbRr]y .*")) {
-        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else a.trim
+        ).sorted.toBuffer
       } else if (txt.contains(" composed ")) {
-        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else a.trim
+        ).sorted.toBuffer
       } else if (txt.contains(" by ")) {
         publishers = txt.substring(txt.indexOf(" by ")+4, txt.indexOf(".")).split(",|&").map(_.trim).sorted.toBuffer    
       }
@@ -128,9 +160,19 @@ lazy val examples = {
         txt.startsWith("module composed ")
     ) {
       if (txt.matches(".* composed [BbRr]y .*")) {
-        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else a.trim
+        ).sorted.toBuffer
       } else if (txt.contains(" composed ")) {
-        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else a.trim
+        ).sorted.toBuffer
       }
 
     } else if (
@@ -190,13 +232,21 @@ lazy val examples = {
         year = Some(1989)
       }
       if (txt.matches(".* composed [BbRr]y .*")) {
-        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a => {
-          if (a.contains("/")) {
+        authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else if (a.contains("/")) {
             a.split("/").head.trim
           } else a.trim
-        }).sorted.toBuffer
+        ).sorted.toBuffer
       } else if (txt.contains(" composed ")) {
-        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+        authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(a =>
+          if (a.contains("(") && a.contains(")")) {
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+          } else a.trim
+        ).sorted.toBuffer
       } else if (txt.contains(" by ")) {
         publishers = txt.substring(txt.indexOf(" by ")+4, txt.indexOf(".")).split(",|&").map(_.trim).sorted.toBuffer
       }
@@ -221,9 +271,19 @@ lazy val examples = {
       } else if (txt.contains("\"")) {
         album = txt.substring(txt.indexOf("\""), txt.indexOf("\"", txt.indexOf("\"")+1)).replace("\"","").trim
         if (txt.matches(".* composed [BbRr]y .*")) {
-          authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+          authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
+            if (a.contains("(") && a.contains(")")) {
+              if (isGame) a.split("\\(").head.trim
+              else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+            } else a.trim
+          ).sorted.toBuffer
         } else if (txt.contains(" composed ")) {
-          authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(_.trim).sorted.toBuffer
+          authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(a =>
+            if (a.contains("(") && a.contains(")")) {
+              if (isGame) a.split("\\(").head.trim
+              else a.split("\\(").tail.head.replaceAll("\\)", "").trim
+            } else a.trim
+          ).sorted.toBuffer
         } else if (txt.contains(" by ")) {
           publishers = txt.substring(txt.indexOf(" by ")+4, txt.indexOf(".")).split(",|&").map(_.trim).sorted.toBuffer
         }
@@ -247,9 +307,15 @@ lazy val examples = {
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        val isAtari = e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE.lzx/") || e.path.contains("ST.lzx/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_")
-        val isPC = e.path.endsWith("PC")
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
+        val isAtari = (e.path.contains("HST_") || e.path.endsWith("STE") || e.path.contains("STE.lzx/") || e.path.contains("ST.lzx/") || e.path.contains("SOG_LifesABitch") || e.path.contains("JD_F-29Retaliator") || e.path.contains("TCB_") || e.path.contains("DODA_") || e.path.contains("RHO_") || e.path.contains("QTS_") || e.path.contains("SQT_") || publishers.contains("Inner Circle") || txt.contains("(Atari ST ") || txt.contains("(Atari STE ")) && !txt.contains("(Amiga ")
+        val isPC = e.path.endsWith("PC") || txt.contains("(PC ") || album == "Abenteuer Europa"
+        val _type =
+          if (txt.endsWith(" editor.") || txt.endsWith(" editors")) "Editor"
+          else if (isGame || album == "onEscapee") "Game"
+          else if (album.startsWith("ST News")) "DiskMag"
+          else if (!isGame && (txt.contains("from the") || txt.contains("modules from"))) "Demo"
+          else ""
+        WantedTeamMeta(e.md5, e.path, filesize, authors.sorted.distinct, album, publishers.sorted.distinct, year, _type, if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty
@@ -258,7 +324,7 @@ lazy val examples = {
 }.distinct.seq
 
 lazy val wantedteam_rips_by_path =
-  sources.wantedteam.filter(_.path.startsWith("rips/"))
+  sources.sourceDB(sources.Source.WantedTeam).filter(_.path.startsWith("rips/"))
   .groupBy(_.path.split("/").drop(1).take(1).mkString)
 
 lazy val ripshtml = Paths.get(wantedteam_path + "rips.html").toFile
@@ -275,6 +341,7 @@ lazy val rips = {
     var authors = Buffer.empty[String]
     var publishers = Buffer.empty[String]
     var year: Option[Int] = None
+    val isGame = txt.toLowerCase.contains(" game")
 
     if (txt.contains("\"")) {
       album = txt.substring(txt.indexOf("\""), txt.indexOf("\"", txt.indexOf("\"")+1)).replace("\"","").trim
@@ -289,7 +356,8 @@ lazy val rips = {
       if (txt.matches(".* composed [BbRr]y .*")) {
         authors = txt.substring(txt.indexOf(" composed ")+12).split("\\.").head.split(",|&").map(a =>
           if (a.contains("(") && a.contains(")")) {
-            a.split("\\(").tail.head.replaceAll("\\)", "").trim
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
           } else if (a.contains("/")) {
             a.split("/").head.trim
           } else a.trim
@@ -297,7 +365,8 @@ lazy val rips = {
         } else if (txt.contains(" composed ")) {
         authors = txt.substring(txt.indexOf(" composed ")+10).split("\\.").head.split(",|&").map(a =>
           if (a.contains("(") && a.contains(")")) {
-            a.split("\\(").tail.head.replaceAll("\\)", "").trim
+            if (isGame) a.split("\\(").head.trim
+            else a.split("\\(").tail.head.replaceAll("\\)", "").trim
           } else a.trim
         ).sorted.toBuffer
       } else if (txt.contains(" by ")) {
@@ -314,15 +383,21 @@ lazy val rips = {
     } else {
       // no available metadata or ambiguous
     }
+    // XXX
+    authors = authors.map(_.replace("Gian Luca0Gaiba", "Gian Luca Gaiba"))
     val entries = wantedteam_rips_by_path.getOrElse(path, Seq.empty)
     if (entries.isEmpty) {
         System.err.println(s"WARN: wantedteam rips missing md5s for $path")
     }
     if (!album.isEmpty || !authors.isEmpty || !publishers.isEmpty || year.isDefined) {
       entries.map(e =>
-        val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST")
+        val isAtari = e.path.contains("MOD_DarkSideOfTheSpoon") || e.path.contains("MOD_Robbo") || e.path.contains("ST_BioChallengeST") || publishers.contains("Inner Circle")
         val isPC = e.path.contains("MOD_StarControl2")
-        WantedTeamMeta(e.md5, e.path, filesize, authors, album, publishers, year, if (txt.toLowerCase.contains(" game")) "Game" else "", if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
+        val _type =
+          if (isGame) "Game"
+          else if (!isGame && (txt.contains("from the") || txt.contains("modules from"))) "Demo"
+          else ""
+        WantedTeamMeta(e.md5, e.path, filesize, authors.sorted.distinct, album, publishers.sorted.distinct, year, _type, if (isAtari) "Atari" else if (isPC) "PC" else "Amiga")
       )
     } else {
       Seq.empty
@@ -331,3 +406,26 @@ lazy val rips = {
 }.distinct.seq
 
 lazy val metas = (customs ++ examples ++ rips).distinct
+  // XXX fix issue with author parsing and other quirks
+  .par.map(m => {
+    var authors = m.authors
+    var publishers = m.publishers
+    var year = m.year
+    if (authors == Buffer("Andrew J")) {
+      authors = Buffer("Andrew J. Lepisto")
+    } else if (authors == Buffer("Ott M")) {
+      authors = Buffer("Ott M. Aaloe")
+    } else if (authors == Buffer("W")) {
+      authors = Buffer("W. Degener")
+    }
+    if (m.album == "Boppin'") {
+      publishers = Buffer("Accursed Toys","KarmaSoft")
+      year = Some(1992)
+    }
+    if (m.album == "UFO (CD32)" || m.album == "UFO (AGA)") {
+      publishers = Buffer("MicroProse","Mythos Games")
+      year = Some(1994)
+    }
+    m.copy(authors = authors, publishers = publishers, year = year)
+  })
+  .seq

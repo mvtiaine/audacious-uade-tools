@@ -18,6 +18,7 @@ import scala.xml.factory.XMLLoader
 import javax.xml.parsers.SAXParser
 
 import convert._
+import normalization._
 
 object XML extends XMLLoader[Elem] {
   override def parser: SAXParser = {
@@ -28,17 +29,22 @@ object XML extends XMLLoader[Elem] {
   }
 }
 
-case class TosecMeta(
+final case class TosecMeta(
   title: String,
   publishers: Buffer[String],
   year: Int,
   _type: String = "",
-  platform: String = "",
+  _platform: String = "",
+  _demo: Boolean = false,
+  _compilation: Boolean = false,
+  _crack: Boolean = false,
+  _budget: Boolean = false,
+  _nonEnglish: Boolean = false,
 )
 
-val tosecDir = System.getProperty("user.home") + "/sources/tosec/TOSEC/"
-val tosecIsoDir = System.getProperty("user.home") + "/sources/tosec/TOSEC-ISO/"
-val tosecCUEsDir = System.getProperty("user.home") + "/sources/tosec/CUEs/"
+val tosecDir = System.getProperty("user.home") + "/sources/metadata/tosec/TOSEC/"
+val tosecIsoDir = System.getProperty("user.home") + "/sources/metadata/tosec/TOSEC-ISO/"
+val tosecCUEsDir = System.getProperty("user.home") + "/sources/metadata/tosec/CUEs/"
 
 lazy val platforms = Buffer(
   //"3DO 3DO",
@@ -49,7 +55,7 @@ lazy val platforms = Buffer(
   "Atari Falcon030",
   "Atari Jaguar",
   //"Atari Lynx",
-  //"Atari ST",
+  "Atari ST",
   //"Bandai WonderSwan",
   "Commodore Amiga",
   //"Fujitsu FM Towns",
@@ -122,7 +128,7 @@ lazy val cuesDirs = Seq(
   //"Sony/PlayStation/Homebrew/Games/"
 )
 
-def normalizePlatform(platform: String): String = {
+private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Atari")) "Atari"
   else if (platform.startsWith("Commodore")) "Amiga"
   else if (platform.startsWith("IBM")) "PC"
@@ -130,11 +136,11 @@ def normalizePlatform(platform: String): String = {
 }
 
 lazy val tosecPattern = """^(.*) \((.*?)\)\((.*?)\)""".r
-lazy val titleSuffixPattern = """\s*\((demo-playable)\)\s*$""".r
+lazy val titleSuffixPattern = """\s*\((demo|demo-kiosk|demo-playable|demo-rolling|demo-slideshow)\)\s*$""".r
 lazy val articlePattern = """^(.*), (The|A|An)\b(.*)""".r
 lazy val namePattern = """^([^,]+),\s*(.+)$""".r
 
-def normalizeTitle(title: String): String = {
+private def normalizeTitle(title: String): String = {
   // Remove demo-related suffixes
   val cleaned = titleSuffixPattern.replaceFirstIn(title, "").trim
   
@@ -144,7 +150,7 @@ def normalizeTitle(title: String): String = {
   }
 }
 
-def normalizePublisher(publisher: String): String = {
+private def normalizePublisher(publisher: String): String = {
   // Check if it's in "LastName, FirstName" format
   namePattern.findFirstMatchIn(publisher) match {
     case Some(m) => s"${m.group(2)} ${m.group(1)}"
@@ -161,7 +167,7 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
     val dat = XML.loadFile(f.toFile)
     (dat \ "game").flatMap(g =>
       val name = (g \ "@name").text.trim
-      val (title, year, publishers) = tosecPattern.findFirstMatchIn(name) match {
+      val (title, year, publishers, demo, compilation, crack, budget, nonEnglish) = tosecPattern.findFirstMatchIn(name) match {
         case Some(m) =>
           val rawTitle = m.group(1).trim
           val title = normalizeTitle(rawTitle)
@@ -172,10 +178,16 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
             .sorted.distinct
             .toBuffer
           val year = date.take(4).toIntOption.getOrElse(0)
-          if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
-          else (title, year, publishers)
+          val demo = Set("(demo)", "(demo-kiosk)", "(demo-playable)", "(demo-rolling)", "(demo-slideshow)").exists(rawTitle.contains)
+          val compilation = name.contains("[compilation ") || name.contains("[compilation]")
+          val crackVersion = Set("[a ","[a]","[cr ","[cr]","[f ","[f]","[h ","[h]","[m ","[m]","[p ","[p]","[t ","[t]","[tr ","[tr]").exists(name.contains)
+          val budget = name.contains("[budget ") || name.contains("[budget]")
+          val nonEnglish = Set("(de)", "(fr)", "(it)", "(es)", "(pl)").exists(name.toLowerCase.contains)
+
+          if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty, false, false, false, false, false)
+          else (title, year, publishers, demo, compilation, crackVersion, budget, nonEnglish)
         case None =>
-          ("", 0, Buffer.empty)
+          ("", 0, Buffer.empty, false, false, false, false, false)
       }
       if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
         val _type = if (f.getFileName.toString.contains(" - Games ")) "Game"
@@ -186,7 +198,12 @@ lazy val datMetas = Seq(tosecDir, tosecIsoDir).par.flatMap(dir =>
           publishers,
           year,
           _type,
-          normalizePlatform(f.getFileName.toString)
+          normalizePlatform(f.getFileName.toString),
+          demo,
+          compilation,
+          crack,
+          budget,
+          nonEnglish
         )
         Some(meta)
       } else None
@@ -211,7 +228,7 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
   }
   files.flatMap(filename =>
     val name = filename.trim
-    val (title, year, publishers) = tosecPattern.findFirstMatchIn(name) match {
+    val (title, year, publishers, demo, compilation, crack, budget, nonEnglish) = tosecPattern.findFirstMatchIn(name) match {
       case Some(m) =>
         val rawTitle = m.group(1).trim
         val title = normalizeTitle(rawTitle)
@@ -222,10 +239,16 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
           .sorted.distinct
           .toBuffer
         val year = date.take(4).toIntOption.getOrElse(0)
-        if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty)
-        else (title, year, publishers)
+        val demo = Set("demo", "demo-kiosk", "demo-playable", "demo-rolling", "demo-slideshow").exists(rawTitle.contains)
+        val compilation = name.contains("[compilation ") || name.contains("[compilation]")
+        val crackVersion = Set("[a ","[a]","[cr ","[cr]","[f ","[f]","[h ","[h]","[m ","[m]","[p ","[p]","[t ","[t]","[tr ","[tr]").exists(name.contains)
+        val budget = name.contains("[budget ") || name.contains("[budget]")
+        val nonEnglish = Set("(de)", "(fr)", "(it)", "(es)", "(pl)").exists(name.toLowerCase.contains)
+
+        if (title.startsWith("ZZZ-UNK")) ("", 0, Buffer.empty, false, false, false, false, false)
+        else (title, year, publishers, demo, compilation, crackVersion, budget, nonEnglish)
       case None =>
-        ("", 0, Buffer.empty)
+        ("", 0, Buffer.empty, false, false, false, false, false)
     }
     if (title.nonEmpty || year != 0 || publishers.nonEmpty) {
       val _type = if (dir.contains("/Games/")) "Game"
@@ -236,22 +259,108 @@ lazy val cuesMetas = cuesDirs.par.flatMap(dir =>
         publishers,
         year,
         _type,
-        normalizePlatform(dir)
+        normalizePlatform(dir),
+        demo,
+        compilation,
+        crack,
+        budget,
+        nonEnglish
       )
       Some(meta)
     } else None
   ).toSet
 ).toSet.seq
 
-lazy val metas = datMetas ++ cuesMetas
-lazy val tosecMetas = metas.map(m =>
+private val metas = (datMetas ++ cuesMetas)
+  .filterNot(m => (m._type == "Game" && m._platform == "PC" && (m.year > 0 && m.year <= 1991)))
+  .filterNot(m => (m._platform == "PC" && (m.year > 0 && m.year < 1990)))
+  .filterNot(m => (m._platform == "Atari" && (m.year > 0 && m.year < 1988)))
+
+lazy val originals = metas.toSeq.sortBy(m => -m.year).filter(m => !m._crack && !m._demo && !m._compilation && !m._budget && !m._nonEnglish)
+  .groupBy(m => (m._platform, m._type, _normalizeAlbum(m.title), m.publishers.sorted.distinct))
+
+lazy val others = metas.toSeq.sortBy(m => -m.year).filter(m => m._crack || m._demo || m._compilation || m._budget || m._nonEnglish)
+  .groupBy(m => (m._platform, m._type, _normalizeAlbum(m.title), m.publishers.sorted.distinct))
+
+lazy val tosecMetas = (
+  originals.par.flatMap { case ((platform, _type, normAlbum, publishers), metas) =>
+  if (metas.size > 1) {
+    println(s"TOSEC META (original): ${metas.head} has ${metas.size} entries with same platform/type/normalized album/publishers, filtering out duplicates: ${metas.mkString(", ")}")
+  }
+  Some(metas.sortBy(m => if (m.year > 0) m.year else Int.MaxValue).head)
+} ++ others.par.flatMap { case ((platform, _type, normAlbum, publishers), metas) =>
+  val _originals = originals.get((platform, _type, normAlbum, publishers)).getOrElse(Seq.empty)
+  if (_originals.nonEmpty && (_originals.exists(_.year > 0) || !metas.exists(_.year > 0))) {
+    println(s"TOSEC META (other): ${metas.head} has same platform/type/normalized album/publishers as original metadata, filtering out: ${metas.mkString(", ")} originals: ${_originals.mkString(", ")}")
+    None
+
+  } else {
+    val meta = metas.sortBy(m => if (m.year > 0) m.year else Int.MaxValue).head
+    if (metas.size > 1) {
+      println(s"TOSEC META (other): ${meta} has ${metas.size} entries with same platform/type/normalized album/publishers, filtering out duplicates: ${metas.mkString(", ")}")
+      Some(meta)
+    } else Some(meta)
+  }
+}).map(m =>
+  val _platform = m._platform.trim
+  val _type = m._type.trim
+  var title = m.title.trim
+  var publishers = m.publishers.sorted.distinct.toBuffer
+  var year = m.year
+  // XXX quirks
+  if (_platform == "Atari" && _type == "Game" && title == "Tusker") year = 1989
+  else if (_platform == "Amiga" && _type == "Game" && title == "Joe & Mac - Caveman Ninja") year = 1993
+  else if (_platform == "Amiga" && _type == "Game" && title == "Charlie J Cool") year = 1996
+  else if (_platform == "Atari" && _type == "Game" && title == "International Ninja Rabbits") year = 1991
+  else if (_platform == "Atari" && _type == "Game" && title == "Zero 5") year = 1994
+  else if (_platform == "Atari" && _type == "Game" && title == "5th Gear") year = 1989
+  else if (_platform == "Atari" && _type == "Game" && title == "Operation Thunderbolt") year = 1989
+  else if (_platform == "Atari" && _type == "Game" && title == "Bio Challenge") year = 1989
+  else if (_platform == "Amiga" && _type == "Game" && title.toLowerCase == "james pond 2 - codename robocod") year = 1991
+  else if (_platform == "Amiga" && _type == "Game" && title.toLowerCase == "james pond 2 - robocod") year = 1991
+  else if (_platform == "Amiga" && _type == "Game" && title == "Joe Blade 2") year = 1988
+  else if (_platform == "Amiga" && _type == "Demo" && title == "Zenith Slide-Show") year = 1991
+  else if (_platform == "Amiga" && _type == "Game" && title == "Pinball Fantasies") year = 1992
+  else if (_platform == "Amiga" && _type == "Game" && title == "TV Sports Basketball") year = 1990
+  else if (_platform == "Amiga" && _type == "Game" && title.startsWith("Mine Runner")) year = 1993
+  else if (_platform == "Amiga" && _type == "Game" && title.startsWith("Uropa 2 - The Ulterior Colony")) year = 1997
+  else if (_platform == "Amiga" && _type == "Game" && title == "Prospector - In the Mazes of Xor") year = 1989
+  else if (_platform == "Amiga" && _type == "Game" && title == "Hole-In-One") year = 1989
+  else if (_platform == "Amiga" && _type == "Game" && title == "Star Trash" && year == 1989) year = 1990
+  else if (_platform == "Amiga" && _type == "Game" && title == "Desert Wolf") year = 1996
+  else if (_platform == "Amiga" && _type == "Game" && title == "The Basket Manager") year = 1990
+  else if (_platform == "Amiga" && _type == "Game" && title == "Deluxe Galaga") year = 1993
+  else if (_platform == "Amiga" && _type == "Game" && title == "The Big Red Adventure") year = 1997
+  else if (_platform == "Amiga" && _type == "Game" && title == "Elvira II - Jaws of Cerberus rev 1") {
+    title = "Elvira II - The Jaws of Cerberus"
+    year = 1992
+  } else if (_platform == "Amiga" && _type == "Game" && title == "The Games - Winter Edition") {
+    publishers = Buffer("Epyx", "FACS Entertainment")
+    year = 1989
+  } else if (_platform == "Amiga" && _type == "Game" && (title == "Step Five") || title == "StepFive") {
+    publishers = Buffer("NightLight")
+    year = 1994
+  } else if (_platform == "Amiga" && _type == "Game" && title == "Wolfen" && year == 1992) {
+    publishers = Buffer("Apocalypse", "OASE")
+  } else if (_platform == "Atari" && _type == "Game" && title == "Stormlords" && year == 1989) title = "Stormlord"
   MetaData(
     hash = "",
     authors = Buffer.empty,
-    publishers = m.publishers.sorted.distinct.toBuffer,
-    album = m.title.trim,
-    year = m.year,
-    _type = m._type.trim,
-    _platform = m.platform.trim,
+    publishers = publishers,
+    album = title,
+    year = year,
+    _type = _type,
+    _platform = _platform,
   )
 )
+// XXX
+.filterNot(m =>
+  (m._platform == "Amiga" && m._type == "Game" && m.album == "Amnios" && m.publishers == Buffer("Microdeal") && m.year == 1989) ||
+  (m._platform == "Amiga" && m._type == "Game" && m.album == "MineRunner v1.8" && m.publishers == Buffer("Matthias Bock") && m.year == 1995) ||
+  (m._platform == "Amiga" && m._type == "Game" && m.album == "Another World" && m.publishers == Buffer("Kixx") && m.year == 1995) ||
+  (m._platform == "Amiga" && m._type == "Game" && m.album == "Fire Force" && m.publishers == Buffer("Buzz") && m.year == 1993) ||
+  (m._platform == "Atari" && m._type == "Game" && m.album == "Elf" && m.publishers == Buffer("MicroValue") && m.year == 1988) ||
+  (m._platform == "Atari" && m._type == "Game" && m.album == "Spaceball" && m.publishers == Buffer("Microvideo") && m.year == 1989) ||
+  (m._platform == "Atari" && m._type == "Game" && m.album == "International Soccer Challenge" && m.publishers == Buffer("Micro Style") && m.year == 1988) ||
+  (m._platform == "Amiga" && m._type == "Game" && m.album == "Startrash" && m.publishers == Buffer("Top Shots") && m.year == 1992)
+).toSet.seq

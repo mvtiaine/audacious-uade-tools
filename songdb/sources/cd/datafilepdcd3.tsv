@@ -1,0 +1,648 @@
+00032ac465265504a80c80de33f5fbd8	1	169093	player	uade	Protracker	0	83302	88b8e56c	283cc846	MUSIC/STA_K/BOOTUP
+0019a4464fbe410d97fcf816433aaaf7	0	241559	player	libopenmpt	Digital Symphony	4	114204	ebed2e39	4eb5207c	MUSIC/SYS_S/SUNSET_77
+00e57476ede76bca6791e04d65136d2b	1	0	nosound	uade	Protracker	0	130548	88e5352c	ddc5d07b	MUSIC/STL_W/LEMMUS
+00e57476ede76bca6791e04d65136d2b	10	46216	player
+00e57476ede76bca6791e04d65136d2b	11	52486	player
+00e57476ede76bca6791e04d65136d2b	12	38520	player
+00e57476ede76bca6791e04d65136d2b	2	46216	player
+00e57476ede76bca6791e04d65136d2b	3	46216	player
+00e57476ede76bca6791e04d65136d2b	4	82044	player
+00e57476ede76bca6791e04d65136d2b	5	57730	player
+00e57476ede76bca6791e04d65136d2b	6	38520	player
+00e57476ede76bca6791e04d65136d2b	7	51320	player
+00e57476ede76bca6791e04d65136d2b	8	46216	player
+00e57476ede76bca6791e04d65136d2b	9	46216	player
+0114f58e3d729247acd22624dc435288	1	161397	player	uade	Protracker	0	88128	8cb3e1fb	53c06b2b	MUSIC/STL_W/PROJECT_B
+022ee3f9965a79d5c259c58be144f0e1	1	375260	player	uade	Protracker compatible	0	298154	01912fa1	b5c1bb4b	MUSIC/STA_K/A_RAVEMOD
+02bf9129fc27a9b2a665e2f560fcbaad	1	121088	player	uade	Protracker compatible	0	59802	bb2dc885	51e6579e	GAMES2/SPITFIRE/_DISC2/SONIX/TRACK2
+030abc970bdbeda142d40ea08094df9c	0	188279	player	libopenmpt	Digital Symphony	4	130492	49e05407	54d01e42	MUSIC/SYL_O/MAHONEY
+0343102cfefcecccc4c5deab08d73217	0	46011	player	libopenmpt	Digital Symphony	4	15652	9c0c459b	fec1725f	MUSIC/SYL_O/LOONCREDTU
+038e695aa6f6f403d5cc95c14ae986dc	0	224625	player	libopenmpt	Digital Symphony	4	97456	99eb7315	70cbd945	MUSIC/SYH_K/HEAVYBALAD
+0426d46295d7841b4fb816897d65a15a	0	46011	player	libopenmpt	Digital Symphony	4	12416	17780510	3366e9f5	MUSIC/SYL_O/NOTHING2
+043236e9e8202c4065a717f67c5f3fe9	0	256777	player	libopenmpt	Digital Symphony	4	115816	536c07e2	f25e8fb1	MUSIC/SYL_O/NOBEATZONE
+04fa832028d66d4dcf77ab9ded9a881d	0	162703	player	libxmp	Archimedes Tracker	4	108020	b46a9ec8	7f5b38c1	MUSIC/STMODS/DJXMAS
+05f3819053b31ea5661676e770f4954c	0	150546	player+silence	libopenmpt	Digital Symphony	8	15296	12f133aa	afb47946	MUSIC/SYE_G/FROGGY
+062e2845085e188295b5ff97c668bb79	1	394691	player	uade	Protracker	0	136616	1db38f0f	6ed6b2db	MUSIC/STA_K/BLUE3
+07dc4a5bdae76ff7c461cc346e997f2c	0	95857	player	libopenmpt	Digital Symphony	4	32432	76b0e176	3a435766	MUSIC/SYL_O/LEVELINTRO
+08f246045fa750ed44effaba61138344	0	302515	player+silence	libopenmpt	Digital Symphony	4	39732	ca455e8d	51bba599	MUSIC/SYH_K/IGARUN
+09058c9ebc8452f59b8041072bfe02e4	0	123615	player	libopenmpt	Digital Symphony	8	55552	c2808149	aed30e56	MUSIC/SYS_S/SIX2_8
+093e826c74b6a3cee6dafed60baa9a07	0	431468	player+silence	libopenmpt	Digital Symphony	4	39180	53ae010b	a67acc2d	MUSIC/SYA_D/AQUAPOOL
+099aba900be1fc667c1c0366d60248ed	1	30824	player	uade	Protracker	0	30132	9b647c1f	77d719a7	MUSIC/STA_K/JACKINAPOP
+0bc5d75ba0594500b76df911bf110b51	0	145904	player	libxmp	Archimedes Tracker	4	75020	70973977	80c5283b	MUSIC/STMODS/JAZZID
+0be64223aff63a6b4f89ca696e0b32c8	0	234849	player	libopenmpt	Digital Symphony	4	80232	38605159	e6fa4627	MUSIC/SYH_K/HOUSESPEC
+0be88fdbafbfb7a1d51dbe66dde2aec5	1	153721	player	uade	Noisetracker 1.x	0	89582	d2808bd8	3563b710	MUSIC/STA_K/16RASTRSNG
+0bfa733d95915180f014e6e795d09d3d	0	634045	player+silence	libopenmpt	Digital Symphony	4	143060	8ea5b5d4	05a0e1db	MUSIC/SYL_O/OLDMAGIC
+0c749c71dbc0d5b2510d33cbf4234293	0	140590	player	libopenmpt	Digital Symphony	4	80420	fee9e7a1	2a291ec6	MUSIC/SYP_R/RSI_HARD
+0c847b315aa34d99eeac454414b61d64	0	308216	player+silence	libopenmpt	Digital Symphony	4	36892	4d2a0bf7	9d4d14a3	MUSIC/SYP_R/PURPLES
+0d0643e1b1f2cbede0c0d1324209581e	0	167958	player+silence	libopenmpt	Digital Symphony	4	59724	f0165074	de6b6d5e	MUSIC/SYP_R/PENDANT
+0d171e19aeffa3f1bbb5efa57ca3cae5	0	214719	player	libopenmpt	Digital Symphony	4	47792	992f23c3	a1792804	MUSIC/SYT_Z/VOYAGER
+0d9561bb5218714c59f1c61e6fa084c1	1	176769	player	uade	Protracker	0	61452	af129493	e8ae953e	MUSIC/STL_W/WORLDDISCO
+0d96d8a56ef34f7b1986271ff0e35117	0	92152	player	libxmp	Archimedes Tracker	4	76728	16a79097	6d01fbb1	MUSIC/STMODS/TGCAZ
+0da82f3dbec3183dd5720fbf29c1fba2	0	87534	player+silence	libopenmpt	Digital Symphony	4	92796	92318171	8e3390c2	MUSIC/SYT_Z/T124
+0ded79d6521f5660572e414554ac0ef3	0	193430	player+silence	libopenmpt	Digital Symphony	4	117716	7e6fffee	98593bbd	MUSIC/SYL_O/LONGSTABB
+0e2433050f0d87ef0cb87af8d2bb3765	0	107359	player	libopenmpt	Digital Symphony	4	57904	5ba41aba	688b822e	MUSIC/SYA_D/ABANDON
+0e63138eb0052770c305637fcd7bc365	0	113361	player	libopenmpt	Digital Symphony	4	119600	5fcf932e	4bbe336d	MUSIC/SYL_O/LEVEL1
+0e6922518ffbca527ce09c08a5336189	0	141868	player	libopenmpt	Digital Symphony	4	56112	3a3a43f3	b18bd937	MUSIC/SYE_G/GOWEST
+0e9c85f8a5767d73f3cdff2ccb92edf6	0	230057	player	libopenmpt	Digital Symphony	4	43584	f2018eef	9691a7bd	MUSIC/SYT_Z/TJ
+0eb6b1a4daacfae928f837a0c978265a	0	414033	player+silence	libopenmpt	Digital Symphony	4	115176	2c3fe897	bfc77cec	MUSIC/SYL_O/MANDA
+0ec3e9f0d5c9b15e0bb124d4d2d66c3a	0	214719	player	libopenmpt	Digital Symphony	4	65092	522c7e66	b49d158a	MUSIC/SYL_O/NEWPOLTER
+0f58e42f48c1124e15adff8e6f938434	0	506135	player+silence	libopenmpt	Digital Symphony	4	91820	46d01aa5	1aa1f50d	MUSIC/SYT_Z/TINYTUNES
+0f8d2b6725a9fe13a88790df33438642	0	156585	player+silence	libopenmpt	Digital Symphony	4	72588	c3d38e2d	eee13eee	MUSIC/SYE_G/FEAREXAM
+0f9fba37f4d3880d0345eeb34e0f6104	0	92981	player	libopenmpt	Digital Symphony	4	543804	c48bd666	93af9a30	MUSIC/SYE_G/FEEL
+0fb389ae0837ae2775a464eb6abc6e73	0	165958	player+silence	libopenmpt	Digital Symphony	4	55852	080a1496	a7636fe7	MUSIC/SYL_O/MOONLIGH
+102313925d9105cfe9359fb2ed595fc1	0	107504	player	libxmp	Archimedes Tracker	4	102056	6c5c8c75	446a37c5	MUSIC/STMODS/WOGANREMIX
+10a66c4ca6c8e81268538dfa567c415d	1	91308	player	uade	Protracker compatible	0	126686	c761b61c	f599e5a5	MUSIC/STL_W/PROD_3
+10c76229efb138d17cab6feaba1542ad	1	166521	player	uade	Protracker	0	167356	b8ac60af	686173de	MUSIC/STL_W/SIM2000
+10d3c4f9bf7380867933bd35a47b0713	0	84354	player	libopenmpt	Digital Symphony	4	41396	c871c1ba	63549135	MUSIC/SYS_S/SWEETTIME
+11363834c1629b9dbda35386aa477355	0	38342	player	libopenmpt	Digital Symphony	4	19648	7f251f96	613ae4d7	MUSIC/SYT_Z/TWINWORLD0
+11490510c1104ce3933018e35dba0edf	0	252946	player	libxmp	Archimedes Tracker	8	234552	a755e3c5	35e1e35a	MUSIC/STMODS/VIBEES2
+12ea6e454a88771a755fccdb813dbde9	1	227828	player	uade	Protracker compatible	0	176586	47480249	c12ebdd2	MUSIC/STL_W/VARANEN
+13501f4d05c5e22712102b34af5b8b71	1	64442	player	uade	Protracker compatible	0	44120	cabc74df	35e70bf8	MUSIC/STA_K/DINOSAW
+13768dc30f1179271b173d4d4d1a35d9	0	226222	player	libopenmpt	Digital Symphony	4	106248	09fe9001	5a989bfa	MUSIC/SYL_O/LYKKEH
+14ac7712dc6b4dac535b9b47b9c21f77	0	196826	player	libopenmpt	Digital Symphony	4	26680	5410301e	6743da00	MUSIC/SYL_O/NFANCY
+17659773ff2d24a6cca9b8b39166b617	0	117648	player	libopenmpt	Digital Symphony	4	57416	a8444012	7bbc2359	MUSIC/SYL_O/OIMAGKES
+17bda66eafd0c9b8aee0ed0acc4c6409	0	345085	player	libopenmpt	Digital Symphony	4	321288	3fad1867	b6527a57	MUSIC/SYA_D/DJ_BOBO
+183afa731bc0e7b52610ef723ff11844	0	74637	player	libopenmpt	Digital Symphony	4	150228	c15a2e3b	1d47aefa	MUSIC/SYE_G/GAMEOVER
+1899881e2c28512c7e3a088658dd5ce7	0	153371	player	libopenmpt	Digital Symphony	4	20168	744c2b4d	b9a67f5b	MUSIC/SYE_G/GOODTUNE
+194f55a8e7d8665ebea29e5913119241	0	191714	player	libopenmpt	Digital Symphony	4	22132	eff69cf0	618ddd03	MUSIC/SYE_G/GSCTHEME
+19e6337e58e43638470ee0503d27be1d	0	260731	player	libopenmpt	Digital Symphony	4	47540	c1a3c343	b23cce5e	MUSIC/SYA_D/ADAMSKI
+1a16acdc5ad9d76b7636c1b8723783ee	1	32501	player+silence	uade	Protracker	0	46518	89152748	f48f34ac	GAMES2/THUNDER/DISC_1/_THUNDER/TUNESPICS/MUSIC/PHANTOM
+1a1e6f8a24a42b3c29df3e8e7f7dcedc	0	276068	player	libopenmpt	Digital Symphony	4	55900	39894a68	6b60f726	MUSIC/SYA_D/AXK1
+1a4e9c553b27d434ac394972e529259a	0	99691	player	libopenmpt	Digital Symphony	4	42836	6e17bb04	4bf36b0d	MUSIC/SYE_G/ELEPHANT
+1af8c659d7c9c55b0c28d0a5a9578979	1	255880	player	uade	Protracker	0	141188	4cce2e29	75c6c9e0	MUSIC/STL_W/WHATSHIS
+1b6269b76b0fc64383ed29825dd7020c	0	146981	player+silence	libopenmpt	Digital Symphony	4	38888	3fe7e72b	b2d5c01e	MUSIC/SYS_S/SINISTER
+1b7bf603595e1a869fe3bbf84206f17b	0	29675	player	libopenmpt	Digital Symphony	4	40744	7cc2df1f	ae0bc358	MUSIC/SYL_O/NEWBIZ
+1c8f0f3a8a0fd1447dd9707a2f6338f4	1	56485	player+silence	uade	Protracker compatible	0	35585	8361e0b7	022cfc54	MUSIC/STL_W/SPACENOISE
+1e6c27afa7c57abdf66865866191bcfb	0	220091	player+silence	libopenmpt	Digital Symphony	4	219808	55b2a5d0	0160d5ba	MUSIC/SYT_Z/THEOBJ
+1ea020016f7119820693ae0555cac9c6	0	334421	player	libopenmpt	Digital Symphony	4	55316	0737cdae	c4ecc75a	MUSIC/SYT_Z/TOCCATA
+1ee04ea1d065694ee71d1451ae1779ac	0	182727	player	libopenmpt	Digital Symphony	4	61784	b3adf7a2	a6de7052	MUSIC/SYE_G/GIANASISTE
+1fc4e981c0a54411742cd997f37ea85d	0	64026	player+silence	libopenmpt	Digital Symphony	4	33424	f67bf6b0	d3a2cd94	MUSIC/SYP_R/R250DEVICE
+20de6cf5b72b1bb7ba570c23e390fe7a	0	46011	player	libopenmpt	Digital Symphony	4	4456	92ceb834	48395a08	MUSIC/SYE_G/G_FORCE
+2130679375744fe17b79ae7c459bf0cc	0	97919	player	libxmp	Archimedes Tracker	5	57216	8efb15cf	ccacb7e8	MUSIC/STMODS/ARABIA
+218347648b34da4b4ad03768b1fa84ab	0	73906	player	libxmp	Archimedes Tracker	4	67540	903f44df	283a7720	MUSIC/STMODS/MRMEN
+21ec877141b18a2af7adc7bb235acd63	0	145702	player	libopenmpt	Digital Symphony	4	123676	4e5cdfe0	be5d3618	MUSIC/SYT_Z/TRAXX
+2237a5c18af2fba14a3315dd9db2643f	0	159028	player+silence	libopenmpt	Digital Symphony	4	30756	aff73a0a	cea24641	MUSIC/SYE_G/FFSOUND
+22601c1992bc3f6b69a09e8a5e1c0f85	1	331917	player	uade	Protracker	0	282768	12a4f0dc	dae6e1a0	MUSIC/STL_W/VD_LOVE
+2318ba05e70eb5abd1f6658a6a2673a9	0	245640	player+silence	libopenmpt	Digital Symphony	8	114100	6da31038	f1aec366	MUSIC/SYT_Z/THE_FLOW
+234a5bad54aebd9db99c74bd97586ce8	0	84354	player	libopenmpt	Digital Symphony	4	18720	4207a811	b6bc16ec	MUSIC/SYS_S/STRANGE
+23944bedc5b8b7a6c875db92f8b2a694	0	240307	player	libxmp	Archimedes Tracker	4	69828	8ec28e89	f8564494	MUSIC/STMODS/TOMMDAWN
+239905f404ee99e04886db7cc1875635	0	130365	player	libopenmpt	Digital Symphony	4	34664	92b6e31a	bcecf728	MUSIC/SYT_Z/TITLEMUS
+23f861cea12bfb83c8d9134da446a62b	0	207650	player	libopenmpt	Digital Symphony	4	132760	e4af2036	addaf8f3	MUSIC/SYP_R/ROOTS
+241cdc504b06993c92e39caf6c8369ee	0	57514	player	libopenmpt	Digital Symphony	4	39952	c8ed3666	4651b0a2	MUSIC/SYL_O/LAST_SIN
+24302f9c4a93b1de7b83134b1f2734d7	0	189772	player+silence	libopenmpt	Digital Symphony	4	26880	0a2988ba	ca6e27b8	MUSIC/SYH_K/HOUSE1
+24f2039dd29864e919938b61329f5115	0	230057	player	libopenmpt	Digital Symphony	4	142972	d4305ff0	2a148298	MUSIC/SYP_R/REVERB
+24f6c4507490559f7872334bc0fdf35e	0	171444	player	libopenmpt	Digital Symphony	4	85000	1d5958ea	b1283295	MUSIC/SYA_D/3D_FOOT
+250f38a5daa8460d4e224982c933bf25	0	283062	player+silence	libopenmpt	Digital Symphony	4	133460	16b2377d	38cbb03e	MUSIC/SYE_G/ENSONIC
+255fb7ea0036ca67a02554cc26f9c19c	0	502731	player+silence	libopenmpt	Digital Symphony	4	101936	5e28d1fe	e703b72a	MUSIC/SYT_Z/WARMPLACE
+25aa792efd75a8216f7c3ed0ac90baa1	0	213321	player+silence	libopenmpt	Digital Symphony	4	85200	a52d9425	a0d462b6	MUSIC/SYH_K/JMJ_CHINA
+25cba31cb79e823adcfdc3d46326f516	1	144618	player	uade	Noisetracker 1.x	0	614892	dfa3149a	f8d07719	MUSIC/STA_K/GIVEITUP
+2623ab3d69a1b05f68a51544af4bf168	1	161397	player	uade	Protracker compatible	0	66074	b6a60a25	a9310f12	MUSIC/STL_W/NIGHT
+268037bac8d2c40273ac610ec6f340ff	0	47928	player	libopenmpt	Digital Symphony	4	42892	44383135	1a3623fd	MUSIC/SYA_D/DRWHOFINL4
+26826e0bca78f58526d207b868b691b8	0	451129	player+silence	libopenmpt	Digital Symphony	4	196008	790f59a8	fbfe151a	MUSIC/SYS_S/SIGNIA
+26a8f3b3b34b84a02f5bee2bf2fcb0a1	0	96201	player+silence	libopenmpt	Digital Symphony	4	50012	7f92fadb	e1dace0a	MUSIC/SYE_G/EQUINOXE
+27168d6498907afc7e052591c4a91509	0	179166	player+silence	libopenmpt	Digital Symphony	4	105184	fe8c68c9	51f1c8d9	MUSIC/SYA_D/DEKAMX
+274f3c5ab91e9e825faccd652ba3c7e9	0	133104	player	libxmp	Archimedes Tracker	8	58928	98a2423a	68700947	MUSIC/STMODS/MISBEHAVIN
+275467ed801f97ae3e6a8dbb8fa6c6b9	0	174176	player	libopenmpt	Digital Symphony	4	227060	7ea8eb24	b4facd4d	MUSIC/SYS_S/SUNDANCE
+2786769c01030bc8292ccd6c7b876eb6	0	107359	player	libopenmpt	Digital Symphony	4	62952	3d0dd2bf	d887cb87	MUSIC/SYE_G/G_OF_P
+27f1b0b598414a030270464242dd568d	1	69224	player	uade	Protracker	0	50870	bcc0c324	dff37ae7	MUSIC/STL_W/LME
+2822396d92c190682be76b1392cc04a5	1	132463	player+volume	uade	Protracker	0	190806	b84dddb3	7c1ce574	MUSIC/STL_W/LONELYN
+29c1a581ac8b29c09b3ccce5822d9221	0	99691	player	libopenmpt	Digital Symphony	4	10896	0729bab0	1ee042a0	MUSIC/SYE_G/GUESSWHO
+2aa75e12198c092b64eb075881f5ea3a	0	185700	player+silence	libopenmpt	Digital Symphony	4	79436	1c1701ab	d3d90257	MUSIC/SYA_D/CLASSIC
+2ac7eb3635a07b996584457895c8d7f4	0	226183	player+silence	libopenmpt	Digital Symphony	4	35704	8151ef81	b91635d4	MUSIC/SYT_Z/THELASTSUN
+2baa11032d33cc881e952ca042de524e	1	76920	player	uade	Noisetracker 1.x	0	49650	22e9cb2c	e43d1aeb	MUSIC/STL_W/REV_MOD
+2bd975b615717260619161ee14cf504e	1	317856	player+silence	uade	Protracker	0	122580	985d3dfb	6d1070d1	MUSIC/STA_K/GRAVE_YARD
+2c462418ec388d5ee88c0dc20f9038e7	0	253062	player	libopenmpt	Digital Symphony	4	134344	ced8ace1	075dd2f9	MUSIC/SYH_K/IMPLODER
+2c9f68ace58540749bf0a559fe4c80bc	0	84354	player	libopenmpt	Digital Symphony	4	75872	522cb51d	1631bfe0	MUSIC/SYP_R/PARASONG
+2d98c0eb6cf802a3de0e0b2fab34aa23	0	223666	player	libopenmpt	Digital Symphony	4	81504	5b8fd156	42f5ac8b	MUSIC/SYE_G/GALAKTIK
+2db002f4ede30a37c5723e15f7026a52	0	161039	player	libopenmpt	Digital Symphony	4	68012	42be7287	b2ef6038	MUSIC/SYA_D/BANANAS
+2e5246e957fc071f1d40c605bb5cc5f4	0	245394	player	libopenmpt	Digital Symphony	4	183596	c875f2b8	9f68d43d	MUSIC/SYL_O/MAIN2
+2eaa8929f3a6c502fc94d9d221f0d3c2	0	97214	player	libopenmpt	Digital Symphony	4	72528	c949d159	f52ca12f	MUSIC/SYA_D/BELIEVE
+2f2e2490d28db72fb6db77462554b6f2	1	61568	player	uade	Protracker	0	57432	c0aa2819	1b9c6e04	MUSIC/STA_K/CHUNG_KUO
+2f63896dd76cc6e366d36e901c11b402	0	289205	player+silence	libopenmpt	Digital Symphony	4	52032	399b459d	f0de6db7	MUSIC/SYH_K/INALIFE
+2f86b8898b74a926d109eb673d3debd4	0	238110	player+silence	libopenmpt	Digital Symphony	4	74740	8ba36b70	3199b570	MUSIC/SYH_K/HUNGER
+2fc7607b7212061a5f7bbed47de808f2	0	166232	player	libopenmpt	Digital Symphony	4	210732	953540fa	a209defc	MUSIC/SYP_R/RAVEMACHNE
+2ff72e859b8a9d0df54ebc78edfae9d4	0	163185	player	libxmp	Archimedes Tracker	4	188044	f46ee67c	f58eaced	MUSIC/STMODS/PIL_MUSIK1
+30bd54f08b690501082d75411a9fc8f7	0	106936	player+silence	libopenmpt	Digital Symphony	4	65584	40cfa073	9144045a	MUSIC/SYL_O/MEGA
+31149ab7fe12ed98000f42cd9ac8eac5	1	121731	player	uade	Protracker compatible	0	223350	5bac1fcb	6c5cc174	MUSIC/STL_W/SATTHE14TH
+311a1af9cf1ef1b0de933ea6225ad856	0	130552	player	libxmp	Archimedes Tracker	4	50896	4de3088a	2daa2fbc	MUSIC/STMODS/GUITSY
+3159bfaf9e785e523b24c7a493d289c8	0	246355	player+silence	libopenmpt	Digital Symphony	4	154256	4a049faa	d3284fae	MUSIC/SYP_R/RISEUP
+31ae5e4dcba9eec3e591b36beed6a6c8	1	44910	player	uade	Protracker	0	43036	33be72d9	380c55c0	MUSIC/STL_W/OUTRO
+32c546d7e2111a1958689804ff87922d	1	176516	player	ft2play	Fasttracker (M.K.)	4	98312	8e940693	68c29c8f	MUSIC/STL_W/SUMMER
+330fc9a24d99e8bbbb5a67ac4a01f9ee	1	199700	player+silence	uade	Protracker	0	68430	482bc2b2	2b014df8	MUSIC/STA_K/BREAKFREE
+33852d6708b21ff6174ffbf91901ee7e	0	153371	player	libopenmpt	Digital Symphony	4	19988	d758614b	e228d50d	MUSIC/SYT_Z/TWM
+33a11d9fdaad8efdd87d2d5f6cdc9c3c	0	541005	player+silence	libopenmpt	Digital Symphony	4	60188	7eabfc67	51da0bfe	MUSIC/SYL_O/NEGLIGENT
+34e278fe6ac3cc490ae8c8105b5ccb70	0	118886	player	libopenmpt	Digital Symphony	4	54776	2f4ec9f1	6e210a7b	MUSIC/SYH_K/KANEISEDO
+3597a68c9e4480ee49075990afb5bbf8	0	176377	player	libopenmpt	Digital Symphony	4	43672	2ab33625	43083674	MUSIC/SYH_K/HJELMFOSS
+35e74ce91eb71106853a1a87fa3c19d3	0	191714	player	libopenmpt	Digital Symphony	4	52764	315371bb	808f437b	MUSIC/SYT_Z/TUN2
+36372f73eeec5e1bf6e92d73e7c63167	1	61568	player	uade	Protracker	0	64412	61dbbb2e	ae48691a	MUSIC/STL_W/SUBERCOM
+367754792ccd1c2b2acf181e760a01ac	0	110155	player	libopenmpt	Digital Symphony	4	85400	401f0a40	93adbbec	MUSIC/SYL_O/NEWAMIGA
+3687a25e4d547001c1b00c9664d79281	0	168952	player	libxmp	Archimedes Tracker	4	76272	d8dbfa5b	caf33546	MUSIC/STMODS/WORRA
+3696ff2b6c49ca3cdca31554e59ff4af	0	176377	player	libopenmpt	Digital Symphony	4	34284	89dcea41	e61f0844	MUSIC/SYH_K/HYPNOSOS
+37ac870464d026746327e3edce63e0fc	0	187640	player	libopenmpt	Digital Symphony	4	61260	54cf1982	a3c45ede	MUSIC/SYH_K/ITALIA
+3908def8631899316f452dd348785cc5	0	291405	player	libopenmpt	Digital Symphony	4	98888	390d1d0d	31c1393b	MUSIC/SYA_D/CAPPOWER
+39df95810be0203098dd59c7a1ffe3b7	1	90997	player+silence	uade	Protracker compatible	0	77330	1d9d093d	a9c06dd9	MUSIC/STL_W/MOD_DS9A
+3a213cf53bcd970a230235e17d767495	0	145702	player	libopenmpt	Digital Symphony	4	114332	84556481	4801f1d1	MUSIC/SYH_K/KAOSRAVE
+3a700d2e50577df989eb6e4d2f0c53b6	1	153741	player	uade	Soundtracker II (31 instr.)	0	94185	881fb140	efdb7130	MUSIC/STL_W/SPREAD
+3a9d407d64d2ce46173789b2e5d1c4a4	0	29365	player+silence	libopenmpt	Digital Symphony	4	75548	c90c760b	75e1d13e	MUSIC/SYE_G/EEIRIE
+3ac6146099f4dd6a7158a38c460ac893	1	92031	player	uade	Protracker	0	293534	02ab0936	5e106882	MUSIC/STL_W/OLDETCIWON
+3ae1607735955211e3404b5d2b097f92	0	69017	player	libopenmpt	Digital Symphony	4	4720	92ddf7ed	85272cfb	MUSIC/SYE_G/GONADS
+3b24c120568959ddc91b06078d5a1b76	1	122997	player	uade	Protracker	0	58616	b5bcfbdb	c7cc7d1f	MUSIC/STL_W/LASTMONTH
+3b4fc5a7bc0264cb84e735caa3ac222e	1	88434	player	uade	Noisetracker 1.x	0	63952	80c0060c	87253de3	MUSIC/STL_W/SURVIVORS2
+3c6e03a09e6d155a79e41975c714c98e	0	91423	player	libopenmpt	Digital Symphony	4	381804	3d384794	598cadf4	MUSIC/SYP_R/RAVELIMIT
+3cddeb377756763b7877fad7f7ac07ca	0	207051	player	libopenmpt	Digital Symphony	4	80516	46925f68	1c75719c	MUSIC/SYL_O/MOBA1
+3d633d4f7349f828f7237ad657f89e4b	0	138228	player	libxmp	Archimedes Tracker	8	69500	c6f005c6	65519fa2	MUSIC/STMODS/HCOMESBAND
+3de61a3e9a412ec4100851c2f226ccef	0	549040	player+silence	libopenmpt	Digital Symphony	4	18452	0353801f	2633a14a	MUSIC/SYA_D/ALTOGETHER
+3e06527d6ec8d9e2a4c1dbca8f2cfd5c	0	143885	player	libopenmpt	Digital Symphony	4	66520	0388e565	d7a82914	MUSIC/SYT_Z/TROUBLE
+3e083cf9eda44687b015f0a588b6c08b	0	153371	player	libopenmpt	Digital Symphony	4	42868	843a267a	57f48f4d	MUSIC/SYH_K/HALFSTEP
+3e100aec598269be7eda21e9918700fe	0	369236	player+silence	libopenmpt	Digital Symphony	5	121252	a7c5753e	58b791f6	MUSIC/SYA_D/DRUMOTRONI
+3e84d689ccdab34db42aa14ec4c769d3	0	44733	player	libopenmpt	Digital Symphony	4	21752	19b8179b	5ff720d7	MUSIC/SYL_O/MUNK_JAMS
+3ee243d8c79796c03640178c07b698d4	0	316328	player	libopenmpt	Digital Symphony	4	82052	fed33fe0	a80d771d	MUSIC/SYH_K/HARDSTUFF
+3f699f33d64f4142b4494ab852c705c4	1	116566	player	uade	Protracker compatible	0	190800	9c28a4f1	7f981f6a	MUSIC/STL_W/PROD_MIX
+4052c54ee7a660a91a3974bc18ab51aa	0	20489	player	libopenmpt	Digital Symphony	5	19652	5571331b	2d886b70	MUSIC/SYP_R/PEPPERS
+405733ae9068b09b18513c3d01b1c3ac	0	255818	player	libopenmpt	Digital Symphony	4	68096	96f50306	cdafa3df	MUSIC/SYA_D/COMIC
+406073802861a88f3d1eefb8523dd1ba	1	44910	player	uade	Soundtracker II (15 instr.)	0	50836	07571527	ad6bffc0	MUSIC/STA_K/FAIRLITE_M
+40b436b4dceaedffe4c52295a4bcb6df	0	199382	player	libopenmpt	Digital Symphony	4	48556	d8b14b69	e164ad47	MUSIC/SYH_K/IMPACT
+40b94ad9aa55435cfef3779e97ac73dc	0	97135	player	libopenmpt	Digital Symphony	4	89308	226f9127	8d4d1942	MUSIC/SYT_Z/URBAN7
+40c4c0c066db523ebdb00f97065c552a	0	76685	player	libopenmpt	Digital Symphony	4	47604	17792472	58bb2273	MUSIC/SYT_Z/TOOBTITLE
+40de7208523589d06d3b7f1610c43aae	0	264565	player	libopenmpt	Digital Symphony	4	96696	3534caf7	11dbfa25	MUSIC/SYP_R/ROCKYMOUNT
+40f0c6b166d25c7d6efb54d38998edc8	1	289827	player+silence	uade	Protracker	0	406354	c9a0d499	d0f82e76	MUSIC/STA_K/GUITAR
+41268d3b3f29fdb4561aa7d4006e3e1d	1	48125	player	uade	Protracker	0	80808	daa522c9	3a8161b1	MUSIC/STA_K/DRWHOFINL4
+414aeb9334366147a60f6cb404059b30	1	96693	player	uade	Protracker compatible	0	55586	cc531df1	7c637d45	GAMES2/THUNDER/DISC_1/_THUNDER/TUNESPICS/MUSIC/HYPNAUTIC
+415c4c915e7697868a1ba1d45980f163	0	162018	player	libopenmpt	Digital Symphony	4	67652	f072a369	513676e3	MUSIC/SYA_D/BOBBY
+415fc17b8b051c884bd0bdd284e05b2f	0	299940	player+silence	libopenmpt	Digital Symphony	4	170260	22b3fcfa	720244b9	MUSIC/SYL_O/LIGHTOFDAY
+41ac318575ced84d5c7e1262a290ed18	0	191714	player	libopenmpt	Digital Symphony	4	101044	fc229612	3d667151	MUSIC/SYA_D/BH_COP2
+41b5a7fab0cb4ef8f93baa629a4991a9	0	291003	player+silence	libopenmpt	Digital Symphony	4	239332	f4f48232	7a53b07e	MUSIC/SYE_G/ELMSTREET
+41f4bc86dc8e1cc281f4157f627f8340	0	195124	player+silence	libopenmpt	Digital Symphony	4	163976	4abdbad5	ef6de14d	MUSIC/SYE_G/ELECTRIX
+42c2afccc281fd939605972cab9060cd	0	130365	player	libopenmpt	Digital Symphony	4	44572	b48e59d3	b363d767	MUSIC/SYA_D/AUTUMN
+43076a5461aa0a3a4cce9e54bad6099d	1	237705	player	ft2play	Fasttracker (M.K.)	4	370923	f31cf5aa	428e31e0	MUSIC/STA_K/BLUEMAN
+43150654754c2f92cd4b41bc1c63d6df	0	184304	player	libxmp	Archimedes Tracker	4	111920	b8b40de4	2a9fbb5e	MUSIC/STMODS/SPACEWORP
+432dc616bfd858c941ac98356f45dd2f	1	222845	player	uade	Protracker	0	196740	5eb02287	712a6ec2	MUSIC/STL_W/LETMEHEAR
+4376ade91ed4766766f206d72a238e5b	0	7668	player	libopenmpt	Digital Symphony	4	25952	7f89ebe9	ccfd801e	MUSIC/SYL_O/MANUTDFX
+4376ade91ed4766766f206d72a238e5b	1	3234	player+volume
+4376ade91ed4766766f206d72a238e5b	2	3042	player+volume
+4376ade91ed4766766f206d72a238e5b	3	7668	player
+4376ade91ed4766766f206d72a238e5b	4	3180	player+volume
+43931130dce2d1ac4d833ae7edd4134c	1	134531	player	uade	Protracker	0	316066	90f63ce9	4486b6d2	MUSIC/STL_W/SIMPSONS
+43a051535d732879ea42bf31b1fafbcf	1	112126	player	uade	Protracker	0	69894	5fdf04bd	d0640dd5	MUSIC/STA_K/07
+43b300d735b8f3d75d60eca61ef2ea0b	0	17905	player+silence	libopenmpt	Digital Symphony	4	31284	b4f76d87	f2870fe1	MUSIC/SYH_K/HANGING
+43bb67978feefbe3cf83489b19b44fed	0	112467	player	libxmp	Archimedes Tracker	8	176104	397535f9	6f471878	MUSIC/STMODS/JBELLS2
+43bfa5c5292da16e9b882bd2d67fc450	0	6687	player+silence	libopenmpt	Digital Symphony	4	10560	e438d26b	00625be6	MUSIC/SYE_G/FINALE
+442198f45afb48ae67d4a515370e208f	1	123076	player+silence	uade	Soundtracker II (15 instr.)	0	75604	cea206c6	51f498ea	MUSIC/STA_K/DIABLO
+44dc59f23c74f006478227e316d68db3	0	304428	player+silence	libopenmpt	Digital Symphony	4	69984	4e7b198f	1b493a04	MUSIC/SYP_R/PETSHOP
+458420d8e3ec7b309d7f267d5ccffcd7	0	232024	player+silence	libopenmpt	Digital Symphony	4	52464	998298a5	ea4e68fb	MUSIC/SYL_O/ORANGEJU
+45888f8b057884f15577e6a0bc832d8b	0	140780	player	libxmp	Coconizer	4	354352	e83caa12	56e574da	MUSIC/STL_W/THECHASE
+458e612fdb57435c3a0feb467ecc86d2	0	440942	player	libopenmpt	Digital Symphony	4	112292	96a422f4	b7b16e45	MUSIC/SYL_O/MACHSHOUSE
+45ea374cdc3184df4cb440f23d052cff	0	186727	player+silence	libopenmpt	Digital Symphony	8	125640	66292893	9ba7114e	MUSIC/SYH_K/HEAVEN
+46272e4c045136803189316e988b6c2a	0	138034	player	libopenmpt	Digital Symphony	4	25760	89c442b0	3402c903	MUSIC/SYE_G/GHOSTWRTRS
+473196051886dbad118601e71268be17	0	76685	player	libopenmpt	Digital Symphony	4	52724	8aa36df4	3519d89e	MUSIC/SYT_Z/VCC_4
+47f6ef28f1a3a282d506e4b11d72979f	1	226588	player+silence	uade	Noisetracker 1.x	0	136250	fce8c322	c07d5eeb	MUSIC/STA_K/ARCMAGE
+49199af8c39eb1042237fc40ca4bce12	1	84616	player	uade	Noisetracker 1.x	0	22248	e2b2019b	0f67c1e6	GAMES2/SPITFIRE/_DISC2/SONIX/TRACK1
+4996a2c08c984bdd602c3ff3e1911c05	1	199576	player	uade	Protracker compatible	0	748404	7ab72a6d	081e794e	MUSIC/STA_K/JAMES
+4a699241320f1030e8b5c332b9fd7357	0	248076	player	libopenmpt	Digital Symphony	4	281928	f6c359e0	0e42a959	MUSIC/SYA_D/ACEOBASE
+4acf87e3be91f440ff395b1de74deec3	0	74041	player+silence	libopenmpt	Digital Symphony	4	710848	d0dc3c3f	e4b2a513	MUSIC/SYL_O/MACLADS
+4c74f3f6fb5cdababf5f5f3d9082ada1	1	166601	player	uade	Protracker	0	257896	bda46ea1	0c1a890e	MUSIC/STL_W/RAVEMACHNE
+4e0fe1d0b4a74207c6127c2883d58440	1	340689	player+silence	uade	Protracker	0	114550	26a53a41	45ce68b8	MUSIC/STL_W/WHO_KNOWS
+4e54ee3ca7e5d255745b9e1eb9a93c32	0	228702	player+silence	libopenmpt	Digital Symphony	4	70732	8b4ae48f	dc2b7941	MUSIC/SYT_Z/WALKMAN2
+4e9095f45436a56e5297d88112b3fd64	1	69224	player	uade	Protracker	0	58994	c8e76b4c	fb86ddba	MUSIC/STL_W/TECH3_1
+4ebea04df937e8eb00849802264f30b9	1	229978	player	uade	Protracker compatible	0	245198	8bb15410	bcf19535	MUSIC/STA_K/A_FUNKY_D
+4ebfcdad0530dea8439735fae0019a9b	0	92022	player	libopenmpt	Digital Symphony	4	44200	c556374f	16a651de	MUSIC/SYH_K/HEAVY
+4f3f6cb30de4a464072d7a8354a1a946	0	340057	player+silence	libopenmpt	Digital Symphony	4	72072	aa99ace8	4466aead	MUSIC/SYT_Z/WHO_KNOWS
+4f4355eb66edac1cc48be513b793261e	1	192141	player	uade	Soundtracker II (15 instr.)	0	75860	24327966	3095bd90	MUSIC/STL_W/MFC1_MOD
+4f51636ba42951e2411ef50be886ad20	1	46839	player	uade	Protracker	0	57252	643b8660	2c4768d7	MUSIC/STA_K/KEFERENS_D
+4f78823cbbe2df36986dfe098767db8c	1	307321	player	uade	Protracker compatible	0	135652	5eaa38f6	7fd90dd7	MUSIC/STMODS/MELLOW
+4f97ab7531769b3e309882313b0519f5	0	199382	player	libopenmpt	Digital Symphony	4	59912	e0cdb299	bdc59b99	MUSIC/SYT_Z/ZOWEE
+5021098150ada33da3ac84dea3f3cd4f	0	175990	player+silence	libopenmpt	Digital Symphony	4	115748	ddc0e717	cfbf49a5	MUSIC/SYT_Z/TITLE
+505f6f17a82127bb66c235fc6a956785	0	191714	player	libopenmpt	Digital Symphony	4	122384	f1f99ac2	ab937532	MUSIC/SYE_G/FFGUITAR
+50b0d2bc66099572f2f4627fab6a50da	0	247630	player	libopenmpt	SoundTracker 2.0 / 2.1 / 2.2	4	74876	2c9852bc	b295f40d	MUSIC/STL_W/RENDEVOUS2
+50f6a4780c6252b9d897bd05af5dd88a	0	99691	player	libopenmpt	Digital Symphony	4	76580	b08065e4	bc98bb60	MUSIC/SYT_Z/TRITAX
+516710def367973d3f909cd377ccba3b	0	62147	player	libopenmpt	Digital Symphony	4	60048	dd47fe57	48f14147	MUSIC/SYA_D/BLUEMAX
+518a6269017e8add69adf99c3e5f0da4	0	161039	player	libopenmpt	Digital Symphony	4	68016	db9a7add	ea4f7e83	MUSIC/SYA_D/BOUNCEDEMO
+5206a4149a1f378d393a494024714f94	0	112912	player+silence	libopenmpt	Digital Symphony	4	81372	3e818d2d	43fc9883	MUSIC/SYP_R/REALITY
+521b837adf71e260dc6895dc122b2843	0	76685	player	libopenmpt	Digital Symphony	4	49256	9457463e	b81d11dd	MUSIC/SYL_O/NIRVANA
+521b837adf71e260dc6895dc122b2843	1	46011	player
+5266c66ec83d1e0eef522b33dffe2429	0	84354	player	libopenmpt	Digital Symphony	4	41668	b1e10d39	6320a4e5	MUSIC/SYS_S/SHOW
+52da71c68913acb64dc59ac38acd98e4	0	123780	player	libxmp	Archimedes Tracker	8	100264	2aee408c	4d54e346	MUSIC/STMODS/SIX2_8
+52f8fb076000a2974646da40fa84b55b	0	65901	player	libopenmpt	Digital Symphony	4	59400	6e8e6359	cc28d41a	MUSIC/SYT_Z/TOON
+53a1eee5d3752ef5b17df94f3cb11142	0	152314	player+silence	libopenmpt	Digital Symphony	4	30308	8ab7a044	bab615fb	MUSIC/SYA_D/ASSASIN
+53c49e96e3c0f697cc7a89d2d27dd9df	0	158028	player+silence	libopenmpt	Digital Symphony	4	81820	87f1c394	0c05a0a2	MUSIC/SYH_K/J
+53d3757aba5042462e5164ad30fc9865	0	81798	player	libopenmpt	Digital Symphony	4	117736	8a59b819	07e1cb73	MUSIC/SYP_R/REBORN
+54239ab0b2bcdd72d9afafbd8e4c6222	0	152093	player	libopenmpt	Digital Symphony	4	251268	e30f1027	d8d72e4c	MUSIC/SYH_K/HOO_YEAH
+5462d92dff4850ae42e9a91610b98f18	0	84476	player	libxmp	Archimedes Tracker	4	107236	8ad9a570	d0321d09	MUSIC/STMODS/PARASONG
+54b67908a1fbaf098382b00b76087f26	0	226486	player+silence	libopenmpt	Digital Symphony	4	49760	6a66d655	92b9a6d9	MUSIC/SYS_S/STEEVE
+55011fdad0dba121bd5b80050b4d1a68	0	278624	player	libopenmpt	Digital Symphony	4	78192	826efaed	8555d872	MUSIC/SYP_R/PUSGALORM
+5509723ff399b7d1e3973c338f7aa0e3	0	70295	player	libopenmpt	Digital Symphony	4	92016	da4c0ab3	b6b572b9	MUSIC/SYA_D/DEVILLIGHT
+5539b2451cbf3c08ff44c928417f4e36	0	84673	player	libopenmpt	Digital Symphony	4	13000	61ad4133	4a829de8	MUSIC/SYL_O/LISA
+553a957a8f6ed5404e02431291d902a6	0	38342	player	libopenmpt	Digital Symphony	4	5856	dcb9991c	0cf6acbe	MUSIC/SYA_D/ATTACK
+55e9598e8cca11d4fad655ea16e1c9e5	0	206271	player+silence	libopenmpt	Digital Symphony	4	187268	ca4a8eb4	e2ca3d08	MUSIC/SYA_D/CONDOMCOR
+567a5eedabc95ed2e69e143dfe694839	0	244116	player	libopenmpt	Digital Symphony	4	136680	ce9f0d14	70c6d5f4	MUSIC/SYH_K/HCCSEXY
+56ad2da93fbfa79fac89620b8f560214	0	240922	player+silence	libopenmpt	Digital Symphony	8	154756	d5ddcd61	c264b559	MUSIC/SYT_Z/WOUNDED
+5739122e0d2997c58f1246370526b6b8	0	207051	player	libopenmpt	Digital Symphony	4	127180	cb9c927d	ba60f04c	MUSIC/SYL_O/MISSINRAVE
+5771ae8ee17e722d034f8ce459f957d4	1	161397	player	uade	Protracker	0	73480	674bb338	16461470	MUSIC/STA_K/FREEFALL
+57725a65fede69d301c4eaff3a063e11	0	263696	player+silence	libopenmpt	Digital Symphony	4	61936	3af8920b	2abd46ed	MUSIC/SYA_D/DNS
+578ec6d2a66c356dc73f65997fa1b2e2	0	117288	player+silence	libopenmpt	Digital Symphony	4	18216	bd31a524	6fdefe9f	MUSIC/SYA_D/ARCADE
+58e199c04b410ea71725025107e4438d	0	374988	player+silence	libopenmpt	Digital Symphony	4	117016	55928a31	48b9e578	MUSIC/SYH_K/KRIS7
+593df61ba601e26b2c58b227a3228c09	0	145904	player	libxmp	Archimedes Tracker	4	66684	2b811cbd	cd0ea6c6	MUSIC/STMODS/NOTEASY
+59cbd62f3e25f82153794f4f29c618eb	0	134199	player	libopenmpt	Digital Symphony	4	15252	66a19d23	fff6e6f4	MUSIC/SYE_G/GASGUZZLER
+5a7061427fc689961a5740cd3bf787f3	1	291969	player	uade	Protracker compatible	0	70188	2e194a1c	2ecea8b0	MUSIC/STL_W/SUBCULTR
+5ab9d7a5cec22e54b39932a11b2bce41	0	319981	player	libxmp	Archimedes Tracker	8	235892	e34e314b	4a92d6c0	MUSIC/STMODS/HOTELC2
+5bd5ade5eb50313097ee43674cf435c9	0	168708	player	libopenmpt	Digital Symphony	4	50404	ff838f47	1d3d2097	MUSIC/SYT_Z/WORRA
+5c0d0e279de5257c0e197a0c6aeaacc3	1	195336	player	uade	Protracker compatible	0	150314	176f7046	ac296468	MUSIC/STL_W/NO_LIMITS
+5c2504a61442e2538fb80b2aa2642c73	0	286293	player	libopenmpt	Digital Symphony	4	51344	22a98981	fba63190	MUSIC/SYH_K/HIDE_SEEK
+5c8e5b7d04c97f97bcfc3effcb11ed8a	0	197206	player+volume	libopenmpt	Digital Symphony	4	93028	f80d1a19	343bfbb0	MUSIC/SYS_S/SEARCHIN
+5d46a38e4de53a3bb31792ece46d765e	0	168744	player+silence	libopenmpt	Digital Symphony	4	45436	c64e3f4a	6b83ea30	MUSIC/SYL_O/LOSERLAUGH
+5d5f42b33508456bb3fa204f7aa266d5	1	399842	player+silence	uade	Protracker	0	117664	ac7e76c6	51e73e3b	MUSIC/STA_K/4MATSMADNS
+5d92a8862ab153fe205affc06fe02063	0	146490	player+silence	libopenmpt	Digital Symphony	4	89616	8a9c15a7	8d201b3e	MUSIC/SYS_S/STARFIN
+5eef352d3f75c246ff1597a63a219501	1	192141	player	uade	Protracker compatible	0	137040	0aec0f90	095306ad	MUSIC/STMODS/ILLUMINA
+5f2a2ca645f5d72221b324be79ac512b	0	186440	player+silence	libopenmpt	Digital Symphony	4	36800	078bf19a	d0ec7bdb	MUSIC/SYA_D/CREWMIX
+5ff818bfa16e3d212eb16511700260f6	0	191714	player	libopenmpt	Digital Symphony	4	65044	7fc8b521	5ddde78c	MUSIC/SYA_D/CULTOFTE
+6038d3ec95b2ae78e6db3241cd3832c7	0	322079	player	libopenmpt	Digital Symphony	4	77760	51d5e883	cdbdc995	MUSIC/SYT_Z/ZZZEP
+60bd9bf04375646d18160cdddd7687c8	0	212569	player+silence	libopenmpt	Digital Symphony	4	63032	a9686350	042b5e5b	MUSIC/SYP_R/PACMAN
+60f00b3baca3e5828b37972945056e2c	0	147300	player	libopenmpt	Digital Symphony	4	103876	b1d43083	06ca573c	MUSIC/SYE_G/GIZMO
+6140a0a3214cdb8ff2228c621232c92b	0	318555	player	libopenmpt	Digital Symphony	4	279140	d8dc4bab	a2ed35e2	MUSIC/SYS_S/SX
+6174c4427c21897685259ac4c1826bc3	0	210619	player+silence	libopenmpt	Digital Symphony	4	53428	aea8b286	c3a8a4a0	MUSIC/SYS_S/SOLAR_D
+61a37a56173c15df1e3955becc3a2e2b	0	44733	player	libopenmpt	Digital Symphony	4	30588	e3b44535	bd66eb4c	MUSIC/SYE_G/FAIRLIGHT
+61ce3eb6b3d0a7c8f7563b7053079f9b	1	103829	player+silence	uade	Protracker compatible	0	83248	26801a1f	90019ec2	MUSIC/STA_K/DAMDADEE
+621255d7e165b6b4dbc7dfdcde8c2e5d	0	69017	player	libopenmpt	Digital Symphony	4	41632	9d6a4f39	be96263e	MUSIC/SYP_R/PANFLUTEAZ
+626feed7e8798b1694beeaef1b070ffc	0	178933	player	libopenmpt	Digital Symphony	4	100620	a6d4488b	b6a1ecbc	MUSIC/SYP_R/POWERMON
+62e32ff000933b9d75a4275ae4142291	0	76685	player	libopenmpt	Digital Symphony	4	16656	e77ac528	23b08fcc	MUSIC/SYT_Z/TWINWORLD3
+62fe3fa7fae26f296968762b929ea187	0	118015	player+silence	libopenmpt	Digital Symphony	4	20992	95e88a3e	1f0292b6	MUSIC/SYL_O/NUMAN2
+63010d1347fd6bb855ff90837c6d0925	1	144276	player+silence	uade	Protracker compatible	0	55762	7d77c46b	186f45f5	MUSIC/STA_K/CONFUSED
+6354e5718c7189f10b624003fbcd84cc	0	196186	player+silence	libopenmpt	Digital Symphony	4	168466	5168f966	67e6a223	MUSIC/SYT_Z/UNDERTHUM2
+63c65b902a6a2e58b76656a4a75c13d6	0	134199	player	libopenmpt	Digital Symphony	4	248420	58af3601	bab86ddd	MUSIC/SYS_S/SIMPSONS
+63c7e7293e75705ad06ba8ace0c693b2	0	354908	player+silence	libopenmpt	Digital Symphony	4	136712	81e87998	2038b96b	MUSIC/SYL_O/LIGHT2
+64d67d1d5d123c6542a8099255ad8ca2	0	332781	player	libxmp	Archimedes Tracker	6	108648	6a45c1a4	187a30ee	MUSIC/STMODS/DREAMALONE
+6504ca9645f836a655e265c905bcb35a	1	171002	player	uade	Protracker	0	137892	d9fc3c01	0368fe41	MUSIC/STL_W/RTFT
+651c8d91b130836cb57e7b1f8f4650d3	0	324316	player	libopenmpt	Digital Symphony	4	72880	eec1544b	1798b71e	MUSIC/SYT_Z/TOMMOROW
+652ebda800f1b0eabb4ccc103124b140	1	299766	player	uade	Protracker compatible	0	120194	e9c0de96	967d2c9e	MUSIC/STL_W/SCOOPEX
+65877dbbea796cd79dc2d60c333f0f42	0	138034	player	libopenmpt	Digital Symphony	4	47704	a78b54f9	2b819b08	MUSIC/SYT_Z/TRUE
+65b276772d5fcf5374b2e2b3c1307383	0	690171	player	libopenmpt	Digital Symphony	4	262712	95acde4b	a1562c17	MUSIC/SYL_O/M_D_M_A
+661d21c74e1bc36deda320230c5837b3	0	17893	player	libopenmpt	Digital Symphony	4	25184	5ab63d27	5de49f76	MUSIC/SYT_Z/TRAIN7
+6686ed4a7256046a7b22e3ba001a435d	0	176377	player	libopenmpt	Digital Symphony	4	38316	9c478f21	6f9260b1	MUSIC/SYP_R/ROCKIT
+668e0ab45bb5b59da6bbd62e499f0371	0	162764	player+silence	libopenmpt	Digital Symphony	4	111924	2336db0d	fd085f09	MUSIC/SYL_O/LONGSLIDE
+675435d28ad33858e643c38029d18bcf	0	299416	player+silence	libopenmpt	Digital Symphony	4	258832	d92d0874	552b9e1b	MUSIC/SYS_S/SPC_DEBRIS
+67df9624829e5ccb1b64a26e08d2f77e	0	44733	player	libopenmpt	Digital Symphony	4	36840	4ffc0d97	1fc3a23c	MUSIC/SYL_O/OUTRO
+6838500e8225cfe026ea7a5e3e249df5	1	203976	player	uade	Protracker compatible	0	115052	6d004c42	a3819723	MUSIC/STA_K/CHAMPAGNE
+68a7f48fb44cb83857938824f38812da	0	114687	player+silence	libopenmpt	Digital Symphony	4	94096	9e3f3b62	864ea166	MUSIC/SYT_Z/VIETNAM
+6a0dee7c3c07086e1cae3c81008dc1fe	0	152093	player	libopenmpt	Digital Symphony	4	19196	2c0f44ce	69f97f98	MUSIC/SYP_R/REFLECTE
+6a12ddf1ecc7ced2a3f920d98cb2f365	0	221098	player+silence	libopenmpt	Digital Symphony	6	49024	a4de169f	90b55a6a	MUSIC/SYT_Z/VISIONS_8
+6a66afb4cecd2ff841cba0ae05d5961d	1	591738	player+silence	uade	Protracker	0	169648	1b5a2765	ef3410c8	MUSIC/STA_K/HYSTERESIS
+6a9d76bfdbaf4141b684936bfe827c89	0	280501	player	libopenmpt	Digital Symphony	4	124084	4240adde	ecd02caa	MUSIC/SYE_G/FEEDBACK
+6a9e9a62c67183ddece3081e8e402efa	0	232724	player+silence	libopenmpt	Digital Symphony	4	23440	a8b21d7e	fcc87205	MUSIC/SYT_Z/ZOMBI
+6b19d2e2fb74e856b4578cfc456cc597	1	38520	player	uade	Protracker	0	33226	cffbac05	79200860	MUSIC/STA_K/DOTTYFLOWE
+6baca587477a1ae6ac61ce853e6bf9fa	1	54977	player	uade	Protracker compatible	0	36112	62dd3b7c	8d48089b	MUSIC/STA_K/CATS_EYE
+6bf330ab2d440d57defad9e7a11c8b90	0	118862	player	libopenmpt	Digital Symphony	4	62340	821351f3	11fd89ab	MUSIC/SYL_O/LIFESTYLE
+6da09c5daa31f60ee2106bfcc0261660	0	118862	player	libopenmpt	Digital Symphony	4	51920	d32f0d55	bf8f349f	MUSIC/SYT_Z/URBAN4
+6eac1bb916c2929040e1f597b3e71875	0	292377	player+volume	libopenmpt	Digital Symphony	4	62724	3b411481	26189a9d	MUSIC/SYA_D/APPEAREA
+6f76cfde07e5899440bb6366b1ee01c8	0	249475	player+volume	libopenmpt	Digital Symphony	4	76360	a1d52613	9e08ce6a	MUSIC/SYA_D/CANYON_FLY
+6fa126addc0491094cfa194051db7ea1	0	135478	player	libopenmpt	Digital Symphony	4	138140	ab8db785	ad30de4d	MUSIC/SYL_O/LONEFUNK
+7071f794d8638ff751a868e3eb4cc272	0	144544	player	libopenmpt	Digital Symphony	4	49872	06b30e4e	0af06ebb	MUSIC/SYA_D/BEATBOX
+712296f8bd2268ce15beaf0cad8d356d	0	201204	player+silence	libopenmpt	Digital Symphony	4	60624	bde71bbe	ce96893d	MUSIC/SYS_S/SUPER_TED
+7167c7ceaab14bed8368bb1609949d92	0	386304	player	libopenmpt	Digital Symphony	4	102684	aed2dc23	74e26162	MUSIC/SYT_Z/TECHNOLO
+71b769c5d5946d1a3f1ecabe8a9cdfec	1	33738	player	uade	Protracker	0	15280	70c50ee4	60ad5ec0	MUSIC/STL_W/SOMEDAYS
+723adc9fd2eb5a38eb10488dddb0e470	0	296164	player+silence	libopenmpt	Digital Symphony	4	86356	649c9eb9	9f6e182c	MUSIC/SYH_K/INFLUENCIA
+7270f2a3048b880d15a84fe97fbdd4ae	0	283911	player	libxmp	Archimedes Tracker	8	196568	7307dd81	8a4e72c9	MUSIC/STMODS/LEMMIX
+73b9f0ef23e8fe726f00f966a4cc251f	0	222388	player	libopenmpt	Digital Symphony	4	59744	79ca74b0	e3cc1ef3	MUSIC/SYT_Z/UNREAL
+740e11bc759a86196569cc490d731e81	1	280455	player	uade	Protracker compatible	0	194072	33bb5289	b41666b8	MUSIC/STMODS/MOD_OCC
+7413b82f893829db17ce60eb34b0b51f	1	179321	player	uade	Protracker compatible	0	47720	e0b5e349	2ae9cfd7	GAMES2/SPITFIRE/_DISC2/SONIX/TRACK3
+75708e7784c412d60582d4c46b33b497	0	99691	player	libopenmpt	Digital Symphony	4	19764	5e1f4cde	2aaabbf1	MUSIC/SYA_D/BEAT
+75bae8f528b6b91fc83d789e9a39cf07	0	135797	player	libopenmpt	Digital Symphony	8	80016	91d5e389	bcdd713d	MUSIC/SYH_K/KRELOMATIK
+7691ad8a1952a6a8a401bbfb9f10243b	0	107484	player	libxmp	Archimedes Tracker	4	163076	1de892c2	15f04bf0	GAMES/_O_ERFAR/DARKOPERA
+76dba79f9a979de2cc85927be9724c14	0	437236	player+volume	libopenmpt	Digital Symphony	4	414391	20d314ef	a98c4073	MUSIC/SYP_R/RHYTHM
+770a60e15c83cc1c2d6247dd9d07888e	0	105442	player	libopenmpt	Digital Symphony	4	89340	a293106a	d6c04ce1	MUSIC/SYH_K/INTOXICATE
+7776dfb31a538c1a781b77491209548b	1	67315	player	uade	Protracker	0	33906	66fd06d3	b31fe778	MUSIC/STL_W/RUGBYINTER
+777adce0dcbe6f92a83e759502e53094	0	38342	player	libopenmpt	Digital Symphony	4	10576	fd2ddc88	1fdfd9b9	MUSIC/SYP_R/PERHAPS
+77f279d25a70e67625e935098f746c12	0	127809	player	libopenmpt	Digital Symphony	4	89140	d4821a8e	ec80c2c6	MUSIC/SYT_Z/TOBLERONE
+780efb78c6bee13404e60fdf58c24dcf	1	213240	player	uade	Protracker	0	239110	056eb1aa	3b9c8c3f	MUSIC/STA_K/JETSET_BLA
+781f235c831754043f2b794a8a733e1e	0	314411	player	libopenmpt	Digital Symphony	4	50024	f4d6f664	42b026e3	MUSIC/SYA_D/CONSERT
+784e84147218db2c6840b2c46fd66c9a	0	69057	player+silence	libopenmpt	Digital Symphony	4	12388	f0ffbd09	61f7e18f	MUSIC/SYS_S/SPICEITUP
+78b70bb7f39aeae267c96eb73d557a12	0	512695	player	libopenmpt	Digital Symphony	4	95888	23382aa4	ca7e6b84	MUSIC/SYS_S/SATISFACTI
+78b70bb7f39aeae267c96eb73d557a12	1	23005	player
+78c134e8314cfacb3f87e834de80fbef	1	141885	player	uade	Protracker	0	44302	c5131f5d	7c8b918e	MUSIC/STA_K/EMPTYSPAC2
+791fdb085d83851969114358c49a891b	0	138228	player	libxmp	Archimedes Tracker	4	85804	0ac08a30	e603851b	MUSIC/STMODS/JUNGLE1
+792858e55a90b58fbfd41e383d242821	0	201299	player	libopenmpt	Digital Symphony	4	48236	596b5e07	9b4c2b79	MUSIC/SYT_Z/WISHBRINGR
+7938360c542980da29fc3da318f02ea8	1	210205	player+silence	uade	Noisetracker 1.x	0	93588	625f0f31	3d2fc8fd	MUSIC/STA_K/ARCANE
+797ce04bfbba9a8245b19938121f9ce6	0	122876	player	libxmp	Archimedes Tracker	8	99948	ee922a53	52d0fd6b	MUSIC/STMODS/FORGOTMEM
+79ebde73429f4ef0729fb82586b1f02f	0	172542	player	libopenmpt	Digital Symphony	4	42396	551c4784	7db329a1	MUSIC/SYL_O/NE_STORY
+7b000079b1304448f21df8f67af4f2a9	0	208264	player+silence	libopenmpt	Digital Symphony	4	60424	49825abc	fa18880c	MUSIC/SYA_D/COL
+7bb3c9115ca814df44f48a5a545b5c68	0	174560	player+silence	libopenmpt	Digital Symphony	4	41240	5ed0274e	6830dd8a	MUSIC/SYL_O/MOD
+7c3846f3dbd2f67bb710fcdea68539cb	0	130365	player	libopenmpt	Digital Symphony	4	29968	d213c57f	ad82cf72	MUSIC/SYS_S/SMEGMA
+7c4fd8ef5b0172b4c6169efc73e143e5	0	199382	player	libopenmpt	Digital Symphony	4	24028	2331f953	06dd79ec	MUSIC/SYT_Z/TRUMP
+7c7cfe88abe19faa894d2bf999bf1b99	0	0	nosound	libxmp	Archimedes Tracker	4	136940	393b23bc	25f77419	MUSIC/STMODS/SFX
+7c7cfe88abe19faa894d2bf999bf1b99	1	60	player
+7c7cfe88abe19faa894d2bf999bf1b99	2	462	player
+7c7cfe88abe19faa894d2bf999bf1b99	3	60	player
+7c7cfe88abe19faa894d2bf999bf1b99	4	60	player
+7c7cfe88abe19faa894d2bf999bf1b99	5	33637	player
+7c7cfe88abe19faa894d2bf999bf1b99	6	79352	player
+7c7cfe88abe19faa894d2bf999bf1b99	7	381	player
+7c7cfe88abe19faa894d2bf999bf1b99	8	381	player
+7c7cfe88abe19faa894d2bf999bf1b99	9	5485	player
+7cc28d8e9761fccffbbef6be674a14e2	0	280681	player	libopenmpt	Digital Symphony	4	41824	f8717c7e	8920ccef	MUSIC/SYA_D/BEAST_II
+7cc61f77e2126256b0e489fa8e5a159e	0	177423	player+silence	libopenmpt	Digital Symphony	4	175936	62099e8e	cd8a6e49	MUSIC/SYA_D/DEEE_LITED
+7ce79a74d16d5262cae011d8a357d405	0	147779	player	libopenmpt	Digital Symphony	4	38720	cdb1a65e	55d346f4	MUSIC/SYS_S/SUPERBAZ
+7d10a679edafd75fd3be03d8102ac18a	0	173848	player	libopenmpt	Digital Symphony	4	41032	dfa06d64	7a7a282f	MUSIC/SYS_S/SUBSPACE2
+7d9055222e0a13eb43c902881cb0ae87	0	161536	player+silence	libopenmpt	Digital Symphony	4	90688	e8199d29	c5fa984e	MUSIC/SYE_G/GAUNTLET
+7d9b5de29229610722574801c75a1885	0	201259	player	libopenmpt	Digital Symphony	4	105204	330bbd85	7f20fbd1	MUSIC/SYE_G/EVOLUTIO
+7de377546fa4de080facc26e1f11fbbb	0	159307	player+silence	libopenmpt	Digital Symphony	4	25456	acfc49be	d4048bbb	MUSIC/SYT_Z/ZEPELIN
+7e24e2825c96307458f360ece2df791b	0	185196	player+volume	libopenmpt	Digital Symphony	4	73604	96e7dd69	cbc76881	MUSIC/SYE_G/FALLUPWARD
+7e85a1ac5f276ed52023318f52527707	0	104706	player	libopenmpt	Digital Symphony	4	76864	5ec14f75	4949c743	MUSIC/SYE_G/FLATLINER
+7fe31376479dc4de9d4b5081c60a134a	0	152058	player+silence	libopenmpt	Digital Symphony	4	45244	fd96730c	8fc74f22	MUSIC/SYE_G/FIVE
+8028ce480303c17998a2c8374c7cf5be	1	169213	player	uade	Protracker compatible	0	55428	7039a6bb	5a821724	MUSIC/STL_W/TWILIGHT
+80ccbf93f8b5b7a85d926ab8587f8f17	0	76685	player	libopenmpt	Digital Symphony	4	114352	1f66cd5c	1b38593f	MUSIC/SYS_S/SOUNDS
+80ccbf93f8b5b7a85d926ab8587f8f17	1	23243	player+silence
+80ccbf93f8b5b7a85d926ab8587f8f17	2	117584	player
+80ccbf93f8b5b7a85d926ab8587f8f17	3	175098	player
+80ccbf93f8b5b7a85d926ab8587f8f17	4	185483	player
+80ccbf93f8b5b7a85d926ab8587f8f17	5	39620	player
+80ccbf93f8b5b7a85d926ab8587f8f17	6	357866	player
+8190b693631d9daae60552f71cf7edb1	0	182667	player	libopenmpt	Digital Symphony	4	93764	d9a9c64d	78cbf3bd	MUSIC/SYL_O/METALHOR
+81da38da62accd2fca47a1ca316257ca	0	38380	player	libxmp	Archimedes Tracker	4	58348	48179032	06e77e32	MUSIC/STMODS/DWEED
+81ed5488e1510f99e54c79607e4e407d	0	222508	player	libopenmpt	Digital Symphony	4	83944	bf0c3afb	ffffcab7	MUSIC/SYP_R/PHA_THON
+81ed5488e1510f99e54c79607e4e407d	1	14352	player+silence
+81ed5488e1510f99e54c79607e4e407d	2	7668	player
+8226a05257d14b985e41bfde26bc2268	0	150867	player+silence	libopenmpt	Digital Symphony	4	105908	c6732afc	61ef8380	MUSIC/SYA_D/ANEWJACK
+82352b0d6e811dd8fde4433576a772f9	0	369236	player+silence	libopenmpt	Digital Symphony	5	121284	1cc8972c	0574989a	MUSIC/SYH_K/KRISBEAT
+82a7cec61855602bb91443448655923e	0	339155	player	libopenmpt	Digital Symphony	4	350332	841cff51	3feb8c18	MUSIC/SYA_D/CREAMXTREM
+8367c56e6b69c9483b26a8d944ac4cd9	0	447333	player	libopenmpt	Digital Symphony	4	37520	27d8706e	cbd1cce8	MUSIC/SYT_Z/VERTMAD
+83c04d604231bcce60d4abde5eb5c6cc	0	250506	player	libopenmpt	Digital Symphony	4	56648	aa0adc3f	ac4c9f8c	MUSIC/SYH_K/HIGHTOP
+84336a903de4065c2b5f47a744f1f922	0	142155	player	libopenmpt	Digital Symphony	4	81556	d7ceb58e	1e5774d8	MUSIC/SYA_D/DETSKANOKG
+844b9840637fa7fc780f7e982af6609d	1	0	nosound	uade	Protracker	0	78554	2f36bbb4	776e4a10	MUSIC/STL_W/LEMTITLE
+844b9840637fa7fc780f7e982af6609d	2	84616	player
+84851b40a6f650a5ab27c9f2b97d6af6	0	260731	player	libopenmpt	Digital Symphony	4	71688	89852c82	5b377e4f	MUSIC/SYL_O/MEGABASS
+84945bd0f1cf17eb9716d4ec8bfbe208	0	230057	player	libopenmpt	Digital Symphony	4	77708	1a4be295	9325c261	MUSIC/SYP_R/REBOK3
+85378fe3edddb4958264645ff5b80473	0	76685	player	libopenmpt	Digital Symphony	4	5416	22889ddb	ebf209b6	MUSIC/SYA_D/CHIP
+8566e2793a89ac741da1888560a9c825	1	512142	player	uade	Protracker compatible	0	122578	e808a07b	ff52ac75	MUSIC/STL_W/ROM_JUL3
+8706dca824c5c118e917bba82697c834	0	216957	player	libxmp	Archimedes Tracker	4	49804	a2406234	e554ede6	MUSIC/STMODS/TWOMELODY
+872c4a73719819379175a3c2ed157b9d	0	99691	player	libopenmpt	Digital Symphony	4	32596	806d3cd1	cfb7fe42	MUSIC/SYP_R/PARTNGSONG
+873814808625f5854dbc22c3183abcaa	0	69017	player	libopenmpt	Digital Symphony	4	8660	403272c9	887d8dde	MUSIC/SYA_D/BLIZZARD02
+87dc1d5bce97da4e27f416ae8f9c58c3	1	204941	player	uade	Protracker	0	183236	c36cc3f6	92bb6021	MUSIC/STA_K/COKEISBACK
+8839880b298586c20cf352a9f4226372	0	91737	player	libopenmpt	Digital Symphony	4	238524	0d8a1971	fe336eb9	MUSIC/SYL_O/OLDETCIWON
+8894cbf6f0c89452016a5b97cb77eb2b	0	37341	player+silence	libopenmpt	Digital Symphony	5	20816	39dcbcbf	74288754	MUSIC/SYL_O/LDERRY
+8b9ad3b39fef7ba6e70cb390e621c41d	0	209616	player+silence	libopenmpt	Digital Symphony	4	90468	366e883f	4166a74a	MUSIC/SYT_Z/WHISK
+8bbb61005f481ab2a22aa980af1addad	0	7668	player	libopenmpt	Digital Symphony	4	640	3c170040	c8be34da	MUSIC/SYL_O/MICRO
+8be0854202c13291a0af631dc832c615	0	176128	player+silence	libopenmpt	Digital Symphony	4	172996	64b7981d	54d4398a	MUSIC/SYA_D/AT_MIX
+8c02cfd135baa9b236a1587866b90a4f	0	38342	player	libopenmpt	Digital Symphony	4	138668	b49d18f3	4db1a51f	MUSIC/SYE_G/FRANKTALKS
+8cf4bf5f430f58492c97477868249db2	0	80638	player	libxmp	Archimedes Tracker	8	232672	2ec67f1b	e4a26018	MUSIC/STMODS/WONDERTON
+8d0bf273d45374f28372e4f3115ebc07	0	105043	player	libopenmpt	Digital Symphony	4	190928	91b88639	18680b9c	MUSIC/SYT_Z/ZOOLOOK
+8dc4de353467eedf15842798d0436518	0	246256	player+volume	libopenmpt	Digital Symphony	4	129668	1837e808	a14e6c1c	MUSIC/SYT_Z/VOLATILE7
+8dc5c9b46bcda0c67bc600388759ecc6	0	241261	player+silence	libxmp	Archimedes Tracker	4	65048	ded08403	13ede274	MUSIC/STMODS/BIG
+8e24b8efde78660c7346a055613c27e3	0	99691	player	libopenmpt	Digital Symphony	4	7748	d0c7caeb	fa68aa29	MUSIC/SYS_S/STR0B0SK0P
+8f46335c69022b66468089026c1d5324	0	107359	player	libopenmpt	Digital Symphony	4	7012	957a8cc4	ccb2d326	MUSIC/SYE_G/FUN
+90faf17cb1c626df3845d8b177eadb0a	0	46969	player	libopenmpt	Digital Symphony	4	534164	11cdf0ab	f0fe0ba8	MUSIC/SYP_R/POISON
+91a41fa0d9f9d176625935498b6c7d33	0	406434	player	libopenmpt	Digital Symphony	4	105992	3d3fd222	0c05c865	MUSIC/SYS_S/SYNTHETICO
+9218b1fca9e95ac118ff60c419fb048c	0	84354	player	libopenmpt	Digital Symphony	4	54473	3fc8cce0	fe40c1bb	MUSIC/SYE_G/ECLIPSE88
+92979bb37530cca2c5556ac9a4fabd86	0	160205	player+silence	libopenmpt	Digital Symphony	4	39704	f07e8744	4ed7f0b0	MUSIC/SYL_O/LIKE
+93abea98beeef15b0cb1bdbd6374b63d	0	130365	player	libopenmpt	Digital Symphony	4	15564	b0134d59	42aa4b0f	MUSIC/SYS_S/SEEYOU
+943d5235bfdfbf6c1ae1518d5ce99565	0	179180	player	libxmp	Archimedes Tracker	8	290744	72e70dc1	bf8d03b4	MUSIC/STMODS/JON_E_MIX
+948dc4599f296ebfda32ea17610bfba9	1	194813	player	uade	Protracker	0	253556	b8610bee	2fc8ce14	MUSIC/STA_K/BREATHOFAR
+950e2d367477d094d32355bdf4ae2646	0	312904	player+silence	libopenmpt	Digital Symphony	4	351540	7c99b585	e8193539	MUSIC/SYT_Z/THEPOWER2
+9514ca1fe65d5dd75094aee3f6cc4fbd	0	164391	player+silence	libopenmpt	Digital Symphony	4	159860	2323b85d	f0476fc5	MUSIC/SYT_Z/TECHNO
+955134862092d5f2ca0eff011593f1f2	0	180212	player+silence	libopenmpt	Digital Symphony	4	54996	f5cf1723	6d777765	MUSIC/SYE_G/EXPULSION
+95beb983f03c75b24f50e8bbe01e1a2e	0	121339	player+silence	libopenmpt	Digital Symphony	4	184732	3f866867	5be41ad0	MUSIC/SYS_S/SATTHE14TH
+961bde06e6a03dbe6b37a81eb25023d5	0	222388	player	libopenmpt	Digital Symphony	4	105016	e1c280bb	f9db01a1	MUSIC/SYE_G/ELYSIUM
+967fa9f3f2ddffa8acb8f2245bb5a9ba	0	149163	player+silence	libopenmpt	Digital Symphony	4	120732	bec6266d	f5c9f274	MUSIC/SYL_O/NOTHINTO
+9686909fb7b1a714ba445cda6039e94b	0	252783	player	libopenmpt	Digital Symphony	4	96424	6b409c10	dbdd11d8	MUSIC/SYT_Z/WHICHWAYNW
+96d44aef08f151efc8b8634ea1c0b728	0	214719	player	libopenmpt	Digital Symphony	4	73368	0a13452a	3e3db51d	MUSIC/SYP_R/ROBOTRON
+980dc8f92a420ca18eb03d4e18aca274	1	298172	player+silence	uade	Noisetracker 1.x	0	93458	b823008b	61a1d2e5	MUSIC/STL_W/LTSHRMYBBY
+981c7786be676970faa0d1592217eb7c	0	238354	player+silence	libopenmpt	Digital Symphony	4	124168	ea5a2f08	925a63af	MUSIC/SYT_Z/TEKNOPAR
+98ffd72ce5b1ba9295c01e808e3f17e2	0	107359	player	libopenmpt	Digital Symphony	4	22536	d615d7e3	dc66e2a9	MUSIC/SYT_Z/TWINWORLD2
+9928caf71db07b7a5b587772b3904fc0	0	482231	player+silence	libopenmpt	Digital Symphony	4	298620	9effa565	664df76e	MUSIC/SYL_O/ORPHEU
+99cab87ec5d7fe7183908c753febf3b5	0	103003	player	uade	Ultimate-Soundtracker or compatible	0	48720	7f1b4856	60ab2fcb	MUSIC/STL_W/LN_MUSIQ08
+9a4ac071d09f0c9af5d846f651d7766e	0	87711	player	libxmp	Archimedes Tracker	5	63720	fa49385c	e1635609	MUSIC/STMODS/SAXDUET
+9a7608646f65c8927f7913a3b5584e21	0	99691	player	libopenmpt	Digital Symphony	4	40552	4f83b22b	86e9ecdd	MUSIC/SYS_S/SKIDANCE
+9aba6632618d94e386a7060e835cce87	0	199382	player	libopenmpt	Digital Symphony	4	53244	8f388af1	bfc9bd80	MUSIC/SYH_K/INDREV42
+9ae5f3666eb54249c8d5d407d68db94c	0	217417	player+silence	libopenmpt	Digital Symphony	4	116336	42db3c77	a898e302	MUSIC/SYH_K/HEATLOSS
+9ae5f3666eb54249c8d5d407d68db94c	1	15337	player
+9c31c3d72f60ed617392f2d881386d13	0	102247	player	libopenmpt	Digital Symphony	4	21300	200b6c7e	924f5351	MUSIC/SYP_R/PATZGA
+9d137b83215a2db35c1cdf76f2711724	0	97135	player	libopenmpt	Digital Symphony	4	40244	4e740e34	02a95811	MUSIC/SYH_K/INDIANTEST
+9d137b83215a2db35c1cdf76f2711724	1	15337	player
+9dfb3e6ff132e20cb23eb8535b52e581	0	191714	player	libopenmpt	Digital Symphony	4	39780	f5c8ca2a	1351abf3	MUSIC/SYT_Z/WERWERU
+9e23576251f2c94c5013cbc6ef5ddbf3	0	897110	player	libopenmpt	Digital Symphony	4	70916	edf165e5	edfafbb8	MUSIC/SYL_O/NEBULOS
+9f24aae6e57eadc6fd48583358d008f1	0	383747	player	libopenmpt	Digital Symphony	4	124148	391db68b	6504e3b5	MUSIC/SYS_S/SPACEDELSH
+9f897d8774c5a1760ccc1790ece68534	0	168708	player	libopenmpt	Digital Symphony	4	58052	2189a379	ce392642	MUSIC/SYA_D/ALF
+9fbd4e60707f6823338db77df628996d	0	204087	player+silence	libopenmpt	Digital Symphony	4	76460	3b446792	57ee90c3	MUSIC/SYH_K/KLFCHURCH
+9fc247efd85747cf7a23be118680faaa	0	61348	player	libopenmpt	Digital Symphony	4	18756	e3d3ac17	ecebf866	MUSIC/SYS_S/SONIXTIT
+9fff5bb578ad3cca73b2ce555fcd3abc	0	276068	player	libopenmpt	Digital Symphony	4	93352	8ddd02ad	d83b497e	MUSIC/SYP_R/PROJECT_X
+9fff5bb578ad3cca73b2ce555fcd3abc	1	7668	player
+a0259ad9e2eb645981fdbbf6f24c2aa5	0	76685	player	libopenmpt	Digital Symphony	4	79252	dfb4024a	0eeb1d07	MUSIC/SYA_D/ALF_TUNE
+a11aea3a8a893317309c4a74ce016e09	0	108138	player	libopenmpt	Digital Symphony	4	67872	71891b03	906288b9	MUSIC/SYA_D/DARKLIGH
+a12b7490f159b0e57b80f34e695f702b	0	28882	player+silence	libopenmpt	Digital Symphony	5	17116	7703d6f7	5bd8d297	MUSIC/SYL_O/MAZURKA
+a19fea530baa31e8805188e90cb4270b	1	300365	player+volume	uade	Protracker	0	214140	b8947653	c891ab2c	MUSIC/STL_W/LIGHTOFDAY
+a1d0a82e371d4668ead826fe53c0a032	1	280134	player	uade	Protracker compatible	0	114732	188d1c7b	3a9d6a5c	MUSIC/STL_W/TRANCE
+a21400a91129ec954f1579215107683e	0	134199	player	libopenmpt	Digital Symphony	4	103120	0112d1cb	e4d8ba00	MUSIC/SYA_D/ASTORM
+a4334b5c79cd68d97fb45c396207f93d	0	130365	player	libopenmpt	Digital Symphony	4	73292	3c0aafa0	bca5813a	MUSIC/SYT_Z/TOUT_TOUT
+a559190cef3131cd38d9c4655891ee5c	0	31952	player	libopenmpt	Digital Symphony	4	23888	c5129633	b90b231b	MUSIC/SYA_D/ATHELTIC
+a6d7a66403aa6501418afdb5fc25c5a6	0	23005	player	libopenmpt	Digital Symphony	4	17864	dd4bea5c	3f1fe4b7	MUSIC/SYL_O/OOEERR
+a76cf1f09b13f71fbc0329b8d629443d	0	199382	player	libopenmpt	Digital Symphony	4	59964	aba36669	0b41fe48	MUSIC/SYH_K/KINGTUT
+a78d8fc4dc43e71893e0c190be7a236f	0	138034	player	libopenmpt	Digital Symphony	4	62684	51149ddf	e7b9ede3	MUSIC/SYA_D/CONTROL
+a97495b6c4d43a874f8e19f665af02ad	0	85842	player	libxmp	Archimedes Tracker	4	158016	b4699590	7bce1c5d	MUSIC/STMODS/SPOOKY
+aa506b53e80b95b997539faaae780e72	0	240281	player	libopenmpt	Digital Symphony	4	102124	807c9ec0	72fc33d5	MUSIC/SYS_S/SUPER_BA
+aa67a3f2d782b7b238b6961ee4775b47	0	117509	player+silence	libopenmpt	Digital Symphony	4	193560	93126421	abdc2335	MUSIC/SYH_K/HOUSEMIX_1
+ac67543b327af57f39dcd846b2a1d6f3	1	68742	player	uade	Protracker	0	21862	8396a5ef	197c2edc	MUSIC/STL_W/L_AMOUR
+ac8fdc38ad5b0c695e63f1bd0774ca74	0	285771	player+silence	libopenmpt	Digital Symphony	4	53024	e1b6023a	b2df8414	MUSIC/SYL_O/NOTASSUCH
+ad49d5e3825bc1308cd7276645a1c9d8	1	248535	player+silence	uade	Soundtracker II (15 instr.)	0	93924	f6640e94	b8856847	MUSIC/STL_W/ROCKY
+adc4fa7b73c523a2165d1073e344dc4e	0	236875	player+silence	libopenmpt	Digital Symphony	4	37172	a9068df7	1619493c	MUSIC/SYA_D/ALPHAVMS
+ae37cec5a5a9b1f41cad9516800781fb	0	172542	player	libopenmpt	Digital Symphony	4	15072	78db684f	ce95c4c7	MUSIC/SYL_O/MOTION
+ae37cec5a5a9b1f41cad9516800781fb	1	10224	player
+ae85f90604156d82b553cbc8677594e7	0	230057	player	libopenmpt	Digital Symphony	4	47028	14a17c42	48f08222	MUSIC/SYL_O/NS_BEAT
+aed16e877a3f122414043a9a3bf78a6f	0	270317	player	libopenmpt	Digital Symphony	4	85260	e8d3c980	5560fbc4	MUSIC/SYL_O/LIMITELCTR
+aef418d85b4b87d7fd7698b18be8ea19	0	139358	player+silence	libopenmpt	Digital Symphony	4	190976	5c084da8	a115bcc9	MUSIC/SYE_G/FRESHHOUSE
+af1ac9a288bb6694ea62d82d1f0ea565	0	130248	player+silence	libopenmpt	Digital Symphony	4	43116	80bf1f29	4b23e112	MUSIC/SYA_D/DUFFY_S
+af3bd2dfb8875fc4b14a7429afcdc21f	0	47768	player	libopenmpt	Digital Symphony	4	246872	a34784fc	cfc6b864	MUSIC/SYT_Z/UFATBA
+b0386d6cb8e0d2280f77436a5ef1c89e	0	111194	player	libopenmpt	Digital Symphony	4	54716	6c354e2d	89f79aa0	MUSIC/SYS_S/SONIC
+b08ab48cecb7e92762ccfcc678a27b4a	1	120324	player	uade	Protracker	0	27410	4204f939	d2e99542	MUSIC/STA_K/FIREBALLS
+b0b15509a7095d05433921eb74d96d65	1	173765	player+silence	uade	Protracker	0	34688	e7c4d890	392820f5	MUSIC/STA_K/EMPTYSPACE
+b1703b1a65223b8315e7cc2d03b75c67	0	301630	player	libopenmpt	Digital Symphony	4	81444	d3c0a2de	b5147ee5	MUSIC/SYS_S/STEEL
+b1b742f2b647a21ba6fdc2e28e689d81	0	265802	player+silence	libopenmpt	Digital Symphony	4	63740	7a72d1ab	0f83f681	MUSIC/SYS_S/SAATIN
+b1c60dc26a3b187e54f3f8aba35fa701	0	246352	player	libopenmpt	Digital Symphony	4	55348	2f770972	6b90a07c	MUSIC/SYL_O/LOWALT
+b244610ca9be30b46f7edb9d6f705e94	0	431866	player	libxmp	Archimedes Tracker	8	230192	b46a1837	3b27a300	MUSIC/STMODS/ARMYOFGODS
+b25b6248131ef776716feb700a863c12	0	168708	player	libopenmpt	Digital Symphony	4	8968	9c9faefa	4fe6f695	MUSIC/SYT_Z/ZAPPED_
+b2a123d4474ec00bd335bfe1cd5c5d49	0	176377	player	libopenmpt	Digital Symphony	4	56968	335ac32e	119e7a13	MUSIC/SYE_G/FYC
+b2d2d9176d53950f722166e3aff32ae9	0	103525	player	libopenmpt	Digital Symphony	4	34044	e883821f	ef0929bc	MUSIC/SYT_Z/VAMP
+b41d48b189792775a34c46bd0a9ffcf0	0	23964	player	libopenmpt	Digital Symphony	5	24208	036b3a06	024945ca	MUSIC/SYL_O/MIDNIGHT
+b4f3bc489668923cad1c9e13aaef673d	0	106720	player	libopenmpt	Digital Symphony	4	21428	20907a4a	e9772242	MUSIC/SYH_K/HELLOMAN
+b5585294a98cff380f8e91f6ebd453db	0	211893	player+silence	libopenmpt	Digital Symphony	4	60780	36c51600	aab02b3e	MUSIC/SYL_O/LESSONS
+b581f01628cc3346f6e9c28a49ea434b	0	298216	player+silence	libopenmpt	Digital Symphony	4	77356	2ab7edd5	e28b1b22	MUSIC/SYA_D/DRAGNET
+b626707a571f5593398414f4ccb250fb	0	138034	player	libopenmpt	Digital Symphony	4	9424	20b521d2	7ad5789d	MUSIC/SYS_S/SUPERMARIO
+b66c7a9834757efa060355b613ef7bb1	0	228264	player+silence	libopenmpt	Digital Symphony	4	32476	faf39186	7116e695	MUSIC/SYA_D/DEAR
+b769f5ed4013215ba5ce6e0559d9b293	0	141030	player+silence	libopenmpt	Digital Symphony	4	107504	07214c0d	5988c4ba	MUSIC/SYA_D/ANITOUNI
+b7c5647e6b5caa3fe284605f73d934a9	0	187495	player+silence	libopenmpt	Digital Symphony	4	42488	33205a9e	c0d19902	MUSIC/SYA_D/AFL
+b89f6aa7a6b46fc511e883e4cac27311	0	380392	player+silence	libopenmpt	Digital Symphony	4	45576	55ac2c64	1d4df7b7	MUSIC/SYT_Z/WEREDEVILS
+b8e53dd8534604ea4926802eaa160946	0	38342	player	libopenmpt	Digital Symphony	4	31040	d685f93c	4b2b74c0	MUSIC/SYH_K/HANTARDA
+b95a9accf7e2851dfab3df1ff85ed36c	0	164731	player+silence	libopenmpt	Digital Symphony	4	23560	7477fbfc	497355d7	MUSIC/SYS_S/SAYSAYSAY
+b9ca4c417c68dbc4e859e741cd4c4dc2	0	130365	player	libopenmpt	Digital Symphony	4	65468	f00e1292	5287a59c	MUSIC/SYE_G/FORANDREA
+ba413d06ab3476d41a99c8648bfcd98b	0	357887	player+silence	libopenmpt	Digital Symphony	4	288676	3e4ab379	ff36ec46	MUSIC/SYH_K/IFEELMUC
+ba48708f96e6005e53da72da81778a94	0	140892	player	libopenmpt	Digital Symphony	4	110392	33c157cb	35abbe81	MUSIC/SYL_O/LEVEL2
+bb0fafa0e8b8a9673245855d7071d8a2	0	86271	player	libopenmpt	Digital Symphony	4	106312	7cb1e537	b0135f83	MUSIC/SYE_G/FUNKITUP
+bb247815f8ba1a0310f515a57a7b471f	0	184045	player	libopenmpt	Digital Symphony	4	80896	9e2d614c	4acfe79e	MUSIC/SYE_G/EPI
+bb30a60dfa3ab720351a1b772b84ccb0	0	160155	player+silence	libopenmpt	Digital Symphony	4	221108	e2d2242c	2f95b1b8	MUSIC/SYL_O/NICOLE
+bb51e71228c46889528678bece107dc1	0	215798	player	libopenmpt	Digital Symphony	4	207744	bb71002c	53cc0f67	MUSIC/SYP_R/PUBHMX
+bbd3d4923b140db7b8b1b64b1b4d1ef0	0	232938	player+silence	libopenmpt	Digital Symphony	4	48280	9a766b96	ae760bea	MUSIC/SYA_D/DREAMWAR
+bc0753fd71d1b4b4ee3386dde8985c89	0	159347	player	libxmp	Archimedes Tracker	4	134748	dbbec89a	10f023a0	MUSIC/STMODS/X_MAS
+bc19eb027f5020b1888f6319b47d3f5c	0	212667	player+volume	libopenmpt	Digital Symphony	4	165128	0988f995	5d9027a4	MUSIC/SYE_G/FULLMOON
+bc5cb994107062f3d0cc7b6c593279e9	0	122697	player	libopenmpt	Digital Symphony	4	57412	957c9815	9b6c16a9	MUSIC/SYA_D/DREAM
+bd895d21b6d98bcaf6176ee9906562ec	0	99691	player	libopenmpt	Digital Symphony	4	62124	172cbfdb	0f55602e	MUSIC/SYL_O/LEGRIND
+c02e836bf291332bcd7e3a3bafb25f01	0	145904	player	libxmp	Archimedes Tracker	4	72960	e269b66a	73ac58d0	MUSIC/STMODS/AZTECNGHTS
+c06c4c4e5502415f0d45d8a605b98517	0	30674	player	libopenmpt	Digital Symphony	4	26472	e3173585	0f7caa57	MUSIC/SYP_R/PENNYLANE
+c18156cafdd8abd8bdf9dd27cc9762bf	1	116911	player+silence	uade	Protracker	0	88692	373e8d00	c532e461	MUSIC/STL_W/UNICRON
+c1b66541d3a50fb7e686724d1c48fa07	0	198444	player+silence	libopenmpt	Digital Symphony	4	117444	b1961d90	48db5a19	MUSIC/SYA_D/BLACKMOR
+c1d576df60c92785b40fe5a04bdebb57	0	312885	player+silence	libopenmpt	Digital Symphony	4	76436	11cf7832	134d7b6a	MUSIC/SYA_D/DUBDFOREST
+c237f27e4d58d6c74aa4060c4be2ef2f	1	147934	player	uade	Protracker	0	267192	bb9a556a	4d5e0381	MUSIC/STL_W/THEPRODIGY
+c2bead147fc2f1f60aa3fb22783181a3	0	590721	player+silence	libopenmpt	Digital Symphony	4	87388	bc8751c1	b58f948a	MUSIC/SYH_K/HYSTERESIS
+c3656286cd3fb4cf4bb77f586f31db0d	0	164694	player+silence	libopenmpt	Digital Symphony	4	119824	b4c999e9	b3ef7e1e	MUSIC/SYS_S/SNDMACHINE
+c3819efa5ac2e9411b63613c2723eac6	0	222066	player+silence	libopenmpt	Digital Symphony	4	108748	609799a0	abcb08c5	MUSIC/SYA_D/ANOTHER1
+c3af111f5f528cd6e853bce5bf3a726f	1	327817	player	uade	Protracker	0	153014	cb3c546c	b1922825	MUSIC/STA_K/JAMBUG
+c4314ce6811e2fb2950a160e1e0ed68c	0	107359	player	libopenmpt	Digital Symphony	4	54480	502857d5	a6e857b2	MUSIC/SYS_S/S_ACTION4
+c4a65c8a60ab7153493a7a4b36b9d6e3	0	139886	player+silence	libopenmpt	Digital Symphony	4	326196	74cd1c89	8f5b9047	MUSIC/SYT_Z/THECHASE
+c50f13450e273539cacb4a10e11865c6	0	122697	player	libopenmpt	Digital Symphony	8	40912	74906ae7	9c61a47e	MUSIC/SYA_D/DRAGONBALL
+c56de90bd220c62163e7f203cb1611e6	0	16854	player	libopenmpt	Digital Symphony	8	16848	ed15f703	bbaa8808	MUSIC/SYP_R/PRELUDEINA
+c581dc86f02efa84559498e5aad15b33	1	123695	player+volume	uade	Protracker compatible	0	185068	c304d2ef	efaba147	MUSIC/STA_K/FURELISE2
+c631bd26ac11495462925157660a37b2	0	70711	player	libxmp	Archimedes Tracker	4	57044	d9f4e816	098c9f81	MUSIC/STMODS/OVERTHEBOW
+c6bb7b9fc7563ff1b86213f66e800ca7	1	51320	player	uade	Protracker	0	152803	39651298	96011c25	MUSIC/STL_W/LEMMUS0
+c6bb7b9fc7563ff1b86213f66e800ca7	10	25720	player
+c6bb7b9fc7563ff1b86213f66e800ca7	11	23168	player
+c6bb7b9fc7563ff1b86213f66e800ca7	12	46216	player
+c6bb7b9fc7563ff1b86213f66e800ca7	13	38520	player
+c6bb7b9fc7563ff1b86213f66e800ca7	14	13081	player
+c6bb7b9fc7563ff1b86213f66e800ca7	15	48768	player
+c6bb7b9fc7563ff1b86213f66e800ca7	16	42358	player
+c6bb7b9fc7563ff1b86213f66e800ca7	17	25318	player
+c6bb7b9fc7563ff1b86213f66e800ca7	18	19310	player
+c6bb7b9fc7563ff1b86213f66e800ca7	2	46216	player
+c6bb7b9fc7563ff1b86213f66e800ca7	3	42358	player
+c6bb7b9fc7563ff1b86213f66e800ca7	4	38520	player
+c6bb7b9fc7563ff1b86213f66e800ca7	5	23168	player
+c6bb7b9fc7563ff1b86213f66e800ca7	6	46216	player
+c6bb7b9fc7563ff1b86213f66e800ca7	7	30824	player
+c6bb7b9fc7563ff1b86213f66e800ca7	8	25077	player
+c6bb7b9fc7563ff1b86213f66e800ca7	9	46216	player
+c6bf13ea5c60e3d158668225356ad951	0	275256	player+silence	libopenmpt	Digital Symphony	4	87244	63ee37f2	eb42884f	MUSIC/SYT_Z/XTC
+c6f01a29e0e6e577e960bd0969dda92d	0	69017	player	libopenmpt	Digital Symphony	4	63072	7b1f808b	7c5d4e55	MUSIC/SYA_D/COCA_COLA
+c7d04a75a9069d45651ce8386f1fb209	0	153371	player	libopenmpt	Digital Symphony	4	73104	6513a5f3	56bd3716	MUSIC/SYA_D/CYBERTITLE
+c7ec427d1f2b618fc74eef16883c5a82	1	237378	player+silence	uade	Protracker	0	161930	a69e3fa6	a9d12b0a	MUSIC/STA_K/AXELGOES
+c8f3abf565d98a7223e3c60afb8391fd	0	95025	player	libxmp	Archimedes Tracker	8	83412	1c445014	cf1a2e71	MUSIC/STMODS/TRAITOR
+c92eb350c9e0b2ac689a2d421b53ab4f	0	123268	player+volume	libopenmpt	Digital Symphony	4	89488	1ffed716	fdbdee55	MUSIC/SYE_G/FURELISE
+c9c089a876633558a1558c510f7d9d18	0	458336	player	libopenmpt	Digital Symphony	4	154772	9228cfb1	750fe30d	MUSIC/SYL_O/NICE
+c9e6238af6be29401bdb3cd32ace9fd8	0	180211	player	libopenmpt	Digital Symphony	4	40912	afa16449	f2f91ec4	MUSIC/SYL_O/OUTERWORLD
+c9ecc115b1664fdcf5045cc009ce4624	0	38342	player	libopenmpt	Digital Symphony	4	16472	577380de	5f1b9d1c	MUSIC/SYT_Z/THAT_SALL
+ca3fbcf24296adb56c8de98d1f855909	0	287631	player	libopenmpt	Digital Symphony	4	66936	164f13d3	68eca767	MUSIC/SYL_O/NIGHTLIGHT
+ca50c1fb719589844438473a654c8e5d	0	76685	player	libopenmpt	Digital Symphony	4	32424	8b89b56b	6123c9ad	MUSIC/SYL_O/OLYM_MUS
+caa3d642fdbd98078bb02839194e44b6	0	86271	player	libopenmpt	Digital Symphony	4	41172	13212a7b	f37b274c	MUSIC/SYH_K/JTGAME1
+caa3d642fdbd98078bb02839194e44b6	1	19171	player
+caa3d642fdbd98078bb02839194e44b6	2	5831	player
+cb075850e29c0c680ec1f5e394574726	0	107359	player	libopenmpt	Digital Symphony	4	36096	3e19eb98	f7b310b5	MUSIC/SYT_Z/TWINWORLD1
+cb4bff9a4f43b0da9633098c4c6257b5	0	61348	player	libopenmpt	Digital Symphony	4	6088	f12d3d5e	23ce55f3	MUSIC/SYE_G/FIREWORKS
+cb85343ec8e338db0309e63862df65f9	0	84354	player	libopenmpt	Digital Symphony	4	14776	51d4de09	d20ee89d	MUSIC/SYA_D/CHOIR
+cb85343ec8e338db0309e63862df65f9	1	7668	player
+cb85343ec8e338db0309e63862df65f9	2	6855	player+silence
+cb92794fa8295e9aa72f4783495797db	0	448885	player	libxmp	Archimedes Tracker	4	88716	d68ff0fa	7796e177	MUSIC/STMODS/SINISTER
+cb999ff4e8b8cbf429abfd9b8543886f	0	94358	loop	libopenmpt	Digital Symphony	2	286768	da44f8bf	c0905898	MUSIC/SYT_Z/VATH
+cbb6fbf28eb43459afbe6848aa72e158	0	99691	player	libopenmpt	Digital Symphony	4	82792	0e0d4f54	b49e5957	MUSIC/SYL_O/MIRAGE
+cbcb47afea208557933d51ce8b5b22b3	0	118503	player	libopenmpt	Digital Symphony	4	70072	e54ef69b	b0ad8d34	MUSIC/SYE_G/ENUTOMED
+cbf0673337462f3d4171bc65609ce843	1	227761	player+silence	uade	Protracker	0	348902	889bca40	74e61863	MUSIC/STA_K/HELLSPARTY
+ce105e5eb215d0fcdcffc3bfea261ecf	0	168708	player	libopenmpt	Digital Symphony	8	60404	656c8b27	9a263836	MUSIC/SYE_G/EXPLORE
+ce9ac55295d952bcb5e0a465dd33eb7e	0	152033	player	libxmp	Archimedes Tracker	4	101224	93ff0ee2	8450e258	GAMES/_O_ERFAR/COMIC
+cf340709eecff92f40f1c73e7232bb56	0	251768	player+volume	libopenmpt	Digital Symphony	4	74328	2bd64795	382fabe6	MUSIC/SYA_D/CAN_FLITE
+d015df930dba8f7925bb7234cc5f6949	0	173533	player+silence	libopenmpt	Digital Symphony	8	52412	09de6d46	f8e728eb	MUSIC/SYL_O/NINA
+d06ce44da9991c9fe68984bc15559859	0	53679	player	libopenmpt	Digital Symphony	4	19492	76387001	9e387adc	MUSIC/SYS_S/SONATAC1ST
+d0c5baa43e06b190e6995b156ce0c071	0	385158	player+silence	libopenmpt	Digital Symphony	4	103700	8e8f9a03	57813ec0	MUSIC/SYT_Z/TRUST
+d18b6112498c8231b486360f68cb06fd	0	76685	player	libopenmpt	Digital Symphony	4	54420	4f64fc15	eaf93aa8	MUSIC/SYP_R/PAT
+d19e3960f05733f4e3c88a4b01b4ccfa	0	61348	player	libopenmpt	Digital Symphony	4	14276	4580a070	4e09f2ab	MUSIC/SYH_K/HPYNEWYEAR
+d1b507085df6910fe72dc6662d494b9e	1	61568	player	uade	Protracker	0	9456	35904ee6	8d7b209a	MUSIC/STL_W/MELON_INIT
+d1c46d4f9264de083268b889406f41ee	0	290147	player	libopenmpt	Digital Symphony	4	14824	0be64087	b43c27f8	MUSIC/SYS_S/SIXTHX
+d22b9b41c5412a5adecd87e23fd3bd1a	0	76685	player	libopenmpt	Digital Symphony	4	4540	2dcac3bb	01e9dfc7	MUSIC/SYT_Z/WARNING
+d23190eaa54a614b8adf6482499ea47b	0	61348	player	libopenmpt	Digital Symphony	4	39696	71d4f6e9	760d799f	MUSIC/SYE_G/FAIRYTALE
+d2d2ef333c04440abfc29449259e8e38	0	268399	player	libopenmpt	Digital Symphony	4	48156	4fd08467	5fe5008c	MUSIC/SYP_R/QUARKTHEME
+d38d74e88fdcd37d8191726c8f2d4326	0	76685	player	libopenmpt	Digital Symphony	4	66684	162ff8a2	0dd8c284	MUSIC/SYL_O/MEGABEAT
+d4056de34b36d4e71a97d425c4a2edb2	0	186482	player	libopenmpt	Digital Symphony	4	87920	3a872dd7	49e877d8	MUSIC/SYH_K/INSANITY
+d47a2106341bb2a6e05b38545a7793cd	0	40871	player	libxmp	Archimedes Tracker	4	31728	a1ce9f4d	5ef557b9	MUSIC/STMODS/FOLKSONG
+d4fa8115e2d4a5e81bd7c85dcb52d2d3	0	145904	player	libxmp	Archimedes Tracker	4	299124	3a21ae36	5b6c57ac	MUSIC/STMODS/HUMPTY
+d4fd36f8c3a10f37f5baede5b662026c	0	183020	player+silence	libopenmpt	Digital Symphony	4	72376	6918368f	d4538d77	MUSIC/SYS_S/SPACEWORP
+d4fe6f631ed6e9dc93adddd8a050c671	0	383428	player	libopenmpt	Digital Symphony	4	675136	74d44fa5	336d73d3	MUSIC/SYS_S/SNAPDANCER
+d516a4d41ea7bf5147264d9034ca3b59	0	69017	player	libopenmpt	Digital Symphony	4	40576	b6d39f4a	f15bb0ae	MUSIC/SYA_D/BLACKENE
+d5866d1d4ed8e20418a08fbdc146f6fe	1	172931	player	uade	Protracker	0	244378	50b1eba3	ec0b6571	MUSIC/STA_K/FLINTSTONE
+d5d3e18cffac774cfab7a722296725ba	0	322079	player	libopenmpt	Digital Symphony	4	91616	7b3dce5f	5e0866dc	MUSIC/SYH_K/HARDWIRED
+d60acc94a02c3c2c57861f863daa5140	0	30704	player	libxmp	Archimedes Tracker	4	75440	27c9b837	0b7f5584	MUSIC/STMODS/ROCKIN
+d6ae37d76a7bd0f9c528c062d82f4276	0	111492	player+silence	libopenmpt	Digital Symphony	4	146352	3d2485b7	08f43e9f	MUSIC/SYE_G/FOOT2
+d6d1459a4675cb4069965e58aed9f748	0	222388	player	libopenmpt	Digital Symphony	4	167496	af7ae89d	1d51aaad	MUSIC/SYL_O/LETMEHEAR
+d72ea05511205b9b968de88b98b72445	0	210052	player+silence	libopenmpt	Digital Symphony	4	97256	3746b82b	4219abfa	MUSIC/SYS_S/SATURDAY
+d735580245747dec4f44a2cf85852792	0	153580	player	libxmp	Archimedes Tracker	4	51916	e14d891b	80556b42	MUSIC/STMODS/XON2RX
+d7f9ef29bfa18dbb7f27f06e8276bc49	0	168708	player	libopenmpt	Digital Symphony	4	66152	5d90c1e2	25b5a976	MUSIC/SYT_Z/UNIT_REMIX
+d7fd705f8bd6efa8d806dbebfeeebce8	1	112769	player	uade	Soundtracker II (15 instr.)	0	68602	5dac2731	fc45f564	MUSIC/STA_K/DLT1
+d8c39db18277ac146eebbc2a9458e59b	0	147140	player	libopenmpt	Digital Symphony	2	636304	0fcea6c3	7dd8db5e	MUSIC/SYE_G/EVERYBODY
+d983223bb688768d4252bb01d6d3b1e1	0	130365	player	libopenmpt	Digital Symphony	4	305484	4faa2adc	5c8f3659	MUSIC/SYE_G/FUNKY
+d98b8b5b9c7946d17b48493864ab9bc3	0	199382	player	libopenmpt	Digital Symphony	4	75728	ad020a49	85856371	MUSIC/SYS_S/SOUNDNR2
+dc259d844dc5b3d18fd651ef02475f97	0	235032	player+silence	libopenmpt	Digital Symphony	4	55932	d06ff119	9783e1ff	MUSIC/SYS_S/SPEEDRULES
+dcc4e51b3abe8da32c1e24076e274f3d	0	76780	player	libxmp	Archimedes Tracker	4	68456	7a30e5a3	43f3054c	MUSIC/STMODS/TOOBTITLE
+dccfd4560c1ea0a13ff693e292f3391b	0	7676	player	libxmp	Archimedes Tracker	4	22888	f0a8a6f4	4d845428	MUSIC/STMODS/YEAH
+dcff32908d0f85ed64a5575fcd2c2e74	0	168708	player	libopenmpt	Digital Symphony	4	64732	3ad51242	41f1f47c	MUSIC/SYA_D/ATMSPHERIC
+de19ccc80ca9c5198195b9d887e74623	0	186190	player+silence	libopenmpt	Digital Symphony	8	144148	0f72d805	e5d00c67	MUSIC/SYE_G/FANTASIES
+de28a7d0663e11938eb97cf9d5baaca0	0	383428	player	libopenmpt	Digital Symphony	4	126668	38c624dc	9d67d25b	MUSIC/SYP_R/PENITRATIO
+de38d304749a512a058db9f137719618	0	44733	player	libopenmpt	Digital Symphony	4	20468	450f34bd	e1b5efeb	MUSIC/SYH_K/INTRO
+de5f6a95f1b4b47c6ef9280abfa6b044	0	253824	player+silence	libopenmpt	Digital Symphony	4	92768	788c111a	40b82f8d	MUSIC/SYE_G/FAIRGROUND
+de6f5e25af12d76b0ad9bd21850568c4	1	172931	player	uade	Soundtracker II (15 instr.)	0	64808	c690257b	293cb86d	MUSIC/STL_W/LOSERLAUGH
+de74d81c099169a6b0c624a90377ac33	0	355212	player+silence	libopenmpt	Digital Symphony	4	63596	52843f07	2edc20d1	MUSIC/SYA_D/CLUSTER
+de7c6cd26e82a363d859a24985eafffe	0	86271	player	libopenmpt	Digital Symphony	8	45832	9456cce4	e64519d9	MUSIC/SYL_O/ORIENTXPRS
+df764cc2615613d347210f81ce5db26e	0	124619	player+silence	libopenmpt	Digital Symphony	4	68940	01d3c253	c6bc63ec	MUSIC/SYT_Z/TIMERIDE
+e018b785bcbbe2b59508b85a6c7f1eb0	0	138273	player	libopenmpt	Digital Symphony	4	107444	b07f7cff	e5233c7d	MUSIC/SYH_K/ILLUSIONS
+e026455d125a843e76c93b3b9511979c	0	259894	player+silence	libopenmpt	Digital Symphony	4	57328	997f85b8	194c9c4a	MUSIC/SYP_R/ROUNDONE
+e0bab441a7b931289c1eedf52a8f9b86	0	250495	player+silence	libopenmpt	Digital Symphony	4	31664	64ededb2	901ecd9d	MUSIC/SYT_Z/THEMEDREAM
+e137c345366ccd154e748c88e7af4aeb	1	134531	player	uade	Soundtracker II (15 instr.)	0	81970	632335f2	4291dd36	MUSIC/STMODS/CONTACT
+e17a87f2f4c14c438d6696373a06f434	0	39620	player	libopenmpt	Digital Symphony	4	50304	6d13214e	53df6c8e	MUSIC/SYS_S/SPENCRSRVE
+e31aec47467eb79da494f1fc27bf35ff	0	115028	player	libopenmpt	Digital Symphony	4	144936	4ab26db5	9769e52c	MUSIC/SYT_Z/WEAPON
+e33f38f45317a56e5fd496a6da4f09fb	0	398065	player+silence	libopenmpt	Digital Symphony	4	202580	605343c6	de36835f	MUSIC/SYT_Z/THE_DEPT
+e35ee31e4958586e039bea5246f06a4f	0	226222	player	libopenmpt	Digital Symphony	4	206044	cb90ac07	964be1cd	MUSIC/SYP_R/ROADRASH
+e3a3d4080386e68d30f056a4d9a0ab38	0	108801	player+silence	libopenmpt	Digital Symphony	4	161932	719e9f61	6f3b4c70	MUSIC/SYL_O/MAIN1
+e43ef1fc09ac817f74fea644d8a1cf00	1	211331	player	uade	Noisetracker 1.x	0	55806	21513d98	a74c3db6	MUSIC/STA_K/CJ18
+e44946d4d9ac8f6bc98d5bddff5ecd69	0	142721	player+silence	libopenmpt	Digital Symphony	4	60932	e5e20f25	0896c081	MUSIC/SYP_R/RIPPEDJAWS
+e6efb54fc091dc76383ffd690a8b921e	0	184045	player	libopenmpt	Digital Symphony	4	34204	2f349f61	a608c621	MUSIC/SYP_R/QUARTEX
+e7681f9afb4fe1a92d530b678dae1d13	0	245394	player	libopenmpt	Digital Symphony	4	24232	f39b1b7a	570852ff	MUSIC/SYE_G/FUTUREHRIZ
+e80cf33fc5d1ea0ee4a3b04efb1ab617	0	78762	player	libopenmpt	Digital Symphony	4	29800	41d19476	78082b99	MUSIC/SYT_Z/TIDLYTUM
+e8720c607a168c6c206094bfd579f501	0	127980	player	libxmp	Archimedes Tracker	4	41652	eaedb952	34e892bf	MUSIC/STMODS/RACING
+e8f6a40e4798c77625fefbe7adc3d94c	0	92022	player	libopenmpt	Digital Symphony	4	89944	6768ab56	e010893c	MUSIC/SYT_Z/X
+e9d85a22a6c0a52f0e08695fe017f229	0	244142	player+silence	libopenmpt	Digital Symphony	4	73996	cba739ad	8af85140	MUSIC/SYT_Z/TRANSYLVAN
+e9f03e0837b70e107570d918cdb79eae	0	75607	player	libopenmpt	Digital Symphony	4	139960	5ffad3cb	8b9b05b3	MUSIC/SYH_K/I_MFREE
+ea6fffc289b839e19e0f0d9be44c43f0	1	44910	player	uade	Protracker	0	25652	227b8f64	eb1829ac	MUSIC/STA_K/INTRO
+eaa67d8f085e2117e606fc732820cb17	0	235512	player+silence	libopenmpt	Digital Symphony	4	56364	29cfb83c	0709fada	MUSIC/SYH_K/HOTHEAT
+ec8ae35090a3f53c39c071ee0ea386b0	0	181169	player	libopenmpt	Digital Symphony	4	50504	e627cf8d	6e946d8c	MUSIC/SYL_O/NEWSONG
+ec8f59a0e9ec4b5c4bed2caa281373d5	1	184445	player	uade	Noisetracker 1.x	0	392656	fa3ca7a4	17165e1d	MUSIC/STA_K/DDR
+ed82129a20dec2ff4e0bac76a5977faa	0	84472	player+silence	libopenmpt	Digital Symphony	5	18956	0936ba54	0b5fe943	MUSIC/SYH_K/JOHN_YOKO
+edd5af5163f4e87773b3b00eb1cfbf4e	0	99691	player	libopenmpt	Digital Symphony	4	16520	1052a1b7	ddcf8dbc	MUSIC/SYT_Z/THEEND
+ee18ca4f95046c2ef7d340c48cb35ebc	1	64522	player	uade	Protracker	0	13964	673e1202	40789c9a	MUSIC/STA_K/HYPER
+eec911f12df55fa73f732ce4cc157725	0	185323	player	libopenmpt	Digital Symphony	4	12956	ee00a294	b98de459	MUSIC/SYE_G/FASTLANE
+eee15c05f5f13a2b59b34ae503021263	0	82003	player	libopenmpt	Digital Symphony	4	91116	9760050a	a7406925	MUSIC/SYT_Z/UPSTREAM6
+f006fb641a1b1383512b42fa8fb8d04b	0	53679	player	libopenmpt	Digital Symphony	4	41936	60638b1f	6d0c039d	MUSIC/SYH_K/JUMPYJIG
+f176aa95a672abc7336ced64e97a9655	0	106401	player	libopenmpt	Digital Symphony	4	25372	fddf1c6a	5839a851	MUSIC/SYS_S/SLEEZYBLUE
+f1c07f689ad05b8dac262f88a4caf7e3	0	172542	player	libopenmpt	Digital Symphony	4	188496	4793f9cf	b68cb968	MUSIC/SYE_G/FLINTSTONE
+f1ea89d708c38b278404a64fa4f46db3	0	204098	player+silence	libopenmpt	Digital Symphony	4	110808	da5f04b9	9b2f7405	MUSIC/SYT_Z/WET
+f27781792767a8fef766de709fd933e9	1	249631	player	uade	Protracker	0	375378	a676eda9	4db22232	MUSIC/STA_K/ACEOBASE
+f27b25ceed47dc163e1b78d3e56622ba	0	587284	player	libopenmpt	Digital Symphony	4	52276	74cce449	03ad5f41	MUSIC/SYS_S/SANTA_S
+f30f8270d14be6ea602b533d53a71bd5	1	92272	player	uade	Protracker	0	75950	deef8778	dfbaad1e	MUSIC/STL_W/LEMMUS1
+f30f8270d14be6ea602b533d53a71bd5	2	44910	player
+f30f8270d14be6ea602b533d53a71bd5	3	35968	player
+f30f8270d14be6ea602b533d53a71bd5	4	20596	player
+f39e2ecb996073029ffc044a2acace0a	0	184045	player	libopenmpt	Digital Symphony	4	80016	ea4a331f	ee9606a9	MUSIC/SYA_D/AAARRGH
+f517973a4abd132b9e444ac4d2ff98c0	0	92152	player	libxmp	Archimedes Tracker	4	48012	99b34148	3e9960c5	MUSIC/STMODS/BUGHREMIX
+f5805c9af9ddc789f042756bda1168b2	0	287631	player	libopenmpt	Digital Symphony	4	66336	82ef6b92	ff37ab1e	MUSIC/SYT_Z/VICTOR
+f636cf63d4fee192d9dd000e3a4104ed	0	321955	player+volume	libopenmpt	Digital Symphony	4	286300	69de3c90	e2589174	MUSIC/SYA_D/DASBOOT
+f6a15ab303ae7d7e6101f32b76c57fc6	0	61348	player	libopenmpt	Digital Symphony	4	14260	ca62789f	55eb0eff	MUSIC/SYH_K/HYPNOTIC
+f6fe7c73f908737254fe3c51beca06b0	1	147331	player	uade	Noisetracker 1.x	0	149424	000f295f	cf16e7a8	MUSIC/STMODS/SHADOWS
+f88fbbd8607acfe3be26f6e5febab941	0	179170	player+silence	libopenmpt	Digital Symphony	4	288168	dec976ab	1422f2fc	MUSIC/SYT_Z/VOGUE2
+f8b1907cdb6c84df5645d0e64fbcc306	1	130346	player+silence	uade	Protracker	0	93750	b01a5a26	7b334c39	MUSIC/STL_W/NO_ONEHOME
+f99d49e0885b1170d932f59a7cd3387d	1	163969	player	uade	Protracker compatible	0	48710	6e330fbf	004b57cc	MUSIC/STMODS/JUSTIFIA
+f9b6dfe86b71c2b77220ea67a95a990c	0	15352	player	libxmp	Archimedes Tracker	4	90800	2477874d	87f78ab8	MUSIC/STMODS/MORAVE
+fa05d497143a4e6e112f9095daf70235	0	76685	player	libopenmpt	Digital Symphony	4	17956	20f22900	a98509fc	MUSIC/SYH_K/IPEC
+fa162a9564d25a75098314c841ec0070	0	144143	player+silence	libopenmpt	Digital Symphony	4	15740	4a7c89a6	436ad528	MUSIC/SYS_S/SDEATH
+fbd92f9c5765ec847107d575d7404293	0	208914	player	libopenmpt	Digital Symphony	4	105940	48567f49	32af95ba	MUSIC/SYA_D/BLADERAV
+fc56921da73f0a1f788354ef6cb52fb0	0	359940	player+silence	libopenmpt	Digital Symphony	4	159796	07be5dc5	dabacbdc	MUSIC/SYP_R/REDSECTOR
+fcc95751a1522d5510971131cec23d34	1	115321	player	uade	Protracker	0	95686	1f973b4d	35a84d1f	MUSIC/STL_W/NINTRO5
+fceac3b06e2f682425fa6e75349dad7a	0	203514	player	libxmp	Archimedes Tracker	4	65660	6e368439	a28a53f9	MUSIC/STMODS/NEWREALITY
+fd0628a038f9b9c607be8b0e4dabf666	0	145702	player	libopenmpt	Digital Symphony	4	23248	ba8e7de6	3b9e6855	MUSIC/SYP_R/PARADOX1
+fd119df93d9a4b47e43c5c96371832cc	1	548533	player	uade	Protracker compatible	0	147252	29feee5b	957769bd	MUSIC/STA_K/GRYZOR_MOD
+fd13c910ad9589b3b84ae03fdf67dadf	0	214719	player	libopenmpt	Digital Symphony	4	85688	f568f094	7b624652	MUSIC/SYS_S/STARMIX1_1
+fd724c1783ced4eb6058ed64e7274247	0	67819	player+silence	libopenmpt	Digital Symphony	5	237240	a0f1ff01	7a8596d8	MUSIC/SYA_D/CHUCKY
+fd8f0f4bcfa09189e250f4e2db55a84c	0	232613	player	libopenmpt	Digital Symphony	4	47208	635821e7	6c8b0f37	MUSIC/SYA_D/DONTSAYGOO
+fe5766129199e6e173f7af0ec0bf6b37	0	50743	player+silence	libopenmpt	Digital Symphony	8	26404	443eaae9	99b27812	MUSIC/SYA_D/BREATHE_8
+fe6cd4effaedb778be853e0014616c32	0	138034	player	libopenmpt	Digital Symphony	4	47704	09fa3ac9	7b62dc64	MUSIC/SYH_K/J_M_JARRE
+fe9b76b45c9de2228860b9afcc089fb5	0	52586	player	libxmp	Archimedes Tracker	4	97468	85fb7b30	9e1c5a1f	MUSIC/STMODS/FNCASMPL
+fedec00c869221c39363701145bad6ef	0	260731	player	libopenmpt	Digital Symphony	4	44460	293f8798	250a06c9	MUSIC/SYA_D/AMEGAS

@@ -7,6 +7,9 @@
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
+import scala.concurrent.{Future, Await}
+import scala.concurrent.duration._
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.Using
 import java.io.File
 import java.io.FileInputStream
@@ -18,10 +21,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 //val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_7.xlsx"
 // XXX corrupted fujiology excel file?
 org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
-val fujiology_xlsx = System.getProperty("user.home") + "/sources/fujiology/fujiology_archive_2_9_9.xlsx"
-lazy val fujiology_by_filename = sources.fujiology.groupBy(_.path.split("/").last.toLowerCase)
+val fujiology_xlsx = System.getProperty("user.home") + "/sources/metadata/fujiology/fujiology_archive_2_9_9.xlsx"
+lazy val fujiology_by_filename = sources.sourceDB(sources.Source.Fujiology).groupBy(_.path.split("/").last.toLowerCase)
 
-case class FujiologyMeta (
+final case class FujiologyMeta (
   md5: String,
   authors: Buffer[String],
   publishers: Buffer[String],
@@ -101,6 +104,7 @@ lazy val music_metas = {
   //val sheet = workbook.getSheet("MUSIC")
   val sheet = workbook.getSheet("MUSIC FT-SNDH-ASMA")
   var prevfolder = ""
+  var prodType = ""
   val rows = sheet.iterator()
   rows.next()
   while (rows.hasNext()) {
@@ -118,6 +122,7 @@ lazy val music_metas = {
       val system = getCellString(row, 5)
       val prod = getCellString(row, 6)
       val crew = getCellString(row, 7)
+      val info = getCellString(row, 9)
       var foldername = getCellString(row, 10)
       if (!foldername.isEmpty) {
         prevfolder = foldername
@@ -206,7 +211,10 @@ lazy val music_metas = {
             album = prod,
             year = None,
             system,
-            prodType = "",
+            if (info.toLowerCase.contains("converted") || info.toLowerCase.contains("conversion") ||
+                info.toLowerCase.contains("remix") || info.toLowerCase.contains("remake") ||
+                info.toLowerCase.contains("original")
+            ) "" else prodType,
           )
           if (metas.exists(m => m.md5 == entry.md5)) {
             System.err.println(s"WARN: Fujiology duplicates: ${meta} vs ${metas.filter(_.md5 == entry.md5)}")
@@ -214,6 +222,13 @@ lazy val music_metas = {
           metas += meta
           by_filename.update(filename, by_filename(filename).filterNot(_ == entry))
         }
+      }
+      if (composer == "DEMOS (Falcon)") {
+        prodType = "Demo"
+      } else if (composer == "Demos (ST)") {
+        prodType = "Demo"
+      } else if (composer == "GAMES") {
+        prodType = "Game"
       }
     }
   }
@@ -226,7 +241,7 @@ lazy val prods_metas = {
   val by_filename = mutable.Map.from(fujiology_by_filename)
   val file = new FileInputStream(new File(fujiology_xlsx))
   val workbook = new XSSFWorkbook(file)
-  case class ProdRow (
+  final case class ProdRow (
     system: String,
     prod: String,
     filename: String,
@@ -264,16 +279,19 @@ lazy val prods_metas = {
   }
 
   def parseMetas(prefix: String, prodRows: Buffer[ProdRow], index: Int) = {
+    val blacklist = Seq(("ST/", "racer.zip"))
     val metas = Buffer[FujiologyMeta]()
     val prodsByFilename = prodRows.groupBy(_.filename)
-    sources.fujiology.filter(e => e.path.startsWith(prefix)).foreach{ e =>
+    sources.sourceDB(sources.Source.Fujiology).filter(e => e.path.startsWith(prefix)).foreach{ e =>
       var i = index
       if (e.path.startsWith(s"${prefix}!BONUS/")) {
         i += 1
       }
       var filename = e.path.split("/")(i).toLowerCase
       val prods = prodsByFilename.getOrElse(filename, Seq())
-      if (prods.size == 1) {
+      if (blacklist.contains((prefix, filename))) {
+        System.err.println(s"WARN: Fujiology ${prefix} PRODS ignoring blacklisted filename '${filename}'")
+      } else if (prods.size == 1) {
         val prod = prods.head
         metas += FujiologyMeta(
           md5 = e.md5,
@@ -324,7 +342,7 @@ lazy val mags_metas = {
   val sheet = workbook.getSheet("MAGAZINES")
   val rows = sheet.iterator()
   rows.next()
-  case class MagRow (
+  final case class MagRow (
     prod: String,
     system: String,
     filename: String,
@@ -355,7 +373,7 @@ lazy val mags_metas = {
     }
   }
   val magsByFilename = magRows.groupBy(_.filename)
-  sources.fujiology.filter(_.path.startsWith("MAGS/")).foreach{ e =>
+  sources.sourceDB(sources.Source.Fujiology).filter(_.path.startsWith("MAGS/")).foreach{ e =>
     var filename = e.path.split("/")(2).toLowerCase
     if (filename == "falcon") {
       filename = e.path.split("/")(3).toLowerCase
@@ -383,7 +401,7 @@ lazy val mags_metas = {
   metas
 }
 
-lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).flatMap { e =>
+lazy val party_metas = sources.sourceDB(sources.Source.Fujiology).filter(_.path.startsWith("PARTIES/")).par.flatMap { e =>
   val dirs = e.path.split("/")
   val competitions = Seq("CHIPTUNE", "F030MSX", "M1CH", "M4CH", "M8CH", "MMUL", "MP3", "MSX", "NONMUSIC", "ST-00")
   val compo = dirs(3)
@@ -395,9 +413,23 @@ lazy val party_metas = sources.fujiology.filter(_.path.startsWith("PARTIES/")).f
       album = "",
       year = Some(dirs(1).toInt),
       system = "",
-      prodType = "",
+      prodType = "Compo",
     ))
   } else None
 }
 
-lazy val metas = (music_metas ++ prods_metas ++ party_metas ++ mags_metas)
+lazy val metas = {
+  val musicFuture = Future { music_metas }
+  val prodsFuture = Future { prods_metas }
+  val partyFuture = Future { party_metas }
+  val magsFuture = Future { mags_metas }
+  
+  val combined = for {
+    m <- musicFuture
+    p <- prodsFuture
+    pa <- partyFuture
+    ma <- magsFuture
+  } yield m ++ p ++ pa ++ ma
+  
+  Await.result(combined, Duration.Inf)
+}

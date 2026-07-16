@@ -2664,7 +2664,7 @@ e972f6db0e92b2da53feb1838e275730	1	233093	player	uade	Protracker compatible	0	19
 e998012c700eb43af0321711305829b2	1	637350	player	uade	Protracker (vblank)	0	224288	947eb4e3	100c8746	SOUNDS/MOD/MOD_23/KLISJE~1.MOD
 e99adda53aa7ff59659b7068d9ce5fe2	1	252948	player+silence	st3play	Scream Tracker 3.01 (SB)	16	226622	e05fa551	cc3c1514	SOUNDS/S3M/S3M_R/R_WIZARD.S3M
 e9aec55b607ebfcf68e92c8b98ec7a05	1	135455	player	st3play	Scream Tracker 3.03 (GUS)	6	52472	150bec44	eb1f4bbd	SOUNDS/S3M/S3M_I/INVTRO94.S3M
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	SOUNDS/MOD/MOD_27/MEGAFCE2.MOD
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	SOUNDS/MOD/MOD_27/MEGAFCE2.MOD
 e9cd562c351a7644ae0928f3579fd16c	1	168671	player	st3play	Scream Tracker 3.01 (SB)	8	60482	2ad5d44f	b6552ef1	SOUNDS/S3M/S3M_B/BLACKHOL.S3M
 ea1aa147ddd9747f27f35d12f675cdc4	1	208056	player	uade	Protracker	0	68882	12cdad26	d16cd978	SOUNDS/MOD/MOD_26/MANDELFC.MOD
 ea2142f7f4fe6b8cc711e9a0349b0130	1	138369	player	uade	Protracker	0	119156	762743a2	a6f3c81c	SOUNDS/MOD/MOD_10/DARKDAN0.MOD

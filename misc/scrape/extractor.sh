@@ -5,8 +5,12 @@ export LANG=C
 export LC_ALL=C
 export LC_CTYPE=C
 
+export TIMEOUT=$(which gtimeout 2>/dev/null || which timeout)
+
 NPROC=$(getconf _NPROCESSORS_ONLN 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 1)
 GROUP=$(id -gn)
+
+EXCLUDE_GREP="grep -z -v -e '/usr/' -v -e '/man/' -vi -e '/fonts/' -vi -e '/icons' -vi -e '/include/' -vi -e '/locale/' -v -e '/po/' -v -e '/\.svn/' -v -e '/\.git/' -v -e '/CVS/' -vi -e '\.readme$' -vi -e '\.html$'"
 
 # wait/pid helper: manage pid-array and block until there is room (< nproc)
 manage_pids_wait() {
@@ -56,6 +60,7 @@ run_extract() {
           rm -rf -- "$tmpdir/       >>>      Iceman      <</"
           rm -rf -- "$tmpdir/     >>> TMF Crunchdisk 2.0 <</"
           rm -rf -- "$tmpdir/ ** THE BITSTOPPERS ** /"
+          rm -rf -- "$tmpdir/-=> The Bitstoppers <=-/"
           rm -f -- "$src"
           mv -- "$tmpdir" "$src" >/dev/null 2>&1
           chmod -R 755 "$src" >/dev/null 2>&1
@@ -69,7 +74,7 @@ run_extract() {
     ) &
     _pids+=("$!")
     manage_pids_wait _pids "$NPROC"
-  done < <(gfind -L . -type f -size +0c \( "${find_args[@]}" \) -print0 2>/dev/null | grep -z -v '\.part[0-9]\+\.rar$')
+  done < <(gfind . -type f -size +0c \( "${find_args[@]}" \) -print0 2>/dev/null | $EXCLUDE_GREP)
 
   manage_pids_wait _pids 1
 }
@@ -107,7 +112,7 @@ run_extract_pair() {
     ) &
     _pids+=("$!")
     manage_pids_wait _pids "$NPROC"
-  done < <(gfind -L . -type f -size +0c -iname "*${primary_suffix}" -print0 2>/dev/null)
+  done < <(gfind . -type f -size +0c -iname "*${primary_suffix}" -print0 2>/dev/null | $EXCLUDE_GREP)
 
   manage_pids_wait _pids 1
 }
@@ -115,7 +120,7 @@ run_extract_pair() {
 chmod -R 755 . >/dev/null 2>&1
 chown -R ${USER}:${GROUP} . >/dev/null 2>&1
 
-COUNT=$(gfind -L . -type d 2>/dev/null | wc -l)
+COUNT=$(gfind . -type d 2>/dev/null | $EXCLUDE_GREP | wc -l)
 while : ; do
   run_extract 'f=`mktemp /tmp/extract.iso.gz.XXXXXX`; gzip -d -c "$src" > "${f}" && 7z x -aoa "${f}"; rm -f "${f}"' \
     .iso.gz
@@ -173,14 +178,14 @@ while : ; do
     .lzx .lz
   run_extract 'unarj x "$src"' \
     .arj
-  run_extract 'f=`mktemp -d /tmp/extract.cab.XXXXXX`; 7z x -aoa "$src"; chmod -R 755 .; chown -R ${USER}:${GROUP} .; cabextract -d "${f}" "$src"; chmod -R 755 "${f}"; chown -R ${USER}:${GROUP} "${f}"; cp -rp "${f}"/. .; rm -rf "${f}"' \
+  run_extract 'f=`mktemp -d /tmp/extract.cab.XXXXXX`; $TIMEOUT 60 7z x -aoa "$src"; chmod -R 755 .; chown -R ${USER}:${GROUP} .; cabextract -d "${f}" "$src"; chmod -R 755 "${f}"; chown -R ${USER}:${GROUP} "${f}"; cp -rp "${f}"/. .; rm -rf "${f}"' \
     .cab
   run_extract 'unace x "$src"' \
     .ace
-  run_extract 'zoo x "$src"' \
+  run_extract '$TIMEOUT 60 zoo x "$src"' \
     .zoo
 
-  NEW_COUNT=$(gfind -L . -type d 2>/dev/null | wc -l)
+  NEW_COUNT=$(gfind . -type d 2>/dev/null | $EXCLUDE_GREP | wc -l)
   [[ $NEW_COUNT -eq $COUNT ]] && break
   COUNT=$NEW_COUNT
 done
@@ -219,14 +224,16 @@ do
   ) &
   _pids+=("$!")
   manage_pids_wait _pids "$NPROC"
-done < <(gfind -L . -type f -size +0c -iname "*.gz" -o -iname "*.bz2" -o -iname "*.xz" -o -iname "*.Z" -o -iname "*.lzma" -print0 2>/dev/null)
+done < <(gfind . -type f -size +0c -iname "*.gz" -o -iname "*.bz2" -o -iname "*.xz" -o -iname "*.Z" -o -iname "*.lzma" -print0 2>/dev/null | $EXCLUDE_GREP)
 
 manage_pids_wait _pids 1
 
 # ancient (single file)
 for i in {1..2}; do
   echo "Extracting ancient ($i/2) ..."
-  gfind -L . -type f -size +0c -print0 | xargs -0 -P "$NPROC" -n 1 ancient i 2>&1 \
+  gfind . -type f -size +0c -print0 \
+  | $EXCLUDE_GREP \
+  | xargs -0 -P "$NPROC" -n 1 sh -c 'ancient i "$1" || true' _ 2>&1 \
   | grep \
     -e '^Compression of ' \
   | gsed \
@@ -276,3 +283,5 @@ done
 
 chmod -R 755 . >/dev/null 2>&1
 chown -R ${USER}:${GROUP} . >/dev/null 2>&1
+
+gfind . -type l -exec rm -f {} \; 2>/dev/null

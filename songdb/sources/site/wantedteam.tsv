@@ -343,11 +343,11 @@
 067b85d38865df3db35fcd2ee5c34f90	0	11714	player	uade	Sierra AGI	0	901	1518ae92	861f0ea2	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 162
 06a67edc6b9ea29e8fd2563623a9ca54	0	136018	player	uade	Sonix Music Driver	0	2890	712891b9	e0a87fbf	examples/SMUS_PicturesAtExhibition.lzx/Pictures At An Exhibition/SMUS.Kiev2
 06bfc40041dd1982c838ac633446f564	1	189649	player	uade	Wally Beben	0	66082	3d40f5df	8662683d	examples/WB_Elite.lzx/WB.Elite
-06c73c16252e1920d6e6409a630a26a9	0	22486	player+silence	uade	TFMX Pro	0	3532	1bbad51c	0d121e81	examples/TFMX_KaramalzCup.lzx/MDAT.ongame
+06c73c16252e1920d6e6409a630a26a9	0	30744	player	uade	TFMX Pro	0	3532	1bbad51c	0d121e81	examples/TFMX_KaramalzCup.lzx/MDAT.ongame
 06c73c16252e1920d6e6409a630a26a9	1	23912	player
 06c73c16252e1920d6e6409a630a26a9	2	7696	player
-06c73c16252e1920d6e6409a630a26a9	3	10377	player+silence
-06c73c16252e1920d6e6409a630a26a9	4	8324	player+silence
+06c73c16252e1920d6e6409a630a26a9	3	10381	player+silence
+06c73c16252e1920d6e6409a630a26a9	4	8310	player+silence
 06eddbd6c5c1038acc3b13995d601972	1	97939	player	uade	Dave Lowe	0	89660	01fc15d4	4a5e4123	examples/DL_SummerEdition.lzx/DL.SummerEdition archery
 07067eb0fda1a94130ae7f7b641674b1	1	30824	player	uade	Protracker	0	30208	2940f327	9c9d7544	rips/MOD_DylanDog.lzx/MOD.dylanbastone
 071172283613aa58ebc05c1c51491452	1	50034	player	uade	Jesper Olsen	0	18396	fbcae7bd	a4e2adbf	examples/JO_HaraldHardtand.lzx/JO.HaraldHardtand end
@@ -356,39 +356,39 @@
 071c3a7863aac06ec96e23a544a3165b	1	143493	player	uade	Protracker	0	26628	e0d262e6	7a1fec47	rips/MOD_DylanDog01.lzx/MOD.st1
 071ef7ec56de7f71424410eae66c4611	0	0	nosound	uade	TFMX Pro	0	2264	625039fb	76560098	examples/TFMX_Transplant.lzx/MDAT.Transplant FX
 071ef7ec56de7f71424410eae66c4611	1	0	nosound
-071ef7ec56de7f71424410eae66c4611	10	3356	silence
-071ef7ec56de7f71424410eae66c4611	11	3302	silence
-071ef7ec56de7f71424410eae66c4611	12	3401	silence
-071ef7ec56de7f71424410eae66c4611	13	3280	silence
-071ef7ec56de7f71424410eae66c4611	14	3318	silence
+071ef7ec56de7f71424410eae66c4611	10	3354	silence
+071ef7ec56de7f71424410eae66c4611	11	3315	silence
+071ef7ec56de7f71424410eae66c4611	12	3400	silence
+071ef7ec56de7f71424410eae66c4611	13	3310	silence
+071ef7ec56de7f71424410eae66c4611	14	3321	silence
 071ef7ec56de7f71424410eae66c4611	15	3200	silence
 071ef7ec56de7f71424410eae66c4611	16	4238	silence
-071ef7ec56de7f71424410eae66c4611	17	4240	silence
-071ef7ec56de7f71424410eae66c4611	18	3640	silence
+071ef7ec56de7f71424410eae66c4611	17	4241	silence
+071ef7ec56de7f71424410eae66c4611	18	3641	silence
 071ef7ec56de7f71424410eae66c4611	19	3635	silence
 071ef7ec56de7f71424410eae66c4611	2	0	nosound
-071ef7ec56de7f71424410eae66c4611	20	3639	silence
+071ef7ec56de7f71424410eae66c4611	20	3636	silence
 071ef7ec56de7f71424410eae66c4611	21	3608	silence
 071ef7ec56de7f71424410eae66c4611	22	3640	silence
-071ef7ec56de7f71424410eae66c4611	23	3353	silence
+071ef7ec56de7f71424410eae66c4611	23	3354	silence
 071ef7ec56de7f71424410eae66c4611	24	3381	silence
 071ef7ec56de7f71424410eae66c4611	25	3400	silence
 071ef7ec56de7f71424410eae66c4611	26	3921	silence
 071ef7ec56de7f71424410eae66c4611	27	3420	silence
-071ef7ec56de7f71424410eae66c4611	28	3401	silence
-071ef7ec56de7f71424410eae66c4611	29	3920	silence
+071ef7ec56de7f71424410eae66c4611	28	3400	silence
+071ef7ec56de7f71424410eae66c4611	29	3921	silence
 071ef7ec56de7f71424410eae66c4611	3	0	nosound
-071ef7ec56de7f71424410eae66c4611	30	3195	silence
-071ef7ec56de7f71424410eae66c4611	31	3172	silence
+071ef7ec56de7f71424410eae66c4611	30	3160	silence
+071ef7ec56de7f71424410eae66c4611	31	3142	silence
 071ef7ec56de7f71424410eae66c4611	32	3480	silence
-071ef7ec56de7f71424410eae66c4611	33	3641	silence
+071ef7ec56de7f71424410eae66c4611	33	3635	silence
 071ef7ec56de7f71424410eae66c4611	34	0	nosound
-071ef7ec56de7f71424410eae66c4611	4	3506	silence
-071ef7ec56de7f71424410eae66c4611	5	3328	silence
-071ef7ec56de7f71424410eae66c4611	6	3872	silence
-071ef7ec56de7f71424410eae66c4611	7	3432	silence
-071ef7ec56de7f71424410eae66c4611	8	3440	silence
-071ef7ec56de7f71424410eae66c4611	9	3372	silence
+071ef7ec56de7f71424410eae66c4611	4	3481	silence
+071ef7ec56de7f71424410eae66c4611	5	3352	silence
+071ef7ec56de7f71424410eae66c4611	6	3743	silence
+071ef7ec56de7f71424410eae66c4611	7	3479	silence
+071ef7ec56de7f71424410eae66c4611	8	3439	silence
+071ef7ec56de7f71424410eae66c4611	9	3321	silence
 072903aa92c8cf811721f3bd9af776e2	0	39438	loop	uade	Paul Robotham	0	5892	b54499af	d2b695e9	examples/DAT_AshesOfEmpire.lzx/AshesOfEmpire sea.dat
 07372e8f8c2393c28a7d354b55bf0eff	1	134450	player	uade	Steve Barrett	0	30966	e9873e76	3df5818f	examples/SB_KellyX.lzx/SB.KellyX
 0769e850a96eff138e43f4c5e10bffff	0	207392	player	uade	TFMX Pro	0	13612	554ace51	e3787042	examples/MDAT_JimPowerUV.lzx/MDAT.JimPower level5
@@ -474,8 +474,8 @@
 0966a9a7a2cd66baca16870be4494817	5	1929	player
 0966a9a7a2cd66baca16870be4494817	6	3637	player
 0966a9a7a2cd66baca16870be4494817	7	5345	player
-0966a9a7a2cd66baca16870be4494817	8	47646	loop
-0966a9a7a2cd66baca16870be4494817	8	47653	loop
+0966a9a7a2cd66baca16870be4494817	8	45812	loop
+0966a9a7a2cd66baca16870be4494817	8	60953	loop
 0967710bf723958748fb297a2ed85823	0	101154	player	uade	Sonix Music Driver	0	4752	71753079	1edc88d9	examples/SMUS_MagnificentForceMusC2.lzx/Magnificent Force MusicCol2/SMUS.QUARK (RED LEOPARD 1)
 0974b4aa567b10d739ddba870865962a	0	245793	player	uade	TFMX Pro	0	8116	648c1ffa	8008fc5e	examples/TFMX_GemX.lzx/MDAT.Gem'X title
 0974b4aa567b10d739ddba870865962a	1	70410	player
@@ -820,11 +820,11 @@
 107ef893907f02f423894be6808d92a0	1	38520	player	uade	ProRunner 2.0	0	35214	5b3565c1	b7ffe910	rips/PRU2_Overdrive.lzx/PRU2.Overdrive level 2 end
 1082bb9a814f89998f0c704feec26df3	0	62191	player	uade	TFMX Pro	0	3044	127ac20f	102d1dbc	examples/TFMX_FreakOut.lzx/MDAT.FreakOut
 1082bb9a814f89998f0c704feec26df3	1	0	nosound
-1082bb9a814f89998f0c704feec26df3	2	8320	silence
-1082bb9a814f89998f0c704feec26df3	3	13277	silence
-1082bb9a814f89998f0c704feec26df3	4	8320	silence
-1082bb9a814f89998f0c704feec26df3	5	13438	silence
-1082bb9a814f89998f0c704feec26df3	6	10795	silence
+1082bb9a814f89998f0c704feec26df3	2	8323	silence
+1082bb9a814f89998f0c704feec26df3	3	13268	silence
+1082bb9a814f89998f0c704feec26df3	4	8323	silence
+1082bb9a814f89998f0c704feec26df3	5	13441	silence
+1082bb9a814f89998f0c704feec26df3	6	10798	silence
 109a0762c670cc48c02c2034896b4d5c	1	61568	player	uade	Protracker	0	23912	096bf482	fee4670d	rips/MOD_Tex08.lzx/MOD.mormal
 10a4ef20263f475998c43af9a84a78c3	1	368770	player	uade	ProPacker 2.1 - 3.0	0	102152	74097520	16800b56	rips/PP21_ABCChemii.lzx/PP21.ABC Chemii
 10bc7976c76385c8534f4a7694d3cab6	0	13583	player	uade	Sierra AGI	0	306	5e258c30	bbe685f9	examples/AGI_DonaldDucksPlayground.lzx/AGI.DonaldDucksPlayground 08
@@ -847,10 +847,10 @@
 111358ffa5504b615f5b5cb37ed4dc71	0	122916	player	uade	TFMX Pro	0	20108	af66938b	7dd3ed0e	examples/MDAT_Tony&FriendsPC.lzx/MDAT.ongame2
 111358ffa5504b615f5b5cb37ed4dc71	1	122916	player
 111358ffa5504b615f5b5cb37ed4dc71	10	46116	player
-111358ffa5504b615f5b5cb37ed4dc71	11	8220	player+silence
-111358ffa5504b615f5b5cb37ed4dc71	12	5821	player+silence
-111358ffa5504b615f5b5cb37ed4dc71	13	7730	player+silence
-111358ffa5504b615f5b5cb37ed4dc71	2	7730	player+silence
+111358ffa5504b615f5b5cb37ed4dc71	11	8219	player+silence
+111358ffa5504b615f5b5cb37ed4dc71	12	5820	player+silence
+111358ffa5504b615f5b5cb37ed4dc71	13	7737	player+silence
+111358ffa5504b615f5b5cb37ed4dc71	2	7737	player+silence
 111358ffa5504b615f5b5cb37ed4dc71	3	1326	player
 111358ffa5504b615f5b5cb37ed4dc71	4	84516	player
 111358ffa5504b615f5b5cb37ed4dc71	5	84516	player
@@ -1100,7 +1100,7 @@
 151b18959f0c268bb74cb43d36ff3035	1	57730	player	uade	Pha Packer	0	60398	b0981a39	2fd5f090	rips/PHA_BrianTheLion.lzx/PHA.BrianTheLion 12
 1521605ba4c51262fae5eefcfe56e5ae	0	407069	player	uade	TFMX Pro	0	20340	b57d0892	443eb0bf	examples/MDAT_Turrican2ST.lzx/MDAT.Turrican2 title
 1521605ba4c51262fae5eefcfe56e5ae	1	193869	player
-1521605ba4c51262fae5eefcfe56e5ae	2	144842	player+silence
+1521605ba4c51262fae5eefcfe56e5ae	2	145064	player+silence
 1521605ba4c51262fae5eefcfe56e5ae	3	10268	player
 1534fdc99d371d7bc6a5d4df25bfc3a6	0	3074	player	uade	Sierra AGI	0	336	a476b5e5	538a4d3d	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 086
 153c555fdc2c72e5a62e21c131f4b635	1	50074	player	uade	Jesper Olsen	0	155410	9137ec31	b206efba	examples/JO_LollyPop.lzx/JO.LollyPop 04
@@ -1653,17 +1653,17 @@
 20f24c6ca962f19d40ac6b89685b3903	1	31789	player	uade	Noisetracker 1.x	0	19152	e02cfe3e	40758d56	rips/MOD_Tex12.lzx/MOD.gmotx
 20fd0eb52f78898d3670158ad551f8da	0	193789	player	uade	TFMX Pro	0	8760	73215764	8bd41482	examples/TFMX_CyberZerk.lzx/MDAT.CyberZerk
 20fd0eb52f78898d3670158ad551f8da	1	31367	player
-20fd0eb52f78898d3670158ad551f8da	10	4602	player+silence
-20fd0eb52f78898d3670158ad551f8da	11	4760	player+silence
+20fd0eb52f78898d3670158ad551f8da	10	4603	player+silence
+20fd0eb52f78898d3670158ad551f8da	11	4761	player+silence
 20fd0eb52f78898d3670158ad551f8da	12	0	nosound
 20fd0eb52f78898d3670158ad551f8da	2	25700	player
 20fd0eb52f78898d3670158ad551f8da	3	7696	player
 20fd0eb52f78898d3670158ad551f8da	4	0	nosound
-20fd0eb52f78898d3670158ad551f8da	5	8049	player+silence
-20fd0eb52f78898d3670158ad551f8da	6	131229	loop
+20fd0eb52f78898d3670158ad551f8da	5	8050	player+silence
+20fd0eb52f78898d3670158ad551f8da	6	131624	loop
 20fd0eb52f78898d3670158ad551f8da	7	138911	player
 20fd0eb52f78898d3670158ad551f8da	8	0	nosound
-20fd0eb52f78898d3670158ad551f8da	9	4654	player+silence
+20fd0eb52f78898d3670158ad551f8da	9	4655	player+silence
 2103e9b00290f0f7a9858a70072559bf	1	176769	player	uade	Soundtracker II (15 instr.)	0	65164	14f53862	27a071db	rips/ST_SoundMachine.lzx/MOD.lw (LONG WALK)
 21117dbead5ed888047c0e27f2719af9	0	30724	player	uade	Magnetic Fields Packer	0	926	53a7ccff	e4578067	examples/MFP_KidVicious.lzx/MFP.KidVicious-3
 2113d6101e944a538212eeb3da32fb0f	1	96030	player	uade	Dave Lowe	0	58196	e87f74ea	18556aa9	examples/DL_LineOfFire.lzx/DL.LineOfFire
@@ -2233,14 +2233,14 @@
 2cc8746dd37bb8940576e1345d596cb3	0	30724	player	uade	UFO	0	1332	4c23202b	981ad508	examples/MUS_UFOCD32.lzx/EnBase.mus
 2cecdda79bbdb6b2009e36b04aaaa6f5	0	50376	player	uade	Nick Pelling Packer	0	1992	29e9bfb0	f9225263	examples/NPP_Battletoads.lzx/NPP.ice
 2ced0db9b85c11d2be4bfa90144d8d3f	0	31407	player	uade	SoundFX	0	22676	e4d945d1	50ea2297	examples/SFX_VenusTheFlytrap.lzx/SFX.Venus ingame 03
-2d02fc26e346d00217cc79d5608a18a1	0	3056	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	examples/TFMX_SoftwareManager.lzx/MDAT.FX (author)
-2d02fc26e346d00217cc79d5608a18a1	1	3112	silence
-2d02fc26e346d00217cc79d5608a18a1	2	3077	silence
+2d02fc26e346d00217cc79d5608a18a1	0	3053	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	examples/TFMX_SoftwareManager.lzx/MDAT.FX (author)
+2d02fc26e346d00217cc79d5608a18a1	1	3110	silence
+2d02fc26e346d00217cc79d5608a18a1	2	3081	silence
 2d02fc26e346d00217cc79d5608a18a1	3	3821	silence
 2d02fc26e346d00217cc79d5608a18a1	4	3721	silence
-2d02fc26e346d00217cc79d5608a18a1	5	3185	silence
-2d02fc26e346d00217cc79d5608a18a1	6	3638	silence
-2d02fc26e346d00217cc79d5608a18a1	7	3150	silence
+2d02fc26e346d00217cc79d5608a18a1	5	3186	silence
+2d02fc26e346d00217cc79d5608a18a1	6	3639	silence
+2d02fc26e346d00217cc79d5608a18a1	7	3151	silence
 2d02fc26e346d00217cc79d5608a18a1	8	3181	silence
 2d0c8f7d98969490f18c2005eef8ccee	1	61568	player	uade	Protracker	0	28476	6407241e	2c5f712b	rips/MOD_Tex08.lzx/MOD.action
 2d303df16e7729ce82a6f3739f3fcd46	0	2210	player	uade	Sierra AGI	0	166	0c5cc8eb	9dbbc2f4	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 075
@@ -2373,7 +2373,7 @@
 2f1e567198016cf9809fe6e3fb5ccf07	1	86425	player	uade	Jochen Hippel COSO	0	2208	ec2ec208	1e539590	examples/SOC_Amberstar.lzx/SOC.Ode to Schnism
 2f263411e65e11a694a4ccc29c905816	1	57610	player	uade	Dave Lowe New	0	25857	d4bacdc0	2ea69074	examples/DLN_SuperStreetFighter2.lzx/DLN.Blanka
 2f263411e65e11a694a4ccc29c905816	2	0	nosound
-2f376920bf45875fc387586ce0a091d4	0	404717	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	examples/TFMX_MasterBlazer.lzx/MDAT.MasterBlazer intro
+2f376920bf45875fc387586ce0a091d4	0	405077	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	examples/TFMX_MasterBlazer.lzx/MDAT.MasterBlazer intro
 2f376920bf45875fc387586ce0a091d4	1	1004	player
 2f376920bf45875fc387586ce0a091d4	2	1004	player
 2f376920bf45875fc387586ce0a091d4	3	1004	player
@@ -2559,7 +2559,7 @@
 327277cfe82d3ee267e0baeee6610020	1	81924	player
 327277cfe82d3ee267e0baeee6610020	2	81924	player
 327277cfe82d3ee267e0baeee6610020	3	5164	player
-327277cfe82d3ee267e0baeee6610020	4	5731	silence
+327277cfe82d3ee267e0baeee6610020	4	5723	silence
 3274657988873e2e3ba97b2fb733845c	0	63055	player	uade	MIDI - Loriciel	0	2738	c74844dc	dc79ab17	examples/MIDI_Entity.lzx/MIDI.Entity L9
 327d7390fd6db4519dd87340583c27ac	1	76920	player	uade	Protracker	0	43640	a463eb7a	4dfbf81b	rips/MOD_Elvira2.lzx/MOD.breathing(life)
 3286eba543046baa3a8b8b4f87e4e493	0	88354	player	uade	Quartet ST	0	5644	2663617c	fd2aac18	examples/QTS_PompeyPiratesMenu.lzx/QTS.PompeyPiratesMenu 106
@@ -2789,7 +2789,7 @@
 37b03442159bc03db708df10ba499254	1	61568	player	uade	Protracker	0	23784	40d87498	77766313	rips/MOD_Diabolik10.lzx/MOD.st1
 37b406445ed1eb805f152b8a690092c1	0	107544	player	uade	TFMX Pro	0	11960	38cea76e	a0c3b8f4	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 5
 37b406445ed1eb805f152b8a690092c1	1	46116	player
-37b406445ed1eb805f152b8a690092c1	2	5699	player+silence
+37b406445ed1eb805f152b8a690092c1	2	5701	player+silence
 37b406445ed1eb805f152b8a690092c1	3	1326	player
 37b406445ed1eb805f152b8a690092c1	4	8982	player
 37c9146054677f23b63e6b93f1c4382f	1	83873	player	uade	Richard Joseph	0	41796	756fb5bc	ad6996d1	examples/RJ_JamesPond2.lzx/RJ.Robocod title
@@ -3162,7 +3162,7 @@
 3f25d6f21f1021f6a4b92b3ceb789161	7	10218	silence
 3f25d6f21f1021f6a4b92b3ceb789161	8	7817	silence
 3f25d6f21f1021f6a4b92b3ceb789161	9	7817	silence
-3f26fb76d1c768c0a60d6e73fcf15aa2	0	9861	silence	uade	TFMX Pro	0	1088	0f1f88e9	456be332	examples/TFMX_Turrican3.lzx/MDAT.Factor5
+3f26fb76d1c768c0a60d6e73fcf15aa2	0	8782	silence	uade	TFMX Pro	0	1088	0f1f88e9	456be332	examples/TFMX_Turrican3.lzx/MDAT.Factor5
 3f26fb76d1c768c0a60d6e73fcf15aa2	1	3426	silence
 3f26fb76d1c768c0a60d6e73fcf15aa2	2	9521	silence
 3f282fafe4096d1501730f3932e9e1f3	0	51541	player	uade	TFMX Pro	0	12448	8f84db8d	c9beacda	examples/TFMX_DasSchwarzeAuge.lzx/MDAT.DSA Intro
@@ -3407,7 +3407,7 @@
 44a60fddd131257d897a3ed22a8bd655	3	30744	player
 44a60fddd131257d897a3ed22a8bd655	4	2451	player
 44a60fddd131257d897a3ed22a8bd655	5	2592	player
-44a60fddd131257d897a3ed22a8bd655	6	18483	silence
+44a60fddd131257d897a3ed22a8bd655	6	18491	silence
 44b43c02a5f8b875f1bac9bcd38233ed	1	92272	player	uade	Noisetracker 1.x	0	94942	ab848ad9	37889f94	rips/MOD_ItalianNight1999.lzx/MOD.galleria
 44bc5f3cad610aa47ee2d45d63c7c000	1	116285	player	uade	Protracker	0	22992	f1c1dabe	1960e36d	rips/MOD_NoiseFromHeaven1.lzx/MOD.when santa sleeps
 44c3ffedfb1fe91ba010d18b4aa6d72f	1	61568	player	uade	Soundtracker II (31 instr.)	0	32088	4cd8e6f8	21b4e32d	rips/MOD_Simulman05.lzx/MOD.cinque
@@ -3552,7 +3552,7 @@
 47e0d7e64f71238d452ac8e63ee39795	1	23168	player	uade	Protracker compatible	0	37292	20348f1c	ec3124bc	rips/MOD_VikingChild.lzx/MOD.monster5
 47e2941560a928a84522fba701283879	0	70430	player	uade	TFMX Pro	0	9600	1bac97fd	f61fda28	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 3
 47e2941560a928a84522fba701283879	1	35868	player
-47e2941560a928a84522fba701283879	2	5699	player+silence
+47e2941560a928a84522fba701283879	2	5701	player+silence
 47e2941560a928a84522fba701283879	3	1326	player
 47e2941560a928a84522fba701283879	4	35868	player
 47ec644bb0ffa24283e60b903020c5be	1	166420	player	uade	Special FX ST	0	9990	9ae24a9f	fcde6e84	examples/DODA_NavySeals.lzx/DODA.NavySeals
@@ -4485,7 +4485,7 @@
 5acf8ed64f7968881706cc4368e6dafd	0	15713	player	uade	Sierra AGI	0	456	64819d04	ed1b33b8	examples/AGI_KingsQuest4.lzx/AGI.King'sQuestIV 92
 5ad604e1538d62e98f2e73ffd1853275	0	101636	loop	uade	CustomPlay	0	78532	f791ec89	88474a1c	customs/Gotcha!.lha/CUST.Gotcha!
 5ad90cb7bfb0abb370f37cf9093a1351	0	60744	player	uade	PumaTracker	0	15906	e5d36fad	87a37171	examples/PUMA_Elf.lzx/PUMA.elf-lakes
-5ade805268a995f4b374c253f2b8738a	0	4962	silence	uade	TFMX Pro	0	2940	bdb4a35b	5421781c	examples/TFMX_GemZ.lzx/MDAT.Gem'Z 4
+5ade805268a995f4b374c253f2b8738a	0	4964	silence	uade	TFMX Pro	0	2940	bdb4a35b	5421781c	examples/TFMX_GemZ.lzx/MDAT.Gem'Z 4
 5ade805268a995f4b374c253f2b8738a	1	1949	player
 5ade805268a995f4b374c253f2b8738a	2	3215	player
 5ade805268a995f4b374c253f2b8738a	3	3858	player
@@ -4859,7 +4859,7 @@
 64a418349fdd618afb7b62197f24db5e	0	222664	player	uade	CustomPlay	0	3161628	ec697484	6723b7a1	customs/Lapsuus.lha/CUST.Lapsuus
 64ba519b51602ccd80a3353e0680923d	1	76920	player	uade	Soundtracker II (31 instr.)	0	68978	3e77180a	8f64fada	rips/MOD_Simulman02.lzx/MOD.cinthia
 64c601dbe591c6220c54f7a7338b73ef	0	16095	player	uade	TFMX Pro	0	2400	8c6d4fd4	c3b6cbbf	examples/TFMX_KaramalzCup.lzx/MDAT.pause
-64c601dbe591c6220c54f7a7338b73ef	1	7397	player+silence
+64c601dbe591c6220c54f7a7338b73ef	1	7381	player+silence
 64c601dbe591c6220c54f7a7338b73ef	2	6269	player
 64c83df8eb17d101c4cd5e9553682242	1	53772	player	uade	Dave Lowe New	0	119130	a3c1bb59	b2d468e0	examples/DLN_BeneathASteelSky.lzx/DLN.BeneathASteelSky 05
 64c83df8eb17d101c4cd5e9553682242	2	0	nosound
@@ -4899,13 +4899,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 65862cfd45125f581c0c4b978c68290f	1	172830	player	uade	Special FX ST	0	6298	a56abd42	1f70853c	examples/DODA_Robocop2.lzx/DODA.Robocop2 firing
@@ -5167,7 +5167,7 @@
 6c15720dcfc1294c41d7d701ca56aece	1	144015	player
 6c15720dcfc1294c41d7d701ca56aece	2	77302	player
 6c25c73d8b7166e58edb211ba7cb9f34	0	9559	player+silence	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	41348	1a146850	140ec9fb	rips/ST_OperationWolf.lzx/MOD.wolf31
-6c3ae239008e6aa6a59d9f0c5e476b85	0	81924	player	uade	TFMX Pro	0	6936	ca835e11	cb7de5ce	examples/TFMX_Oath.lzx/MDAT.Techno Prison (author)
+6c3ae239008e6aa6a59d9f0c5e476b85	0	81944	player	uade	TFMX Pro	0	6936	ca835e11	cb7de5ce	examples/TFMX_Oath.lzx/MDAT.Techno Prison (author)
 6c3ae239008e6aa6a59d9f0c5e476b85	1	51220	player
 6c3ae239008e6aa6a59d9f0c5e476b85	2	2712	player
 6c3ae239008e6aa6a59d9f0c5e476b85	3	1245	player
@@ -5257,7 +5257,7 @@
 6de6deec88f63257a453a5bc03d48c79	6	38420	player
 6de6deec88f63257a453a5bc03d48c79	7	3395	player
 6de6deec88f63257a453a5bc03d48c79	8	1326	player
-6de6deec88f63257a453a5bc03d48c79	9	6220	player+silence
+6de6deec88f63257a453a5bc03d48c79	9	6213	player+silence
 6def8ea0d8367e4418732c4e395593bd	1	172830	player	uade	Special FX ST	0	6750	b431a3b1	ffdf6c86	examples/DODA_Robocop2.lzx/DODA.Robocop2 puzzle
 6def8ea0d8367e4418732c4e395593bd	2	174116	player
 6df947af1531cc8c5dd6624ec3f58ee6	0	191538	player	uade	CustomPlay	0	196224	1fe5aa34	628506f0	customs/G.nius.lha/CUST.G.nius
@@ -5738,7 +5738,7 @@
 789565dd345e7875d89b2bb48f7fd3d8	0	7876	player	uade	MED Packer	0	19140	8f1f7272	44483f25	examples/MMDC_Knightmare.lzx/MMDC.Knightmare ingame2
 78a145f61a269ce20716ea617df17650	1	157458	player	uade	Jochen Hippel ST	0	5306	4194f806	c6a7f1ab	examples/HST_APrehistoricTale.lzx/HST.APrehistoricTale 3
 78a145f61a269ce20716ea617df17650	2	2592	player
-78ac26df20aa77877f1d6169e39af6be	0	311045	player+silence	uade	TFMX Pro	0	17752	e649763d	616ca816	examples/MDAT_CarlLewisChallengeST.lzx/MDAT.CarlLewisChallengeST main
+78ac26df20aa77877f1d6169e39af6be	0	311111	player+silence	uade	TFMX Pro	0	17752	e649763d	616ca816	examples/MDAT_CarlLewisChallengeST.lzx/MDAT.CarlLewisChallengeST main
 78ac26df20aa77877f1d6169e39af6be	1	49934	player
 78ae397e8fd8205332d1adb056aef249	0	24314	player	uade	Sonix Music Driver	0	592	9dfdc679	238df183	examples/TINY_TheGamesWinterEdit.lzx/The Games - Winter Edition/TINY.Canada
 78bd41186eac3703210d62bc52d76788	1	262391	player+silence	uade	Protracker	0	144324	69e57d60	8914d2f7	rips/MOD_Rolling.lzx/MOD.cruel-destiny
@@ -6303,7 +6303,7 @@
 8461ac86c297fd54323996677304924c	2	268439	player
 8461ac86c297fd54323996677304924c	3	0	nosound
 8461ac86c297fd54323996677304924c	4	47205	loop
-8473e4cd7b0afa6717132cb01d7e22ad	0	188849	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	examples/TFMX_Logical.lzx/MDAT.Logical title
+8473e4cd7b0afa6717132cb01d7e22ad	0	188650	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	examples/TFMX_Logical.lzx/MDAT.Logical title
 847a7e078ce817c01820300fc3b7a85d	0	160030	player	uade	TFMX Pro	0	5068	0821d043	2b679be2	examples/TFMX_BugBomber.lzx/MDAT.BugBomber
 847d15f0b375c8b216a202663f152f60	0	1165	player	uade	Sonix Music Driver	0	400	ebad7e60	646bc71f	examples/TINY_CarmenWorld1989.lzx/Carmen World 1989/TINY.CarmenWorld 08
 848795434a95cb50fac212fd4af575d4	1	92272	player	uade	Protracker	0	25694	165f4329	6bc2ee2b	rips/MOD_Simulman02.lzx/MOD.st3
@@ -6438,7 +6438,7 @@
 858dd10a247fc6d089c0b07d87586f9d	0	92172	player	uade	TFMX Pro	0	7876	4c61b493	153ac7de	examples/TFMX_Quick&Silva.lzx/MDAT.Silva
 858dd10a247fc6d089c0b07d87586f9d	1	87068	player
 858dd10a247fc6d089c0b07d87586f9d	2	56344	player
-858dd10a247fc6d089c0b07d87586f9d	3	19117	loop
+858dd10a247fc6d089c0b07d87586f9d	3	171168	loop
 859a24d1e2a036f2e356f5e7f33a3984	1	94222	player	uade	Protracker compatible	0	70814	acf8a86e	61074aa3	rips/MOD_TorvakTheWarrior.lzx/MOD.torvakingame
 859a24d1e2a036f2e356f5e7f33a3984	2	99968	player
 859a24d1e2a036f2e356f5e7f33a3984	3	77885	player
@@ -6616,9 +6616,9 @@
 8a39a6410033cf05d065b3d40c7ee1b2	1	99968	player	uade	Protracker compatible	0	54964	4b571217	bb053724	rips/MOD_DylanDogAdv.lzx/MOD.rainy house
 8a3a5d3e1183eb7ea8b959183accc521	1	34642	player	uade	Protracker	0	98572	97a006b4	cc3a9c5a	rips/MOD_SkizzoDemo2.lzx/MOD.SkizzoDemo2 06
 8a4cdb53e67857547237a3f2daf7e20a	0	125468	player	uade	TFMX Pro	0	8728	3ca5e640	ef6f305e	examples/TFMX_Oath.lzx/MDAT.Mutant Planet
-8a4cdb53e67857547237a3f2daf7e20a	1	10784	repeat
+8a4cdb53e67857547237a3f2daf7e20a	1	10088	repeat
 8a4cdb53e67857547237a3f2daf7e20a	2	2712	player
-8a4cdb53e67857547237a3f2daf7e20a	3	4666	silence
+8a4cdb53e67857547237a3f2daf7e20a	3	4644	silence
 8a61de0c825ea87109843e2214ec75fe	0	84496	player	uade	Fashion Tracker	0	62382	f661a751	d161bfa3	examples/EX_Astronuts22.lzx/EX.Glowing ears II
 8a6d2f2f8042a0f18350653670c5ac76	1	97316	player	uade	Jochen Hippel	0	75722	b0de6f34	c6f540a9	examples/SOG_WingsOfDeathST.lzx/SOG.WingsOfDeathST outro
 8a6d2f2f8042a0f18350653670c5ac76	2	1306	player
@@ -6671,7 +6671,7 @@
 8b67e2242755c5f5ccfec377c5ad6ee1	0	3719	player+silence	uade	SoundFX	0	19172	62d6a6f0	76d6f4f1	rips/SFX_BushBuck.lzx/SFX.BushBuck 09
 8b67f5d4c45052626cdfceead74de906	0	81944	player	uade	TFMX Pro	0	10960	c6e48f90	bbfbfa0f	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 4
 8b67f5d4c45052626cdfceead74de906	1	51220	player
-8b67f5d4c45052626cdfceead74de906	2	5699	player+silence
+8b67f5d4c45052626cdfceead74de906	2	5701	player+silence
 8b67f5d4c45052626cdfceead74de906	3	1326	player
 8b7a2d087ad7b0cf0c3f50d7ef3ccffe	1	245893	player	uade	Protracker	0	80146	fdcabec5	60d84a00	rips/MOD_Brainies.lzx/MOD.game
 8b7a2d087ad7b0cf0c3f50d7ef3ccffe	2	5798	player+silence
@@ -6862,7 +6862,7 @@
 8edf097eb93ab6b043d7ffb7efeaddf3	2	111382	player
 8ef5adaec15f1a89bbfb2ed9076934ad	0	20496	player	uade	TFMX Pro	0	2616	50b1a286	0c443bed	examples/TFMX_Subtrade.lzx/MDAT.Subtrade 2
 8ef5adaec15f1a89bbfb2ed9076934ad	1	8138	player
-8ef5adaec15f1a89bbfb2ed9076934ad	2	5177	player+silence
+8ef5adaec15f1a89bbfb2ed9076934ad	2	5181	player+silence
 8ef5adaec15f1a89bbfb2ed9076934ad	3	12498	player
 8ef5adaec15f1a89bbfb2ed9076934ad	4	1125	player
 8ef5adaec15f1a89bbfb2ed9076934ad	5	3134	player
@@ -7025,10 +7025,10 @@
 92f3dfa2e19bc3f8b2b0a954e7dece41	0	122916	player	uade	TFMX Pro	0	20108	0779bbbe	21f5c19a	examples/TFMX_Tony&Friends.lzx/MDAT.ongame2
 92f3dfa2e19bc3f8b2b0a954e7dece41	1	122916	player
 92f3dfa2e19bc3f8b2b0a954e7dece41	10	46116	player
-92f3dfa2e19bc3f8b2b0a954e7dece41	11	8220	player+silence
-92f3dfa2e19bc3f8b2b0a954e7dece41	12	5821	player+silence
-92f3dfa2e19bc3f8b2b0a954e7dece41	13	7730	player+silence
-92f3dfa2e19bc3f8b2b0a954e7dece41	2	7730	player+silence
+92f3dfa2e19bc3f8b2b0a954e7dece41	11	8219	player+silence
+92f3dfa2e19bc3f8b2b0a954e7dece41	12	5820	player+silence
+92f3dfa2e19bc3f8b2b0a954e7dece41	13	7737	player+silence
+92f3dfa2e19bc3f8b2b0a954e7dece41	2	7737	player+silence
 92f3dfa2e19bc3f8b2b0a954e7dece41	3	1326	player
 92f3dfa2e19bc3f8b2b0a954e7dece41	4	84516	player
 92f3dfa2e19bc3f8b2b0a954e7dece41	5	84516	player
@@ -7517,7 +7517,7 @@
 9d801383871c177f163633e7796a7bfc	0	40349	player	uade	TFMX Pro	0	3040	129b6228	2d379497	examples/TFMX_CaribbeanDisaster.lzx/MDAT.Kneipe
 9d96db43aa9366d079b35669e5f95de1	0	321	player	uade	Sierra AGI	0	81	67e4c13c	b4c96b29	examples/AGI_KingsQuest1.lzx/AGI.King'sQuestI 15
 9d9f0c131a98d11e66e7087829ec0213	1	176769	player	uade	Protracker	0	23448	9738c8e7	872bd7dd	rips/MOD_TimeRunners21.lzx/MOD.arca
-9d9f944336e0a967981a6ba5739daa2c	0	55064	loop	uade	TFMX Pro	0	3028	0d68aa89	269b9edd	examples/TFMX_Ramses.lzx/MDAT.Ramses title
+9d9f944336e0a967981a6ba5739daa2c	0	56309	loop	uade	TFMX Pro	0	3028	0d68aa89	269b9edd	examples/TFMX_Ramses.lzx/MDAT.Ramses title
 9d9f944336e0a967981a6ba5739daa2c	1	38420	player
 9d9f944336e0a967981a6ba5739daa2c	2	46096	player
 9da1f7ad8130ad9b9efc4d5eae259310	0	221	player	uade	Sierra AGI	0	50	38487be4	7a3829e4	examples/AGI_Manhunter1.lzx/AGI.ManhunterI 96
@@ -7732,7 +7732,7 @@ a131d4a8a3adca863f0ecaacdc2ad1a4	1	92272	player	uade	Protracker	0	26608	d62886ba
 a1356104fb5cc4e05960cf89393ed0e3	0	261814	loop	uade	CustomPlay	0	65708	188ab3ad	2bc2d7cb	customs/DarkCentury.lha/CUST.DarkCentury
 a1375b78485c109370a054a94f93c1db	1	49847	player+silence	uade	Soundtracker II (15 instr.)	0	42608	2f29b8e9	07274864	rips/ST_BioChallenge.lzx/MOD.toyota6
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	examples/TFMX_DasSchmutzigeErbe.lzx/MDAT.Erbe2
-a1389382a197d038400d80a9b76c525d	1	81924	player
+a1389382a197d038400d80a9b76c525d	1	81944	player
 a1389382a197d038400d80a9b76c525d	2	61468	player
 a1389382a197d038400d80a9b76c525d	3	176668	player
 a14e852fd795761ab2a07a3621823327	1	23321	player+silence	uade	Protracker	0	72556	bc980e8f	18935a7c	rips/MOD_1869AGA.lzx/MOD.news
@@ -7779,7 +7779,7 @@ a22bea66754b5809a19479d204488ff8	1	38520	player	uade	Protracker	0	119274	48daea9
 a22bea66754b5809a19479d204488ff8	2	84616	player
 a22bea66754b5809a19479d204488ff8	3	46216	player
 a22ed67ba168e3adb401a1903f808e6f	0	16236	player	uade	SoundFX	0	30044	247c884f	a1b9f572	rips/SFX_BushBuck.lzx/SFX.BushBuck 05
-a2474c344ef516e9bf378af290fee8b6	0	200661	player+volume	uade	TFMX Pro	0	8680	c5f06d1d	2501988e	examples/TFMX_GemZ.lzx/MDAT.Gem'Z title
+a2474c344ef516e9bf378af290fee8b6	0	200035	player+volume	uade	TFMX Pro	0	8680	c5f06d1d	2501988e	examples/TFMX_GemZ.lzx/MDAT.Gem'Z title
 a2474c344ef516e9bf378af290fee8b6	1	48025	player
 a2474c344ef516e9bf378af290fee8b6	2	15372	player
 a2474c344ef516e9bf378af290fee8b6	3	15372	player
@@ -7815,7 +7815,7 @@ a33727f2585e4afcfe4d62d36b9e9b24	0	78729	player	uade	SoundPlayer	0	7719	e9c9e0c0
 a33a4ef23f43543ae09ee4fecc4a0a61	1	51220	player	uade	Jesper Olsen	0	68156	46e8f3a3	04c00643	examples/JO_GeorgGlaxo.lzx/JO.GeorgGlaxo hiscore
 a33c9b463f291f483afb73f3267669d9	0	76820	player	uade	TFMX Pro	0	11368	7b426dc9	83554b8c	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 6
 a33c9b463f291f483afb73f3267669d9	1	51220	player
-a33c9b463f291f483afb73f3267669d9	2	5699	player+silence
+a33c9b463f291f483afb73f3267669d9	2	5701	player+silence
 a33c9b463f291f483afb73f3267669d9	3	1326	player
 a33c9b463f291f483afb73f3267669d9	4	5144	player
 a343567b42d2227e9088ab939869fd50	1	245813	player	uade	Wally Beben	0	75446	c9dabdc9	cf532278	examples/WB_PoolOfRadiance.lzx/WB.PoolOfRadiance
@@ -7913,7 +7913,7 @@ a5bdc0281140e40b87c5dbd5a2445021	0	27408	player	uade	Sonix Music Driver	0	865	66
 a5bfe384052cbda4bfa84b84a84847df	0	51220	player	uade	TFMX Pro	0	7984	1c34461a	f847854a	examples/TFMX_CrystalPalace.lzx/MDAT.ongame
 a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
-a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
+a5bfe384052cbda4bfa84b84a84847df	3	4744	silence
 a5cf58790e6e482e25fed6cb3d0f74f8	1	115321	player	uade	Protracker	0	29882	8f4eb771	1a87040b	rips/MOD_TimeRunners26.lzx/MOD.secmus
 a5d6e5e7deb9387b2f447cbb3ccdf6cf	0	15251	player	uade	NoiseTracker	0	80758	53d5fe60	b6ec31bc	examples/NT_GnomieByNight.lzx/MOD.strulengok-19
 a5dbac5e21834f15c56e00555ddd30a9	1	38520	player	uade	Soundtracker II (15 instr.)	0	25196	efcd8379	af0fa281	rips/ST_Gilbert.lzx/MOD.g-bonuslevel
@@ -8240,7 +8240,7 @@ ad595a805acefe2be2765735ecbbb4c0	0	61870	player	uade	SoundFX	0	66380	5532db25	eb
 ad5d0a587773092791d71b0aa011903b	0	723	player	uade	Sierra AGI	0	156	fca13623	61663520	examples/AGI_GoldRush.lzx/AGI.GoldRush 40
 ad60e021fd8a7f374a3c7518ce2f5bc6	0	2210	player	uade	Sierra AGI	0	161	b5d7b30c	b4c78b9a	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 149
 ad70b0e876307772d38aad6b7ef5bffc	1	182938	player	uade	OctaMED MMD0	0	29856	67f11b1d	9a63172a	rips/MED_SoulCrystal.lzx/MED.Mallet Mood
-ad7842d19469dd1df1ba45ff11174404	0	37814	loop	uade	TFMX Pro	0	3040	a8d7d435	ec5c18cd	examples/TFMX_DasTelekommando2.lzx/MDAT.outro (author)
+ad7842d19469dd1df1ba45ff11174404	0	57222	loop	uade	TFMX Pro	0	3040	a8d7d435	ec5c18cd	examples/TFMX_DasTelekommando2.lzx/MDAT.outro (author)
 ad920d1e1ab9c79b27e98e265bb21f74	1	71857	player	uade	ProRunner 2.0	0	36558	d60b1e07	003eac23	rips/PRU2_Overdrive.lzx/PRU2.Overdrive choose pilot
 ada722f52905d73ff32417c7aaed85ea	0	3054	player	uade	Sierra AGI	0	161	c598614c	6d4076c6	examples/AGI_KingsQuest3.lzx/AGI.King'sQuestIII 15
 ada722f52905d73ff32417c7aaed85ea	0	3054	player	uade	Sierra AGI	0	161	c598614c	6d4076c6	examples/AGI_SierraDemo1.lzx/AGI.Demo 04
@@ -8425,7 +8425,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b17307d38a77cde6e339f5effccb976e	0	1205	player	uade	Sierra AGI	0	91	3c5520e2	3d4c649b	examples/AGI_MixedUpMotherGoose.lzx/AGI.MixedUpMotherGoose 49
 b1861f845f33736c5b6c0bed8945f4d2	0	6430	player	uade	Sierra AGI	0	571	e5cb4ff1	122f88c7	examples/AGI_SierraDemo5.lzx/AGI.Demo4 05
 b18c9106b6d6501768bd55f051b0b576	1	169093	player	uade	Soundtracker II (15 instr.)	0	84796	46538e1c	125dd6ed	rips/ST_Savage.lzx/MOD.savage level three
@@ -8532,7 +8532,7 @@ b4a9b7c1826a1e9b7a2d3acb44d7366d	4	15372	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	5	65306	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	6	34582	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	7	7696	player
-b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43215	player+volume
+b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43219	player+volume
 b4a9b7c1826a1e9b7a2d3acb44d7366d	9	25620	player
 b4b5ffa637f62d4c99405558ef7c5207	0	26886	player	uade	Pierre Adane Packer	0	1714	1ff6685a	6c981aad	examples/PAP_Ivanhoe.lzx/PAP.Ivanhoe level1 (forest)
 b4c38cd1081f76a027e6b18a873781fd	0	63939	player	uade	Alcatraz Packer	0	866	f81e188c	815837a8	examples/ALP_Cedric.lzx/ALP.Cedric intro
@@ -8633,7 +8633,7 @@ b693071b4721ff13b01bcc7413f112a0	1	34682	player	uade	Dave Lowe New	0	29091	6b7fe
 b693071b4721ff13b01bcc7413f112a0	2	0	nosound
 b69cdbd3f2b5809f3fe85004b940d94d	0	81944	player	uade	TFMX Pro	0	10608	768a81de	3a04e0d2	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 1
 b69cdbd3f2b5809f3fe85004b940d94d	1	46116	player
-b69cdbd3f2b5809f3fe85004b940d94d	2	5699	player+silence
+b69cdbd3f2b5809f3fe85004b940d94d	2	5701	player+silence
 b69cdbd3f2b5809f3fe85004b940d94d	3	1326	player
 b69d529ad45477ca687e4427f296a518	0	5566	player	uade	Sierra AGI	0	391	fb4a51b3	88ee101a	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 145_fix
 b6a46e4be8d4bda64163ec0c845bfa29	1	6510	player	uade	Soundtracker II (15 instr.)	0	4476	9dec7b94	537ddaef	rips/ST_Cabal.lzx/MOD.cabal2
@@ -8714,7 +8714,7 @@ b80f29698a6d5367ac76e89ccb9b6195	6	3061	silence
 b80f29698a6d5367ac76e89ccb9b6195	7	3861	silence
 b80f29698a6d5367ac76e89ccb9b6195	8	3381	silence
 b80f29698a6d5367ac76e89ccb9b6195	9	3160	silence
-b80f9cf265782038aba008eb6143a711	0	81924	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	examples/TFMX_Oath.lzx/MDAT.The Call Of Gold
+b80f9cf265782038aba008eb6143a711	0	81944	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	examples/TFMX_Oath.lzx/MDAT.The Call Of Gold
 b80f9cf265782038aba008eb6143a711	1	65306	player
 b80f9cf265782038aba008eb6143a711	2	2712	player
 b80f9cf265782038aba008eb6143a711	3	1245	player
@@ -8996,9 +8996,9 @@ bc14b7b359f4208135169fbe17967a38	1	24789	silence	uade	Dave Lowe New	0	71773	87e7
 bc14b7b359f4208135169fbe17967a38	2	24789	silence
 bc178eafd5100df60d966c2ab45dcb57	1	38440	player	uade	OctaMED MMD0	0	27386	d4bc5df6	45dc471f	rips/MED_Boppin.lzx/MED.Bumblebelly
 bc2b0a4dce4715203daecbc9e4f0b8f2	1	51220	player	uade	Jochen Hippel ST	0	4534	c281ff67	458b3c8c	examples/HST_Turrican2.lzx/HST.Turrican2 loading
-bc2d22493a61d36e842ee519016efbd3	0	5398	silence	uade	TFMX Pro	0	892	ef1f2f60	a12c8e62	examples/TFMX_MasterBlazer.lzx/MDAT.MasterBlazer loader
-bc2d22493a61d36e842ee519016efbd3	1	5161	silence
-bc2d22493a61d36e842ee519016efbd3	2	5514	silence
+bc2d22493a61d36e842ee519016efbd3	0	5405	silence	uade	TFMX Pro	0	892	ef1f2f60	a12c8e62	examples/TFMX_MasterBlazer.lzx/MDAT.MasterBlazer loader
+bc2d22493a61d36e842ee519016efbd3	1	5159	silence
+bc2d22493a61d36e842ee519016efbd3	2	5511	silence
 bc47456dd7633d8500b59072fbf99810	0	3576	player	uade	Sierra AGI	0	106	4f50b65b	0ae9fa97	examples/AGI_MixedUpMotherGoose.lzx/AGI.MixedUpMotherGoose 40
 bc5ea6ed34781da816d8b5cf7d9ce5a2	1	73464	player	uade	Protracker	0	45432	0e3a2f36	586e8d5c	rips/MOD_QuikTheThunderRabbit.lzx/MOD.rabbit-level3.nuit
 bc5ea6ed34781da816d8b5cf7d9ce5a2	2	43262	player
@@ -9057,7 +9057,7 @@ bdd7506b5d2b48f21938c7ba468105de	0	321	player	uade	Sierra AGI	0	61	ddc029f4	52f0
 bded7623ca00863cd665f113f30b4d5b	1	107645	player	uade	Soundtracker II (15 instr.)	0	28044	63c9acea	3ae5bc8d	rips/ST_Iceball.lzx/MOD.koto
 bdeec7e2782e4718344c274271e48edf	0	26343	player	uade	SoundFX	0	43648	aad0d5e3	455a01ef	examples/SFX_AnotherWorld.lzx/SFX.AnotherWorld jingle
 bdf778a07f382c751f2eea646cc12e23	0	30724	player	uade	Pierre Adane Packer	0	2152	9731d46c	430b4eb2	examples/PAP_Pang.lzx/PAP.Pang 04
-bdfa5dcb97f513764e401189c39adb12	0	81924	player	uade	TFMX Pro	0	6920	00f4bca9	93943b5e	examples/TFMX_Oath.lzx/MDAT.Techno Prison
+bdfa5dcb97f513764e401189c39adb12	0	81944	player	uade	TFMX Pro	0	6920	00f4bca9	93943b5e	examples/TFMX_Oath.lzx/MDAT.Techno Prison
 bdfa5dcb97f513764e401189c39adb12	1	51220	player
 bdfa5dcb97f513764e401189c39adb12	2	2712	player
 bdfa5dcb97f513764e401189c39adb12	3	1245	player
@@ -9101,7 +9101,7 @@ beb9dcd9e9630e3505149cd9eaa36eaf	1	61568	player	uade	Pha Packer	0	51880	58e620da
 beb9dcd9e9630e3505149cd9eaa36eaf	2	61568	player
 bebbdc8ec3e857bd8c4597d851afb740	1	19310	player	uade	Protracker	0	32296	17f24352	cf55a6e6	rips/MOD_Lotus2.lzx/MOD.jingle8
 bebe7d08418575627b9da2eb6ce1ff52	0	92172	player	uade	TFMX Pro	0	4232	af6edf3c	14daec64	examples/TFMX_MetalLaw.lzx/MDAT.MetalLaw 2
-bec5f99239633b6edbf4ff5402ad7642	0	404717	player+silence	uade	TFMX Pro	0	20896	fe56f0dc	c8e28562	examples/MDAT_MasterBlazerST.lzx/MDAT.MasterBlazerST intro
+bec5f99239633b6edbf4ff5402ad7642	0	405077	player+silence	uade	TFMX Pro	0	20896	fe56f0dc	c8e28562	examples/MDAT_MasterBlazerST.lzx/MDAT.MasterBlazerST intro
 bec5f99239633b6edbf4ff5402ad7642	1	1004	player
 bec5f99239633b6edbf4ff5402ad7642	2	1004	player
 bec5f99239633b6edbf4ff5402ad7642	3	1004	player
@@ -9137,7 +9137,7 @@ bf62944f77960d0aa10e72681273750d	1	80758	player	uade	Protracker	0	26628	4d83ea2b
 bf6829e3d41c69af46df5dc9babc8212	0	5304	player	uade	Sierra AGI	0	216	0e93e09f	8ca24bf0	examples/AGI_BlackCauldron.lzx/AGI.BlackCauldron 23
 bf8a95971b692da3a1a46b626873cf81	0	101777	player	uade	TFMX Pro	0	10420	50c9c08a	7bfd54d9	examples/TFMX_Z-Out.lzx/MDAT.Z-Out 2
 bf8a95971b692da3a1a46b626873cf81	1	26906	player
-bf8a95971b692da3a1a46b626873cf81	2	5699	player+silence
+bf8a95971b692da3a1a46b626873cf81	2	5701	player+silence
 bf8a95971b692da3a1a46b626873cf81	3	1326	player
 bf8f9f42d31e3c3b69febeb35b5a1e37	1	289417	player	uade	Soundtracker II (15 instr.)	0	110186	2ef311e9	14251412	rips/ST_Classic.lzx/MOD.warhawk
 bf8fa879af47300bb0326160e62195fd	1	98361	player	uade	Soundtracker II (15 instr.)	0	364540	ec047cfc	4bcd49c0	rips/ST_RandomAccess.lzx/MOD.mc paranoimia
@@ -9197,15 +9197,15 @@ c0fc923cc2bbac4f560ce2be56b08d8b	0	27087	player	uade	Mugician II	0	78616	bf1c66a
 c120517a466ed6c3684bc1fa01d4c3b9	1	65406	player	uade	Protracker	0	15554	20bf6f1c	857f47b9	rips/MOD_NoiseFromHeaven2.lzx/MOD.never_to_finish
 c123d1918c5690dac4129f3c2cd3e0be	0	107544	player	uade	Sonic Arranger	0	49824	0281d1d2	60990851	examples/SA_TRSI.lzx/SA.TRSI intro 1
 c13240e8032037f65b7b6e1a74414943	0	10810	player	uade	Sonix Music Driver	0	1431	2ba48efd	3b4720f2	examples/SNX_RiseOfTheDragon.lzx/Rise Of The Dragon/SNX.rescue arcade
-c1451e7f0e2eaa049ef497909e0621be	0	4044	silence	uade	TFMX Pro	0	960	d7271b4a	26c23f3e	examples/TFMX_FreakOut.lzx/MDAT.FreakOut FX (author)
-c1451e7f0e2eaa049ef497909e0621be	1	3170	silence
-c1451e7f0e2eaa049ef497909e0621be	2	3280	silence
+c1451e7f0e2eaa049ef497909e0621be	0	4045	silence	uade	TFMX Pro	0	960	d7271b4a	26c23f3e	examples/TFMX_FreakOut.lzx/MDAT.FreakOut FX (author)
+c1451e7f0e2eaa049ef497909e0621be	1	3174	silence
+c1451e7f0e2eaa049ef497909e0621be	2	3296	silence
 c1451e7f0e2eaa049ef497909e0621be	3	3107	silence
 c1451e7f0e2eaa049ef497909e0621be	4	3759	silence
-c1451e7f0e2eaa049ef497909e0621be	5	3197	silence
+c1451e7f0e2eaa049ef497909e0621be	5	3202	silence
 c1451e7f0e2eaa049ef497909e0621be	6	3234	silence
-c1451e7f0e2eaa049ef497909e0621be	7	3370	silence
-c1451e7f0e2eaa049ef497909e0621be	8	3216	silence
+c1451e7f0e2eaa049ef497909e0621be	7	3365	silence
+c1451e7f0e2eaa049ef497909e0621be	8	3223	silence
 c14a8f4539322104f5e04617d37d0151	1	150795	player+silence	uade	Protracker compatible	0	70916	f86b5b43	3bb4fb58	rips/MOD_VikingChild.lzx/MOD.prophecy1
 c168050fd1e9efc3e8536e991ff17cbc	0	321	player	uade	Sierra AGI	0	76	2456b98e	69a76c6b	examples/AGI_KingsQuest3.lzx/AGI.King'sQuestIII 13
 c168050fd1e9efc3e8536e991ff17cbc	0	321	player	uade	Sierra AGI	0	76	2456b98e	69a76c6b	examples/AGI_LeisureSuitLarry1.lzx/AGI.LeisureSuitLarryI 23
@@ -9213,8 +9213,8 @@ c168050fd1e9efc3e8536e991ff17cbc	0	321	player	uade	Sierra AGI	0	76	2456b98e	69a7
 c1798df5ff311856a4f6c18151245e22	1	99968	player	uade	Soundtracker II (31 instr.)	0	54198	3e3b2f4b	b1e744b6	rips/MOD_Diabolik02.lzx/MOD.in_action
 c183a1db9f1160b4095d8c2913d794f1	0	89218	player	uade	Maximum Effect	0	6798	c87584e4	329f657f	examples/MAX_DinosaurDetective.lzx/MAX.DinosaurDetective music4
 c193698970cfd4262ac7db375bf292da	1	76920	player	uade	Protracker	0	22478	8b6f0af0	2a2d091c	rips/MOD_Simulman11.lzx/MOD.sigsm93
-c19f70eb78cabf85ec2160ebdc6de826	0	158375	player+silence	uade	TFMX Pro	0	7528	4058edc8	de666a56	examples/TFMX_Transplant.lzx/MDAT.Transplant
-c19f70eb78cabf85ec2160ebdc6de826	1	158375	player+silence
+c19f70eb78cabf85ec2160ebdc6de826	0	158382	player+silence	uade	TFMX Pro	0	7528	4058edc8	de666a56	examples/TFMX_Transplant.lzx/MDAT.Transplant
+c19f70eb78cabf85ec2160ebdc6de826	1	158382	player+silence
 c19f70eb78cabf85ec2160ebdc6de826	2	38420	player
 c19f70eb78cabf85ec2160ebdc6de826	3	41615	player
 c1a1981f6e78f7ac96bd232d124b50a7	1	134209	player	uade	ProRunner 1.0	0	95948	4326394b	e731ceca	rips/PRUN_UltimatePinballQuest.lzx/PRUN.crystal
@@ -10570,7 +10570,7 @@ e0d89cbf25f6860c6208b2108a2fc0ae	0	25258	player	uade	Sierra AGI	0	416	52a767fc	c
 e0dca6c4ad621e8750560757b55ff847	0	122916	player	uade	TFMX Pro	0	19156	3bf0aac8	f1b7b253	examples/TFMX_Tony&Friends.lzx/MDAT.ongame (author)
 e0dca6c4ad621e8750560757b55ff847	1	122916	player
 e0dca6c4ad621e8750560757b55ff847	10	15372	player
-e0dca6c4ad621e8750560757b55ff847	2	7730	player+silence
+e0dca6c4ad621e8750560757b55ff847	2	7731	player+silence
 e0dca6c4ad621e8750560757b55ff847	3	1326	player
 e0dca6c4ad621e8750560757b55ff847	4	84516	player
 e0dca6c4ad621e8750560757b55ff847	5	84516	player
@@ -10633,17 +10633,17 @@ e28a17eaec57f27a8108b0caeb40d8ea	0	130572	player	uade	EarAche	0	18694	4ac450f8	a
 e29278c03145a4ee469a3d759db7221c	0	13021	player	uade	Sonix Music Driver	0	488	a0a667a0	9f888624	examples/SMUS_NewYorkWarriors.lzx/New York Warriors/SMUS.win
 e29bd400462b107370197e82a2bd26d1	0	30603	player	uade	Images Music System	0	28244	7edbaf6e	03300ad2	examples/IMS_ShadowDancer.lzx/IMS.am10-3ch
 e29e746a94c6f047f7bdea32cfcec438	0	111361	player+volume	uade	NoiseTracker	0	123836	19a5f49f	080779df	examples/NT_HisMastersNoise.lzx/mod.Muppenkorva
-e2a2915ddcc52e5de592cb99eac5c769	0	26153	loop	uade	TFMX Pro	0	2076	7c94eb99	813bc046	examples/TFMX_Hanse.lzx/MDAT.theme (author)
+e2a2915ddcc52e5de592cb99eac5c769	0	56745	loop	uade	TFMX Pro	0	2076	7c94eb99	813bc046	examples/TFMX_Hanse.lzx/MDAT.theme (author)
 e2b3c0b6788c0507cb46be1c60fe7652	0	68782	player	uade	Sonix Music Driver	0	5241	3b9c5d4e	8feaf40c	examples/SNX_RiseOfTheDragon.lzx/Rise Of The Dragon/SNX.bar 4
 e2cf7bdf9055c2f8f1811499ee809b0b	1	89720	player	uade	Noisetracker 1.x	0	23684	ccb3d368	30e5ea5f	rips/MOD_Tex12.lzx/MOD.st1tx10
 e2e2626432bb083bdda19e1ecc8134bb	0	221	player	uade	Sierra AGI	0	51	80755e35	359578d1	examples/AGI_Manhunter2.lzx/AGI.ManhunterII 140
-e2f0246ca04b2e67e3c67e2ab5629919	0	3067	silence	uade	TFMX Pro	0	4464	2c1f6bb3	6544dddf	examples/TFMX_Logistic.lzx/MDAT.Logistic FX
-e2f0246ca04b2e67e3c67e2ab5629919	1	5228	silence
-e2f0246ca04b2e67e3c67e2ab5629919	2	3168	silence
-e2f0246ca04b2e67e3c67e2ab5629919	3	3503	silence
+e2f0246ca04b2e67e3c67e2ab5629919	0	3068	silence	uade	TFMX Pro	0	4464	2c1f6bb3	6544dddf	examples/TFMX_Logistic.lzx/MDAT.Logistic FX
+e2f0246ca04b2e67e3c67e2ab5629919	1	5238	silence
+e2f0246ca04b2e67e3c67e2ab5629919	2	3169	silence
+e2f0246ca04b2e67e3c67e2ab5629919	3	3504	silence
 e2f0246ca04b2e67e3c67e2ab5629919	4	3679	silence
-e2f0246ca04b2e67e3c67e2ab5629919	5	4276	silence
-e2f0246ca04b2e67e3c67e2ab5629919	6	4252	silence
+e2f0246ca04b2e67e3c67e2ab5629919	5	4277	silence
+e2f0246ca04b2e67e3c67e2ab5629919	6	4253	silence
 e2f7bdfc4ace9b6a7aebbe2909616d18	0	142408	player	uade	NoiseTracker	0	119648	d7ac3998	1e4400d4	examples/NT_HisMastersNoise.lzx/mod.Not used
 e2f909139c7b00800348889a4a3985ea	1	69224	player	uade	Protracker	0	64878	c64aee8a	f9f7bcca	rips/MOD_DylanDog05.lzx/MOD.mummia
 e31265f11208bf17ddf109990913b679	1	192141	player	uade	Protracker	0	98770	a23a0ea2	71966395	rips/MOD_Tex04.lzx/MOD.intro
@@ -10690,7 +10690,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e3978cd1af689a4f4ab24a8d1d405634	1	105595	player	uade	Protracker	0	45682	e1a77dfa	ce006212	rips/MOD_Plan9FromOuterSpace.lzx/MOD.underscore
 e39d87497b72dd54c63f2498532f6cde	1	108931	player	uade	Noisetracker 1.x	0	93918	16d99f84	c7bed49f	rips/MOD_ItalianNight1999.lzx/MOD.noche italiana
 e3a059119c492945ab869a45ba90f50f	0	77182	player	uade	TFMX Pro	0	9496	36a1bcbc	a853149d	examples/TFMX_BCKid.lzx/MDAT.Coconut Attack
@@ -11438,7 +11438,7 @@ f31806f415ed99423132a3a5df20443b	1	128121	player	uade	Protracker	0	35426	cecc572
 f31b9990453c751002949b051d7cefdf	0	6048	player	uade	Sierra AGI	0	246	62c56897	623e68ec	examples/AGI_KingsQuest4.lzx/AGI.King'sQuestIV 10
 f3244b40bdaa7169f6175f996b24e2ba	0	7696	player	uade	TFMX Pro	0	980	c7b8ffc1	7d20a9ff	examples/TFMX_DinoPark.lzx/MDAT.DinoTown
 f331a0141863bc0b370a5c997733b226	1	41072	player	uade	Protracker compatible	0	23196	1dbd4a80	a3791c7f	rips/MOD_SimonTheSorcerer.lzx/MOD.SKULLPATH
-f345566b842f5b5964fbd62bbc3f6874	0	200660	player+volume	uade	TFMX Pro	0	8392	5d4850a8	c4ea8266	examples/TFMX_GemZBV.lzx/MDAT.Gem'Z title
+f345566b842f5b5964fbd62bbc3f6874	0	200045	player+volume	uade	TFMX Pro	0	8392	5d4850a8	c4ea8266	examples/TFMX_GemZBV.lzx/MDAT.Gem'Z title
 f345566b842f5b5964fbd62bbc3f6874	1	48025	player
 f345566b842f5b5964fbd62bbc3f6874	2	15372	player
 f345566b842f5b5964fbd62bbc3f6874	3	15372	player
@@ -11895,7 +11895,7 @@ f8546839a6f4edf6a3f6f7baae7c9d50	1	61568	player	uade	Noisetracker 1.x	0	26870	b9
 f8593558b2abcf1fd546e7ea1c609691	1	82044	player	uade	Protracker	0	26798	a75d2092	108d4e8b	rips/MOD_Diabolik01.lzx/MOD.st3
 f85d2132ebb749b53fb29218bb0f73f7	1	38520	player	uade	Soundtracker II (15 instr.)	0	30072	7a8efd30	c22cf252	rips/ST_TimesOfLore.lzx/MOD.TimesOfLore ingame 4
 f870536032cdf9941838ac2e3a135122	1	84616	player	uade	Pha Packer	0	65710	209d64a2	9a56f7b5	rips/PHA_BrianTheLion.lzx/PHA.BrianTheLion 40
-f87e025c0b5ef37dc38a2159e23c9d0d	0	21762	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	examples/TFMX_MadTV.lzx/MDAT.MadTV ongame5
+f87e025c0b5ef37dc38a2159e23c9d0d	0	21782	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	examples/TFMX_MadTV.lzx/MDAT.MadTV ongame5
 f87e025c0b5ef37dc38a2159e23c9d0d	1	30744	player
 f87e025c0b5ef37dc38a2159e23c9d0d	2	51220	player
 f87e025c0b5ef37dc38a2159e23c9d0d	3	46096	player
@@ -11978,7 +11978,7 @@ fa9db6b73fa8242c1bb0004ae6b8f289	1	55701	player
 fa9db6b73fa8242c1bb0004ae6b8f289	2	63377	player
 fa9db6b73fa8242c1bb0004ae6b8f289	3	80658	player
 fa9db6b73fa8242c1bb0004ae6b8f289	4	57610	player
-fa9db6b73fa8242c1bb0004ae6b8f289	5	4545	player+silence
+fa9db6b73fa8242c1bb0004ae6b8f289	5	4548	player+silence
 fab59df663f2b48f06e0165d346aa8c2	1	276597	player	uade	Protracker	0	21672	75c1afee	75f8a184	rips/MOD_TimeRunners16.lzx/MOD.unit3
 fac0b8f2519f9500bced5326a4487bfa	0	26363	player	uade	Sonix Music Driver	0	974	264baff1	38d16a12	examples/TINY_TheGamesWinterEdit.lzx/The Games - Winter Edition/TINY.England
 fac20da76d62ece0e465cf1affc45f55	1	15472	player	uade	Protracker	0	7874	bba74709	c6da614f	rips/MOD_3DWorldSoccer.lzx/MOD.japan

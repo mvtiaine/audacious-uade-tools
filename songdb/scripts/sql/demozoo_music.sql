@@ -30,8 +30,10 @@ SELECT DISTINCT
         array_agg(DISTINCT m.name) AS prod_publishers,
 --        array_agg(DISTINCT n.original_url) AS image_urls,
         r.name AS party,
-        p.shown_date_date AS party_date,
-        p.shown_date_precision AS party_date_precision,
+        p.shown_date_date AS party_shown_date,
+        p.shown_date_precision AS party_shown_date_precision,
+        q.start_date_date AS party_start_date,
+        q.start_date_precision AS party_start_date_precision,
         array_agg(DISTINCT v.name) AS production_type
     FROM
         productions_productionlink a
@@ -50,8 +52,7 @@ SELECT DISTINCT
     LEFT JOIN productions_soundtracklink h
         ON h.soundtrack_id = b.id
     LEFT JOIN productions_production i
-    -- TODO check if release_date_date check needed
-        ON i.id = h.production_id AND i.release_date_date <= b.release_date_date + 30
+        ON i.id = h.production_id
     LEFT JOIN productions_production_platforms j
         ON j.production_id = i.id
     LEFT JOIN platforms_platform k
@@ -108,5 +109,7 @@ SELECT DISTINCT
         a.parameter,
         r.name,
         p.shown_date_date,
-        p.shown_date_precision
+        p.shown_date_precision,
+        q.start_date_date,
+        q.start_date_precision
 ) TO '/tmp/demozoo_music.tsv' WITH NULL AS '';

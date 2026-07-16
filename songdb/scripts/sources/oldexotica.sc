@@ -17,9 +17,9 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val oldexotica_path = System.getProperty("user.home") + "/sources/oldexotica/"
+val oldexotica_path = System.getProperty("user.home") + "/sources/metadata/oldexotica/"
 
-case class OldExoticaMeta (
+final case class OldExoticaMeta (
   archive: String,
   md5: String,
   path: String,
@@ -30,13 +30,13 @@ case class OldExoticaMeta (
   year: Option[Int],
 )
 
-lazy val oldexotica_mods_by_path = sources.oldexotica
+lazy val oldexotica_mods_by_path = sources.sourceDB(sources.Source.OldExotica)
   .filter(_.path.startsWith("tunes/archive/"))
-  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(2).mkString("/"))
-lazy val oldexotica_mods_by_dir = sources.oldexotica
+lazy val oldexotica_mods_by_dir = sources.sourceDB(sources.Source.OldExotica)
   .filter(_.path.startsWith("tunes/archive/"))
-  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32))
+  .map(e => sources.SourceDBEntry(e.md5, e.path.replace("tunes/archive/", "").replace(".lha", ""), e.filesize, e.xxh32, e.crc32))
   .groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
 
 lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).toScala(Buffer).par.flatMap(f =>
@@ -113,11 +113,23 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
                     !name.endsWith(".readme") &&
                     !meta.path.startsWith("DOCUMENTS")
                 ) {
-                    System.err.println(s"WARN: oldexotica missing md5 for '${meta.path}' (${meta.archive})")
+                  System.err.println(s"WARN: oldexotica missing md5 for '${meta.path}' (${meta.archive})")
                 }
               } else {
-                  meta = meta.copy(md5 = md5.get, year = txt.toIntOption)
-                  metas.append(meta)
+                var name_source = meta.name_source
+                var year = txt.toIntOption
+                // XXX quirks
+                if (name_source == "Motor Head") {
+                  name_source = "Motörhead"
+                  year = Some(1992)
+                } else if (name_source == "Ugh!") year = Some(1992)
+                else if (name_source == "Agony") year = Some(1992)
+                else if (name_source == "Carribean Disaster")  {
+                  name_source = "Caribbean Disaster"
+                  year = Some(1996)
+                }
+                meta = meta.copy(md5 = md5.get, name_source = name_source, year = year)
+                metas.append(meta)
               }
               meta = OldExoticaMeta(meta.archive, "", "", 0, "", "", "", None)
             }
@@ -131,13 +143,19 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
   metas
 ).distinct.seq
 
-def transformAuthors(meta: OldExoticaMeta): Buffer[String] = {
+lazy val oldexotica_by_archive = metas.groupBy(_.archive.toLowerCase)
+
+def transformAuthors(meta: OldExoticaMeta, _type: String): Buffer[String] = {
   var author = meta.author_handle
   if (author.endsWith("N/A") || author.endsWith("?") || author.endsWith("Various")) return Buffer.empty
+  // XXX
+  if (author == "Jumping Jack Flash") return Buffer.empty
   if (author.startsWith("(") && author.endsWith(")")) {
     author = author.substring(1, author.length - 1).trim
   }
-  if (author.contains(" (") && author.endsWith(")")) {
+  if (_type == "Game" && author.contains(" (") && author.endsWith(")")) {
+    author = author.split(" \\(").head.trim
+  } else if (author.contains(" (") && author.endsWith(")")) {
     author = author.split(" \\(").tail.head.replaceAll("\\)", "").trim
   }
   if (author.split("/").length > 1) {
@@ -167,6 +185,15 @@ def transformAuthors(meta: OldExoticaMeta): Buffer[String] = {
 
 def transformPublishers(meta: OldExoticaMeta): Buffer[String] = {
   var publisher = meta.info
+  if (meta.name_source == "Icing 95") {
+    publisher = "Icing";
+  } else if (meta.name_source == "Motorola Inside 98") {
+    publisher = "Motorola Inside";
+  } else if (meta.name_source == "THX IRC Compo") {
+    publisher = "THX IRC Compo";
+  } else if (meta.name_source == "Jumping Jack Flash") {
+    publisher = "Jumping Jack Flash";
+  }
   if (publisher.endsWith("N/A") ||
       publisher.endsWith("?") ||
       publisher.endsWith("Various") ||
@@ -203,17 +230,22 @@ def transformPublishers(meta: OldExoticaMeta): Buffer[String] = {
       publisher == "Games" ||
       publisher == "Demo" ||
       publisher == "Intro" ||
+      publisher == "BBS Intro" ||
+      publisher == "Invitation Intro" ||
       publisher == "Diskmag" ||
       publisher == "Utility" ||
       publisher == "Cruncher Utility" ||
       publisher == "(Made for unfinished game)" ||
       publisher == "THX Sound System" ||
       publisher == "Music Demo" ||
+      publisher == "Music Disk" ||
       publisher == "Advert" ||
       publisher == "Megadrive" ||
       publisher.startsWith("Demo (") ||
       publisher.startsWith("Musicdisk") ||
       publisher.startsWith("Compo") ||
+      publisher.startsWith("Music Compo") ||
+      publisher.startsWith("IRC Music Competition") ||
       publisher.startsWith("(Another version of") ||
       publisher.startsWith("Cover - ") ||
       publisher.startsWith("Conv. Of C64 Tune") ||
@@ -245,6 +277,16 @@ def transformAlbum(meta: OldExoticaMeta): String = {
   }
   if (album == "DTACK Music Comp") {
     album = ""
+  } else if (album == "Icing 95") {
+    album = ""
+  } else if (album == "Motorola Inside 98") {
+    album = ""
+  } else if (album == "THX IRC Compo") {
+    album = ""
+  // XXX
+  } else if (album == "Sonolumineszenz") {
+    album = ""
   }
+  
   album
 }

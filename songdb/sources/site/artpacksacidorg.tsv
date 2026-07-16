@@ -370,7 +370,6 @@
 2a7f3f1422a4eeba149d56bcb4bd22f1	1	122675	player	st3play	Scream Tracker 3.2x (SB)	16	267584	93bfa7fb	ee666679	artpacks/1996/odium-03.zip/LD-GLASS.S3M
 2ab2edc6e5566279e74160a44e86856f	1	99165	player	st3play	Scream Tracker 3.2x (SB)	16	201560	edcd013b	f20708c3	artpacks/1995/fti-0695.zip/TDA3.S3M
 2ad1ba39d78867df42c05e4d1ec8d33c	1	70530	player	uade	Protracker compatible	0	85059	c4aefd48	39f3fadf	artpacks/1994/blde9405.zip/...to infinity
-2ad1ba39d78867df42c05e4d1ec8d33c	1	70530	player	uade	Protracker compatible	0	85059	c4aefd48	39f3fadf	artpacks/1994/blde9405.zip/ST-INFIN.MOD
 2b05dadd6f53e984ec0d71602d225f38	0	135118	player+silence	libopenmpt	Unknown	8	131072	c2378b42	07b5698b	artpacks/1997/mist3yrc.zip/GR-BEAST.XM
 2b1c0548b254b178219a56f574cecc0c	1	196059	player	st3play	Scream Tracker 3.2x (GUS)	5	17079	5a7bb8c1	d39fe6b6	artpacks/1996/mist0896.zip/P3-ETO.S3M
 2b3c326f02cd0b05666a1664f08749e3	1	82803	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	83579	ca1b4813	34455432	artpacks/1996/dark1196.zip/MOBY-12.S3M
@@ -445,7 +444,6 @@
 30fae13d39b27d109af2dbf7548f184a	1	95339	player	ft2play	FastTracker v2.00	10	216741	87bda577	89471070	artpacks/1995/fos-0795.zip/WN-NAIZL.XM
 311142c9972cc03bc0c4d6c1ea65bf20	1	38702	player+volume	ft2play	FastTracker v2.00	16	318855	27fe57cd	57e4dc91	artpacks/1997/m-blend2.zip/GRN^DOG.XM
 311739a00eaf1a6401e64c348adabb52	1	51249	player	ft2play	FastTracker v2.00	4	27877	46987f69	9677c783	artpacks/2001/cro0601.zip/cro0601.rar/chips/pd-mg.xm
-313cc51107f61e68be6fc5159c1ac16d	1	236427	player	ft2play	Fasttracker (M.K.)	4	114038	62aceae7	a8687306	artpacks/1994/dark0894.zip/DARKVIEW.MOD
 313cc51107f61e68be6fc5159c1ac16d	1	236427	player	ft2play	Fasttracker (M.K.)	4	114038	62aceae7	a8687306	artpacks/1994/dark0894.zip/MiNd tRiP Part 1
 3147668164d166db6a701ffa995541eb	1	9475	silence	uade	Protracker compatible	0	55186	f1212eb8	9bd68d5b	artpacks/1993/atm-0793.zip/BARRYNUK.ZIP/NUKE.MOD
 3147668164d166db6a701ffa995541eb	1	9475	silence	uade	Protracker compatible	0	55186	f1212eb8	9bd68d5b	unsorted/barrynuk.zip/NUKE.MOD
@@ -1180,7 +1178,6 @@
 7f7373d3cb2ed553216dbace059d5882	1	153351	player	ft2play	Fasttracker (M.K.)	4	142891	74dd15d2	6f854058	artpacks/1993/ice-1293.zip/MODS.ZIP/RE-HAUNT.MOD
 7f83b489b590b1d91ff2ea6a2d09ce64	1	178836	player	ft2play	FastTracker v2.00	30	550386	ae671680	9d245d23	mags/1999/hugi16.zip/POP.XM
 7f83b489b590b1d91ff2ea6a2d09ce64	2	82052	player
-7f86d1b12b1d05a58b64a0841531f0d3	1	146045	player	uade	Protracker compatible	0	114949	69972328	2b227bef	artpacks/1994/dark0494.zip/DARKVIEW.MOD
 7f86d1b12b1d05a58b64a0841531f0d3	1	146045	player	uade	Protracker compatible	0	114949	69972328	2b227bef	artpacks/1994/dark0494.zip/star control2,tune1
 7fa3ad14bf382cbd164e29585a9b8100	1	109097	player	ft2play	FastTracker v2.00	6	10868	768b8124	e4793c6e	artpacks/2002/cro0102.zip/cro0102.rar/mag/DATA/music/modules/pd-noe.xm
 7fa7d2442a998f6d6ad6ebd01d039173	1	149883	player	uade	Protracker compatible	0	21413	804babf9	2ad9ea3b	artpacks/1996/prz-9607.zip/PHARAZON.MOD
@@ -1293,7 +1290,6 @@
 8aa83c27bc7d8bb614b7adfc6260daff	1	242479	player+silence	st3play	Scream Tracker 3.01 (SB)	16	182221	8ba0007a	5409e01a	artpacks/1994/uni-0694.zip/FA-BLUR.S3M
 8ac1d04e8c798e11a0e4cf5753e4ed73	1	200681	player	uade	Protracker compatible	0	124561	1170405a	83e05504	artpacks/1994/lqd-9403.zip/BNY-MOVE.MOD
 8ae78ba4cfce9c32504934d5920ab32a	1	134527	player+silence	st3play	Scream Tracker 3.01 (GUS)	16	114546	07bd9706	6b87653c	artpacks/1994/rave-02.zip/PAUL.S3M
-8aef6e9a2d5f54fbf54133349558c8e0	1	75072	player	uade	Protracker compatible	0	69145	fc76b5b6	b939927b	artpacks/1993/ice-0293.zip/MP-QUANT.ZIP/QUANTUM.MOD
 8b2927c87ad4d75e9deee13c123e6255	1	314318	player+silence	uade	Protracker	0	358095	7b766bb9	b9b8c16b	artpacks/1994/die-pk8.zip/EM-MINDC.MOD
 8b3fb3e4636caa494c36b71248ec07aa	1	252685	player	uade	Protracker	0	187793	dc31576f	291b86ba	mags/1994/imphob8.zip/dos/f/demos/imp8/data.002
 8bc8f17a6ee6588cc32a7b8674606133	1	112467	player	st23play	Scream Tracker 2.x	4	185317	190eecd4	c916be05	artpacks/1993/grip0993.zip/TD-DANGR.ZIP/TD-DANGR.STM
@@ -2038,7 +2034,6 @@ ca983a8f29132e306461cddbbe5e52f0	1	157185	player	ft2play	FastTracker v2.00	8	119
 caabd631b3ce67368551a998e283c7bd	1	38322	player	ft2play	<Unknown>	8	44291	07303a4b	06c7c92c	artpacks/1997/sliver02.zip/DM!NUM2.XM
 cad983184497da8142f3285330b942b2	1	111161	player	st3play	Scream Tracker 3.2x (SB)	16	206593	a6fed4c6	5fe42764	artpacks/1995/tl199502.zip/QY-MYCRF.S3M
 cb20f6273f107e49a6c010e3dc90b5d3	1	178274	player	ft2play	FastTracker v2.00	6	45559	2e07b678	34552798	artpacks/2001/cro0401.zip/cro0401.rar/chips/Pd-ri2k1.xm
-cb68bee2757732a5e49577923037d99d	1	126935	player	it2play	Impulse Tracker 2.04	24	330299	72864cf5	4dddf8de	artpacks/1996/flip-27.zip/FLP-CTS8.ZIP/CS-WUAD.IT
 cb68bee2757732a5e49577923037d99d	1	126935	player	it2play	Impulse Tracker 2.04	24	330299	72864cf5	4dddf8de	artpacks/1996/flip-27.zip/FLP-CTS8.ZIP/IMPMWake Up And Dance! - CTS
 cb7d86a0a472063a6951a95428c20304	1	261486	player	uade	Protracker compatible	0	163137	845f40fe	6570c40c	artpacks/1994/dark0694.zip/MOBY_ACD.MOD
 cb8a7eab09a93d2dada68d1fb9dbd224	1	192010	player+silence	ft2play	FastTracker v2.00	8	34392	41b54371	15c91a1c	www/mirrors/ftp_mimic_ca/christ_ascii_archives/ascii/moonflow/mfl_pck1.zip/CHIPS/FLOJD.XM
@@ -2396,7 +2391,6 @@ f123eb589ad412b6356bfa96390acf24	1	296812	player	st3play	Scream Tracker 3.2x (SB
 f127277f475d1104c669472cc511486f	1	134531	player	uade	Protracker	0	228412	31f7f011	e3d5ebc4	artpacks/1996/sac0696a.zip/AR-CCUTT.MOD
 f178738ffb807816b1b7d7dfd39d36ab	1	151886	player+silence	ft2play	FastTracker v2.00	12	307006	8e0ea160	99a4ac01	artpacks/1998/noir0198.rar/KAOT-SOU.XM
 f17b73c868636fcf13f6478378a42154	1	284222	player+silence	st3play	Scream Tracker 3.01 (SB)	11	259253	f8910bc4	393d79a2	artpacks/1994/lap-0894.zip/Doom!!
-f17b73c868636fcf13f6478378a42154	1	284222	player+silence	st3play	Scream Tracker 3.01 (SB)	11	259253	f8910bc4	393d79a2	artpacks/1994/lap-0894.zip/DOOM.S3M
 f18d1c0b1538c766343bac670ee80634	1	172522	player	ft2play	FastTracker v2.00	20	460433	9d775ed4	669d0993	artpacks/1999/breed03.zip/lar-Stop.xm
 f1961473e812a77a53f067ffd78470bb	1	76920	player	uade	Protracker compatible	0	77171	3a2b3c8a	0dcafde5	artpacks/1994/cri-0594.zip/SL-EVIL.MOD
 f1f5c045d6109a5cdeffe8598e568fa1	1	210001	player+silence	uade	Protracker	0	176706	d161abba	bec2c012	unsorted/overtrun.zip/OVERTRUN.MOD

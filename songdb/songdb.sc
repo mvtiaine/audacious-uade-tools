@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J -Xmx56G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx64G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -10,6 +10,7 @@
 //> using file scripts/combine.sc
 //> using file scripts/xxh32.sc
 //> using file scripts/chromaprint.sc
+//> using file scripts/normalization.sc
 
 //> using file scripts/songlengths.sc
 //> using file scripts/sources/sources.sc
@@ -25,7 +26,8 @@
 //> using file scripts/sources/tosec.sc
 //> using file scripts/sources/whdload.sc
 //> using file scripts/sources/wikipedia.sc
-//> using file scripts/sources/exodos.sc
+//> using file scripts/sources/retroexo.sc
+//> using file scripts/sources/kestra.sc
 //> using file scripts/sources/audio.sc
 
 import java.nio.file.Files
@@ -36,6 +38,7 @@ import scala.collection.parallel.CollectionConverters._
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
 import scala.concurrent.Future
+import scala.jdk.CollectionConverters._
 import scala.util.Success
 import scala.util.Failure
 
@@ -49,6 +52,7 @@ import audio._
 import chromaprint._
 import tosecmusic._
 import fujiology._
+import demozoo._
 
 implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
 
@@ -57,6 +61,9 @@ val DEST = "/tmp/songdb/"
 // shutup warning
 System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
 
+// init audio fingerprints eagerly to reduce memory usage
+audio.duplicateSubsongsByPlayerAndMd5
+
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
 lazy val idx2xxh32 = Buffer("0" * 12) ++ songlengths.db.map(e => md5ToXxh32(e.md5.take(12))).sorted.distinct
@@ -64,6 +71,7 @@ lazy val idx2xxh32 = Buffer("0" * 12) ++ songlengths.db.map(e => md5ToXxh32(e.md
 var ampdata: Buffer[MetaData] = Buffer.empty
 var modlanddata: Buffer[MetaData] = Buffer.empty
 var unexoticadata: Buffer[MetaData] = Buffer.empty
+var kestradata: Buffer[MetaData] = Buffer.empty
 var demozoodata: Buffer[MetaData] = Buffer.empty
 var oldexoticadata: Buffer[MetaData] = Buffer.empty
 var wantedteamdata: Buffer[MetaData] = Buffer.empty
@@ -71,31 +79,50 @@ var modsanthologydata: Buffer[MetaData] = Buffer.empty
 var tosecmusicdata: Buffer[MetaData] = Buffer.empty
 var fujiologydata: Buffer[MetaData] = Buffer.empty
 
-def dedupMeta(entries: Buffer[MetaData], name: String) = {
-  val dedupped = entries.groupBy(_.hash).flatMap { case (hash, metas) =>
+val globalLeftovers = new java.util.concurrent.ConcurrentLinkedQueue[MetaData]()
+
+def dedupMeta(entries: Buffer[MetaData], name: String): Buffer[MetaData] = {
+  val allMetas = entries.groupBy(_.hash).par.flatMap { case (hash, metas) =>
     if (metas.size > 1) {
       System.err.println(s"WARN: removing duplicate entries in ${name}, hash: ${metas.head.hash} entries: ${metas}")
     }
+    
+    val minyear = metas.map(e => if (e.year > 0) e.year else 9999).min
+    val validMetas = metas.filter(e => minyear == 0 || e.year > 0 && e.year <= minyear + 1)
+    val scoredMetas = metas.map(e => 
+      (e, (if (e._platform.toLowerCase == "amiga" || e._type == "Compo") 1 else 0) + (if (e._type.toLowerCase == "game") 1 else 0) + (if (e.authors.nonEmpty) 1 else 0) + (if (e.publishers.nonEmpty || e._type == "Tool") 1 else 0) + (if (e.album.nonEmpty || e._type == "Compo") 1 else 0) + (if (e.year > 0) 1 else 0) + (if (e.year <= minyear) 1 else 0))
+    )
+    val bestscore = scoredMetas.map(_._2).max
+    val bestMetasForScore = scoredMetas.filter(_._2 == bestscore).map(_._1)
+
     val SORT = "\u0001"
-    val meta = metas.sortBy(m => ("" +
+    val bestMeta = bestMetasForScore.sortBy(m => ("" +
+     (if (m._type.isEmpty) SEPARATOR else if (m._type.toLowerCase == "game") 0 else 1) + SORT +
+     (if (m._platform.isEmpty) SEPARATOR else if (m._platform.toLowerCase == "amiga" || m._type == "Compo") 0 else 1) + SORT +
      (if (m.year == 0) 9999 else m.year) + SORT +
      (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) + SORT +
      (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
      (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
     )).head
-    if (meta.authors.isEmpty && meta.publishers.isEmpty && meta.album.isEmpty && meta.year == 0) {
+
+    val leftovers = metas.filter(_ != bestMeta)
+    leftovers.foreach(globalLeftovers.add)
+
+    val bestOpt = if (bestMeta.authors.isEmpty && bestMeta.publishers.isEmpty && bestMeta.album.isEmpty && bestMeta.year == 0) {
       None
     } else {
-      Some(MetaData(hash, meta.authors, meta.publishers, meta.album, meta.year, meta._type, meta._platform))
+      Some(MetaData(hash, bestMeta.authors, bestMeta.publishers, bestMeta.album, bestMeta.year, bestMeta._type, bestMeta._platform))
     }
-  }.toBuffer
-  dedupped
+    
+    bestOpt.toSeq
+  }.seq.toBuffer
+  allMetas
 }
 
-def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false) = {
-  val entries = dedupMeta(_entries, name)
+def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false): Buffer[MetaData] = {
+  val dedupped = dedupMeta(_entries, name)
   // encoding does also deduplication
-  val encoded = encodeMetaTsv(entries, name, _md5idx)
+  val encoded = encodeMetaTsv(dedupped, name, _md5idx)
   val decoded = decodeMetaTsv(encoded, idx2md5)
   val pretty = createPrettyMetaTsv(decoded)
 
@@ -117,7 +144,7 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
   }
 
-  entries
+  dedupped
 }
 
 def _try[T](f: => T) = try {
@@ -156,55 +183,9 @@ lazy val xxh32idxTsv = Future(_try {
 })
 
 lazy val songlengthsTsvs = Future(_try {
-  audio.audioByPlayerAndMd5 // XXX need explicit eager init before .par to avoid "unparallelized" init due to most threads waiting below
   val entries = songlengths.db.sortBy(_.md5).par.map(e => {
     val md5 = e.md5.take(12)
-    val duplicates = mutable.SortedSet[Int]()
-    val fingerprints = audio.audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
-    if (fingerprints.nonEmpty) {
-      val filtered = fingerprints.filter(_.audioBytes > 0).distinctBy(_.subsong)
-      val grouped = (
-        if (filtered.forall(e => e.audioBytes > 2 * 11025 * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
-        else filtered.groupBy(_.audioTag.replaceFirst(s"^[0-9]+-", "")
-      )).mapValues(_.distinct)
-      if (!grouped.values.forall(group => group.map(_.subsong).distinct.size == group.size)) {
-        System.err.println(s"WARN: inconsistent audio fingerprints for md5: $md5 player: ${e.player} format: ${e.format}")
-      }
-      assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
-      for ((_, group) <- grouped) {
-        var remaining = group
-        while (remaining.nonEmpty) {
-          val cmp = remaining.head
-          remaining = remaining.filterNot(_.subsong == cmp.subsong)
-          for (e <- remaining) {
-            var duplicate = true
-            // XXX audioChromaprint may differ even if md5 is same
-            if (cmp.audioMd5 == e.audioMd5) {
-              // duplicate = true
-            } else if (e.audioChromaprint != cmp.audioChromaprint) {       
-              val threshold = if (filtered.forall(f => (f.audioTag == e.audioTag || f.audioBytes == e.audioBytes) && e.audioBytes > 2 * 11025 * 12)) 0.9 else 0.99
-              val similarity = chromaSimilarity(cmp.audioChromaprint, e.audioChromaprint)
-              if (similarity < threshold) {
-                duplicate = false
-                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong} is too low: ${similarity} threshold: ${threshold}")
-              } else {
-                //System.err.println(s"DEBUG: Chromaprint similarity for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${similarity} threshold: ${threshold} (duplicate)")
-              }
-            } else if (e.audioHash != cmp.audioHash) {
-              duplicate = false
-              //System.err.println(s"DEBUG: Audio hash mismatch for ${md5} subsong ${cmp.subsong} vs ${e.subsong}: ${cmp.audioHash} vs ${e.audioHash}")
-            }
-            if (duplicate) {
-              duplicates += e.subsong
-            }
-          }
-          remaining = remaining.filterNot(e => duplicates.contains(e.subsong))
-        }
-      }
-      if (duplicates.nonEmpty && e.subsongs.size > duplicates.size) {
-        System.err.println(s"INFO: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
-      }
-    }
+    val duplicates = audio.duplicateSubsongsByPlayerAndMd5.getOrElse((e.player, md5), scala.collection.mutable.SortedSet[Int]())
     SongInfo(
       md5,
       e.minsubsong,
@@ -268,41 +249,46 @@ lazy val modinfosTsvs = Future(_try {
 })
 
 lazy val ampTsvs = Future(_try {
-  val entries = amp.metas.groupBy(m => (m.md5, m.path)).par.map { case ((md5, path), m) =>
-    var best = m.head
-    if (m.size > 1) {
-      best = m.maxBy(_.extra_authors.size)
-    }
-    best
-  }.par.flatMap(m =>
-    val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
-    if (!(m.extra_authors.isEmpty && m.album.isEmpty)) {
-      Some(MetaData(
-        m.md5.take(12),
-        m.extra_authors.sorted.filterNot(_.isEmpty).toBuffer,
-        Buffer.empty,
-        m.album,
-        0,
-        m._type,
-        if (m.album.endsWith(" PC")) "PC" else "",
-      ))
-    } else None
-  ).toBuffer.distinct
+  val entries = amp.details.par.flatMap(detail =>
+    detail.metas.groupBy(m => (m.md5, m.path)).map { case ((md5, path), m) =>
+      var best = m.head
+      if (m.size > 1) {
+        best = m.maxBy(_.extra_authors.size)
+      }
+      best
+    }.flatMap(m =>
+      val path = m.path.substring(m.path.indexOf("/") + 1, m.path.lastIndexOf("/"))
+      if (!(m.extra_authors.isEmpty && m.album.isEmpty)) {
+        Some(MetaData(
+          m.md5.take(12),
+          amp.transformAuthors(m, detail),
+          Buffer.empty,
+          m.album,
+          0,
+          m._type,
+          if (m.album.endsWith(" PC")) "PC"
+          else if (m.album.endsWith(" - Jaguar") || (m.album.endsWith("- Falcon") || m.album.endsWith(" ST"))) "Atari"
+          else if (m.album.endsWith(" AGA") || (m.album.endsWith(" CD32"))) "Amiga"
+          //else if (m.album.endsWith(" GBC")) ""
+          else ""
+        ))
+      } else None
+    )).toBuffer.distinct
 
   ampdata = processMetaTsvs(entries, "amp.tsv")
 })
 
 lazy val modlandTsvs = Future(_try {
-  val smus = sources.modland.filter(e => e.path.startsWith("IFF-SMUS/") && e.path.toLowerCase.endsWith(".smus"))
+  val smus = sources.sourceDB(sources.Source.Modland).filter(e => e.path.startsWith("IFF-SMUS/") && e.path.toLowerCase.endsWith(".smus"))
     .groupBy(_.path.split("/").take(3).mkString("/"))
-  val entries = sources.modland.sortBy(_.md5).par.flatMap { e =>
+  val entries = sources.sourceDB(sources.Source.Modland).sortBy(_.md5).par.flatMap { e =>
     var path =
       if (e.path.startsWith("Ad Lib/")) e.path.substring("Ad Lib/".length)
       else e.path
     val format = path.substring(0, path.indexOf("/"))
     // XXX Ashley Hogg
     if (path.indexOf("/") == path.lastIndexOf("/")) {
-      path = path.substring(path.indexOf("/") + 1)
+      path = "_unknown"
     } else {
       path = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/"))
     }
@@ -334,18 +320,16 @@ lazy val unexoticaTsvs = Future(_try {
   val entries = unexotica.metas.par.map { m =>
     val md5 = m._1
     val path = m._2
-    val authorAlbum = path.substring(path.indexOf("/") + 1, path.lastIndexOf("/")).split("/")
-    val authors = Buffer(unexotica.transformAuthors(authorAlbum(0)))
-    val filesize = m._3
     val meta = m._4
-    val album = unexotica.transformAlbum(meta, authorAlbum)
+    val authors = unexotica.transformAuthors(meta, path)
+    val album = unexotica.transformAlbum(meta, path)
     val publishers = unexotica.transformPublishers(meta)
     val year = meta.year.fold(_.toString, _.toString)
     MetaData(
       md5.take(12),
-      authors,
+      authors.sorted.distinct.toBuffer,
       publishers,
-      album,
+      album.trim,
       if (year != "Unknown") year.toInt else 0,
       meta.`type`,
       "Amiga",
@@ -355,46 +339,22 @@ lazy val unexoticaTsvs = Future(_try {
   unexoticadata = processMetaTsvs(entries, "unexotica.tsv")
 })
 
-lazy val demozooTsvs = Future(_try {
-  val entries = demozoo.metas.par.flatMap { case (md5, m) =>
-    val dates = Seq(m.modDate, m.prodDate, m.partyDate.getOrElse("")).filterNot(_.isEmpty)
-    val earliestDate = if (dates.isEmpty) "" else dates.min
-    val authors = m.authors.filterNot(_ == "?").sorted.toBuffer
-    val useProd = !m.prod.isEmpty && (m.prodDate == earliestDate || m.partyDate.getOrElse("") != earliestDate)
-    val info = MetaData(
-      hash = md5.take(12),
-      authors = if (authors.forall(_.trim.isEmpty)) Buffer.empty else authors,
-      publishers = ((m.prodPublishers, m.party, m.modPublishers) match {
-        case (prod,_,_) if useProd =>
-          if (prod.forall(_.trim.isEmpty)) Buffer.empty else prod.toBuffer
-        case (_,party,_) if !party.isEmpty =>
-          Buffer(party.get)
-        case (_,_,mod) if !mod.isEmpty =>
-          if (mod.forall(_.trim.isEmpty)) Buffer.empty else mod.toBuffer
-        case _ => Buffer.empty
-      }).sorted,
-      album = if (useProd) m.prod.trim else "",
-      year = if (!earliestDate.isEmpty) earliestDate.substring(0,4).toInt else 0,
-      _type = m.prodType.getOrElse(""),
-      _platform = if (m.prodPlatforms.isEmpty || m.prodPlatforms.size > 1) "" else demozoo.normalizePlatform(m.prodPlatforms.head)
-      //if (!m.prodPlatforms.isEmpty) m.prodPlatforms else m.modPlatform
-    )
-    info match {
-      case MetaData(_, Buffer(), Buffer(), "", 0, "", "") => None
-      case _ => Some(info)
-    }
-  }.toBuffer.distinct
+lazy val kestraTsvs = Future(_try {
+  kestradata = processMetaTsvs(kestra.metas.map(_._2).toBuffer, "kestra.tsv")
+})
 
+lazy val demozooTsvs = Future(_try {
+  val entries = demozoo.metas.par.flatMap(demozoo.transformMeta).toBuffer.distinct
   demozoodata = processMetaTsvs(entries, "demozoo.tsv")
 })
 
 lazy val oldexoticaTsvs = Future(_try {
   val entries = oldexotica.metas.par.flatMap { m =>
-    val authors = oldexotica.transformAuthors(m)
+    val _type = m.info.replaceAll("\\(.*\\)$","").trim
+    val authors = oldexotica.transformAuthors(m, _type)
     val publishers = oldexotica.transformPublishers(m)
     val album = oldexotica.transformAlbum(m)
     val year = m.year.getOrElse(0)
-    val _type = m.info.replaceAll("\\(.*\\)$","").trim
     if (authors.isEmpty && publishers.isEmpty && album.isEmpty && year == 0) None
     else Some(MetaData(
       m.md5.take(12),
@@ -402,8 +362,11 @@ lazy val oldexoticaTsvs = Future(_try {
       publishers,
       album,
       year,
-      if (_type != "N/A") _type else "",
-      "Amiga",
+      if (_type != "N/A" && _type != "?") _type else "",
+      if (album.nonEmpty && !m.archive.contains("PN-PokeyNoise/"))
+        if (m.info.contains("Falcon") || m.archive.contains("YM-YM2149") || m.archive.contains("-ST/")) "Atari"
+        else "Amiga"
+      else "",
     ))
   }.toBuffer.distinct
 
@@ -436,6 +399,8 @@ lazy val modsanthologyTsvs = Future(_try {
       m.publishers,
       m.album,
       m.year.getOrElse(0),
+      m._type,
+      m._platform,
     ))
   }.toBuffer.distinct
 
@@ -443,7 +408,7 @@ lazy val modsanthologyTsvs = Future(_try {
 })
 
 lazy val tosecmusicTsvs = Future(_try {
-  val tosec = sources.tosecmusic ++ sources.tosecmusic_unknown
+  val tosec = sources.sourceDB(sources.Source.TOSECMusic) ++ sources.sourceDB(sources.Source.TOSECMusicUnknown)
   val entries = tosec.sortBy(_.md5).distinct.par.flatMap { e =>
     tosecmusic.parseTosecMeta(e.md5, e.path).map { meta =>
       MetaData(
@@ -452,7 +417,8 @@ lazy val tosecmusicTsvs = Future(_try {
         meta.publishers,
         meta.album,
         meta.year,
-        meta._type
+        meta._type,
+        meta._platform,
       )
     }
   }.toBuffer.distinct
@@ -497,6 +463,7 @@ val future = Future.sequence(
       ampTsvs,
       modlandTsvs,
       unexoticaTsvs,
+      kestraTsvs,
       demozooTsvs,
       oldexoticaTsvs,
       wantedteamTsvs,
@@ -512,11 +479,13 @@ val future = Future.sequence(
       modlanddata,
       unexoticadata,
       demozoodata,
+      kestradata,
       oldexoticadata,
       wantedteamdata,
       modsanthologydata,
       fujiologydata,
       tosecmusicdata,
+      globalLeftovers.asScala.toBuffer
     )
     processMetaTsvs(combined, "metadata.tsv", true)
 }

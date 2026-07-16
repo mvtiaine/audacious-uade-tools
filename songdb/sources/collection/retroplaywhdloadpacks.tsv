@@ -37,6 +37,7 @@
 0179f04de04afd1505af44663dcf7146	1	89519	player	uade	OctaMED MMD1	0	27260	bebabb5d	6afd7df7	Commodore_Amiga_-_WHDLoad_-_Games/P/PierreLeChefIsOutToLunch_v2.3_CD32.lha/PierreIsOutToLunchCD32/data/OTLCD32/GREECE1.MOD
 01a092ec2cdd4afb27049f3179dd6959	0	5827	player	uade	Sonix Music Driver	0	618	c5c5940e	00b47b4e	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_1586.lha/SpiritOfExcalibur/data/EXCALFiles/Scores/Village1.smus
 01a092ec2cdd4afb27049f3179dd6959	0	5827	player	uade	Sonix Music Driver	0	618	c5c5940e	00b47b4e	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_NTSC_2852.lha/SpiritOfExcaliburNTSC/data/EXCALFiles/Scores/Village1.smus
+01b17f671960a32ecc258ba6424413ce	1	3134	player	uade	Protracker	0	2248	8a79ba36	26c695bb	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/ranking.mod
 01bb65015aa42af27906a14b4c1d2ae9	0	143352	player	libxmp	NoisePacker v2	4	17170	ffda689f	492bf69c	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/58
 01cb2f702b1bc93c6eea1adb0accc818	1	0	nosound	uade	Protracker	0	21564	af0777ad	b8e2abe5	Commodore_Amiga_-_WHDLoad_-_Games/C/Clou_v1.1_AGA_De.lha/ClouDeAGA/data/sounds/ok.bk
 01cb2f702b1bc93c6eea1adb0accc818	1	0	nosound	uade	Protracker	0	21564	af0777ad	b8e2abe5	Commodore_Amiga_-_WHDLoad_-_Games/C/Clou_v1.1_De.lha/ClouDe/data/sounds/ok.bk
@@ -99,7 +100,7 @@
 034611b56ff0170c182ea1a0496167e4	0	23590	player	uade	Sonix Music Driver	0	1060	599b1125	9642bd64	Commodore_Amiga_-_WHDLoad_-_Games/T/TVSportsBaseball_v1.0_0754.lha/TVSportsBaseball/data/titleami.smus
 035471fb36bd87349dfc21a64dcdbe56	1	46216	player	uade	Protracker compatible	0	30772	e356560b	ee70513c	Commodore_Amiga_-_WHDLoad_-_Games/M/MasterAxe_v2.2.lha/MasterAxe/data/SELECT.MOD
 037117f8c1d5597992192dd4db83d707	1	194693	player	uade	Protracker	0	61532	daf6829b	89305241	Commodore_Amiga_-_WHDLoad_-_Games/E/EishockeyManager_v1.0_De_0472.lha/EishockeyManagerDe/data/kleinbilder/229
-0379a44027157aeea19db8a66e4a493b	1	14408	player+silence	uade	Protracker	0	31326	aae80b1c	6cdb9b31	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3.lha/DeluxeGalaga/data/GALAGA.JINGLE2
+0379a44027157aeea19db8a66e4a493b	1	14408	player+silence	uade	Protracker	0	31326	aae80b1c	6cdb9b31	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5.lha/DeluxeGalaga/data/GALAGA.JINGLE2
 038fa469cbc198be2fabd4f50870494c	0	84476	player	libxmp	NoisePacker v2	4	5998	9e2b937c	00202ee8	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/33
 03abb93b0a1f7208a777a1c90ffcd79f	1	275004	player+volume	uade	Protracker compatible	0	123904	1bf0b420	fca5a0af	Commodore_Amiga_-_WHDLoad_-_Demos/D/DonMartinMusicDisk_v1.0_Hypnosis.lha/DonMartinMusicDisk/data/5
 03af0f9c77e26f567db7c7fd18a1eaf2	0	51155	player+silence	libxmp	NoisePacker v3	4	179098	8b9951c4	98271041	Commodore_Amiga_-_WHDLoad_-_Demos/M/Mirror_v1.0_Andromeda.lha/Mirror/MirrorData/MOD.Overture.CNP
@@ -156,7 +157,7 @@
 05b8f804273d942abacfa968a831710e	0	26845	player	uade	ChipTracker	0	46690	a60a93d3	5c3d09c2	Commodore_Amiga_-_WHDLoad_-_Games/P/Premiere_v3.2_CD32.lha/PremiereCD32/data/elev3ct.rnc
 05b8f804273d942abacfa968a831710e	1	4301	silence
 05db8ee14122e5fba6bfc327e4216829	1	124926	player	uade	P40A - P40B - P41A	0	39024	e8c39156	8c40cfe9	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L4MU
-05db8ee14122e5fba6bfc327e4216829	1	124926	player	uade	P40A - P40B - P41A	0	39024	e8c39156	8c40cfe9	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L4MU
+05db8ee14122e5fba6bfc327e4216829	1	124926	player	uade	P40A - P40B - P41A	0	39024	e8c39156	8c40cfe9	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L4MU
 05db8ee14122e5fba6bfc327e4216829	1	124926	player	uade	P40A - P40B - P41A	0	39024	e8c39156	8c40cfe9	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperfrogDemo_v1.1_AmigaAction.lha/SuperfrogDemoAmigaAction/data/L4MU
 05dd9c5db9b24a0b48f24469219ed700	1	233415	player	uade	P40A - P40B - P41A	0	60406	c2f16479	b3feba44	Commodore_Amiga_-_HD_Loaders_-_Games/A/AlienBreed2_HD_StefanBobergNov93_0278.lha/AlienBreed2_HD/MUSC
 05de41f35f7521d486da8be0a2aa9a60	1	0	nosound	uade	Protracker	0	10300	83c61e58	f9ec7c3d	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners13_v1.0_2722.lha/TimeRunners13/data/GAME_DIR/MUS/SECMUS.MDI
@@ -296,6 +297,8 @@
 0b3b078ee987cfe575cefdb1b323f6cd	1	115321	player	uade	Noisetracker 1.x	0	50440	4ff344bd	e9568a68	Commodore_Amiga_-_WHDLoad_-_Games/T/Trolls_v2.11.lha/Trolls/data/disk2_062f
 0b564cfcd8f6532392ab9e36cbb3af60	1	241465	player+silence	uade	Protracker compatible	0	113210	eb9a5847	65788150	Commodore_Amiga_-_WHDLoad_-_Magazines/F/FourthDimension3_v1.0_Cryptoburners.lha/FourthDimension3/data/DATA/mod.trial
 0b75d624a622895f40a0933f71a81d6d	1	91951	player	uade	Protracker	0	66108	620d9163	b07974d3	Commodore_Amiga_-_WHDLoad_-_Games/S/Shortgrey_v1.1a_Fr_2669.lha/ShortgreyFr/DataIntro/mod.acro-part4
+0b7872f4ecbcc476fb9c7385955ef894	1	85722	player	uade	Protracker	0	162942	2e301261	fa56d856	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/level1.mod
+0b7872f4ecbcc476fb9c7385955ef894	1	85722	player	uade	Protracker	0	162942	2e301261	fa56d856	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/level1.mod
 0b7de8d34464850e313ced3480c905ae	1	27006	player	uade	Protracker	0	36254	427f3a1e	b5562166	Commodore_Amiga_-_WHDLoad_-_Games/T/Trolls_v2.11_AGA_0155.lha/TrollsAGA/data/disk2_0589
 0b7de8d34464850e313ced3480c905ae	1	27006	player	uade	Protracker	0	36254	427f3a1e	b5562166	Commodore_Amiga_-_WHDLoad_-_Games/T/Trolls_v2.11_CD32.lha/TrollsCD32/data/mod.tune7
 0b7de8d34464850e313ced3480c905ae	1	27006	player	uade	Protracker	0	36254	427f3a1e	b5562166	Commodore_Amiga_-_WHDLoad_-_Games/T/Trolls_v2.11.lha/Trolls/data/disk2_05fa
@@ -475,7 +478,7 @@
 120ed992f6da6b2b05f4f5348790eeb0	1	0	nosound	uade	Protracker	0	9276	36c2d5d0	abb41158	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-08/GAME_DIR/MUS/MUS1.MDI
 120ed992f6da6b2b05f4f5348790eeb0	1	0	nosound	uade	Protracker	0	9276	36c2d5d0	abb41158	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-09/GAME_DIR/MUS/UNIT01.MDI
 1223c8c1b32572bdbaeb6417c9dfdae7	1	9700	player+silence	uade	P50A - P60A - P61A	0	134162	a6524587	23c01bff	Commodore_Amiga_-_JST_-_Games/S/SuperStardust_v1.0_CD32_JST.lha/SuperStardustCD32JST/CDDATA/ANIM/SND/P61.planetblows
-1229e7bf2b957641ba6a3a2d582402af	0	115180	player	libxmp	ProPacker 2.1	4	67280	90a4751c	76acf24b	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lv2
+1229e7bf2b957641ba6a3a2d582402af	0	115180	player	libxmp	ProPacker 2.1	4	67280	90a4751c	76acf24b	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lv2
 124a6740a8ff324e77e46c7df33ba746	0	84476	player	libxmp	NoisePacker v2	4	9458	43b931ad	a32a5a3a	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/22
 12569c55d2090b69ad1f5d837d61151a	1	34903	player	uade	Protracker	0	52162	5463a5e2	1119c803	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/U/USChampionshipVBall_v1.10_AGA.lha/USChampionshipVBallAGA/128Colors/hurry.mod
 12569c55d2090b69ad1f5d837d61151a	1	34903	player	uade	Protracker	0	52162	5463a5e2	1119c803	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/U/USChampionshipVBall_v1.10_AGA.lha/USChampionshipVBallAGA/64Colors/hurry.mod
@@ -613,7 +616,7 @@
 173a8eef6018de752832deb094ef4c83	1	276597	player	uade	Tracker Packer 2 - 3	0	79918	8a0a26ac	ac75cccc	Commodore_Amiga_-_WHDLoad_-_Games/T/TurboTrax_v1.1_Arcane_512KB_0156.lha/TurboTraxArcane512KB/data/Pak/Title.TP3
 173e3c413b5c3e4ae90dc756fecea334	0	9424	player	uade	Sonix Music Driver	0	472	782c7634	e54b46af	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_1586.lha/SpiritOfExcalibur/data/EXCALFiles/Scores/Village2.smus
 173e3c413b5c3e4ae90dc756fecea334	0	9424	player	uade	Sonix Music Driver	0	472	782c7634	e54b46af	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_NTSC_2852.lha/SpiritOfExcaliburNTSC/data/EXCALFiles/Scores/Village2.smus
-17721a0e9fcbeb4dbfe0d681e1788e86	0	41836	player	libxmp	ProPacker 2.1	4	88558	eed02540	b08f8576	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/con
+17721a0e9fcbeb4dbfe0d681e1788e86	0	41836	player	libxmp	ProPacker 2.1	4	88558	eed02540	b08f8576	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/con
 17a04fee5e0799dd79af3dbae150ded7	1	230541	player	uade	Protracker compatible	0	50684	90372259	b5771837	Commodore_Amiga_-_WHDLoad_-_Demos/C/CrazySounds2_v1.0_TeamX.lha/CrazySounds2/data/modules/mod.psycho dance
 17c59790c6a791968b97584fe57802b7	1	158211	player+volume	uade	Soundtracker II (15 instr.)	0	121904	dcfd4080	0ce619c1	Commodore_Amiga_-_WHDLoad_-_Demos/S/SoundtrackerInjury_v1.0_ElectronicArtists.lha/SoundtrackerInjury/data/MOD.j
 17dd120ef98678ef69051aac2020a1d9	1	203635	player	uade	Soundtracker II (31 instr.)	0	79750	1858171e	4acbf2c2	Commodore_Amiga_-_WHDLoad_-_Games/H/HeartOfTheDragon_v1.1_4Disk_2267.lha/HeartOfTheDragon4Disk/data/STrack1
@@ -947,7 +950,7 @@
 23bca303cf20b28ef37ee307a117b4af	1	0	nosound	uade	Protracker	0	8252	4b6a5e2a	84d09e0d	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-27/GAME_DIR/MUS/TENS.MDI
 23bca303cf20b28ef37ee307a117b4af	1	0	nosound	uade	Protracker	0	8252	4b6a5e2a	84d09e0d	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-28/GAME_DIR/MUS/TENS.MDI
 23bd2464e369067facc9fdc22a80c4b2	1	184445	player	uade	P40A - P40B - P41A	0	36282	a54eaffe	9738155b	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L3MU
-23bd2464e369067facc9fdc22a80c4b2	1	184445	player	uade	P40A - P40B - P41A	0	36282	a54eaffe	9738155b	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L3MU
+23bd2464e369067facc9fdc22a80c4b2	1	184445	player	uade	P40A - P40B - P41A	0	36282	a54eaffe	9738155b	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L3MU
 23c5f48d55e868c01e33eef75f65b022	1	51421	player	uade	OctaMED MMD0	0	6298	28229255	f68ae90c	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_2090.lha/Civilization/data/stalin
 23c5f48d55e868c01e33eef75f65b022	1	51421	player	uade	OctaMED MMD0	0	6298	28229255	f68ae90c	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_1633.lha/CivilizationAGA/data/stalin
 23c5f48d55e868c01e33eef75f65b022	1	51421	player	uade	OctaMED MMD0	0	6298	28229255	f68ae90c	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_CD.lha/CivilizationAGACD/data/stalin
@@ -1178,6 +1181,8 @@
 2d36fcec2a5ac360833b8e9a2500552d	1	35044	player	uade	OctaMED MMD1	0	85224	290c0262	7a62591d	Commodore_Amiga_-_WHDLoad_-_Games/D/DGeneration_v2.4_CD32.lha/DGenerationCD32/data/dgen2.mod
 2d4cfde976217fe44414fe00b15c25ae	1	149851	player+silence	uade	Protracker	0	163968	2dfd4da8	f34dd2c6	Commodore_Amiga_-_WHDLoad_-_Demos/L/LegaliseIt_v1.1_Anarchy.lha/LegaliseIt/data/time
 2d5081629277257b2cfffbdb37185aa6	1	92272	player	uade	Protracker	0	26796	f5d78af4	863ccad7	Commodore_Amiga_-_WHDLoad_-_Games/F/Funturatum_v1.1_Pl.lha/FunturatumPl/data/funsdata2
+2d525a4c290de2d488df0f3798d60e96	1	88374	player	uade	Protracker	0	221978	ee0be595	253cae96	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/level3.mod
+2d525a4c290de2d488df0f3798d60e96	1	88374	player	uade	Protracker	0	221978	ee0be595	253cae96	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/level3.mod
 2d59a8dc5a64a20f3bebd714dd9645ef	1	0	nosound	uade	Noisetracker 1.x	0	3132	ffe2452d	9ef5a887	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog14_v1.0_It.lha/DylanDog14It/data/MUS/INTROD14.MIC
 2d6d94fa643acbb570885a9b41e37e19	0	7676	player	libxmp	The Player 6.1a	4	88754	7ed54c88	f8157016	Commodore_Amiga_-_JST_-_Games/S/SuperStardust_v1.0_CD32_JST.lha/SuperStardustCD32JST/CDDATA/ANIM/SND/P61.starscroll
 2d88c0f879028d8d87c14679ad089caf	0	177476	player+silence	libxmp	ProPacker 2.1	4	135274	c4fc8842	a58235a9	Commodore_Amiga_-_WHDLoad_-_Demos/W/WaveSound_v1.0_Appendix.lha/WaveSound/data/4
@@ -1350,9 +1355,10 @@
 3541a65786b24109da14dae3c26d58bb	1	107645	player	uade	Protracker	0	75236	9defa11f	84a0ef88	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/S/SuperCars2_v0.91_AGA.lha/SuperCars2AGA/data/file78_track1.mod
 3543df6e9246516a3e59c61af44762b0	0	341149	player+silence	uade	SIDMon 2.0	0	192000	a0ee6308	fb01e9d2	Commodore_Amiga_-_WHDLoad_-_Games/R/Rectangle_v1.0.lha/Rectangle/data/disk1_03d3
 3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/JUNBASE.SNG
-3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/JUNBASE.SNG
-3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/JUNBASE.SNG
-3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/JUNBASE.SNG
+3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/JUNBASE.SNG
+3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/JUNBASE.SNG
+3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/JUNBASE.SNG
+3586ae65553650056059b3c6eda35ffd	0	0	nosound	uade	Richard Joseph Player	0	3153	fbe39e22	a9b4b8c0	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/JUNBASE.SNG
 3586ae65553650056059b3c6eda35ffd	1	16015	player
 3586ae65553650056059b3c6eda35ffd	2	24635	player
 3586ae65553650056059b3c6eda35ffd	3	17301	player
@@ -1477,10 +1483,13 @@
 38de374a8f2c0f1c9e32b32ffc900fe7	1	92755	player	uade	Startrekker (4ch)	0	48876	777c53c0	67ccb80a	Commodore_Amiga_-_WHDLoad_-_Games/P/Puggsy_v2.0_1113.lha/Puggsy/data/3DARKBLDE.MOD
 38eb06fe547dd60829dabd847fcbfcb3	1	0	nosound	uade	Protracker	0	11324	b105815a	f9770400	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners19_v1.0_2728.lha/TimeRunners19/data/GAME_DIR/MUS/ARCA.MDI
 38eb06fe547dd60829dabd847fcbfcb3	1	0	nosound	uade	Protracker	0	11324	b105815a	f9770400	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-19/GAME_DIR/MUS/ARCA.MDI
+39025a8ff74fd43981d1b4bbeec2344a	1	38400	player	uade	Protracker	0	152412	cce6c867	67fb8bcd	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/level4.mod
+39025a8ff74fd43981d1b4bbeec2344a	1	38400	player	uade	Protracker	0	152412	cce6c867	67fb8bcd	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/level4.mod
 3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/KILLER.SNG
-3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/KILLER.SNG
-3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/KILLER.SNG
-3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/KILLER.SNG
+3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/KILLER.SNG
+3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/KILLER.SNG
+3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/KILLER.SNG
+3911c1555670f72e725fdad9a3b88d22	0	0	nosound	uade	Richard Joseph Player	0	2989	880d4810	c9b4346a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/KILLER.SNG
 3911c1555670f72e725fdad9a3b88d22	1	32010	player
 3911c1555670f72e725fdad9a3b88d22	2	0	nosound
 3911c1555670f72e725fdad9a3b88d22	3	144015	player
@@ -1525,7 +1534,7 @@
 3ab4b083a15ce06b674ce1efb518637b	1	0	nosound	uade	Protracker	0	6204	e667685d	0e63cea9	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog07_v1.0_It.lha/DylanDog07It/data/MUS/caos.mdi
 3ab4b083a15ce06b674ce1efb518637b	1	0	nosound	uade	Protracker	0	6204	e667685d	0e63cea9	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog10_v1.0_It.lha/DylanDog10It/data/MUS/frenet.mdi
 3ab6ab4f570fa26974cf88bdbbe21793	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.8-2.0	4	10840	6b926f1f	1e399e33	Commodore_Amiga_-_WHDLoad_-_Games/H/HoleInOne&DataDisks_v1.2.lha/HoleInOne&DataDisks/data/FarOut/Title.Music
-3ac49ad060173d5eb0e3b99379518ef4	1	61568	player	uade	Protracker	0	76078	4b6b69dc	1667cf47	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3_AGA.lha/DeluxeGalagaAGA/data/GALAGA.JINGLE1
+3ac49ad060173d5eb0e3b99379518ef4	1	61568	player	uade	Protracker	0	76078	4b6b69dc	1667cf47	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5_AGA.lha/DeluxeGalagaAGA/data/GALAGA.JINGLE1
 3acf5020f6917a53105d36b2967b1256	1	0	nosound	uade	Protracker	0	3132	e363b702	0880183e	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex01_v1.0_It.lha/Tex01It/data-01/MUS/st5
 3acf5020f6917a53105d36b2967b1256	1	0	nosound	uade	Protracker	0	3132	e363b702	0880183e	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex04_v1.0_It.lha/Tex04It/data-04/MUS/st5
 3ae168d701b904db76f882ee3f13eb08	1	0	nosound	uade	Protracker	0	10300	bfc00118	59df4bec	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners02_v1.0a_2713.lha/TimeRunners02/data/GAME_DIR/MUS/ATM03.MDI
@@ -1588,7 +1597,7 @@
 3c7b1dab8f5a1aa6406914cde2938d6d	0	102520	player	uade	Amos Music Bank	0	41974	16bdbcd3	afaf7e1b	Commodore_Amiga_-_WHDLoad_-_Games/A/AmiRobbo_v1.0_Pl.lha/AmiRobboPl/data/Music/Mod2.abk
 3c939067130108c60a1f07b0c713a65d	1	87168	player	uade	Protracker	0	106912	60d5fad6	c53a57c3	Commodore_Amiga_-_WHDLoad_-_Demos/M/Mixolydian_v1.0_EndOfCentury1999.lha/Mixolydian/data/09
 3ca2d0143e8fbc6b5884de38760b800c	1	166501	player	uade	Protracker compatible	0	179200	5c4c8767	a419c8a0	Commodore_Amiga_-_WHDLoad_-_Demos/D/DiscoFever_v1.0_IpecElite.lha/DiscoFever/data/03
-3cad9c4f9fb7ff788c8f2fa4fbde7637	1	176273	player+silence	uade	Protracker	0	93686	58557396	8292b37e	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.4.lha/MegaTyphoon/data/prgfx/title.mod.p
+3cad9c4f9fb7ff788c8f2fa4fbde7637	1	176273	player+silence	uade	Protracker	0	93686	58557396	8292b37e	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.5.lha/MegaTyphoon/data/prgfx/title.mod.p
 3cb0498314a7760125e220b7c0d4d60b	1	80517	player	uade	P50A - P60A - P61A	0	77612	957296e1	66711d1f	Commodore_Amiga_-_WHDLoad_-_Games/E/EvilsDoom_v1.1_AGA.lha/EvilsDoomAGA/data/MUZ/P60.lostlife
 3cb34b74d57f053a31a51c9f0ab24a6d	1	0	nosound	uade	Protracker	0	9276	c82caa2c	dd1b809d	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog12_v1.0_It_2907.lha/DylanDog12It/data/MUS/st2
 3ccd7e73ba864ba60167f7cfc6373f1d	1	135314	player	uade	Soundtracker II (15 instr.)	0	74740	98490144	89f5ea72	Commodore_Amiga_-_WHDLoad_-_Games/R/RockStar_v1.1_Fr.lha/RockStarFr/data/music6
@@ -1677,9 +1686,10 @@
 3f728b507186db38a153874ef9d0c03d	1	54837	player	uade	P40A - P40B - P41A	0	13948	dd855d4d	d9bfa732	Commodore_Amiga_-_WHDLoad_-_Games/C/Colonization_v1.1_0452.lha/Colonization/data/Exe/Col16.mod
 3f728b507186db38a153874ef9d0c03d	1	54837	player	uade	P40A - P40B - P41A	0	13948	dd855d4d	d9bfa732	Commodore_Amiga_-_WHDLoad_-_Games/C/Colonization_v1.1_AGA_0452.lha/ColonizationAGA/data/Exe/Col16.mod
 3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/ICEBASE.SNG
-3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/ICEBASE.SNG
-3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/ICEBASE.SNG
-3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/ICEBASE.SNG
+3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/ICEBASE.SNG
+3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/ICEBASE.SNG
+3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/ICEBASE.SNG
+3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/ICEBASE.SNG
 3f862754641c04a4711b8bcee2f55b3c	0	0	nosound	uade	Richard Joseph Player	0	3207	630c11bf	23fa1703	Commodore_Amiga_-_WHDLoad_-_Games/N/NotVeryFestiveFodder_v1.0.lha/NotVeryFestiveFodder/data/ICEBASE.SNG
 3f862754641c04a4711b8bcee2f55b3c	1	8821	player
 3f862754641c04a4711b8bcee2f55b3c	2	4340	player
@@ -1717,10 +1727,10 @@
 4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/morbase.sng
 4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/morbase.sng
 4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/morbase.sng
-4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/MORBASE.SNG
-4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/MORBASE.SNG
-4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/MORBASE.SNG
-4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/MORBASE.SNG
+4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/MORBASE.SNG
+4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/MORBASE.SNG
+4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/MORBASE.SNG
+4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/MORBASE.SNG
 4049fc6b00b1e171b906f58c5816ea31	0	0	nosound	uade	Richard Joseph Player	0	3211	9d9acf36	62881249	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/MORBASE.SNG
 4049fc6b00b1e171b906f58c5816ea31	1	8901	player
 4049fc6b00b1e171b906f58c5816ea31	2	16656	player+silence
@@ -1747,6 +1757,16 @@
 412e6eff9cf4c63617fa95adc3041288	0	38342	player	libopenmpt	Game Music Creator	4	11726	b2b03de1	fd74eb5a	Commodore_Amiga_-_WHDLoad_-_Games/K/KnightsOfTheSky_v1.4_0522.lha/KnightsOfTheSky/data/knightsdata3
 413f8e6e67ea25d0132db42604745c91	0	30844	player	uade	Amos Music Bank	0	15380	bc9ab396	19c9e024	Commodore_Amiga_-_WHDLoad_-_Games/G/Genesia_v1.4_1808.lha/Genesia/data/T6/A606
 413f8e6e67ea25d0132db42604745c91	0	30844	player	uade	Amos Music Bank	0	15380	bc9ab396	19c9e024	Commodore_Amiga_-_WHDLoad_-_Games/G/Genesia_v1.4_Fr.lha/GenesiaFr/data/T6/A606
+4144b919f2885f16d416a508618e3295	1	32090	player	uade	Protracker	0	217296	c95905f0	5a1bb90e	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/GnG_Stage_3-4.mod
+4144b919f2885f16d416a508618e3295	10	7329	player+silence
+4144b919f2885f16d416a508618e3295	2	25037	player
+4144b919f2885f16d416a508618e3295	3	0	nosound
+4144b919f2885f16d416a508618e3295	4	0	nosound
+4144b919f2885f16d416a508618e3295	5	0	nosound
+4144b919f2885f16d416a508618e3295	6	0	nosound
+4144b919f2885f16d416a508618e3295	7	3436	player
+4144b919f2885f16d416a508618e3295	8	5563	player+silence
+4144b919f2885f16d416a508618e3295	9	13564	player+silence
 4147f6970149f6fc9af243559b300ce3	1	35928	player	uade	OctaMED MMD0	0	6994	49e783d3	d5b47269	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_2090.lha/Civilization/data/lincoln
 4147f6970149f6fc9af243559b300ce3	1	35928	player	uade	OctaMED MMD0	0	6994	49e783d3	d5b47269	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_1633.lha/CivilizationAGA/data/lincoln
 4147f6970149f6fc9af243559b300ce3	1	35928	player	uade	OctaMED MMD0	0	6994	49e783d3	d5b47269	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_CD.lha/CivilizationAGACD/data/lincoln
@@ -1756,8 +1776,8 @@
 416721840d7971ba844ddc2f82f6a061	0	0	nosound	libopenmpt	SoundTracker 2.0 / 2.1 / 2.2	4	8792	d8b4515c	506177a1	Commodore_Amiga_-_WHDLoad_-_Games/P/Prehistorik_v2.0_0557.lha/Prehistorik/Disk.1/rocky.pat
 416c53b8aa31050154f6cb16d75b4679	1	107645	player	uade	Startrekker (4ch)	0	74752	1f6d8d25	1096e1d6	Commodore_Amiga_-_WHDLoad_-_Demos/C/CerebralDelights_v1.0_Goldfire.lha/CerebralDelights/data/05
 416db491bf2854e33f6a0d4126aaba1f	1	31065	player	uade	P50A - P60A - P61A	0	33512	28d40a80	5633f767	Commodore_Amiga_-_JST_-_Games/B/Banshee_v3.1_AGA_0633_JST.lha/BansheeAGAJST/P60.end
-416db491bf2854e33f6a0d4126aaba1f	1	31065	player	uade	P50A - P60A - P61A	0	33512	28d40a80	5633f767	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v3.3_AGA_0633.lha/BansheeAGA/data/P60.end
-416db491bf2854e33f6a0d4126aaba1f	1	31065	player	uade	P50A - P60A - P61A	0	33512	28d40a80	5633f767	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v3.3_CD32.lha/BansheeCD32/data/P60.end
+416db491bf2854e33f6a0d4126aaba1f	1	31065	player	uade	P50A - P60A - P61A	0	33512	28d40a80	5633f767	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v4.0_AGA_0633.lha/BansheeAGA/data/P60.end
+416db491bf2854e33f6a0d4126aaba1f	1	31065	player	uade	P50A - P60A - P61A	0	33512	28d40a80	5633f767	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v4.0_CD32.lha/BansheeCD32/data/P60.end
 417c9cf6e7104a36194d80b9ca8e1806	0	15291	player	uade	ChipTracker	0	51994	91047022	a49083b8	Commodore_Amiga_-_JST_-_Games/P/Premiere_v1.2_1553_JST.lha/PremiereJST/elev5ct.rnc
 417c9cf6e7104a36194d80b9ca8e1806	0	15291	player	uade	ChipTracker	0	51994	91047022	a49083b8	Commodore_Amiga_-_JST_-_Games/P/Premiere_v1.2_CD32_JST.lha/PremiereCD32JST/elev5ct.rnc
 417c9cf6e7104a36194d80b9ca8e1806	0	15291	player	uade	ChipTracker	0	51994	91047022	a49083b8	Commodore_Amiga_-_WHDLoad_-_Games/P/Premiere_v3.2_1553.lha/Premiere/data/elev5ct.rnc
@@ -1766,12 +1786,20 @@
 41cead85590e29a0725717ca18593473	1	261245	player	uade	Protracker	0	53690	43d02b0e	64cbfc73	Commodore_Amiga_-_WHDLoad_-_Games/P/PizzaConnection_v1.0_De.lha/PizzaConnectionDe/data/sound/m2
 41cead85590e29a0725717ca18593473	1	261245	player	uade	Protracker	0	53690	43d02b0e	64cbfc73	Commodore_Amiga_-_WHDLoad_-_Games/P/PizzaConnection_v1.0.lha/PizzaConnection/data/sound/m2
 41d67f2caa6bac3766d8506739c4422f	1	0	nosound	uade	Protracker	0	4156	2937de6a	9dca4fa3	Commodore_Amiga_-_WHDLoad_-_Games/D/Diabolik02_v1.0_It.lha/Diabolik02It/data/MUS/dialogo_2
+41e17e48493d5f7ba0f2b93262d7dea5	1	36832	player	uade	Protracker	0	384310	f6aa9e3a	f8f4f1a6	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/GnG_Stage_1-2.mod
+41e17e48493d5f7ba0f2b93262d7dea5	2	20114	player
+41e17e48493d5f7ba0f2b93262d7dea5	3	0	nosound
+41e17e48493d5f7ba0f2b93262d7dea5	4	0	nosound
+41e17e48493d5f7ba0f2b93262d7dea5	5	3436	player
+41e17e48493d5f7ba0f2b93262d7dea5	6	5563	player+silence
+41e17e48493d5f7ba0f2b93262d7dea5	7	13564	player+silence
+41e17e48493d5f7ba0f2b93262d7dea5	8	7329	player+silence
 41e4bb537dcabcecab796887a1180f8b	1	0	nosound	uade	Noisetracker 1.x	0	7228	48adbcb8	d67d9925	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog17_v1.0_It.lha/DylanDog17It/data/MUS/GMODD.MIC
 41f71b15df999421f285da3a2f270b43	1	35968	player	uade	Protracker	0	25164	201d04eb	ce3d1056	Commodore_Amiga_-_WHDLoad_-_Games/S/SoccerKid_v2.1_CD32.lha/SoccerKidCD32/data/cutscene.mod
 41f71b15df999421f285da3a2f270b43	2	25077	player
 421e22cf904a26b1df0461efc5646ad6	1	49411	player	uade	Protracker	0	35646	66c4e1ef	a716e9a0	Commodore_Amiga_-_WHDLoad_-_Games/P/PulsatorDemo_v1.1_AGA.lha/PulsatorDemoAGA/Pulsator/Datas/mod.1
-4222e03dcd2bd5986fd5e6534d546f77	1	96130	player	uade	Protracker	0	58440	aa99a500	5d821bd6	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3_AGA.lha/DeluxeGalagaAGA/data/GALAGA.MUSIC
-4222e03dcd2bd5986fd5e6534d546f77	1	96130	player	uade	Protracker	0	58440	aa99a500	5d821bd6	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3.lha/DeluxeGalaga/data/GALAGA.MUSIC
+4222e03dcd2bd5986fd5e6534d546f77	1	96130	player	uade	Protracker	0	58440	aa99a500	5d821bd6	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5_AGA.lha/DeluxeGalagaAGA/data/GALAGA.MUSIC
+4222e03dcd2bd5986fd5e6534d546f77	1	96130	player	uade	Protracker	0	58440	aa99a500	5d821bd6	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5.lha/DeluxeGalaga/data/GALAGA.MUSIC
 42465eee6f3c71ed584d8f05a699009f	1	177608	player+silence	uade	P40A - P40B - P41A	0	48268	bf202c27	6591f779	Commodore_Amiga_-_WHDLoad_-_Games/D/DungeonMaster2_v1.1_0899.lha/DungeonMaster2/data/music/SK03.MOD
 42588fd22ea3d1539c53f6fd477934d8	0	46176	player	uade	SoundFX	0	51640	166fdf16	747a31eb	Commodore_Amiga_-_WHDLoad_-_Games/F/FutureWars_v4.3-B_1570.lha/FutureWars/data/aliens
 42588fd22ea3d1539c53f6fd477934d8	0	46176	player	uade	SoundFX	0	51640	166fdf16	747a31eb	Commodore_Amiga_-_WHDLoad_-_Games/F/FutureWars_v4.3-B_De_0506.lha/FutureWarsDe/data/aliens
@@ -1814,6 +1842,7 @@
 43a6e56556905ba386754870656e5367	1	41072	player	uade	Protracker	0	18878	61d48fbc	a2594076	Commodore_Amiga_-_WHDLoad_-_Games/U/UFOEnemyUnknown_v1.0_1677.lha/UFOEnemyUnknown/data/GeoFiles/music/mars.mus
 43b51d49f86e3b525f1af5fbba331970	1	21520	player	uade	Protracker	0	181968	51be9b55	6bac23f0	Commodore_Amiga_-_WHDLoad_-_Games/F/Fears_v4.0.2_CD32.lha/FearsCD32/data/datas/z081
 44254051338a39655b9d811f83e4386f	0	57650	player	uade	Amos Music Bank	0	62020	3f772884	fd5258c3	Commodore_Amiga_-_WHDLoad_-_Games/L/LostInMine_v1.1_Pl.lha/LostInMinePl/data/m1
+44379a80c8f64bdbe4f0863b96e2f5a4	1	12418	player	uade	Protracker	0	3272	a714f968	3fa4f2c4	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/offroad.mod
 443b8196e328d2f7b62a0961962fa284	1	5331	player+silence	uade	Protracker	0	6500	5a59a7de	26569c67	Commodore_Amiga_-_JST_-_Games/F/Flashback_v3.1_JST.lha/FlashbackJST/music/donneobj
 443b8196e328d2f7b62a0961962fa284	1	5331	player+silence	uade	Protracker	0	6500	5a59a7de	26569c67	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_1163.lha/Flashback/data/music/donneobj
 443b8196e328d2f7b62a0961962fa284	1	5331	player+silence	uade	Protracker	0	6500	5a59a7de	26569c67	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_Cz.lha/FlashbackCz/data/music/donneobj
@@ -2019,7 +2048,7 @@
 4affdbadb905f82c92db8fa2439af48c	1	103806	player	uade	Noisetracker 1.x	0	21274	5233072f	59ae0899	Commodore_Amiga_-_WHDLoad_-_Games/L/LupoAlberto_v1.01.lha/LupoAlberto/data/mod.01
 4b85c45aa5fa75d848e439db682e3193	1	230541	player	uade	Protracker	0	72426	d86393be	8b2f9bb0	Commodore_Amiga_-_WHDLoad_-_Demos/P/PackVanPee1_v1.0_Jetset.lha/PackVanPee1/data/mod.construction
 4bb31085300eb255bb100b6eb09854c2	1	234359	player	uade	P40A - P40B - P41A	0	40514	a882af3a	3ec46491	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L1MU
-4bb31085300eb255bb100b6eb09854c2	1	234359	player	uade	P40A - P40B - P41A	0	40514	a882af3a	3ec46491	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L1MU
+4bb31085300eb255bb100b6eb09854c2	1	234359	player	uade	P40A - P40B - P41A	0	40514	a882af3a	3ec46491	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L1MU
 4bc0b257ff6eebbe7bc2f67b129e2fff	0	47040	player	uade	Amos Music Bank	0	34414	82807776	70aa7588	Commodore_Amiga_-_WHDLoad_-_Games/G/Genesia_v1.4_1808.lha/Genesia/data/T4/C402
 4bc0b257ff6eebbe7bc2f67b129e2fff	0	47040	player	uade	Amos Music Bank	0	34414	82807776	70aa7588	Commodore_Amiga_-_WHDLoad_-_Games/G/Genesia_v1.4_Fr.lha/GenesiaFr/data/T4/C402
 4bf1099c0ea195db313686415ded64f0	1	9711	player+silence	uade	P50A - P60A - P61A	0	37736	bf8bc047	f19e6a34	Commodore_Amiga_-_JST_-_Games/S/SuperStardust_v1.0_CD32_JST.lha/SuperStardustCD32JST/CDDATA/ANIM/SND/P61.flyby1
@@ -2183,18 +2212,19 @@
 52dfac55162238a0d27c7b671f7877f8	1	72058	player	uade	Protracker	0	52158	b787b8e6	6e9eae2e	Commodore_Amiga_-_WHDLoad_-_Games/P/PizzaConnection_v1.0_De.lha/PizzaConnectionDe/data/sound/m4
 52dfac55162238a0d27c7b671f7877f8	1	72058	player	uade	Protracker	0	52158	b787b8e6	6e9eae2e	Commodore_Amiga_-_WHDLoad_-_Games/P/PizzaConnection_v1.0.lha/PizzaConnection/data/sound/m4
 5300e306d7224887cbc88791cd718ec9	1	92272	player	uade	P40A - P40B - P41A	0	25422	4f419b0b	5f46747f	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/LFMU
-5300e306d7224887cbc88791cd718ec9	1	92272	player	uade	P40A - P40B - P41A	0	25422	4f419b0b	5f46747f	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/LFMU
+5300e306d7224887cbc88791cd718ec9	1	92272	player	uade	P40A - P40B - P41A	0	25422	4f419b0b	5f46747f	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/LFMU
 5324ce809301f77067a255971147ccf0	1	239764	player	uade	Noisetracker 1.x	0	75264	a38b71de	9ba35553	Commodore_Amiga_-_WHDLoad_-_Demos/C/Celebration_v1.0_It.lha/Celebration/data/01
 5344c8a07b9388ed650ccabc7482ff45	1	0	nosound	uade	Protracker	0	5180	f0068b83	547d7b57	Commodore_Amiga_-_WHDLoad_-_Games/D/Diabolik04_v1.0_It.lha/Diabolik04It/data/MUS/usa_corda
 5344c8a07b9388ed650ccabc7482ff45	2	0	nosound
 53471e0da3d4ec4e0efc58928c52a3fd	0	61649	player	uade	Sonix Music Driver	0	1596	73f8d3c5	4cdfbedb	Commodore_Amiga_-_WHDLoad_-_Games/P/PortesDuTemps_v1.2_Fr.lha/PortesDuTempsFr/data/MU4
+5356bd5111937bb93c8e148dea92d0f1	1	7032	player	uade	Protracker	0	3168	048eaeeb	9d849a79	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/viva ny.mod
 535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/intbase.sng
 535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/intbase.sng
 535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/intbase.sng
-535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/INTBASE.SNG
-535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/INTBASE.SNG
-535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/INTBASE.SNG
-535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/INTBASE.SNG
+535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/INTBASE.SNG
+535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/INTBASE.SNG
+535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/INTBASE.SNG
+535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/INTBASE.SNG
 535faad9fb414f96e6d53777d85073fc	0	0	nosound	uade	Richard Joseph Player	0	2701	c6dc3be9	cc46bbbe	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/INTBASE.SNG
 535faad9fb414f96e6d53777d85073fc	1	3094	player
 535faad9fb414f96e6d53777d85073fc	2	8660	player
@@ -2601,7 +2631,7 @@
 611dc43163b526c619f8ba0e7ce50dd3	1	121586	player+silence	uade	Protracker compatible	0	98722	010f24f4	d6d73539	Commodore_Amiga_-_WHDLoad_-_Games/F/Fire!_v1.0.lha/Fire!/data/fire.mus
 613cc13b6c899f95bada475365841996	1	0	nosound	uade	Noisetracker 1.x	0	5180	93981878	75fa0797	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex11_v1.0_It.lha/Tex11It/data-11/MUS/GMOTX.MIC
 6149e2e6a7d7089d83b5d78f78d1d1d8	1	134209	player	uade	P40A - P40B - P41A	0	60446	b57225d4	61e68ce3	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/MUSC
-6149e2e6a7d7089d83b5d78f78d1d1d8	1	134209	player	uade	P40A - P40B - P41A	0	60446	b57225d4	61e68ce3	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/MUSC
+6149e2e6a7d7089d83b5d78f78d1d1d8	1	134209	player	uade	P40A - P40B - P41A	0	60446	b57225d4	61e68ce3	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/MUSC
 61671f7ef4513a896cbe4cbc23aaa598	1	0	nosound	uade	Protracker	0	5180	0e9bf970	1dd1c8f9	Commodore_Amiga_-_WHDLoad_-_Games/D/Diabolik04_v1.0_It.lha/Diabolik04It/data/MUS/st3
 616b196ca9fb388fb6de7bfe2ec114a3	1	41735	player+silence	uade	Protracker	0	34366	439c6860	66200785	Commodore_Amiga_-_JST_-_Games/F/Flashback_v3.1_JST.lha/FlashbackJST/music/voyage
 616b196ca9fb388fb6de7bfe2ec114a3	1	41735	player+silence	uade	Protracker	0	34366	439c6860	66200785	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_1163.lha/Flashback/data/music/voyage
@@ -2635,8 +2665,8 @@
 628816331fcc586c305812428101f05a	0	107631	silence	uade	Infogrames	0	3160	d86a62db	7d23b1f6	Commodore_Amiga_-_WHDLoad_-_Games/W/WeenTheProphecy_v1.3.lha/WeenTheProphecy/data/WEEN.DUM
 6294af190d48d42dfc18e6a557d6b65f	1	0	nosound	uade	Noisetracker 1.x	0	7228	f923061b	5e3bd643	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex09_v1.0_It.lha/Tex09It/data-09/mus/SIGTX.MIC
 62a5d9f7e0342ce8a729b297e1254a63	1	85842	player	uade	P50A - P60A - P61A	0	24730	b3fd82df	e36325a2	Commodore_Amiga_-_JST_-_Games/B/Banshee_v3.1_AGA_0633_JST.lha/BansheeAGAJST/P60.intro
-62a5d9f7e0342ce8a729b297e1254a63	1	85842	player	uade	P50A - P60A - P61A	0	24730	b3fd82df	e36325a2	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v3.3_AGA_0633.lha/BansheeAGA/data/P60.intro
-62a5d9f7e0342ce8a729b297e1254a63	1	85842	player	uade	P50A - P60A - P61A	0	24730	b3fd82df	e36325a2	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v3.3_CD32.lha/BansheeCD32/data/P60.intro
+62a5d9f7e0342ce8a729b297e1254a63	1	85842	player	uade	P50A - P60A - P61A	0	24730	b3fd82df	e36325a2	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v4.0_AGA_0633.lha/BansheeAGA/data/P60.intro
+62a5d9f7e0342ce8a729b297e1254a63	1	85842	player	uade	P50A - P60A - P61A	0	24730	b3fd82df	e36325a2	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v4.0_CD32.lha/BansheeCD32/data/P60.intro
 62aa97a9026f1e1d7c869259990ea224	1	0	nosound	uade	Protracker	0	7228	09d017bf	e4f21da8	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog01_v1.01_It.lha/DylanDog01It/data/MUS/st4
 62aa97a9026f1e1d7c869259990ea224	1	0	nosound	uade	Protracker	0	7228	09d017bf	e4f21da8	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog01_v1.01.lha/DylanDog01/data/MUS/st4
 62c5ad450399bce4aa9affab0eb447d7	1	30824	player	uade	Protracker	0	40702	101ccd36	6dc810c6	Commodore_Amiga_-_WHDLoad_-_Games/C/ChristophKolombus_v1.1_AGA_De_0448.lha/ChristophKolumbusAGADe/data/songs/mod.columbus.happy
@@ -2653,6 +2683,7 @@
 63706eb576067fbe57dbc3404d65775a	2	86525	player
 63706eb576067fbe57dbc3404d65775a	3	86525	player
 6374ee4a5eb1615d359add46db0b95e0	1	23168	player	uade	Soundtracker II (15 instr.)	0	11548	9e269c2d	07375f8e	Commodore_Amiga_-_WHDLoad_-_Games/S/SafariGuns_v1.0_Fr.lha/SafariGunsFr/data/tamtam.mus
+637623d1b203408e2dc0c3f1da7daebd	1	11839	player+silence	uade	Protracker	0	21052	30997e24	bcd82575	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/jingle_second_place.mod
 637b0e22ebe35090d192d43e2c7a70ab	1	146045	player	uade	Noisetracker 1.x	0	63884	a954a206	ff9ba5f0	Commodore_Amiga_-_WHDLoad_-_Games/L/Limes&Napoleon_v1.1_2983.lha/Limes&Napoleon/data/backround1
 6388c893207ec4ecf70a69750c7bcde7	1	0	nosound	uade	Protracker compatible	0	10300	b1889435	f3cc256e	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners01_v1.0a_2593.lha/TimeRunners01/data/GAME_DIR/MUS/atm01.mdi
 6388c893207ec4ecf70a69750c7bcde7	1	0	nosound	uade	Protracker compatible	0	10300	b1889435	f3cc256e	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-01/GAME_DIR/MUS/atm01.mdi
@@ -2662,6 +2693,8 @@
 63aca945ade773fe271857938a05dd5a	0	3194	player	uade	Sonix Music Driver	0	278	86afe9c6	fde9111a	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_1586.lha/SpiritOfExcalibur/data/EXCALFiles/Scores/BtlStrt.smus
 63aca945ade773fe271857938a05dd5a	0	3194	player	uade	Sonix Music Driver	0	278	86afe9c6	fde9111a	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_NTSC_2852.lha/SpiritOfExcaliburNTSC/data/EXCALFiles/Scores/BtlStrt.smus
 63b2821943c8942236fa1c0efbb6ee95	1	11092	player+volume	uade	Soundtracker II (15 instr.)	0	35068	ae375487	b80b8a6a	Commodore_Amiga_-_WHDLoad_-_Games/E/Explora3_v1.2_Fr_2676.lha/Explora3Fr/data/mu04
+63c9b620af12af23da0ee4c0cfe0f695	1	5445	player	uade	Protracker	0	26868	4228acf1	0942dc19	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/intermission.mod
+63c9b620af12af23da0ee4c0cfe0f695	1	5445	player	uade	Protracker	0	26868	4228acf1	0942dc19	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/intermission.mod
 6400c575f6b8e876620d56769371e5df	1	0	nosound	uade	Noisetracker 1.x	0	4156	9db6a9e6	7bac5fde	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog16_v1.0a_It.lha/DylanDog16It/data/MUS/MUS00.MIC
 6429d14dacc47b0cd665e509334b53bf	1	69224	player	uade	P50A - P60A - P61A	0	94138	9b0839cd	30881009	Commodore_Amiga_-_WHDLoad_-_Games/E/EvilsDoom_v1.1_AGA.lha/EvilsDoomAGA/data/MUZ/P60.luea tavern
 64377a7e8cbf31a56e368bb684370177	1	220393	player	uade	OctaMED MMD1	0	151372	fe229e9f	3b4f7898	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperSkidmarksFarmYardEdition_v2.2_CD.lha/SuperSkidmarksFYEdCD/data/Sfx/tune.crn
@@ -2768,6 +2801,7 @@
 67b40cfa96380796ebde148158195a85	1	75011	player	uade	Protracker	0	79026	c8329949	48406b3f	Commodore_Amiga_-_WHDLoad_-_Games/H/HighSeasTrader_v1.0_AGA_2108.lha/HighSeasTraderAGA/data/mod.intro
 67cec4b3239e24594eb7846eefb55cdb	0	345085	player	libopenmpt	SoundTracker 2.0 / D.O.C. SoundTracker II	4	135168	e69d65cc	9bf989bb	Commodore_Amiga_-_WHDLoad_-_Demos/S/SoundQuest1_v1.0_Quest.lha/SoundQuest1/data/3
 67d811e5a6a52872793202cdc431d4a9	1	0	nosound	uade	Protracker compatible	0	5180	b34bd458	c1ca5f87	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex11_v1.0_It.lha/Tex11It/data-11/MUS/DRAMM.MIC
+68001e4e92eb8bc8f2bf6b4e6aa9b7a5	1	1667	player	uade	Protracker	0	2282	83ce779b	7f9a621f	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/frontview.mod
 6827c5bf38c22a681e61c38a8782f599	1	82687	player	uade	Startrekker (4ch)	0	29466	b9cf8ccd	c2590cd2	Commodore_Amiga_-_JST_-_Games/P/Puggsy_v1.0_1113_JST.lha/PuggsyJST/data/2LITEHOUS.MOD
 6827c5bf38c22a681e61c38a8782f599	1	82687	player	uade	Startrekker (4ch)	0	29466	b9cf8ccd	c2590cd2	Commodore_Amiga_-_WHDLoad_-_Games/P/Puggsy_v2.0_1113.lha/Puggsy/data/2LITEHOUS.MOD
 6832ae5c6d426ff044c49f0d780aba3b	1	295204	player	uade	Startrekker (4ch)	0	256000	0d2341e3	bad7340f	Commodore_Amiga_-_WHDLoad_-_Demos/C/CerebralDelights_v1.0_Goldfire.lha/CerebralDelights/data/01
@@ -2881,7 +2915,9 @@
 6cc7b26b29c1f81da34105858411548b	1	0	nosound	uade	Protracker	0	9276	3824da2d	c74bfeba	Commodore_Amiga_-_WHDLoad_-_Games/S/Simulman10_v1.0_It.lha/Simulman10It/data-10/MUS/MUS4.MIC
 6ccc28f44a34c1e9d3270138f2df56b8	0	7816	player	uade	Amos Music Bank	0	8392	9cb0c0da	63987b0b	Commodore_Amiga_-_WHDLoad_-_Games/E/EksperymentDelfin_v1.1_Pl.lha/EksperymentDelfinPl/data/dane/mod05
 6ce06bf5a68b4515a75cdef6b40ba524	0	56163	player	uade	SoundFX	0	39700	29e9b5e2	cae3c584	Commodore_Amiga_-_WHDLoad_-_Games/K/Kaiser_v1.0_De.lha/KaiserDe/Disk.1/INTROSOUND
-6ced1a387ed2390921a061ddccbf0a8b	0	81904	player	libxmp	ProPacker 2.1	4	103912	d3006742	9f020f48	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/tit
+6ced1a387ed2390921a061ddccbf0a8b	0	81904	player	libxmp	ProPacker 2.1	4	103912	d3006742	9f020f48	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/tit
+6cf545b8c2704a143386a70534ba453e	1	56243	player	uade	Protracker	0	151492	5cca36b7	b2faecf5	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/level2.mod
+6cf545b8c2704a143386a70534ba453e	1	56243	player	uade	Protracker	0	151492	5cca36b7	b2faecf5	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/level2.mod
 6d040ddd1d5cc9aca4d8646630266112	1	0	nosound	uade	Protracker	0	10300	c3cc6e6a	98cbce77	Commodore_Amiga_-_WHDLoad_-_Games/D/Diabolik11_v1.01_It.lha/Diabolik11It/data/MUS/tema.MDI
 6d4488a5afa292fb53c348cee160c322	1	61568	player	uade	Protracker	0	32748	b3aeab8b	6f077f4d	Commodore_Amiga_-_WHDLoad_-_Games/D/DreamWeb_v1.1_1660.lha/DreamWeb/data/DREAMWEB.M06
 6d4488a5afa292fb53c348cee160c322	1	61568	player	uade	Protracker	0	32748	b3aeab8b	6f077f4d	Commodore_Amiga_-_WHDLoad_-_Games/D/DreamWeb_v1.1_AGA_1815.lha/DreamWebAGA/data/DREAMWEB.M06
@@ -3098,6 +3134,13 @@
 7445a684bea4885952f5c4918ff05640	1	166521	player	uade	Protracker compatible	0	65398	8eb4d5bf	7f88f537	Commodore_Amiga_-_WHDLoad_-_Games/Z/Zombi_v1.2_De.lha/ZombiDe/data/zombi2.mus
 7445a684bea4885952f5c4918ff05640	1	166521	player	uade	Protracker compatible	0	65398	8eb4d5bf	7f88f537	Commodore_Amiga_-_WHDLoad_-_Games/Z/Zombi_v1.2_Fr_2768.lha/ZombiFr/data/zombi2.mus
 7445a684bea4885952f5c4918ff05640	1	166521	player	uade	Protracker compatible	0	65398	8eb4d5bf	7f88f537	Commodore_Amiga_-_WHDLoad_-_Games/Z/Zombi_v1.2.lha/Zombi/data/zombi2.mus
+744831f145b643612c4a59cb84959544	1	32090	player	uade	Protracker	0	292860	674256a0	e4f2dc8a	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/GnG_Stage_5-6.mod
+744831f145b643612c4a59cb84959544	2	19491	player
+744831f145b643612c4a59cb84959544	3	32834	player
+744831f145b643612c4a59cb84959544	4	3436	player
+744831f145b643612c4a59cb84959544	5	37134	player
+744831f145b643612c4a59cb84959544	6	35325	player
+744831f145b643612c4a59cb84959544	7	24434	player
 745abb9781e7e504fedea0a85ec47303	0	21279	player	uade	Sonix Music Driver	0	1190	ffae356b	8a048344	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_1586.lha/SpiritOfExcalibur/data/EXCALFiles/Scores/BkBtl.smus
 745abb9781e7e504fedea0a85ec47303	0	21279	player	uade	Sonix Music Driver	0	1190	ffae356b	8a048344	Commodore_Amiga_-_WHDLoad_-_Games/S/SpiritOfExcalibur_v1.02_NTSC_2852.lha/SpiritOfExcaliburNTSC/data/EXCALFiles/Scores/BkBtl.smus
 7467d8a0f1307ccb55c76ba76a3b4d0e	0	30854	player+silence	libopenmpt	Startrekker	4	76268	01ce71dc	643e1356	Commodore_Amiga_-_WHDLoad_-_Games/T/TownWithNoName_v1.0_CDTV.lha/TownWithNoNameCDTV/data/OUT/INTOTOWNTUNE
@@ -3131,6 +3174,7 @@
 759b1554feda84cf36a2b8e602cb85b1	1	208697	player+silence	uade	Protracker compatible	0	101108	8b7242c9	6ff1f0c1	Commodore_Amiga_-_WHDLoad_-_Games/E/EscapeFromColditz_v1.4a_0214.lha/EscapeFromColditz/data/LOADTUNE.MUS
 759b1554feda84cf36a2b8e602cb85b1	1	208697	player+silence	uade	Protracker compatible	0	101108	8b7242c9	6ff1f0c1	Commodore_Amiga_-_WHDLoad_-_Games/F/FluchtAusColditz_v1.4a_De.lha/FluchtAusColditzDe/data/LOADTUNE.MUS
 75ae5f76b3d54baa6ec947f1c78df44b	1	61488	player	uade	Soundtracker II (15 instr.)	0	39768	2b3c3698	1266e6ad	Commodore_Amiga_-_WHDLoad_-_Games/E/Explora3_v1.2_Fr_2676.lha/Explora3Fr/data/mu07
+75c1681f1d01796b7bb4eecb79cae158	1	9649	player+silence	uade	Protracker	0	81518	7a8411d6	fdd92e4b	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/jingle_first_place.mod
 75d827667e1c010d7c06695d475858d1	1	0	nosound	uade	Protracker	0	9276	64250c72	a59928e8	Commodore_Amiga_-_WHDLoad_-_Games/A/Akira_v1.3_CD32.lha/AkiraCD32/data/SewerSng.Pat
 75d8857d1e82ab47e28462a045c22966	1	0	nosound	uade	Protracker	0	11324	32484ea1	a2ca9aad	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners04_v1.0_2753.lha/TimeRunners04/data/GAME_DIR/MUS/ATM01.MDI
 75d8857d1e82ab47e28462a045c22966	1	0	nosound	uade	Protracker	0	11324	32484ea1	a2ca9aad	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-04/GAME_DIR/MUS/ATM01.MDI
@@ -3231,7 +3275,7 @@
 799b79e2194807959fde56edb2c00863	1	31688	player	uade	OctaMED MMD0	0	67658	d3dffbe9	a590d329	Commodore_Amiga_-_WHDLoad_-_Games/E/EurekaMaths6Eme5Eme_v1.0_Fr.lha/EurekaMaths6Eme5EmeFr/data/Ech.Mod
 79d2ce58762c887052c1f373345ee529	1	99968	player	uade	Protracker	0	56486	398ea6d7	da0f5110	Commodore_Amiga_-_WHDLoad_-_Games/S/StoriaAncestrale_v1.0.lha/StoriaAncestrale/data-01/Mod/mod.bosco
 79d47c63448dc6482ff0c852f16c5100	1	92272	player	uade	P40A - P40B - P41A	0	33876	8d3815ba	9141a9b8	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/LBMU
-79d47c63448dc6482ff0c852f16c5100	1	92272	player	uade	P40A - P40B - P41A	0	33876	8d3815ba	9141a9b8	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/LBMU
+79d47c63448dc6482ff0c852f16c5100	1	92272	player	uade	P40A - P40B - P41A	0	33876	8d3815ba	9141a9b8	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/LBMU
 79d9cd2b32078da7d4e6d34a26a84581	0	181825	silence	uade	Infogrames	0	4548	92ff2f48	1a801d25	Commodore_Amiga_-_WHDLoad_-_Games/M/MetalMasters_v1.1_0534.lha/MetalMasters/data/METAL.DUM
 79f4559d2a801e34a679da41cccf3dd1	1	0	nosound	uade	Noisetracker 1.x	0	11324	d1696919	6bbc6ced	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog14_v1.0_It.lha/DylanDog14It/data/MUS/ST3
 7a20e9b3399aef2cbd40273292302c32	1	23128	player	uade	Protracker	0	28872	9c18c5f5	11a37bc8	Commodore_Amiga_-_WHDLoad_-_Games/P/PizzaConnection_v1.0_De.lha/PizzaConnectionDe/data/sound/m9
@@ -3330,7 +3374,7 @@
 7e3f879da9020ab05937b8beca676c7a	0	34481	player	uade	Sonix Music Driver	0	1788	f0ee4468	816ec45d	Commodore_Amiga_-_WHDLoad_-_Games/T/TVSportsBaseball_v1.0_0754.lha/TVSportsBaseball/data/mmhatami.smus
 7e4aa15cf66810e35a6d5bde01faf2f2	1	185731	player	uade	Protracker compatible	0	76890	b8567e15	d50b0c49	Commodore_Amiga_-_WHDLoad_-_Demos/C/CrazySounds2_v1.0_TeamX.lha/CrazySounds2/data/modules/mod.har har
 7e5ae43368d653172694a29628008fcb	1	279069	player	uade	Protracker compatible	0	148908	1a924436	13dbf103	Commodore_Amiga_-_WHDLoad_-_Magazines/S/Scene1_v1.0_Mystix.lha/Scene1/data/1.mod
-7e673a32022782cabb5f6b5232fb1cc9	1	30824	player	uade	Protracker	0	62654	9664012c	b58422a3	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3.lha/DeluxeGalaga/data/GALAGA.JINGLE1
+7e673a32022782cabb5f6b5232fb1cc9	1	30824	player	uade	Protracker	0	62654	9664012c	b58422a3	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5.lha/DeluxeGalaga/data/GALAGA.JINGLE1
 7e8b33007f03e89a7d54c2cd34691273	1	293927	player+silence	uade	Protracker	0	70822	91533d3b	fadb40bc	Commodore_Amiga_-_WHDLoad_-_Demos/B/BassoContinuo_v1.0_Fury.lha/BassoContinuo/data/MODULES/MOD.2
 7e96e05953f89baa3b646ab0758b2ce7	1	88434	player	uade	Startrekker (4ch)	0	41798	23438068	42bb1341	Commodore_Amiga_-_WHDLoad_-_Games/W/Wizkid_v1.4_1449.lha/Wizkid/data/mod.reg6
 7ea379a4f249a7a4038b1ed6297b851a	1	14206	player	uade	Protracker	0	45882	e944bb3d	68aea3ad	Commodore_Amiga_-_WHDLoad_-_Games/C/Castles2_v1.1_CD32.lha/Castles2CD32/data/mus.09
@@ -3455,8 +3499,8 @@
 83491dd89ba2ef82b2fef04cb92cd462	0	15472	player	uade	Amos Music Bank	0	8024	e5811242	e05c64c9	Commodore_Amiga_-_WHDLoad_-_Games/V/ValhallaBeforeTheWar_v1.4_0756.lha/ValhallaBeforeTheWar/data/-U-/Le1-03
 83523d2c31567a0618654ca0bcd11d2e	0	127980	player	libxmp	NoisePacker v2	4	7710	336cde6c	d41f13d4	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/81
 835e4a4b061f62ae298a4417a792482a	0	136962	player	uade	Sonix Music Driver	0	5432	a9d48ae7	76592729	Commodore_Amiga_-_WHDLoad_-_Games/C/CaliforniaGames_v1.1_1445.lha/CaliforniaGames/data/SCORES/tit.smus
-836d43e7bec0a811d2ee9ec63e872c1d	0	25620	player	uade	David Whittaker	0	52448	ce71c1fc	b0266094	Commodore_Amiga_-_WHDLoad_-_Games/C/ChronoQuest_v1.4_1016.lha/ChronoQuest/data/trcode
-836d43e7bec0a811d2ee9ec63e872c1d	0	25620	player	uade	David Whittaker	0	52448	ce71c1fc	b0266094	Commodore_Amiga_-_WHDLoad_-_Games/C/ChronoQuest_v1.4_De_0792.lha/ChronoQuestDe/data/trcode
+836d43e7bec0a811d2ee9ec63e872c1d	0	25620	player	uade	David Whittaker	0	52448	ce71c1fc	b0266094	Commodore_Amiga_-_WHDLoad_-_Games/C/ChronoQuest_v1.5_1016.lha/ChronoQuest/data/trcode
+836d43e7bec0a811d2ee9ec63e872c1d	0	25620	player	uade	David Whittaker	0	52448	ce71c1fc	b0266094	Commodore_Amiga_-_WHDLoad_-_Games/C/ChronoQuest_v1.5_De_0792.lha/ChronoQuestDe/data/trcode
 836d43e7bec0a811d2ee9ec63e872c1d	1	40329	player
 836d43e7bec0a811d2ee9ec63e872c1d	2	19230	player
 836d43e7bec0a811d2ee9ec63e872c1d	3	23068	player
@@ -3518,6 +3562,8 @@
 85fece446f78eefcf892ca2516efb596	3	51180	player
 85fece446f78eefcf892ca2516efb596	4	3838	player
 860ffa65f1d789ca369faa626ab0be73	0	259195	player	libxmp	ProPacker 2.1	4	87940	7faec0e8	a041b8d9	Commodore_Amiga_-_WHDLoad_-_Demos/W/WaveSound_v1.0_Appendix.lha/WaveSound/data/6
+8623905ff5ee8f69a593e190f1e0b876	1	50255	player	uade	Protracker	0	280208	2ff306d6	b468edb5	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/intro.mod
+8623905ff5ee8f69a593e190f1e0b876	1	50255	player	uade	Protracker	0	280208	2ff306d6	b468edb5	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/intro.mod
 8648cefb481518bff3905d638dcb4abd	0	81904	player	libxmp	NoisePacker v3	4	27756	e6f34afb	749f793f	Commodore_Amiga_-_WHDLoad_-_Games/B/Blob_v1.2.lha/Blob/data/b2np
 864d507e9cffcef6ce519c33df73e114	1	173092	player	uade	Soundtracker II (15 instr.)	0	111202	b3d2a1b1	0d3d9de7	Commodore_Amiga_-_WHDLoad_-_Demos/P/ProjectBeat_v1.0_Crusaders.lha/ProjectBeat/data/Modules/mod.bomb
 865ddb39a7e9b115352c43335f17079e	1	0	nosound	uade	Noisetracker 1.x	0	12348	c0f963c7	7a3c6127	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog17_v1.0_It.lha/DylanDog17It/data/MUS/SIGDD.MIC
@@ -3737,9 +3783,10 @@
 8c85e8980228c6948da1ca6982eebf78	1	30824	player	uade	Protracker	0	42252	affbe8a6	fd9dc087	Commodore_Amiga_-_WHDLoad_-_Games/S/Sqrxz3_v1.0.lha/Sqrxz3/data/disk1_0197
 8cac08439aebbde6f727454d11029a34	1	385408	player	uade	Protracker	0	137824	9006d687	542960a8	Commodore_Amiga_-_WHDLoad_-_Demos/M/Mixolydian_v1.0_EndOfCentury1999.lha/Mixolydian/data/03
 8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/DESBASE.SNG
-8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/DESBASE.SNG
-8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/DESBASE.SNG
-8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/DESBASE.SNG
+8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/DESBASE.SNG
+8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/DESBASE.SNG
+8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/DESBASE.SNG
+8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/DESBASE.SNG
 8cc7354fa6aa26725d924f981216a01f	0	0	nosound	uade	Richard Joseph Player	0	3145	217b96e2	30b52b20	Commodore_Amiga_-_WHDLoad_-_Games/N/NotVeryFestiveFodder_v1.0.lha/NotVeryFestiveFodder/data/DESBASE.SNG
 8cc7354fa6aa26725d924f981216a01f	1	3858	player
 8cc7354fa6aa26725d924f981216a01f	2	29779	player
@@ -3773,10 +3820,10 @@
 8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/junbase.sng
 8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/junbase.sng
 8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/junbase.sng
-8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/JUNBASE.SNG
-8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/JUNBASE.SNG
-8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/JUNBASE.SNG
-8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/JUNBASE.SNG
+8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/JUNBASE.SNG
+8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/JUNBASE.SNG
+8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/JUNBASE.SNG
+8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/JUNBASE.SNG
 8d8c84d83b451e513c78f9afcf1ace02	0	0	nosound	uade	Richard Joseph Player	0	2730	cf13f9cf	fe06f278	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/JUNBASE.SNG
 8d8c84d83b451e513c78f9afcf1ace02	1	11554	player
 8d8c84d83b451e513c78f9afcf1ace02	2	9122	player
@@ -4071,8 +4118,8 @@
 99f8be3e5b61f1140e8d93486929d6cc	0	22987	player	uade	Sonix Music Driver	0	608	013291cb	1e7f68eb	Commodore_Amiga_-_WHDLoad_-_Games/V/VengeanceOfExcalibur_v1.02_De_2499.lha/VengeanceOfExcaliburDe/data/EXCALFiles/Scores/LoseGame.smus
 99f8be3e5b61f1140e8d93486929d6cc	0	22987	player	uade	Sonix Music Driver	0	608	013291cb	1e7f68eb	Commodore_Amiga_-_WHDLoad_-_Games/V/VengeanceOfExcalibur_v1.02_Fr_2499.lha/VengeanceOfExcaliburFr/data/EXCALFiles/Scores/LoseGame.smus
 9a401b89d2e7c60a7ce774e9e95935f3	1	319511	player+silence	uade	Protracker	0	106976	a5feb47c	18ada5f1	Commodore_Amiga_-_WHDLoad_-_Demos/S/Smau92MusicDisk_v1.0_Nightfall.lha/Smau92MusicDisk/data/07
-9a494f6f25372879d950bc607a9e35ae	1	255478	player	uade	OctaMED MMD1	0	92552	43050e40	d316acaa	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperTennisChamps_v1.2_1153.lha/SuprTennisChmps/data/oliNBP
-9a494f6f25372879d950bc607a9e35ae	1	255478	player	uade	OctaMED MMD1	0	92552	43050e40	d316acaa	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperTennisChamps&DataDisks_v1.2_1153.lha/SuprTennisChmps&DataDisks/data/oliNBP
+9a494f6f25372879d950bc607a9e35ae	1	255478	player	uade	OctaMED MMD1	0	92552	43050e40	d316acaa	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperTennisChamps_v1.3_1153.lha/SuprTennisChmps/data/oliNBP
+9a494f6f25372879d950bc607a9e35ae	1	255478	player	uade	OctaMED MMD1	0	92552	43050e40	d316acaa	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperTennisChamps&DataDisks_v1.3_1153.lha/SuprTennisChmps&DataDisks/data/oliNBP
 9a5ec6bf1a4afdc3775164b4ad7df179	1	0	nosound	uade	Protracker	0	5180	a24c4f47	a7ad48d1	Commodore_Amiga_-_WHDLoad_-_Games/D/Diabolik04_v1.0_It.lha/Diabolik04It/data/MUS/st5
 9a6606880ffa5f32ac11800532671f2c	0	0	nosound	uade	TFMX	0	4352	0238f7c7	1a46e771	Commodore_Amiga_-_WHDLoad_-_Games/P/PiracyOnTheHighSeas_v1.0.lha/PiracyOnTheHighSeas/data/mdat.effect1
 9a6606880ffa5f32ac11800532671f2c	0	0	nosound	uade	TFMX	0	4352	0238f7c7	1a46e771	Commodore_Amiga_-_WHDLoad_-_Games/P/PiracyOnTheHighSeas_v1.0.lha/PiracyOnTheHighSeas/data/mdat.effectd
@@ -4148,6 +4195,7 @@
 9d692974147b9a50d6e5669cce4e58ce	1	23168	player	uade	Protracker	0	25178	08ac78c3	83081648	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_LowMem_It.lha/FlashbackLowMemIt/data/music/holocube
 9d692974147b9a50d6e5669cce4e58ce	1	23168	player	uade	Protracker	0	25178	08ac78c3	83081648	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_LowMem_Pl.lha/FlashbackLowMemPl/data/music/holocube
 9d692974147b9a50d6e5669cce4e58ce	1	23168	player	uade	Protracker	0	25178	08ac78c3	83081648	Commodore_Amiga_-_WHDLoad_-_Games/F/Flashback_v3.5_Pl.lha/FlashbackPl/data/music/holocube
+9d6f338ea0ba3ceadaa1e2b1fea59b9e	1	18567	player	uade	Protracker	0	3306	5f043b8a	3b5ecdb1	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/onroadstage.mod
 9dc3b83b9e51ae11cc487de6a39d71ca	1	167019	player+silence	uade	Protracker	0	65432	7963dea5	0c3ba467	Commodore_Amiga_-_WHDLoad_-_Demos/R/RoyalMusic_v1.0_MagicGuild.lha/RoyalMusic/data/mod.miraculix
 9dc5dcb3c93d3adeb54e30d75327584a	1	66110	player	uade	Protracker	0	37604	ad63f7bd	7fa11a6e	Commodore_Amiga_-_WHDLoad_-_Games/B/BurningRubber_v1.5a_Enhanced_2181.lha/BurningRubberEnhanced/data/USA!USA6.NJW
 9dc5dcb3c93d3adeb54e30d75327584a	1	66110	player	uade	Protracker	0	37604	ad63f7bd	7fa11a6e	Commodore_Amiga_-_WHDLoad_-_Games/B/BurningRubber_v1.5a.lha/BurningRubber/data/USA!USA6.NJW
@@ -4260,7 +4308,7 @@ a134c5c640786dde09a368dba178e09f	4	119038	player
 a134c5c640786dde09a368dba178e09f	5	61428	player
 a134c5c640786dde09a368dba178e09f	6	103666	player
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	Commodore_Amiga_-_WHDLoad_-_Games/S/SchmutzigeErbe_v1.0_De.lha/SchmutzigeErbeDe/data/Songs/mdat.Erbe2
-a1389382a197d038400d80a9b76c525d	1	81924	player
+a1389382a197d038400d80a9b76c525d	1	81944	player
 a1389382a197d038400d80a9b76c525d	2	61468	player
 a1389382a197d038400d80a9b76c525d	3	176668	player
 a14f143b95f1b4626917bab8df73b7e1	1	348233	player	uade	Protracker compatible	0	216982	fe6f9917	b38f47f1	Commodore_Amiga_-_WHDLoad_-_Demos/M/MusicBox_v1.0_Exodus.lha/MusicBoxExodus/data/mod.disco...
@@ -4323,7 +4371,7 @@ a418bf95406b0f635e27b8e10f15cfd8	0	53824	silence	uade	Infogrames	0	2107	0d832a1a
 a418bf95406b0f635e27b8e10f15cfd8	0	53824	silence	uade	Infogrames	0	2107	0d832a1a	9cd180fb	Commodore_Amiga_-_WHDLoad_-_Games/N/NorthAndSouth_v2.2_Files_NTSC_1780.lha/NorthAndSouthFilesNTSC/data/finp.dum
 a41b9836a04df3a3c112ca7b7ca52413	1	0	nosound	uade	Noisetracker 1.x	0	10300	665ae680	c50b30b1	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex10_v1.0_It.lha/Tex10It/data-10/MUS/PROLTX10.MIC
 a42479673fbe7018d3620e1716ed503f	1	230541	player	uade	P40A - P40B - P41A	0	41680	ed5892e1	8a20ece5	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L5MU
-a42479673fbe7018d3620e1716ed503f	1	230541	player	uade	P40A - P40B - P41A	0	41680	ed5892e1	8a20ece5	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L5MU
+a42479673fbe7018d3620e1716ed503f	1	230541	player	uade	P40A - P40B - P41A	0	41680	ed5892e1	8a20ece5	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L5MU
 a444b2ef97164958f70998ba219b149c	1	107645	player	uade	Soundtracker II (31 instr.)	0	45728	68268bc0	63224c2d	Commodore_Amiga_-_WHDLoad_-_Demos/S/SoundtrackerInjury4_v1.0_VisualArts.lha/SoundtrackerInjury4/data/modules/mod.song
 a44994b7b69ad0b40eb55acc5b25ff3c	1	0	nosound	uade	Noisetracker 1.x	0	12348	6f2727e9	dc276ee0	Commodore_Amiga_-_WHDLoad_-_Demos/E/EargasmTunes_v1.00a_Silents.lha/EargasmTunes/data/Songs/Kraft
 a44b820fa112ac1f23be9e2d4af3a9b1	1	8339	player	uade	OctaMED MMD0	0	20214	a7cf0686	5f77bf6a	Commodore_Amiga_-_WHDLoad_-_Games/J/Jonathan_v1.1_De_0515.lha/JonathanDe/data/Musik/3Magie6
@@ -4340,6 +4388,8 @@ a4e409a4da99932fbf99c4d36b6469f7	1	224754	player	uade	OctaMED MMD1	0	133918	5cfa
 a4e409a4da99932fbf99c4d36b6469f7	2	8861	player
 a4e409a4da99932fbf99c4d36b6469f7	3	184907	player
 a4ffb781b9b094912ab3e1e82928c1e7	1	0	nosound	uade	Protracker	0	7228	956f595a	c69503c7	Commodore_Amiga_-_WHDLoad_-_Games/S/Simulman11_v1.0_It.lha/Simulman11It/data-11/MUS/MUS5.MIC
+a50f6745a6ceb385c17e841677c2269b	1	25559	player	uade	Protracker	0	47360	fb318dbd	9e12706b	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/boss.mod
+a50f6745a6ceb385c17e841677c2269b	1	25559	player	uade	Protracker	0	47360	fb318dbd	9e12706b	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/boss.mod
 a515d3be22ab0cd26661052fab22e94d	1	15472	player	uade	Protracker	0	21284	76e3dd57	a0a96302	Commodore_Amiga_-_WHDLoad_-_Games/B/BezKompromisu_v1.0b_Pl.lha/BezKompromisuPl/data/koc
 a5452b95d64ad1a7f185bc840bfda7d0	0	15472	player	uade	Amos Music Bank	0	16634	f2d05f41	3dce77d2	Commodore_Amiga_-_WHDLoad_-_Games/L/LegionsOfDawn_v1.0.lha/LegionsOfDawn/data/INDAWN3.DAWN
 a5489790f5251c25fe67f89f9f37842d	1	16638	player	uade	OctaMED MMD0	0	23924	fe46fed2	3ed0c42d	Commodore_Amiga_-_WHDLoad_-_Games/J/Jonathan_v1.1_De_0515.lha/JonathanDe/data/Musik/G14.1
@@ -4546,6 +4596,13 @@ ad595a805acefe2be2765735ecbbb4c0	0	61870	player	uade	SoundFX	0	66380	5532db25	eb
 ad59797fb5da8e43ef66b34a6da7341f	1	0	nosound	uade	Protracker	0	9276	40e85e2e	97eab675	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog09_v1.0_It.lha/DylanDog09It/data/MUS/azione.mdi
 ad59797fb5da8e43ef66b34a6da7341f	1	0	nosound	uade	Protracker	0	9276	40e85e2e	97eab675	Commodore_Amiga_-_WHDLoad_-_Games/D/DylanDog11_v1.0_It.lha/DylanDog11It/data/MUS/azione.mdi
 ad62a858473a8439dbb77560f010b9d2	0	70299	player+silence	uade	SoundFX	0	45260	a1dbf6e7	90cfc8ef	Commodore_Amiga_-_WHDLoad_-_Games/T/TripleX_v1.0_2048.lha/TripleX/data/AlphaDroid.snd1
+ad8308c1134fadbc7d6106855fb42c8e	1	11088	player+silence	uade	Protracker	0	209664	4e902180	62064735	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/GnG_Stage_7-END.mod
+ad8308c1134fadbc7d6106855fb42c8e	2	0	nosound
+ad8308c1134fadbc7d6106855fb42c8e	3	3436	player
+ad8308c1134fadbc7d6106855fb42c8e	4	5563	player+silence
+ad8308c1134fadbc7d6106855fb42c8e	5	13564	player+silence
+ad8308c1134fadbc7d6106855fb42c8e	6	9207	player+silence
+ad8308c1134fadbc7d6106855fb42c8e	7	24463	player+silence
 ad85ad4e19272774d510c86342fa8dc2	0	310175	player	uade	Oktalyzer	0	90112	444bd862	2c690a77	Commodore_Amiga_-_WHDLoad_-_Demos/B/BestOfRAFVol1_v1.0_Katharsis.lha/BestOfRAFVol1/data/04
 ad8f85f2dc3cd7c6bd9a73df5f5f222e	0	7816	player	uade	Amos Music Bank	0	8862	8013b803	51a8ef26	Commodore_Amiga_-_WHDLoad_-_Games/V/ValhallaBeforeTheWar_v1.4_0756.lha/ValhallaBeforeTheWar/data/-U-/Le3-90
 ad985b4f8325023975a37209cad8f1ae	1	286907	player+silence	uade	Protracker compatible	0	119588	7e5b86c7	6bd962a9	Commodore_Amiga_-_WHDLoad_-_Demos/K/Kakburk_v1.0_Strangers.lha/Kakburk/data/mod.strange snakes
@@ -4587,7 +4644,7 @@ afdab20fe87ad6ad35540141c701a2af	1	163326	player	uade	Protracker	0	58836	965c2ab
 afe222f7aeab3f19af9255d397e79df1	1	188884	player+silence	uade	Noisetracker 1.x	0	195092	bacc8f3c	bcaecdac	Commodore_Amiga_-_WHDLoad_-_Games/A/Atomino_v1.11_0632.lha/Atomino/DAT1
 afe222f7aeab3f19af9255d397e79df1	1	188884	player+silence	uade	Noisetracker 1.x	0	195092	bacc8f3c	bcaecdac	Commodore_Amiga_-_WHDLoad_-_Games/A/Atomino_v1.11_De.lha/AtominoDe/DAT1
 afe222f7aeab3f19af9255d397e79df1	1	188884	player+silence	uade	Noisetracker 1.x	0	195092	bacc8f3c	bcaecdac	Commodore_Amiga_-_WHDLoad_-_Games/A/Atomino_v1.11_NTSC_1972.lha/AtominoNTSC/DAT1
-b05c32e63c321ea69e5c076ad253f464	0	122876	player	libxmp	ProPacker 2.1	4	107772	cdfe495e	6376dab6	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lv4
+b05c32e63c321ea69e5c076ad253f464	0	122876	player	libxmp	ProPacker 2.1	4	107772	cdfe495e	6376dab6	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lv4
 b097fb71b6a52b0e58838f22f525e4d4	0	331515	player	libxmp	NoisePacker v2	4	14432	6178a86f	3e25c677	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/04
 b0981e291f872374115c31e25c2c01fb	1	0	nosound	uade	Protracker	0	6204	cd040556	5b45bf7b	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners13_v1.0_2722.lha/TimeRunners13/data/GAME_DIR/MUS/ST1
 b0981e291f872374115c31e25c2c01fb	1	0	nosound	uade	Protracker	0	6204	cd040556	5b45bf7b	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-13/GAME_DIR/MUS/ST1
@@ -4655,9 +4712,10 @@ b36c9aa4c2ed58b69179f5e2331a37e2	0	38380	player	libxmp	The Player 6.1a	4	52958	a
 b36c9aa4c2ed58b69179f5e2331a37e2	0	38380	player	libxmp	The Player 6.1a	4	52958	a4d51bbe	5ca43045	Commodore_Amiga_-_WHDLoad_-_Games/C/CapitalPunishment_v1.2_AGA_CD.lha/CapitalPunishmentAGACD/data/DATA/Music/I.mod
 b36e0c9fa2fc80ea1a5cd92cc7bcf55b	1	243341	player	uade	Protracker compatible	0	129024	cb7a6d77	e0afb8ba	Commodore_Amiga_-_WHDLoad_-_Games/C/Charly_v1.0.lha/Charly/data/disk1_06
 b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/MORBASE.SNG
-b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/MORBASE.SNG
-b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/MORBASE.SNG
-b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/MORBASE.SNG
+b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/MORBASE.SNG
+b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/MORBASE.SNG
+b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/MORBASE.SNG
+b3aac35da6cbb0840a3be318f4e0fa75	0	0	nosound	uade	Richard Joseph Player	0	3011	40b04e9e	f756515b	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/MORBASE.SNG
 b3aac35da6cbb0840a3be318f4e0fa75	1	14764	player+volume
 b3aac35da6cbb0840a3be318f4e0fa75	2	24635	player
 b3aac35da6cbb0840a3be318f4e0fa75	3	14517	player+volume
@@ -4701,6 +4759,8 @@ b51bb9b55d74a91f5df35d5fc7674729	1	115321	player	uade	Protracker compatible	0	49
 b51bb9b55d74a91f5df35d5fc7674729	1	115321	player	uade	Protracker compatible	0	49648	69daba24	fcfd3d4e	Commodore_Amiga_-_JST_-_Games/S/ShaqFu_v1.0_JST.lha/ShaqFuJST/Shaqfu.d2/1STORY.MOD
 b51bb9b55d74a91f5df35d5fc7674729	1	115321	player	uade	Protracker compatible	0	49648	69daba24	fcfd3d4e	Commodore_Amiga_-_WHDLoad_-_Games/S/ShaqFu_v1.1_AGA_1761.lha/ShaqFuAGA/data/2STORY.MOD
 b51bb9b55d74a91f5df35d5fc7674729	1	115321	player	uade	Protracker compatible	0	49648	69daba24	fcfd3d4e	Commodore_Amiga_-_WHDLoad_-_Games/S/ShaqFu_v1.1.lha/ShaqFu/data/1STORY.MOD
+b5387f35b3dfdf658d0dbc107b42dfb5	0	35387	player	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	23040	79965039	5aee26ed	Commodore_Amiga_-_WHDLoad_-_Games/F/FlyingShark_v2.1_Alt.lha/FlyingSharkAlt/data/audio
+b5387f35b3dfdf658d0dbc107b42dfb5	0	35387	player	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	23040	79965039	5aee26ed	Commodore_Amiga_-_WHDLoad_-_Games/F/FlyingShark_v2.1.lha/FlyingShark/data/audio
 b5438c5a8850195fedf22a779560fd5e	1	135174	player	uade	Protracker compatible	0	72018	2a6e6f26	dee6c8d1	Commodore_Amiga_-_WHDLoad_-_Games/0/7Colors_v1.1_0956.lha/7Colors/data/Colors_Mod_Datas_Sy40
 b549a5c74010d45b7d5d3a1e63a50b17	1	0	nosound	uade	Protracker	0	11324	cff4f07e	bc12ebe3	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners14_v1.0_2723.lha/TimeRunners14/data/GAME_DIR/MUS/UNIT02.MDI
 b549a5c74010d45b7d5d3a1e63a50b17	1	0	nosound	uade	Protracker	0	11324	cff4f07e	bc12ebe3	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-14/GAME_DIR/MUS/UNIT02.MDI
@@ -4778,7 +4838,7 @@ b701b81101fcd825619d721980864a36	3	31387	player
 b701b81101fcd825619d721980864a36	4	76137	player
 b701cc71aef8fff2ce363d24151e114d	1	42358	player	uade	P50A - P60A - P61A	0	42970	38811b16	31af7f79	Commodore_Amiga_-_WHDLoad_-_Games/E/EvilsDoom_v1.1_AGA.lha/EvilsDoomAGA/data/MUZ/P60.IOW
 b709beca5334b314a707ed8f0afcfb15	1	116828	player	uade	P50A - P60A - P61A	0	106038	9e2c9003	d34e4e31	Commodore_Amiga_-_JST_-_Games/B/Banshee_v3.1_AGA_0633_JST.lha/BansheeAGAJST/P60.calm bottom4
-b709beca5334b314a707ed8f0afcfb15	1	116828	player	uade	P50A - P60A - P61A	0	106038	9e2c9003	d34e4e31	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v3.3_AGA_0633.lha/BansheeAGA/data/P60.calm bottom4
+b709beca5334b314a707ed8f0afcfb15	1	116828	player	uade	P50A - P60A - P61A	0	106038	9e2c9003	d34e4e31	Commodore_Amiga_-_WHDLoad_-_Games/B/Banshee_v4.0_AGA_0633.lha/BansheeAGA/data/P60.calm bottom4
 b709beca5334b314a707ed8f0afcfb15	2	31065	player
 b70daf743e28d34828f1ecbdf7734a8e	1	0	nosound	uade	Protracker	0	12348	ce86d274	5189244d	Commodore_Amiga_-_WHDLoad_-_Games/T/TexPiomboCaldoPart1_v1.0_It.lha/TexPiomboCaldoPart1It/data-01/Tex1/MUS/west
 b70daf743e28d34828f1ecbdf7734a8e	1	0	nosound	uade	Protracker	0	12348	ce86d274	5189244d	Commodore_Amiga_-_WHDLoad_-_Games/T/TexPiomboCaldoPart1_v1.0_It.lha/TexPiomboCaldoPart1It/data-01/Tex2/MUS/west
@@ -5131,7 +5191,7 @@ c2c186d19fd8a16d06756d0afe78ba6a	1	57730	player	uade	Protracker	0	38716	21e2fcd5
 c2d686fb9edf20f6c58500a66bbbce75	0	62714	player	libxmp	NoisePacker v2	4	16564	c5c88062	0e862627	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/24
 c2dc8f77883ce38c077418bad64b27e6	1	44910	player	uade	Protracker compatible	0	31958	e96795c8	2dd0f0ed	Commodore_Amiga_-_WHDLoad_-_Games/G/Godfather_v2.0_1331.lha/Godfather/data/mod.leveltheme
 c2e7f8eed3eb59b6020deb78648d5726	1	211331	player	uade	P40A - P40B - P41A	0	40122	d313353b	055918b7	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L2MU
-c2e7f8eed3eb59b6020deb78648d5726	1	211331	player	uade	P40A - P40B - P41A	0	40122	d313353b	055918b7	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L2MU
+c2e7f8eed3eb59b6020deb78648d5726	1	211331	player	uade	P40A - P40B - P41A	0	40122	d313353b	055918b7	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L2MU
 c2ecb99c4ab230cd05d46c94b2aab4b2	1	0	nosound	uade	Protracker	0	11324	bcf8d169	7c70ec51	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners23_v1.0_2731.lha/TimeRunners23/data/GAME_DIR/MUS/ST1
 c2ecb99c4ab230cd05d46c94b2aab4b2	1	0	nosound	uade	Protracker	0	11324	bcf8d169	7c70ec51	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-23/GAME_DIR/MUS/ST1
 c30162c2efc7799e10d22403ade25333	1	84616	player	uade	Protracker compatible	0	27052	cf2d6050	825688b2	Commodore_Amiga_-_WHDLoad_-_Games/M/Moochies_v1.1_1425.lha/Moochies/data/07tune
@@ -5178,6 +5238,7 @@ c48aff97dbb0b6c5e30af70f81d2f500	0	30844	player	uade	Amos Music Bank	0	10894	2de
 c48aff97dbb0b6c5e30af70f81d2f500	0	30844	player	uade	Amos Music Bank	0	10894	2de86cdb	d897dbc9	Commodore_Amiga_-_WHDLoad_-_Games/G/Genesia_v1.4_Fr.lha/GenesiaFr/data/T1/A104
 c48bf73f6565d714f158bd72fe3b45ab	1	0	nosound	uade	Protracker	0	9276	9018c315	0ef27b5a	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners07_v1.0a_2717.lha/TimeRunners07/data/GAME_DIR/MUS/DIA01.MDI
 c48bf73f6565d714f158bd72fe3b45ab	1	0	nosound	uade	Protracker	0	9276	9018c315	0ef27b5a	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-07/GAME_DIR/MUS/DIA01.MDI
+c4b811965563bd8fb71cbb2cb2d2e52a	1	5055	player+silence	uade	Protracker	0	3776	c0a6a267	cf1d1e17	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/checkpoint.mod
 c4da89f353483d4ee3d7aaac46ac813f	1	71173	player	uade	Protracker	0	80154	34db1173	2ca7e803	Commodore_Amiga_-_WHDLoad_-_Demos/R/RoyalMusic2_v1.0_MagicGuild.lha/RoyalMusic2/data/mod.forget-me-not
 c4ddc7dfbf16aa30fe963e13c6405559	1	76920	player	uade	Startrekker (4ch)	0	40968	5cb06e10	d1af0a8f	Commodore_Amiga_-_JST_-_Games/P/Puggsy_v1.0_1113_JST.lha/PuggsyJST/data/2PYRABOSS.MOD
 c4ddc7dfbf16aa30fe963e13c6405559	1	76920	player	uade	Startrekker (4ch)	0	40968	5cb06e10	d1af0a8f	Commodore_Amiga_-_WHDLoad_-_Games/P/Puggsy_v2.0_1113.lha/Puggsy/data/2PYRABOSS.MOD
@@ -5231,8 +5292,8 @@ c6a7d46ccb95cde9fa80476ac6104436	1	259256	player	uade	Protracker	0	377630	df25b1
 c6b3953a643f8cdb0cb06f67c253254e	1	116586	player	uade	Protracker	0	101484	d338e15a	4e587a24	Commodore_Amiga_-_WHDLoad_-_Demos/R/RoyalMusic_v1.0_MagicGuild.lha/RoyalMusic/data/mod.straight ahead
 c6cf2104408664847421eecdaf3e88e1	1	16758	player	uade	Protracker	0	197744	9c6807dc	3f5e626c	Commodore_Amiga_-_WHDLoad_-_Games/P/Perihelion_v1.4_0799.lha/Perihelion/PerihelionData/004515BC0101CCBE
 c6de31e397001c197d2c2b50fc7b47a4	1	403332	player	uade	Protracker compatible	0	106908	4efba60e	c47597ca	Commodore_Amiga_-_WHDLoad_-_Demos/R/RainheartProject_v1.01_BadCompany.lha/RainheartProject/data/mod.steelheart
-c6e5093478d96bdb5d96986a02ac3ac1	1	64120	player	uade	Protracker	0	35758	d35ff680	415a1b87	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.4.lha/MegaTyphoon/data/prgfx/hiscore.mod.p
-c6e5093478d96bdb5d96986a02ac3ac1	1	64120	player	uade	Protracker	0	35758	d35ff680	415a1b87	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.4.lha/MegaTyphoon/data/Slide/mod.TH
+c6e5093478d96bdb5d96986a02ac3ac1	1	64120	player	uade	Protracker	0	35758	d35ff680	415a1b87	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.5.lha/MegaTyphoon/data/prgfx/hiscore.mod.p
+c6e5093478d96bdb5d96986a02ac3ac1	1	64120	player	uade	Protracker	0	35758	d35ff680	415a1b87	Commodore_Amiga_-_WHDLoad_-_Games/M/MegaTyphoon_v1.5.lha/MegaTyphoon/data/Slide/mod.TH
 c6fa8139a093ee5171ffa000016573d6	0	168952	player	libxmp	NoisePacker v2	4	14712	1abd9be4	a83b5a47	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/79
 c7015064bd345169ee161faf2277783d	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.8-2.0	4	6744	5995b94c	fdbeb63c	Commodore_Amiga_-_WHDLoad_-_Games/H/HoleInOne&DataDisks_v1.2.lha/HoleInOne&DataDisks/data/Menagerie/Title.Music
 c7015064bd345169ee161faf2277783d	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.8-2.0	4	6744	5995b94c	fdbeb63c	Commodore_Amiga_-_WHDLoad_-_Games/M/MiniGolf_v1.0.lha/MiniGolf/data/Expert/Title.Music
@@ -5243,7 +5304,7 @@ c725bf070f74dc4e98db70b9e88d610e	0	297013	player	uade	SoundFX	0	137796	0be2e542	
 c740df6622a238d12650d1c487a64007	1	192141	player	uade	Protracker	0	100712	e22c19fb	df2a64f8	Commodore_Amiga_-_WHDLoad_-_Games/R/RockstarNeverTrustRottenTangerines_v1.0_Pl.lha/RockstarNTRTPl/data/mods/under voice
 c75da2efc686a20a12dc98608e4bf4ec	0	39525	player	uade	SoundFX	0	60992	9b20aa60	da530aa2	Commodore_Amiga_-_WHDLoad_-_Games/T/TripleX_v1.0_2048.lha/TripleX/data/AlphaDroid.snd2
 c764db4f2dc73efd3f5c1db96f3d8209	1	253569	player	uade	P40A - P40B - P41A	0	38956	94623f49	35833210	Commodore_Amiga_-_JST_-_Games/S/Superfrog_v1.0_CD32_JST.lha/SuperfrogCD32JST/SFData/L6MU
-c764db4f2dc73efd3f5c1db96f3d8209	1	253569	player	uade	P40A - P40B - P41A	0	38956	94623f49	35833210	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.6_CD32.lha/SuperfrogCD32/data/L6MU
+c764db4f2dc73efd3f5c1db96f3d8209	1	253569	player	uade	P40A - P40B - P41A	0	38956	94623f49	35833210	Commodore_Amiga_-_WHDLoad_-_Games/S/Superfrog_v1.7_CD32.lha/SuperfrogCD32/data/L6MU
 c7688b5f48d023a2d7cdb2865bf1854f	1	99245	player	uade	Protracker	0	67620	f83f0d5d	fdcc518e	Commodore_Amiga_-_WHDLoad_-_Demos/R/RoyalMusic_v1.0_MagicGuild.lha/RoyalMusic/data/mod.choose for yourself
 c7839ccfcfeb26e67f9febb964710884	1	102520	player	uade	P40A - P40B - P41A	0	91302	28cb12f6	7a433bd5	Commodore_Amiga_-_JST_-_Games/O/Overdrive_v1.3_1149_JST.lha/OverdriveJST/Overdrive.d2
 c794109fcfc53cd401e7166c8e02e33f	1	0	nosound	uade	Protracker	0	7228	df441aab	f60920d5	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners11_v1.0_2720.lha/TimeRunners11/data/GAME_DIR/MUS/MUS02.MDI
@@ -5268,7 +5329,7 @@ c8536f2fc90df11cf76c2d2ee6918b5a	1	131135	player	uade	OctaMED MMD0	0	48006	0309a
 c8536f2fc90df11cf76c2d2ee6918b5a	1	131135	player	uade	OctaMED MMD0	0	48006	0309a174	62e1dfd9	Commodore_Amiga_-_WHDLoad_-_Games/L/Lemmings2_v1.8_512KB_NTSC_1976.lha/Lemmings2512KBNTSC/data/highland/tune
 c8594a0345fd68b937afcd618bd216ea	1	230541	player	uade	Noisetracker 1.x	0	148722	efeb4492	70d08a50	Commodore_Amiga_-_WHDLoad_-_Demos/G/GreatestBits2_v1.0_Pussy.lha/GreatestBits2/data/MODULES/mod.pussytalk
 c85d95e994d4d47f2dcec8eae2d11efe	1	245893	player	uade	Soundtracker II (15 instr.)	0	63834	6a938b97	c427ac21	Commodore_Amiga_-_WHDLoad_-_Games/S/Steel_v1.2_1981.lha/Steel/data/SteelMusic
-c8819884f3380ba904bbf29e55e09957	0	133787	player	libxmp	ProPacker 2.1	4	97268	ab8e859b	f98416f6	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lv3
+c8819884f3380ba904bbf29e55e09957	0	133787	player	libxmp	ProPacker 2.1	4	97268	ab8e859b	f98416f6	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lv3
 c8881e5924478c4df4a425261af8c412	0	15352	player	libxmp	NoisePacker v2	4	67660	aa457fc1	9815efd2	Commodore_Amiga_-_WHDLoad_-_Games/U/Universe_v1.5_0894.lha/Universe/UniverseData/block5_2.n
 c8881e5924478c4df4a425261af8c412	1	30704	player
 c8881e5924478c4df4a425261af8c412	2	39384	player
@@ -5293,6 +5354,7 @@ c90370caf7909e16f7dd1990122fdf73	0	3600000	timeout	uade	SoundFX	0	5780	e3fca9aa	
 c90370caf7909e16f7dd1990122fdf73	0	3600000	timeout	uade	SoundFX	0	5780	e3fca9aa	e5189d46	Commodore_Amiga_-_WHDLoad_-_Games/H/Historyline_v1.5_Fr.lha/HistorylineFr/data/TXT/ZWTXT2.SNG
 c9060c7d28d5e0748fb4788cf596b3b9	1	86525	player	uade	Protracker	0	42448	e13cb667	b9de2bd8	Commodore_Amiga_-_WHDLoad_-_Games/B/Beavers_v2.0_CD32.lha/BeaversCD32/data/mod.mod1
 c908e706a307ed2855cb31a1112f6bd7	1	215149	player	uade	Noisetracker 1.x	0	95744	3a9e1edc	e25a0ceb	Commodore_Amiga_-_WHDLoad_-_Demos/M/MeanBreakMachine2_v1.0_Tetragon.lha/MeanBreakMachine2/data/MeanBreakMachine2_04
+c90e968991b53fd9cf509ba5bba91ba9	1	4119	player	uade	Protracker	0	4916	4b0c016d	6f09b965	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/gameover.mod
 c916584ad6f03497cc0499d3294ffa6f	1	25559	player	uade	OctaMED MMD0	0	17766	820f6d65	7d79dc89	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_2090.lha/Civilization/data/ceasar
 c916584ad6f03497cc0499d3294ffa6f	1	25559	player	uade	OctaMED MMD0	0	17766	820f6d65	7d79dc89	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_1633.lha/CivilizationAGA/data/ceasar
 c916584ad6f03497cc0499d3294ffa6f	1	25559	player	uade	OctaMED MMD0	0	17766	820f6d65	7d79dc89	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_CD.lha/CivilizationAGACD/data/ceasar
@@ -5331,10 +5393,10 @@ cb2ccba1042ed35b8607aaea8c8bb4ca	1	160064	player+silence	uade	Soundtracker II (1
 cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/desbase.sng
 cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/desbase.sng
 cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/desbase.sng
-cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/DESBASE.SNG
-cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/DESBASE.SNG
-cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/DESBASE.SNG
-cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/DESBASE.SNG
+cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/DESBASE.SNG
+cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/DESBASE.SNG
+cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/DESBASE.SNG
+cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/DESBASE.SNG
 cb4782f8f831d624f0d20cdc704dd02c	0	0	nosound	uade	Richard Joseph Player	0	2701	d22c4cf9	524c6c39	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/DESBASE.SNG
 cb4782f8f831d624f0d20cdc704dd02c	1	3375	player
 cb4782f8f831d624f0d20cdc704dd02c	2	35868	player
@@ -5490,10 +5552,10 @@ d1dfa7bcbef49cc2d12288832acd193f	1	222322	player	uade	Protracker	0	103424	a06b8f
 d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/jon.sng
 d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/jon.sng
 d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/jon.sng
-d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/JON.SNG
-d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/JON.SNG
-d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/JON.SNG
-d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/JON.SNG
+d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/JON.SNG
+d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/JON.SNG
+d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/JON.SNG
+d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/JON.SNG
 d2343838ec51c5becc3337415c26e0f6	0	134430	player	uade	Richard Joseph Player	0	7637	8c883d58	5080fa7a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/JON.SNG
 d2343838ec51c5becc3337415c26e0f6	1	7696	player
 d2343838ec51c5becc3337415c26e0f6	10	12820	player
@@ -5531,6 +5593,7 @@ d34e33cfa2013fb1a6c9ea3b6c7be7b5	1	112126	player	uade	Protracker compatible	0	60
 d34e33cfa2013fb1a6c9ea3b6c7be7b5	1	112126	player	uade	Protracker compatible	0	60248	e7025822	ed6a70dd	Commodore_Amiga_-_WHDLoad_-_Games/L/LittleRedRidingHood_v1.0.lha/LittleRedRidingHood/data/MOD.BABAYAGA
 d354ceb76234fe2d9418eca1649a90e2	1	112769	player	uade	Protracker	0	69634	5254634e	23182315	Commodore_Amiga_-_WHDLoad_-_Demos/M/MusicForFools_v1.0_Ghost.lha/MusicForFools/data/09
 d364b7d6acdd33190d5149b867c16451	0	23005	player	libopenmpt	Game Music Creator	4	24750	847a1c27	3493b907	Commodore_Amiga_-_WHDLoad_-_Games/P/ProSoccer2190_v1.0_1563.lha/ProSoccer2190/data/prosoccer.blk
+d36635bd3e7e7b33f9826f76241ec62d	1	8057	player	uade	Protracker	0	8878	abb8f3f4	d55fb2a4	Commodore_Amiga_-_WHDLoad_-_Games/Z/ZippyRace_v1.1.lha/ZippyRace/data/mus/start.mod
 d37e642d458e3de90b85dd260d326904	1	126925	player+silence	uade	Protracker	0	156256	ac5ed8ea	e279b48c	Commodore_Amiga_-_WHDLoad_-_Demos/M/Mirror_v1.0_Andromeda.lha/Mirror/MirrorData/MOD.Stormbringer.C
 d380fb23bac07c636781c12e18a0035f	1	199797	player	uade	Protracker compatible	0	94912	7a470458	aed90f56	Commodore_Amiga_-_WHDLoad_-_Games/C/CrystalKingdomDizzy_v2.0a_0109.lha/CrystalKingdomDizzy/data/data53
 d3ad7fdde5c0906c9715586f58bbf9dc	1	50275	player	uade	Tracker Packer 2 - 3	0	252416	52753e2a	f9beaeeb	Commodore_Amiga_-_WHDLoad_-_Demos/M/MagnumIcetro_v1.0_Depth.lha/MagnumIcetro/data/04
@@ -5635,6 +5698,7 @@ d7de303b27c43c8aa3cbe530f7347f07	0	217681	player	libxmp	NoisePacker v3	4	56320	5
 d7dec7b701b4c0b2c616fb1311586b10	1	119415	player+silence	uade	Protracker	0	178528	cc3fbbcf	946a8c90	Commodore_Amiga_-_WHDLoad_-_Demos/L/Lovesongs_v1.0_CrimeDevils.lha/Lovesongs/data/mod.5
 d7e148fb139445c3404307b1d02d3e8d	0	7676	player	libxmp	The Player 6.1a	4	40264	d67f38ea	7c88b67e	Commodore_Amiga_-_JST_-_Games/S/SuperStardust_v1.0_CD32_JST.lha/SuperStardustCD32JST/CDDATA/ANIM/SND/P61.demo3-i
 d7e6956de806f74b43090e73c23d8f31	1	156936	player	uade	Protracker	0	77688	302f3bcd	597dcdb3	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/S/SuperCars2_v0.91_AGA.lha/SuperCars2AGA/data/file72_cd3_lotus3.mod
+d7e8d86ceb417132bf2fa473f37ea7ae	1	21058	player	uade	Protracker compatible	0	33820	126c9ddf	bcbbef75	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/second_place.mod
 d7f62ee6ad88e14d88c6d32bf914f58b	1	96613	player	uade	Protracker	0	61410	95132d76	a45fd6f0	Commodore_Amiga_-_WHDLoad_-_Demos/L/Lovesongs_v1.0_CrimeDevils.lha/Lovesongs/data/mod.3
 d82854304260e26c163c47f9886c72ab	1	149841	player+volume	uade	Protracker	0	173270	c9604c7f	9af731e8	Commodore_Amiga_-_WHDLoad_-_Games/B/Blade_v1.0_1801.lha/Blade/data/OCSData/MODBlade.mus
 d829ef4b38005d2344116af9e80c3446	1	0	nosound	uade	Noisetracker 1.x	0	4156	628dff1c	9127579e	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex09_v1.0_It.lha/Tex09It/data-09/mus/ST1.MIC
@@ -5709,9 +5773,10 @@ da3b79f9d4e89ed9672178930c4293c3	1	134370	player	uade	OctaMED MMD0	0	48710	f32f5
 da3b79f9d4e89ed9672178930c4293c3	1	134370	player	uade	OctaMED MMD0	0	48710	f32f52ff	ca210a95	Commodore_Amiga_-_WHDLoad_-_Games/L/Lemmings2_v1.8_512KB_NTSC_1976.lha/Lemmings2512KBNTSC/data/medieval/tune
 da3cb9d0186a318ff8f840cf6694fd7e	0	69104	player	libxmp	NoisePacker v2	4	18548	fcd74352	bf9e53ff	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/42
 da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/INTBASE.SNG
-da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/INTBASE.SNG
-da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/INTBASE.SNG
-da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/INTBASE.SNG
+da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/INTBASE.SNG
+da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/INTBASE.SNG
+da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/INTBASE.SNG
+da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/INTBASE.SNG
 da554481cb78de0bd84edd4bfd6e9d53	0	0	nosound	uade	Richard Joseph Player	0	3095	07c115df	9df63d1a	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2AlienLevels_v1.0.lha/CannonFodder2AlienLevels/data/INTBASE.SNG
 da554481cb78de0bd84edd4bfd6e9d53	1	21219	player
 da554481cb78de0bd84edd4bfd6e9d53	2	24635	player
@@ -5875,7 +5940,7 @@ dffb2cb9a40c5460d3dda5df14f856af	1	0	nosound	uade	Protracker	0	8252	2cd6e992	170
 dffde088021c290584a8580c4637ddbc	1	0	nosound	uade	Noisetracker 1.x	0	10300	34b97e62	c60655fb	Commodore_Amiga_-_WHDLoad_-_Games/T/Tex09_v1.0_It.lha/Tex09It/data-09/mus/MUS1.MIC
 e0009dcfc76654f1134a0d6fc3af4d61	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.8-2.0	4	7768	1fcbb8a6	308e0b38	Commodore_Amiga_-_WHDLoad_-_Games/H/HoleInOne&DataDisks_v1.2.lha/HoleInOne&DataDisks/data/AlphabetSoup/Title.Music
 e00923673ea1ce85705ba3aa6b75142a	1	402962	player+silence	uade	Protracker compatible	0	180132	50fa03d2	22c90ee3	Commodore_Amiga_-_WHDLoad_-_Demos/Q/QuickMusique_v1.0_Oxygen.lha/QuickMusique/data/01
-e01867429fc83f51da87b6311e0ebdfe	0	95990	player	libxmp	ProPacker 2.1	4	90128	ec0061d2	6274456d	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lv5
+e01867429fc83f51da87b6311e0ebdfe	0	95990	player	libxmp	ProPacker 2.1	4	90128	ec0061d2	6274456d	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lv5
 e02469add1f880aab568e899e5b2aa08	1	425516	player	uade	OctaMED MMD1	0	228148	85a3b6fc	3938ef37	Commodore_Amiga_-_HD_Loaders_-_Games/S/Skidmarks2_HD_AcidSoftware.lha/Skidmarks2HD/sfx/tune.crn
 e02469add1f880aab568e899e5b2aa08	1	425516	player	uade	OctaMED MMD1	0	228148	85a3b6fc	3938ef37	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperSkidmarks_v2.2_1797.lha/SuperSkidmarks/data/sfx/tune.crn
 e02469add1f880aab568e899e5b2aa08	1	425516	player	uade	OctaMED MMD1	0	228148	85a3b6fc	3938ef37	Commodore_Amiga_-_WHDLoad_-_Games/S/SuperSkidmarks_v2.2_CD.lha/SuperSkidmarksCD/data/Sfx/tune.crn
@@ -5937,7 +6002,7 @@ e1c27ddea17ae0c34762cda25d89b72a	1	46216	player	uade	Protracker compatible	0	460
 e1c978b92ad1dffcadf6b340513736c3	0	30844	player	uade	Amos Music Bank	0	33708	f04bcd78	b31500c7	Commodore_Amiga_-_WHDLoad_-_Games/E/EksperymentDelfin_v1.1_Pl.lha/EksperymentDelfinPl/data/dane/mod03
 e1ea9648dd0da52d8ea5b48f781468ff	1	132139	player	uade	Protracker	0	183664	17612bac	698c259a	Commodore_Amiga_-_WHDLoad_-_Demos/A/AudioRhythm2_v1.0_Tronix.lha/AudioRhythm2/data/hardcore2.crm
 e1f32bf6e4722c6111e075d31a6a1a91	1	0	nosound	uade	Protracker	0	8252	afdf642f	0bf53c71	Commodore_Amiga_-_WHDLoad_-_Games/P/ParaglidingSimulation_v1.0_2002.lha/ParaglidingSimulation/Disk.1/Music/songs/music2.sng
-e1fe80d014560c0431a8a3d28fbfaba9	0	0	error	uade	NovoTrade Packer	0	69668	ca5085a8	169e80fc	Commodore_Amiga_-_WHDLoad_-_Games/C/CastleVania_v1.1.lha/CastleVania/data/sounds/hellojarre.mod
+e1fe80d014560c0431a8a3d28fbfaba9	0	0	error	uade	NovoTrade Packer	0	69668	ca5085a8	169e80fc	Commodore_Amiga_-_WHDLoad_-_Games/C/CastleVania_v1.2.lha/CastleVania/data/sounds/hellojarre.mod
 e21bf098dd974476a2c6f005a13f7e1b	0	0	nosound	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	17408	691ed890	e114cfdd	Commodore_Amiga_-_WHDLoad_-_Games/B/Banzai_v1.0.lha/Banzai/data/1_3A8
 e237c8f09a1777d8458c73e9c0289d5c	1	0	nosound	uade	Noisetracker 1.x	0	20540	1e5eed0a	8e34f1c2	Commodore_Amiga_-_WHDLoad_-_Demos/E/EargasmTunes_v1.00a_Silents.lha/EargasmTunes/data/Songs/Big
 e237f5dc2c3e81722ab734c6dab32024	1	46216	player	uade	Startrekker (4ch)	0	46638	1c4f9a0b	b99a94c5	Commodore_Amiga_-_JST_-_Games/P/Puggsy_v1.0_1113_JST.lha/PuggsyJST/data/3AZTCTMPL.MOD
@@ -6000,6 +6065,8 @@ e3a24f357236356b7507e8aa6414690f	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.
 e3b1721d11c96b2deb122951dddfea5b	0	98542	player	libxmp	NoisePacker v2	4	4926	4c18ba14	a4574ac8	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/14
 e3ce86bd581eaccf2954e7d496825739	1	135568	player+silence	uade	Protracker	0	223928	73bae273	760dc07d	Commodore_Amiga_-_WHDLoad_-_Games/T/TubeWarriors_v1.0_AGA.lha/TubeWarriorsAGA/data/intro.mod.crm
 e3d85f3faaadcb550c125da2cca258ec	1	134531	player	uade	Startrekker (4ch)	0	135168	129bc88c	24cb4faf	Commodore_Amiga_-_WHDLoad_-_Demos/M/MusicDisk_v1.0_Dreamscape.lha/MusicDiskDreamscape/data/5
+e3df669cbf694e7e291a72b38600ed54	1	64281	player	uade	Protracker	0	271740	7ceac37f	d9087aad	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/ending.mod
+e3df669cbf694e7e291a72b38600ed54	1	64281	player	uade	Protracker	0	271740	7ceac37f	d9087aad	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/ending.mod
 e423887de32a053ec8c3380cb5e3bc2d	1	302860	player	uade	Noisetracker 1.x	0	118408	6a7caa4c	eda7346d	Commodore_Amiga_-_WHDLoad_-_Demos/S/SoundtrackerInjury4_v1.0_VisualArts.lha/SoundtrackerInjury4/data/modules/mod.hippie mix
 e437c658c1559a3b4939058dbcda36ce	1	3507414	player	uade	Soundtracker II (31 instr.)	0	27460	f4bacfed	31759a7e	Commodore_Amiga_-_WHDLoad_-_Games/S/Sqrxz4_v1.0.lha/Sqrxz4/data/disk1_0216
 e440c18d9b44f47cf3f0c2037b307fbd	1	56906	player	uade	Protracker	0	144610	740b4def	51fdceef	Commodore_Amiga_-_WHDLoad_-_Games/C/Castles2_v1.1_CD32.lha/Castles2CD32/data/mus.12
@@ -6139,7 +6206,7 @@ e85038be2307f1509532d0bec686cbe4	1	22565	player+silence	uade	Protracker	0	244824
 e85038be2307f1509532d0bec686cbe4	1	22565	player+silence	uade	Protracker	0	244824	accb05be	a97358cd	Commodore_Amiga_-_WHDLoad_-_Games/N/NigelMansellsWorldChampionship_v1.3_AGA_0138.lha/NigelMansellsWrldChmpAGA/data/mansell1/noises/mod.mansdemointro
 e85940dc92f6008d76840d3647399869	1	236919	player+silence	uade	Protracker	0	171888	41f187c2	2f5c808f	Commodore_Amiga_-_WHDLoad_-_Demos/I/Imaginations_v1.0_Defiance.lha/Imaginations/data/mod.the remix
 e876dfff73e79dc1f4691cc9fd56a2d5	1	64120	player	uade	Protracker compatible	0	19872	d1296380	7bc042c7	Commodore_Amiga_-_WHDLoad_-_Games/B/Blobz_v1.0_AGA.lha/BlobzAGA/data/DISK2/mods/music.8
-e885d41077ee248da428f8abf21348b4	0	127980	player	libxmp	ProPacker 2.1	4	63658	56e634e2	955f15fa	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lv1
+e885d41077ee248da428f8abf21348b4	0	127980	player	libxmp	ProPacker 2.1	4	63658	56e634e2	955f15fa	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lv1
 e8964cf605c9893af0dff8c26bc99b24	0	133104	player	libxmp	NoisePacker v2	4	8704	74545103	bee097c7	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/18
 e8b304a9933f0c304fb43ad8b34cee42	1	124363	player	uade	OctaMED MMD0	0	51156	badfad9d	e772c38a	Commodore_Amiga_-_HD_Loaders_-_Games/L/Lemmings2_HD_BlackHawk.lha/Lemmings2HD/polar/tune
 e8b304a9933f0c304fb43ad8b34cee42	1	124363	player	uade	OctaMED MMD0	0	51156	badfad9d	e772c38a	Commodore_Amiga_-_JST_-_Games/L/Lemmings2_BlackHawk&DrZarkov_0351_JST.lha/Lemmings2JST/Lem2Game/polar/tune
@@ -6169,10 +6236,10 @@ e96b9928373340194b28175e331936f7	1	146688	player	uade	Protracker	0	103316	fb2a46
 e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_CD32_JST.lha/CannonFodderCD32JST/icebase.sng
 e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_JST_-_Games/C/CannonFodder_v2.0_JST.lha/CannonFodderJST/icebase.sng
 e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v1.2_CD32.lha/CannonFodderCD32/data/icebase.sng
-e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_0860.lha/CannonFodder/data/ICEBASE.SNG
-e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_De.lha/CannonFodderDe/data/ICEBASE.SNG
-e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_Fr_2332.lha/CannonFodderFr/data/ICEBASE.SNG
-e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v2.0_It.lha/CannonFodderIt/data/ICEBASE.SNG
+e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_0860.lha/CannonFodder/data/ICEBASE.SNG
+e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_De.lha/CannonFodderDe/data/ICEBASE.SNG
+e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_Fr_2332.lha/CannonFodderFr/data/ICEBASE.SNG
+e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder_v3.0_It.lha/CannonFodderIt/data/ICEBASE.SNG
 e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodderNewCampaign_v2.0.lha/CannonFodderNewCampaign/data/ICEBASE.SNG
 e9707112e3dcc2fdfbd34dbc61b95b57	0	0	nosound	uade	Richard Joseph Player	0	2755	88b40cd5	2ff0390e	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonSoccer_v1.0_0165.lha/CannonSoccer/data/AFXBASE.SNG
 e9707112e3dcc2fdfbd34dbc61b95b57	1	20074	player
@@ -6287,6 +6354,8 @@ eda59c85254c266d9fd6735b275f2221	1	30824	player	uade	Protracker	0	168540	73ffc0e
 eda59c85254c266d9fd6735b275f2221	2	57730	player
 eda59c85254c266d9fd6735b275f2221	3	67717	player
 eda59c85254c266d9fd6735b275f2221	4	84616	player
+eda6ddf7b9d26f85fca52f24045b5149	1	4882	player	uade	Protracker	0	30866	eb8a82ac	65a32306	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA_Decrunched.lha/DoubleDragonAGADc/data/level_complete.mod
+eda6ddf7b9d26f85fca52f24045b5149	1	4882	player	uade	Protracker	0	30866	eb8a82ac	65a32306	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/D/DoubleDragon_Beta3_AGA.lha/DoubleDragonAGA/data/level_complete.mod
 edb4b470b35be4bc971f1508c68f7dc3	1	0	nosound	uade	Protracker	0	7228	fa7ccf61	519b3b89	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners07_v1.0a_2717.lha/TimeRunners07/data/GAME_DIR/MUS/ST3
 edb4b470b35be4bc971f1508c68f7dc3	1	0	nosound	uade	Protracker	0	7228	fa7ccf61	519b3b89	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-07/GAME_DIR/MUS/ST3
 edbcd8c1f67a8ad7e09b540f34b746b0	1	187640	player	uade	Protracker	0	145916	d251966e	03ddb195	Commodore_Amiga_-_WHDLoad_-_Demos/A/AudioRhythm2_v1.0_Tronix.lha/AudioRhythm2/data/goinginsane.crm
@@ -6474,7 +6543,7 @@ f54782fc7d102ca8aaf28d8daa6a59c2	1	0	nosound	uade	Protracker	0	3132	5c16563e	932
 f57a57608fe1b0729852aa82e13e8b05	1	15472	player	uade	Protracker	0	11770	7ecc96a5	190b3acf	Commodore_Amiga_-_JST_-_Games/R/RoadRash_v1.2_1313_JST.lha/RoadRashJST/score.ice
 f57a57608fe1b0729852aa82e13e8b05	1	15472	player	uade	Protracker	0	11770	7ecc96a5	190b3acf	Commodore_Amiga_-_WHDLoad_-_Games/R/RoadRash_v2.0_1313.lha/RoadRash/data/score.ice
 f58986c4406481fe9920537faf0c5bcb	1	406766	player+silence	uade	Protracker	0	283874	736b9d34	2bcf3c6c	Commodore_Amiga_-_WHDLoad_-_Demos/D/DizzyTunes2_v1.0_Noiseless&Spaceballs.lha/DizzyTunes2/data/mod.the wanderer.pp
-f5a2ec0d8763e00ed4c8835dc8cbb54d	0	10067	player	libxmp	ProPacker 2.1	4	29772	619acaa7	bc791663	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.0_Pl.lha/WPotrzaskuPl/data/lvc
+f5a2ec0d8763e00ed4c8835dc8cbb54d	0	10067	player	libxmp	ProPacker 2.1	4	29772	619acaa7	bc791663	Commodore_Amiga_-_WHDLoad_-_Games/W/WPotrzasku_v1.1_Pl.lha/WPotrzaskuPl/data/lvc
 f5c98aca87483bc6710992667866ddb9	1	149445	player+silence	uade	Startrekker (4ch)	0	250782	4dd0971b	b6d76b87	Commodore_Amiga_-_WHDLoad_-_Games/S/SensibleSoccer_v1.2_1MB_0384.lha/SensibleSoccer1MB/data/mod.captain3
 f5c98aca87483bc6710992667866ddb9	1	149445	player+silence	uade	Startrekker (4ch)	0	250782	4dd0971b	b6d76b87	Commodore_Amiga_-_WHDLoad_-_Games/S/SensibleSoccer_v1.2_512KB_0384.lha/SensibleSoccer512KB/data/mod.captain3
 f5c98aca87483bc6710992667866ddb9	1	149445	player+silence	uade	Startrekker (4ch)	0	250782	4dd0971b	b6d76b87	Commodore_Amiga_-_WHDLoad_-_Games/S/SensibleSoccer9293_v1.2_1MB_2391.lha/SensibleSoccer92931MB/data/mod.captain3
@@ -6664,7 +6733,7 @@ fc3f3fa7be715237cc3dae96b3c20f19	1	108127	player	uade	Protracker compatible	0	26
 fc4ebe87b9a4367249bcca32c9947e9a	0	61428	player	libxmp	MED 2.10 MMDC	4	27240	ff5dd0db	10b0515b	Commodore_Amiga_-_WHDLoad_-_Games/K/Knightmare_v2.1_Mindscape_0966.lha/KnightmareMindscape/data/Victory.MUS
 fc56afb9191d11cda6aab586446fdb26	1	115321	player	uade	Soundtracker II (15 instr.)	0	51700	4a76fe68	c542851d	Commodore_Amiga_-_WHDLoad_-_Games/S/SciFi_v1.0_2464.lha/SciFi/data/work/mod.loader
 fc7abe315b539ad6ad4552093b23769d	1	207493	player	uade	Noisetracker 1.x	0	131072	ab8d3342	cde62776	Commodore_Amiga_-_WHDLoad_-_Demos/G/GreatestHits_v1.0_Cult.lha/GreatestHits/data/08
-fc8d0879077484418fe5df62fcf77a00	1	52124	player	uade	Protracker	0	7120	e9093e9a	8c27bfd7	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.3_AGA.lha/DeluxeGalagaAGA/data/GALAGA.JINGLE2
+fc8d0879077484418fe5df62fcf77a00	1	52124	player	uade	Protracker	0	7120	e9093e9a	8c27bfd7	Commodore_Amiga_-_WHDLoad_-_Games/D/DeluxeGalaga_v1.5_AGA.lha/DeluxeGalagaAGA/data/GALAGA.JINGLE2
 fca2bfdd837f068fc7cf847ad642f15f	0	161397	player	uade	Amos Music Bank	0	10406	55de17aa	8c55270b	Commodore_Amiga_-_WHDLoad_-_Games/M/Mentor_v1.1_Pl.lha/MentorPl/data/Mods/mod-E2-01
 fca7030f8d04b6d0dffa3c885673a03f	1	140	player	uade	OctaMED MMD0	0	2490	43dcb21c	5a6f8e7c	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_2090.lha/Civilization/data/sword
 fca7030f8d04b6d0dffa3c885673a03f	1	140	player	uade	OctaMED MMD0	0	2490	43dcb21c	5a6f8e7c	Commodore_Amiga_-_WHDLoad_-_Games/C/Civilization_v1.1_AGA_1633.lha/CivilizationAGA/data/sword
@@ -6680,6 +6749,7 @@ fd02d290bb5359dd6d12a194d0424122	1	262061	player+silence	uade	Soundtracker II (3
 fd159dbbaa93ad9a838311194c4421f1	0	15472	player	uade	Amos Music Bank	0	12910	659bde76	c67f5348	Commodore_Amiga_-_WHDLoad_-_Games/M/Mentor_v1.1_Pl.lha/MentorPl/data/Mods/mod-solo
 fd1eaf8428e728035c7ef58e1083bfb0	1	61568	player	uade	Protracker compatible	0	59576	7a1bb87c	1b793e30	Commodore_Amiga_-_WHDLoad_-_Games/D/Dominium_v1.0.lha/Dominium/data/sons/game.mod
 fd27c7826a7a3f237de177a896defba0	0	53752	player	libxmp	NoisePacker v2	4	24546	96aa46b8	98cabaaf	Commodore_Amiga_-_WHDLoad_-_Demos/S/SyntheticVibes_v1.0_Quartz.lha/SyntheticVibes/data/f/45
+fd2e7857481a90ec2121697989b78244	1	29196	player	uade	Protracker compatible	0	36548	7e629aad	66f9d7c5	Commodore_Amiga_-_WHDLoad_-_Games_-_Beta_&_Unofficial/G/GhostsNGoblins_v1.1_AGA.lha/GhostsNGoblinsAGA/data/first_place.mod
 fd487f4cc19e2c09a5a99bb6691adae7	1	0	nosound	uade	Protracker	0	12348	c14cd324	7e7dae08	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunners19_v1.0_2728.lha/TimeRunners19/data/GAME_DIR/MUS/COVER.MDI
 fd487f4cc19e2c09a5a99bb6691adae7	1	0	nosound	uade	Protracker	0	12348	c14cd324	7e7dae08	Commodore_Amiga_-_WHDLoad_-_Games/T/TimeRunnersSeries_v1.0.lha/TimeRunnersSeries/data-19/GAME_DIR/MUS/COVER.MDI
 fd5ce960d0947dd1ee5f840b8ed8baa0	1	384122	player	uade	Soundtracker II (15 instr.)	0	116528	45958ed0	859ee6a4	Commodore_Amiga_-_JST_-_Games/B/Baal_v1.0b_1350_JST.lha/BaalJST/data/11.baal
@@ -6739,9 +6809,10 @@ ffda937a73fb1b096b5cbfdcc0e14677	1	5400	player+silence	uade	Noise Packer 3.0	0	3
 ffda937a73fb1b096b5cbfdcc0e14677	1	5400	player+silence	uade	Noise Packer 3.0	0	3188	1884d35b	06402bce	Commodore_Amiga_-_WHDLoad_-_Games/B/BubbaNStix_v3.1_1323.lha/BubbaNStix/data/BubbaData/gameover.np
 ffda937a73fb1b096b5cbfdcc0e14677	1	5400	player+silence	uade	Noise Packer 3.0	0	3188	1884d35b	06402bce	Commodore_Amiga_-_WHDLoad_-_Games/B/BubbaNStix_v3.1_CD32.lha/BubbaNStixCD32/data/BubbaData/gameover.np
 ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_HD_Loaders_-_Games/C/CannonFodder2_v1.2a_HD_JOTD_0104.lha/CannonFodder2HD/JON.SNG
-ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_0104.lha/CannonFodder2/data/JON.SNG
-ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_De_0241.lha/CannonFodder2De/data/JON.SNG
-ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.12_Fr_2578.lha/CannonFodder2Fr/data/JON.SNG
+ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_0104.lha/CannonFodder2/data/JON.SNG
+ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_De_0241.lha/CannonFodder2De/data/JON.SNG
+ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_Fr_2578.lha/CannonFodder2Fr/data/JON.SNG
+ffe8031ff503fbaad8447047574d7902	0	76820	player	uade	Richard Joseph Player	0	7935	54d8a36e	ec5ba7be	Commodore_Amiga_-_WHDLoad_-_Games/C/CannonFodder2_v1.15_It.lha/CannonFodder2It/data/JON.SNG
 ffe8031ff503fbaad8447047574d7902	1	5767	player
 ffe8031ff503fbaad8447047574d7902	10	12820	player
 ffe8031ff503fbaad8447047574d7902	11	28815	player

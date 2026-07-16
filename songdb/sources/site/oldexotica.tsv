@@ -410,11 +410,11 @@
 06b7473eb1765eeda9fdf711a3ca87c7	9	3521	silence
 06b890430af28b89de13435e00f820b2	1	48010	loop	uade	MON	0	7788	0ff7e16b	dfa63e98	tunes/archive/MON-ManiacsOfNoise-New/MON.Gyroscope_Bug.lha/MON.Gyroscope_Bug
 06be02e465330f4af6b0dddfecc8f771	0	98710	silence	uade	Infogrames	0	2179	067cb195	f3539ed6	tunes/archive/RH-RobHubbard-2/Ween.lha/Ween/MUS2c.DUM
-06c73c16252e1920d6e6409a630a26a9	0	22486	player+silence	uade	TFMX Pro	0	3532	1bbad51c	0d121e81	tunes/archive/TFMX/Rudolf_Stember_Adverts.lha/Rudolf_Stember_Adverts/Karamalz/mdat.Ongame
+06c73c16252e1920d6e6409a630a26a9	0	30744	player	uade	TFMX Pro	0	3532	1bbad51c	0d121e81	tunes/archive/TFMX/Rudolf_Stember_Adverts.lha/Rudolf_Stember_Adverts/Karamalz/mdat.Ongame
 06c73c16252e1920d6e6409a630a26a9	1	23912	player
 06c73c16252e1920d6e6409a630a26a9	2	7696	player
-06c73c16252e1920d6e6409a630a26a9	3	10377	player+silence
-06c73c16252e1920d6e6409a630a26a9	4	8324	player+silence
+06c73c16252e1920d6e6409a630a26a9	3	10381	player+silence
+06c73c16252e1920d6e6409a630a26a9	4	8310	player+silence
 06c79fa11f1a34c41a66b75083ffd53e	1	99968	player	uade	Soundtracker II (15 instr.)	0	102642	3178fe84	22505b53	editors/archive/StarTrekker_v1.2.lha/StarTrekker_v1.2/Modules/MOD.RED SECTOR MUSIC
 06e2d57e413adfdca1410876ecd19c7d	1	261518	loop	uade	The YM2149 Player v1.52c	0	2312	d3a53dca	427f9a48	players/amiga/deliplayers/MYST_Data_2.lha/YM2149/Hippel/MCoder/YM.EnchantedLand_Level3
 06e2d57e413adfdca1410876ecd19c7d	1	261518	loop	uade	The YM2149 Player v1.52c	0	2312	d3a53dca	427f9a48	tunes/archive/YM-YM2149/Hippel.lha/Hippel/MCoder/YM.EnchantedLand_Level3
@@ -531,7 +531,7 @@
 0966a9a7a2cd66baca16870be4494817	5	1929	player
 0966a9a7a2cd66baca16870be4494817	6	3637	player
 0966a9a7a2cd66baca16870be4494817	7	5345	player
-0966a9a7a2cd66baca16870be4494817	8	47653	loop
+0966a9a7a2cd66baca16870be4494817	8	45812	loop
 0978cf8401d1261154b53c59ac1d28c6	0	30764	player	uade	AHX v2	0	1171	cfc28c77	fb8c9a22	tunes/archive/AHX-AbyssHighestExperience/Mermaid.lha/Mermaid/AHX.Sick_of_it_all
 099002bbcefd0e9622b8693602bcbee5	0	53772	player	uade	ArtOfNoise (4ch)	0	27180	0bd0bba2	c7c24a2f	tunes/archive/AON-ArtOfNoise/Twice-Revolution.lha/Twice-Revolution/AON.revolution-0005
 099294e7f496d3c14021a152fdd35d55	1	112990	loop	uade	The YM2149 Player v1.52c	0	12656	0cc78218	bc6750f6	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/Iso/YM.PatatKro
@@ -934,11 +934,11 @@
 1077ebebfa48a1ecdad8f3fc5688af6b	0	228934	player	uade	Sonic Arranger	0	44934	1dff8ddd	42bee1bf	tunes/archive/SA-SonicArranger/SA.MetalWars.lha/SA.MetalWars
 1082bb9a814f89998f0c704feec26df3	0	62191	player	uade	TFMX Pro	0	3044	127ac20f	102d1dbc	tunes/archive/TFMX/Freak_Out.lha/Freak_Out/mdat.ALL
 1082bb9a814f89998f0c704feec26df3	1	0	nosound
-1082bb9a814f89998f0c704feec26df3	2	8320	silence
-1082bb9a814f89998f0c704feec26df3	3	13277	silence
-1082bb9a814f89998f0c704feec26df3	4	8320	silence
-1082bb9a814f89998f0c704feec26df3	5	13438	silence
-1082bb9a814f89998f0c704feec26df3	6	10795	silence
+1082bb9a814f89998f0c704feec26df3	2	8323	silence
+1082bb9a814f89998f0c704feec26df3	3	13268	silence
+1082bb9a814f89998f0c704feec26df3	4	8323	silence
+1082bb9a814f89998f0c704feec26df3	5	13441	silence
+1082bb9a814f89998f0c704feec26df3	6	10798	silence
 108e16512379f70e0d57b7a799293d26	1	189168	loop	uade	The YM2149 Player v1.52c	0	1748	e86bad14	9aeb239b	players/amiga/deliplayers/MYST_Data_4.lha/YM2149/Tao/YM.Loader_Sid
 108e16512379f70e0d57b7a799293d26	1	189168	loop	uade	The YM2149 Player v1.52c	0	1748	e86bad14	9aeb239b	tunes/archive/YM-YM2149/Tao.lha/Tao/YM.Loader_Sid
 10933c0ebbafc8504e348c6432e7fd88	1	191676	loop	uade	The YM2149 Player v1.52c	0	4260	1d68b48a	855228ad	players/amiga/deliplayers/MYST_Data_6.lha/YM2149/BigAlec/YM.Structure
@@ -2392,11 +2392,11 @@
 28a7123c11c7690bef5a5ca26bc39d0c	0	57610	player	uade	TFMX Pro	0	8920	a37751bf	40bd2b69	tunes/archive/TFMX/Hanse.lha/Hanse/mdat.Hanse
 28a7123c11c7690bef5a5ca26bc39d0c	1	76820	player
 28a7123c11c7690bef5a5ca26bc39d0c	10	1647	player
-28a7123c11c7690bef5a5ca26bc39d0c	11	4971	player+silence
-28a7123c11c7690bef5a5ca26bc39d0c	12	4979	player+silence
-28a7123c11c7690bef5a5ca26bc39d0c	13	5459	player+silence
-28a7123c11c7690bef5a5ca26bc39d0c	14	5459	player+silence
-28a7123c11c7690bef5a5ca26bc39d0c	15	6438	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	11	4970	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	12	4970	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	13	5460	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	14	5449	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	15	6440	player+silence
 28a7123c11c7690bef5a5ca26bc39d0c	16	97316	player
 28a7123c11c7690bef5a5ca26bc39d0c	2	38420	player
 28a7123c11c7690bef5a5ca26bc39d0c	3	60503	player
@@ -2405,7 +2405,7 @@
 28a7123c11c7690bef5a5ca26bc39d0c	6	46096	player
 28a7123c11c7690bef5a5ca26bc39d0c	7	3496	player
 28a7123c11c7690bef5a5ca26bc39d0c	8	1486	player
-28a7123c11c7690bef5a5ca26bc39d0c	9	5216	player+silence
+28a7123c11c7690bef5a5ca26bc39d0c	9	5204	player+silence
 28cacb6c622ddb651f79a4835b13ee66	1	225385	loop	uade	The YM2149 Player v1.52c	0	13760	538d5b0b	85ff43f8	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/Iso/YM.DBA9_Intro
 28cfef36f659851522f1042ce809f7df	0	0	nosound	uade	FaceTheMusic	0	5942	09163ccb	90875269	editors/archive/Face_The_Music.lha/Face_The_Music/FTM-1/FTM-Songs/Turning Point
 28dfea13b6c83b7853fae9a72dc99857	1	56947	loop	uade	The YM2149 Player v1.52c	0	5072	61730c91	7fce6008	players/amiga/deliplayers/MYST_Data_7.lha/YM2149/Page/YM.FireIce_Forest
@@ -2602,14 +2602,14 @@
 2ce74cdbeb0ab1f81a31b8d62312e692	0	76900	player	uade	AHX v2	0	1803	dbe7cf54	bca94996	tunes/archive/AHX-AbyssHighestExperience/JaZz{Jolly}.lha/JaZz{Jolly}/AHX.Test.07
 2ced0db9b85c11d2be4bfa90144d8d3f	0	31407	player	uade	SoundFX	0	22676	e4d945d1	50ea2297	tunes/archive/SFX-SoundFX/Venus.lha/Venus/SFX.Venus7
 2cf830fd08314e68c4eab36c15bf5ee5	0	152380	loop	uade	MarkCookseyOld	0	59030	b14a150a	d90d072f	tunes/archive/MC-MarkCooksey/MCO.Live_And_Let_Die.lha/MCO.Live_And_Let_Die
-2d02fc26e346d00217cc79d5608a18a1	0	3056	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	tunes/archive/TFMX/Software_Manager.lha/Software_Manager/mdat.Fx
-2d02fc26e346d00217cc79d5608a18a1	1	3112	silence
-2d02fc26e346d00217cc79d5608a18a1	2	3077	silence
+2d02fc26e346d00217cc79d5608a18a1	0	3053	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	tunes/archive/TFMX/Software_Manager.lha/Software_Manager/mdat.Fx
+2d02fc26e346d00217cc79d5608a18a1	1	3110	silence
+2d02fc26e346d00217cc79d5608a18a1	2	3081	silence
 2d02fc26e346d00217cc79d5608a18a1	3	3821	silence
 2d02fc26e346d00217cc79d5608a18a1	4	3721	silence
-2d02fc26e346d00217cc79d5608a18a1	5	3185	silence
-2d02fc26e346d00217cc79d5608a18a1	6	3638	silence
-2d02fc26e346d00217cc79d5608a18a1	7	3150	silence
+2d02fc26e346d00217cc79d5608a18a1	5	3186	silence
+2d02fc26e346d00217cc79d5608a18a1	6	3639	silence
+2d02fc26e346d00217cc79d5608a18a1	7	3151	silence
 2d02fc26e346d00217cc79d5608a18a1	8	3181	silence
 2d03e2c52ecd26c58a759040cd517020	1	64675	loop	uade	The YM2149 Player v1.52c	0	5568	fa2b9ec6	9fdfb13d	players/amiga/deliplayers/MYST_Data_4.lha/YM2149/Scavenger/YM.CrapMan8
 2d03e2c52ecd26c58a759040cd517020	1	64675	loop	uade	The YM2149 Player v1.52c	0	5568	fa2b9ec6	9fdfb13d	tunes/archive/YM-YM2149/Scavenger.lha/Scavenger/YM.CrapMan8
@@ -3872,7 +3872,7 @@
 44a60fddd131257d897a3ed22a8bd655	3	30744	player
 44a60fddd131257d897a3ed22a8bd655	4	2451	player
 44a60fddd131257d897a3ed22a8bd655	5	2592	player
-44a60fddd131257d897a3ed22a8bd655	6	18483	silence
+44a60fddd131257d897a3ed22a8bd655	6	18491	silence
 44aa3fa5805759f89cf6e7207952d52e	0	91661	player+silence	uade	SIDMon 1.0	0	30586	69a74e62	b450f390	tunes/archive/SID1-SidMon-1/SID1.Anarchy.lha/SID1.Anarchy
 44bc324c993abcc3ba9944add0852906	0	69224	player	uade	AHX v2	0	1960	dad917ba	8ae3afbf	tunes/archive/AHX-AbyssHighestExperience/JaZz{Jolly}.lha/JaZz{Jolly}/AHX.Carrera Rocks
 44c041f4a62bdb30308a0d2db677d005	0	84516	player	uade	Sonic Arranger	0	19126	10fe6c72	6a2df5ea	tunes/archive/SA-SonicArranger/SA.Sknint36.lha/SA.Sknint36
@@ -3979,7 +3979,7 @@
 472299c46f3882452c9a4f9cf54a0fed	0	161574	player+silence	uade	Sonic Arranger	0	187868	b0b1936e	32fd3be2	tunes/archive/SA-SonicArranger/SA.Mega_End.lha/SA.Mega_End
 47344131fc0648ed40e8f6769063afe6	1	3600000	timeout	uade	The YM2149 Player v1.52c	0	4588	39154494	79586e4a	players/amiga/deliplayers/MYST_Data_7.lha/YM2149/Page/YM.FireIce_Sea
 47344131fc0648ed40e8f6769063afe6	1	3600000	timeout	uade	The YM2149 Player v1.52c	0	4588	39154494	79586e4a	tunes/archive/YM-YM2149/Page.lha/Page/YM.FireIce_Sea
-4744e8607fda30d339b6d5f814228d53	0	160306	player+silence	uade	TFMX Pro	0	6420	d564575f	afb2797b	tunes/archive/TFMX/Rudolf_Stember_Other.lha/Rudolf_Stember_Other/mdat.Happy_b
+4744e8607fda30d339b6d5f814228d53	0	160309	player+silence	uade	TFMX Pro	0	6420	d564575f	afb2797b	tunes/archive/TFMX/Rudolf_Stember_Other.lha/Rudolf_Stember_Other/mdat.Happy_b
 4744e8607fda30d339b6d5f814228d53	1	7696	player
 475d2e340c734d60f94c2bd8e9401612	1	228772	loop	uade	The YM2149 Player v1.52c	0	4092	047fbadd	d2bf74ad	players/amiga/deliplayers/MYST_Data_9.lha/YM2149/Hippel/BIG/YM.HumanRace
 475d2e340c734d60f94c2bd8e9401612	1	228772	loop	uade	The YM2149 Player v1.52c	0	4092	047fbadd	d2bf74ad	tunes/archive/YM-YM2149/Hippel.lha/Hippel/BIG/YM.HumanRace
@@ -4421,7 +4421,7 @@
 502af9e42db56adf4484eb4e285ef20d	3	3395	player
 502af9e42db56adf4484eb4e285ef20d	4	1486	player
 502af9e42db56adf4484eb4e285ef20d	5	82426	player
-502af9e42db56adf4484eb4e285ef20d	6	233800	loop
+502af9e42db56adf4484eb4e285ef20d	6	3600000	timeout
 5042f5e91fc7cffd1ce8d6ecaffdc5ca	0	128040	player	uade	ArtOfNoise (4ch)	0	20478	b4291d46	eaf81c5e	tunes/archive/AON-ArtOfNoise/Twice-Revolution.lha/Twice-Revolution/AON.revolution-0050
 5053a98509ff617639683886990787cb	1	205619	loop	uade	The YM2149 Player v1.52c	0	18128	c669a808	3b5af3b7	players/amiga/deliplayers/MYST_Data_2.lha/YM2149/Hippel/YM.TEXShow
 5053a98509ff617639683886990787cb	1	205619	loop	uade	The YM2149 Player v1.52c	0	18128	c669a808	3b5af3b7	tunes/archive/YM-YM2149/Hippel.lha/Hippel/YM.TEXShow
@@ -4614,7 +4614,7 @@
 539abc9c8ae743056a4f7bb96c8e00bc	4	4822	player
 539abc9c8ae743056a4f7bb96c8e00bc	5	38420	player
 539abc9c8ae743056a4f7bb96c8e00bc	6	34140	player
-539d99b331075d5ed480d7f10f53e8b6	0	151365	player+silence	uade	TFMX Pro	0	7012	a0a22474	74d38c29	tunes/archive/TFMX/L_And_M_Adventure.lha/L_And_M_Adventure/mdat.L_M_Title
+539d99b331075d5ed480d7f10f53e8b6	0	151326	player+silence	uade	TFMX Pro	0	7012	a0a22474	74d38c29	tunes/archive/TFMX/L_And_M_Adventure.lha/L_And_M_Adventure/mdat.L_M_Title
 539f2ea8b2a39cee18f4b48fca196239	1	19281	silence	uade	The YM2149 Player v1.52c	0	7452	0289f7ae	2038c6aa	players/amiga/deliplayers/MYST_Data_1.lha/YM2149/Daglish/YM.RickDangerous
 539f2ea8b2a39cee18f4b48fca196239	1	19281	silence	uade	The YM2149 Player v1.52c	0	7452	0289f7ae	2038c6aa	tunes/archive/YM-YM2149/Daglish.lha/Daglish/YM.RickDangerous
 539f2ea8b2a39cee18f4b48fca196239	2	26279	silence
@@ -5048,7 +5048,7 @@
 5add44122a3a7afc6de4d893fe7dbb52	6	86998	loop
 5add44122a3a7afc6de4d893fe7dbb52	7	218865	loop
 5add44122a3a7afc6de4d893fe7dbb52	8	192385	loop
-5ade805268a995f4b374c253f2b8738a	0	4962	silence	uade	TFMX Pro	0	2940	bdb4a35b	5421781c	tunes/archive/TFMX/Gem_Z.lha/Gem_Z/mdat.GemZ4
+5ade805268a995f4b374c253f2b8738a	0	4964	silence	uade	TFMX Pro	0	2940	bdb4a35b	5421781c	tunes/archive/TFMX/Gem_Z.lha/Gem_Z/mdat.GemZ4
 5ade805268a995f4b374c253f2b8738a	1	1949	player
 5ade805268a995f4b374c253f2b8738a	2	3215	player
 5ade805268a995f4b374c253f2b8738a	3	3858	player
@@ -5126,7 +5126,7 @@
 5bcbfd94ed5cb05a1e0e757715e18bb6	1	0	nosound	uade	OctaMED MMD1	0	16746	711dede0	81f125c7	nostalgia/amfm/amfm14.dms/MIDIFiles/Bach/Two_Menuets.MED.pp
 5be14bb9a5b67433b8cb5fe9b087d9dc	1	96116	loop	uade	The YM2149 Player v1.52c	0	2292	18515383	59bfb445	players/amiga/deliplayers/MYST_Data_2.lha/YM2149/Hippel/MCoder/YM.Atomino3
 5be14bb9a5b67433b8cb5fe9b087d9dc	1	96116	loop	uade	The YM2149 Player v1.52c	0	2292	18515383	59bfb445	tunes/archive/YM-YM2149/Hippel.lha/Hippel/MCoder/YM.Atomino3
-5bea0ed764044382e543fd486b89f881	0	266811	player+silence	uade	TFMX Pro	0	11016	14817686	8a52ad1f	tunes/archive/TFMX/Gordian_Tomb.lha/Gordian_Tomb/mdat.Gordian_Tomb!
+5bea0ed764044382e543fd486b89f881	0	266813	player+silence	uade	TFMX Pro	0	11016	14817686	8a52ad1f	tunes/archive/TFMX/Gordian_Tomb.lha/Gordian_Tomb/mdat.Gordian_Tomb!
 5bea0ed764044382e543fd486b89f881	1	329626	player
 5bedab6e35d9ab3d3bdf4fe9b5270787	0	44870	player	uade	AHX v2	0	3773	a9494909	10788178	tunes/archive/AHX-AbyssHighestExperience/W!G.lha/W!G/AHX.ARGH!
 5bf2772c0579412c58843b883da6c426	0	52184	player	uade	David Whittaker	0	19180	179ca1e4	3e455706	tunes/archive/DW-DavidWhittaker/DW.BadCompany.lha/DW.BadCompany
@@ -5715,7 +5715,7 @@
 64ab0b2137428342c0511e414d9b2c5b	0	67455	loop	uade	SoundMon 2.2	0	11028	f8a24a47	4bf27d40	tunes/archive/BP-SoundMon/Orchestral_Delights.lha/Orchestral_Delights/BP3.Future_II
 64b14103adb0c8d792877fbb88230e06	0	164833	player	uade	SoundFX	0	91684	017fa9d4	0156e81c	tunes/archive/SFX-SoundFX/Kerni-Other.lha/Kerni-Other/SFX.timetravelling
 64c601dbe591c6220c54f7a7338b73ef	0	16095	player	uade	TFMX Pro	0	2400	8c6d4fd4	c3b6cbbf	tunes/archive/TFMX/Rudolf_Stember_Adverts.lha/Rudolf_Stember_Adverts/Karamalz/mdat.Pause
-64c601dbe591c6220c54f7a7338b73ef	1	7397	player+silence
+64c601dbe591c6220c54f7a7338b73ef	1	7381	player+silence
 64c601dbe591c6220c54f7a7338b73ef	2	6269	player
 64d19c9a8f6744de3a05546f2c47d4d3	0	247681	player	uade	Mark_II	0	84454	88d5cbda	7983793a	tunes/archive/MKII-Mark2SoundSystem/MKII.Pemain.lha/MKII.Pemain
 64d7e82a60fa9a0b4cf57fe391b09eec	1	0	nosound	uade	OctaMED MMD0	0	12294	a5046341	075015af	nostalgia/amfm/amfm07.dms/MIDIFiles/Bach/BOURREE IN A MAJOR.MED.pp
@@ -5727,13 +5727,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 658946282ff029b1f6005414342b342c	0	195919	player	uade	FutureComposer 1.3	0	28156	5307ddfd	9b4fef07	tunes/archive/FC13-FutureComposer/FC13.AMAZE.lha/FC13.AMAZE
@@ -5936,7 +5936,7 @@
 697652bd13895946160f46ddc6711fb7	1	81924	player
 697652bd13895946160f46ddc6711fb7	2	81924	player
 697652bd13895946160f46ddc6711fb7	3	5164	player
-697652bd13895946160f46ddc6711fb7	4	5731	silence
+697652bd13895946160f46ddc6711fb7	4	5723	silence
 6987747163d2cd5598b9628d99bb51f1	1	341355	loop	uade	The YM2149 Player v1.52c	0	1776	8a171d7d	dd532a1e	players/amiga/deliplayers/MYST_Data_2.lha/YM2149/Hippel/MCoder/YM.Phalanx2_Game
 6987747163d2cd5598b9628d99bb51f1	1	341355	loop	uade	The YM2149 Player v1.52c	0	1776	8a171d7d	dd532a1e	tunes/archive/YM-YM2149/Hippel.lha/Hippel/MCoder/YM.Phalanx2_Game
 69b5c9c536ef499a17d59f5c6441f0a8	0	7716	player	uade	SunTronic	0	7516	29dc6faf	2e9ce4cd	tunes/archive/CUST-SUNTronic/SUNTronicTunes.lha/suntronic-14
@@ -5944,7 +5944,7 @@
 69c574c52c230a7e2ab73e45cd317144	1	36062	loop	uade	The YM2149 Player v1.52c	0	5832	78125f0d	b8775386	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/Iso/YM.DBA8_Intro
 69c611c02a8c25ef553fdb160953130a	0	0	error	uade	TFMX Pro	0	7820	fdbc092b	f91c0812	tunes/archive/TFMX/Logistic.lha/Logistic/mdat.Logistic
 69d8ffd3602462a59b53c60b39323ea3	0	345782	player	uade	ArtOfNoise (4ch)	0	42464	0f24a333	66de1ef4	tunes/archive/AON-ArtOfNoise/Twice.lha/Twice/AON.jump'n'fun
-69e30c9df09f51a8dd1802d300a967bc	0	142207	player	uade	TFMX Pro	0	7292	33854faf	29258376	tunes/archive/TFMX/Jan_Krolzig.lha/Jan_Krolzig/mdat.daydream.jk
+69e30c9df09f51a8dd1802d300a967bc	0	142227	player	uade	TFMX Pro	0	7292	33854faf	29258376	tunes/archive/TFMX/Jan_Krolzig.lha/Jan_Krolzig/mdat.daydream.jk
 69ed29931944b50b94315f2d9e36657a	0	272659	player	uade	Sonic Arranger	0	38584	0a72e1d9	8325200b	tunes/archive/SA-SonicArranger/SA.Sonican.lha/SA.Sonican
 69f74a58117f0d43dfba77a0f6cfed15	0	230420	player	uade	Synth 4.0	0	27204	9492338b	0d40bd28	tunes/archive/SYN-Synthesis-4.0/SYN.Dear_Rob.lha/SYN.Dear_Rob
 69f97eb50ec2047ddf3a7e19b54a492b	0	84134	player	uade	David Whittaker	0	58540	a7af709e	b7bec1b7	tunes/archive/DW-DavidWhittaker/DW.SuperLeagueManager.lha/DW.SuperLeagueManager
@@ -6091,7 +6091,7 @@
 6c1ef14410beef4b7307cb758a19b8f8	1	140439	loop	uade	The YM2149 Player v1.52c	0	7808	1cc80769	deea326d	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/Lap/YM.Lap11
 6c3469bac24326ccc557340d732b7d64	0	153727	player+silence	uade	FutureComposer 1.3	0	61502	81ee1ca5	1c58dafa	editors/archive/Future_Composer_v1.4.lha/Future_Composer_v1.4/MODULES/crbsong
 6c3687268314774888469ca3347e79a1	0	0	nosound	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	8792	3adb68cc	3b68cda0	editors/archive/Soundtracker_IV.lha/Soundtracker_IV/songs/unit a
-6c3ae239008e6aa6a59d9f0c5e476b85	0	81924	player	uade	TFMX Pro	0	6936	ca835e11	cb7de5ce	tunes/archive/TFMX/Oath.lha/Oath/mdat.Level2
+6c3ae239008e6aa6a59d9f0c5e476b85	0	81944	player	uade	TFMX Pro	0	6936	ca835e11	cb7de5ce	tunes/archive/TFMX/Oath.lha/Oath/mdat.Level2
 6c3ae239008e6aa6a59d9f0c5e476b85	1	51220	player
 6c3ae239008e6aa6a59d9f0c5e476b85	2	2712	player
 6c3ae239008e6aa6a59d9f0c5e476b85	3	1245	player
@@ -6159,7 +6159,7 @@
 6de6deec88f63257a453a5bc03d48c79	6	38420	player
 6de6deec88f63257a453a5bc03d48c79	7	3395	player
 6de6deec88f63257a453a5bc03d48c79	8	1326	player
-6de6deec88f63257a453a5bc03d48c79	9	6220	player+silence
+6de6deec88f63257a453a5bc03d48c79	9	6213	player+silence
 6e06b60a1fa49c1bfaf7ae023a58296e	1	19523	loop	uade	The YM2149 Player v1.52c	0	9244	c6216f55	22605337	players/amiga/deliplayers/MYST_Data_8.lha/YM2149/Tao/YM.EAI_IceAge
 6e06b60a1fa49c1bfaf7ae023a58296e	1	19523	loop	uade	The YM2149 Player v1.52c	0	9244	c6216f55	22605337	tunes/archive/YM-YM2149/Tao.lha/Tao/YM.EAI_IceAge
 6e0a9968f7ca8fb9591f6aaba7fbaaa9	1	211331	player	uade	Protracker	0	138268	71da7f74	78382ef1	nostalgia/amfm/amfmSpec04.dms/Protracker-modules/mod.shang-title.pp
@@ -7572,7 +7572,7 @@
 8461ac86c297fd54323996677304924c	4	27930	loop
 8462e1a7306d5cdc311d8b834cfe0f7a	0	470487	loop	uade	UADE	0	52724	84bfd146	ff067bfe	tunes/archive/CUST-Custom/CUST.IK++.lha/CUST.IK++
 846912eda193ea66ad709d3c5a5e8908	0	17211	silence	uade	AHX v2	0	1058	a3459160	9f9131e8	tunes/archive/AHX-AbyssHighestExperience/Miao.lha/Miao/AHX.Logo
-8473e4cd7b0afa6717132cb01d7e22ad	0	188849	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	tunes/archive/TFMX/Logical.lha/Logical/mdat.Titelmsx
+8473e4cd7b0afa6717132cb01d7e22ad	0	188650	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	tunes/archive/TFMX/Logical.lha/Logical/mdat.Titelmsx
 847c1e2d0aa064cd3325984927737f29	0	244676	player+silence	uade	SoundFX	0	199924	d5ea9b4a	624ce6ec	tunes/archive/SFX-SoundFX/Synthetix.lha/Synthetix/SFX.Pardie
 848300786c0d5465dc6a40b787e8e748	0	30744	player	uade	Major Tom's Player 2.01	0	45632	f50be524	08d68898	tunes/archive/MTP-MajorTom/HolyNoise.lha/HolyNoise/MTP2.Holy_Noise-5
 848300786c0d5465dc6a40b787e8e748	0	30744	player	uade	Major Tom's Player 2.01	0	45632	f50be524	08d68898	tunes/archive/MTP-MajorTom/MTP2.Slashback.lha/MTP2.Slashback
@@ -7607,7 +7607,7 @@
 84f58ae142223c883aa52532659d86b0	0	0	nosound	libopenmpt	Ultimate Soundtracker 1.0-1.21	4	4696	fe2711e8	25a14bda	editors/archive/Soundtracker_IV.lha/Soundtracker_IV/songs/drum02
 8507af2bf8cb30bc63638a1e4cdba42a	1	120764	loop	uade	The YM2149 Player v1.52c	0	6472	826d22b5	41d654d7	players/amiga/deliplayers/MYST_Data_1.lha/YM2149/CountZero/YM.SOTE2
 8507af2bf8cb30bc63638a1e4cdba42a	1	120764	loop	uade	The YM2149 Player v1.52c	0	6472	826d22b5	41d654d7	tunes/archive/YM-YM2149/CountZero.lha/CountZero/YM.SOTE2
-8508bc4ef55aed798e9c0d72ba154b32	0	314358	player+silence	uade	TFMX Pro	0	9808	7846d8b2	1160575e	tunes/archive/TFMX/Demo_Songs.lha/Demo_Songs/mdat.Acieed1
+8508bc4ef55aed798e9c0d72ba154b32	0	314359	player+silence	uade	TFMX Pro	0	9808	7846d8b2	1160575e	tunes/archive/TFMX/Demo_Songs.lha/Demo_Songs/mdat.Acieed1
 8508bc4ef55aed798e9c0d72ba154b32	1	11775	player
 8508bc4ef55aed798e9c0d72ba154b32	2	17642	player
 851bbac629680a61cf9a68002addcd90	0	42861	player	uade	SoundFX	0	43036	510649e6	340eda4e	tunes/archive/SFX-SoundFX/FutureWars.lha/FutureWars/SFX.Future_Wars_Tune_10
@@ -7940,7 +7940,7 @@
 8a0d34b189eab9579d64225f1ccfe9ca	7	41615	player
 8a0d34b189eab9579d64225f1ccfe9ca	8	10469	player
 8a0d34b189eab9579d64225f1ccfe9ca	9	2813	player
-8a15102f877d0a0559be4d58dca30602	0	347244	player+silence	uade	TFMX Pro	0	5948	dfc57613	7254c60b	tunes/archive/TFMX/X-Out.lha/X-Out/mdat.XOutTitle
+8a15102f877d0a0559be4d58dca30602	0	347417	player+silence	uade	TFMX Pro	0	5948	dfc57613	7254c60b	tunes/archive/TFMX/X-Out.lha/X-Out/mdat.XOutTitle
 8a15102f877d0a0559be4d58dca30602	1	3858	player
 8a15102f877d0a0559be4d58dca30602	2	6410	player
 8a2e23abc752c9b024159145afc639ee	0	272719	player	uade	FutureComposer 1.3	0	34044	ebaae992	d2fba961	tunes/archive/FC13-FutureComposer/FC13.Magfield13.lha/FC13.Magfield13
@@ -8969,7 +8969,7 @@
 9d801383871c177f163633e7796a7bfc	0	40349	player	uade	TFMX Pro	0	3040	129b6228	2d379497	tunes/archive/TFMX/Caribbean_Disaster.lha/Caribbean_Disaster/mdat.Knei
 9d87266b480ff7fc852b26f7347d9b2d	0	163105	player	uade	Martin Walker	0	62936	6a04535a	61692ee6	tunes/archive/AVP-ActivisionPro/Thunderhawk.lha/Thunderhawk/AVP.Thunderhawk 1
 9d9ef1a6507f8d0644b14426fbddef56	0	174261	silence	uade	AHX v2	0	4588	d29a2045	cf5d364f	tunes/archive/AHX-AbyssHighestExperience/JaZz{Jolly}.lha/JaZz{Jolly}/AHX.Het is fijn met Reyn
-9d9f944336e0a967981a6ba5739daa2c	0	55064	loop	uade	TFMX Pro	0	3028	0d68aa89	269b9edd	tunes/archive/TFMX/Ramses.lha/Ramses/mdat.Titel
+9d9f944336e0a967981a6ba5739daa2c	0	56309	loop	uade	TFMX Pro	0	3028	0d68aa89	269b9edd	tunes/archive/TFMX/Ramses.lha/Ramses/mdat.Titel
 9d9f944336e0a967981a6ba5739daa2c	1	38420	player
 9d9f944336e0a967981a6ba5739daa2c	2	46096	player
 9da8d2850375d225ca173723f2ac7f11	0	189991	player	uade	SoundMon 2.0	0	75904	319db119	803fbc4c	tunes/archive/BP-SoundMon/DTACK_Music_Compilation.lha/DTACK_Music_Compilation/BP.Remix-X
@@ -9141,7 +9141,7 @@ a12501652e1b19794401752dbe8a86b3	0	30764	player	uade	Benn Daglish	0	32216	bc65da
 a126bac91d31148efb136fb9dfd1868e	0	307120	player	uade	JamCracker	0	66020	10a73ee0	00a3d82a	tunes/archive/JAM-JamCracker/JAM.AroundtheTwice.lha/JAM.AroundtheTwice
 a130438b9678b79d99512815ae547aec	0	64100	player	uade	SIDMon 1.0	0	5824	d6c2f60f	0b8d2ad5	tunes/archive/SID1-SidMon-1/SID1.The_Sound_Of_Funk.lha/SID1.The_Sound_Of_Funk
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	tunes/archive/TFMX/Rudolf_Stember_Adverts.lha/Rudolf_Stember_Adverts/Schmutziges_Erbe/mdat.Erbe
-a1389382a197d038400d80a9b76c525d	1	81924	player
+a1389382a197d038400d80a9b76c525d	1	81944	player
 a1389382a197d038400d80a9b76c525d	2	61468	player
 a1389382a197d038400d80a9b76c525d	3	176668	player
 a143266b5743fbd54e1bbe8427c6fc73	0	20415	player	uade	SoundMon 2.2	0	16236	6c5c8aa6	a60fe6e4	tunes/archive/BP-SoundMon/Short_Loops.lha/Short_Loops/BP3.GBLoader
@@ -9185,7 +9185,7 @@ a227b542e554bc84d6ebd3beccb63c00	0	0	nosound	uade	PumaTracker	0	7828	06657f9a	dc
 a22ae0ef38fc79ba8d6775444fcc9a8d	0	89700	player	uade	SIDMon 1.0	0	6560	12948a85	8cdd282e	tunes/archive/SID1-SidMon-1/SID1.Synthetic_Age.lha/SID1.Synthetic_Age
 a23f806f2f00e149456c164c57623237	1	147458	loop	uade	The YM2149 Player v1.52c	0	3080	170b83d7	05d4be10	players/amiga/deliplayers/MYST_Data_9.lha/YM2149/Hippel/BIG/YM.OneManAndHisDroid
 a23f806f2f00e149456c164c57623237	1	147458	loop	uade	The YM2149 Player v1.52c	0	3080	170b83d7	05d4be10	tunes/archive/YM-YM2149/Hippel.lha/Hippel/BIG/YM.OneManAndHisDroid
-a2474c344ef516e9bf378af290fee8b6	0	200661	player+volume	uade	TFMX Pro	0	8680	c5f06d1d	2501988e	tunes/archive/TFMX/Gem_Z.lha/Gem_Z/mdat.Title
+a2474c344ef516e9bf378af290fee8b6	0	200035	player+volume	uade	TFMX Pro	0	8680	c5f06d1d	2501988e	tunes/archive/TFMX/Gem_Z.lha/Gem_Z/mdat.Title
 a2474c344ef516e9bf378af290fee8b6	1	48025	player
 a2474c344ef516e9bf378af290fee8b6	2	15372	player
 a2474c344ef516e9bf378af290fee8b6	3	15372	player
@@ -9370,7 +9370,7 @@ a5b520fae99e1466f0582b9e7805f68d	2	442099	loop	uade	The YM2149 Player v1.52c	0	1
 a5bfe384052cbda4bfa84b84a84847df	0	51220	player	uade	TFMX Pro	0	7984	1c34461a	f847854a	tunes/archive/TFMX/Crystal_Palace.lha/Crystal_Palace/mdat.Crystal_Palace-1
 a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
-a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
+a5bfe384052cbda4bfa84b84a84847df	3	4744	silence
 a5c787bd63487d08566f85b10e79009f	0	69144	player	uade	ArtOfNoise (4ch)	0	25022	22d34ca1	19daa336	tunes/archive/AON-ArtOfNoise/Twice.lha/Twice/AON.cloud 9
 a5d00cc8f472c830a3f94adb611ae92e	1	113578	loop	uade	The YM2149 Player v1.52c	0	7848	b3b50531	768b86f0	players/amiga/deliplayers/MYST_Data_7.lha/YM2149/Loriaux/YM.Ivanhoe_Level1
 a5d00cc8f472c830a3f94adb611ae92e	1	113578	loop	uade	The YM2149 Player v1.52c	0	7848	b3b50531	768b86f0	tunes/archive/YM-YM2149/Loriaux.lha/Loriaux/YM.Ivanhoe_Level1
@@ -9592,8 +9592,8 @@ a9399d1442a513fb0a981e8eaffe359c	1	108952	loop	uade	The YM2149 Player v1.52c	0	3
 a942cfc4c74207b84c42d6e0b7b37ba9	0	13885	player	uade	Soundcontrol 3.0/3.2/4.0/	0	43760	65ff72e0	215a29b8	tunes/archive/SC-SoundControl/Biing.lha/Biing/SC.REFANF
 a94abec649430e63b1e4bee73acad6cc	1	142392	loop	uade	The YM2149 Player v1.52c	0	3648	78d01503	740cf8c2	players/amiga/deliplayers/MYST_Data_5.lha/YM2149/Whittaker/YM.BeverlyHillsCop
 a94abec649430e63b1e4bee73acad6cc	1	142392	loop	uade	The YM2149 Player v1.52c	0	3648	78d01503	740cf8c2	tunes/archive/YM-YM2149/Whittaker.lha/Whittaker/YM.BeverlyHillsCop
-a94e52f94ca5497738bf7e73d2bc41e5	0	162488	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	tunes/archive/TFMX/X-Out.lha/X-Out/mdat.XOutHigh
-a94e52f94ca5497738bf7e73d2bc41e5	1	162488	player+silence
+a94e52f94ca5497738bf7e73d2bc41e5	0	162489	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	tunes/archive/TFMX/X-Out.lha/X-Out/mdat.XOutHigh
+a94e52f94ca5497738bf7e73d2bc41e5	1	162489	player+silence
 a94f94797f3e74695c566e66d523f6d8	0	159367	player	uade	TFMX 7V	0	6040	fc0b393f	03cd5435	tunes/archive/TFMX/Hexuma.lha/Hexuma/mdat.Title
 a951070f6af368f676620ca3882f440c	1	70492	loop	uade	The YM2149 Player v1.52c	0	6700	7d95c751	e2a41d1e	players/amiga/deliplayers/MYST_Data_1.lha/YM2149/Cooksey/YM.GhostsnGoblins
 a951070f6af368f676620ca3882f440c	1	70492	loop	uade	The YM2149 Player v1.52c	0	6700	7d95c751	e2a41d1e	tunes/archive/YM-YM2149/Cooksey.lha/Cooksey/YM.GhostsnGoblins
@@ -10116,7 +10116,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b17eaeca360f2aaa14a00ac1ec91b237	1	114799	loop	uade	The YM2149 Player v1.52c	0	24980	4faaadcd	93225d14	players/amiga/deliplayers/MYST_Data_6.lha/YM2149/BlipBlop/YM.Blablabla
 b17eaeca360f2aaa14a00ac1ec91b237	1	114799	loop	uade	The YM2149 Player v1.52c	0	24980	4faaadcd	93225d14	tunes/archive/YM-YM2149/BlipBlop.lha/BlipBlop/YM.Blablabla
 b1982565225f8d778489fe9ef3caebdd	1	48701	loop	uade	The YM2149 Player v1.52c	0	4196	24df5497	a9806d95	players/amiga/deliplayers/MYST_Data_4.lha/YM2149/Scavenger/YM.CrapManB
@@ -10143,7 +10143,7 @@ b2536a80ab2995cf154298d53d5607d5	1	55701	player
 b2536a80ab2995cf154298d53d5607d5	2	63377	player
 b2536a80ab2995cf154298d53d5607d5	3	80658	player
 b2536a80ab2995cf154298d53d5607d5	4	57610	player
-b2536a80ab2995cf154298d53d5607d5	5	4537	player+silence
+b2536a80ab2995cf154298d53d5607d5	5	4548	player+silence
 b259c054bab30a493753f0d7adc8a81b	0	0	nosound	libopenmpt	Defjam Soundtracker III / Alpha Flight SoundTracker IV / D.O.C. SoundTracker IV / VI	4	5720	eb8bcfd8	1df6a2d3	editors/archive/Soundtracker_IV.lha/Soundtracker_IV/songs/hymn to yezz
 b25e8b74480f4ff5277f84d56ff1dce6	0	157807	player+silence	uade	SIDMon 2.0	0	12948	91308f71	62633b30	tunes/archive/SID2-SidMon-2/SID2.Compost54.lha/SID2.Compost54
 b27302d68a672b2f9a52e85c04c03613	1	178626	silence	uade	The YM2149 Player v1.52c	0	7704	eb79762a	2eaa523e	players/amiga/deliplayers/MYST_Data_1.lha/YM2149/Daglish/YM.MotorHead_1
@@ -10271,7 +10271,7 @@ b4a9b7c1826a1e9b7a2d3acb44d7366d	4	15372	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	5	65306	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	6	34582	player
 b4a9b7c1826a1e9b7a2d3acb44d7366d	7	7696	player
-b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43215	player+volume
+b4a9b7c1826a1e9b7a2d3acb44d7366d	8	43219	player+volume
 b4a9b7c1826a1e9b7a2d3acb44d7366d	9	25620	player
 b4d44e12782903f7c1a97224e0a6f078	1	11261	silence	uade	The YM2149 Player v1.52c	0	9172	e81a831e	c378ac70	players/amiga/deliplayers/MYST_Data_4.lha/YM2149/Misc/YM.Untouchables
 b4d44e12782903f7c1a97224e0a6f078	2	629324	loop
@@ -10435,7 +10435,7 @@ b804ebd755d8309761411885895a9f88	7	5461	silence
 b804ebd755d8309761411885895a9f88	8	55863	silence
 b804ebd755d8309761411885895a9f88	9	28617	silence
 b80a716e3d852eaf3b08462ea783b701	0	99989	player	uade	AHX v2	0	1803	792e8417	cedeae06	tunes/archive/AHX-AbyssHighestExperience/JaZz{Jolly}.lha/JaZz{Jolly}/AHX.Trens
-b80f9cf265782038aba008eb6143a711	0	81924	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	tunes/archive/TFMX/Oath.lha/Oath/mdat.Level5
+b80f9cf265782038aba008eb6143a711	0	81944	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	tunes/archive/TFMX/Oath.lha/Oath/mdat.Level5
 b80f9cf265782038aba008eb6143a711	1	65306	player
 b80f9cf265782038aba008eb6143a711	2	2712	player
 b80f9cf265782038aba008eb6143a711	3	1245	player
@@ -10994,15 +10994,15 @@ c134cd48fd624c37aad1e21cc5dcc2e8	0	6389	player	uade	Mugician	0	32973	ae213bca	00
 c134cd48fd624c37aad1e21cc5dcc2e8	1	166400	player
 c134cd48fd624c37aad1e21cc5dcc2e8	2	3838	player
 c134cd48fd624c37aad1e21cc5dcc2e8	3	3838	player
-c1451e7f0e2eaa049ef497909e0621be	0	4044	silence	uade	TFMX Pro	0	960	d7271b4a	26c23f3e	tunes/archive/TFMX/Freak_Out.lha/Freak_Out/mdat.FX
-c1451e7f0e2eaa049ef497909e0621be	1	3170	silence
-c1451e7f0e2eaa049ef497909e0621be	2	3280	silence
+c1451e7f0e2eaa049ef497909e0621be	0	4045	silence	uade	TFMX Pro	0	960	d7271b4a	26c23f3e	tunes/archive/TFMX/Freak_Out.lha/Freak_Out/mdat.FX
+c1451e7f0e2eaa049ef497909e0621be	1	3174	silence
+c1451e7f0e2eaa049ef497909e0621be	2	3296	silence
 c1451e7f0e2eaa049ef497909e0621be	3	3107	silence
 c1451e7f0e2eaa049ef497909e0621be	4	3759	silence
-c1451e7f0e2eaa049ef497909e0621be	5	3197	silence
+c1451e7f0e2eaa049ef497909e0621be	5	3202	silence
 c1451e7f0e2eaa049ef497909e0621be	6	3234	silence
-c1451e7f0e2eaa049ef497909e0621be	7	3370	silence
-c1451e7f0e2eaa049ef497909e0621be	8	3216	silence
+c1451e7f0e2eaa049ef497909e0621be	7	3365	silence
+c1451e7f0e2eaa049ef497909e0621be	8	3223	silence
 c14a8c5997a423bebcc8d13a6438b1a1	0	99848	player	uade	SIDMon 2.0	0	5676	015d34f0	24312262	tunes/archive/SID2-SidMon-2/SID2.Quartex.lha/SID2.Quartex
 c1615bb39c5d9a60ea0b27e7c70081c4	1	77676	loop	uade	The YM2149 Player v1.52c	0	5240	5f58990d	b1bf5cf5	players/amiga/deliplayers/MYST_Data_7.lha/YM2149/Lowe/YM.FinalFight
 c1615bb39c5d9a60ea0b27e7c70081c4	1	77676	loop	uade	The YM2149 Player v1.52c	0	5240	5f58990d	b1bf5cf5	tunes/archive/YM-YM2149/Lowe.lha/Lowe/YM.FinalFight
@@ -12757,7 +12757,7 @@ e0d40d35577329b13e4e53a99b02448e	1	107036	loop	uade	The YM2149 Player v1.52c	0	1
 e0dca6c4ad621e8750560757b55ff847	0	122916	player	uade	TFMX Pro	0	19156	3bf0aac8	f1b7b253	tunes/archive/TFMX/Rudolf_Stember_Adverts.lha/Rudolf_Stember_Adverts/Kellogs/mdat.Ongame
 e0dca6c4ad621e8750560757b55ff847	1	122916	player
 e0dca6c4ad621e8750560757b55ff847	10	15372	player
-e0dca6c4ad621e8750560757b55ff847	2	7730	player+silence
+e0dca6c4ad621e8750560757b55ff847	2	7731	player+silence
 e0dca6c4ad621e8750560757b55ff847	3	1326	player
 e0dca6c4ad621e8750560757b55ff847	4	84516	player
 e0dca6c4ad621e8750560757b55ff847	5	84516	player
@@ -12867,7 +12867,7 @@ e2986b35b0118a8e2fd7ebb5dc0eaad2	6	3760	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	7	4159	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	8	5700	silence
 e2986b35b0118a8e2fd7ebb5dc0eaad2	9	3876	silence
-e2a2915ddcc52e5de592cb99eac5c769	0	26153	loop	uade	TFMX Pro	0	2076	7c94eb99	813bc046	tunes/archive/TFMX/Hanse.lha/Hanse/mdat.Theme
+e2a2915ddcc52e5de592cb99eac5c769	0	56745	loop	uade	TFMX Pro	0	2076	7c94eb99	813bc046	tunes/archive/TFMX/Hanse.lha/Hanse/mdat.Theme
 e2b1c8187e91d00096234b84475857e2	0	276621	loop	uade	UADE	0	65212	a422961e	12746dc4	tunes/archive/CUST-Custom/CUST.RainbowArts_Slideshow.lha/CUST.RainbowArts_Slideshow
 e2b8d005eae5fec9bfbaf1762bcef564	0	249711	player	uade	TFMX 7V	0	7568	27688d6a	2fb11ee5	tunes/archive/TFMX/Marx_Marvellous.lha/Marx_Marvellous/mdat.scimitar
 e2d87638669696dd288c43f9b2771e8d	1	177697	loop	uade	The YM2149 Player v1.52c	0	11588	a3254440	a21620b1	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/HotLine/Eternal/YM.OfAllPlaces
@@ -12917,7 +12917,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e3e082403a8ae41e53750ac678cd64a5	0	132644	player+silence	uade	Sound Master	0	81804	2aaabaf4	9d2cde71	tunes/archive/SM-SoundMaster/FutureShock.lha/FutureShock/SM.FutureShock-GameOver
 e3e6823f72ef422a0d1654fbfd3e9cfe	1	150868	loop	uade	Batman The Movie - Level 	0	80360	8047b264	c56c71f5	tunes/archive/CUST-Custom/Batman_The_Movie.lha/Batman_The_Movie/CUST.Batman_The_Movie-Lvl_2_4
 e3e6823f72ef422a0d1654fbfd3e9cfe	10	3216	silence
@@ -13673,8 +13673,8 @@ f11d7fb62fc2bc5427bba309d27cd97f	1	130015	loop	uade	The YM2149 Player v1.52c	0	3
 f11d7fb62fc2bc5427bba309d27cd97f	1	130015	loop	uade	The YM2149 Player v1.52c	0	3020	ef1e10cf	7a2f5046	tunes/archive/YM-YM2149/Scharvona.lha/Scharvona/YM.LastNinjaIII_Level4
 f1362c760c8409e3e6caf6b4e278cd81	0	30844	player	uade	FutureComposer 1.3	0	17488	4895c1e6	15b4ec46	tunes/archive/FC13-FutureComposer/FC13.Future_11_Jump'n'roll.lha/FC13.Future_11_Jump'n'roll
 f14d6935df5e3bb026c3a485a6adeefd	1	322693	player	uade	Soundtracker II (15 instr.)	0	82078	8b65e088	d5b99671	editors/archive/StarTrekker_v1.2.lha/StarTrekker_v1.2/Modules/MOD.PHENOMENA MUSIC
-f14eeab046d30659e54b31ec7259ac75	0	158375	player+silence	uade	TFMX Pro	0	7536	772e8dc2	31c51bfc	tunes/archive/TFMX/Transplant.lha/Transplant/mdat.Transplant
-f14eeab046d30659e54b31ec7259ac75	1	158375	player+silence
+f14eeab046d30659e54b31ec7259ac75	0	158382	player+silence	uade	TFMX Pro	0	7536	772e8dc2	31c51bfc	tunes/archive/TFMX/Transplant.lha/Transplant/mdat.Transplant
+f14eeab046d30659e54b31ec7259ac75	1	158382	player+silence
 f14eeab046d30659e54b31ec7259ac75	2	38420	player
 f14eeab046d30659e54b31ec7259ac75	3	41615	player
 f161648fa291799611a98d7adb62a2f7	0	76900	player	uade	AHX v2	0	2884	20fdb4bb	3334d800	tunes/archive/AHX-AbyssHighestExperience/Mr.Tickle.lha/Mr.Tickle/AHX.Plonk!
@@ -13753,7 +13753,7 @@ f332834cbe52191b11c27ec27102c788	0	188162	player	uade	SIDMon 2.0	0	133542	854ca9
 f341276fdf1fce147b8ea1338133f3f6	0	125468	player	uade	TFMX Pro	0	8728	ebe7d888	0a91fbca	tunes/archive/TFMX/Oath.lha/Oath/mdat.Level1
 f341276fdf1fce147b8ea1338133f3f6	1	51220	player
 f341276fdf1fce147b8ea1338133f3f6	2	2712	player
-f341276fdf1fce147b8ea1338133f3f6	3	4666	silence
+f341276fdf1fce147b8ea1338133f3f6	3	4644	silence
 f3466f56f1479d46d254910809d3b0b6	1	252965	loop	uade	The YM2149 Player v1.52c	0	10684	df1c26db	667a275f	players/amiga/deliplayers/MYST_Data_3.lha/YM2149/MegaTizer/YM.Pete_DigiTallis1
 f3466f56f1479d46d254910809d3b0b6	1	252965	loop	uade	The YM2149 Player v1.52c	0	10684	df1c26db	667a275f	tunes/archive/YM-YM2149/MegaTizer.lha/MegaTizer/YM.Pete_DigiTallis1
 f3484eef519cc32aa319b13c1f1e7b07	0	88394	player	uade	FutureComposer 1.3	0	8826	aaf15423	8f6e263b	tunes/archive/FC13-FutureComposer/FC13.Mikael_Balle_Tune_1.lha/FC13.Mikael_Balle_Tune_1
@@ -14058,7 +14058,7 @@ f85d87abe8e6997607bf69b66cf03df6	1	654925	loop	uade	The YM2149 Player v1.52c	0	1
 f8624b09d53185df752b5c1faf81b224	0	23068	player	uade	SunTronic	0	9276	84068339	494303ab	tunes/archive/CUST-SUNTronic/SUNTronicTunes.lha/mule.src
 f868e479dfedb1a1f64fa6a8e58c3ffb	1	85511	loop	uade	The YM2149 Player v1.52c	0	3096	4d1fc72c	12e4fd71	players/amiga/deliplayers/MYST_Data_7.lha/YM2149/Loriaux/YM.Elf_Castle
 f868e479dfedb1a1f64fa6a8e58c3ffb	1	85511	loop	uade	The YM2149 Player v1.52c	0	3096	4d1fc72c	12e4fd71	tunes/archive/YM-YM2149/Loriaux.lha/Loriaux/YM.Elf_Castle
-f87e025c0b5ef37dc38a2159e23c9d0d	0	21762	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	tunes/archive/TFMX/Mad_TV.lha/Mad_TV/mdat.Ongame5
+f87e025c0b5ef37dc38a2159e23c9d0d	0	21782	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	tunes/archive/TFMX/Mad_TV.lha/Mad_TV/mdat.Ongame5
 f87e025c0b5ef37dc38a2159e23c9d0d	1	30744	player
 f87e025c0b5ef37dc38a2159e23c9d0d	2	51220	player
 f87e025c0b5ef37dc38a2159e23c9d0d	3	46096	player
@@ -14333,7 +14333,7 @@ fe41caebd42ba4c552b2b89b6332cf83	1	121210	loop	uade	The YM2149 Player v1.52c	0	4
 fe41caebd42ba4c552b2b89b6332cf83	1	121210	loop	uade	The YM2149 Player v1.52c	0	4224	c5ff1d9a	121e2dd6	tunes/archive/YM-YM2149/CountZero.lha/CountZero/YM.Loader
 fe47b9fca55a272db31cc8269c074c0f	0	311360	player	uade	SunTronic	0	16392	e6d5cbd9	d8bf10d6	tunes/archive/CUST-SUNTronic/SUNTronicTunes.lha/zoids.src
 fe68932e9ac218fdd8f641c36e2033be	0	61548	player	uade	AHX v2	0	2084	a3f5ab3e	a9b8f049	tunes/archive/AHX-AbyssHighestExperience/Kyzer.lha/Kyzer/AHX.Good old Alf-Extended
-fe7cf768665968b37b409a8cf0874ded	0	404717	player+silence	uade	TFMX Pro	0	17288	e91c5c34	6939a0c8	tunes/archive/TFMX/Master_Blazer.lha/Master_Blazer/mdat.MB_Intro
+fe7cf768665968b37b409a8cf0874ded	0	405077	player+silence	uade	TFMX Pro	0	17288	e91c5c34	6939a0c8	tunes/archive/TFMX/Master_Blazer.lha/Master_Blazer/mdat.MB_Intro
 fe7cf768665968b37b409a8cf0874ded	1	1004	player
 fe7cf768665968b37b409a8cf0874ded	2	1004	player
 fe7cf768665968b37b409a8cf0874ded	3	1004	player

@@ -35,8 +35,6 @@ esac
 run_uade() {
   local HOME="/tmp/songdb/$1"
   local WORK="$HOME"
-  mkdir -p $WORK
-  mkdir -p $WORK/strings
   echo "Processing $2" >> "$WORK/stderr"
   "$PRECALC" "$2" $INCLUDEPATH >> "$WORK/songdb.tsv" 2>> "$WORK/stderr"
   local RES=$?
@@ -105,14 +103,19 @@ run_uade() {
 }
 
 mkdir -p /tmp/songdb
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16; do mkdir -p /tmp/songdb/$i/strings; done
 
 export -f run_uade
-find -L  . -type f | sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 run_uade {%} {}
+
+gfind -L  . -type f \
+| grep -v -e '/usr/' -v -e '/man/' -vi -e '/fonts/' -vi -e '/icons' -vi -e '/include/' -vi -e '/locale/' -v -e '/po/' -v -e '/\.svn/' -v -e '/\.git/' -v -e '/CVS/' -vi -e '\.readme$' -vi -e '\.html$' \
+| sed "s/^\.\///g" | parallel --nice 20 --timeout 7200 --delay 0 --ssh-delay 0 run_uade {%} {}
 
 cat /tmp/songdb/*/songdb.tsv | sort | uniq > /tmp/songdb/songdb.tsv
 cat /tmp/songdb/*/audio.tsv | sort | uniq > /tmp/songdb/audio.tsv
 cat /tmp/songdb/*/stderr > /tmp/songdb/stderr
+mkdir -p /tmp/songdb/strings
 for i in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do
   mkdir -p /tmp/songdb/strings/$i
-  find -L /tmp/songdb -type f -path "*/strings/${i}*.strings" -exec mv -f -- "{}" /tmp/songdb/strings/"$i"/ \;
+  gfind -L /tmp/songdb -type f -path "*/strings/${i}*.strings" -exec mv -f -- "{}" /tmp/songdb/strings/"$i"/ \;
 done

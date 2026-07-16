@@ -48,6 +48,7 @@ val xxh32DupWhiteList = Set(
   "06d624e80137", // ec7a94d4a168829342a08afc21d775b4 vs f7c5b7d021cccf757767f8099fc5dc02
   "dc221903fae0", // d7b175adb59ad149712b7c6b2e5498f7 vs afca85f41859273f184418694a6c6ad2
   "0ea3a79c9cc2", // 71b989b4c26f97ece653b1fbce8cbe67 vs f16cebbf7b212a4f6626bc06e930800c vs 0cfe699f2da92e729ef984ed3c1d206c
+  "e4c678efeaf2", // 8dfaab36b831f99b22d44e81bb731d03 vs 30d9ac4311a40de2edf6c2be94573b79
 )
 
 def songlengthsToXxh32(songlengths: Buffer[SongInfo]) = {
@@ -86,9 +87,9 @@ def metasToXxh32(meta: Buffer[MetaData]) = {
   xxh.groupBy(_.hash).par.map { case (_, entries) =>
     if (!entries.forall(_ == entries.head)) {
       // select best based on some ad hoc metadata heuristics
-      val scores = entries.map(e => (e, e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0))).toMap
+      val scores = entries.map(e => (e.hash, if (e.authors.nonEmpty) 100 else 0 + (if (e.publishers.nonEmpty) 10 else 0) + (if (e.album.nonEmpty || e._type == "Compo") 1000 else 0) + (if (e.year > 0) 10000 else 0))).toMap
       val bestscore = scores.maxBy(_._2)._2
-      val bestentries = entries.filter(e => (e.publishers.size + (if (e.album.nonEmpty) 1 else 0) + (if (e.year > 0) 1 else 0)) == bestscore)
+      val bestentries = entries.filter(e => scores(e.hash) == bestscore)
       val minyear = bestentries.map(e => if (e.year > 0) e.year else 9999).min
       val byyear = bestentries.filter(_.year == minyear)
       var best = if (byyear.nonEmpty) byyear.maxBy(_.authors.size) else bestentries.maxBy(_.authors.size)
