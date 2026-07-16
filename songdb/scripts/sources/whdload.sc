@@ -35,7 +35,7 @@ final case class WHDLoadMeta(
   retroPlayUrl: String
 )
 
-val whdloaddb_csv = System.getProperty("user.home") + "/sources/whdload/WHDLoad_Database.csv"
+val whdloaddb_csv = System.getProperty("user.home") + "/sources/metadata/whdload/WHDLoad_Database.csv"
 
 lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.par.map { line =>
   val l = line.split(";")
@@ -63,6 +63,7 @@ lazy val metas = Using(scala.io.Source.fromFile(whdloaddb_csv)(using scala.io.Co
   else if (meta.shortName == "Dizzy Tunes 2" && meta.year == 1994) meta = meta.copy(year = 1993)
   else if (meta.shortName.startsWith("Super SkidMarks ") && meta.year == 1998) meta = meta.copy(year = 1995)
   else if (meta.shortName == "Deluxe Galaga" && meta.year == 1995) meta = meta.copy(year = 1993)
+  else if (meta.shortName == "Book of Songs" && meta.year == 1992) meta = meta.copy(year = 1993)
   meta
 }).get
 

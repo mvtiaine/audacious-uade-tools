@@ -49,6 +49,7 @@ enum Source:
     AmigaMegaDemos,
     AmigaMegaGames,
     AmigaModulesFreeFr,
+    AmigaMusicCollection,
     AmigaNuts,
     AmigaScne,
     AmigaTools1,
@@ -212,6 +213,7 @@ enum Source:
     MACD9,
     MACD10,
     MACD11,
+    MajaRadio,
     MassiveModCollection,
     MasterOfMusic,
     MaximumMods,
@@ -251,7 +253,9 @@ enum Source:
     ModArchive,
     Modiromppu,
     Modland,
+    ModlandFavourites,
     ModlandIncoming,
+    ModlandSoftware,
     ModPlanet,
     ModSoulBrother,
     ModsAnthology,
@@ -260,6 +264,7 @@ enum Source:
     ModulyPL,
     MonkeyGrafikSound,
     Monstro,
+    MrGreat,
     MrOherd,
     MSDOSWorld2,
     MultimediaClassic,
@@ -480,6 +485,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   AmigaMegaDemos -> Seq(C(_type = "Demo", _platform = "Amiga")), // TODO not really only demos?
   AmigaMegaGames -> Seq(C(_type = "Game", _platform = "Amiga")),
   // AmigaModulesFreeFr
+  AmigaMusicCollection -> Seq(C(year = 2010)),
   AmigaNuts -> Seq(C(year = 1992)),
   AmigaScne -> Seq(
     C(path = "Parties/"),
@@ -809,6 +815,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   MACD9 -> Seq(C(year = 1998)),
   MACD10 -> Seq(C(year = 1999)),
   MACD11 -> Seq(C(year = 1999)),
+  // MajaRadio
   MassiveModCollection -> Seq(C(year = 1995)),
   MasterOfMusic -> Seq(C(year = 1996)),
   MaximumMods -> Seq(C(year = 1996)),
@@ -863,7 +870,9 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
     C(path = "modarchive_2021", year = 2021),
     C(path = "modarchive_2022", year = 2022),
     C(path = "modarchive_2023", year = 2023),
-    C(year = 2023)
+    C(path = "modarchive_2024", year = 2024),
+    C(path = "modarchive_2025", year = 2025),
+    C(year = 2025)
   ),
   Modiromppu -> Seq(
     C(path = "DEMOS/", _type = "Demo", _platform = "PC", year = 1998),
@@ -871,7 +880,9 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
     C(year = 1998)
   ),
   // Modland,
+  // ModlandFavourites
   // ModlandIncoming
+  // ModlandSoftware
   ModPlanet -> Seq(
     C(path = "cd2/demodulate/amiga demos/", _type = "Demo", _platform = "Amiga", year = 2002),
     C(path = "cd2/demodulate/amiga diskmags/", _type = "Mag", _platform = "Amiga", year = 2002),
@@ -897,6 +908,7 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   MonkeyGrafikSound -> Seq(C(year = 1994)),
   Monstro -> Seq(C(year = 2002)),
   MrOherd -> Seq(C(year = 2020)),
+  // MrGreat
   MSDOSWorld2 -> Seq(C(year = 1995)),
   MultimediaClassic -> Seq(C(year = 1995)),
   MultimediaExplosion -> Seq(C(year = 1994)),
@@ -1571,6 +1583,7 @@ val tsvfiles = Buffer(
   ("collection/mod_jp.tsv", ModJP),
   ("collection/modulesinjp.tsv", ModulesInJP),
   ("collection/modulypl.tsv", ModulyPL),
+  ("collection/mrgreat.tsv", MrGreat),
   ("collection/mroherd.tsv", MrOherd),
   ("collection/playitbyyear.tsv", PlayItByYear),
   ("collection/protrackermodulesgpack.tsv", ProTrackerModulesGPack),
@@ -1597,6 +1610,7 @@ val tsvfiles = Buffer(
   ("site/amigamega_games.tsv", AmigaMegaGames),
   ("site/amigamodulesfreefr.tsv", AmigaModulesFreeFr),
   ("site/amigamuseum.tsv", AmigaMuseum),
+  ("site/amigamusiccollection.tsv", AmigaMusicCollection),
   ("site/amigascne.tsv", AmigaScne),
   ("site/aminet.tsv", Aminet),
   ("site/amisectorone.tsv", AmiSectorOne),
@@ -1621,9 +1635,12 @@ val tsvfiles = Buffer(
   ("site/hobbes.tsv", Hobbes),
   ("site/hornet.tsv", Hornet),
   ("site/jpvscenereleases.tsv", jPVSceneReleases),
+  ("site/majaradio.tsv", MajaRadio),
   ("site/modarchive.tsv", ModArchive),
   ("site/modland.tsv", Modland),
+  ("site/modland_favourites.tsv", ModlandFavourites),
   ("site/modland_incoming.tsv", ModlandIncoming),
+  ("site/modland_software.tsv", ModlandSoftware),
   ("site/modulespl.tsv", ModulesPL),
   ("site/nostalgicplayer.tsv", NostalgicPlayer),
   ("site/oldexotica.tsv", OldExotica),

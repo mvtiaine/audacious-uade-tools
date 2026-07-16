@@ -42,9 +42,9 @@ final case class TosecMeta(
   _nonEnglish: Boolean = false,
 )
 
-val tosecDir = System.getProperty("user.home") + "/sources/tosec/TOSEC/"
-val tosecIsoDir = System.getProperty("user.home") + "/sources/tosec/TOSEC-ISO/"
-val tosecCUEsDir = System.getProperty("user.home") + "/sources/tosec/CUEs/"
+val tosecDir = System.getProperty("user.home") + "/sources/metadata/tosec/TOSEC/"
+val tosecIsoDir = System.getProperty("user.home") + "/sources/metadata/tosec/TOSEC-ISO/"
+val tosecCUEsDir = System.getProperty("user.home") + "/sources/metadata/tosec/CUEs/"
 
 lazy val platforms = Buffer(
   //"3DO 3DO",

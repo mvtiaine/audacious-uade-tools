@@ -79,12 +79,20 @@ def expandArticleVariants(m: MetaData): Set[MetaData] = {
   variants + m
 }
 
-val unnormalizedAuthors = amp.composer_handles.keys.par.flatMap(name => {
+
+val realNames = (unexotica.composer_handles.keys ++ amp.composer_handles.keys ++ kestra.composer_handles.keys ++ demozoo.composer_handles.keys).toSet
+
+// filtered realNames with unambiguous handle -> realname mapping
+val uniqueHandleRealNames = (unexotica.composer_handles.toSeq ++ amp.composer_handles.toSeq ++ kestra.composer_handles.toSeq ++ demozoo.composer_handles.toSeq).par.map { case (realName, handle) => (handle, realName) }.groupBy(_._1).flatMap { case (handle, realNames) =>
+  if (realNames.map(n => normalizeName(n._2)).distinct.size == 1) Some(handle -> realNames.head._2) else None
+}.seq.toMap
+
+val unnormalizedAuthors = realNames.par.flatMap(name => {
   val normalized = normalizeName(name)
   if (normalized != name) Some(normalized -> name) else None
 }).toMap
 
-val realNameVariants = (unexotica.composer_handles.keys ++ amp.composer_handles.keys ++ kestra.composer_handles.keys).par.flatMap(n => Seq(n, normalizeName(n)).distinct).flatMap(n => (Seq(n) ++ generateNameVariants(n))).toSet
+val realNameVariants = realNames.par.flatMap(n => Seq(n, normalizeName(n)).distinct).flatMap(n => (Seq(n) ++ generateNameVariants(n))).toSet
 
 def isRealName(a: String): Boolean = {
   realNameVariants.contains(a) || unnormalizedAuthors.contains(a)
@@ -133,7 +141,7 @@ def areAuthorsCompatible(as1: Buffer[String], as2: Buffer[String], knownAuthors:
 }
 
 def haveCompatibleAuthors(authorsList: Buffer[Buffer[String]], knownAuthors: Set[String]): Boolean = {
-  if (authorsList.isEmpty) return true
+  if (authorsList.size <= 1) return true
   val distinctAuthors = authorsList.distinct
   var components = scala.collection.mutable.Buffer(scala.collection.mutable.Set(distinctAuthors.head))
   distinctAuthors.tail.foreach { a =>
@@ -285,6 +293,7 @@ def filterByCracktros(m: MetaData, cracktros: Map[String, Set[MetaData]], games:
       } else m
     } else m
 }
+
 def filterByCracktros(metas: Buffer[MetaData], cracktros: Map[String, Set[MetaData]], games: Map[String, Set[MetaData]]): Buffer[MetaData] =
   metas.par.map(m => filterByCracktros(m, cracktros, games)).seq.toBuffer
 
@@ -465,6 +474,9 @@ def combineMetadata(
   val nonSceneGroups = Set("Binary Emotions", "Diamond Software", "Edge", "Frontier Software", "Imageworks", "Kalisto", "New Deal", "Ocean", "Ocean Software","Psygnosis", "Rainbow Arts", "Starbyte", "Thalion","Unique Development Sweden")
   val sceneGroups = extraMetas.par.filter(m => m._type.nonEmpty && m._type.toLowerCase != "game" && m.album.nonEmpty && m.publishers.nonEmpty).flatMap(_.publishers).seq.toSet
     .filterNot(nonSceneGroups.contains)
+    ++
+    // XXX
+    Set("Cultural Productions","Flash","Impact Software","Realms Developments","Retroguru","Soy","Vanquish","Zonk")
 
   val uniqueAlbumTypes = extraMetas
     .par
@@ -2391,7 +2403,41 @@ def combineMetadata(
       }
     }
     if (m._type.toLowerCase == "game" && m.authors.exists(!isRealName(_)) && (m.publishers.isEmpty || !m.publishers.forall(sceneGroups.contains))) {
-      var realNameAuthors = updated.authors.map(a => if (isRealName(a)) a else getAuthorVariants(a, knownAuthors).sortBy(_.length).find(isRealName).getOrElse(a)).sorted.distinct
+      var realNameAuthors = updated.authors.map(a =>
+        // XXX
+        if (a == "Tip") "Robert Ling"
+        else if (a == "Greg") "Grégoire Dini"
+        else if (isRealName(a) || Set("Jose A. Martin").contains(a)) a
+        else if (uniqueHandleRealNames.contains(a)) uniqueHandleRealNames(a)
+        else {
+          val variants = getAuthorVariants(a, knownAuthors).sortBy(_.length)
+          lazy val gameVariants = variants.filter(a =>
+            authenticAuthorMetas.getOrElse(Buffer(normalizeAuthor(a)), Set.empty).filter(_._type.toLowerCase == "game").nonEmpty
+          )
+          lazy val filteredVariants =
+            if (gameVariants.nonEmpty) gameVariants
+            else variants.filter(a =>
+              authenticAuthorMetas.getOrElse(Buffer(normalizeAuthor(a)), Set.empty).nonEmpty
+            )
+          lazy val _realNames = variants.filter(realNames.contains)
+          lazy val _unnormalized = variants.filter(unnormalizedAuthors.contains)
+          lazy val _filteredRealNames = filteredVariants.filter(realNames.contains)
+          lazy val _filteredUnnormalized = filteredVariants.filter(unnormalizedAuthors.contains)
+          if (haveCompatibleAuthors(_filteredRealNames.map(Buffer(_)), knownAuthors) && haveCompatibleAuthors(_filteredUnnormalized.map(Buffer(_)), knownAuthors)) {
+            filteredVariants.find(realNames.contains)
+              .getOrElse(filteredVariants.find(unnormalizedAuthors.contains)
+              .getOrElse(filteredVariants.find(realNameVariants.contains)
+              .getOrElse(a)
+            ))
+          } else if (haveCompatibleAuthors(_realNames.map(Buffer(_)), knownAuthors) && haveCompatibleAuthors(_unnormalized.map(Buffer(_)), knownAuthors)) {
+            variants.find(realNames.contains)
+              .getOrElse(variants.find(unnormalizedAuthors.contains)
+              .getOrElse(variants.find(realNameVariants.contains)
+              .getOrElse(a)
+            ))
+          } else a
+        }
+      ).sorted.distinct
       if (realNameAuthors != updated.authors) {
         // XXX "Rod Thacker" vs "Jochen Hippel" vs "Mad Max"
         if (realNameAuthors.contains("Rod Thacker") && updated.authors.contains("Mad Max")) {
@@ -2433,7 +2479,9 @@ def combineMetadata(
             ) {
               val metas = authenticAuthorMetas.getOrElse(Buffer(normalizeAuthor(alias)).sorted.distinct, Set.empty)
               if (metas.exists(m2 => m2.authors.contains(alias) && (m2.hash == updated.hash ||
-                  (m2.album.nonEmpty && updated.album.nonEmpty && normalizeAlbum(m2) == normalizeAlbum(updated)) || (pass >= 2 && updated._type.toLowerCase == "compo" && m2._type.toLowerCase == "compo" && updated.year != 0 && m2.year != 0 && m2.year >= updated.year - 1) || (pass >= 3 && updated.publishers.nonEmpty && m2.publishers.nonEmpty && updated.publishers == m2.publishers && m2.year >= updated.year - 1)))) {
+                  (m2.album.nonEmpty && updated.album.nonEmpty && normalizeAlbum(m2) == normalizeAlbum(updated)) || (pass >= 2 && updated._type.toLowerCase == "compo" && m2._type.toLowerCase == "compo" && updated.year != 0 && m2.year != 0 && m2.year >= updated.year - 1) || (pass >= 3 && updated.publishers.nonEmpty && m2.publishers.nonEmpty && updated.publishers == m2.publishers && m2.year >= updated.year - 1))) ||
+                  // XXX
+                  author == "Erik Lydén") {
                 debug(s"Replacing real name authors with non-real names for ${updated} -> ${alias}")
                 authors = authors.map(a => if (a == author) alias else a)
                 break()

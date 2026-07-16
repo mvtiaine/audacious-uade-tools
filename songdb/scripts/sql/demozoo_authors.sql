@@ -5,6 +5,11 @@ COPY (
     SELECT DISTINCT
         a.id AS releaser_id,
         a.name AS releaser_name,
+        a.first_name AS first_name,
+        a.surname AS surname,
+        a.location AS location,
+        a.country_code AS country_code,
+        a.real_name_note AS real_name_note,
         array_agg(DISTINCT b.name) as nicks,
         array_agg(DISTINCT c.name) as nick_variants
     FROM

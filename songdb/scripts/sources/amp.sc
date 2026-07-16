@@ -24,7 +24,7 @@ import org.apache.commons.text.WordUtils
 
 import normalization._
 
-val amp_path = System.getProperty("user.home") + "/siterip/AMP/"
+val amp_path = System.getProperty("user.home") + "/sources/metadata/amp/"
 
 final case class AMPMod (
   id: Int,

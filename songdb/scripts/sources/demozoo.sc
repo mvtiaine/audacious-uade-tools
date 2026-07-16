@@ -614,19 +614,57 @@ for ((id, meta) <- demozooMetas) {
   println(s"DEMOZOO PROD META: ${id}: ${meta}")
 }
 
-lazy val all_aliases = Using(scala.io.Source.fromFile("sources/metadata/demozoo_authors.tsv"))(_.getLines().toSeq.par.flatMap(line =>
-    // For each handle, collect all normalized aliases, then map each alias to the full set
-  val l = line.split("\t")
-  val releaser_name = l(1).trim
-  val nicks = split(l(2)).map(trim).filter(_.nonEmpty)
-  val nick_variants = split(l(3)).map(trim).filter(_.nonEmpty)
+final case class DemozooAuthor (
+  id: Int,
+  handle: String,
+  realName: String,
+  location: String,
+  countryCode: String,
+  realNameNote: String,
+  nicks: Buffer[String],
+  nickVariants: Buffer[String]
+)
 
-  val names = (Seq(releaser_name) ++ nicks ++ nick_variants).distinct
-  if (names.nonEmpty) {
-    val normalized = names.map(normalizeAuthor)
-    normalized.map(n => n -> names.distinct.toBuffer)
+val _authors = Using(scala.io.Source.fromFile("sources/metadata/demozoo_authors.tsv"))(_.getLines().toSeq.par.map(line =>
+  val l = line.split("\t")
+  val id = l(0).toInt
+  val handle = l(1).trim
+  val realName = if (l(2).trim.nonEmpty && l(3).trim.nonEmpty) l(2).trim + " " + l(3).trim else ""
+  val location = l(4).trim
+  val countryCode = l(5).trim
+  val realNameNote = l(6).trim
+  val nicks = split(l(7)).map(trim).filter(_.nonEmpty)
+  val nickVariants = split(l(8)).map(trim).filter(_.nonEmpty)
+
+  DemozooAuthor(id, handle, realName, location, countryCode, realNameNote, nicks.toBuffer, nickVariants.toBuffer)
+)).get.seq.groupBy(_.id).mapValues(_.head).toMap
+
+val composer_handles = _authors.values.par.flatMap(author => {
+  val realName = normalizeRealName(author.realName.trim, author.handle.trim).getOrElse("")
+  if (realName.nonEmpty) {
+    val handle =
+      if (author.handle.trim.nonEmpty && !author.handle.trim.equalsIgnoreCase(realName)) author.handle.trim
+      else author.nicks.sortBy(a => a).reverse.distinct.filterNot(a => a.isEmpty || a.equalsIgnoreCase(realName)).headOption.getOrElse("")
+    if (handle.nonEmpty) Some(realName -> handle)
+    else None
+  } else None
+}).seq.toMap
+
+for ((realName, handle) <- composer_handles) {
+  println(s"DEMOZOO COMPOSER HANDLE: ${realName} -> ${handle}")
+}
+
+val all_aliases = _authors.values.par.flatMap(author => {
+  val aliases = (author.nicks ++ author.nickVariants).filter(a => a.nonEmpty && !a.equalsIgnoreCase(author.realName) && !a.equalsIgnoreCase(author.handle)).distinct
+  val generatedNames = if (author.realName.nonEmpty) generateNameVariants(author.realName) else Iterable.empty[String]
+
+  val rawNames = (Seq(author.handle) ++ Seq(author.realName) ++ aliases ++ generatedNames).filterNot(_.isEmpty).distinct
+
+  if (rawNames.nonEmpty) {
+    val normalizedNames = rawNames.map(normalizeAuthor)
+    normalizedNames.map(n => n -> rawNames.distinct.toBuffer)
   } else Iterable.empty[(String, Buffer[String])]
-)).get.seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
+}).seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
 
 def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int): Option[MetaData] = {
   val dates = Seq(m.modDate, m.prodDate, Seq(m.partyShownDate.getOrElse(""), m.partyStartDate.getOrElse("")).max).filterNot(_.isEmpty)

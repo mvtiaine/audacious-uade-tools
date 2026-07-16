@@ -24,7 +24,7 @@ import net.seeseekey.mediawikixml.wikipedia.WikiXMLParserFactory
 
 import normalization._
 
-val unexotica_path = System.getProperty("user.home") + "/sources/unexotica/"
+val unexotica_path = System.getProperty("user.home") + "/sources/metadata/unexotica/"
 val xmldump_path = unexotica_path + "2026-04-13.xml"
 
 implicit def h[A,B](implicit a: Decoder[A], b: Decoder[B]): Decoder[Either[A,B]] = {
@@ -309,6 +309,7 @@ def transformAuthors(meta: UnExoticaMeta, path: String): Seq[String] = {
     "Timm Engles" -> "Timm Engels",
     "Mixed-Up Mother Goose" -> "James Elliot",
     "Øisten Eide" -> "Øistein Eide",
+    "Rob Wells" -> "Robert Wells",
   )
   def normalize(name: String, path: String): String = {
     var normalized = name.replaceAll(" \\(.*\\)$", "").trim

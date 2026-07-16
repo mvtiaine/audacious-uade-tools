@@ -17,7 +17,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val oldexotica_path = System.getProperty("user.home") + "/sources/oldexotica/"
+val oldexotica_path = System.getProperty("user.home") + "/sources/metadata/oldexotica/"
 
 final case class OldExoticaMeta (
   archive: String,

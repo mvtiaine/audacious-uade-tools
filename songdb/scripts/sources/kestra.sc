@@ -126,7 +126,7 @@ final case class KestraMeta (
   connections: Seq[KestraRelease],
 )
 
-val kestra_path = System.getProperty("user.home") + "/siterip/kestra/"
+val kestra_path = System.getProperty("user.home") + "/sources/metadata/kestra/"
 
 def parsePlayingTime(t: String): Int = {
   val timeRegex = """(?:(\d+):)?(\d+):(\d+)""".r

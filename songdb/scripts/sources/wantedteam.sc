@@ -17,7 +17,7 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
 import net.ruippeixotog.scalascraper.model._
 
-val wantedteam_path = System.getProperty("user.home") + "/sources/wantedteam/"
+val wantedteam_path = System.getProperty("user.home") + "/sources/metadata/wantedteam/"
 
 final case class WantedTeamMeta (
   md5: String,

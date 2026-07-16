@@ -15,7 +15,7 @@ import scala.jdk.StreamConverters._
 import scala.util.Using
 import scala.util.boundary, boundary.break
 
-val modsanthology_path = System.getProperty("user.home") + "/sources/modsanthology/"
+val modsanthology_path = System.getProperty("user.home") + "/sources/metadata/modsanthology/"
 
 final case class ModsAnthologyMeta (
   md5: String,
@@ -783,12 +783,15 @@ val albumPatterns = Seq(
 )
 
 def isGame(album: String, comment: String) = {
-  album == "Fears" ||
+  (album == "Fears" ||
   comment.contains("From the game \"") ||
   comment.contains("Used in the game ") ||
   comment.contains("Initially for a game ") ||
   comment.contains("little game ") ||
-  comment.contains("made for a game")
+  comment.contains("made for a game")) &&
+  !comment.toLowerCase.contains("unreleased") &&
+  !comment.toLowerCase.contains("unfinished") &&
+  !album.isEmpty
 }
 
 def parseAlbum(_album: String, _publishers: Buffer[String], comment: String) = {
