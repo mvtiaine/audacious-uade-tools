@@ -4,7 +4,7 @@ This repo contains Scala CLI scripts for generating songdb TSV files used by [au
 
 Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
 
-The database contains songlengths and module infos for around 470000 unique MD5s, and metadata (authors/album/publishers/year) for 370000, processed from over 380 sources.
+The database contains songlengths and module infos for almost 480000 unique MD5s, and metadata (authors/album/publishers/year) for 380000, processed from around 400 [sources](sources.md).
 
 ## Directories
 

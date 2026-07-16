@@ -6,6 +6,7 @@ Sources used for the database:
 
 - **Amegas** - https://www.exotica.org.uk/mirrors/amegas/
 - **AMI Sector One** - https://www.exotica.org.uk/mirrors/ami_sector_one/
+- **Amiga Music Collection** - https://web.archive.org/web/20260124180536/https://www.amigamusiccollection.com/ - https://canvas.projekti.info/canvas_stuff/mods/
 - **Amiga Music Preservation (AMP)** - https://amp.dascene.net/
 - **amiga.modules.free.fr** - http://amiga.modules.free.fr/
 - **AmigaMega** - https://amigamega.com/
@@ -32,6 +33,7 @@ Sources used for the database:
 - **Hobbes OS/2 Archive** - https://hobbes.infania.net/
 - **jPV Scene Releases** - https://web.archive.org/web/20251124170924/http://jpv.wmhost.com/releases/
 - **Keygen Music Opensource Radio Repository** - https://github.com/sxiii/keygen-music
+- **MajaRadio** - https://eab.abime.net/showthread.php?t=123045 - https://aminet.net/package/mus/play/MajaRadio
 - **Modland** - http://ftp.modland.com/
 - **modules.pl** - https://www.modules.pl/
 - **mod.haxor.fi** - https://mod.haxor.fi/
@@ -58,7 +60,7 @@ Sources used for the database:
 - **Amiga Nuts Crunched Modules** - https://grandis.nu/turran/FTP/Collection/Compilation/Disk/Amiga%20Nuts%20Crunched%20Modules/
 - **AOL File Library** - https://archive.org/details/aol-file-protocol-4400-2501-to-2600 + 2901-to-3000 + 3101-to-3300 + 3601-to-3700
 - **Celic Modules** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Moduly/
-- **DemonHellraiser Modules** - https://grandis.nu/turran/FTP/Collection/Music/Mod/
+- **DemonHellraiser Modules** - https://grandis.nu/turran/FTP/Collection/Music/Mod/Modules_(Mixed_Formats)-2770_Files.7z
 - **DFX Collection** - https://archive.org/details/amiga_iso_collection
 - **Esprit de Apple Corps** - https://archive.org/details/esprit-de-apple-corps
 - **Fred / The Gang 2014 Amiga Collection** - https://grandis.nu/turran/FTP/Collection/Compilation/Fred_TheGang_2014_Amiga_Collection/Music%20-%20Unsorted/
@@ -67,15 +69,16 @@ Sources used for the database:
 - **Lemon Amiga Ultimate MOD pack!** - https://www.lemonamiga.com/forum/viewtopic.php?t=14863
 - **melcom's Chiptune Archive** - https://files.scene.org/browse/music/compilations/
 - **Metin Seven's Amiga module collection** - https://archive.org/details/amiga-music-module-collection
-- **Mods Collection By Deck/Scoopex v1.31** - https://www.sitkee.com/mods.zip
+- **Mods Collection By Deck/Scoopex v1.32** - https://www.sitkee.com/mods.zip
 - **Modules in JP** - https://archive.org/details/jp-mod-music
 - **Moduly PL** - https://grandis.nu/turran/FTP/Collection/Compilation/Archive/Scena/Modules/
 - **mod_jp** - https://archive.org/details/jp-mod-music
+- **MrGreat Personal Collection** - https://eab.abime.net/showthread.php?t=120105
 - **Mr.Oherd Tracker Music Pack** - https://archive.org/details/mytrackermusicpack
 - **Protracker Modules Gpack** - https://bsky.app/profile/nogorg.bsky.social/post/3mby77chfss2b
 - **Retroplay WHDLoad Packs** - https://grandis.nu/turran/FTP/Retroplay%20WHDLoad%20Packs/
 - **Sonix CD Player** - https://grandis.nu/turran/FTP/Collection/PD/RiSe%20PD%20Collection/sonixcd_archived/
-- **TCD Game Mods** - https://grandis.nu/turran/FTP/Collection/Music/Mod/
+- **TCD Game Mods** - https://grandis.nu/turran/FTP/Collection/Music/Mod/GameMods.7z
 - **The Scene Archives** - https://files.scene.org/browse/mirrors/the_scene_archives/
 - **The SceneCat Collection** - https://www.patreon.com/AmigaBill/posts/rest-in-peace-162302204
 - **The Ultimate MOD Collection** - https://archive.org/details/the-ultimate-mod-collection.-7z
@@ -98,13 +101,13 @@ And my old Amiga mod collection.
 
 #### BBS
 
-- **BlasterSound BBS** - https://demozoo.org/bbs/507/
+- **BlasterSound BBS** - https://demozoo.org/bbs/507/ - https://files.scene.org/browse/mirrors/scenesp.org/compilations/
 - **MBnet Apaja** - https://archive.org/details/modit
 - **Rat's Nest** - https://archive.org/details/ratsnest1
 - **Russian BBS archive** - https://archive.org/details/rusbbsa
 - **Starport BBS** - https://files.mpoli.fi/skene/
 - **The Arcade BBS** - http://cd.textfiles.com/arcadebbs/
-- **The Dark Corner BBS** - https://demozoo.org/bbs/13215/
+- **The Dark Corner BBS** - https://demozoo.org/bbs/13215/ - https://www.dcee.net/Files/
 - **The Equalizer BBS** - https://archive.org/details/equalizer_bbs
 - **The MIDI and Multimedia Exchange BBS** - https://archive.org/details/digitaldataarchivemegamodmaddness
 
@@ -194,7 +197,7 @@ And my old Amiga mod collection.
 - **Mega CD-ROM 1-3** - https://archive.org/details/megacd_rom_1 - https://archive.org/details/megapack_3CD/ - https://archive.org/details/megapack2
 - **Mega Demo 1** - https://archive.org/details/MegaDemoCDRom1
 - **Mega Games 1** - https://archive.org/details/megapack2
-- **Megahits 1-5,6-7** - https://archive.org/details/MegaHitsVol.1 + 2 + 4 - https://archive.org/details/megahits-3 + 6 + 7
+- **Megahits 1-7** - https://archive.org/details/MegaHitsVol.1 + 2 + 4 - https://archive.org/details/megahits-3 + 5 + 6 + 7
 - **MegaMODMadness** - https://archive.org/details/digitaldataarchivemegamodmaddness
 - **Megashare 2** - https://archive.org/details/megashare-2
 - **Megaware 19** - https://archive.org/details/megaware-19
