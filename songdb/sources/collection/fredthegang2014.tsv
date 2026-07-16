@@ -5221,7 +5221,7 @@ c95aa4f444e89a3f614dfde42029962a	21	2330	player
 c95aa4f444e89a3f614dfde42029962a	3	0	nosound
 c95aa4f444e89a3f614dfde42029962a	3	62031	player
 c95aa4f444e89a3f614dfde42029962a	4	97658	player
-c95aa4f444e89a3f614dfde42029962a	5	66510	player+silence
+c95aa4f444e89a3f614dfde42029962a	5	66512	player+silence
 c95aa4f444e89a3f614dfde42029962a	5	67637	player
 c95aa4f444e89a3f614dfde42029962a	6	0	nosound
 c95aa4f444e89a3f614dfde42029962a	6	29699	player
@@ -6069,7 +6069,7 @@ e99835c73a6b9e612108201162e68d82	1	153741	player	uade	Protracker	0	12514	4fb77ff
 e9a04f72747032aed5c9a3d15581cb29	1	25720	player	uade	Protracker	0	5620	23275476	3c0cf717	chip tunes/mod/_ a - m _/CHIP/SPIRITS_.MOD
 e9a0a895124b53584cd8a22b76eeca7e	1	143493	player	uade	Protracker compatible	0	60974	e964e148	ac82697a	mer_amiga_moddar/MOD00013.MOD
 e9a4956397beb55f068bdec84132e387	1	88168	player	ft2play	FastTracker v2.00	4	41031	f8913275	a70d6327	chip tunes/XM/med&kenet-coeur.xm
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	Modules Tracker/MOD/Megaforce02.mod
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	Modules Tracker/MOD/Megaforce02.mod
 e9b9a2a880ed5a465afae689aa31426c	1	15472	player	uade	Protracker	0	33194	4b60419d	37efb195	chip tunes/mod/_ a - m _/CHIP/WHA.MOD
 e9bcd2b2c7f452174257e9ce08cff9e5	1	76920	player	uade	Protracker	0	197224	dedf6f4f	0114cedc	Mod/MOD.PMP
 e9bcd2b2c7f452174257e9ce08cff9e5	10	86726	player

@@ -275,7 +275,7 @@ e4de3e7f0f1c7c7ab2a43dc3859a9b1f	1	217741	player	uade	Soundtracker II (15 instr.
 e4fd94366dc7e587e2a619432d056290	0	188893	player+silence	libopenmpt	Ultimate Soundtracker 1.0-1.21	4	76916	2a1ba904	b424f969	SOUNDS/MOD/SLL2.MOD
 e6a455a5ae6a4d43705125dd6ffbc28f	1	170379	player	uade	Protracker compatible	0	54408	1ff5fb00	1b4608bd	SOUNDS/MOD/PRINCRAZ.MOD
 e714c44a1e0a5d803b3392797db0de74	1	76920	player	uade	Soundtracker II (15 instr.)	0	85320	0297ad1d	88e48735	SOUNDS/MOD/PAT.MOD
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	SOUNDS/MOD/MEGAFCE2.MOD
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	SOUNDS/MOD/MEGAFCE2.MOD
 e9f76f9755996e0451d8447babc31794	1	92272	player	uade	Noisetracker 1.x	0	79428	82ccdef9	c9d50c0d	SOUNDS/MOD/INT2.MOD
 ea1aa147ddd9747f27f35d12f675cdc4	1	208056	player	uade	Protracker	0	68882	12cdad26	d16cd978	SOUNDS/MOD/MANDELFO.MOD
 ea2142f7f4fe6b8cc711e9a0349b0130	1	138369	player	uade	Protracker	0	119156	762743a2	a6f3c81c	SOUNDS/MOD/DARKDAN.MOD

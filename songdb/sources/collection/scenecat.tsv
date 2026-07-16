@@ -542,7 +542,7 @@
 0966a9a7a2cd66baca16870be4494817	5	1929	player
 0966a9a7a2cd66baca16870be4494817	6	3637	player
 0966a9a7a2cd66baca16870be4494817	7	5345	player
-0966a9a7a2cd66baca16870be4494817	8	47653	loop
+0966a9a7a2cd66baca16870be4494817	8	45812	loop
 097f87dad5210e4e6e5f4f790081a4c6	1	138409	player	uade	Protracker	0	281004	c2cf6060	79c56b0a	MODarchive/trance-acid/after_party.mod
 098215862dd2aea52ccd91fe0705c572	1	215149	player	uade	Protracker compatible	0	63920	0b54858e	16b23bbe	SceneCAT_Select/Various_BestofAmigaGameMusic/Predator_2/mod.predatorfinal
 0984c27fdd0755a60c5646cb3bfda6d9	1	460942	player	uade	Protracker	0	282838	f8f4eb5d	a7f4445a	MODarchive/techno/techmaru.mod
@@ -1674,17 +1674,17 @@
 20fc9bedc7128edd9923b7c4bbdc088b	1	61411	player+volume	uade	Protracker compatible	0	19828	f2bbb075	f4950638	games/Chuck Rock 2/chuck2story.mod
 20fd0eb52f78898d3670158ad551f8da	0	193789	player	uade	TFMX Pro	0	8760	73215764	8bd41482	SceneCAT_Select/Various_BestofAmigaGameMusic/Cyberzerk/mdat.ingame
 20fd0eb52f78898d3670158ad551f8da	1	31367	player
-20fd0eb52f78898d3670158ad551f8da	10	4602	player+silence
-20fd0eb52f78898d3670158ad551f8da	11	4760	player+silence
+20fd0eb52f78898d3670158ad551f8da	10	4603	player+silence
+20fd0eb52f78898d3670158ad551f8da	11	4761	player+silence
 20fd0eb52f78898d3670158ad551f8da	12	0	nosound
 20fd0eb52f78898d3670158ad551f8da	2	25700	player
 20fd0eb52f78898d3670158ad551f8da	3	7696	player
 20fd0eb52f78898d3670158ad551f8da	4	0	nosound
-20fd0eb52f78898d3670158ad551f8da	5	8049	player+silence
-20fd0eb52f78898d3670158ad551f8da	6	131229	loop
+20fd0eb52f78898d3670158ad551f8da	5	8050	player+silence
+20fd0eb52f78898d3670158ad551f8da	6	131624	loop
 20fd0eb52f78898d3670158ad551f8da	7	138911	player
 20fd0eb52f78898d3670158ad551f8da	8	0	nosound
-20fd0eb52f78898d3670158ad551f8da	9	4654	player+silence
+20fd0eb52f78898d3670158ad551f8da	9	4655	player+silence
 20fe56539ccb431426842c11bc8b11c7	1	76920	player	uade	Protracker	0	111804	88a3c50e	2afc4cfe	games/cytron.zip/cytron_hiscore.mod
 20fe56539ccb431426842c11bc8b11c7	1	76920	player	uade	Protracker	0	111804	88a3c50e	2afc4cfe	games/cytron/cytron_hiscore.mod
 21117dbead5ed888047c0e27f2719af9	0	30724	player	uade	Magnetic Fields Packer	0	926	53a7ccff	e4578067	SceneCAT_Select/Various_BestofAmigaGameMusic/Kid_Chaos/Demo_Version/mfp.KidVicious-3
@@ -2920,7 +2920,7 @@
 37b15681dc44bc5ff813328c2fc210db	1	153721	player	uade	Protracker compatible	0	104692	6fb5bab5	792dd7a1	MODarchive/jazz/icecream.mod
 37b406445ed1eb805f152b8a690092c1	0	107544	player	uade	TFMX Pro	0	11960	38cea76e	a0c3b8f4	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_2
 37b406445ed1eb805f152b8a690092c1	1	46116	player
-37b406445ed1eb805f152b8a690092c1	2	5699	player+silence
+37b406445ed1eb805f152b8a690092c1	2	5701	player+silence
 37b406445ed1eb805f152b8a690092c1	3	1326	player
 37b406445ed1eb805f152b8a690092c1	4	8982	player
 37c90d5a780788aed32b473c1c85cc16	0	122916	player	uade	David Whittaker	0	167808	6e0f8825	a0481c19	SceneCAT_Select/Various_BestofAmigaGameMusic/Total_Recall/dw.intro
@@ -3879,7 +3879,7 @@
 47e0d7e64f71238d452ac8e63ee39795	1	23168	player	uade	Protracker compatible	0	37292	20348f1c	ec3124bc	games/Prophecy - Viking Child/monster5.mod
 47e2941560a928a84522fba701283879	0	70430	player	uade	TFMX Pro	0	9600	1bac97fd	f61fda28	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_4
 47e2941560a928a84522fba701283879	1	35868	player
-47e2941560a928a84522fba701283879	2	5699	player+silence
+47e2941560a928a84522fba701283879	2	5701	player+silence
 47e2941560a928a84522fba701283879	3	1326	player
 47e2941560a928a84522fba701283879	4	35868	player
 47e65d34afebe92530ea9433f3fdb65b	0	101777	player	uade	Sonic Arranger	0	78982	6ef3ab15	28c72168	SceneCAT_Select/Various_BestofAmigaGameMusic/Lionheart/Direct_from_Composer/sa.flugschloss.SA
@@ -5405,13 +5405,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 657a061b52ac410215b765e0d5aeab31	1	39806	player	uade	Protracker	0	23340	08b8fb74	7f93379e	games/Soccer Kid.zip/11-skpav.mod
@@ -7644,7 +7644,7 @@
 8b5d9210aa365372404e682612384a43	1	15472	player	uade	Noise Packer 3.0	0	29880	85d8ac1a	b26d5423	SceneCAT_Select/Various_BestofAmigaGameMusic/Chuck_Rock_2-Son_of_Chuck/np3.Subgames
 8b67f5d4c45052626cdfceead74de906	0	81944	player	uade	TFMX Pro	0	10960	c6e48f90	bbfbfa0f	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_3
 8b67f5d4c45052626cdfceead74de906	1	51220	player
-8b67f5d4c45052626cdfceead74de906	2	5699	player+silence
+8b67f5d4c45052626cdfceead74de906	2	5701	player+silence
 8b67f5d4c45052626cdfceead74de906	3	1326	player
 8b795dc1c98b19ac5979c77d11f21c4e	1	121731	player	uade	Protracker	0	180240	338331b6	f8cfffc6	MODarchive/techno/reiv.mod
 8b7ecc245e6c981107ff307b0d35da4b	1	514249	player	ft2play	Fasttracker	28	957334	d52ca736	a9f1aba7	Demoscene Various/mod.fst-onward(Dope demo)
@@ -8879,7 +8879,7 @@ a33771af2f7a5a2986a1273ec7c112d0	1	152435	player	uade	Protracker compatible	0	93
 a33771af2f7a5a2986a1273ec7c112d0	2	61086	player
 a33c9b463f291f483afb73f3267669d9	0	76820	player	uade	TFMX Pro	0	11368	7b426dc9	83554b8c	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_1
 a33c9b463f291f483afb73f3267669d9	1	51220	player
-a33c9b463f291f483afb73f3267669d9	2	5699	player+silence
+a33c9b463f291f483afb73f3267669d9	2	5701	player+silence
 a33c9b463f291f483afb73f3267669d9	3	1326	player
 a33c9b463f291f483afb73f3267669d9	4	5144	player
 a3536087cb8ae1851791ad0acf5449d7	1	133273	player+silence	uade	Protracker	0	253812	a0747768	34627f1a	MODarchive/funk/its_so_cool.mod
@@ -9185,8 +9185,8 @@ a9475884a64a919c71edd0bf25d80972	1	101918	player	uade	Protracker compatible	0	20
 a9481b61eb9154d7bf194eee7f6fb8ca	1	227237	player+silence	ft2play	Fasttracker	8	466456	92b9b408	7fa767fc	MODarchive/demoscene-tracking/demostyle/pl.mod
 a94dac3593adacb20fce55e830132bc5	0	133446	player	uade	SoundFX	0	66824	5744eb0b	5c43815e	SceneCAT_Select/Various_BestofAmigaGameMusic/Venus_the_Flytrap/sfx.title
 a94dc6b7e7b432cf79544920676f9b86	1	205318	player+volume	uade	Protracker	0	412342	ecbe34fa	267843d3	SceneCAT_Select/mix/suspicious mix.mod
-a94e52f94ca5497738bf7e73d2bc41e5	0	162488	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	SceneCAT_Select/Various_BestofAmigaGameMusic/X-Out/mdat.hiscore
-a94e52f94ca5497738bf7e73d2bc41e5	1	162488	player+silence
+a94e52f94ca5497738bf7e73d2bc41e5	0	162489	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	SceneCAT_Select/Various_BestofAmigaGameMusic/X-Out/mdat.hiscore
+a94e52f94ca5497738bf7e73d2bc41e5	1	162489	player+silence
 a953ca9019a218a91faf1ad99d48f5cb	1	300891	player	uade	Protracker compatible	0	329116	86861e38	a59323e4	MODarchive/dance/acid_state.mod
 a95685aceda9419fee99a5324f684623	1	273139	player+volume	uade	Protracker	0	139610	edaa2828	7e911bb9	SceneCAT_Select/Amiga dj sets/remute/MOD.kurkkukipu
 a959de4eb5b3c28c863570b3eb0ff2a0	0	57027	player	uade	musica	0	12684	903e3b9e	ce73e2f3	SceneCAT_Select/Various_BestofAmigaGameMusic/Faery_Tale_Adventure/cust.The_Faery_Tale_Adventure
@@ -9571,7 +9571,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b183961d42a859d9d192152c230d1514	1	32110	player	uade	Protracker compatible	0	7004	1cde1f2c	31483604	MODarchive/demoscene-tracking/chiptune/sac13.mod
 b18c9106b6d6501768bd55f051b0b576	1	169093	player	uade	Soundtracker II (15 instr.)	0	84796	46538e1c	125dd6ed	games/Savage.zip/04-savage level three.mod
 b18c9106b6d6501768bd55f051b0b576	1	169093	player	uade	Soundtracker II (15 instr.)	0	84796	46538e1c	125dd6ed	games/Savage/04-savage level three.mod
@@ -9825,7 +9825,7 @@ b691f67d4e267c866a52ffc1f5bb774d	1	174197	player	uade	Protracker compatible	0	52
 b691f67d4e267c866a52ffc1f5bb774d	1	174197	player	uade	Protracker compatible	0	52834	3ce48a49	99e89350	games/A.T.F. 2/atf2.mod
 b69cdbd3f2b5809f3fe85004b940d94d	0	81944	player	uade	TFMX Pro	0	10608	768a81de	3a04e0d2	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_6
 b69cdbd3f2b5809f3fe85004b940d94d	1	46116	player
-b69cdbd3f2b5809f3fe85004b940d94d	2	5699	player+silence
+b69cdbd3f2b5809f3fe85004b940d94d	2	5701	player+silence
 b69cdbd3f2b5809f3fe85004b940d94d	3	1326	player
 b69f58164540ca04b4969e962ac1131b	1	115321	player	uade	Noise Packer 3.0	0	52314	924c4a25	0a16dc3d	SceneCAT_Select/Various_BestofAmigaGameMusic/Bubba_n_Stix/np3.level4
 b6a0039bce4e91e8c0b06edb0ccfa7fe	0	7696	player	uade	Sonic Arranger	0	46882	215fcc3b	2ef61edc	SceneCAT_Select/Various_BestofAmigaGameMusic/Ambermoon/Direct_from_Composer/sa.Amber16neu
@@ -10276,7 +10276,7 @@ bf88642488cc53943aba28b6e39d6b1a	1	102520	player	uade	Protracker	0	35608	bf28796
 bf88642488cc53943aba28b6e39d6b1a	1	102520	player	uade	Protracker	0	35608	bf287968	58514da3	games/Titus the Fox/lagjeu3export.mod
 bf8a95971b692da3a1a46b626873cf81	0	101777	player	uade	TFMX Pro	0	10420	50c9c08a	7bfd54d9	SceneCAT_Select/Various_BestofAmigaGameMusic/Z-Out/mdat.level_5
 bf8a95971b692da3a1a46b626873cf81	1	26906	player
-bf8a95971b692da3a1a46b626873cf81	2	5699	player+silence
+bf8a95971b692da3a1a46b626873cf81	2	5701	player+silence
 bf8a95971b692da3a1a46b626873cf81	3	1326	player
 bf91ebb1b133954ad776b111581d2319	1	253629	player	uade	Protracker compatible	0	144450	74fe89b6	106c9a85	SceneCAT_Select/Amiga-Demoscene/checknobankh.mod
 bf95827e42202be36f2ab069adf1a228	1	211127	player+silence	uade	Protracker	0	334184	563ccc61	6ebecef5	MODarchive/VideoGame/kombat-syndrome.mod
@@ -12215,7 +12215,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e398d35097551fdea9ae2730d86b1fce	1	76920	player	uade	Protracker	0	27632	5f8471a4	03db0872	games/Soccer Kid.zip/20-sktrain.mod
 e398d35097551fdea9ae2730d86b1fce	1	76920	player	uade	Protracker	0	27632	5f8471a4	03db0872	games/Soccer Kid/20-sktrain.mod
 e3a08b80d89f1d4c3eb4a956e0e7dc6d	1	12179	player+volume	uade	Protracker	0	16196	078a6b6d	4b30bc0c	games/Colonization.zip/Col32.mod

@@ -126,7 +126,7 @@
 0a4247ff526ac24d3cc30c8041c69afa	1	437894	player	uade	Protracker	0	131028	86cc1d77	67e570b5	A/ALGORETH.MOD
 0a62319214ccc4823051c8ed094f008a	1	139313	player	uade	Protracker	0	73024	bc1ce536	38a0e606	N/NOYHOZO.MOD
 0a67beaeb76f62839fbdbed9aeabafaa	1	265206	player+silence	uade	Protracker	0	399278	2f422384	fcadfd0a	0/2UNLTD.MOD
-0a6ed6ab31a5c103256162b2bb49aaa9	0	58126	silence	uade	Soundtracker II - V or compatible	0	50076	ed67c9c4	73962b45	P/POPCORN.MOD
+0a6ed6ab31a5c103256162b2bb49aaa9	0	67276	silence	uade	Soundtracker II - V or compatible	0	50076	ed67c9c4	73962b45	P/POPCORN.MOD
 0a775f063fa6a54ebb5ef860a803caa9	1	119179	player	uade	Noisetracker 1.x	0	99948	19f883d3	525b721f	L/LIFERULE.MOD
 0a803e9c59e684b213ef7b1c4669d6f6	0	138273	player+silence	libopenmpt	Composer 669	8	288592	2914ec51	a58f65d6	A/ARRIVED_.669
 0a9f083dc40f76d064380b17e0868c87	1	243341	player	uade	Protracker compatible	0	155008	a7f4bb12	bc3d3c0a	C/CAROLINE.MOD
@@ -2128,7 +2128,7 @@
 96a0d33b5649c29c487e286d854f428a	1	161397	player	uade	Noisetracker 1.x	0	67342	c5995744	163a3af4	G/GVIBES.MOD
 96b541e2f173bd4d0c0bc6e4c7a576f4	1	99968	player	uade	Noisetracker 1.x	0	39858	b46764d7	21ef0326	M/MMODNPG.MOD
 96bf900f3993fd030a4a0fb90f0ab5be	1	92272	player	uade	Protracker	0	300730	ff7f367e	f84b844d	R/RENSTIM.MOD
-9710b4af1af743b3c4c762f4db173045	1	384272	player+silence	ft2play	Fasttracker (M.K.)	4	360448	1b0bf529	e21dee86	M/MEGAMIX.MOD
+9710b4af1af743b3c4c762f4db173045	1	384274	player+silence	ft2play	Fasttracker (M.K.)	4	360448	1b0bf529	e21dee86	M/MEGAMIX.MOD
 974bc6e245fa1bb55a9341bfebcf40ad	1	176769	player	uade	Noisetracker 1.x	0	121592	8924a6b6	ad8d20a9	T/TOXIC.MOD
 976ad226763139226b3948c8de58e47a	1	84576	player	uade	Protracker	0	168728	bc96f22e	70594e96	T/TUNNEHAI.MOD
 97829220a8d5364cd45dfd64779da0da	1	222845	player	uade	Protracker	0	85888	a05d4caf	8efc1d2f	H/HEREAGAN.MOD
@@ -2540,7 +2540,7 @@ b7531ec82ee274606fdc6032128b346d	1	197014	player+silence	uade	Protracker compati
 b76a9f8c66c467e85e65429cf3568ba7	0	232571	player	uade	FaceTheMusic	0	165590	041b673d	ad80875c	A/AWALKI.MOD
 b76da67f71a4ea2bf344198e4d84c505	1	184445	player	uade	Protracker	0	78446	ca472a21	793ec0dd	H/HORIZ36.MOD
 b78c51a28c929f33220784e1644d5aea	1	270308	player+silence	ft2play	Fasttracker	6	213696	62365fc6	26adc454	O/OVERIDE.MOD
-b792d45fa93e0efa4900cae912ed300b	1	384272	player+silence	ft2play	Fasttracker (M.K.)	4	301056	ed6d3316	2e6cb853	N/NMEGAMIX.MOD
+b792d45fa93e0efa4900cae912ed300b	1	384274	player+silence	ft2play	Fasttracker (M.K.)	4	301056	ed6d3316	2e6cb853	N/NMEGAMIX.MOD
 b7950d97115a60fe7cb68bb4f4b85fe8	1	293961	player+silence	uade	Protracker compatible	0	182111	7c390864	01c7e0d2	A/ATMOSFEA.MOD
 b7989afe7d71f47ea1ad0c402aebaf3e	1	220886	player+silence	uade	Protracker compatible	0	191104	1948f5fc	e5961f9d	B/BARBRIAN.MOD
 b79f6f8b2371723702d980211849e167	1	303503	player	uade	Protracker	0	215440	6febe89c	5fcd07ff	A/ADRENO.MOD

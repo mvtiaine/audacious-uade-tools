@@ -1415,7 +1415,7 @@
 46a8290bcc0e67a638ba42721cb8da9d	4	51059	player
 46a8290bcc0e67a638ba42721cb8da9d	5	6791	player
 46b0cefaff735a0b59a3f0eae47a22a1	1	182395	player	it2play	Impulse Tracker 2.14+	17	257690	45c28c1a	ee3fe37b	cd1/pc artists A-M/jcl/JCL_RTN.IT
-46c900f2cd2f29638e789cbaad929af3	1	386042	player+silence	it2play	Impulse Tracker 2.14+	14	69001	200d02f0	438f7210	bonuscd/artists/wonder/Wonder - Welcome home (Chipallica).it
+46c900f2cd2f29638e789cbaad929af3	1	386247	player+silence	it2play	Impulse Tracker 2.14+	14	69001	200d02f0	438f7210	bonuscd/artists/wonder/Wonder - Welcome home (Chipallica).it
 46ceefa82c5566245332ba86c307cf72	1	286273	player	ft2play	FastTracker v2.00	4	22703	e9e7baca	26cab308	cd2/pc artists N-Z/sace2/SACE2 - Wintermute Old intro music - 1995.xm
 46efefbc0d79debdf2a96801cefd7971	1	281087	player+silence	ft2play	FastTracker v2.00	16	549443	1eed9bcd	9d8ceaef	cd1/pc artists A-M/awesome/AWS_SOUL.XM
 471e90511672b00a4f60eb9faa5cfc35	1	134585	player	ft2play	FastTracker v2.00	18	2253632	bc76fafb	e76f371f	cd2/pc artists N-Z/snaked/Falcon.xm
@@ -1796,9 +1796,9 @@
 598d4e3d630fb3cc786e691d35d33037	1	160131	player	uade	Protracker	0	159868	81f41fee	2fecc081	cd1/amiga artists/estrayk/DISCO DANCE 4.mod
 59a010a2cc592a44c057c67f96c402a3	1	25077	player	uade	Protracker	0	31684	2fd5ae7a	1ea945ca	cd1/amiga artists/choche/ketep.mod
 59a74d3715f6c0e72668acf9f28ff3fb	1	185972	player	uade	Protracker	0	22502	792842da	fa28dc48	cd1/amiga artists/mcgyver/CHIP3.mod
+59b52393131c20594019ef3b6f67ec6c	0	91232	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	8	62262	7cea6b96	18e8e1fc	cd2/pc artists N-Z/sergeeo/wut-srgwat.it
+59b52393131c20594019ef3b6f67ec6c	0	91246	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	8	62262	7cea6b96	18e8e1fc	cd2/misc/chipcorner/wut-srgwat.it
 59b52393131c20594019ef3b6f67ec6c	0	91246	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	8	62262	7cea6b96	18e8e1fc	cd2/pc artists N-Z/sergeeo/chiptune/watching.it
-59b52393131c20594019ef3b6f67ec6c	0	91246	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	8	62262	7cea6b96	18e8e1fc	cd2/pc artists N-Z/sergeeo/wut-srgwat.it
-59b52393131c20594019ef3b6f67ec6c	0	91260	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	8	62262	7cea6b96	18e8e1fc	cd2/misc/chipcorner/wut-srgwat.it
 59bc09db764e18061b433881e5ec6788	1	229295	player	uade	Protracker	0	360594	0fd459ed	e1203ed8	cd1/amiga artists/goreboy/RESET YOUR 1200 UP.mod
 59c1571ef005afbd2a21137808268420	1	71816	player	uade	Protracker	0	66276	ae566881	14c4bd97	cd1/amiga artists/estrayk/estrayk-horizon.mod
 59c44c20366444d77e1fc3c2d7a8ece8	1	183036	player+silence	uade	Protracker	0	281776	36097bf9	7d993512	bonuscd/artists/nork/BlackTribe-Mix.mod
@@ -2489,7 +2489,7 @@
 7be7e42bfb78e4197a6b432313c3e202	1	482148	player+silence	ft2play	FastTracker v2.00	12	1008857	a8d3030d	2b0fe53e	bonuscd/pcmania and future music/masterdj/MASTER20.XM
 7bf23aa851381cb3009311eef7083458	1	165215	player	uade	Protracker	0	64792	8e1215bd	ddb543bb	cd1/amiga artists/evelred/RESONANCE 1 V2.mod
 7bf9aad4747713d95dd40cb1972f2d6a	1	57730	player	uade	Protracker	0	61286	ff055c48	1d853cde	cd1/amiga artists/blue/metal.mod
-7c0c578571b939a7c62eefbc3aabce22	0	95548	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	24	288033	8c128e2c	c20542d7	bonuscd/modulez ohc/ma/TOWN.IT
+7c0c578571b939a7c62eefbc3aabce22	0	93841	player+volume	libopenmpt	ModPlug Tracker 1.09 - 1.16	24	288033	8c128e2c	c20542d7	bonuscd/modulez ohc/ma/TOWN.IT
 7c13e9513e4e314a2d2dd42990dfd055	1	38778	player+silence	uade	Protracker	0	40314	3f6e08c2	eb388755	cd1/amiga artists/dj uno/BEGINNING NIGHT.mod
 7c13e9513e4e314a2d2dd42990dfd055	1	38778	player+silence	uade	Protracker	0	40314	3f6e08c2	eb388755	cd2/demodulate/amiga demos/batman returns 2 by batman group.mod
 7c1c8424eaf037bc5f70b656f3445591	1	82406	player	uade	Protracker	0	343320	99b9c420	3759ce81	cd1/amiga artists/estrayk/jilted2.mod
@@ -4326,8 +4326,8 @@ e0319db35a323cd00355b38f9b314b15	1	109996	player	it2play	Impulse Tracker 2.14+	7
 e0319db35a323cd00355b38f9b314b15	1	109996	player	it2play	Impulse Tracker 2.14+	7	37587	a291a9d7	a379e02d	cd2/music disks/pc/fuzzion - ofFlimitS v1.1 linux/audio/jcl_bjoy.it
 e0319db35a323cd00355b38f9b314b15	1	109996	player	it2play	Impulse Tracker 2.14+	7	37587	a291a9d7	a379e02d	cd2/music disks/pc/fuzzion - ofFlimitS v1.1 win/audio/jcl_bjoy.it
 e03ba88e4e0a31921b5cfd96e02293fa	1	255390	player+silence	ft2play	FastTracker v2.00	28	1843319	b42884d4	90130e00	cd1/pc artists A-M/garrapatrackers/GDJ_WARA.XM
-e077d2647645a585d6b8094d095d8bbd	0	60673	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	6	15211	e9e15765	892f270c	cd2/pc artists N-Z/sergeeo/chiptune/fishes.it
 e077d2647645a585d6b8094d095d8bbd	0	60707	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	6	15211	e9e15765	892f270c	cd2/pc artists N-Z/sergeeo/chiptune/The_fishes_in_the_river.it
+e077d2647645a585d6b8094d095d8bbd	0	60710	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	6	15211	e9e15765	892f270c	cd2/pc artists N-Z/sergeeo/chiptune/fishes.it
 e08568a1cd0197cd78250c67bea1594a	1	295405	player	uade	Protracker	0	143974	550f8b45	88bba972	cd1/amiga artists/estrayk/ESTRAYK'S REVENGE 2.mod
 e08d7c8e0d057ad898cfee6bf8dba4a6	1	341039	player	uade	Protracker	0	721398	89e38975	01ceea46	cd1/amiga artists/fireboy/MILLIONS OF BUGS THEME.mod
 e08d7c8e0d057ad898cfee6bf8dba4a6	1	341039	player	uade	Protracker	0	721398	89e38975	01ceea46	cd2/demodulate/amiga demos/millions bugs by dreams day.mod

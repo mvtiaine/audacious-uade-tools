@@ -1,119 +1,121 @@
-002c90c3b858d049e2667873bc351253	0	92022	player	libopenmpt	Generic ProTracker or compatible	4	141552	5997006d	e457b821	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.stans_revenge.pp
 0032d2cd4e765921d9a2f913a9f6796e	1	76920	player	uade	Protracker	0	57442	c02aaca5	a7128286	Ziny/Testament/Testament_1.dms/Modules/mod.sweet
+006828b95b6cd18a504d95b8ba8c6322	1	182764	player+silence	uade	Protracker	0	240812	07c09bfd	d2a001fa	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#3
 0118b478dbe88bb0aa1a418dcecd42cd	1	181712	player	uade	Protracker	0	139860	50852555	27e7f14a	Ziny/Fastidium/Fastidium_1.dms/VICT/mod.1
-01fcdce0360597afbea5119a0cff3380	0	169028	player	libopenmpt	Generic ProTracker or compatible	4	79888	0bca36c6	e5afc71f	Ziny/H...za/H..za_2.dms/Muzyka/mod.chorus
-0252bbdf9cb01f4e7ef679dca96b1372	0	210326	player	libopenmpt	Generic ProTracker or compatible	4	78720	2871a08c	6da6b8db	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.leatherwolf
-02c514f2a06deef9f5d03801e58e46db	0	214719	player	libopenmpt	Generic ProTracker or compatible	4	43900	c242e6d1	db2710fb	Ziny/NextLife/NextLife_6.dms/MOD./Q2
+0233ddc2744198a31586c3c035938c4a	1	220686	player+silence	uade	Protracker	0	102236	6445f78c	be02bf88	Ziny/Previews/TB#0.dms/s/MagMod
 02c8b1497684cbd725b2c642880e1894	1	130974	player	uade	OctaMED MMD0	0	74410	71fded05	f1cfe25d	C&A_PD/DyskiPD/C&A_PD3.DMS/BootPic/Demo.mod
 0372df9e84c8c143d7bb07c26610035c	1	363344	player	uade	Protracker	0	283172	261d5394	d6676242	Polski_Aminet/Grzegorz_Salaga/ballad.lha/ballad.mod
 0379a44027157aeea19db8a66e4a493b	1	14408	player+silence	uade	Protracker	0	31326	aae80b1c	6cdb9b31	C&A_PD/DyskiPD/C&A_PD31.DMS/DeLuxeGalaga/GALAGA.JINGLE2
-04740777a361e3eb004c269a951c2895	0	46011	player	libopenmpt	Generic ProTracker or compatible	4	15936	63c9e634	6b55f088	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.<< street tune 1 >>
-048c1e3256bb622f39d7cb90a0936819	0	158444	player+silence	libopenmpt	Generic ProTracker or compatible	4	117780	bdd00220	a39816bb	Ziny/NiezTejBeczki/NTB_8a.dms/NTB/mod.## severe ##
-065cf4df3ccf3d88032a97f6e3b2156e	0	296603	player+silence	libopenmpt	Generic ProTracker or compatible	4	77208	e6be7696	b09a69ac	Ziny/FatAgnus/FatAgnus_11b.dms/mod.free!!!
+040031440c6c4d25e31c48d853d6464e	1	233865	player+silence	uade	Protracker	0	107536	9a707429	d0e62c66	Ziny/PoczytajMiMamo/PMM_4.dms/modules/mod.sweet little child
+0461cf33e1b087fddc7e7fdab7f9a5b6	1	40429	player	uade	Protracker	0	16728	8ed50b6f	3535eb92	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.jazztarnia
+04d5e78c86192bd30b947598fcbeafd0	1	238197	player	uade	Protracker	0	53976	e5bf8ce3	ffef92c4	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.in the future
+0580948aa0d1a8bf33b1e409ea150a76	0	135214	player	libxmp	ProPacker 2.1	4	40942	f76744b0	21574e6b	Ziny/FatAgnus/FatAgnus_15a.dms/mod.sleekness
+0580948aa0d1a8bf33b1e409ea150a76	0	135214	player	libxmp	ProPacker 2.1	4	40942	f76744b0	21574e6b	Ziny/FatAgnus/FatAgnus_15a.dms/mod.syllogism
+060c97c8c21f8398e9c3499834926cb7	0	216636	player	libxmp	ProPacker 2.1	4	106216	e996903f	898efc1f	Ziny/FatAgnus/FatAgnus_13b.dms/modules/mod.wariacje
 067ea43ba5347d6bcfda67b6513d220a	1	188167	player+silence	uade	Protracker	0	187194	735726bf	a286085a	Polski_Aminet/KOLA/NightWow.lha/mod.night_woow
 06c6c712fb8e2ffe0d41ad289bd6b169	1	151490	player	uade	P50A - P60A - P61A	0	90460	9905e368	00006b59	Ziny/Zielone_Brygady/ZieloneBrygady_9-96.dms/P61.interface
-077cb38e2639d01d3760622d2e15be1e	0	239482	player+silence	libopenmpt	Generic ProTracker or compatible	4	80796	700c6583	12790e93	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Thats_all
 07dca240a834ec3906e1eaa275edfa1a	1	161397	player	uade	Noisetracker 1.x	0	44410	0ed55930	f2a05f31	Ziny/AleJaja/AleJaja_1.dms/Moduly/mod.Echoing Only
 084254293afcc621253e12768ed2084c	1	143493	player	uade	Protracker	0	75702	47263fc5	29d1fbc4	Ziny/AleJaja/AleJaja_1.dms/Moduly/mod.Why_?
+084254293afcc621253e12768ed2084c	1	143493	player	uade	Protracker	0	75702	47263fc5	29d1fbc4	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.why?
 08b3551f2fd520bd1ec8c1de9d2d83e0	1	199797	player	uade	Startrekker (4ch)	0	148686	2b360273	71542ecd	Ziny/PoczytajMiMamo/PMM_1.dms/WORMSIGN
-08c23ecf5cbd42b68b39732d8f07100d	0	384323	player+silence	libopenmpt	Generic ProTracker or compatible	4	54548	2ccd7330	0ead6dc3	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.Silentium.pp
 09c416a85cd233a66488e47ded1fce24	0	163105	player	uade	SoundMon 2.0	0	8628	5e9ef501	ff336215	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/SpaceShip.pmc
 0a3fae5a64181c09db0f62ac297b9c76	1	265873	player+silence	uade	OctaMED MMD1	0	148262	1b619799	13542f66	Ziny/BrainDegenerator/BD_8.dms/Muzyka/1
 0a5fe986a9a81461e9b3776bf0e0d788	1	164230	player	uade	Protracker	0	163736	7e68cb0d	ad4b5370	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.warm pleasures+
 0ace8ed488c267fb3cd99b6cb80a453b	1	161032	player+silence	uade	Protracker	0	104822	631b1e3e	3e846be0	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.the realm of love
-0b3b50ac0b351765612f92a2511d4371	0	462031	player	libopenmpt	Generic ProTracker or compatible	4	42644	c11da1a4	f681424e	Ziny/HotDog/HotDog_2.dms/mod.fog valley sk'p
+0bb22f20d48be8a0100ab8b44832f931	1	193929	player	uade	Protracker	0	42768	463f03c5	45c9baa4	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.songtech_4
 0d68196a3ba36503104dc406aea4d042	1	878661	player+silence	uade	Protracker	0	180884	ecba138f	c13e3f6c	Ziny/NextLife/NextLife_2.dms/Cr.Rev
-0e1a1375f58321b5fe6b446543b3eb72	0	237725	player	libopenmpt	Generic ProTracker or compatible	4	28632	49bb4f23	36f1da48	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.in the future
+0d920b1869064f248f44a2f20f1efa9e	1	122770	player+volume	uade	Protracker	0	258314	e59b32e2	434939b4	Ziny/PoczytajMiMamo/PMM_8a.dms/For_Miklesz!/mod.switchback.pp
 0e1a80a9b27d826cc740e5eb2786df2f	1	76920	player	uade	Protracker	0	22680	5866216b	e44d0501	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.chipper i
 0e5b5e2489532253e101ddf9587b58e8	1	175744	player	uade	Protracker	0	160678	5b28652c	9e3a487c	Ziny/Strata_Czasu/StrataCzasu_1.lha/mod.Fuck Time !
 0e5edb3636e902f350f2c6a5a4bd810a	1	139856	player	uade	Protracker	0	223518	0064690c	51841736	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.cucumber boogie+
 0e7aa8d418da8fd9d347f6ead937d5a3	1	381	player	uade	OctaMED MMD0	0	6732	34540ebb	d4b09be0	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/tasten
-0f93e9c3b096e732f128b60ab0b8f20b	0	229936	player+silence	libopenmpt	Generic ProTracker or compatible	4	50888	724e80f8	442fbf83	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.2.pp
-103a9377927d51849d9c41369ce46b9a	0	53679	player	libopenmpt	Generic ProTracker or compatible	4	4196	4b1b59e9	9f41f711	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune19
-10f44e9bd27be43917ea0a2aeb92c2b0	0	451806	player	libopenmpt	Generic ProTracker or compatible	4	76000	b286790e	4d08951e	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.gregorian_3.pp
-10f9028a68bc9d0459e36246396e2630	0	225583	player	libopenmpt	Generic ProTracker or compatible	4	136488	40c4b5c6	6b0653e9	MA_share/MAMOD.DMS/mod.lifetime.pp
+0f9d3a91454070a3964bcf30a60b0e48	1	144960	player	uade	Protracker	0	106792	462f320e	458b00f9	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.** waiting **
+105b9900621e57d19103561c97a47315	1	319338	player	uade	Protracker	0	211654	9bcc145e	14bee086	Ziny/PmM2/PMM2/Modules/mod.Discovery
+105b9900621e57d19103561c97a47315	1	319338	player	uade	Protracker	0	211654	9bcc145e	14bee086	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.Discovery
+1088ba21d17aa10cffe432cbe2d30542	1	104512	player+silence	uade	Protracker	0	32158	5674f52c	d5016920	Ziny/PoczytajMiMamo/PMM_6.dms/modules/ChipCompo/mod.2nd-chippolino
+1158751432155b5b45e9f0bd8a47b8f8	1	56424	player	uade	Protracker	0	36650	09fddb2f	2be8e7af	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.the sign-part2
+115ce7861835199510fc52aa0f7192e9	1	245600	player+silence	uade	Protracker	0	282116	6f1f412a	516f01e0	MA_share/MAMOD.DMS/mod.jarre.again.pp
 11a354eca66eefaaba9db16b9940511b	0	175224	silence	uade	MusiclineEditor	0	12922	990827e6	f7399618	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.NakedChip
-12089e38b95945c5ad23fc780f74587c	0	152523	player+silence	libopenmpt	Generic ProTracker or compatible	4	146560	733c4016	90898a83	Ziny/ZigZagInfo/ZigZagInfo_2.dms/ZZI#2/mod.Helpless
-127132d69bf6dd56f3ec353440c846df	0	191703	player+silence	libopenmpt	Generic ProTracker or compatible	4	108460	0cf7ab63	d12dd611	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.digitalhorses.pp
-1289260d467a4c8646523f54f0b382cc	0	112472	player	libopenmpt	Generic ProTracker or compatible	4	32340	c8e393e7	e8153b0e	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.pastel news
-1359b92f6ec0a3001eaf663d7f434838	0	108677	player	libopenmpt	Generic ProTracker or compatible	4	207328	56463905	268a4843	MA_share/MAMOD.DMS/mod.black.sacrifice.pp
+1395a05e3e87a2f360540f158f26d276	1	252544	player	uade	Protracker	0	90376	22b19f78	8aaa391c	Ziny/Coma/COMA2.DMS/cOmA#2/mSx/1
 13f4aede12091745822b95bf09377e97	1	121771	player	uade	P50A - P60A - P61A	0	210790	98f27471	dc0fcc47	Ziny/FatAgnus/FatAgnus_18a.dms/Modules/P61.slodkie_sny
-14ac144ee38373cc97d919dfd9d8d111	0	454669	player+silence	libopenmpt	Generic ProTracker or compatible	4	77848	3a545c86	eddfdaf5	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.sequence
+15150ceb4b64a1298a4754947218a4f1	0	217376	silence	uade	DIGI Booster V1.5	0	284020	1acdcf79	92d5e53d	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/subway.DIGI
 152eb96297b1897da9157ea38732943f	0	30844	player	uade	Amos Music Bank	0	30404	4f5fadef	be585085	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/T-03
-153d6c927ee549f4c10055e03db59f81	0	333233	player+volume	libopenmpt	Generic ProTracker or compatible	4	129800	cd36377a	519587db	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.Kruganini.pp
+1546a746fd9100e79f5544cec456c3a6	1	221318	player	uade	Protracker	0	87618	bea012dc	24837504	Ziny/NiezTejBeczki/NTB_3.dms/modules/mod.ntb
+1547f1ca2b504519d317704ad8dabde1	1	327817	player	uade	Protracker	0	128006	ebcea93b	e047f9db	Ziny/Bigoz/Bigoz_9.dms/MODULES/002.pp
+158b3c185245682fec80e160ae605409	1	198116	player+silence	uade	Protracker	0	160002	ba89af50	177470b9	Ziny/PoczytajMiMamo/PMM_8a.dms/modules/mod.czytanka
+158c68df54a7ac3f42d11718bde157a9	1	133265	player	uade	Protracker	0	64766	29fd00a2	db6bff1f	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.the last world
 15bc575ac7ee22f4a220d6490474d201	1	122707	player+volume	uade	Protracker	0	21082	f10c3ddb	2d4e1c23	Polski_Aminet/Venture/vnt_ff.lha/bonus/mod.full_flavour
 15bc575ac7ee22f4a220d6490474d201	2	4601	player
-1618833f8abd62a3526c0ec119cc4c47	0	168950	player+silence	libopenmpt	Generic ProTracker or compatible	4	138576	ac0d3e42	93e674a1	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.power of nothing ii
-163703d0ad8619cbb30cb92c71168608	0	102247	player	libopenmpt	Generic ProTracker or compatible	4	5296	fe2d33b4	1007e5e1	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.intro #3
-1640521098d51c0f5b46d725c17899f9	0	110814	player	libopenmpt	Generic ProTracker or compatible	4	36132	475aa7da	880e085d	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.70s reprise
 16be94c91e621b4a408644b25fa39c50	1	177174	player+silence	uade	Protracker	0	104510	a7bc7428	d55a4942	Polski_Aminet/Tomasz_Nidecki/umowy.lha/mod.Umowy
+16c3527d82c18c52861a00ff38eb3849	1	242176	player	uade	Protracker	0	145536	b75ad0f6	855d4c7d	Ziny/FatAgnus/FatAgnus_11b.dms/mod.digital_deream
 175b2b937bde4d629ed8b03f35deafaf	1	166561	player	uade	P50A - P60A - P61A	0	301716	afd6af0b	fa12e1f6	Polski_Aminet/Anadune/and_sghd.lha/Sound_Garden/P61.metalic rain
 177f24b96a388bd998d1baf80b6a4798	1	236931	player	uade	Protracker	0	200012	84f1ce31	db520fda	Ziny/Wstret/wstret2.lha/datas/mod.GOOSEBERRY II
-1783a4d99c970ae06ea60cead0a9983b	0	221768	player+silence	libopenmpt	Generic ProTracker or compatible	4	236044	54814a0f	c1d23f89	Polski_Aminet/Piotr_Kazimierczak/modecontrol.lha/mod.modecontrol
+17bab7e35eec0a93af42dd349bb441dd	1	56424	player	uade	Protracker	0	12666	3de38fb3	9b1c5b50	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.intro #4
+17c957305d1fade9fec82d12f3e2e5c8	1	212557	player	uade	Protracker	0	59816	7c0dc5af	8570891d	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.orchestral2
 19371e896bcf74dc3c9824ce6d2436d2	1	199355	player	st3play	Scream Tracker 3.2x (SB)	16	114390	fc8df4eb	eae256d3	Polski_Aminet/Roy/untitled.lha/UNTITLED.S3M
+1b150d9c7dee31fa7f834ba669678016	0	128623	player	libxmp	ProPacker 2.1	4	134048	64c6cfdf	1cbcc92c	Ziny/FatAgnus/FatAgnus_13b.dms/modules/mod.voice from "rv-125".crm
+1b7b0eb89524f15162a05012ca576acf	1	196027	player+silence	uade	Protracker	0	130272	cf869af4	8e43f11d	Ziny/PoczytajMiMamo/PMM_8a.dms/modules/mod.rather-listenable
+1b9a8f8ceb2076531de3161e057bf42e	1	122836	player	uade	Protracker	0	152762	9bc8cbc4	31b8099f	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#1
+1bf7aad692a33f2a7ab78727bfd9f19d	1	184284	player+silence	uade	Protracker	0	238822	42bb8ddc	0c2ba2e4	Ziny/Legion/Legion_2.dms/Modules/mod.the_hollydays_ii.crm
+1c15e7fac5e33b1df9ee48368120eecf	1	210768	player	uade	Protracker	0	114146	575659ff	b32627d8	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.leatherwolf
 1d05d76c5228bbff7792e14c21bc2ab5	1	169093	player	uade	Protracker	0	58318	8c0a6522	178f321e	Ziny/Orgazm/Orgazm_1.lzx/Mods/mod.2Dlaczego
-1d0e350a04e6421030d87025f45127d5	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	4632	6e5ee108	a53c6f66	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.bth.cracktro2
 1daee89ef869eb3fb1a923d8c40a7338	1	723	player	uade	OctaMED MMD0	0	6938	3622abf2	f9bf56a7	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/end
-1e1d77f2d86444158ba3f6bf6e7519db	0	182784	player+silence	libopenmpt	Generic ProTracker or compatible	4	85488	ac35e6f3	3be2ca2b	Ziny/FatAgnus/FatAgnus_11b.dms/mod.anastasia
-1e31fdead9261e99230561fc09864fc2	0	122697	player	libopenmpt	Generic ProTracker or compatible	4	10368	1d5dcea2	8203368c	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.combat game
-1ef0e8a6dded687240b7a24b2143b366	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	4184	3af47b3a	40734993	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.rumleboksen II
-1f2adc33df7a63e444e0f0d0ffa14899	0	245120	player+silence	libopenmpt	Generic ProTracker or compatible	4	193984	f2320374	68329e19	MA_share/MAMOD.DMS/mod.jarre.again.pp
+1de0723ef6b31216b0a5a7dbb25adc95	0	165114	player	libxmp	The Player 6.0a	4	12848	1466ace4	0f110382	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.inception
+1ecbc6db2d86ea5880b1608353e129c8	1	176769	player	uade	Protracker	0	102584	d5ac7e4d	25392b5e	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/High_tension
+1f181e8947b6c0c2bc81f24ff821cff4	1	230541	player	uade	Protracker	0	131438	011e6ec1	ec30d325	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#2
 1f323f0e3fb3459aab13f24452b9b10e	1	122997	player	uade	Soundtracker II (15 instr.)	0	72064	0c6679a1	84e671a8	C&A_PD/DyskiPD/C&A_PD2.DMS/Pipeline_II/Pipeline_II.Extras.LHA/Pipeline_II.extras/Data/Pipesong.MUS
-1fc8d10edd6e547bd24b5c6d99438edc	0	68517	player	libopenmpt	Generic ProTracker or compatible	4	13564	22afe554	7b895ba0	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.l'amour
+1f57a265020353758006633c5bd4d8ff	1	312988	player	uade	Protracker	0	144002	69611c50	6b179a08	Ziny/Silesia/Silesia_13.dms/SIL_MOD/1
+1fa04fc8df4b20fec62a6137046e4ca2	1	124206	player+silence	uade	Protracker	0	157952	65273aaf	6bed3b84	Ziny/Imazine/Imazine_1.dms/MODULES/mod.Ride In The Rain.pp
 200d23749ddacfa6c693b29b4c0e6cef	1	92272	player	uade	Protracker	0	51494	db413e15	18f551c7	Ziny/NextLife/NextLife_2.dms/Quis2
 20cf8f38a5be78776137193bdc68b28b	1	206589	player	uade	OctaMED MMD1	0	132822	c1d20081	73ca92d9	C&A_PD/ZestawyPD/Zestaw8/Z8_2.DMS/archiwa/OOZEAGA.LHA/Ooze/Sound/OozeTheme.mod
-21bfa7c1d93d235c3cea8d7573cb3429	0	199382	player	libopenmpt	Generic ProTracker or compatible	4	62272	c082565c	48e33ce6	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/0.
-228cf95727f0f5f00e931b686cd3b228	0	178933	player	libopenmpt	Generic ProTracker or compatible	4	41828	773ed3f9	7f559cf6	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.## thin agnus ##
-236e9a9af7221a875222f76d49bc7b6b	0	122836	player+silence	libopenmpt	Generic ProTracker or compatible	4	180016	91101332	187614d8	Ziny/PoczytajMiMamo/PMM_8a.dms/For_Miklesz!/mod.switchback.pp
-23e8e71583b566736ffe9981a6c703f0	0	72292	player	libopenmpt	Generic ProTracker or compatible	4	45708	106687c2	3a17faaf	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.ocean club
+20ec766cf0ef19a0a54a85b05ec7a3dd	1	206207	player	uade	Protracker	0	61918	6acd1822	f4e4d291	Ziny/Bigoz/Bigoz_11.dms/Modules/002
+2292a10de2d2a779becb98df7ba0491e	1	109895	player	uade	Protracker	0	74898	e325f222	f4343545	Ziny/NextLife/NextLife_5.dms/MOD./Q5
 242e3855e8935c806d82a5c913ed6911	1	9645	player	uade	Protracker compatible	0	28073	73d80d13	645ecdb0	Amiga_Play/Patches/AlienBreed3D_2_Patch/music/mod.welldone
-24688c06d9d2e0362377a54e3fae0732	0	214959	player	libopenmpt	Digi Booster 1.5	8	116080	dc2089ca	af586d7a	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/subway.DIGI
-249a09863cee1d3ab3c15373fbb8d612	0	440623	player	libopenmpt	Generic ProTracker or compatible	4	76916	236bd370	46bba7ba	Ziny/FatAgnus/FatAgnus_11b.dms/mod.unreal visions
-249a09863cee1d3ab3c15373fbb8d612	1	209607	player
-25680b4fae33c4e81eb0a7b15a4dce28	0	80519	player	libopenmpt	Generic ProTracker or compatible	4	42868	03e1507e	9951610a	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.the end.pp
-25ae247178d3839be659b51c5a1827d5	0	234854	player+silence	libopenmpt	Generic ProTracker or compatible	4	180420	34e52b2d	ac3423f0	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.WestHistory.xpk
-25ae247178d3839be659b51c5a1827d5	0	234854	player+silence	libopenmpt	Generic ProTracker or compatible	4	180420	34e52b2d	ac3423f0	Ziny/Imazine/Imazine4/MODULES/mod.WestHistory.xpk
-25e9314a9fc5f44effe3641e9efda611	0	88348	player	libopenmpt	Generic ProTracker or compatible	4	2816	2553f8d3	59636ed1	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.wizardry
+244209a4c3709275a53bf2deaeee7092	1	146340	player+silence	uade	Protracker	0	75702	2eb41bd6	82025964	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.why?.pp
+25656ec13495a11a99668c33f70a826f	1	130512	player	uade	Protracker	0	147708	a8429122	0564d205	Ziny/Barbapapa/BP_3.dms/modules/mod.3
+264f88fc60f9600a5cddc5496d3b88d1	1	19913	player	uade	Protracker	0	13740	17b4bd64	39a4af29	Ziny/PoczytajMiMamo/PMM_6.dms/modules/Articles/mod.## chipek test ##
 26a3fa496b677523454ebf3c0c0e462c	1	34923	player	uade	Protracker	0	68978	9b1bd1cb	ad2db627	Amiga_Play/DEMO/BlackViper/Modules/mod.startsequence
 27d1c7916c66515e66b0b1193449be38	0	145709	loop	uade	MusiclineEditor	0	27138	bbae12d8	a1334264	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.OctaGroove
 27d1c7916c66515e66b0b1193449be38	1	145707	loop
-289bef4a69b2b79640a9354819591d10	0	170337	player	libopenmpt	Generic ProTracker or compatible	4	126204	433c0286	646559e5	Polski_Aminet/Piotr_Kazimierczak/Ravemix.lha/mod.ravemix
 28d3dd2265b8d5ae9266df580ad93edd	1	276597	player	uade	Protracker	0	160682	c157f396	85fef7a2	C&A_PD/ZestawyPD/Zestaw8/Z8_2.DMS/Concentration
-2b15e740f2b9faf35586c59b8510c81f	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	3592	a6493b5c	80f0a9af	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune5
-2b15e740f2b9faf35586c59b8510c81f	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	3592	a6493b5c	80f0a9af	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune5
-2baffa92365aa340fe09e66ee0057c32	0	314950	player	libopenmpt	Generic ProTracker or compatible	4	116576	71cd2f36	c3775183	Ziny/NextLife/NextLife_5.dms/MOD./MN
-2c868d998f70dd8fa5ccceb3d21f560b	0	123908	player+silence	libopenmpt	Generic ProTracker or compatible	4	107324	2632d655	7fa183af	Ziny/Imazine/Imazine_1.dms/MODULES/mod.Ride In The Rain.pp
+29afe3357fa42b53b839e39785fab975	1	32110	player	uade	Protracker	0	17490	adc46258	e8623bcd	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.Packmusica
+29cad6fb79a9932e536923d7f41f2b78	1	204197	player	uade	Protracker	0	308276	50f1f335	a1726d96	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.SmallVillage.pp
+2aab0e2beb9b1a756435b56069dfe9fd	1	46216	player	uade	Protracker	0	27764	a177bc37	6fe62d3c	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.<< street tune 1 >>
+2b55720bf005ab80da4b9f6990dc7774	1	130882	player+silence	uade	Protracker	0	204024	35de943d	641a10ed	Ziny/Silesia/Silesia_10.dms/SIL_MOD/1
+2dd918638763acd556bdc60a2250b9b4	1	243952	player+silence	uade	Protracker	0	144442	aeff4955	b3685648	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.moon_eye-BFA.pp
+2dea3e99387efa938d9ed946756b41da	1	160131	player	uade	Protracker	0	41670	15004e42	839ffe37	Ziny/Barbapapa/BP_4.dms/muzyka4
 2e11c34b800cee11140f077d36cfbe1b	0	53651	player	uade	SoundMon 2.0	0	3616	5eb82737	25554a35	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/CommandoHigh.pmc
 2e38288496b19401c2c806aeb3361cfd	1	188283	player	uade	Protracker	0	216234	8ded18f3	ead67ce0	Polski_Aminet/Axel_D/mind_scan.lha/mod.mind scanning
-2f7c06f895fd75335cc527ed397cf259	0	76685	player	libopenmpt	Generic ProTracker or compatible	4	41788	7c9cb01e	30de4b35	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.ciemniejsze siury.pp
-304a351f85eedf07c73879733111811c	0	176377	player	libopenmpt	Generic ProTracker or compatible	4	69752	706e1712	8e16038a	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/High_tension
-3114f0faea179c20acb7b880f9120854	0	197096	player+silence	libopenmpt	Generic ProTracker or compatible	4	87728	3bf0eb77	11994da1	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.psychoza
+2e3cc9aa580b870611b33368f3a9fa25	1	183480	player	uade	Protracker	0	29512	7878a5f5	0e7d6cf9	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.turrigol
+2e45b7f680e2eed2cfde363b541bbfa2	1	328460	player	uade	Protracker	0	188002	89f1bbbc	9389ff37	Ziny/PmM2/PMM2/Modules/mod.MerryChristmas
+2e45b7f680e2eed2cfde363b541bbfa2	1	328460	player	uade	Protracker	0	188002	89f1bbbc	9389ff37	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.MerryChristmas
+2f8d388a3846e08777ea6c9274be75ec	1	102581	player	uade	Protracker	0	131444	21c5830a	aadfcbd9	Ziny/ZigZag/ZigZag_6a.dms/Megatracker_II/mod.megatracker1.pp
+2fb1056d0fff08b5d0519b2b65ad3ead	1	93800	player	uade	Protracker	0	88136	1daaad9b	1ed54474	Ziny/BrainDegenerator/BD_4.dms/Muzyka/physicalcompo
+305d9e154d1f59207a5424f4a296741b	1	188403	player	uade	Protracker	0	101304	470ccc98	1adea3c0	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.touch
+305d9e154d1f59207a5424f4a296741b	2	112628	player
+305d9e154d1f59207a5424f4a296741b	3	192141	player
+309d31c62c0bbd0e87cd6a923166f367	1	96492	player	uade	Protracker	0	121464	aa1ae25d	98c37bdd	MA_share/MAMOD.DMS/mod.meeting.pp
 3218f016f81826eafa2d32dd7bda5419	1	133747	player	uade	OctaMED MMD0	0	189860	931af7e6	3dd7cc04	Amiga_Play/DEMO-DMS/HarrysBalloons.dms/Sonix/BalloonTheme.sng
-321e0aa5425ca4a0e38e5016bdf4c588	0	53679	player	libopenmpt	Generic ProTracker or compatible	4	28196	7aec4e87	41f373ed	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.palle's theme2
-3229a159b5fd5fe77b9a65cfc8e6f99f	0	223267	player	libopenmpt	Generic ProTracker or compatible	4	105480	7c1554a9	3f837e4f	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.psychodelic-XTD.pp
 32305ec4cd4a8cc4b0c5305278180499	1	201726	player	uade	Protracker	0	172882	1f384568	06f4eb9a	Ziny/Fastidium/Fastidium_1.dms/VICT/mod.2
+3310f69b9d8f9ac7b56b7ba218499ca9	1	179321	player	uade	Protracker	0	80136	de7a73f6	f1e048e1	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.## thin agnus ##
+337d9c48d215a68013e14aafc233f4a0	1	34682	player	uade	Protracker	0	10190	8bb99650	5bbc7fc8	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.one day in ohio
+33d0cf0c850ffe247fc185c57dfc075d	1	23168	player	uade	Protracker	0	9648	4c37c086	7dd1f38a	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune5
+33d0cf0c850ffe247fc185c57dfc075d	1	23168	player	uade	Protracker	0	9648	4c37c086	7dd1f38a	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune5
+33f0bfc8c8288a95f319ef137ef5a44c	1	184445	player	uade	Protracker	0	72544	c1c28ec6	8bb41b7c	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.chris.pp
+3414df902adb0a7ca19e3f210b264c8b	1	20938	player	uade	Protracker	0	10138	4e075615	2c0d6def	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/G.
+345caeca3921e2f096630ab85be12ef3	1	292934	player	uade	Protracker	0	114316	c814320c	2e8796c9	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.>$ lunatic 1 $<.pp
+346b4c1b5ae3eec9add33707a89d46e6	1	194693	player	uade	Protracker	0	122996	13bba6c2	342e9919	Ziny/Bigoz/Bigoz_10.dms/MODULES/001
 347483fd13d0cb30037ff499f5a758d0	1	225397	player	uade	Noisetracker 1.x	0	88284	55c9de2e	cc356837	C&A_PD/DyskiPD/C&A_PD31.DMS/DeLuxeGalaga/GALAGA.MUSIC
-3652f073d2743cc68d27a99a881c9e61	0	144604	player	libopenmpt	Generic ProTracker or compatible	4	65532	8c4e5c4f	c66b2842	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.** waiting **
+355a0325239a4dcca24c14ba7d6c4c7a	1	23168	player	uade	Protracker	0	14870	6f909bcf	32afdb91	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune4
+35f883a75c01c4f9f37dcb1bfff185b3	1	441410	player	uade	Protracker	0	131564	95247b1a	69200b51	Ziny/FatAgnus/FatAgnus_11b.dms/mod.unreal visions
 369fc54ac84381f56c36bbf8c5550cd7	1	32673	player	uade	OctaMED MMD0	0	44546	df3d1496	baf36887	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/hi
-3a57df55651ce34425110f44fb602b05	0	0	nosound	libopenmpt	Generic ProTracker or compatible	4	676	fa7e58de	3ffb4041	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</budzik/mod.tracker-budzik v1.0
-3a57df55651ce34425110f44fb602b05	1	0	nosound
-3a57df55651ce34425110f44fb602b05	10	912719	player
-3a57df55651ce34425110f44fb602b05	11	613165	player
-3a57df55651ce34425110f44fb602b05	12	313612	player
-3a57df55651ce34425110f44fb602b05	13	14059	player
-3a57df55651ce34425110f44fb602b05	2	0	nosound
-3a57df55651ce34425110f44fb602b05	3	0	nosound
-3a57df55651ce34425110f44fb602b05	4	0	nosound
-3a57df55651ce34425110f44fb602b05	5	2710040	player
-3a57df55651ce34425110f44fb602b05	6	2110933	player
-3a57df55651ce34425110f44fb602b05	7	1811379	player
-3a57df55651ce34425110f44fb602b05	8	1511826	player
-3a57df55651ce34425110f44fb602b05	9	1212272	player
-3aa5dd5caa0bf459153ab005c0ff3218	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	660	54bc7e46	44d5c5d7	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.diana_chip
-3ac451d2080731c6a45f986834886b31	0	205773	player	libopenmpt	Generic ProTracker or compatible	4	97492	473a1460	37f7d957	Ziny/Bumerang/Bumerang_5.lha/mod.Bumerang#5
-3bc0e8b2e305121511837f99b1a4c2c9	0	237525	player	libopenmpt	Generic ProTracker or compatible	4	109784	5a383290	4b43f052	Ziny/Rzeznia/Rzeznia_1a.dms/Data/mod.Green.pp
+37438e36321a0363af5d34fd408e5fdc	1	39726	player	uade	Protracker	0	12596	9b4808ef	a976ee09	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.only chip
+392e9bfd87e25b407ecbb331091eb84d	1	49311	player	uade	Protracker	0	14470	324edea2	41451a59	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.cometa
+3a1c421e41721c866ba57504a6f2dedb	0	179180	player	libxmp	ProPacker 2.1	4	56966	00bfe913	a469f89b	Ziny/FatAgnus/FatAgnus_13b.dms/modules/mod.shine in the darkness
+3a222b325737b253a74cbd5990143179	1	215149	player	uade	Protracker	0	63304	a1c72241	7b4c5722	Ziny/NextLife/NextLife_6.dms/MOD./Q2
 3c7b33ea8c535dc0f0ff7f674358bc71	0	293542	loop	uade	MusiclineEditor	0	46111	26a42b8f	d4bcea5c	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.Teresta
-3ce09c1be172646a038fdc0c3302cdc7	0	56182	player+silence	libopenmpt	Generic ProTracker or compatible	4	16892	8845ebe3	a831bb23	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.** doctor 2 **
+3ca8289df4c8b700dff47b03a8b91424	1	478290	player+silence	uade	Protracker (vblank)	0	171376	3c77440c	e302f9f3	Ziny/ZigZag/ZigZag_5.dms/ZZText/ZIGZAG1.MOD
+3ca8289df4c8b700dff47b03a8b91424	1	478290	player+silence	uade	Protracker (vblank)	0	171376	3c77440c	e302f9f3	Ziny/ZigZag/zigzag5/ZZText/ZIGZAG1.MOD
+3d080d8d8db6c4a5505d10f6421eb2cb	1	40429	player	uade	Protracker	0	13082	358599aa	7c01d612	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/F.      is w kurwe jeza!
 3d38a244936470def6f41c793a16f2e2	1	180125	player	uade	OctaMED MMD0	0	84050	bbbad0af	a6f2acba	Amiga_Play/DEMO-DMS/hattrick1.dms/Data/HatOngame.MED
 3d38c7ea81b509dbf1f035ee7100deda	1	101877	player	uade	Protracker	0	130560	5228d4ff	3f7fcaf5	Amiga_Play/DEMO-DMS/TileMove.dms/TileMoveDemo.LHA/TileMoveDEMO/SFX/InGame
 3d38c7ea81b509dbf1f035ee7100deda	2	76257	player
@@ -124,233 +126,283 @@
 3d38c7ea81b509dbf1f035ee7100deda	7	9183	player+silence
 3d38c7ea81b509dbf1f035ee7100deda	8	9082	player
 3d38c7ea81b509dbf1f035ee7100deda	9	23421	player+silence
-3e10c3c03d90daa8b879de7e8254a2dc	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	3336	f4bf6d2c	90655fa2	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.introsong4
+3db4aa2c4f182c97d971f9247f2f4f92	1	223729	player	uade	Protracker	0	155068	a255d058	c6203f29	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.psychodelic-XTD.pp
+3df4b48302459eb28bcd836bdd3b3c16	1	174880	player	uade	Protracker	0	108796	a3df2791	8975d62c	Ziny/NiezTejBeczki/NTB_8b.dms/NTB2/mod.lato funzinkow
 3e4b22c5c4774dadadaaf81db1e30992	1	172931	player	uade	Protracker	0	71778	46c18856	897d22a5	Ziny/AleJaja/AleJaja_1.dms/Moduly/mod.Jaguar_title
-3e4e294cc2c514c897e5587ddd534da7	0	383428	player	libopenmpt	Digi Booster 1.5	8	177664	07983dad	95c2836d	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/Aquarium.DIGI
 3f580601ec5516bd2518e14971cf18ed	1	0	nosound	uade	OctaMED MMD0	0	948	34627a1a	2c79a33d	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/led
-3ff9a7f6ee6ab9d35ad50e9caf2a8427	0	88228	player	libopenmpt	Generic ProTracker or compatible	4	201000	6f00cee5	4d7c33d6	Ziny/NiezTejBeczki/NTB_6plus.dms/NTB/mod.-pluskwa-
+3f5a5be1d96f87b419f2064c515c7ffd	1	69224	player	uade	Protracker	0	73536	278d4722	5f641357	Ziny/NiezTejBeczki/NTB_5a.dms/NTB/gznd2-dd
+3fa04dd1a39e05606ad5324cbfbc2360	1	52606	player	uade	Protracker	0	10124	cd3a3496	6e6d49cb	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.little feet
 402dfea1eaa2e487d8d16e2084cf1cff	1	44910	player	uade	Protracker	0	7130	a8450d96	f7f84ebf	Ziny/NiezTejBeczki/NTB_7plus.dms/>> BONUS TRACKS <</mod.$ potato chips $
 40c1a184ab16719ddf529f93c651f2c1	1	238197	player	uade	Protracker	0	133074	af58c284	9ce2201b	Ziny/Wstret/wstret2.lha/datas/mod.SPACE III
 418b6f51087846270fffa71fc5cb6ad2	1	166048	player+silence	uade	OctaMED MMD0	0	107826	556d4260	e4fc381b	Amiga_Play/DEMO/WhalesVoyage2/RacingManiacs/intro.song
-4271d4eb5c82382944f58c33c7fd913e	0	201078	player+silence	libopenmpt	Generic ProTracker or compatible	4	17116	8f06f0b1	ab4dddee	Ziny/NiezTejBeczki/NTB_5a.dms/NTB/gznd-dd
+419f1a55da5b7e228c8fc4463ae715c2	0	140157	player	libxmp	ProPacker 2.1	4	152164	1f322368	e6b9b78a	Ziny/XMag/XMag_5.dms/mod.ide do dombia
+41d87e39d7d43711f73be1fb1b954627	1	290040	player	uade	Protracker	0	59506	24044526	345bac17	Ziny/PoczytajMiMamo/PMM_8a.dms/modules/mod.synthetic_dick
 42db31baf80a5619c713cefed0969e07	1	152435	player	uade	Protracker	0	64476	f17f21d5	d81df382	Ziny/NextLife/NextLife_2.dms/Quis1
+43bd7b24e2196670f6528bb101b1ddb9	1	0	nosound	uade	Protracker	0	3484	77532e2c	c647471f	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</budzik/mod.tracker-budzik v1.0
 44081a1ab1fc3d032eeeb4585e304ad1	1	175079	player	ft2play	Fasttracker	8	394348	f5c22a9b	95f01c0c	Polski_Aminet/MaXym/LiverLandou.lha/take.Liver Landau
 4479a4a5768056052459f5efc8fb2020	1	294521	player	uade	Protracker	0	141610	a04e2478	0967791a	Polski_Aminet/Axel_D/my_angel.lha/mod.my_angel
+4479a4a5768056052459f5efc8fb2020	1	294521	player	uade	Protracker	0	141610	a04e2478	0967791a	Ziny/Silesia/Silesia_14.dms/SIL_MOD/1
+44d8524b6509cd09c1d7b60eb1e95c6a	1	155971	player	uade	Protracker	0	191302	939c7aff	8ffd9c16	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.everything_we_like
 45146c8ac664640fea100d29a538e69f	1	54375	player	uade	OctaMED MMD0	0	54086	2bb02f71	528885c7	C&A_PD/ZestawyPD/Zestaw9/Z9_2.DMS/Static/Static04.mod
-4549b5ab41928f4d58aa80edba06b47a	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	964	a554dd94	368e411b	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## microtune 3 ##
-45d0f7b021b08c1ca509cf35891225a5	0	388511	player	libopenmpt	Generic ProTracker or compatible	4	46368	4483f9a5	08fc1dc1	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.timer-destruction.pp
+459f50df974dbb5ea5ff9687d86476bf	1	143653	player	uade	Protracker	0	100006	ec128409	81aa3419	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.get higher
 46d87ee1b33dd005d59b12f096a78889	0	23168	player	uade	Amos Music Bank	0	6232	f8b0a7c6	fbb7032a	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/B-32
-48c763f60be06fe474f27162afa42c62	0	84354	player	libopenmpt	Generic ProTracker or compatible	4	59444	775fadcc	db2f8465	Ziny/Imazine/Imazine_1.dms/MODULES/mod.Zulu Gula.pp
-4a989f2fb3268c04c439234e8b3d3608	0	40899	player	libopenmpt	Generic ProTracker or compatible	4	31848	0495883e	052c4f12	Ziny/NextLife/NextLife_5.dms/MOD./Q2
 4ad0120cdf9434d189b67f0674761ea4	1	249731	player	uade	Protracker	0	401188	eedeba68	ba2640c8	Polski_Aminet/Grzegorz_Salaga/ygtrance.lha/mod.YG-Trance
-4cba357780099a30b950693bb3434972	0	79441	player	libopenmpt	Generic ProTracker or compatible	4	13472	b1e1ab19	e40e4c12	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.playingw
+4b103ced9b716a87f6b96ab267948585	1	304769	player	uade	Protracker	0	174346	0a3c4d64	8da55ff8	Polski_Aminet/Piotr_Kazimierczak/Zapomnienie.lha/mod.zapomnienie
+4b6bdd6c48e94fc0b105da2193150ce4	1	383911	player+silence	uade	Protracker	0	149224	61bef866	c837ec19	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.1.pp
+4bbabfe6394c6778d4c28c51ea2ec21d	1	487494	player+silence	uade	Protracker compatible	0	129302	5dddd767	e837f0b5	Ziny/Previews/Scream.dms/mod.4everyou.xpk
 4d2772d9f7c81654535e420a46f2bde4	1	276203	player+volume	uade	Protracker	0	128714	e2e0424a	886df1db	Ziny/Barbapapa/BP_2.dms/modules/mod.1
 4d5baade182c081861eab2d4dd0ee518	0	215028	player	libxmp	ProPacker 2.1	4	146114	0831cd97	8abd8136	Ziny/XMag/XMag_3.dms/xmagdatas/datas1.dat
-4d6b5d47b8281d9258c69df342b50b72	0	194729	player	libopenmpt	Generic ProTracker or compatible	4	92272	2a3e87e4	5de03143	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.invazja swietych
-4ed5124383d056cbab23c0238fa9d940	0	69017	player	libopenmpt	Generic ProTracker or compatible	4	48720	2e5f43d3	6887064b	Ziny/NiezTejBeczki/NTB_5a.dms/NTB/gznd2-dd
 4f5b801734828d6eee8a22fe7534f048	1	166521	player	uade	Protracker	0	131076	2bc61373	6e56a161	C&A_PD/ZestawyPD/Zestaw14/Z14_2.DMS/modules/mod.on edge of abyss
 4fdefeb4b876dc5d1efec21174900be6	0	7816	player	uade	Amos Music Bank	0	5622	183df2b5	d49a26e7	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/B-33
-514ba30376485a50ec7a96a85a560fc7	0	327223	player+silence	libopenmpt	Generic ProTracker or compatible	4	137184	7ce25537	538fdb18	Ziny/PmM2/PMM2/Modules/mod.MerryChristmas
-514ba30376485a50ec7a96a85a560fc7	0	327223	player+silence	libopenmpt	Generic ProTracker or compatible	4	137184	7ce25537	538fdb18	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.MerryChristmas
+5067f4ed83f555889dd16e386b9fed1e	1	222330	player+silence	uade	Protracker	0	350768	7031daec	be1f1e6f	Polski_Aminet/Piotr_Kazimierczak/modecontrol.lha/mod.modecontrol
+50c80ea94bdb74dada5bce3a56660583	1	3355	player	uade	Protracker	0	2410	8f82ec21	2c5498a0	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/J.
+515640bc55f540c26a4ad1f91d7d9784	1	57489	player	uade	Protracker	0	49558	1435a9ed	b7dfa648	Ziny/ZigZag/ZigZag_4.dms/ZZText/ZIGZAG2.MOD
 51c7510d6b7ce56eb39cec245d537e18	1	243341	player	uade	Protracker	0	361678	ebb72252	77fcc7f3	Polski_Aminet/Axel_D/passiveness.lha/mod.passiveness
+522dc8c6ba9d4771fd97153abe7636b6	1	276572	player+silence	uade	Protracker	0	53866	e9475345	7fbeaf2a	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.## suggestion ##
+530c79c9d0f75c00b20500437a484cb5	1	101234	player	uade	P50A - P60A - P61A	0	13872	e4ea626e	45afb57b	Ziny/FatAgnus/FatAgnus_19a.dms/Modules/P61.sunday.crm
+5335b525c31f293f43ddc2353c99e9df	1	160955	player	uade	Protracker	0	279980	e3461c55	52c2fc43	MA_share/MAMOD.DMS/mod.return.to.alaska.pp
 53bf6e1784400c7f4c6e2d0ec2c72f1e	1	143493	player	uade	Protracker	0	75702	58e4bf8f	c51338fc	Ziny/H...za/H..za_1.dms/Muzyka/mod.scorpik
-53d21d1af3171689beb7657a01689b9b	0	212741	player+volume	libopenmpt	Generic ProTracker or compatible	4	25864	4397e21f	8a82ae25	Ziny/NiezTejBeczki/NTB_2.dms/modules/mod.strack
-54c2a5b074aa6ce6fcf4914776b06da7	0	69017	player	libopenmpt	Generic ProTracker or compatible	4	15796	59253258	f575a3a6	Ziny/Kraweznik/Kraweznik_2.dms/Kranik#2/Mods/mod3
+54f7c3168e6d3a7c99c6b05e82d49d2c	1	261104	player	uade	Protracker	0	162874	5b99cfc2	21c0d393	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.MysticLights.xpk
+54f7c3168e6d3a7c99c6b05e82d49d2c	1	261104	player	uade	Protracker	0	162874	5b99cfc2	21c0d393	Ziny/Imazine/Imazine4/MODULES/mod.MysticLights.xpk
+552c755f049af733341ce8e53a71ef2d	0	195477	player	libxmp	ProPacker 2.1	4	111174	52fb62fa	f3ee258b	Ziny/FatAgnus/FatAgnus_15a.dms/mod.blade walker 3
+557a4ac529306e92ba7ee4f4befab1ab	1	367343	player+silence	uade	Protracker	0	145002	c08d3d1b	531ace97	Ziny/Bigoz/Bigoz_9.dms/MODULES/001.pp
 5609053b16d5f0f11b8c26f593044df3	1	176608	player	uade	OctaMED MMD1	0	138106	ac68ee72	b28e9e2e	Ziny/BrainDegenerator/BD_8.dms/Muzyka/2
-561a72872fdd1b7563360c5aa174e224	0	137511	player+silence	libopenmpt	Generic ProTracker or compatible	4	69468	0e1d18d6	4f6e8684	Ziny/Jestem/mod.Blood & Fear vol.4.pp
+563862543b2c3bc339b8530580765e0b	1	455475	player+silence	uade	Protracker	0	122680	82221c3f	338fad68	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.sequence
 5730c6fb874b385ea31bfc99124ee74d	1	39244	player	uade	Protracker	0	66836	e5d2978d	7e00afac	Amiga_Play/DEMO/BlackViper/Modules/mod.reikontinent
+57871a5a187b3159807bd659ce1cdae1	1	84616	player	uade	Protracker	0	74282	387af8d2	c79479b9	Ziny/Silesia/Silesia_11.dms/SIL_MOD/1
+57ce3bab7356cb66dcc29da8962e2390	1	30824	player	uade	Protracker	0	11416	d262c0ba	52388647	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.rumleboksen II
 57f5a361a6ecd2ae7f243cdcbc20cdd6	1	39002	player	uade	Protracker	0	138838	910541a4	74dae585	Amiga_Play/DEMO-DMS/TileMove.dms/TileMoveDemo.LHA/TileMoveDEMO/SFX/HiMenu
 57f5a361a6ecd2ae7f243cdcbc20cdd6	2	38520	player
 5809e744216e925119c68d2a684529a4	1	107645	player	uade	Protracker	0	73180	5ab78609	a6815a13	Ziny/Testament/Testament_1.dms/Modules/mod.gazetka#1
-58173ee2ef783af1707c58d900b4e774	0	145702	player	libopenmpt	Generic ProTracker or compatible	4	47568	3925a66d	c6c4c817	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.for sylvia
+581709b4e8415dfb482f575702515369	1	235645	player	uade	Protracker	0	109546	1e256eb9	6255fcac	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.>$ ascension $<.pp
+5846604a42e4ab79f980a33af7de069d	1	50034	player	uade	Protracker	0	28386	a81713d5	97c5710c	Ziny/BrainDegenerator/BD_4.dms/Muzyka/economy15
 58688c79e62cdc5aed1caede89a569bc	1	124363	player	uade	OctaMED MMD0	0	51156	9c58f26c	f22eb730	Amiga_Play/DEMO-DMS/Lemmings2.dms/Polar/Tune
-599b71b2cb62d9a20acb7e35cf9c5ed1	0	210246	player	libopenmpt	Scream Tracker	4	61248	7cafb259	c289770e	Ziny/Izviestia/Izviestia_10.lha/Izviestia_10/Music/001
-5b68b16182dc54ffe39d2e2dd96f404f	0	166631	player	libopenmpt	Generic ProTracker or compatible	4	58104	bfd0a562	637d8b14	Ziny/NextLife/NextLife_5.dms/MOD./Q4
+58a8ca6f66f835229c29ace3aec31536	1	316344	player	uade	Protracker compatible	0	103986	b3f57a9f	3c7fc91b	Ziny/NextLife/NextLife_3.dms/mod.quis1
+58a96337832a3a2afcf6d67f2fa9dcb4	1	222845	player	uade	Protracker	0	56890	31f7840d	5069e4ef	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.zackteam.pp
+58fb1dfe47e1cca107959bc515ab39dd	1	10368	player	uade	Protracker	0	3160	643440a5	e44f69f3	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.amiga_forever
+59684f1a1a40c3c2aa018566abc7fe17	1	56402	player+silence	uade	Protracker	0	11746	11e36098	93b5b98f	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune15
+59684f1a1a40c3c2aa018566abc7fe17	1	56402	player+silence	uade	Protracker	0	11746	11e36098	93b5b98f	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune15
+598e696c2b294d40766ffa01350e08b4	1	150365	player	uade	Protracker	0	63136	676ee5b9	92dab968	Ziny/Coma/COMA2.DMS/cOmA#2/mSx/2
+59b58c76873999b83055a32496e38ae4	1	92272	player	uade	Protracker	0	159272	173638e9	0f4c8211	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.stans_revenge.pp
+59baeeb7ef3e109f37562a9b7430f4d7	1	159407	player	uade	Protracker	0	155630	ed077db9	91631d7f	Ziny/NiezTejBeczki/NTB_8a.dms/NTB/mod.## severe ##
+5a8ff001db4de533c5811d04bb66c04e	1	215149	player	uade	Protracker	0	78974	a069f134	c8ff5dfb	Ziny/Ala_Ma_Kota/AMK_3a.DMS/Mordki.music
+5c49bbc75e0a4cec9e6a4ed32f22657f	1	84616	player	uade	Protracker	0	81664	2aadfc5e	a30547a4	Ziny/Imazine/Imazine_1.dms/MODULES/mod.Zulu Gula.pp
 5c562d338f65509155df2ecf89f48ce3	0	303718	player+silence	uade	JamCracker	0	50954	859298e7	03458c2f	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/Crusaders.pmc
-5cadba3b1ccc06059df421e8227daf4c	0	161039	player	libopenmpt	Startrekker	4	44212	0e03a3c7	ddda9a05	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.3.pp
 5cbf188795a44ca977191c3f36ae2c0d	1	13744	player	uade	Protracker	0	57842	0573d8d4	696642ca	Amiga_Play/DEMO/BigRedAdventure/PART1/MSC/SHOW.MSC
+5d25b7952de11b4f98d1233f1a89f17e	1	23168	player	uade	Protracker	0	8530	d0d5374f	c7033339	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.bth.cracktro2
 5d421bc9ae713258aa64d1de7c691a45	1	321	player	uade	OctaMED MMD0	0	4990	0b386554	193a6c0c	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/set
-5d58b36c36bfb2039a70329e05f8be84	0	15337	player	libopenmpt	Generic ProTracker or compatible	4	6532	a8fe3d0c	b0aa5eab	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.ntb-freechip
-5db34b7e5d31062d589d3e9f267ed949	0	49845	player	libopenmpt	Generic ProTracker or compatible	4	19120	dcc9dcf6	6d6c56dc	Ziny/BrainDegenerator/BD_4.dms/Muzyka/economy15
-5eabe3ea3084bc9b0428195e259dea5c	0	127419	player	libopenmpt	Generic ProTracker or compatible	4	59612	667c0c62	e02fe561	Ziny/Legion/Legion_4a.dms/mod. >>>100lec<<<.pp
-5eabe3ea3084bc9b0428195e259dea5c	1	0	nosound
+5d74e88a78e83c9ba56978277f1f27df	1	53872	player	uade	Protracker	0	12332	8164b494	e73ddf7c	Ziny/PoczytajMiMamo/PMM_6.dms/modules/ChipCompo/mod.4th-moonlight reflexion
+5da9b787489b4648a33b5799ce102e18	0	349974	silence	uade	DIGI Booster V1.6	0	375792	48b60345	7801c6d4	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/...this is no house....DIGI
 5eb52865af5a98351d43fe4c6eb5448f	1	99968	player	uade	Startrekker (4ch)	0	64858	56afdae8	99736e37	Amiga_Play/DEMO/KargonDemo/MusicTitle.dat
-6017029ae2b97abcc1fdb0f63285bcef	0	156786	player	libopenmpt	Generic ProTracker or compatible	4	121984	db30df8c	a564213f	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Eyes_of_the_Lies_1
-60e507383b5a0916f2bf776d7e129ce9	0	78612	player+silence	libopenmpt	Startrekker	4	7936	de250fa1	cd4cfd27	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.## syntherella 5 ##
-6104a8dbee2df71da6684f15453dd848	0	311293	player+silence	libopenmpt	Generic ProTracker or compatible	4	167352	be8f47f4	97022785	Ziny/PmM2/PMM2/Modules/mod.Discovery
-6104a8dbee2df71da6684f15453dd848	0	311293	player+silence	libopenmpt	Generic ProTracker or compatible	4	167352	be8f47f4	97022785	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.Discovery
-62784b97904f75917370eba422dad17e	0	40259	player	libopenmpt	Generic ProTracker or compatible	4	5440	dae0ef2a	3e4fd3df	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/F.      is w kurwe jeza!
-62fa4d244013484314c20b2c3a769f44	0	181085	player+silence	libopenmpt	Generic ProTracker or compatible	4	113528	01d16726	30154b2f	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.nagie wkretaki-JARKO
+5ed8f3e365a7de166342affe3b0ca303	1	153721	player	uade	Protracker	0	147848	8c0ed004	ae33a2cb	Ziny/PoczytajMiMamo/PMM_5.dms/modules/mod.the_secret_mind.pp
+5f2b5a2f6ccfb96964f2221829f53042	1	15472	player	uade	Protracker	0	7290	c0c9d85d	b39a426e	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.kukko
+6152de3e8bdb07b53f122765f03a4d94	1	199797	player	uade	Protracker	0	94710	4de97874	61947d85	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/0.
+617fc83d352935659c27c94cb4c7360e	1	20114	player	uade	Protracker	0	18278	7d7e22d8	6309322f	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.X-MAS LULEZ
+61dc1b6dd6b48228353be15f67c87d2f	1	153721	player	uade	Protracker	0	35514	abba59ea	2418c46e	Ziny/Coma/Coma_1.dms/Coma#1-DanE/msx/2
 630fb76f024bb568aa1a014441e10d67	0	23148	player	uade	Amos Music Bank	0	23450	13841e5f	4f20d48e	Amiga_Play/DEMO-DMS/HillseaLido.dms/-V-/M0
-631f990ca9cdf5b5183177294d90cdf6	0	38342	player	libopenmpt	Generic ProTracker or compatible	4	2216	b0f25e14	aca0bde3	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.ding
-6511df616781b91be42b2b8b87223477	0	170087	player	libopenmpt	Generic ProTracker or compatible	4	52968	eacbb2c1	a0def974	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.IlTramontoDelSole.xpk
-6511df616781b91be42b2b8b87223477	0	170087	player	libopenmpt	Generic ProTracker or compatible	4	52968	eacbb2c1	a0def974	Ziny/Imazine/Imazine4/MODULES/mod.IlTramontoDelSole.xpk
+63c3b5cd6e83f27fc22525e4af6009ee	1	294524	player+volume	uade	Protracker	0	88836	960b27b0	2da4fa96	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.desistance-XTD.pp
+64b1a1de4c1084a975850d28cc05efca	0	254915	player	libxmp	ProPacker 2.1	4	128464	310b474b	aeb5da9c	Ziny/FatAgnus/FatAgnus_13b.dms/modules/mod.malutkie smutki
+64f4066ec1f7092e7b3a1ab2572f62f0	1	108971	player	uade	Protracker	0	237414	02ad13f1	43865b5c	MA_share/MAMOD.DMS/mod.black.sacrifice.pp
 65272342818f1687038932b53e33df49	1	84717	player	uade	OctaMED MMD1	0	261368	f1b6f0ad	1267ebe6	C&A_PD/ZestawyPD/Zestaw2/Z2_3.DMS/Default.WINM
 65272342818f1687038932b53e33df49	1	84717	player	uade	OctaMED MMD1	0	261368	f1b6f0ad	1267ebe6	C&A_PD/ZestawyPD/Zestaw3/Z3_3.DMS/Default.WINM
+658f1c2388b3ca90800554e3b34c184d	0	88475	player	libxmp	The Player 6.0a	4	3602	5c467974	d1af39c9	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.wizardry
 65b4aeae988232f8b73f4a3a50c0b1a7	1	207493	player	uade	Protracker	0	62150	5f85edcb	082ba74a	Ziny/Karmelia/Karmelia_1.dms/text/mod.lukas ukw 9v2
 65d7187277128c1ec51d1c6ed7a8eba6	1	61207	player	uade	Protracker	0	51048	0a5e8e78	21a07b6c	Amiga_Play/DEMO/BlackViper/Modules/mod.shop
 667a2d7de38704dcd0ca933270828f12	0	247681	player	uade	Amos Music Bank	0	176416	42afba12	51519b0d	Ziny/Prawda/Prawda_1.dms/modules/take my mind
-66d05c5cfcead6cb960c29200fd29cb5	0	109596	player	libopenmpt	Generic ProTracker or compatible	4	43736	89dd6114	d966fa57	Ziny/NextLife/NextLife_5.dms/MOD./Q5
-675aa495e9d0846844bb40689b151a44	0	383213	player+silence	libopenmpt	Generic ProTracker or compatible	4	72260	8c1ce1fa	ed36ea99	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.1.pp
+66c49acfab485bce97b58974295cde7f	1	358441	player	uade	Protracker	0	206510	ac14ee91	eb2f2173	Ziny/PoczytajMiMamo/PMM_4.dms/modules/mod.industrial_device
+670817b655624c73d68a6a51c528a4ff	1	88595	player	uade	Noisetracker 1.x	0	8466	4e489873	ae688b7b	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.wizardry
+672a881ee50444ecea12a6c093b48b1b	0	188142	player	libxmp	NoisePacker v3	4	70404	4f0bdb21	2b520618	Ziny/Ala_Ma_Kota/AMK_3a.DMS/AMK.music
 67dc2ff1543c1921b57a4bacc467db5a	1	92272	player	uade	Protracker	0	9072	9d3bab2e	e03ada5b	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.exterminator
-6a8484f5e5603bc40ea3a99cc9ff9c5f	0	135478	player	libopenmpt	Generic ProTracker or compatible	4	108908	22ac5984	0cd6a584	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.heavy.pp
-6b130d98a21aeb193228a67a9fa3f2ce	0	214719	player	libopenmpt	Generic ProTracker or compatible	4	48236	7a571fb1	8d01af2d	Ziny/Ala_Ma_Kota/AMK_3a.DMS/Mordki.music
-6bf0553c49906e4b37fefab89131a37f	0	7668	player	libopenmpt	Generic ProTracker or compatible	4	4236	e5701565	b9162607	Ziny/NiezTejBeczki/NTB_7plus.dms/>> BONUS TRACKS <</mod.ballerina
-6cdeee46f60babe325a2bb6d1cde6a06	0	40259	player	libopenmpt	Generic ProTracker or compatible	4	4016	63e28f86	18f7245e	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.jazztarnia
-6ce6bf124b562534ccc700af372d428c	0	184045	player	libopenmpt	Generic ProTracker or compatible	4	48244	d0beaa4f	43014d49	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.chris.pp
-6d781391b84fda312d6dad928814eab5	0	210749	player+silence	libopenmpt	Generic ProTracker or compatible	4	41764	afe244c6	c99ecafe	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Im_a_junk
+680eeb7c19efbd5f49f4415b94d02e64	1	82044	player	uade	Protracker	0	60696	752fc7e1	adcd20df	Ziny/PmM2/PMM2/Modules/mod.delight_part_i
+680eeb7c19efbd5f49f4415b94d02e64	1	82044	player	uade	Protracker	0	60696	752fc7e1	adcd20df	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.delight_part_i
+694bd12ef226550084e89979b95aaf77	1	7796	player	uade	Protracker compatible	0	6352	92be778a	d8a63697	Ziny/NiezTejBeczki/NTB_7plus.dms/>> BONUS TRACKS <</mod.ballerina
+69c427b5758128987f88ef0e5ae895f0	1	225397	player	uade	Protracker	0	192700	dccf1478	1bb9346e	MA_share/MAMOD.DMS/mod.lifetime.pp
+6a7508af30552acb180cf8a65bd4f450	1	76920	player	uade	Protracker	0	63482	c02c9c00	99d849ad	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.ciemniejsze siury.pp
+6b5519eaeb199ab51aed6b9daa845c86	1	406111	player+volume	uade	Protracker	0	37208	cc78dc4a	ff943220	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.last ninja 2
+6cb9a51448629f6b0cd5bb7bc19cac88	1	61890	player	uade	Protracker	0	30308	59ce82bd	0d796457	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.intro_live
+6d0841b7f153a151b32f27e4530ce60c	1	248030	player+silence	uade	Protracker	0	141702	7d320c4f	1c1a8913	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.canal green
+6d2c5cd60f013890393ab1d6a4fcf32b	1	183176	player+silence	uade	Protracker	0	114602	f7ae1355	c80fffda	Ziny/FatAgnus/FatAgnus_11b.dms/mod.anastasia
+6d87dfec61bed6c6f7385f2895818ced	1	66512	player	uade	Protracker	0	12282	653200d5	4e462d69	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.synthmania 1
 6d8f34a9887aa91811c05fafdc9f696d	1	247641	player	uade	OctaMED MMD1	0	103876	bad7c8d7	9a10e723	C&A_PD/DyskiPD/C&A_PD26.DMS/MB_Music/Title.tune
-6e2452f52bdbf63545f967a2afde9ffd	0	63105	player	libopenmpt	Generic ProTracker or compatible	4	51624	61312759	624f97c8	Ziny/Imazine/Imazine_1.dms/MODULES/mod.STAN 92 Trumpet.pp
-6e8f8a67548397028375e42c62175f78	0	62626	player	libopenmpt	Generic ProTracker or compatible	4	12500	c33da741	faa9a080	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.short
+6e7196ef47c1419365d13f8ec55d069b	1	58614	player	uade	Protracker	0	10714	010e6e83	b95bca64	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.HappinessFixed
+6ef5392ca912477f2c07be6db789b749	0	215028	player	libxmp	ProPacker 2.1	4	100616	85413a3f	b1b4a4eb	Ziny/FatAgnus/FatAgnus_14a.dms/Modules/mod.welcome
+6f072da3938d3b719b74f6c748ae46ca	1	71816	player	uade	Protracker	0	52894	4d36be6e	ebcfb131	Ziny/Orgazm/Orgazm_2a.dms/[-bONUS-]/mod.stupid and ugly.pp
+6f0825cbaece0aefff39c62eaf0d556c	1	135797	player	uade	Noisetracker 1.x	0	140084	7ab29560	423f8ba6	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.heavy.pp
 6f383247860b30526e371eef3667395c	1	44046	player	uade	OctaMED MMD0	0	101938	9c6391b5	222ee665	Amiga_Play/DEMO-DMS/Samba1.dms/sound/med.SambaStart
-7134dfe16a92b562f46119b9da2040b2	0	20449	player	libopenmpt	Generic ProTracker or compatible	4	5384	86397ef3	80f25cf7	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.chipmunks
+6f5204312d7480a3f9180d5559ed19cc	0	441551	player	libxmp	ProPacker 2.1	4	151364	0db4f5d1	798ee695	Ziny/XMag/XMag_5.dms/mod.## emotions ##
+710436c14c15b3d72e86ee7779d4757c	1	61568	player	uade	Protracker	0	10142	32942574	0febdee9	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.introsong4
+712f9ac2b7c91b9b122a12a258ebd136	1	114738	player	uade	Protracker	0	142402	79c0cb88	8bdb5e11	Ziny/Barbapapa/BP_4.dms/muzyka2
 71670b17344c78c727bdafbb970258a2	1	256141	player	uade	Protracker	0	111510	362530d9	a1a98da8	Ziny/Necronomicon/Necronomicon_1.dms/Modules/mod.light
-717ea6b911f246c532636dc0253d454b	0	46969	player	libopenmpt	Generic ProTracker or compatible	4	20360	1b8cb393	6acced40	Ziny/BrainDegenerator/BD_4.dms/Muzyka/MR.PRIEST
-72b7416133301526a9bfef8afefadf1e	0	160600	player	libopenmpt	Generic ProTracker or compatible	4	211980	0a3cd4eb	19fc7f16	MA_share/MAMOD.DMS/mod.return.to.alaska.pp
+726869df45dabe2409e86b01a9a974b3	1	637499	player+silence	uade	Protracker	0	157048	846e62e7	6f9a0cbf	Ziny/NextLife/NextLife_3.dms/So nice
 734e14ed83ff8b2190b1d1d41b039b68	1	222845	player	uade	Protracker	0	130006	47597cd8	b8525a47	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/Elysium.pmc
+7392a668be86e323bc1fc0df98048670	1	61568	player	uade	Protracker	0	7580	7c2da7a7	76af5761	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.the last kuusnepa
 73adac4f6980fd3cab2706024313d4cc	1	102219	player	st3play	Scream Tracker 3.2x (SB)	16	178824	c85da4cd	dd364fde	Polski_Aminet/Roy/spoko.lha/SPOKO.S3M
 7435f6346c38870d5b5a5283444fc83c	1	105682	player+silence	uade	Protracker	0	177234	f57f0a1c	f3537e3e	Ziny/Strefa_Mroku/StrefaMroku_1a.dms/STREFA MROKU #1/SM_MSX/Dreams.Digital
-746c624354a00f0d9df0709f296cfabc	0	39541	player	libopenmpt	Generic ProTracker or compatible	4	3552	3e674b06	812bc158	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.only chip
-74a864cb37c63f9c9e9cb023df5a6ab8	0	348283	player+volume	libopenmpt	Digi Booster 1.6	8	165908	ca8ba0ce	a1056068	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/...this is no house....DIGI
+74499999491c827aa83154761c4c27da	1	201688	player+silence	uade	Protracker	0	49574	9fc27c30	75157599	Ziny/NiezTejBeczki/NTB_5a.dms/NTB/gznd-dd
 751e7a4e5764f1f4f03fa2437542d15d	0	118757	player	uade	Amos Music Bank	0	88078	26df4ac1	04ad5b5e	Ziny/Prawda/Prawda_1.dms/modules/kiss me
-756a0fa046c05a82c40ea89da2fa29e9	0	93540	player	libopenmpt	Generic ProTracker or compatible	4	43596	d538b1cf	08ed92d0	Ziny/BrainDegenerator/BD_4.dms/Muzyka/physicalcompo
+7538f3e07247a5ebeb8a2dbdcb815f12	1	297167	player+silence	uade	Protracker	0	131784	ab96eb81	1eb4f928	Ziny/FatAgnus/FatAgnus_11b.dms/mod.free!!!
 758897c54b9c6e130cf571b5346334a7	0	7796	player	uade	Amos Music Bank	0	5708	29869799	b25c5669	Amiga_Play/DEMO-DMS/TimeKeepers.dms/-S-/BOMB-MU
 7628e131cd43670220af6a61985438c4	1	46096	player	uade	Protracker	0	55544	d034bc6e	85405f0a	Amiga_Play/DEMO/BigRedAdventure/PART1/MSC/DOUG.MSC
 76a57322905c2d5970b868ca428db720	1	254433	player	uade	Protracker	0	217026	79cacec8	6150bbf1	Ziny/Strata_Czasu/StrataCzasu_1.lha/mod.Late Visit
 7718a0796d8eed26a120e4940edb30b7	1	222039	player+silence	uade	Protracker	0	373868	29567f6f	7025f68f	Polski_Aminet/Grzegorz_Salaga/cyber.lha/cyber.mod
+772ae9074e459dad687383ea49b0206a	0	304080	player+volume	libxmp	ProPacker 2.1	4	73448	d99d3785	74e92e80	Ziny/FatAgnus/FatAgnus_16a.dms/Modules/MOD.BENUMBED
 77766cdaec16cd940641fd42d2864080	1	285177	player	uade	Protracker	0	222476	757a8b90	f520d8cf	Ziny/BTW/BTW_2.dms/DANE/mod.btw
-780d390eaeea69343d35c95d48b2ed44	0	56200	player+silence	libopenmpt	Generic ProTracker or compatible	4	4180	938b52f4	e7a92837	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune15
-788c57d77e755fa2a5a9d451165287a0	0	298022	player	libopenmpt	Generic ProTracker or compatible	4	108088	3820a038	c02033a2	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.(Obcy)kajTo.pp
+77f7be979906153f43739f2e5781e55d	1	24133	player	uade	Protracker	0	10904	a9ffa0eb	3232e9de	Ziny/PoczytajMiMamo/PMM_6.dms/modules/ChipCompo/mod.3rd-speed chip
 78cea67b7e33844e3c8ced7cfdb1b315	0	30844	player	uade	Amos Music Bank	0	6836	0121dfe8	ed79675b	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/B-03
-796d38c4323f599ae9534ab5760ade0f	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	3744	d142af74	63f2a8a8	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.s.s.mania
+79c4244dd5f532928f0a0152e0cb0396	1	195155	player	uade	Protracker	0	150320	f8b8e8b3	fd5610b6	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.invazja swietych
+7a68265c2a8eebdf4dcd2986b28d358b	1	181953	player	uade	Protracker	0	96688	c5e485f3	5138c290	Ziny/ZigZag/ZigZag_5.dms/ZZText/ZIGZAG2.MOD
+7a68265c2a8eebdf4dcd2986b28d358b	1	181953	player	uade	Protracker	0	96688	c5e485f3	5138c290	Ziny/ZigZag/zigzag5/ZZText/ZIGZAG2.MOD
+7ae262ef7d82c9f1c7b372800e444523	0	172790	player	libxmp	ProPacker 2.1	4	87354	6819dfc9	83a2983f	Ziny/FatAgnus/FatAgnus_16a.dms/Modules/mod.skazany_na_onanizm
 7b3671cddc709a87e49f918116260ef2	1	192141	player	uade	Soundtracker II (15 instr.)	0	78440	b84757a0	76c15479	C&A_PD/DyskiPD/C&A_PD5.DMS/Ashido/Source/Ashido_Music.SFX
-7b44c90d17ab59a95dd0e8abdb7553da	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	744	5be7e412	ff1eebbc	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.simply short
-7b9e821b86e00b98842ffdd0692f0043	0	84354	player	libopenmpt	Generic ProTracker or compatible	4	30136	ec403fd8	c741cb58	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.sea death
-7cc46105be2ab4bdc1eea2388d6918d9	0	20769	player	libopenmpt	Generic ProTracker or compatible	4	3060	a773b2e2	efccaa77	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/G.
-7cc46105be2ab4bdc1eea2388d6918d9	1	319	player
-7cfcaf2864a8dcfc9fe5a9354daf2c64	0	67648	player+silence	libopenmpt	Generic ProTracker or compatible	4	14556	5d4c0991	da1b2a26	Ziny/Imazine/Imazine_3a.dms/IMZ_EXE/intro/mod.IntroMuzak.pp
 7e673a32022782cabb5f6b5232fb1cc9	1	30824	player	uade	Protracker	0	62654	9664012c	b58422a3	C&A_PD/DyskiPD/C&A_PD31.DMS/DeLuxeGalaga/GALAGA.JINGLE1
-7ea6dc0c88e75942b993cd3fbbc25209	0	366669	player+silence	libopenmpt	Generic ProTracker or compatible	4	101208	18078980	3b02a5b0	Ziny/Bigoz/Bigoz_9.dms/MODULES/001.pp
-7fa26a8a14e8d3c25e018daf459ed099	0	12780	player	libopenmpt	Generic ProTracker or compatible	4	424	a46373d6	f3b758c2	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/Mod.Ministry-Intro
-805863631181b40c365d873472ff7b1a	0	246880	player+silence	libopenmpt	Generic ProTracker or compatible	4	73308	7a06b7c0	85abbadc	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.13 friday '95
-817e35816ca1fd452a522eb160cc573e	0	3235	player	libopenmpt	Generic ProTracker or compatible	4	252	bde22596	c46a7644	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/J.
+7f983fcfa65b6b64ab843fc12143b0b3	1	236931	player	uade	P50A - P60A - P61A	0	84758	679765f4	1a3c07ac	Ziny/FatAgnus/FatAgnus_18a.dms/Modules/P61.4thdimension.crm
+80a901310dc0f465ed07390ae662ad64	1	122997	player	uade	Protracker	0	66906	9c41c77b	9a4fe65f	Ziny/PoczytajMiMamo/PMM_7.dms/modules/mod.pijosenka 2
+80d4491bc4c3bcdacabc5d2aea597787	1	38520	player	uade	Protracker	0	8576	df0b7277	e240273a	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.ding
+80e2fb4ee3764c3febb60628a015e795	1	121088	player	uade	Protracker compatible	0	74034	d83c28cb	9d488175	Ziny/BrainDegenerator/BD_4.dms/Muzyka/CREAM
+80f4d37b6abcdf4acc7117fa1ee5c89f	1	250595	player	uade	Protracker	0	83950	a6386822	482eb808	Ziny/NiezTejBeczki/NTB_4.dms/modules/mod.## barrel ##
+811b420aba36dd51c5c25a0d2c12d304	1	128482	player	uade	Protracker	0	89612	1c600e8c	e3cd5775	Ziny/Legion/Legion_4a.dms/mod. >>>100lec<<<.pp
+81e6a176a5ce06f0bb280ca5d6959bfe	1	20596	player	uade	Protracker	0	9012	c8afaf81	46c663fb	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.chipmunks
+82fefacf568e464d63e16aed57492e51	0	142066	player	libxmp	ProPacker 2.1	4	69628	0288846d	cf032c88	Ziny/NextLife/NextLife_7.dms/MOD./Q2
 8332d137127ef8710f6b15bf5c3d406b	1	192623	player	uade	Protracker	0	123508	d105e888	120ef87b	Ziny/Barbapapa/BP_2.dms/modules/mod.3
-84a4514a2214b78a453461150eb756f7	0	235169	player	libopenmpt	Generic ProTracker or compatible	4	89280	39adfcc4	64884099	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.>$ ascension $<.pp
+8379d634f51de62cc1ea6992d990d5c1	1	462851	player	uade	Protracker	0	92722	5f8c85a1	67a93883	Ziny/HotDog/HotDog_2.dms/mod.fog valley sk'p
+83901e5cab2f2637eb880428a919cd78	1	161397	player	uade	Startrekker (4ch)	0	66094	7c514ed8	510b158f	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.3.pp
+8456d35f52563a15aa6a5b9faa74dd98	1	230403	player+silence	uade	Protracker	0	87552	a5b2dc68	7c033554	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.2.pp
+85b7cf87d1c4a736d584b3d94986a224	1	80758	player	uade	Protracker compatible	0	80478	5240bcee	83c2f9eb	Ziny/NextLife/NextLife_3.dms/mod.quis3
 85bae22a12cedf970e605ce1ca56498d	1	175081	player	uade	OctaMED MMD1	0	84654	8c7e2f44	5f7ac736	Amiga_Play/DEMO-DMS/Samba2.dms/sound/med.SambaManag
-85ce34daf03b6a8986234260a408fef4	0	19970	player	libopenmpt	Generic ProTracker or compatible	4	12456	115ce3ad	0a113b22	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.X-MAS LULEZ
-85f943b81cb5a9cd0761e83434d1c219	0	82936	player	libopenmpt	Generic ProTracker or compatible	4	16392	72b95875	cd7c4cfe	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.mamushka
-86b46e996abf5a43e2cd1e45b7ac5e78	0	23005	player	libopenmpt	Generic ProTracker or compatible	4	8480	f960e73f	942e933a	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.intro-tune4
-86b46e996abf5a43e2cd1e45b7ac5e78	1	10224	player
-8829f3f0c4e2a5ac1835538a1b5680d5	0	38342	player	libopenmpt	Generic ProTracker or compatible	4	58444	6204a232	70fbdbb6	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.stan93_trumpet.pp
+85ce4be792bcfe180f4e464dcb9d40b1	0	317027	player	libxmp	ProPacker 2.1	4	152810	66dd01a4	f022f7e1	Ziny/NextLife/NextLife_7.dms/MOD./Q0
+8680c197118a4e4cd87a89e83dcfcfe7	1	186072	player	uade	Protracker	0	160360	b92589b0	c21c9c8c	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.nagie wkretaki-JARKO
+86f5ed979cba77d366e8d5f094421d38	0	407069	player	libxmp	The Player 6.0a	4	8632	d7d7089f	21cad10a	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.last_ninja_2
+88ffaa2a8eab191b4503c8abf6ddd97e	1	235325	player+silence	uade	Protracker	0	339022	57dab788	209bb178	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.WestHistory.xpk
+88ffaa2a8eab191b4503c8abf6ddd97e	1	235325	player+silence	uade	Protracker	0	339022	57dab788	209bb178	Ziny/Imazine/Imazine4/MODULES/mod.WestHistory.xpk
 89223d4c6e8e2a533aadf59bb142f878	1	121731	player	uade	Protracker	0	62708	0f35be9e	7487de08	Ziny/NextLife/NextLife_2.dms/Quis3
 892fb85a5ae9d5ed734edd09786cf121	1	5504	silence	uade	OctaMED MMD1	0	10636	7f491bed	76a4c8ae	C&A_PD/ZestawyPD/Zestaw8/Z8_2.DMS/archiwa/OOZEAGA.LHA/Ooze/Sound/OozeEnd.mod
+898ef00592a72a507b780a63925b86c4	1	203956	player	uade	Protracker	0	138608	cfd15688	49c4f7a4	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.aquirre-GACUCH.pp
+8a7d64ebe4869594abedac2bd267415d	0	386152	silence	uade	DIGI Booster V1.5	0	312142	eabbe0fd	2285229f	Polski_Aminet/Waldemar_Piasta/DBooster16.lha/DigiBooster/DigiModules/Aquarium.DIGI
+8a7fa83c71f682b584e3450bc7c3d451	1	88475	player	uade	Protracker	0	233376	63f90280	e1c2f435	Ziny/NiezTejBeczki/NTB_6plus.dms/NTB/mod.-pluskwa-
 8a9192584db46162883b078f062e7c16	1	171002	player	uade	Protracker	0	106182	586cc4bb	fb9821d2	Ziny/Necronomicon/Necronomicon_1.dms/Modules/mod.shadow
-8b7d754ef60be9704511008da2413900	0	243469	player+silence	libopenmpt	Generic ProTracker or compatible	4	100344	b82b5201	79c6f604	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.moon_eye-BFA.pp
-8c1effbdc23ac4c384692430d399a8ca	0	114543	player+silence	libopenmpt	Generic ProTracker or compatible	4	111788	0f1078fd	eac860e0	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#1
-8c58f18dde383799e5ddca7d6cadf9b6	0	193631	player	libopenmpt	Generic ProTracker or compatible	4	60396	e6a1708e	afa5cea0	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Lets_party
-8caea91f8d01daacdf97d2322b806068	0	244714	player+silence	libopenmpt	Generic ProTracker or compatible	4	141304	1a885a2d	df6eaaf9	Ziny/NextLife/NextLife_6.dms/MOD./Q3
-8ccf1b31fc01ae49bb5df445c8acc4be	0	31952	player	libopenmpt	Generic ProTracker or compatible	4	11000	ceae01c8	208f620a	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.Packmusica
+8bbaabb6000698da2c5bcd19433c5031	1	30824	player	uade	Protracker	0	14048	139eab03	be69a121	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.holiday's part 1
+8be4ff67a4315a03fe3e43d8572bbf94	1	410119	player+silence	uade	Protracker	0	146862	cfaf6e6a	0756562a	Ziny/ZigZag/ZigZag_4.dms/ZZText/ZIGZAG3.MOD
 8d15b14bb378c4560bf48cedf81353ff	1	161397	player	uade	P50A - P60A - P61A	0	114130	353e69a8	9c0c555a	Ziny/Zielone_Brygady/ZieloneBrygady_8-96.dms/P61.heresion
 8d597aeed13c8089d4b5bffd59e716b1	1	276597	player	uade	Protracker	0	461428	f8f3d4e0	b66dd9ad	Amiga_Play/DEMO-DMS/trapped1.dms/Trapped1.lha/mod.trappedtitle
-8e18b040b28d640195da224699497fd8	0	220870	player	libopenmpt	Generic ProTracker or compatible	4	60680	d565fca1	8a46208b	Ziny/NiezTejBeczki/NTB_3.dms/modules/mod.ntb
+8dc53954ab056dea8be3ef1103c5432e	1	194050	player	uade	Noisetracker 1.x	0	78932	b81cf5e1	809ed97f	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Lets_party
+8e319f899022ec0cec224b01901a5497	1	89720	player	uade	Protracker	0	23976	6ede543b	7cd38117	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.micro2
+8e81b1bce883569c83b0bad1798e5a7e	1	13121	player	uade	Protracker	0	13000	928a2447	9fd6826a	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.U.S.S.R.
+8e81b1bce883569c83b0bad1798e5a7e	2	5244	player
+8e81b1bce883569c83b0bad1798e5a7e	3	23168	player
+8e81b1bce883569c83b0bad1798e5a7e	4	5324	player
+8e81b1bce883569c83b0bad1798e5a7e	5	23168	player
+8e81b1bce883569c83b0bad1798e5a7e	6	8158	player
+8e81b1bce883569c83b0bad1798e5a7e	7	15110	player
 8ed7fcf7d562ae489927b58b1d5ee1a8	0	67094	player	uade	SoundMon 2.0	0	5008	8c2fe589	c9bf35ab	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/J.S.Bach.pmc
-8ee7548e4afa998acaeed89d97fcfb79	0	55117	player	libopenmpt	Generic ProTracker or compatible	4	26080	83b8957d	ad9428b0	Ziny/NextLife/NextLife_3.dms/mod.quis4
-9015e517a40a0b886ed26474f6bf8f15	0	94604	player+silence	libopenmpt	Generic ProTracker or compatible	4	80552	cd3d88a6	276b277e	MA_share/MAMOD.DMS/mod.meeting.pp
-905ff58593fa44cf0cc8d04bda954217	0	327192	player	libopenmpt	Generic ProTracker or compatible	4	96484	e205201d	7ad55382	Ziny/Bigoz/Bigoz_9.dms/MODULES/002.pp
+8f11220f21d70e399e108b79fa8a7335	1	333659	player+volume	uade	Protracker	0	256148	f1bc37b6	161a4b21	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.Kruganini.pp
+8f71b2590076c3400e76d8abe2102d83	1	213181	player+volume	uade	Protracker	0	59288	d49077e8	50144442	Ziny/NiezTejBeczki/NTB_2.dms/modules/mod.strack
+903629216d1b53267a9207ba55d4d91e	1	38520	player	uade	Protracker	0	70660	c3043184	ee2b0895	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.stan93_trumpet.pp
+904bd59d86bb15416afb660050bc6e31	0	115180	player	libxmp	ProPacker 2.1	4	88994	3c6ff015	2b506bf2	Ziny/FatAgnus/FatAgnus_16a.dms/Modules/mod.love with me
+9111f2073f22047a289e48d644b8caf6	1	112769	player	uade	P50A - P60A - P61A	0	71659	18693cec	58b1610c	Ziny/FatAgnus/FatAgnus_17a.dms/Modules/P61.Viking
 91442b84744bcd59d9f74bf0f3fd00c2	1	46216	player	uade	Protracker	0	10198	d63d08be	264b721c	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.silent night
+91a4de7f86a6c633e11bcc06ba7a25a0	1	156916	player	uade	Protracker	0	99992	11565c98	33ae9c6f	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.powrot z nikad
 92080358dfb3bcb8a15c75281a460682	1	5018	silence	uade	Protracker	0	12024	bde864c6	5dd03d37	Ziny/NiezTejBeczki/NTB_5b.dms/NTB/mod.emtiv
-9251670204e4dd66016663c67ae6208f	0	303473	player+silence	libopenmpt	Generic ProTracker or compatible	4	86216	0840a9ec	48e8512a	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.love in paradise
 925a7256248dc4d470577850c010ebe1	1	9082	player	uade	Protracker	0	158618	4603bd40	f3906b17	Ziny/Rzeznia/Rzeznia_1a.dms/Data/mod.rzeznia
 92ee9ab7840310e979908d916f79e2fe	1	311818	player+silence	uade	Protracker	0	159874	cd4322ed	eef04592	Ziny/NiezTejBeczki/NTB_1.dms/modules/mod.prism
-948341e2f7c6c696015b8ec1aa187fdb	0	193851	player	libopenmpt	Generic ProTracker or compatible	4	102176	a1416a71	f0e8dc02	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.asleep-PETERS.pp
-94da927f6d285cd2320e6f82343359b7	0	56236	player	libopenmpt	Generic ProTracker or compatible	4	19012	15538f0b	46c3f3d2	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.kill the bros
+93f77b4d157e0d65cfa62ed0c264c852	1	169322	player+silence	uade	Protracker	0	157694	049ec103	83e4f0da	Ziny/PaperWhite/PaperWhite_3.dms/modules/mod.power of nothing ii
+93f77b4d157e0d65cfa62ed0c264c852	2	178577	player
+93f77b4d157e0d65cfa62ed0c264c852	3	178577	player
+93f77b4d157e0d65cfa62ed0c264c852	4	178577	player
+94a885858e7a1bc6ae06b9e253a26751	0	54264	player+volume	libxmp	ProPacker 2.1	4	51416	2cfd6745	ab5df5a5	Ziny/NextLife/NextLife_7.dms/MOD./Q3
+94f009c179934bc663be94364e3d12c4	1	61890	player	uade	Protracker	0	32496	fd766f90	6247633e	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.** doctor 2 **
+955ca4691d425ca2599707b489ccb88e	1	152804	player+silence	uade	Protracker	0	206012	6b991bc3	5cb51578	Ziny/ZigZagInfo/ZigZagInfo_2.dms/ZZI#2/mod.Helpless
+956ccf3b7770f0c1ac850857c4f6d52b	1	146045	player	uade	Protracker	0	80546	b026791c	f7645933	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.for sylvia
 9584af8d48361d959d32fa5b5e6d51f5	0	7816	player	uade	Amos Music Bank	0	11414	15cfb92e	fdacbd5f	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/B-30
-9697308b5aad3df6614bc7eac96e601f	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	8380	bd174beb	c75ffe08	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.holiday's part 1
-988bb741cf24c341f5c6e9308b525179	0	214518	player+silence	libopenmpt	Generic ProTracker or compatible	4	85500	88d7a529	a6fa400b	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.crystal rain
-988ec3b80dd942ec5b0af803e903a80b	0	46969	player	libopenmpt	Generic ProTracker or compatible	4	19508	b7c6453c	e09e88fd	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## economy 9 ##
-98a813966c03e3293c65380a010e6731	0	16615	player	libopenmpt	Generic ProTracker or compatible	4	2812	81f2a0ba	6c946dae	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.<>> quadrascope <<>
+96e3ae8752352d852c8b160dd9e3f678	1	245224	player+silence	uade	Protracker	0	194516	73e79ddf	cc332af2	Ziny/NextLife/NextLife_6.dms/MOD./Q3
+9765a4062318c023d3a0919cbd862526	1	143493	player	uade	Protracker	0	137690	2d16ce18	b6a67dcb	Ziny/Barbapapa/BP_4.dms/muzyka3
+9788b086058e2878c0a8f51490bb68b4	1	210688	player	uade	Protracker	0	110774	6f8fdf41	d7a3f4b6	Ziny/Izviestia/Izviestia_10.lha/Izviestia_10/Music/001
 98b7b3b2716a66000b2fdf60ed6fe4f3	1	14358	player+silence	uade	Protracker	0	31926	be25250e	9b36f377	C&A_PD/ZestawyPD/Zestaw15_lha/disk2/TheEnd.lha/mod.the end
-991dd572a0e5b1d2dca0b42e4b17847a	0	56236	player	libopenmpt	Generic ProTracker or compatible	4	24100	174cd78c	bd24f63e	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.the sign-part2
-994d23cd27db304401daf45b3dee94ea	0	250107	player	libopenmpt	Generic ProTracker or compatible	4	39016	44ec3f9d	c3171fcb	Ziny/NiezTejBeczki/NTB_4.dms/modules/mod.## barrel ##
+98b8751be67c0aa1b22ab0cb45c275c6	1	111101	player	uade	Protracker	0	56658	f1cf48fb	e1ab0ca2	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.70s reprise
+98f335fdd7d17fe7ad1fdaaddc6af282	1	199797	player	uade	Protracker	0	111658	b086d4bb	83746e74	Ziny/PoczytajMiMamo/PMM_5.dms/modules/mod.one_second.pp
+9975e16ae3ec0a09be0abc2a7f5872ae	1	27006	player	uade	Protracker	0	16170	ece9857b	9feda458	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</>> KONKURS <</mod.- NTB FREECHIP -
+9a0be93f0525b26aa9108a004d72c912	1	563021	player	uade	P50A - P60A - P61A	0	152102	b088fa28	db8a631f	Ziny/Necronomicon/Necronomicon_5.dms/NCR_dat/P61.ncr5
 9a19ed1e68301554946098b9b0067a31	1	188405	player+silence	uade	Protracker	0	83144	6eff1f42	2e680bdc	Ziny/Barbapapa/BP_2.dms/modules/mod.2
-9a945360fe4c361fa7c2765fbb302aa0	0	17893	player	libopenmpt	Generic ProTracker or compatible	4	6620	cf4aa567	1a26263d	Ziny/NextLife/NextLife_3.dms/mod.quis5
 9aec4a052c99cc4d2a8f7c2cd2129112	0	145944	player	uade	SIDMon 1.0	0	21644	cd670747	ee60542b	C&A_PD/DyskiPD/C&A_PD3.DMS/modules/Romeo.pmc
-9b8a722ba32d3847339af93b32f10b49	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	17260	3274547c	18eaf594	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.daydreams
 9bae36a5c2b518bf46dd92267105123d	1	129378	player+silence	uade	Protracker	0	93816	f103b918	16d68939	Ziny/Necronomicon/Necronomicon_1.dms/Modules/mod.fixes
-9cded2df7c625a176419ee88df18bede	0	212123	player	libopenmpt	Generic ProTracker or compatible	4	38508	47f030d8	9b3ba712	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.orchestral2
+9c4b3a1cc49e22975d6ac605c383f193	1	112769	player	uade	Protracker	0	51032	f2d48011	84e556a4	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.pastel news
 9d099c318bf04b399c961d7d2a93d99e	1	847495	player	uade	Protracker	0	182266	e6a0969d	fef293b7	Ziny/H...za/H..za_1.dms/Muzyka/mod.Sea of love
-9da74c7906c299c43a6483ed14f95432	0	92022	player	libopenmpt	Generic ProTracker or compatible	4	33128	73b2b6ba	59daa7aa	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Live_on_techno
+9de5150fa62cb1d4167682a8f62fb249	1	298219	player	uade	Protracker	0	145394	aaa7ec1f	3bf71a75	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.(Obcy)kajTo.pp
 9e169dc3a1246fe28429b3377190ac5e	1	107645	player	uade	Startrekker (4ch)	0	32818	04003274	33f52e70	Amiga_Play/DEMO/KargonDemo/Music.dat
-9f1f4bf562b294bb82c918b8c135708d	0	315729	player	libopenmpt	Generic ProTracker or compatible	4	77220	2519e855	59311574	Ziny/NextLife/NextLife_3.dms/mod.quis1
-a16fd3a1df2bb24d48f5ed375b0063ee	0	83076	player	libopenmpt	Generic ProTracker or compatible	4	6156	66463666	86873978	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.chip with christina
-a2256f4f666e08ba79dbe077239eea64	0	190018	player+silence	libopenmpt	Generic ProTracker or compatible	4	117008	0753f2fb	d3165006	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.bastards atack
-a2ed5aa90e23d84b23893a023f7d6dee	0	203756	player	libopenmpt	Generic ProTracker or compatible	4	208288	6fd45f53	3eff748b	Ziny/Imazine/Imazine_3a.dms/MODULES/mod.SmallVillage.pp
-a3152e3d997c0b9cba74a1bb93374daa	0	293930	player+volume	libopenmpt	Generic ProTracker or compatible	4	46180	28298c63	429a2b06	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.desistance-XTD.pp
+9e3b12250feac371608837a96f79413d	0	77443	player	libxmp	The Player 6.0a	4	2866	3b525df4	8e94753b	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.NOIZZZ!!
+9e5a096ddcacc4b24a1260ce6f8c6743	1	226683	player	uade	Protracker	0	123550	6aca9d0b	5bf45695	Ziny/Silesia/Silesia_14.dms/SIL_MOD/2
+9eb85f8c15a768b0e88b5e6ae7b985b9	1	209482	player	uade	Protracker	0	162560	5b858276	671279aa	Ziny/PoczytajMiMamo/PMM_8a.dms/For_Miklesz!/mod.the black lamb.pp
+a194bf155ecfaa3ae4c710c3086aa73f	1	107645	player	uade	Protracker	0	75006	1742be16	923b5a7c	Ziny/NextLife/NextLife_6.dms/MOD./Q1
+a21ad08464d37a2a280c05034a161c4b	0	57590	player	libxmp	ProPacker 2.1	4	32012	34fb4970	6336907d	Ziny/FatAgnus/FatAgnus_14b.dms/mod.Score
+a33820822c69747b7ab94976f9d2a46b	0	275894	player	libxmp	The Player 6.0a	4	119296	afd30046	a21630e9	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.home_truth
+a35c43b68d95eac04037dc759d6eae61	1	325504	player+silence	uade	Protracker	0	329250	bb5893c6	b4c8d9db	Polski_Aminet/Piotr_Kazimierczak/Terror.lha/mod.terror
+a3b9ffb669ebde9da6ed3bf132d63325	1	152877	player	uade	Noisetracker 1.x	0	144332	4fe32b56	69b9264f	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.elku-peters-xtd.pp
 a3c701be3363e83f2fa0a1342c0e26a5	1	51320	player	uade	Protracker	0	14180	2cab061e	cce970cd	Ziny/NiezTejBeczki/NTB_7plus.dms/>> BONUS TRACKS <</mod.| fun'zy tune ii |
 a41c4c6afe6f0243da3cafb2ffefdc00	1	71173	player	uade	Protracker	0	52446	7943da9e	19384047	Ziny/NextLife/NextLife_2.dms/Quis5
-a4b70c06064cd62655719ba46a193c79	0	52401	player	libopenmpt	Generic ProTracker or compatible	4	5856	ea8a6bfc	3a4805a1	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.little feet
-a4c32f27e9aea4e570fcfbf70694bd95	0	153371	player	libopenmpt	Generic ProTracker or compatible	4	103572	df5b8acf	a7c24cec	Ziny/PoczytajMiMamo/PMM_5.dms/modules/mod.the_secret_mind.pp
 a53004534d61848bf969e495515002a1	1	227173	player+silence	uade	P50A - P60A - P61A	0	266034	e13f895f	67877aa1	Polski_Aminet/Anadune/and_sghd.lha/Sound_Garden/P61.space-trip-2
+a552b888548061a19d2c7eb2c1525978	1	67843	player+silence	uade	Protracker	0	20482	e73f2bcb	3107cf27	Ziny/Imazine/Imazine_3a.dms/IMZ_EXE/intro/mod.IntroMuzak.pp
 a5687579e08c296eccee0f383ee1482d	1	168974	player+silence	uade	Protracker	0	165656	12df3bbc	e47a1f95	Ziny/Coma/Coma_1.dms/Coma#1-DanE/msx/3
-a5e1142e0bc48c36c9334355913cc4cd	0	156546	player	libopenmpt	Generic ProTracker or compatible	4	65844	4d747f55	bb7b0daa	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.powrot z nikad
 a6034b4002e41a9865f809a50b345a60	1	119300	player+silence	uade	Protracker	0	98020	3f71ddcf	403ff3a3	Ziny/GlosLamera/GlosLamera_3_i_4.dms/Dane/gl3.dane
-a647c69c0ba6367fc36c9fd8227d854c	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	22724	6b2d06a6	f684aa88	Ziny/BrainDegenerator/BD_4.dms/Muzyka/flyingworld
-a78f96e02d9ffbcccdc22f5043b2d538	0	165764	player+volume	libopenmpt	Generic ProTracker or compatible	4	96288	89e79982	ee3921fe	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.experience
+a64838d8f45dea8f80b012888e986ca6	0	80658	player	libxmp	ProPacker 2.1	4	99040	108b78ea	0eb5b1ef	Ziny/NextLife/NextLife_7.dms/MOD./Q4
+a65da303215cf1d563a5067bcb89a174	1	189107	player	uade	Protracker	0	139848	8ec0f7c2	368b9cc4	Ziny/NiezTejBeczki/NTB_7a.dms/NTB/mod.futurity
+a791831c1f045026c2d434fe67e41f11	1	259154	player+silence	uade	Protracker	0	220692	f4ab34c2	0ea8f374	Ziny/Orgazm/Orgazm_2a.dms/Org2/mod.## task ##
 a79ee2d674b24eaa3b54dede7573fcc2	1	223689	player	uade	Protracker	0	320432	bf47f9df	e350d4fb	Polski_Aminet/Axel_D/deformed_live.lha/mod.deformed_live
 a7fd1b2aa39d2cd64476d96646917454	1	143493	player	uade	Protracker	0	92520	9abf8d01	ec7e36bd	Ziny/GlosLamera/GlosLamera_1.dms/Mod./mod.gl#1
-a8606d0adbc817b947e3075f88616be5	0	26839	player	libopenmpt	Generic ProTracker or compatible	4	6864	4576e0ff	b48c4d34	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</>> KONKURS <</mod.- NTB FREECHIP -
-a8ced43d16b65e24660f57e071abdc6c	0	304186	player	libopenmpt	Generic ProTracker or compatible	4	111912	5f34501c	30dbc854	Polski_Aminet/Piotr_Kazimierczak/Zapomnienie.lha/mod.zapomnienie
+a876de576c2d3ac8476dfa27d1049560	0	524520	player	libxmp	ProPacker 2.1	4	233250	ded27d5f	9ac2d107	Ziny/XMag/XMag_4.dms/mod.expedition
 a9405964cc276b316bba6976f7539f38	1	374275	player	uade	OctaMED MMD0	0	48406	ddaa2cba	8bba9a69	C&A_PD/ZestawyPD/Zestaw5_lha/disk1/MED_3_22.LHA/demos/Synth-a-sysmic
+a9595be3d5ae99552d89f8b5a076e8a9	1	246536	player	uade	Protracker	0	110392	81ce78aa	59e742e7	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Thats_all
+a97ba6397471bd3d23372adfe66ed38c	1	38520	player	uade	Protracker	0	4478	e232477c	a1c30ead	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## microtune 4 ##
 a9a8b317f5f3ef7e36f25e98b308b400	1	462449	player	uade	OctaMED MMD0	0	53124	c698e055	d01fdab2	C&A_PD/ZestawyPD/Zestaw5_lha/disk1/MED_3_22.LHA/demos/stärkelsesirap
 aa88229c372b48a69b7590e5d5a3fa47	1	381	player	uade	OctaMED MMD0	0	4290	509a7e58	7c42a654	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/time
-aabee4cb21e19939f25d547eaaea668b	0	405587	player+volume	libopenmpt	Generic ProTracker or compatible	4	6684	bcc62e93	b473bd09	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.last ninja 2
-ab4e1e328b1124dfbae444fa94022a43	0	62187	player	libopenmpt	Generic ProTracker or compatible	4	3920	b41f3a4a	eb76f894	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.seikkailumies
+ab3f72171f87082575b599710159c771	1	237996	player	uade	Protracker	0	167076	c2cfc17b	f80e746a	Ziny/Rzeznia/Rzeznia_1a.dms/Data/mod.Green.pp
+ab4e1b9bd209eb5c3095e00a258a3750	1	84616	player	uade	Protracker	0	44114	f6638052	1775ed66	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.sea death
+abe697bf4665c7e3c52448f27dfdefc1	1	160432	player	uade	Protracker	0	317644	be46a8c8	7205942a	Ziny/NiezTejBeczki/NTB_5plus.dms/modules/mod.## wreck ##
 ac2f73720eff745935398396debf226c	1	273854	player+silence	ft2play	Fasttracker	8	592566	e909a046	9e82f6c6	Polski_Aminet/MaXym/Spaceman.lha/take.Spaceman's body
-ac4d668df8e7bb850d2ec95a0b2ad0dc	0	636428	player+silence	libopenmpt	Generic ProTracker or compatible	4	107460	149a491f	451ffc42	Ziny/NextLife/NextLife_3.dms/So nice
-aca4ee053f39a4fe623fc80e63a81382	0	188698	player	libopenmpt	Generic ProTracker or compatible	4	106168	6506c1a0	332b66b0	Ziny/NiezTejBeczki/NTB_7a.dms/NTB/mod.futurity
-adcf32cdf81ae9ad3a91a986b213c2e1	0	71413	player	libopenmpt	Generic ProTracker or compatible	4	9568	f59ce5db	529f1ba5	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.c53
-af27f500b7b90c1ca8ca529b52aacc1e	0	147753	player+silence	libopenmpt	Generic ProTracker or compatible	4	129804	cda15e74	9238e8cb	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.everything_we_like
-af38deeb722f0c584c714b03298c4933	0	89466	player	libopenmpt	Generic ProTracker or compatible	4	12944	b72c3932	58c08886	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.micro2
-b0549f582331bb3385eb791b52a14afa	0	38342	player	libopenmpt	Generic ProTracker or compatible	4	996	f31419a3	956b878d	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## microtune 4 ##
-b1112d10f6848218478958043c357bba	0	120779	player	libopenmpt	Generic ProTracker or compatible	4	47684	1b63ee69	e07212a7	Ziny/BrainDegenerator/BD_4.dms/Muzyka/CREAM
+ad2062874412b0c72acdb169f1e5271a	1	119992	player+silence	uade	Protracker	0	46648	007c3326	07711bdd	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.gentle winds
+ad30a41186e6a70da9bb9d39c75de967	1	163969	player	uade	Protracker	0	141636	1a9de619	821afe4f	Ziny/ZigZag/ZigZag_4.dms/ZZText/ZIGZAG0.MOD
+ae1f1bc8898f4c7766372bd9b9bc4c39	1	167003	player	uade	Protracker	0	78720	6ec60d7b	3f8d5e0c	Ziny/NextLife/NextLife_5.dms/MOD./Q4
+ae5121714e21322e73d15d4ea15e0ebb	1	158684	player	uade	Protracker	0	144418	bb5564f6	572fa24b	Ziny/Barbapapa/BP_3.dms/modules/mod.1
+af7e5f9823a36d77ff8508de56dc8aa1	1	31146	player	uade	Protracker	0	7900	993e2f90	e3a1186b	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/E.   Unauthorised duplicate
 b1361525bc30cffec71eb40ffb69e52c	0	359012	loop	uade	MusiclineEditor	0	50003	e227ee10	a1aebd36	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.Monty On The Run
 b1361525bc30cffec71eb40ffb69e52c	1	15148	silence
 b1361525bc30cffec71eb40ffb69e52c	2	238363	loop
-b15b4991e039c944dbce051aa115fece	0	234401	player+silence	libopenmpt	Generic ProTracker or compatible	4	98616	bc641480	a008fac6	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.duration.pp
-b16f0e42cec0848fc96725c39aeb1637	0	287571	player	libopenmpt	Generic ProTracker or compatible	4	73240	00c09e64	1e24a62c	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.exams 91.pp
-b242f1974c246f87c10a10096fa82d5a	0	102307	player	libopenmpt	Generic ProTracker or compatible	4	93208	392ffb95	fd313bb8	Ziny/ZigZag/ZigZag_6a.dms/Megatracker_II/mod.megatracker1.pp
-b39021d58670407f7c6faa5e06d86f21	0	46011	player	libopenmpt	Generic ProTracker or compatible	4	2680	3aa9ce56	9bd9c91c	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.emax.analyzer
+b1c1a198ed4992cf514e85b247fc9b64	1	199181	player+silence	uade	Protracker	0	101332	63a6bef8	18622101	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.putty-PETERS.pp
+b29c9d23f29000824206765f47861c42	1	125569	player	uade	Protracker	0	90348	76119c17	9f42a767	Ziny/ZigZag/ZigZag_4.dms/ZZText/ZIGZAG1.MOD
+b2cba3a33860d06278d7c40ca86339db	0	148235	player	libxmp	ProPacker 2.1	4	93746	69303079	8127e2fb	Ziny/XMag/XMag_4.dms/mod.fourmag
+b3dc52bbca7edd2e9b9206d5f230edb0	1	140921	player	uade	Protracker	0	35144	7b48ebb8	073af06a	Ziny/PoczytajMiMamo/PMM_8a.dms/modules/mod.new_song
 b436ba9d0db6f530e4386405b80c167e	1	184445	player	uade	Protracker	0	66608	269ef226	dde5987a	Ziny/Legion/Legion_2.dms/Modules/mod.1
-b5156e2f96862c31d7836699aa284c11	0	26839	player	libopenmpt	Generic ProTracker or compatible	4	7288	9ae10f88	f7f94147	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.chipsy kings
-b55ea9a23ed127adf5ef2c8539f672b6	0	199382	player	libopenmpt	Generic ProTracker or compatible	4	79692	dcbce9e1	a3af1d43	Ziny/PoczytajMiMamo/PMM_5.dms/modules/mod.one_second.pp
-b66687fa579b295b23a6af31fe7a8f30	0	132941	player	libopenmpt	Generic ProTracker or compatible	4	33956	1853c97e	7baa4a35	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.the last world
-b66687fa579b295b23a6af31fe7a8f30	1	516350	player
+b49d8584a551742b75bf3a2d138ce63c	1	55319	player	uade	Protracker compatible	0	38840	56e8c49f	2af6b733	Ziny/NextLife/NextLife_3.dms/mod.quis4
+b5c82c2aac8f22efdc822eed32b40af1	1	226966	player+silence	uade	Protracker	0	160002	a4db233e	7daa24e0	Ziny/PoczytajMiMamo/PMM_4.dms/modules/mod.the_forgotten_enemy
 b667369ace126c6ec2d03043604444a7	1	218987	player	uade	OctaMED MMD1	0	307918	14f9e126	df68d400	C&A_PD/ZestawyPD/Zestaw2/Z2_3.DMS/Default.MUSX
 b667369ace126c6ec2d03043604444a7	1	218987	player	uade	OctaMED MMD1	0	307918	14f9e126	df68d400	C&A_PD/ZestawyPD/Zestaw3/Z3_3.DMS/Default.MUSX
-b66c882d5e97d2620bb49e6ee4484c59	0	34508	player	libopenmpt	Generic ProTracker or compatible	4	4220	faf7144b	af8c4b15	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.one day in ohio
-b66c882d5e97d2620bb49e6ee4484c59	1	11502	player
+b6a19892c23d89387aaef03fed10bf71	1	71716	player	uade	Protracker	0	206868	65f83536	e6f321ab	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.party-question-XTD.pp
+b6d496bc42b4aa26e3e72fe9bf9ab477	1	15472	player	uade	Protracker	0	13098	13a8a581	0c142534	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.ntb-freechip
 b6d99111966c83071c4087763d334dcb	0	179931	player+silence	uade	Amos Music Bank	0	48344	0769bb19	658a6d09	Polski_Aminet/Adam_Turczak/abk_view.lha/Abk-View/ABK_MUSICS/Music_Draconus.ABK
-b701f32efdddbb7f25bcf598d9d57ac9	0	174499	player	libopenmpt	Generic ProTracker or compatible	4	82176	b2ac7fbc	f08602e9	Ziny/NiezTejBeczki/NTB_8b.dms/NTB2/mod.lato funzinkow
+b798f081590c34e2bc942a52d51b731c	1	122997	player	uade	Protracker	0	77396	97cd2cc4	6058180a	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.combat game
+b8057c28743cf22f8be95607676f7562	1	102520	player	uade	Protracker	0	21622	668ac873	c3077a63	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.intro #3
+b8824cd10c07047b244979c91f74d279	1	27006	player	uade	Protracker	0	14604	56731503	fff6757f	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.chipsy kings
 b896da235e16d953a6f1ce45df565a89	1	127976	player+silence	uade	Protracker	0	40924	fadf4e9b	673a5cc1	C&A_PD/ZestawyPD/Zestaw12/Z12_2.DMS/TotalExcess/4
-b8b2246e89b85a59930b5922a12a2617	0	138034	player	libopenmpt	Generic ProTracker or compatible	4	75964	fe377cde	4d492390	Ziny/Ala_Ma_Kota/AMK_3b.DMS/MOD.AFTER DREAM.pp
+ba2a1165364e372005aa29a804379e1c	1	69224	player	uade	Protracker	0	23604	57e668ac	ee1fc55a	Ziny/Kraweznik/Kraweznik_2.dms/Kranik#2/Mods/mod3
 bd3cc1ecf5f27a809beaf4dc9576cb27	1	103505	player	st3play	Scream Tracker 3.2x (SB)	16	109456	6d85c5b3	f6b33e09	Polski_Aminet/Roy/pianosad.lha/PIANOSAD.S3M
-bdca4306c0f57ba9919c0b426fb7d603	0	149537	player	libopenmpt	Generic ProTracker or compatible	4	101764	686bce2c	842daf21	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.elku-peters-xtd.pp
-bdff0c3a1875d09bc9cb3f4a6d490a40	0	165191	player+volume	libopenmpt	Generic ProTracker or compatible	4	71672	4104bde3	a51b5563	Ziny/NextLife/NextLife_5.dms/MOD./Q1
-be7f632143016bd9a83b297e72c4f8b6	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	76004	81e163e4	34352df4	Ziny/ZigZag/ZigZag_5.dms/Megatracker/mod.megatracker1.pp
-be7f632143016bd9a83b297e72c4f8b6	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	76004	81e163e4	34352df4	Ziny/ZigZag/zigzag5/Megatracker/mod.megatracker1.pp
+bd56f42deb527bc3970496b9ab618667	1	79673	player	uade	Protracker	0	25398	ba23ce3e	d99d1c5e	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.playingw
+be00ae603030ee100c4e02d8d1b53be9	1	225238	player+silence	uade	Protracker	0	128722	3d414a11	7d194de3	Ziny/Bigoz/Bigoz_10.dms/MODULES/000
+be7c443374aa0e54f570231f18526095	1	131014	player	uade	Protracker	0	151276	17ef8d35	4b869427	Ziny/Bigoz/Bigoz_12.dms/Modules/001
 c0c8d6bf6be0c0e6d9682e980a3dd3df	1	229014	player	uade	Protracker	0	184072	4ca522d5	1fc0bc86	Polski_Aminet/Tomasz_Nidecki/smierdzitrup.lha/mod.Smierdzi_trupem
-c1edd0c916dea4ff44ae67b4a64c6827	0	90584	player	libopenmpt	Generic ProTracker or compatible	4	26084	1ef87da3	7ae67f58	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Bass&percuss
+c16b07fd2a72bd6e8814c8986d2f291c	1	68742	player	uade	Protracker	0	21862	79f7aa19	d21384e2	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.l'amour
 c249b8bb291662ff3ba4336d319a418c	1	0	nosound	uade	Protracker	0	2110	53e1b4e6	a51d7b25	Amiga_Play/DEMO/BlackViper/Modules/mod.shit
-c2738c4f6a3aca210afea1be02125a59	0	58392	player	libopenmpt	Generic ProTracker or compatible	4	7016	967f0121	f0491ef8	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.HappinessFixed
-c3c3152521e38fb1069ad3c76f9187de	0	177124	player+silence	libopenmpt	Generic ProTracker or compatible	4	212924	60d2648e	1ecd19b2	Ziny/Ala_Ma_Kota/AMK_3b.DMS/MOD.LONG AND NICE DREAM.pp
-c487f83d6fc49b6f729dfc69fbca9e42	0	209048	player	libopenmpt	Generic ProTracker or compatible	4	112260	97408207	910df8a4	Ziny/PoczytajMiMamo/PMM_8a.dms/For_Miklesz!/mod.the black lamb.pp
+c257ac2f564b1927efd44b33b8926a67	1	132180	player	uade	Protracker	0	207490	0968e810	9702af58	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Naked_carrion
 c4f85307e5c90996f2ba3ea719fa09b6	1	220127	player+silence	uade	Protracker	0	298262	e70c7e0d	f07ee2e4	Polski_Aminet/Hali/Nyarlath.lha/mod.Nyarlathotep
 c5a03d0c38c2fa0b8beff07eb2ce8746	1	17401	player	uade	Protracker	0	31260	e7ccbbd9	4ca17960	C&A_PD/ZestawyPD/Zestaw18_lha/disk1/ptsupp.lha/PT Support archive/Modules/mod.oh susanna
-c5a57d33b6aa203eb82a5144f843ab85	0	71573	player	libopenmpt	Generic ProTracker or compatible	4	33940	c60d3c83	7448b591	Ziny/Orgazm/Orgazm_2a.dms/[-bONUS-]/mod.stupid and ugly.pp
-c5cafd391f2cb8d442aa15932cd18f4f	0	30993	player	libopenmpt	Generic ProTracker or compatible	4	2756	2a3f3905	f616e5ec	Ziny/NiezTejBeczki/Segrealia_1.dms/SAGRAELIA/E.   Unauthorised duplicate
-c73e361629d7b10a3e03579fc0a4ce38	0	30674	player	libopenmpt	Generic ProTracker or compatible	4	2344	9fca4132	33c2d69b	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.heathsong
+c6262454e2293a87a88f59541b25c34e	1	90846	player	uade	Protracker	0	42978	d139f115	913f3339	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Bass&percuss
+c6698895ea4d1f0fd9910335b0c8ee9a	1	83190	player	uade	Protracker	0	26722	42292917	7de4b944	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.mamushka
 c77963d98ce7a7799d7c82fd4cae2285	1	151370	player+silence	uade	MED4 (8ch)	0	115316	0c722244	d19860be	C&A_PD/ZestawyPD/Zestaw5_lha/disk1/OctaMED_2_0.lzh/OctaMED/Demos/Esc2Heaven
-c79d2cc4be8ccd04682a085c8c32ca23	0	131843	player	libopenmpt	Generic ProTracker or compatible	4	156936	01e40013	ac3e6b9e	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Naked_carrion
+c784de4342cb50fb447f8ab31a13d7a4	1	315560	player	uade	Protracker	0	162150	a5229c29	3ff15dc1	Ziny/NextLife/NextLife_5.dms/MOD./MN
+c7fbeb3c21fc5edc067e436649290ca4	1	128121	player	uade	Protracker	0	143502	0edb6cf5	2716f86c	Ziny/Silesia/Silesia_11.dms/SIL_MOD/2
+c802e4a9cf0c1dd938ea583c577846e8	1	138369	player	uade	Protracker	0	115154	64532ae9	79605686	Ziny/Ala_Ma_Kota/AMK_3b.DMS/MOD.AFTER DREAM.pp
+c82faacfe2a4546649c158f0e8b67c7b	1	291969	player	uade	Protracker	0	143584	5a0e74f4	0d851d6b	Ziny/Bigoz/Bigoz_11.dms/Modules/001
+c8f46a0b44ba62f4607dac0a0c5f42fe	1	169414	player	uade	Protracker	0	100798	075f3df4	0f8c8076	Ziny/H...za/H..za_2.dms/Muzyka/mod.chorus
+c9b62426da37912b7f3395d39d71c1cc	1	389225	player	uade	Protracker	0	82680	6816031e	c3f82d45	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.timer-destruction.pp
+ca23d7e1ef008714635216522f2015a5	1	52863	player+silence	uade	Protracker	0	23484	fd4df028	3030f6ae	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.## syntherella ##
+ca23d7e1ef008714635216522f2015a5	1	52863	player+silence	uade	Protracker	0	23484	fd4df028	3030f6ae	Ziny/PoczytajMiMamo/PMM_6.dms/modules/ChipCompo/mod.1st-syntherella
 cacc925963aa8f80bff4fd4d05a07d70	1	215149	player	uade	Protracker	0	69108	9824c53b	48dafe92	C&A_PD/DyskiPD/C&A_PD1.DMS/modules/mod.art cafe
 cb429bb29b35bd7cc27ca844c5150a08	0	238380	silence	uade	MusiclineEditor	0	257114	67c3bfcd	c1c28e24	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/ML.Straight On
 cb429bb29b35bd7cc27ca844c5150a08	1	0	nosound
@@ -359,95 +411,124 @@ cb429bb29b35bd7cc27ca844c5150a08	3	0	nosound
 cb429bb29b35bd7cc27ca844c5150a08	4	0	nosound
 cb429bb29b35bd7cc27ca844c5150a08	5	0	nosound
 cb44da542b8ccfc4c2b56957f8345f9f	1	46216	player	uade	Protracker	0	99546	a4ded83c	0cb04451	Amiga_Play/DEMO/BigRedAdventure/PART1/MSC/STANZA.MSC
-cba23d6de8f5f915e4d759a642be28db	0	38342	player	libopenmpt	Generic ProTracker or compatible	4	8516	06a6b07f	42625595	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.shock therapy 01
-cba40daa02b1f5d4ffc82dc9247ff270	0	10224	player	libopenmpt	Generic ProTracker or compatible	4	548	57818380	b461fdb4	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.amiga_forever
+cb9ce51f017616eaa68fcc7e630d0b30	1	170921	player	uade	Protracker	0	194982	c8ee3667	f4526cd2	Polski_Aminet/Piotr_Kazimierczak/Ravemix.lha/mod.ravemix
 cd1b54d075bbb712c61cdcfea97372b3	1	222284	player+silence	uade	Protracker	0	357798	632580b2	ce561ad0	Polski_Aminet/Axel_D/Rescue.lha/mod.rescue
+cd260320d535af63b4c59cea275d7e6a	1	62834	player	uade	Protracker	0	18486	4b249e3e	338e2ed1	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/mod.short
 cd33b7a54015b7a3011474d264364a50	1	30824	player	uade	Protracker compatible	0	41920	45d7ef93	2bbf1697	Amiga_Play/Patches/AlienBreed3D_2_Patch/music/mod.tkg
-cffe45c42828b0141952b791bb49652b	0	80519	player	libopenmpt	Generic ProTracker or compatible	4	51464	f8874e60	d9501daf	Ziny/NextLife/NextLife_3.dms/mod.quis3
+cddc808e5acae6ed8ff63b7ee5ff40f8	1	61568	player	uade	Protracker	0	23594	bc7eded0	601231d9	Ziny/Silesia/Silesia_10.dms/SIL_MOD/2
+ce0aa517acbdaaca9633dd0768409c3c	1	234359	player	uade	Protracker	0	71508	9de10f81	d6fc2144	Ziny/Barbapapa/BP_3.dms/modules/mod.4
+cf8f61c889f9394e4564e8acd6f4333a	1	255136	player	uade	Protracker	0	134864	c77b623a	c82ce0e1	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.4.pp
+d0c06be4209c48f4931261202bb2dbef	1	46216	player	uade	Protracker	0	6840	b8283a3b	dba33da3	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.emax.analyzer
+d1548c0049d6714f1549e07ca463cf36	0	145904	player	libxmp	ProPacker 2.1	4	100008	865b590f	234e0171	Ziny/FatAgnus/FatAgnus_14a.dms/Modules/mod.lombard mix
+d17c19929bda868aa9c0c35bc2a0f268	1	197503	player+silence	uade	Protracker	0	147292	546a8359	d9c4702d	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.psychoza
+d1921d2b5a91271f4c80766e4af84d53	0	199676	player	libxmp	NoisePacker v1	4	77546	579925c1	419ec135	Ziny/Ala_Ma_Kota/AMK_2.dms/AMK.music
+d1921d2b5a91271f4c80766e4af84d53	1	15352	player
+d1dce0f905abd76f0cdeaef713c7f886	1	452623	player	uade	Protracker	0	131020	5d84f9c1	3f8ba905	Ziny/Imazine/Imazine_2b.dms/MODULES/mod.gregorian_3.pp
 d207fb646d205396fbf384e3318f0b4c	1	135334	player	uade	OctaMED MMD1	0	335074	2cda7177	acfac085	C&A_PD/ZestawyPD/Zestaw2/Z2_1.DMS/Intro.MUSX
 d207fb646d205396fbf384e3318f0b4c	1	135334	player	uade	OctaMED MMD1	0	335074	2cda7177	acfac085	C&A_PD/ZestawyPD/Zestaw3/Z3_1.DMS/Intro.MUSX
+d249812418e126c8fa0d95b02d9009c0	1	136600	player	uade	P50A - P60A - P61A	0	78578	4281a27d	0181e0be	Ziny/FatAgnus/FatAgnus_19a.dms/Modules/P61.watching_stars_2.crm
+d3508c98372ffa3f97bf3663acc3c9e4	1	194693	player	uade	Protracker	0	145276	29c7d006	3217031f	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.digitalhorses.pp
 d36c542c63a05d8f80e0218d5af20b70	0	473934	player+volume	libxmp	ProPacker 2.1	4	185484	232f8c85	213fd99d	Ziny/XMag/XMag_3.dms/xmagdatas/datas2.dat
-d398f5c7efbbfb9235101ad480e4cf07	0	324366	player+volume	libopenmpt	Generic ProTracker or compatible	4	200992	f5dc3ed7	e74b54e5	Polski_Aminet/Piotr_Kazimierczak/Terror.lha/mod.terror
-d3f837bf8b69632213b25d523b2ab388	0	12980	player	libopenmpt	Generic ProTracker or compatible	4	3616	e54ddecb	ef7987a3	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.U.S.S.R.
-d3f837bf8b69632213b25d523b2ab388	1	5112	player
-d3f837bf8b69632213b25d523b2ab388	2	23005	player
-d3f837bf8b69632213b25d523b2ab388	3	5192	player
-d3f837bf8b69632213b25d523b2ab388	4	8028	player
-d414b0c5896ddee6cc0cafc9055a65a2	0	230057	player	libopenmpt	Generic ProTracker or compatible	4	65412	d49acee7	97669675	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#2
-d53b38ca357be35450a092858d919d2d	0	107359	player	libopenmpt	Generic ProTracker or compatible	4	57320	0f2b04e4	f4dcf28b	Ziny/NextLife/NextLife_6.dms/MOD./Q1
-d6fa0588af64c69c294af6fd6c19062a	0	201005	player+silence	libopenmpt	Generic ProTracker or compatible	4	101772	67354a2d	c371b9dc	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.aquirre-GACUCH.pp
-d9add6e2aa3cf7362739655940fbd073	0	277027	player	libopenmpt	Generic ProTracker or compatible	4	97904	cf86c84c	51369cec	Ziny/PmM2/PMM2/Modules/mod.CarbonDioxide
-d9add6e2aa3cf7362739655940fbd073	0	277027	player	libopenmpt	Generic ProTracker or compatible	4	97904	cf86c84c	51369cec	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.CarbonDioxide
+d4364a9ade72d9170a3ecff37ab1d76f	1	19551	player	uade	Protracker	0	8022	5aa4fb6b	e474f3df	Ziny/PoczytajMiMamo/PMM_6.dms/modules/Articles/mod.kowboje gnoje
+d53c596a62ac347a894609a7331debc3	1	234922	player	uade	Protracker	0	156918	3f7e2360	b007bc1b	Ziny/PoczytajMiMamo/PMM_7.dms/modules/mod.pmm.main
+d569e31b08fdccdb504dedbbe4625251	1	290281	player	uade	Protracker	0	112210	82b138fb	8f059b0f	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.paranoism
+d56d7f0c10056bbf2bfd7f5c537451cd	1	23168	player	uade	Protracker	0	4336	bb3aa621	5a3c05cb	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.diana_chip
+d5c87e2ef20f657728c28ec0904ec26f	1	56424	player	uade	Protracker	0	26976	86efafc7	90089698	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.kill the bros
+d6e42668fb5615dd178cc01faed95a47	1	150283	player+silence	uade	P50A - P60A - P61A	0	117988	eb5cddec	87dc14dc	Ziny/FatAgnus/FatAgnus_17a.dms/Modules/P61.thinkin bout depth
+d7c7c67c20ea5ece3eaa960f7d72853b	1	61568	player	uade	Protracker	0	88774	da47b3a4	69b14c2a	Ziny/Barbapapa/BP_4.dms/muzyka1
+d888058e1f4887b7abd19df5cff2bcc1	1	80758	player	uade	Protracker	0	54536	87a86305	615699de	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.the end.pp
+d8dea4ce311acb8f3b81a38a4079980a	1	288111	player	uade	Protracker	0	94120	d4011c70	67117d54	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.exams 91.pp
+d910716022c100e306c2b02620c4b189	1	47161	player	uade	Protracker	0	29944	fcf1484c	1c4df2b9	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## economy 9 ##
+d9e8619d424e99a16dc22734e58dc1ae	1	62412	player	uade	Protracker	0	14366	1857d996	2c15d3f7	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.seikkailumies
+dafaa05dcf873c651e6b904de8c8d9f2	1	266369	player	uade	Protracker	0	80126	85f6f40a	4e304cf5	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.snow_flake
 db35db4a8f31269b4ca7071e84f633ec	1	107645	player	uade	Protracker compatible	0	45132	7a5f12b6	8560b85e	Ziny/NextLife/NextLife_2.dms/Quis4
-db645fbd13e43e58e42529e6cf90e991	0	182370	player+silence	libopenmpt	Generic ProTracker or compatible	4	148056	71aba94e	6bb425c4	Ziny/Prawda/Prawda_2.dms/modules/mod.HA#3
-db73b27eb71db77b8cbdbd4dfbbc48aa	0	119710	player+silence	libopenmpt	Generic ProTracker or compatible	4	31812	f1d192da	c94177a8	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.gentle winds
-dbe99d99a8d4bde35bd98fa9383fd080	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	9576	b2ec5480	c137b65c	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.monday
+dbb02663a722a3ec28846149167df427	1	165737	player	uade	Protracker	0	96422	4b3bfc68	168f5f77	Ziny/NextLife/NextLife_5.dms/MOD./Q1
 dc2579f73bbb16dc217bdcf7069dd1f3	1	327801	player+silence	uade	Protracker	0	117496	76c8f2ab	fa244fd1	Ziny/Coma/Coma_1.dms/Coma#1-DanE/msx/1
-dcc85a3dfe008a8c3dbddbaa1e552110	0	187999	player	libopenmpt	Generic ProTracker or compatible	4	61960	6566c906	4978cd01	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.touch
-dcc85a3dfe008a8c3dbddbaa1e552110	1	0	nosound
-dcc85a3dfe008a8c3dbddbaa1e552110	2	11132	player+silence
-dcc85a3dfe008a8c3dbddbaa1e552110	3	7668	player
+dc58287eaa5afb5165384904d9a2a314	1	194271	player	uade	Protracker	0	138628	adbb5175	00c44393	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.asleep-PETERS.pp
+dc790df3cb11d93b2ab481c8a60b2b69	1	47161	player	uade	Protracker	0	30000	9c7504d2	93691533	Ziny/BrainDegenerator/BD_4.dms/Muzyka/MR.PRIEST
 dd1916c70d5fb2d16f54b543164c26b3	1	10207	player	uade	Protracker	0	28198	6a87bdc7	7edf7435	Ziny/Strefa_Mroku/StrefaMroku_1a.dms/STREFA MROKU #1/SM_MSX/Dark.Wiwa
-ddc3891873ab92515f5c82030cb2ff5b	0	52667	player+silence	libopenmpt	Generic ProTracker or compatible	4	4200	8acd07f8	d9b24d69	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.## syntherella ##
-ddc8ddef4b6fe0844f4cc2c0de2e67e9	0	265843	player	libopenmpt	Generic ProTracker or compatible	4	48628	b88ddcf2	29034945	Ziny/PoczytajMiMamo/PMM_3.dms/Modules/mod.snow_flake
-deccee532ceba96bf340109651a33284	0	247538	player+silence	libopenmpt	Generic ProTracker or compatible	4	89412	4164632b	b4a54680	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.canal green
-def708eb9589184bff731467e0004865	0	328731	player+silence	libopenmpt	Generic ProTracker or compatible	4	88908	13702659	e6deb517	Ziny/Orgazm/Orgazm_2b.dms/[-bONUS2-]/mod.underground.pp
-df6c71ccafec85940d74cb9fde7a6f62	0	241679	player	libopenmpt	Generic ProTracker or compatible	4	117104	e602aa17	a0686b03	Ziny/FatAgnus/FatAgnus_11b.dms/mod.digital_deream
+dd29321ffbdbb1ca7ffecb7f8f537f42	1	61568	player	uade	Protracker	0	24706	37b69330	d8f0fba2	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.daydreams
+dd398a75dd69c3be5f6af8e215ad60ce	1	339171	player+silence	uade	Protracker	0	167574	eb464d0e	4be8dd61	Ziny/ZigZag/ZigZag_5.dms/ZZText/ZIGZAG0.MOD
+dd398a75dd69c3be5f6af8e215ad60ce	1	339171	player+silence	uade	Protracker	0	167574	eb464d0e	4be8dd61	Ziny/ZigZag/zigzag5/ZZText/ZIGZAG0.MOD
+ddf5f2dd8f00e381d213d06685f92f8c	1	53872	player	uade	Protracker	0	40346	da40e5dc	5798faef	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.palle's theme2
+de18d48a453f31be0050127ebe639a91	1	63317	player	uade	Protracker	0	70026	a6a6939e	d6e914a5	Ziny/Imazine/Imazine_1.dms/MODULES/mod.STAN 92 Trumpet.pp
+de7adc715b4efe03f1b47ee31abaf2b0	1	12920	player	uade	Protracker	0	2318	d0c83244	1744bc93	Ziny/NiezTejBeczki/NTB_5b.dms/>>_BONUS-TRACKS_<</modules/Mod.Ministry-Intro
+df163c4bf03e27354f77d3a8ec513172	0	52184	player	libxmp	The Player 6.0a	4	13304	3de25679	401ba7b5	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.love
+df163c4bf03e27354f77d3a8ec513172	1	0	nosound
+df837e4c9446814ba82e34126f8ee6c0	1	76800	player	uade	Protracker	0	42852	f29f3563	bd352ace	Ziny/NextLife/NextLife_3.dms/mod.quis2
+dfafc2aa105c34038334acf51c56907e	1	304064	player+silence	uade	Protracker	0	124830	853011c8	1585cf7e	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.love in paradise
 dfbcbdf5614b3e41eaa14f66a44b4cd2	1	120123	player	uade	Protracker	0	114306	855b42f4	9ea35f26	Ziny/Legion/Legion_2.dms/Modules/mod.2
 dfebda5a08a2be8178910ab45f56ea13	1	124283	player	uade	Protracker	0	62150	66571d3b	9e0f3a88	Ziny/Karmelia/Karmelia_1.dms/text/mod.wielka podroz
+e030a0d347ec6a3f501ab3a4bf0b4bb9	1	61568	player	uade	Protracker	0	11854	882d4970	dacd03bd	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.s.s.mania
 e0680a9c8be9c89580c80b63c5a524dd	1	76920	player	uade	Protracker	0	48578	7231bccd	84b6a065	Ziny/Testament/Testament_1.dms/Modules/mod.pkb
-e0c1b2e99766ebd87a8cddfd87683864	0	145993	player+silence	libopenmpt	Generic ProTracker or compatible	4	244764	43aeb44d	c4a172f7	Ziny/NiezTejBeczki/NTB_5plus.dms/modules/mod.## wreck ##
+e0ae645845eba0e9d37fd8c6c915b2a6	1	86284	player	uade	Protracker	0	51584	a500e4b2	420e2f43	Ziny/Barbapapa/BP_3.dms/modules/mod.2
+e11a3ac78942fc48683d4c9a399ccd83	1	277582	player	uade	Protracker	0	167748	986cdf71	0d37c2a9	Ziny/PmM2/PMM2/Modules/mod.CarbonDioxide
+e11a3ac78942fc48683d4c9a399ccd83	1	277582	player	uade	Protracker	0	167748	986cdf71	0d37c2a9	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.CarbonDioxide
+e158987fd23aee305bd113853ffd5c03	1	61568	player	uade	Protracker	0	107984	946af9c7	d8fd0121	Ziny/ZigZag/ZigZag_5.dms/Megatracker/mod.megatracker1.pp
+e158987fd23aee305bd113853ffd5c03	1	61568	player	uade	Protracker	0	107984	946af9c7	d8fd0121	Ziny/ZigZag/zigzag5/Megatracker/mod.megatracker1.pp
 e16816d7f56e679a24b3980dc720186c	1	262531	player	uade	Protracker compatible	0	179650	5b475e4d	a9ef9df6	Ziny/H...za/H..za_1.dms/Muzyka/mod.Agony
-e2702a3b2e30e4ac768cc574cc6caad1	0	139993	player+silence	libopenmpt	Generic ProTracker or compatible	4	75460	9448f8a7	bf982093	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.get higher
+e1adfaaac92f9cb7d94dba0ed16f5b05	1	18044	player	uade	Protracker	0	13710	5484d4e1	77f8a4d8	Ziny/NextLife/NextLife_3.dms/mod.quis5
 e2785c02c908df619cf414540c134122	1	207493	player	uade	Protracker	0	50406	83f9e3e6	c6fbe6b3	Ziny/Previews/NoNameMa.dms/MAG.MOD
+e315104930dd4461334a6c7d3fbdc8af	1	214952	player+silence	uade	Protracker	0	113060	d9f0a6fd	180edafb	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.crystal rain
 e33e707f5829675af2d7da200a1c1e0d	1	179321	player	uade	Protracker	0	119814	32c72204	025937a7	Ziny/Orgazm/Orgazm_1.lzx/Mods/mod.SexAndJazz
-e34aee9973057eb0eb8db004d20747b9	0	183087	player	libopenmpt	Generic ProTracker or compatible	4	9112	90faccac	2c7c5444	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.turrigol
-e452c93cba971aef188ae9a4ca568630	0	108318	player	libopenmpt	Generic ProTracker or compatible	4	58596	c1ee89db	13df552a	Ziny/NextLife/NextLife_5.dms/MOD./Q3
-e4b2322f849601376e4a8bc28c3b746a	0	66301	player	libopenmpt	Generic ProTracker or compatible	4	4976	1cbbcbae	a540e78e	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.synthmania 1
-e729bfd6ccb2fc0083dc63d813b3ac30	0	61668	player	libopenmpt	Generic ProTracker or compatible	4	19176	2ebd7d03	6b402366	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.intro_live
-e73f4430af398636b90cd01a04b51454	0	61348	player	libopenmpt	Generic ProTracker or compatible	4	2608	1591abc3	b96c6157	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.the last kuusnepa
-e7e5f0cbc5a1fa5c4c8533d33931777b	0	222388	player	libopenmpt	Generic ProTracker or compatible	4	31940	5f05b092	576404fd	Ziny/Ala_Ma_Kota/AMK_1.dms/mod.zackteam.pp
+e42bcd88b65970ceda0776e7883b89b2	1	170278	player	uade	Protracker	0	120208	348769d7	ef322858	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.IlTramontoDelSole.xpk
+e42bcd88b65970ceda0776e7883b89b2	1	170278	player	uade	Protracker	0	120208	348769d7	ef322858	Ziny/Imazine/Imazine4/MODULES/mod.IlTramontoDelSole.xpk
+e62c644c8de7ee5470481243cba519a9	1	71656	player	uade	Protracker	0	22000	c6408b1f	759a00ce	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.c53
+e662eb60e3c130651202380116a46fd5	1	72520	player	uade	Protracker	0	60936	81649161	9c0d7710	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.ocean club
 e8191a2bc064c05ebdefaf3e6c34004d	1	95809	player	uade	P50A - P60A - P61A	0	116110	387586b8	274861b9	Polski_Aminet/Anadune/and_sghd.lha/Sound_Garden/P61.funtastic day
 e8191a2bc064c05ebdefaf3e6c34004d	2	95327	player
-e85b69dccc84716993a638a9b975429c	0	184045	player	libopenmpt	Generic ProTracker or compatible	4	101040	47be5d03	65a23979	Ziny/H...za/H..za_2.dms/Muzyka/mod.fantasymusic
-e9a85139e870f90cf6aeba49a6499e3a	0	181934	player+silence	libopenmpt	Generic ProTracker or compatible	4	23892	a9a20698	b9f5f90c	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.songtech_4
-ea5bb14a4f410986b25ddc50952d3964	0	276025	player+silence	libopenmpt	Generic ProTracker or compatible	4	26192	07223abe	2940063c	Ziny/FatAgnus/FatAgnus_12b.dms/Modules/mod.## suggestion ##
+e9ab37a003bf9fca313f520f8de778f8	0	61428	player	libxmp	The Player 6.0a	4	4196	6875c6e1	7d31b57d	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.intromusic
 eaa632daba937d0805f0a92a421181fd	1	61568	player	uade	Protracker	0	19652	42b9470d	26a698b8	C&A_PD/DyskiPD/C&A_PD31.DMS/DeLuxeGalaga/mod.c&a
 eb421ce3daccebc21912ae62a3588106	1	50034	player	uade	Protracker	0	14042	7b4f7f7f	3170abcf	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.roslinki
-eb483b2fd08c0381e039f9cf8516371d	0	76565	player	libopenmpt	Generic ProTracker or compatible	4	28856	3440f488	c0a93d26	Ziny/NextLife/NextLife_3.dms/mod.quis2
+eb65907c8e579213082c97028facf849	1	177545	player+silence	uade	Protracker	0	298156	5bf311ce	b554a123	Ziny/Ala_Ma_Kota/AMK_3b.DMS/MOD.LONG AND NICE DREAM.pp
 ebb3022d6b05cd6f41d58aef75dbee13	1	107645	player	uade	Protracker	0	110296	09fca62d	ba594c67	Ziny/GlosLamera/GlosLamera_2.dms/pdprg/gl#2.dane
+ebc838835176b96a75da9acf4c0d54b7	1	30824	player	uade	Protracker	0	30338	e7729333	209b856e	Ziny/BrainDegenerator/BD_4.dms/Muzyka/flyingworld
+ebebf153e13ce5027ed28bd6af6e603a	1	206207	player	uade	Protracker	0	154824	f92ad471	9924802e	Ziny/Bumerang/Bumerang_5.lha/mod.Bumerang#5
 ec00d401049aa10cae15a3dada90ffc5	1	186827	player+silence	uade	Protracker	0	195706	adad6abe	2aa9d887	Amiga_Play/DEMO-DMS/trapped1.dms/Trapped1.lha/mod.TrappedManual
-ec1dec352bf200714699c28f4423267b	0	198800	player+silence	libopenmpt	Generic ProTracker or compatible	4	71616	975bb9ca	86c21313	Ziny/PaperWhite/PaperWhite_1.dms/modules/mod.putty-PETERS.pp
+ec4ec08f49a467e0473fd73133c8f4d1	1	30824	player	uade	Protracker	0	5370	b12413d4	d992f27c	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.## microtune 3 ##
+ec7b7e2756b698cfed265d59c5f6d526	1	61568	player	uade	Protracker	0	15960	659a8a5d	9be9ea05	Ziny/NiezTejBeczki/NTB_6b.dms/>> BONUS TRACKS <</modules/mod.monday
 ec820e136d59a3b1ce7c8425c7187ec4	1	53872	player	uade	Protracker	0	47850	6321139b	2acaf254	C&A_PD/ZestawyPD/Zestaw19_lha/disk2/SamPull.lha/SamPull/mod.Sample
+ece00459a8152fc4b2ca410a101e24c5	1	151571	player	uade	Protracker	0	109870	5b92a97a	bc23e418	Ziny/Silesia/Silesia_12.dms/SIL_MOD/1
+ed81eb610d69e6a6b8a5950d6fc881b7	1	190423	player+silence	uade	Protracker	0	174228	95c8fd7f	91dba243	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.bastards atack
 edc245ce45c7856f8bb12b7c8f684f5a	1	3416	player	uade	OctaMED MMD0	0	7902	c82e17e9	fa533b3a	C&A_PD/DyskiPD/C&A_PD14.DMS/DoubleSquares/snd/new_hi
 edf6b329e51dae9def19ca8c29a421f9	1	190091	player	uade	OctaMED MMD0	0	44664	8a03f3e9	3406bf17	Amiga_Play/DEMO-DMS/Lemmings2.dms/Circus/Tune
-ee67e91afbe9485b786fb440cf4a0adf	0	146002	player+silence	libopenmpt	Generic ProTracker or compatible	4	48924	a85eb37d	77b7a762	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.why?.pp
 eed4c6b42545fbf62eceeb74345e9cc3	1	105193	player	uade	P50A - P60A - P61A	0	100456	808f1232	29727f39	Polski_Aminet/Anadune/and_sghd.lha/Sound_Garden/P61.no i co ?
+eefe46a1e8f2897e8754feadf56ec4a5	1	247119	player+volume	uade	Protracker	0	99998	c35bccf9	79c0b43f	Ziny/NiezTejBeczki/NTB_6b.dms/NTB/mod.13 friday '95
+ef4e1940337eea94723a52bc3a62d0a2	1	53872	player	uade	Protracker	0	10756	2ffcaf45	e165c036	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune19
 ef8b436e7162340d2e9c75e8af8ce68e	1	300686	player+silence	uade	Protracker compatible	0	93614	d56a0eb6	cb2613ba	Ziny/Karmelia/Karmelia_1.dms/text/mod.marek 9
 f03dc2387079c351b294fd3c9476b161	1	163969	player	uade	Protracker	0	87102	67d36636	1183eff5	Amiga_Play/DEMO/BlackViper/Modules/mod.roadMusic1
-f11c8713bb2247894d577c6b62659a97	0	260591	player	libopenmpt	Generic ProTracker or compatible	4	98628	575f45c8	28858969	Ziny/Imazine/Imazine_4a.dms/MODULES/mod.MysticLights.xpk
-f11c8713bb2247894d577c6b62659a97	0	260591	player	libopenmpt	Generic ProTracker or compatible	4	98628	575f45c8	28858969	Ziny/Imazine/Imazine4/MODULES/mod.MysticLights.xpk
-f1e2ce334bafe15526939f374ef646dc	0	287010	player+silence	libopenmpt	Generic ProTracker or compatible	4	95816	d8196120	a5085f13	Ziny/Bigoz/Bigoz_7.dms/MODULES/mod.>$ lunatic 1 $<.pp
-f21d32c0d014230bf97320d521f53bc0	0	143146	player	libopenmpt	Generic ProTracker or compatible	4	45280	e7676e0a	db122790	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.why?
-f234444ec84b61fc518835d579a6e9b2	0	254620	player	libopenmpt	Generic ProTracker or compatible	4	92688	b00ced4f	e48b2f83	Ziny/FatAgnus/FatAgnus_8.dms/Modules/mod.4.pp
+f0e6c76a4a70cf392ae94525920b0fc6	1	331475	player	uade	Protracker	0	156068	0ae28dbe	0857f59c	Ziny/Orgazm/Orgazm_2b.dms/[-bONUS2-]/mod.underground.pp
 f2f4666bba7f89b2b3166461bed228ec	0	313947	loop	uade	MusiclineEditor	0	83214	93a85db0	2da61242	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.Sweet'n'Sour
 f2f4666bba7f89b2b3166461bed228ec	1	321414	loop
-f2f71dd3a298973042dbbc1393b227cf	0	289708	player	libopenmpt	Generic ProTracker or compatible	4	74412	39725991	281656c6	Ziny/FatAgnus/FatAgnus_10b.dms/Modules/mod.paranoism
-f40ea86454a18d791d3a36ed697fb3c7	0	56200	player+silence	libopenmpt	Generic ProTracker or compatible	4	4180	12ee6342	2ba86af0	Ziny/NiezTejBeczki/NTB_2.dms/BONUS-TRACKS/modules/mod.intro-tune15
+f340f6d23f418e08b22b9a224f155f74	1	78848	player+silence	uade	Startrekker (4ch)	0	26938	550f3f9c	8acddbbe	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.## syntherella 5 ##
+f40e2c3b9dd632fb8345769a6bd2fe01	1	30824	player	uade	Protracker	0	2304	e84875c5	5c947da6	Ziny/NiezTejBeczki/NTB_4.dms/>>_BONUS-TRACKS_<</modules/mod.simply short
+f420f9e6a035375e7a153bd35b27d9f7	1	16758	player	uade	Protracker	0	15502	15933b0e	3804e889	Ziny/NiezTejBeczki/NTB_3.dms/>>_BONUS-TRACKS_<</modules/mod.<>> quadrascope <<>
 f431e75fe7b150aea804b4411ebf6afc	1	76920	player	uade	Protracker	0	22002	0dcc85f7	c1e53e9d	Polski_Aminet/Grzegorz_Calkowski/SysPic400.lha/SysPic-4.00/Demos/SoundFiles/mod.Jack The Ripper
 f51ef265186f82bd91aa0919e1106399	0	7816	player	uade	Amos Music Bank	0	4048	efb1de84	6f21c284	Amiga_Play/DEMO-DMS/HillseaLido.dms/-S-/B-31
 f574c3534bebcf4cea6313f264f484ec	1	0	nosound	uade	Protracker	0	31804	7549a602	50fbfb5c	Amiga_Play/DEMO/WhalesVoyage2/SPIEL/VULGO/MUSIC.MUS
+f5c2a78681df02e433fcde52b52875d4	1	83330	player	uade	Protracker	0	17346	89c03a9a	084086a3	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.chip with christina
+f5ffdcdf7866075f71d897ef9ce7ea7e	1	385000	player+silence	uade	Protracker	0	89154	8cf902ea	7a80bca5	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.Silentium.pp
+f64a6ab64ee2798157c515f0916ce759	1	157157	player	uade	Protracker	0	161148	0447f855	a0ea3617	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Eyes_of_the_Lies_1
+f669ddc453da0078268e629f687aca4f	1	166111	player+volume	uade	Protracker	0	133652	f6b3a7bd	39bd7da3	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.experience
+f6893f3e1e3a530ea7a952a9f733a9a2	0	100270	player	libxmp	ProPacker 2.1	4	348608	bd5e8476	715df27e	Ziny/FatAgnus/FatAgnus_13a.dms/Wspominki/mod.rowy-question
+f6b66272d2e6b6bd4b828d6f79f8f3c1	1	184445	player	uade	Protracker	0	121476	6cdcf073	a87ef37e	Ziny/H...za/H..za_2.dms/Muzyka/mod.fantasymusic
 f6ec49f5cc1e3aa6cb61ac862cbc8f34	1	220293	player	uade	Noisetracker 1.x	0	87514	ca028366	ec2af6bd	C&A_PD/ZestawyPD/Zestaw12/Z12_2.DMS/TotalExcess/5
-f7257fec1f0f0fed151ba206608bbee8	0	15337	player	libopenmpt	Generic ProTracker or compatible	4	2876	ac913c52	e7934d12	Ziny/NiezTejBeczki/NTB_8a.dms/>> BONUS TRACKS <</mod.kukko
-f7781ef2f832aa5d8116998abac7e439	0	49106	player	libopenmpt	Generic ProTracker or compatible	4	6996	f9ecf77d	b40950b7	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.cometa
+f7a33165ae9e3428722eec7add24cc7a	1	211149	player+silence	uade	Protracker	0	66536	b3cfd27c	5461b3bc	Ziny/BrainDegenerator/BD_7a.lha/Muzyka/Im_a_junk
+f7e4b978a0c63be089ccbd29e19e32da	1	108609	player	uade	Protracker	0	82470	e7ffe4ea	8059d975	Ziny/NextLife/NextLife_5.dms/MOD./Q3
 f850d6f6167e3f64d3384eb376b46a76	1	23168	player	uade	Protracker	0	51532	f069d75e	c56f0c28	C&A_PD/DyskiPD/C&A_PD28.DMS/Modules/mod.przyklad
-f8dbced4a1c3ee52da1ab27408df553a	0	81798	player	libopenmpt	Generic ProTracker or compatible	4	43768	c05540c7	f1457aaf	Ziny/PmM2/PMM2/Modules/mod.delight_part_i
-f8dbced4a1c3ee52da1ab27408df553a	0	81798	player	libopenmpt	Generic ProTracker or compatible	4	43768	c05540c7	f1457aaf	Ziny/PoczytajMiMamo/PMM_2.dms/Modules/mod.delight_part_i
+f899c366e611ba539549baf44448518b	1	92272	player	uade	Protracker	0	48484	ae989c71	aa1abbe1	Ziny/BrainDegenerator/BD_6.dms/Muzyka/Live_on_techno
+f98083ac7f916c1e6444eae605a2ebeb	0	305975	player	libxmp	ProPacker 2.1	4	115496	4b049d07	385d36fb	Ziny/XMag/XMag_4.dms/mod.alllike
+f9a43a621b970d908438dfa541801ae4	1	38520	player	uade	Protracker	0	14936	206fb564	179b4274	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.shock therapy 01
 fa048e025f64cace92bb8dc95c8514bf	1	334047	player	uade	OctaMED MMD1	0	147392	4dbde94c	ccdf7ccb	Amiga_Play/DEMO-DMS/GloomDeluxe.dms/sfxs/med1
 fa270f7b29fc72bed8df96add6158d0a	1	169093	player	uade	Protracker	0	136724	f1989f21	0e3aeef5	Ziny/Necronomicon/Necronomicon_1.dms/Modules/mod.adventure
+fa7e7450c41c62fdeec9017ba7eed7ac	0	200580	player	libxmp	ProPacker 2.1	4	95410	34a3d7bc	7fd64c8f	Ziny/FatAgnus/FatAgnus_14a.dms/Modules/mod.zorba
+fb79b2cf4467ea76d19c08f35f8b5fc8	1	41072	player	uade	Protracker	0	46824	ed67db61	e598fbeb	Ziny/NextLife/NextLife_5.dms/MOD./Q2
 fbd784fd7d32f7b8dbc6d19c2b370996	0	205163	silence	uade	MusiclineEditor	0	29103	ff5dd1c5	74e924bf	C&A_PD/ZestawyPD/Zestaw16_lha/disk1/mline114.lha/Mline/MusiclineEditor/Modules/Ml.Neutron
 fc03620704931bbba4e7a81e59ef7c22	1	199797	player	uade	Protracker	0	151934	782e87f6	c7a3a259	Ziny/Orgazm/Orgazm_2a.dms/Org2/mod.chinska_czapa
-fc265de5971f5a24a8a11bdb0f87ff84	0	125253	player	libopenmpt	Generic ProTracker or compatible	4	45376	c13a0ff3	7efac943	Polski_Aminet/Piotr_Kazimierczak/Radioactive.lha/mod.radioactive
-fc265de5971f5a24a8a11bdb0f87ff84	1	7668	player
-fca18233b04a0458fb0ab42900c42def	0	71473	player	libopenmpt	Generic ProTracker or compatible	4	154452	784cb717	56de6d19	Ziny/PaperWhite/PaperWhite_2.dms/modules/mod.party-question-XTD.pp
-fe7612949303e4fc6e0970f7f33a3fe2	0	57514	player	libopenmpt	Generic ProTracker or compatible	4	4040	eba8efe8	43dd31db	Ziny/NiezTejBeczki/NTB_5plus.dms/>> BONUS TRACKS <</modules/mod.intro #4
+fc7153a2190f937736a745bb42571861	1	125569	player	uade	Protracker	0	63142	1aa4c259	b678c047	Polski_Aminet/Piotr_Kazimierczak/Radioactive.lha/mod.radioactive
+fc7153a2190f937736a745bb42571861	2	128121	player
+fe2245abe9c13acd24464ec5bbaa815b	0	102380	player	libxmp	ProPacker 2.1	4	93304	5675b9ea	cce9064b	Ziny/NextLife/NextLife_7.dms/MOD./Q1
+fe2b52ab86f9d56d60f51c56a1cedd9b	0	36953	player	libxmp	The Player 6.0a	4	8032	19a57be8	7eb252c1	Ziny/Telesor/Telesor_4.dms/Mjuzik/mod.short
+fe746ce2cacff81e9a4a6fb5b2a03944	1	30824	player	uade	Protracker	0	4816	ef20c7e2	b1db1ff7	Ziny/NiezTejBeczki/NTB_7a.dms/>> BONUS TRACKS <</mod.heathsong
+fe7f624e0c34c99a64b1036abfcb80f9	1	234838	player+silence	uade	Protracker	0	150688	d97cf927	923d43e0	Ziny/FatAgnus/FatAgnus_9.dms/Modules/mod.duration.pp
+ff6ea5dd5aa48928e86a081754609e95	1	137837	player+silence	uade	Protracker	0	97448	0bc90809	a1b12cd5	Ziny/Jestem/mod.Blood & Fear vol.4.pp

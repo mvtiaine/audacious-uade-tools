@@ -145,7 +145,7 @@
 193505ad44aeb289b906a9c2968d3f64	1	76920	player	uade	Soundtracker II (15 instr.)	0	24348	8a39a25e	ceeec0a3	PEGA.MOD
 195ea4c7ec2fba3792dd9891cd0d0e11	1	170580	player	uade	Protracker compatible	0	197674	7ef2fec3	e1752776	YOAFRICA.MOD
 19a16dfd496cb23423551881b1417da3	1	219128	player	uade	Protracker compatible	0	95280	34180620	32521345	ANDSO_ON.MOD
-19f82687764ed012413e312ad7618220	0	163912	silence	uade	Soundtracker II - V or compatible	0	67364	7e301efe	29a1a7c7	THIEF01.MOD
+19f82687764ed012413e312ad7618220	0	166598	silence	uade	Soundtracker II - V or compatible	0	67364	7e301efe	29a1a7c7	THIEF01.MOD
 1a086873fc1ad27a7d2e47f8c7b0c717	1	205463	player+silence	uade	Noisetracker 1.x	0	68958	856888aa	4ab47fba	SKYFIGHT.MOD
 1a2bed05da0fe3158579fe7e488f090d	1	243341	player	uade	Protracker compatible	0	75954	f87398a2	2695726a	WINGS.MOD
 1a4a0f5ceb74b1e18b14411ff14c342c	1	281411	player+silence	uade	Protracker compatible	0	208596	88b8ddeb	33c18eb9	BIRTHDDI.MOD
@@ -633,7 +633,7 @@
 73ae606c840e00224a1ae33c68c78a44	1	250997	player	uade	Protracker	0	99304	20d68440	59657c99	ENDLESS.MOD
 73cd0bb6877e305f77e08fcb88b0bf2a	1	252946	player	uade	Protracker	0	254072	a1716c7a	a168a59d	GLORYLVE.MOD
 73e5aa6263e4d7b2c9338a5d5ae1a799	1	307321	player	uade	Protracker compatible	0	162816	56b280ea	aff4fb08	MCHAMM.MOD
-742a2421c0b28d3cf1e8aaee0aedeb32	0	217259	player	uade	Soundtracker II - V or compatible	0	105124	b35e7473	1ff49ed6	NIGHTMAR.MOD
+742a2421c0b28d3cf1e8aaee0aedeb32	0	217440	player	uade	Soundtracker II - V or compatible	0	105124	b35e7473	1ff49ed6	NIGHTMAR.MOD
 74387b3abb6d8b064042a6d14aa518e4	1	210853	player+silence	uade	Soundtracker II (15 instr.)	0	143594	bf8ffcec	8d40125a	EAGLE.MOD
 7465dd1f47adce60cf4498f12bf6b527	1	169093	player	uade	Protracker compatible	0	91504	db94e586	a6ca11b3	NIGHTFLL.MOD
 74788e1680ab83abd304f65c97c26838	1	138369	player	uade	Protracker compatible	0	126436	ba39f9df	0e96894e	ART.MOD
@@ -1246,7 +1246,7 @@ eab2dbd15c06ba322ca3501e5e8d6ea2	1	268921	player	uade	Noisetracker 1.x	0	63880	8
 eacf75bf63085b521473eed8b4a9065d	1	307321	player	uade	Protracker compatible	0	135656	da77912b	025fdf94	KEF.MOD
 eacf75bf63085b521473eed8b4a9065d	1	307321	player	uade	Protracker compatible	0	135656	da77912b	025fdf94	KEFRENS1.MOD
 eadfc2d2bf44d08d559dfaaec2756560	1	142187	player	uade	Noisetracker 1.x	0	65352	e54215ea	0e530d54	CFRMUS4.MOD
-eae740e4c314e23d1aba6a9785733a18	0	158606	silence	uade	Soundtracker II - V or compatible	0	101710	cfc41d7b	7f628a60	FORPEETS.MOD
+eae740e4c314e23d1aba6a9785733a18	0	157026	silence	uade	Soundtracker II - V or compatible	0	101710	cfc41d7b	7f628a60	FORPEETS.MOD
 eaf94e8c68e3c4911c9a537bfc6aa2a5	1	146045	player	uade	Protracker	0	150474	81e0e3a2	aa1051a6	KAOSMODU.MOD
 eb5f36b4f10aa1f91a2e657a3f8875f7	1	276116	silence	uade	Protracker compatible	0	176900	c8a8edde	fc16d531	DEMOCOMP.MOD
 eb7eea3e60de9fd65b5b911aded5a7ed	1	147974	player	uade	Protracker compatible	0	162168	803c0a66	25b7f7d2	OUTZIDE.MOD

@@ -963,7 +963,7 @@
 2f0e5e0b5741e40b6566d27cb969a79c	1	262893	player	uade	Protracker	0	284842	0bd29035	071f8130	amiga/audio/modules/misc/1994/mod.Fairyland.lha/MOD.Fairyland
 2f248d81f724424585abc16db80a055e	1	313108	player	uade	Protracker	0	136322	764860c7	be3bae57	amiga/audio/modules/misc/1993/mod.MystikalVibes.lha/mod.MystikalVibes
 2f256e6960a61a7457d67ade3d3fa175	1	134933	player	uade	MED4 (4ch)	0	78731	cbb585b6	8f980a63	amiga/audio/modules/Roberto/BackInBlack.med.lha/BackInBlack.med
-2f376920bf45875fc387586ce0a091d4	0	404442	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	amiga/audio/misc/tfmx-tunes/tfmx.MasterBlazer.lha/mdat.MasterBlazer_Intro-CH
+2f376920bf45875fc387586ce0a091d4	0	405088	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	amiga/audio/misc/tfmx-tunes/tfmx.MasterBlazer.lha/mdat.MasterBlazer_Intro-CH
 2f376920bf45875fc387586ce0a091d4	1	1004	player
 2f376920bf45875fc387586ce0a091d4	2	1004	player
 2f376920bf45875fc387586ce0a091d4	3	1004	player
@@ -1744,7 +1744,7 @@
 571bdf6ae3e6e5bb4815a6c8789ee165	5	1929	player
 571bdf6ae3e6e5bb4815a6c8789ee165	6	3637	player
 571bdf6ae3e6e5bb4815a6c8789ee165	7	5345	player
-571bdf6ae3e6e5bb4815a6c8789ee165	8	147275	loop
+571bdf6ae3e6e5bb4815a6c8789ee165	8	138113	loop
 571d1cc98e0845c0d6c56852316d7330	1	163969	player	uade	Protracker compatible	0	27598	5987d6e2	fcb8e2ab	amiga/audio/modules/mat_simmonds/mod.L.f.f.lha/mod.Lightspeed
 5723d1cf93072ef128506a213522e512	1	182874	player+silence	uade	Protracker compatible	0	89826	25a14ae3	5b1e7d71	amiga/audio/modules/nutcase/nc-vanis.zip/VANISHED.MOD
 57253db24480ba5d697222e4a8cd3a29	1	242618	player	uade	Protracker	0	82538	7ad8db4a	3447885e	amiga/audio/modules/misc/1993/mod.TheSeventhSea.lha/mod.TheSeventhSea

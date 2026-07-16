@@ -2144,7 +2144,7 @@
 166e67e9043be0ece00bada85b1d9cbb	1	169093	player	uade	Protracker	0	53214	1121f2d8	0212ebeb	.s/NotInDir.'93/_Intro.HUN/alarm.zip/BLACKIE.MOD
 166f48d4b1b9a8c72e3cbf9fe09f0222	1	272253	player+silence	ft2play	Fasttracker	6	353720	6b05493b	bee6dadd	.1/DEMO.'96/Abduction'96/demo/sd_lume.zip/LUME.MOD
 166fb0a12c8fe2b413c8b953b4b45baa	0	254515	player+silence	libopenmpt	Impulse Tracker 2.14p1-2	64	409600	6be6aebf	df759ac8	.1/DEMO.'98/TheParty.'98/Multichannel/disk197.lha/disk197.it
-166fb0a12c8fe2b413c8b953b4b45baa	0	254534	player+silence	libopenmpt	Impulse Tracker 2.14p1-2	64	409600	6be6aebf	df759ac8	.1/DEMO.'98/TheParty.'98/Multichannel/disk197.zip/disk197.it
+166fb0a12c8fe2b413c8b953b4b45baa	0	254515	player+silence	libopenmpt	Impulse Tracker 2.14p1-2	64	409600	6be6aebf	df759ac8	.1/DEMO.'98/TheParty.'98/Multichannel/disk197.zip/disk197.it
 16714e63326ea9dcd615ba04f40ac04e	1	199086	player+silence	ft2play	FastTracker v2.00	10	754853	bf8a6571	e1449b53	.1/DEMO.'97/X.'97/Multichannel/sexnoize.zip/sexnoize.xm
 1673095d3aff90d2647f02e6ac4e4746	1	322738	player	ft2play	FastTracker v2.00	24	604269	ed62a6b0	ed68b7e3	.1/DEMO.'97/Gathering'97/TextDemo/rcn-ma3.zip/KUMMA.XM
 167dd14b1f62ae8a64aa3c4694d60a3d	1	210870	player+silence	ft2play	Fasttracker (M.K.)	4	144676	8a0b220e	ac7e5f2a	.s/NotInDir.'96/_Musicdisk/wavstor1.zip/WHISPER.MOD
@@ -9039,7 +9039,7 @@
 5d9a607182f4107c16b8baf1e564bf75	1	147858	player+silence	ft2play	FastTracker v2.00	16	758837	7cfdf241	814afdae	.1/DEMO.'97/Demolition97/Multichannel/roadtohm.zip/ROADTOHM.XM
 5d9a673bf952254357043a74fc875fb1	1	166542	player+silence	ft2play	FastTracker v2.00	24	635678	4e0e285a	07a5bda9	.2/Music/mc4/veteran/m4v-over.zip/M4V-OVER.XM
 5da47dd89b695309bd14f5118e348dc2	1	133217	player+silence	ft2play	FastTracker v2.00	14	844230	7a55154e	9aaf470e	.1/DEMO.'98/Proxy.'98/FastMusic/kostoisk.zip/kostoisku.xm
-5da6595ca853d0d6bef8b8f4db1de2de	0	227740	player+silence	libopenmpt	UltraTracker 1.6	18	547107	60c39ae1	5ad3846d	.1/DEMO.'95/Cache.'95/Music/cac95msx.zip/TURK.ULT
+5da6595ca853d0d6bef8b8f4db1de2de	0	227745	player+silence	libopenmpt	UltraTracker 1.6	18	547107	60c39ae1	5ad3846d	.1/DEMO.'95/Cache.'95/Music/cac95msx.zip/TURK.ULT
 5da83f73f3f8e82826b7809bc1e096f8	1	166460	player+silence	it2play	Impulse Tracker 2.00	16	598312	6e17f65b	e33dcd89	.1/DEMO.'96/TextMode.'96/demo/txtc.zip/ACIDCMP4.S3M
 5da85a0de6705cd43d7331bd19361cc0	1	244128	player+volume	uade	Protracker	0	121068	00eb0d41	75fe8ece	.2/Music/MOD-old/lazerro.zip/LAZERRO.MOD
 5daa0d6f832907c932cc7dcb051bf7ef	1	162886	player+silence	ft2play	FastTracker v2.00	24	955635	e2772f25	b460845f	.1/DEMO.'97/Wired.'97/Multichannel/mafland.zip/MAFLAND.XM
@@ -13397,7 +13397,7 @@
 8a2997b288be53d2b2a4779985a76d04	2	69224	player
 8a2d5926370ed655e42131172c211466	1	155589	player+silence	ft2play	FastTracker v2.00	12	178249	a37b0d2f	6ac7df18	.1/DEMO.'98/Proxy.'98/FastMusic/aaretonm.zip/ääretönmopedi.xm
 8a2dec7497bf0ae82e48c96c70409462	1	102895	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	305184	963b59e7	14e0c6b3	.2/Music/mc3/rookie/o-79642.zip/O-79642.S3M
-8a2f091719e5298c50880aed1f89f64b	0	185459	player+silence	libopenmpt	UltraTracker 1.6	13	429649	fca1bebe	f2c0a386	.1/DEMO.'94/Assembly.'94/Multichannel/el_world.zip/EL_WORLD.ULT
+8a2f091719e5298c50880aed1f89f64b	0	185606	player+silence	libopenmpt	UltraTracker 1.6	13	429649	fca1bebe	f2c0a386	.1/DEMO.'94/Assembly.'94/Multichannel/el_world.zip/EL_WORLD.ULT
 8a36707b4a34eec83d933dc618282975	1	244747	player+silence	st3play	Scream Tracker 3.2x (SB)	8	181236	fbf81d23	2b7b6c1b	.2/Music/mc3/veteran/e-91347.zip/E-91347.S3M
 8a370bc8f1cb6be37d1f7c175d9588c9	1	356471	player+silence	it2play	Impulse Tracker 2.05	16	285134	69dde129	ea2d74db	.s/NotInDir.'96/_Musicdisk/c-undspd.zip/WWW.IT
 8a39418cb1ddccf4bb52538735f0f90b	1	171975	player	ft2play	FastTracker v2.00	20	227034	bed9c2ad	0faa455c	.2/Music/MOD-old/jt_wstar.zip/JT_WSTAR.XM
@@ -14530,7 +14530,6 @@
 96660a128388214fb25bd513d63d2ac6	1	191980	player	st3play	Scream Tracker 3.01 (SB)	8	73824	71cb8597	9b707c98	.1/DEMO.'95/Assembly.'95/4channel/japowood.zip/JAPOWOOD.S3M
 96660a128388214fb25bd513d63d2ac6	1	191980	player	st3play	Scream Tracker 3.01 (SB)	8	73824	71cb8597	9b707c98	.1/DEMO.'95/Assembly.'95/Multichannel/japowood.zip/JAPOWOOD.S3M
 966b720f879ec873df03d5d4f1b32c7c	1	198628	player+silence	st3play	Scream Tracker 3.2x (SB)	9	134994	8867ffed	1a838feb	.s/NotInDir.'95/_MusicDisk/cr-txn1a.zip/Feel da' Pulse -XC.Coar! 
-966b720f879ec873df03d5d4f1b32c7c	1	198628	player+silence	st3play	Scream Tracker 3.2x (SB)	9	134994	8867ffed	1a838feb	.s/NotInDir.'95/_MusicDisk/cr-txn1a.zip/XC-PULSE.S3M
 966c482acbc171f35a0617b19d7c4678	1	381453	player+silence	ft2play	FastTracker v2.00	14	195933	b380da1e	908a6b34	.2/Music.'98/MusicDisk/e9-emsn4.zip/BLUERAY_.XM
 966c6f0535386c57bfea8fc4e0b0deea	1	102520	player	uade	Protracker	0	66146	977dcbd6	2647e393	.2/Music.'98/MusicDisk/e9-emsn4.zip/NAMLYYRS.MOD
 966c73494b620a916faa14f7d9ac275a	1	202378	player	ft2play	FastTracker v2.00	8	215645	559ab819	6e76e84e	.1/DEMO.'95/Scenest.'95/Multichannel/one_half.zip/ONE_HALF.XM
@@ -16586,7 +16585,6 @@ ab81a5a90c8bbaa98d763026727dd453	1	170512	player+silence	it2play	Impulse Tracker
 ab88ab998917eae78f716edf72145e8f	1	180026	player	ft2play	FastTracker v2.00	20	1018395	58cd4d94	f886b563	.1/DEMO.'99/Rage.'99/Multichannel/inq_drea.zip/MGN_DREA.XM
 ab89f4c919cb0ba895f301b5f108faa7	1	343148	player	ft2play	Fasttracker	8	200010	d05d6ad5	9091e7da	.s/Photo.'97/Buenzli#5'97/Report/cdx-b5rp.zip/SOUND.MOD
 ab8b52d40fe5707c5922c4b24139e8f5	1	59408	player	ft2play	FastTracker v2.00	16	357924	0acca1df	5864cf5d	.1/DEMO.'97/Z.'97/demo/endradio.zip/Extended Module: [tears in heaven]   FastTracker v2.00   
-ab8b52d40fe5707c5922c4b24139e8f5	1	59408	player	ft2play	FastTracker v2.00	16	357924	0acca1df	5864cf5d	.1/DEMO.'97/Z.'97/demo/endradio.zip/LAGARTO.DAT
 ab8e3dd9de0be8489e9732e800d3bd4a	1	293067	player+silence	it2play	Impulse Tracker 2.12	28	902252	785ad332	a0a66580	.s/NotInDir.'97/_MusicDisk/fm-hshad.zip/LOSTSAT.IT
 ab917f4a97e6ad84b2e7e328069e87a6	1	226843	player+silence	ft2play	FastTracker v2.00	16	543004	61a6fad4	2c6add2b	.s/NotInDir.'97/_MusicDisk/0l_shade.zip/IBELIEVE.XM
 ab9185d0438abd4fb8fd34607ba18e28	1	61568	player	uade	Protracker compatible	0	11070	625d94da	032f5f6f	.s/scene.amiga/music.amiga/ChipMusic/tcr09.zip/Chiptunes/VARIOUS/poppo_-_living_on_chipmem.mod
@@ -18429,7 +18427,6 @@ be78570748fedea5780dc43f9be40b8c	1	61568	player	uade	Protracker	0	18132	3f8ea926
 be785e03f929cacf9239f5b7265e2464	1	238473	player	ft2play	FastTracker v2.00	30	930889	226344f5	ebae48f9	.1/DEMO.'98/TheParty.'98/Multichannel/disk574.zip/disk574.xm
 be785e03f929cacf9239f5b7265e2464	1	238473	player	ft2play	FastTracker v2.00	30	930889	226344f5	ebae48f9	.1/DEMO.'98/TheParty.'98/Multichannel/LISA.lha/disk574.xm
 be7b8f0271fd3d577a96117d78700e1a	1	162770	player+silence	st3play	Scream Tracker 3.2x (SB)	16	198416	375058ee	5f1935f2	.s/NotInDir.'96/_Musicdisk/spl9612.zip/the good wallpaper designer
-be7b8f0271fd3d577a96117d78700e1a	1	162770	player+silence	st3play	Scream Tracker 3.2x (SB)	16	198416	375058ee	5f1935f2	.s/NotInDir.'96/_Musicdisk/spl9612.zip/WA-WALLP.S3M
 be8679e016ca6511b940a49aa3b38218	0	141489	player	libopenmpt	ModPlug Tracker 1.0 alpha	8	374986	bb70e750	b4cb639f	.1/DEMO.'99/ChaosC.'99/Multichannel/power.zip/POWER.XM
 be8894a3abc61ba551bab264d6d0fd17	0	164487	player+volume	libxmp	The Player 6.1a	4	382718	cc2d07cb	ebf73613	.s/scene.amiga/Amiga.'96/Assembly.'96/demos/ap-clic.lha/ap-clich.dat
 be8c0f541435e3b84719786274de8d8b	1	206981	player+silence	uade	Protracker	0	304678	58aef792	e3b3e64d	.1/DEMO.'95/TheParty.'95/4channel/in_addiction.rar/in_addiction.mod
@@ -20675,7 +20672,6 @@ d4e51eca37c4f8f387c9b7383b2c1130	1	62995	player	uade	Protracker	0	10730	fb79815a
 d4e5417b4064f25044a37acba8b95d2c	1	161397	player	it2play	Impulse Tracker 2.14	19	800803	2e4df321	8036c419	.1/DEMO.'97/Evoke.'97/Multichannel/xe_mwrld.zip/XE_MWRLD.IT
 d4e7b0d6df145cb1ab8b3295e5db5b45	0	149901	player+silence	libopenmpt	X-Tracker	17	55144	a37587a9	87b483f0	.1/DEMO.'94/Wired.'94/demo/hn-voya.zip/OVN-VOYA.DMF
 d4e7b0d6df145cb1ab8b3295e5db5b45	0	149901	player+silence	libopenmpt	X-Tracker	17	55144	a37587a9	87b483f0	.s/NotInDir.'94/_Demo/voyages.arj/ovn-voya.dmf
-d4eeb01802696a14a3b0643b7a70eb45	1	314094	player+silence	st3play	Scream Tracker 3.2x (SB)	8	220538	38b0b1f3	73fcdd84	.s/NotInDir.'95/_MusicDisk/cr-txn1b.zip/JL-PORTL.S3M
 d4eeb01802696a14a3b0643b7a70eb45	1	314094	player+silence	st3play	Scream Tracker 3.2x (SB)	8	220538	38b0b1f3	73fcdd84	.s/NotInDir.'95/_MusicDisk/cr-txn1b.zip/Portal to Reality
 d4f14b782c3cb10f7d1cb2261cfc9f55	1	105782	player	ft2play	FastTracker v2.00	6	156961	7c1b8a00	23f30c94	.s/scene.amiga/music.amiga/ChipMusic/tcr_up02.zip/Chiptunes/Dalezy/Bomb_my_soul.xm
 d4f383ebd045ee924a4949aa41fdc56c	1	265089	player+silence	ft2play	FastTracker v2.00	24	1494610	2919869f	fab5098b	.s/NotInDir.'98/_Music/a3-wtcr.zip/a3-wtcr.xm

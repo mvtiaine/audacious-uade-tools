@@ -241,7 +241,7 @@ e6c382d374cb9d2b156d20741b66abdb	1	194050	player	uade	Noisetracker 1.x	0	78928	8
 e714c44a1e0a5d803b3392797db0de74	1	76920	player	uade	Soundtracker II (15 instr.)	0	85320	0297ad1d	88e48735	MUSIK/MODFILES/PAT.MOD
 e86433c408375b2728d65a4bb4779538	1	281239	player	uade	Startrekker (4ch)	0	93516	480ffc52	a3629528	MUSIK/MODFILES/BEAST2.MOD
 e890ea8ef8b5455414d5089da5e40236	0	188735	player+silence	libopenmpt	Digital Tracker	8	525436	77c909ee	ffb4ebe6	FALCON/GAMES/RUNNING/DATA/MENUDATA/FRUCHTIX.DAT
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	MUSIK/MODFILES/MEGAFCE2.MOD
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	MUSIK/MODFILES/MEGAFCE2.MOD
 ea57f182f14b609d096f3d035a2d910d	1	169093	player	uade	Protracker compatible	0	63112	6c8aa679	c92adadb	FALCON/GAMES/MAW/SOUND/2.MOD
 ec9f7bd2d8d7ae285173b2d1364f3aec	1	0	nosound	uade	Protracker compatible	0	2108	8efadf7d	57da983e	FALCON/GAMES/MAW/SOUND/STIL.MOD
 eca083250da661dca8cee64537d1fbed	1	153419	player+silence	uade	Protracker compatible	0	100076	798549e4	a902e371	MUSIK/MODFILES/POINTSOF.MOD

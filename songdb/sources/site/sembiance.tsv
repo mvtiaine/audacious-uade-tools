@@ -22,6 +22,7 @@
 02f48f2ac7f65f416113a5398ed0449f	0	84354	player	libopenmpt	Galaxy Sound System (new version)	9	241063	99c010af	65958dd3	galaxyMusicSystem/Bonus2.j2b
 036a072492e82ec13f7332bd59835a83	1	23168	player	uade	Promizer 4.0	0	5770	81eb1d9a	12ee444e	promizer/PR4.0
 0373bc81bdb5e04c75bcbd60729a425b	0	85702	player	uade	EMS v6	0	2474	76008673	2755a2e3	editeurMusicalSequentie/softsynthtest.ems
+039450ac223902bab389f03da528b918	0	156059	player+silence	libopenmpt	RenderXM	18	337665	c8d45b3f	2269d905	xm/Crash Mobiles.oxm
 03969427147abe250118f8f7617ef971	1	299962	player+silence	uade	MED4 (4ch)	0	57121	03d1e57b	f1b6a7bc	med/song
 03c1856b815ca33d1cc038757870dc23	0	209615	player	libopenmpt	Disorder Tracker 2	9	439230	c8809aca	43cf7920	disorderTracker/act 1... part 2 - remix.plm
 03e846497fba14f9a765cd260057dd26	0	119538	player+silence	libopenmpt	Composer 669	8	119426	0922bf0f	fbc0e489	composer669/kick the melon, let it go!.669
@@ -36,6 +37,7 @@
 04bf1af363f0c349c6411a060414d280	5	23228	player
 04bf1af363f0c349c6411a060414d280	6	0	nosound
 04bf1af363f0c349c6411a060414d280	7	11574	player
+04c0f375100b8c1c6e44cbe4d90760d5	0	379950	loop	uade	PreTracker	0	52726	e5fd08fa	78199fd1	preTrackerModule/surf dance.prt
 050cef377fa12117117dfde73f87c514	1	125428	player	uade	OctaMED MMD2	0	790722	55fda77e	957bf61c	med/NEWCRACK.MMD
 05258f98dd070173ff4db59960da5fa3	0	112648	player	uade	Rob Hubbard ST	0	4566	53065991	2ef02368	robHubbard/jupiterprobe.rho
 05c95f133c845cfe3ec65433142df104	1	324763	player	uade	CustomMade	0	14064	5055d21c	7630e7f4	ronKlaren/RK.Plague-InGame
@@ -44,7 +46,7 @@
 067f43e93c11f6431b1c3101cc4a4394	0	215068	player	uade	Synth 4.0	0	25522	8fd4a725	2a9c06ef	synthesis/SYN.Alcazzar
 06a51e8548f11283553698f187a8fb8d	1	138027	player	st23play	Scream Tracker 2.x	4	44560	5b7a08de	ba6f52b7	s3m/clear darkness.stm
 06e001b79f45b7dfe312750f2e1a075f	0	94737	player	libopenmpt	The FM Tracker!	8	2686	da71d6e2	e304b806	fmTracker/fm dance.fmt
-0715a7937a3732d42dc393ee8b3b5a4f	0	136013	player+silence	libopenmpt	UltraTracker 1.6	17	430813	3f1f0890	1d92d973	ultraTracker/SOLDANCE.ULT
+0715a7937a3732d42dc393ee8b3b5a4f	0	136723	player+silence	libopenmpt	UltraTracker 1.6	17	430813	3f1f0890	1d92d973	ultraTracker/SOLDANCE.ULT
 07275a34ebaad20db3a31fbd1d2bf171	0	20496	player	uade	MCMD	0	9136	24796c13	d69094ae	mcmd/MCMD.Endless-Song
 07372e8f8c2393c28a7d354b55bf0eff	1	134450	player	uade	Steve Barrett	0	30966	e9873e76	3df5818f	steveBarrett/kelly x.sb
 0798a9e9368592a995c06fa303abe41f	0	545278	player	libxmp	Titanics Player	4	205264	74f9e7a8	c2ef2aee	titanics/Titanics - Sesamestreet - 2.tip
@@ -199,6 +201,7 @@
 10f77deb3341c664e3f7f6097681232f	9	17843	player
 11501b9bf9b2bd153449efee5caf5d26	0	35868	player	uade	GlueMon	0	686	87b31225	04f701ae	glueMon/glue.Memphis
 11876677518a5d2085775fab0ed4363a	0	197783	player+volume	uade	DeltaMusic 2.0	0	114632	a6cd68b2	ae076d0c	deltaMusic/deep heat.dm2
+11a354eca66eefaaba9db16b9940511b	0	175224	silence	uade	MusiclineEditor	0	12922	990827e6	f7399618	musiclineModule/ml.nakedchip
 11a3d2813f5177744201fdb653866042	1	155747	player	ft2play	Fasttracker	6	263232	fb83d2ca	25736e03	fastTracker/FAST.Bud Rap
 11af6ffcf589e9926a24f4bbc2988734	0	236606	player+silence	libopenmpt	Digital Tracker 2.3	8	225964	ecced546	8a4c3c4c	digitalTracker/meltech2.dtm
 11ed383b520122fafd0fc21bcc0e1c84	0	253519	player+silence	uade	Digital Sound Studio	0	484494	d142fc2e	fa763793	digitalSoundStudio/mod.Activity
@@ -277,6 +280,7 @@
 16f15a46c127944a14c1c47af5cc1c3d	7	61468	player
 16f15a46c127944a14c1c47af5cc1c3d	8	261145	player
 17007dd74b7f3262db9c3850db65e403	0	208634	player+silence	uade	Oktalyzer	0	614340	29d81ad1	a8028183	okt/okt.bola de drac3
+170d378dbde24b89f1c588f83fe48abe	0	185673	loop	uade	PreTracker	0	28196	45f20ff4	f26d2790	preTrackerModule/a dream of fish.prt
 1717eb6c320f5cac939e0b4ad59669b7	0	265646	player	uade	The Musical Enlightenment	0	171162	002dc51d	38340c46	theMusicalEnlightenment/mysticfever.tme
 173577dc99534b03bdb6a9bde0d0629d	0	310350	player+silence	uade	DIGI Booster TAP!	0	283861	9f54369b	b8b7012f	digiBooster/hocus-pocus.digi
 1748be3a2e2e22f8400b1bd565a21470	1	274234	player	ft2play	FastTracker v2.00	18	724726	995cf1b1	58b3aa76	xm/xm.tp5
@@ -312,11 +316,15 @@
 1a827f0de9453fcee921d5cc44ffbb01	0	184045	player	libopenmpt	ASYLUM Music Format	8	334352	7cf77d73	79fd981f	asylum/MUSIC.AMF
 1ab7b43f7695ad10fcf65bbe56d9500c	1	230541	player	uade	Noise Packer 1.0 - 2.0	0	134500	cba18cbd	51f44ed5	noisePacker/Confused.np2
 1bb8fb55d8cedb5f963f2338ff037707	1	235645	player	uade	Startrekker (4ch)	0	92494	425c546c	17a3deb4	starTracker/MOD.C.T 2
+1bbdca38daa9afea7192781374d93da8	0	270025	loop	uade	PreTracker	0	7402	12d83ac0	1a05beef	preTrackerModule/kingdom of wisdom.prt
 1bee160bfd73fd6724e69d9817eb52af	1	136558	player+silence	ft2play	Fasttracker	8	193208	b68556e4	0c18589a	fastTracker/OVERDRIV.FLX
 1bf62070660668bf763254a0edb6b0cd	0	199506	player+silence	libopenmpt	Imago Orpheus	30	1318724	fe2637f2	dd676151	imagoOrpheus/astaris-16bit.imf
 1c0f0db899568afc38b4c8a312b318e7	0	225583	player	libopenmpt	Impulse Tracker 2.14p3	32	873775	ab2da89d	24b15939	unrealMusic/Fifth.umx
 1c0f0db899568afc38b4c8a312b318e7	1	184617	player
 1c1f0b51ae6994f14f837d5f2afeb4e5	0	97423	loop	uade	MusiclineEditor	0	30610	c24a8a45	b2e437bd	musiclineModule/Ml.Take_the_Ragga_muffin
+1c233dd4dbc244852c6aa28704491d04	0	76137	player	libopenmpt	Karl Morton Music Format	4	692033	9dd45851	f3af1129	karlMortonMusic/TITLE.MUS
+1c233dd4dbc244852c6aa28704491d04	1	31055	player
+1c233dd4dbc244852c6aa28704491d04	2	3157	player
 1d7c4192cffcb2bf384b621452c225bf	0	86666	player	uade	EarAche	0	20964	12156c4d	efbea9b9	earAche/skydance.ea
 1dcda8e6f21be4ed88f80bd978484561	1	166440	player	uade	Sound Programming Languag	0	71584	76497822	845f7d50	soundProgrammingLanguage/boulderdash.spl
 1de62536b0913ed3d2d7afae9e363988	0	43462	player+silence	uade	David Whittaker	0	66050	bfab628c	d979e1b1	davidWhittaker/jaws.dw
@@ -440,6 +448,8 @@
 27d1c7916c66515e66b0b1193449be38	0	145709	loop	uade	MusiclineEditor	0	27138	bbae12d8	a1334264	musiclineModule/Ml.OctaGroove
 27d1c7916c66515e66b0b1193449be38	1	145707	loop
 28044c647a8c3a3f9c04653f4b19e1ef	1	181853	player	uade	ProRunner 2.0	0	144952	c3f3555d	3d723c2a	proRunner/mod.autumn
+28282734fc69bd77248aa1316d72bef2	0	32404	player	libopenmpt	Karl Morton Music Format	4	118507	353ae29e	6f2dfded	karlMortonMusic/BONUS.MUS
+28282734fc69bd77248aa1316d72bef2	1	5358	player
 2855a61c6dd4e4f2372d73eeb4df14df	0	343291	player+silence	libopenmpt	Extreme's Tracker 1.48	20	192730	7ee07d39	80d4b652	extremesTracker/target em.ams
 285e28f42b29ba12f57fd194c0673886	0	106580	player	libopenmpt	Galaxy Sound System (new version)	15	203353	0cc10b82	28dc97f3	galaxyMusicSystem/Bonus3.j2b
 2884033087bf00797c2e22d75a749775	1	48125	player	uade	Promizer 2.0	0	9176	9092adfe	c7f7be2d	promizer/Bubble Bobble.pm2
@@ -652,6 +662,7 @@
 3d02f96788dcb34701fe23dad9bda1f7	8	11232	player
 3d02f96788dcb34701fe23dad9bda1f7	9	3536	player
 3d10ea1b7c3212014ec8af02bc13f631	1	75011	player	uade	Promizer 1.x	0	78206	e0f6172d	44777f33	promizer/We Are Still Alive.pm1
+3d7b34e145b5fcf8f703004fb0470411	0	95265	loop	uade	PreTracker	0	6924	37c0589b	bc1c7c27	preTrackerModule/into the hole.prt
 3dbfff690d29ad0c6bf51578037a99c8	0	108613	loop	uade	SCUMM_Player	0	3232	c0ea3353	03a836cd	scummMusic/zakairport1.scumm
 3dc92c2c39426d174bb875bd721ede4c	0	294441	player	uade	Speedy System	0	129582	8a0aeb0f	9727d56c	speedySystem/crazy wolfs.ss
 3df2416e64bb55b29513dd6ba13998c4	0	120093	loop	uade	POKEYNoise V0.25alpha	0	2050	65ae3d5f	4b710af7	pokeyNoise/pn.internationalkarate
@@ -1013,6 +1024,7 @@
 5d4e03a64646537c5fa461bee16130b7	1	130351	player	st23play	BMOD2STM	4	111772	a538e59c	20953f46	s3m/AW-HEART.STM
 5d601b2e6e0701c7ad5b47618131cd50	1	500869	player	uade	Jochen Hippel 7V	0	122680	96958f46	c85cd9b6	hippel/lethalxcess-intro.hip7
 5d601b2e6e0701c7ad5b47618131cd50	2	70169	player
+5d8c5969a8141fc221e7bdda6660c612	1	97437	player	uade	Protracker compatible	0	168308	eb4347f7	c02baff5	mod/IBM Goes Heavy.wow
 5e676ea4b66c260d370030cb220c1d9b	0	63377	player	uade	Sonic Arranger	0	8748	ab6f8f91	004193e2	sonicArranger/SilverClouds.pc
 5e981bb754eb1db27be87c558f92ddf1	0	27625	player	libopenmpt	X-Tracker	11	118437	1f250013	1b7b627a	dLusionDMF/MB-PAEC.005
 5eb4fc5cfbf15374a899aec9193e77b7	0	180024	player	uade	ArtOfNoise (4ch)	0	30642	2efd587d	1a75fac9	artOfNoise/aon.dawn
@@ -1060,6 +1072,7 @@
 64a1404017be41aeedfc06bb655a80f2	0	419913	player+volume	libopenmpt	MadTracker 2.0	14	1332608	b4e6cec1	8f895087	madTracker/TRANZITY - SEDATION.MT2
 64cec500d0e2d4005b3852a7651b65ac	0	176166	player+silence	libopenmpt	Disorder Tracker 2	9	428619	a9f5272f	de87189a	disorderTracker/JOKER.PLM
 6506e59fbe1be5a1632e2938713d1566	0	94798	player+silence	uade	IFF EMOD	0	524246	193c1e56	00f2d264	quadraComposer/universal jam.emod
+650a0ba44079e3e8d52588713e5a47bb	1	129065	player	uade	Protracker compatible	0	432072	e57952b9	6e4a7c34	mod/Honky Tonk Tech.wow
 652cd8023348999043ad57283ce45385	1	181049	player	uade	Tracker Packer 2 - 3	0	56688	082e8f31	f8651c52	trackerPacker/dat.titlemod
 6531647fb4f289a3dd505a9f387670e7	1	265103	player	uade	STK_2.6 - IceTracker	0	221746	c09e05d7	fe30837e	iceTracker/mod.order of death ii.it
 653a67fe991ae9bc1e5b6ab4f4adfaf2	0	145663	player	uade	Benn Daglish	0	69000	74a6e532	0dd1ad9e	benDaglish/MTH.2
@@ -1165,6 +1178,39 @@
 6abc9c1fed8cd1435c5820116c302e47	0	201506	player	libopenmpt	Chuck Biscuits / Black Artist	12	438365	3006ac9b	9c0090e6	cba/my child.cba
 6abcc43ffd871b78721718502d97091f	0	451207	player+silence	libopenmpt	Symphonie	8	375741	120bb158	ae6f7ea3	symphonie/Liquid Time.SymMOD
 6ac984be3f43ce941dc09e2d0ea97e03	0	79734	player	uade	Soundcontrol 3.0/3.2/4.0/	0	161120	dee3a060	a2f535c1	soundControl/bfanf.sct
+6acdeab18a447f79bfbbc0e8fa112418	0	5152	player	libopenmpt	Karl Morton Music Format	4	729605	e41bf3e3	daca64d7	karlMortonMusic/FUNFAIR.MUS
+6acdeab18a447f79bfbbc0e8fa112418	1	6909	player
+6acdeab18a447f79bfbbc0e8fa112418	10	25561	player
+6acdeab18a447f79bfbbc0e8fa112418	11	20449	player
+6acdeab18a447f79bfbbc0e8fa112418	12	2556	player
+6acdeab18a447f79bfbbc0e8fa112418	13	5121	player
+6acdeab18a447f79bfbbc0e8fa112418	14	34270	player
+6acdeab18a447f79bfbbc0e8fa112418	15	4413	player
+6acdeab18a447f79bfbbc0e8fa112418	16	4553	player
+6acdeab18a447f79bfbbc0e8fa112418	17	4413	player
+6acdeab18a447f79bfbbc0e8fa112418	18	4413	player
+6acdeab18a447f79bfbbc0e8fa112418	19	4413	player
+6acdeab18a447f79bfbbc0e8fa112418	2	2556	player
+6acdeab18a447f79bfbbc0e8fa112418	20	4413	player
+6acdeab18a447f79bfbbc0e8fa112418	21	2556	player
+6acdeab18a447f79bfbbc0e8fa112418	22	6293	player
+6acdeab18a447f79bfbbc0e8fa112418	23	32738	player
+6acdeab18a447f79bfbbc0e8fa112418	24	3834	player
+6acdeab18a447f79bfbbc0e8fa112418	25	17254	player
+6acdeab18a447f79bfbbc0e8fa112418	26	3834	player
+6acdeab18a447f79bfbbc0e8fa112418	27	4073	player
+6acdeab18a447f79bfbbc0e8fa112418	28	479	player
+6acdeab18a447f79bfbbc0e8fa112418	29	958	player
+6acdeab18a447f79bfbbc0e8fa112418	3	10788	player
+6acdeab18a447f79bfbbc0e8fa112418	30	1437	player
+6acdeab18a447f79bfbbc0e8fa112418	31	1917	player
+6acdeab18a447f79bfbbc0e8fa112418	32	0	nosound
+6acdeab18a447f79bfbbc0e8fa112418	4	4126	player
+6acdeab18a447f79bfbbc0e8fa112418	5	28757	player
+6acdeab18a447f79bfbbc0e8fa112418	6	3834	player
+6acdeab18a447f79bfbbc0e8fa112418	7	57514	player
+6acdeab18a447f79bfbbc0e8fa112418	8	15337	player
+6acdeab18a447f79bfbbc0e8fa112418	9	4433	player
 6b04cab90dfb903bf5546a8f6d17a423	1	8429	loop	uade	Desire	0	57930	913711ee	dd11a07f	desireModule/powerdrive 1.dsr
 6b04cab90dfb903bf5546a8f6d17a423	2	63074	loop
 6b04cab90dfb903bf5546a8f6d17a423	3	91516	loop
@@ -1197,6 +1243,7 @@
 6ce1877312e454f425be440031c4ebdd	0	293390	player+silence	libopenmpt	BWSB 2GDM 0.0	4	147030	ee059112	675d56ae	generalDigiMusic/ACCURSED.GDM
 6d05e5c5c147fbfc7b505d91aa248c74	0	152795	player	libopenmpt	Velvet Studio 2.02	32	291737	ce814bcc	dce8e2ac	velvetStudio/cream in my bag.ams
 6d4f01c64060795fdd1f798305655af6	0	170238	player	libxmp	Module Protector noID	4	169850	dbd3249b	64c6603d	moduleProtector/Nicensle.mp
+6d61dd7058a233f18dd022b41997a5d2	0	401239	player+volume	libopenmpt	ModPlug Tracker 1.0 - 1.16	22	460884	eea8b100	c486e177	xm/Into The Wild Blue M.oxm
 6e2a2d33c2de08bf51e84089edcc7a4d	0	52761	loop	uade	SUNtronic	0	4186	4f65508d	89580921	sunTronic/msx-cracktro 2.sun
 6e6a34adda08acbefe47b1d099039e60	0	278402	player	libopenmpt	MO3 v0	14	242352	fb63eb38	4e7f6fb6	mo3/similar.mo3
 6e75e1d903c7a1060eea97dfebd8d7d8	1	157237	player	st3play	Scream Tracker 3.01 (GUS)	8	439516	27a1ed06	441ab1bc	s3m/mod.awake
@@ -1334,7 +1381,6 @@
 795d4d3576a80ccc21eed63afbbc4b29	1	15472	player	uade	Protracker	0	2344	70a57566	e075b218	mod/mod.short test
 79758c83ce335c631f22a4fdb7da969f	0	432361	player	libopenmpt	Symphonie	16	1146092	ef241a66	7a1ceeca	symphonie/jump.symmod
 799833fed500562ce5c6fa919e5fba0a	0	51922	player	libopenmpt	Digital Symphony	4	2712	85a34e62	a2b39844	digitalSymphony/toybox
-799fc5306ba240d9891c3582a78b3b3e	0	175224	silence	uade	MusiclineEditor	0	12816	cc98caeb	48986ed2	musiclineModule/Ml.NakedChip
 79d0bf659514baa980e91adba4dbfde9	0	242013	loop	uade	FredMonitor	0	19784	ca121b33	891a39ab	fredEditor/FRD.muzax
 79d0bf659514baa980e91adba4dbfde9	1	82310	loop
 79d0bf659514baa980e91adba4dbfde9	2	64298	loop
@@ -1624,6 +1670,7 @@
 8f3ba4d13c33bc33b1d9ed5a04d313c0	7	25958	player+silence
 8f3ba4d13c33bc33b1d9ed5a04d313c0	8	27662	loop
 8f3ba4d13c33bc33b1d9ed5a04d313c0	9	4862	player
+8fab892f96c71f2fe3f42de14dd60d6c	1	260120	player	uade	Protracker compatible	0	181548	ef2e1f4c	7ff24eec	mod/Lithium.wow
 8fe97f5cedb24587eb3e09b2766fb7b0	0	274950	loop	uade	Mark_II	0	84642	12450d3d	707768e0	markII/red sector megademo 3 loader.mk2
 90156665c521cbda571ba951dcfd5b66	1	91726	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	295026	5ad59c56	811764aa	s3m/FISTROPI.S3M
 901a81b1f5da5b5ce780da6814aba949	0	62925	loop	uade	Jesper Olsen	0	80186	1b91e502	880fe585	jesperOlsen/haraldhardtand end.jo
@@ -1761,6 +1808,7 @@
 9d8e07ee62be28fbb4b6986ca9727f3a	1	52727	player	uade	Promizer 2.0	0	14824	4c7f3849	2f3cb7a9	promizer/Pyrox.pm2
 9db1a5c14e27e36e166ab86ab3d1185c	0	184344	player	uade	Sonic Arranger	0	123960	b0c92bcb	fdc5b4e1	sonicArranger/japan
 9dbdc81daaf24d98a6919909d10c6801	0	82679	loop	uade	Sonic Arranger	0	83377	6ba2f11b	d05ccf56	sonicArranger/Musik
+9e1718a0245d65637715904eb57843ba	0	137095	loop	uade	PreTracker	0	10484	edfb6be2	183287bd	preTrackerModule/shinnos delight.prt
 9e1fa034faa21705711031603ae03671	0	81798	player	libopenmpt	Epic MegaGames MASI (New Version)	4	92474	b7d87766	20f99ae7	epicMegagamesMASI/jazz jackrabbit - boss - guardian.psm
 9e2661a534c1a238467e12a8ad7a9888	0	457368	player+silence	libopenmpt	Velvet Studio 2.02	32	812712	d2932e60	4f44fe16	velvetStudio/nectar of devotion.ams
 9e47cac56fa0de880be049b7b7e9d7ad	0	56390	loop	uade	Syntracker	0	18776	44e67949	883739e5	synTracker/nuclear-synthetics.synmod
@@ -1799,7 +1847,7 @@ a091c94dc16213f5793b865147fa55dc	0	337180	player	libopenmpt	Symphonie	8	310772	3
 a094918ddbb64fed84d4153954629337	1	174840	player	uade	Startrekker (4ch)	0	213608	96d2d6f7	f123517b	starTracker/cooking it up.mod
 a0a09d299d4012fe25b250035f7b9d9a	0	199716	player	uade	GlueMon	0	5562	4484fb05	22e2596a	glueMon/giana sisters.glue
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	tfmx/mdat.Erbe2
-a1389382a197d038400d80a9b76c525d	1	81924	player
+a1389382a197d038400d80a9b76c525d	1	81944	player
 a1389382a197d038400d80a9b76c525d	2	61468	player
 a1389382a197d038400d80a9b76c525d	3	176668	player
 a156e93f5d28056970d03a6c29492fa5	0	330269	player	uade	Howie Davies	0	92244	393f4890	78d18910	howieDavies/blazing thunder.hd
@@ -1878,6 +1926,7 @@ abbfc3e5f766209551bfdf54d0135995	0	56014	loop	uade	Syntracker	0	7188	a7ac3206	72
 abc4a1aead8d8d4f5aa5bd8474600192	0	385585	player+silence	libopenmpt	Velvet Studio 2.02	32	1056646	8f3e309e	30f7297c	velvetStudio/SOL-REF.AMS
 abd5490108465b4c5b668e29542f770f	1	378917	player	uade	Hippel-COSO	0	59176	14ae8b82	9431b40a	hippel/a prehistoric tale (intro).hipc
 abd812307871b2678ac1d5b71a98e993	0	127841	player	libopenmpt	Epic MegaGames MASI (Old Version)	4	13732	20c84c48	9e234520	epicMegagamesMASI/epic pinball - song5 - magic (old version).psm
+abe52e6fdd00ffa3cbfdaeb62f03023f	0	76137	player	libopenmpt	Karl Morton Music Format	4	454807	d0a13ecd	ff13c390	karlMortonMusic/demtitle.mus
 abff6a466f8c71970d6a0f267858f117	0	214385	player	libxmp	FunktrackerGOLD	8	198768	3bf79fcd	8959f6f2	funkTracker/christmas disco70.fnk
 ac1163bd34bd2f65c74ab1a76830e8c8	1	674391	player+silence	uade	CustomMade	0	34244	51474ebe	525d0ed8	ronKlaren/synsations.rk
 ac1163bd34bd2f65c74ab1a76830e8c8	2	672612	player+silence
@@ -2036,6 +2085,7 @@ bb6c49e71c39686526d19516b5b78b69	1	76920	player	uade	MED4 (4ch)	0	1343	2d417ce9	
 bbb1f74fbdcbb36be6a768251807086b	1	125307	player	uade	Jesper Olsen	0	59452	efc4470d	77183ccb	jesperOlsen/JO.LollyPop_Level6
 bbc4118c361e70fff56d6b0248887bcb	0	66460	player	libopenmpt	OpenMPT 1.19.00.23 (test build)	4	12662	cb231053	970a5158	impulseTracker/better off alone (cover).it
 bc235787332c0ca6387ed2dbee612419	0	315513	loop	uade	UADE	0	119068	7b1d24f5	e3c6e628	deliTrackerCustom/populous.cus
+bc26e70013876cf46aea820e442a373b	0	27578	loop	uade	PreTracker	0	1208	cd2ede46	24da6ed5	preTrackerModule/intermission.prt
 bc58ebfce1320aa7894e873e2832814d	0	30804	player	uade	MultiMedia Sound	0	39686	ed270215	81278428	multiMediaSound/play tag.mms
 bc8eb36b9f1f91f2f0ff8405b7b922c3	0	164559	player+silence	libopenmpt	Digital Tracker	6	177646	f3a089b7	1c8c62f0	digitalTracker/VELOMATR.DTM
 bc9881cc0486d4ea818c3ba8068b3197	0	57478	player	libopenmpt	Galaxy Sound System (new version)	13	195582	74ce6966	3872a473	galaxyMusicSystem/Boss2.j2b
@@ -2265,6 +2315,7 @@ d70766a48e18bae5b5fa78b7c5f4df61	7	3858	player
 d70766a48e18bae5b5fa78b7c5f4df61	8	0	nosound
 d70766a48e18bae5b5fa78b7c5f4df61	9	0	nosound
 d75dcdb7a89e1779c5b41eeb2903ec16	0	204660	player	uade	IFF EMOD	0	29974	3c63223c	d90fe7f7	quadraComposer/music_c
+d763476c94ff95694c64d5e45959ac43	0	136809	loop	uade	PreTracker	0	5106	d1083522	910326bf	preTrackerModule/whatta.prt
 d763d82c0065aadb2d2cdbb824826bd6	1	41072	player	uade	P50A - P60A - P61A	0	42888	d275cc69	fdb34af9	thePlayer/titlehidasx.p5x
 d7a625d58c05c7ca54108fadd19f9b91	1	38520	player	uade	P40A - P40B - P41A	0	46640	ab29571b	e842dd61	thePlayer/Cipher.p40b
 d7e1203ec51a9038c87a2245ccc00523	0	60503	player	uade	Music-Assembler	0	2864	e7c66295	8502b26d	musicAssembler/MA.Thanatos
@@ -2355,6 +2406,7 @@ e1a14534daf8e1c364a2f4516538d2e3	0	141742	loop	uade	UADE	0	9736	31c2969c	09d9b62
 e1fe80d014560c0431a8a3d28fbfaba9	0	0	error	uade	NovoTrade Packer	0	69668	ca5085a8	169e80fc	novoTrade/hellojarre.mod
 e201cabe5baf283a51fa0d221a31ac5e	1	157083	player	ft2play	Fasttracker	6	270086	db8200e2	d7784f47	fastTracker/pitzdahero.ft
 e211b0b53c60c34cc976a1f68776c66d	0	244196	player+silence	libopenmpt	DSMI Advanced Music Format v13	4	83928	51cc7823	7c472055	advancedModuleFormat/THEHEAT.AMF
+e2782342b17eb27ab04032d36340a50d	1	64120	player	uade	Protracker compatible	0	97078	a0dd9d0f	cef901cb	mod/Jibbie.wow
 e2ea7fa9b1c3fcfaecd0662de44a1ae1	1	103806	player	uade	ProPacker 2.1 - 3.0	0	16428	44cefcc5	12321b3e	proPacker/40k Intro.p21
 e31c26166f3b0f39d2900e9ee5ae3db0	0	311117	player+silence	libopenmpt	PolyTracker 2.03	21	801261	b9c81b19	d8200a5d	polyTracker/undrest2.ptm
 e33a4643d758738626a11aa8fa49ea6d	0	244808	player	libxmp	Megatracker MGT v1.1	12	157178	6826fa53	4fb731b4	megatracker/silly venture.mgt
@@ -2407,6 +2459,7 @@ e6c5ae8637bb5eff469ccc4ede83bedf	4	703	player
 e6c5ae8637bb5eff469ccc4ede83bedf	5	15352	player
 e6c5ae8637bb5eff469ccc4ede83bedf	6	85742	player
 e6c5ae8637bb5eff469ccc4ede83bedf	7	4366	player+silence
+e6f3a2f4ea7d5031a00936da1afdbe37	0	20073	player	libopenmpt	Karl Morton Music Format	4	144621	78ea9467	00a69533	karlMortonMusic/WINGAME.MUS
 e71d1fbbff040b498c5d7037d0d6e03d	1	174840	player	uade	ProPacker 2.1 - 3.0	0	51216	1ec09398	4b4e7f5e	proPacker/Jimmys Fantastic Journey - Level 4.p30
 e71de36dd28240a7a2c3df0ff3d67539	1	315017	player	uade	Soundtracker II (15 instr.)	0	113272	b2e296c1	eda3df18	soundTracker/jjk107.mod
 e745bf359ec30e9529ba4524799202db	0	354833	player+silence	uade	IFF EMOD	0	1735776	9a2a3aa8	918c38dc	quadraComposer/Poison.EMOD
@@ -2525,7 +2578,7 @@ f5659ab404635a4f893540a5ca69ac03	1	228473	player+silence	uade	Xann Player	0	1685
 f5ebcb66a0a66a87534c7bdc4af65314	0	36418	player+volume	libopenmpt	The FM Tracker!	8	434	1559082b	2ac9ad24	fmTracker/piano waves.fmt
 f605e4114990140cda8ea69f83c440a0	0	211030	player	uade	ArtOfNoise (4ch)	0	407760	815072e6	53e80b1a	artOfNoise/aon.--->> fm-demosong <<----
 f6087d07ba2ded010f9bffad32d00e05	1	53660	player	ft2play	Fasttracker	8	169788	44839b6c	efbe09f7	fastTracker/MOD_2.4C2
-f66916a17e703ad6b180189c54ddd308	1	238553	silence	uade	Protracker	0	309248	daad9bf4	2e24cb6a	mod/mod.años atras...
+f66916a17e703ad6b180189c54ddd308	1	238553	silence	uade	Protracker	0	309248	daad9bf4	2e24cb6a	mod/mod.años atras...
 f672c1e5550a7485911052924777f792	1	321990	player	uade	Noise Packer 1.0 - 2.0	0	142776	6684904e	3cdeb41f	noisePacker/sanity_is_dead.np2
 f6f0888a061df51c5bcadcd8e821c2a7	0	110156	player	uade	Tomy Tracker	0	25894	076c9430	d5749c39	tomyTracker/irrepressible intro.sg
 f767e2bccb9827dc396fa6fd19c89b03	1	153841	player	uade	Steve Turner	0	81063	402996db	aa22cffd	jasonPage/JPO.Paradroid90%2520Long_Patched

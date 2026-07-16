@@ -141,7 +141,7 @@
 27e47dcae2aba57b6c32ea2b66359813	1	192141	player	uade	Noisetracker 1.x	0	59298	44322149	6861b3ce	Audio/Module/soft/harpiano.mod
 2903e8f53215664ac692054eb6f4176b	1	169093	player	uade	Protracker compatible	0	46568	272ca480	acc2740e	Audio/Module/soft/saysay.mod
 29e0b73eb45170e2f59f177d764972ea	1	88475	player	uade	Protracker compatible	0	97424	9e186b3b	524075e9	Audio/Module/soul/letswing.mod
-29e5656a83bf36896bc3e75c7a643448	0	127776	silence	uade	Soundtracker II - V or compatible	0	47426	f412f031	521595e4	Guides-Texts/SimpsonGuide_v1.41/Samples/911C2.SPL
+29e5656a83bf36896bc3e75c7a643448	0	571860	silence	uade	Soundtracker II - V or compatible	0	47426	f412f031	521595e4	Guides-Texts/SimpsonGuide_v1.41/Samples/911C2.SPL
 29e725d82f58820c6cb3986c4eceb8bc	1	248515	player+silence	uade	Noisetracker 1.x	0	141898	040198bc	1ace410d	Audio/Module/hits/rock.mod
 29fb51da0a6c08d83aa521329fcfd5cc	1	233093	player	uade	Protracker	0	76694	1108b25d	4a53cc61	Audio/Module/soul/dontsay.mod
 2a395e8af5f642ccbfb322cdc0580d1e	1	158644	player	uade	Noisetracker 1.x	0	113710	60392301	484e4043	Audio/Module/soft/mindbomb.mod

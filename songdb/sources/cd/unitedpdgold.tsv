@@ -152,7 +152,7 @@
 14826fd64e0743962c9f863062f2dfe7	1	184445	player	uade	Protracker compatible	0	75492	ed90c697	48566113	4/FredFish/FF.0372.DMS/Magnetic_Pages/Editor/Sounds/mod.evolution
 14851218d27e304aecd697aa130fc1f5	0	310195	player	uade	Sonix Music Driver	0	4330	7ce2d466	5aa4d7c7	2/Music/PM225.DMS/Tchaikovsky/1812.smus
 14a5f0962e63b06bc39b5d17f2b8f0f4	0	0	nosound	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	4/FredFish/FF.0349.DMS/MED/Demos/Inventio8
-14a5f0962e63b06bc39b5d17f2b8f0f4	0	52418	player+silence	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	4/FredFish/FF.0476.DMS/MED/med3_0.lzh/Instruments/AAInventio8
+14a5f0962e63b06bc39b5d17f2b8f0f4	0	0	nosound	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	4/FredFish/FF.0476.DMS/MED/med3_0.lzh/Instruments/AAInventio8
 15056a5c1a3766df2cadbdf52b107108	0	99948	player	uade	Amos Music Bank	0	42054	7ec7dbc6	e52d2fc3	4/Amos/APD180.DMS/music/m1.abk
 152aae88df130eb636489ae7efa115cf	1	6404	silence	uade	Protracker	0	28946	9d01bb24	7e5f0189	3/Games/PG545.DMS/Booze-O-Meter/mod.game over jingle
 154a94f15cfc220faaab95fd1eccfde6	1	27006	player	uade	Protracker	0	59810	0d52c467	9b5fbdbd	2/Music/PM117.DMS/14
@@ -1108,7 +1108,7 @@
 9a96e0c5c0f14bedfe8232a6d8b39244	1	208697	player+silence	uade	Protracker compatible	0	101100	c3d3958e	a30b2607	2/Music_Utilities/PT041.DMS/Modules/Niagra.pp
 9aa3538b523a028d6237738ed080d75a	1	61568	player	uade	Protracker compatible	0	80444	beee5dd6	93595775	3/Assassins/ASI120.DMS/Trax/DATA/SNG1
 9ab6be870d4e1c6fb8810ffb99df7d55	0	0	nosound	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	4/FredFish/FF.0349.DMS/MED/Demos/Sunset Blues
-9ab6be870d4e1c6fb8810ffb99df7d55	0	118254	player	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	4/FredFish/FF.0476.DMS/MED/med3_0.lzh/Instruments/AASunset Blues
+9ab6be870d4e1c6fb8810ffb99df7d55	0	0	nosound	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	4/FredFish/FF.0476.DMS/MED/med3_0.lzh/Instruments/AASunset Blues
 9acc66bba3c2d630313a127f996be94d	0	7796	player	uade	Amos Music Bank	0	36556	5684c779	ce5ddebb	2/Education/PE058.DMS/music/truckmusic.abk
 9aec4a052c99cc4d2a8f7c2cd2129112	0	145944	player	uade	SIDMon 1.0	0	21644	cd670747	ee60542b	2/Music_Utilities/PT041.DMS/Modules/Enigma Gun.pp
 9aec4a052c99cc4d2a8f7c2cd2129112	0	145944	player	uade	SIDMon 1.0	0	21644	cd670747	ee60542b	2/Music_Utilities/PT046.DMS/MODULES/powerplay-SID.EnigmaGun

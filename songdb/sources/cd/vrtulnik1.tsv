@@ -571,7 +571,7 @@ e88862c3566b31eefec93fd7b2dfc476	1	245893	player	uade	Protracker compatible	0	60
 e89f8e192ce5389407049d9faef0ee8f	0	122697	player	libopenmpt	Epic MegaGames MASI (New Version)	4	119943	c14839e9	f87a1e90	HRY/JAZZ/SONG17.PSM
 e8e4218be1dbb3ec6dceef9583086204	1	146045	player	uade	Noisetracker 1.x	0	94848	f055c435	3fbcad83	ZVUK/MOD/ALIEN.MOD
 e972f6db0e92b2da53feb1838e275730	1	233093	player	uade	Protracker compatible	0	192730	8ee68c20	373ffe8e	ZVUK/MOD/FLTCHTHM.MOD
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	ZVUK/MOD/MEGAFCE2.MOD
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	ZVUK/MOD/MEGAFCE2.MOD
 e9f76f9755996e0451d8447babc31794	1	92272	player	uade	Noisetracker 1.x	0	79428	82ccdef9	c9d50c0d	ZVUK/MOD/INT1.MOD
 ea7c3a42143bedf3a1c0cc48a8d4596d	1	247693	player+volume	uade	Protracker compatible	0	88446	0c7af0d3	7a796bbb	ZVUK/MOD/MEGAFUNK.MOD
 eacf75bf63085b521473eed8b4a9065d	1	307321	player	uade	Protracker compatible	0	135656	da77912b	025fdf94	ZVUK/MOD/KFRNSTN1.MOD

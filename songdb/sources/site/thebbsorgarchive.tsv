@@ -69,7 +69,6 @@
 280960dce5205c9b18a110323f456c0a	1	406065	player+silence	ft2play	Fasttracker (M.K.)	4	154079	d3c0282e	ed109030	ANSI Art/die-pk7.zip/EM-FEAR.MOD
 28c3f06e88c44c4753a41608522bbf8e	1	256566	player+silence	uade	Protracker compatible	0	88953	cf156351	33ab7c7d	ANSI Art/dark0694.zip/DARKVIEW.MOD
 2ad1ba39d78867df42c05e4d1ec8d33c	1	70530	player	uade	Protracker compatible	0	85059	c4aefd48	39f3fadf	ANSI Art/blde9405.zip/...to infinity
-2ad1ba39d78867df42c05e4d1ec8d33c	1	70530	player	uade	Protracker compatible	0	85059	c4aefd48	39f3fadf	ANSI Art/blde9405.zip/ST-INFIN.MOD
 2b5eaf5491b7cb92635fb7911fe96a28	1	92272	player	uade	Noisetracker 1.x	0	42804	b4f3a7a0	be332640	ANSI Art/ciapak11.zip/IB-DEMO.ZIP/CIA.DAT
 2c37ba9726089fbb68644f63b0622d2e	1	210072	player+silence	uade	Protracker compatible	0	114445	54b656c3	3d559d02	ANSI Art/atm-0594.zip/CN-ATOM7.MOD
 2d2af2655599e180bdd0e6fd96621f39	1	177700	player+silence	ft2play	Fasttracker (M.K.)	4	66741	4b05b809	045bdd0e	ANSI Art/cri-0594.zip/LP-MENTA.MOD
@@ -277,7 +276,6 @@
 7e993032bcfe4733a8d63dff5d88d7c7	1	176769	player	uade	Soundtracker II (31 instr.)	0	78762	8aef3a76	eaee5e7c	PCBoard PPEs A-C/blaspag.zip/FYC.MOD
 7efc0238dff08a152133f0c9112525ec	1	122997	player	uade	Protracker	0	59876	42342328	8cbea8eb	Door Games/doors_a-c/bgterm.zip/BG4.DAT
 7f00b7bec4f2b34f0fb0b423bdb68dc4	1	240726	player+silence	st3play	Scream Tracker 3.01 (SB)	16	264935	26fc093d	037aa05d	ANSI Art/rel-0694.zip/LP-EUPHO.S3M
-7f86d1b12b1d05a58b64a0841531f0d3	1	146045	player	uade	Protracker compatible	0	114949	69972328	2b227bef	ANSI Art/dark0494.zip/DARKVIEW.MOD
 7f86d1b12b1d05a58b64a0841531f0d3	1	146045	player	uade	Protracker compatible	0	114949	69972328	2b227bef	ANSI Art/dark0494.zip/star control2,tune1
 7ff19afb94645919dafbd1de870366e5	1	150727	player	st3play	Scream Tracker 3.01 (SB)	8	316107	cf0aeb3c	0a2d648b	ANSI Art/shv-0994.zip/PI-SHKRD.S3M
 800222d97971c66494d719c530aa6922	1	90636	player+silence	uade	Protracker	0	53498	53d8d47a	5eb45b47	Door Games/locatha_ddo_fx/stris12.zip/THE.SNG
@@ -499,7 +497,6 @@ ebd9481fc6f10ba3ceb224db1855a937	1	273801	player+silence	st3play	Scream Tracker 
 ed2c1629b80521dd24097078b111d1e3	0	76685	player	libopenmpt	MultiTracker 1.0	4	18567	72f51adc	c6af95d0	ANSI Art/grip0294.zip/AL-SPACE.ZIP/AL-SPACE.MTM
 eec8fa5cde66280151d3027cea4c0d44	1	205564	player	uade	Protracker compatible	0	93595	a3280946	fab657fc	ProBoard PEXs/cb_pex16.zip/CALYPSO1.MOD
 f17b73c868636fcf13f6478378a42154	1	284222	player+silence	st3play	Scream Tracker 3.01 (SB)	11	259253	f8910bc4	393d79a2	ANSI Art/lap-0894.zip/Doom!!
-f17b73c868636fcf13f6478378a42154	1	284222	player+silence	st3play	Scream Tracker 3.01 (SB)	11	259253	f8910bc4	393d79a2	ANSI Art/lap-0894.zip/DOOM.S3M
 f1961473e812a77a53f067ffd78470bb	1	76920	player	uade	Protracker compatible	0	77171	3a2b3c8a	0dcafde5	ANSI Art/cri-0594.zip/SL-EVIL.MOD
 f1ca1f109aab952e38530e3350c3149d	1	44910	player	uade	Soundtracker II (31 instr.)	0	60672	1841cf24	0deb9589	Door Games/locatha_ddo_fx/stris12.zip/WIZ.SNG
 f1ca1f109aab952e38530e3350c3149d	1	44910	player	uade	Soundtracker II (31 instr.)	0	60672	1841cf24	0deb9589	Door Games/locatha_ddo_fx/toag20.zip/TOAGV1.S3M

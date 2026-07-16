@@ -772,7 +772,7 @@ a0c452e7bfdde2c337a6d7effd083248	1	61568	player	uade	Protracker compatible	0	501
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	Nordlicht_SPIELE/Serie_10/Disk03b/Songs/mdat.Erbe2
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	Nordlicht_SPIELE/Serie_10/Disk03b/SPIELE_10_03b.DMS/Songs/mdat.Erbe2
 a1389382a197d038400d80a9b76c525d	0	172830	player	uade	TFMX Pro	0	15196	2a822775	428b288e	Werbespiele/Das_Erbe2.DMS/Songs/mdat.Erbe2
-a1389382a197d038400d80a9b76c525d	1	81924	player
+a1389382a197d038400d80a9b76c525d	1	81944	player
 a1389382a197d038400d80a9b76c525d	2	61468	player
 a1389382a197d038400d80a9b76c525d	3	176668	player
 a142e48c89b8c6fdbe52990e00712eca	1	92272	player	uade	Protracker	0	111184	f4bdb2cb	335a26ac	Nordlicht_SPIELE/Serie_10/Disk04/SPIELE_10_04.DMS/mod.bcarsong
@@ -963,10 +963,10 @@ cb7a4a5a483b1a1fbe42a990c80bb6d7	1	195981	player+volume	uade	Protracker compatib
 cbcce923c9396f9447ef0f5601b6b1c8	1	122534	player	uade	Protracker compatible	0	37928	098dd85d	caa30eb7	Nordlicht_SPIELE/Serie_23/Disk01/Spiele_23_01.DMS/Modules/mod.SPRING IN LENINGRAD
 cbcce923c9396f9447ef0f5601b6b1c8	1	122534	player	uade	Protracker compatible	0	37928	098dd85d	caa30eb7	Nordlicht_SPIELE/Serie_23/Disk02/Spiele_23_02.DMS/Modules/mod.SPRING IN LENINGRAD
 cbdedd0d6d21e219649bf6e45e80f8fc	1	82044	player	uade	Protracker	0	159060	98b5f1e4	d66967ba	Module/MuchMods/THISHERE.MOD
-cc44b090603a13c9bff262fec1f5c338	0	191980	player	libxmp	AMOS Music Bank	4	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_03/Disk02/Gun_Slinger/music
-cc44b090603a13c9bff262fec1f5c338	0	191980	player	libxmp	AMOS Music Bank	4	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_03/Disk02/SPIELE_03_02.DMS/Gun_Slinger/music
-cc44b090603a13c9bff262fec1f5c338	0	191980	player	libxmp	AMOS Music Bank	4	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_08/Disk01/music
-cc44b090603a13c9bff262fec1f5c338	0	191980	player	libxmp	AMOS Music Bank	4	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_08/Disk01/SPIELE_08_01.DMS/music
+cc44b090603a13c9bff262fec1f5c338	0	192141	player	uade	Amos Music Bank	0	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_03/Disk02/Gun_Slinger/music
+cc44b090603a13c9bff262fec1f5c338	0	192141	player	uade	Amos Music Bank	0	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_03/Disk02/SPIELE_03_02.DMS/Gun_Slinger/music
+cc44b090603a13c9bff262fec1f5c338	0	192141	player	uade	Amos Music Bank	0	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_08/Disk01/music
+cc44b090603a13c9bff262fec1f5c338	0	192141	player	uade	Amos Music Bank	0	79522	7dec92c6	36b3ba20	Nordlicht_SPIELE/Serie_08/Disk01/SPIELE_08_01.DMS/music
 cc4878d8f102cc739a29badaf4f171fc	1	84616	player	uade	Protracker compatible	0	106485	d96f14aa	d39ab5bb	Module/MuchMods/GLUE.MOD
 ccf54c3a04a7f6978afead5bfe5345fd	1	102983	player	uade	Protracker	0	169966	eb17cbb0	786737a4	Module/MuchMods/JESUS2.MOD
 cd8650533ec2fb7091e2e1789873756e	0	178356	player	uade	Amos Music Bank	0	57610	83599fac	5b76f4bc	Nordlicht_SPIELE/Serie_20/Disk01b/Level4.abk

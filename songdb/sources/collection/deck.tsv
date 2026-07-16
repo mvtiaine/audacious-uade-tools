@@ -217,6 +217,7 @@
 660f9dfa093905f80b98ed3c8ea7a47a	1	46216	player	uade	Protracker	0	9760	c2eae006	52727d92	amiga_500/chip_mods/chillroom.mod
 67f13176f3fd18e9614ee05b51ae7b70	1	80758	player	uade	Protracker	0	15350	5c9d4dbf	85fcabac	amiga_500/chip_mods/anarchymenu4.mod
 6802e759f3fce8c4e8475a586821d554	1	100210	player	uade	Protracker	0	22234	4c2b29f6	10f36137	amiga_500/chip_mods/wizardry.mod
+680c5dcf7dc8ae03a45638aa3defab92	1	381410	player+silence	uade	Protracker compatible	0	110240	4689a3f0	b6bb50f3	amiga_500/evergreens_1987-1991/we're the devils.mod
 684fec6d39cd2928676e3bcddd14b09b	1	370256	player+silence	uade	Soundtracker II (15 instr.)	0	129248	f545835a	d550671e	amiga_500/evergreens_1987-1991/memorydust.mod
 68f8d4b824ff660d799b06e38e9293b8	0	209223	player+silence	libopenmpt	OpenMPT 1.20.01.00	14	111398	cd86063a	1dea5187	multichannel/chip_mods/rainbow dash.xm
 69352876fe2029b14ef56b59b993e4c3	1	128189	player+volume	uade	Protracker	0	114672	5f3c8de3	65face3e	amiga_500/voldsom kanonslag!.mod
@@ -312,7 +313,7 @@
 954c9b22694408caa3042fb320d30032	1	272161	player+silence	uade	Protracker	0	157496	0f5dfdab	beb449af	amiga_500/evergreens_1987-1991/dyna-song.mod
 9598a5ea93b67ea802405883a85a52e9	1	174966	silence	uade	Protracker	0	139286	267bdd49	93c0933a	amiga_500/242.mod
 969e1f93683733a2014b680c4860c02c	0	259215	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	64	4918849	733f01ee	e58e2fd0	multichannel/bright sign remix.it
-976ad226763139226b3948c8de58e47a	1	84576	player	uade	Protracker	0	168728	bc96f22e	70594e96	amiga_500/tunnehairio.mod
+976ad226763139226b3948c8de58e47a	1	84576	player	uade	Protracker	0	168728	bc96f22e	70594e96	amiga_500/evergreens_1987-1991/tunnehairio.mod
 97a2cd72a8d02a068492019759cd34ce	1	258686	player+silence	it2play	Impulse Tracker 2.15	28	8359282	b7424a1c	037eab83	multichannel/k2 (the race part 1).it
 98f178b8dcd72ba5d0947f6f1df6ad80	1	125488	player	uade	Protracker	0	134876	36f263f4	704b6e32	amiga_500/leluja ja luoteja.mod
 991f672e1ee380a3a606734d5f0037a1	1	196561	player+volume	it2play	Impulse Tracker 2.14+	19	448656	c6cd41ee	7849ddc7	multichannel/the grey abyss.it

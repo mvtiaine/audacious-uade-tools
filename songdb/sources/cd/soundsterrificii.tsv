@@ -1897,7 +1897,7 @@
 5026de0024f5b3c9d895390c0b57b608	1	257566	player+silence	uade	Protracker	0	231620	09f7eaf8	257a48a0	2/MODS/A/ABSOLUT2.MOD
 505042685a243ae13167d13a7016f1b6	1	171122	player	uade	Protracker compatible	0	95160	a848cfb1	93b6785e	2/MODS/E/EASTERNM.MOD
 508ffda5ba71299221b83866a6bc36a8	1	192141	player	uade	Protracker compatible	0	78420	5aa90ec8	efcd6fec	2/MODS/B/BALL_4.MOD
-509497761426c66d1bd64c08dbbfd55d	0	122697	player	libopenmpt	OctaMED v4 (MMD1)	4	41358	d2637c83	c9647210	2/MIDCRAFT/CRAFTBRO/MIDICraft OctaMED Modules/Other/RiskyWoods
+509497761426c66d1bd64c08dbbfd55d	1	122836	player	uade	OctaMED MMD1	0	41358	d2637c83	c9647210	2/MIDCRAFT/CRAFTBRO/MIDICraft OctaMED Modules/Other/RiskyWoods
 50956991a48ebf43c5842c6cb7553242	1	291969	player	uade	Noisetracker 1.x	0	72674	20959567	f945fefb	2/MODS/H/HOAXERS2.MOD
 50c5adde7acd1d69d8713123c5e8f5d1	1	452073	player+silence	uade	Protracker	0	329500	1bdb6f85	91326a8c	1/MODS/S/SIGNIA2.MOD
 50cadcd1963563097c56f813bffc62fe	1	132360	player	uade	Protracker compatible	0	263744	859800cc	ea0f4d53	2/MODS/B/BATDANCE.MOD
@@ -5465,7 +5465,7 @@ e998012c700eb43af0321711305829b2	1	637350	player	uade	Protracker (vblank)	0	2242
 e9ac4f0afe5efc782e2f232916e8b902	1	162675	player+silence	st3play	Scream Tracker 3.2x (GUS)	16	110054	6e916875	69b2a801	1/S3M/S/SALS-HAD.S3M
 e9aec55b607ebfcf68e92c8b98ec7a05	1	135455	player	st3play	Scream Tracker 3.03 (GUS)	6	52472	150bec44	eb1f4bbd	1/S3M/I/INVTRO94.S3M
 e9b26303072a0c6a41c66e877ed49859	1	191679	player	st3play	Scream Tracker 3.2x (SB)	16	301536	fce9da89	bd3031e9	1/S3M/H/HOUSBREK.S3M
-e9b51af4e30eabfc9f94ce2eddcde4ae	0	161316	player	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	2/MODS/M/MEGAFORC.MOD
+e9b51af4e30eabfc9f94ce2eddcde4ae	0	160062	player+volume	uade	Soundtracker II - V or compatible	0	95294	d83a7086	c9b339a3	2/MODS/M/MEGAFORC.MOD
 e9c2ec8bc557e62e76ac34636557c4c2	1	363386	player+silence	uade	Protracker	0	143856	072bad09	13a38f4e	2/MODS/S/SOPHIESM.MOD
 e9c9e00e08925ace4957c087b4f890f5	1	189107	player	uade	Protracker	0	139848	19a4ab6f	c229d31c	2/MODS/F/FUTURIT2.MOD
 e9ebd5146050a11f1c757e68b489be44	1	224593	player	uade	Protracker	0	155770	d037c0c3	ed8b9af3	2/MODS/M/MAGICMOM.MOD

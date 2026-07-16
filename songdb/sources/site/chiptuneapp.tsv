@@ -736,7 +736,7 @@
 06e76499a9eb0ae847cfe153e0a17a61	1	60586	player
 06f18102e28cc19d91d777783a506f41	1	63357	player	it2play	Impulse Tracker 2.14+	4	14580	7bca8bec	a21f1cc5	ModArchives/Dalezy/dd-jatte.it
 06f2bcd200d3c73f7486fe4bb8b3ee2b	1	134490	player	it2play	Impulse Tracker 2.14	16	409894	644e3130	68e3b83c	Game Mods/- Arranged -/Chrono Trigger (SNES, 1995)/ctforest.s3m
-06f83841cd25178f020bc608e02b0d35	0	184669	player+silence	libopenmpt	OpenMPT 1.30.12.00	11	12277	5e5653d5	91aba998	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59976 damifortune - rootspan.it
+06f83841cd25178f020bc608e02b0d35	0	184682	player+silence	libopenmpt	OpenMPT 1.30.12.00	11	12277	5e5653d5	91aba998	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59976 damifortune - rootspan.it
 0700a354ebbe9e4cc543158d4bb9d178	1	98771	player	ft2play	FastTracker v2.00	8	29711	2517f604	2c73c191	Game Mods/- Arranged -/Final Fantasy 7 (Playstation, 1997)/pizz-nes.xm
 0701f87e9fed690d3775bc339e8e0baf	1	184304	player	it2play	Impulse Tracker 2.13	16	548056	1e54c010	1d84e331	Modland/Siren/torg.s3m
 0703ab75c61c3f0f16c42e14d6339027	1	168103	player+volume	ft2play	FastTracker v2.00	18	325265	9aa9342e	f254fe7f	Modland/Radix/sunjammer.xm
@@ -1366,7 +1366,7 @@
 0c1ddda087bc077a8081ea88a0d25c81	1	23168	player	uade	Protracker	0	7690	683d04b6	d3bb990b	The Module Collection/ARTIST-R/REV_DIGI/HOPLA.MOD
 0c1e12637a91c8af0d7b96d68eba2ac9	1	97792	player	ft2play	MilkyTracker	14	76690	0746fc2b	d07d433c	keygenmusic.org/RED/RED - Magic Calender Maker 3.0 kg.xm
 0c217ddb572865daaf23ece1e377af87	0	108111	player	libopenmpt	OpenMPT 1.29.15.00	8	4996	bc725839	c0abe737	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 60065 doctorn0gloff - birch.it
-0c22ad4b1a4e4c8c684550f4cbbe742c	0	231794	player+volume	libopenmpt	ModPlug Tracker b3.2 - 1.09	9	211413	aea9c079	f3ef1a21	Game Mods/- Arranged -/Final Fantasy 4 (SNES, 1991)/thetraveler.it
+0c22ad4b1a4e4c8c684550f4cbbe742c	0	231814	player+volume	libopenmpt	ModPlug Tracker b3.2 - 1.09	9	211413	aea9c079	f3ef1a21	Game Mods/- Arranged -/Final Fantasy 4 (SNES, 1991)/thetraveler.it
 0c25c26c0c78fa36bc1f019f4de3d40b	0	15271	player	libopenmpt	ModPlug Tracker 1.09 - 1.16	16	71999	7b153dcc	af797d4e	Game Mods/Demon's Crest (SNES, 1994)/06-dc-optn.it
 0c27460d55e5139a59e8a4041500d786	1	266254	player+silence	ft2play	FastTracker v2.00	20	307002	31d7b47b	93ff25b8	Game Mods/- Arranged -/Bubble Bobble (C64, 1987)/bubboble.xm
 0c295f8452d71b7908f4c47b15a7bf42	0	143785	player	libopenmpt	munch.py	17	40751	4e22ab71	c1dac4ce	Battle of the Bits/Summer Chip XI [BotB 6220] (2021)/BotB 47624 TrippleP - Escaping the Summer Heat.it
@@ -4917,7 +4917,7 @@
 2c5bb4a586722e324d0ef5ba3e583c6d	7	1326	player
 2c5bb4a586722e324d0ef5ba3e583c6d	8	1647	player
 2c605a00b4974e560735af6bcf49fda3	1	49765	player	ft2play	FastTracker v2.00	4	60340	f3cec4f2	5ed5a729	keygenmusic.org/!Others/Urban Design - A Statement intro.xm
-2c63a6befd49e73476212baaad289e41	0	100974	silence	uade	Soundtracker II - V or compatible	0	105164	8626529f	f8d12058	The Module Collection/MOD--/11-1.MOD
+2c63a6befd49e73476212baaad289e41	0	157348	silence	uade	Soundtracker II - V or compatible	0	105164	8626529f	f8d12058	The Module Collection/MOD--/11-1.MOD
 2c65ef29f8aa4c1096c6ad8e45cccc3b	1	138369	player	uade	Noisetracker 1.x	0	166634	40d684e9	2a911777	The Module Collection/ARTIST-C/CRIBBS/FREQUENC.MOD
 2c724633e5370ce87c20533b87ee556c	1	61568	player	uade	Protracker	0	13696	01f1e6ee	1a414ffb	keygenmusic.org/tRUE/tRUE - WinRAR 3.80 Multilingual crk.mod
 2c76b86a0bab8096e0bdb1ea6d54d2b4	1	32592	player	uade	Protracker	0	45800	6a43ed21	673d713f	Game Mods/Perihelion – The Prophecy (Amiga, 1993)/inside.farm.mod
@@ -5884,7 +5884,7 @@
 3482be189952f88be2a9291cb65f5072	1	27006	player	uade	Protracker	0	12214	4ed45d41	456afdfb	Game Mods/Fantastic Dizzy (Amiga, 1993)/f.a.dizzy-rapids.mod
 3485858347df4b916a0b321de6192982	1	122997	player	uade	Noisetracker 1.x	0	110660	9fe27e78	f4ecb428	The Module Collection/MOD-L/LEGEND.MOD
 34867fc1989ebf1258d0cff511768cb1	1	77940	player	ft2play	FastTracker v2.00	8	189368	e3181db6	2b34a9a9	Game Mods/- Arranged -/Super Mario Advance (Gameboy Advance, 2001)/Super Mario Advance.xm
-34874df8cf41c857b538bbb3022698d7	0	43221	player+silence	libopenmpt	OpenMPT 1.30.11.00	10	29673	b6261f9e	61166971	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59822 Julian - Brush your teeth.it
+34874df8cf41c857b538bbb3022698d7	0	43312	player+silence	libopenmpt	OpenMPT 1.30.11.00	10	29673	b6261f9e	61166971	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59822 Julian - Brush your teeth.it
 3487a52babea59796a981862ad91b790	0	80761	player+volume	libopenmpt	Unknown	4	120960	40021b12	d4628dd9	Game Mods/Pinball World (PC∕DOS, 199x)/WAGONTRN.S3M
 3488d46c821192b1248568d2aca1a5f5	0	46011	player	libopenmpt	OpenMPT 1.19.04.00	4	880869	704f9028	1b749076	keygenmusic.org/SHWZ/SHWZ - WinRAR 4.20 crk.it
 3489c8ced5bf60d102122c2cc1e5e687	1	71539	player	ft2play	FastTracker v2.00	8	184809	231c1e6c	51b38229	Game Mods/- Arranged -/Postman Pat (C64, 1988)/pmanpat.xm
@@ -6483,7 +6483,7 @@
 39c97ad1052c5893c82d1cfb3d6c16ed	1	76920	player	uade	Protracker compatible	0	24832	08111d05	d2093cf1	The Module Collection/MOD-L/LITLCHIN.MOD
 39c97ad1052c5893c82d1cfb3d6c16ed	1	76920	player	uade	Protracker compatible	0	24832	08111d05	d2093cf1	The Module Collection/MOD-L/LITTLE_C.MOD
 39c97ad1052c5893c82d1cfb3d6c16ed	1	76920	player	uade	Protracker compatible	0	24832	08111d05	d2093cf1	The Module Collection/MOD-L/LITTLECH.MOD
-39cca6f4a13b2098ebc4823ffeac28cc	0	186826	player+silence	libopenmpt	munch.py	20	32631	a6b3f575	e479a4c5	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59908 Beej - Arrival.it
+39cca6f4a13b2098ebc4823ffeac28cc	0	186808	player+silence	libopenmpt	munch.py	20	32631	a6b3f575	e479a4c5	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59908 Beej - Arrival.it
 39cd4b08b7f9b0a2359a23995a621941	1	183226	player	ft2play	Fasttracker (M.K.)	4	60984	91b34178	a20ee0fe	Battle of the Bits/Winter Chip IX [BotB 1695] (2014)/BotB 12029 Chip Champion - angel of doof.mod
 39cfc8b69324500b70795bb64c8a0dd5	1	124326	player	ft2play	FastTracker v2.00	10	42205	47ede644	12e41a5f	keygenmusic.org/TFT/TFT - 10 Talismans crk.xm
 39d2103333e946085de3f9e4979e9eb3	0	47293	player	libopenmpt	ModPlug Tracker 1.09 - 1.16	16	92925	500fdccb	4b8957d6	Game Mods/Demon's Crest (SNES, 1994)/23-dc-end1.it
@@ -6537,7 +6537,7 @@
 3a578f212564b800a9805b6fecb2d8d4	4	89486	player
 3a578f212564b800a9805b6fecb2d8d4	5	92022	player
 3a578f212564b800a9805b6fecb2d8d4	6	76685	player
-3a578f212564b800a9805b6fecb2d8d4	7	15785	player+silence
+3a578f212564b800a9805b6fecb2d8d4	7	15784	player+silence
 3a578f212564b800a9805b6fecb2d8d4	8	8886	player
 3a578f212564b800a9805b6fecb2d8d4	9	173820	player
 3a593cafe4f0934b47f3c3744a78d25c	1	159026	player	it2play	Impulse Tracker 2.14+	26	1990805	6d6fe111	59c3186c	Ultimate Mod Collection/games/deus ex - the illuminati.it
@@ -7740,7 +7740,7 @@
 44b5eba4b353625240c599596fdd332b	0	111085	player+silence	libopenmpt	ModPlug Tracker 1.0 - 1.16	11	52156	7c496580	e188a381	keygenmusic.org/TFT/TFT - Inca Quest from Reflexive Arcades crk.xm
 44b67dc88d63cae71f943005bdce3576	1	113706	player+silence	uade	Noisetracker 1.x	0	59616	2e3bdc20	9cb3ec0a	The Module Collection/MOD-H/HC5.MOD
 44b68afa2b93edd3e3145248c887a2b8	1	111681	player+silence	uade	Protracker compatible	0	171228	519cc19d	bd11e099	The Module Collection/MOD-D/DREAMING.MOD
-44bad849b1c85607925a1ad4c698c02a	0	228812	player+silence	libopenmpt	munch.py	40	8191	952f51cf	26ff4ad8	Battle of the Bits/Winter Chip XIII [BotB 3585] (2018)/BotB 27484 RazerBlue6 - Daybreak.it
+44bad849b1c85607925a1ad4c698c02a	0	228736	player+silence	libopenmpt	munch.py	40	8191	952f51cf	26ff4ad8	Battle of the Bits/Winter Chip XIII [BotB 3585] (2018)/BotB 27484 RazerBlue6 - Daybreak.it
 44be18f7b5095d7d24d4ea459c9c990c	1	65587	player	uade	Protracker	0	18058	b095a920	f966d189	Modland/coma's favorite Protracker/Groo/coop-Don-Cato/life shows its face.mod
 44bedc89fc3f0c07934f249daa57b85e	1	176357	player	ft2play	FastTracker v2.00	8	82390	d3c740cf	c8e88353	keygenmusic.org/AiR/AiR - NuGen Audio Complete Master Edition VST 1.1 kg.xm
 44c91b9975534291bbf51181a98c26e3	1	27486	player	ft2play	FastTracker v2.00	4	16322	f9d423ad	352bdb14	Modland/Memblers/tgl-x2.xm
@@ -17309,7 +17309,7 @@
 9874b63fe35e20170de04b4c00758f2c	1	73082	player	uade	Protracker	0	19344	70cea9c2	4af7e460	The Module Collection/ARTIST-E/ECHO/EMBASSY.MOD
 9874f23ec7ca8a0cf7cc5ee7105a727c	1	826621	player+silence	ft2play	FastTracker v2.00	24	1218484	b57a2167	cf65e8b5	Modland/coma's favorite Fasttracker 2/Jeroen Tel/versions.xm
 98755015d1d12a0b5ececf8717289653	1	313530	player	uade	OctaMED MMD1	0	954754	8ad406c5	b62dc807	The Module Collection/MOD-N/NOOGOOD.MOD
-9875acc4884771a5cbd49bdbb9d1bb27	0	197317	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	25	45792	47b796ca	bf6a7ed7	keygenmusic.org/CORE/CORE - Plum Amazing iClock Pro 1.1.2 MacOSX kg.it
+9875acc4884771a5cbd49bdbb9d1bb27	0	197930	player+silence	libopenmpt	ModPlug Tracker 1.09 - 1.16	25	45792	47b796ca	bf6a7ed7	keygenmusic.org/CORE/CORE - Plum Amazing iClock Pro 1.1.2 MacOSX kg.it
 9880458b789841d9bed8c90bb011561a	1	124868	player	ft2play	Fasttracker	8	394754	69c54755	493532f2	Ultimate Mod Collection/jazzy/take me softly.mod
 988450d66495be37138bb9305b3801f6	1	218043	player	ft2play	FastTracker v2.00	28	1898853	5b83bba3	c80c53c1	Ultimate Mod Collection/pop_dream/upbeat/don't fall in love.xm
 988938c65ff3e3027e1c13646757af06	1	130350	player	ft2play	FastTracker v2.00	30	982546	73aad931	0a6cef41	Ultimate Mod Collection/funky/liquorice lobotomy.xm
@@ -19715,7 +19715,7 @@ adbfa4f8a38e800087f8548b3dea926b	1	102529	player	ft2play	FastTracker v2.00	12	41
 adc0b1cf5fb65c12043f64c051987e00	1	342004	player	uade	Protracker compatible	0	165140	952d76f8	21d25415	Game Mods/Quadrax (PC∕DOS, 1995)/01-QMUSM.mod
 adc2102d7e73a02e25ee1753f73f6106	1	218154	player	ft2play	MilkyTracker	6	95059	6d69c4ca	b951ca96	Game Mods/Axia (PC∕DOS, 1998)/46 Awakening.xm
 adc58517b999ce202f5961dc571b8706	1	41072	player	uade	Protracker	0	18128	58038f74	74872549	The Module Collection/MOD-R/ROCKERFO.MOD
-adc958f29162a23605bce3f6289a620e	0	365689	player+silence	libopenmpt	OpenMPT 1.17.02.53	65	85726	b5410984	6531d2be	keygenmusic.org/Under SEH/Under SEH - Babylon Pro 8.0.0r22 crk.it
+adc958f29162a23605bce3f6289a620e	0	365316	player+silence	libopenmpt	OpenMPT 1.17.02.53	65	85726	b5410984	6531d2be	keygenmusic.org/Under SEH/Under SEH - Babylon Pro 8.0.0r22 crk.it
 adcab9318c6898dbfc8f82b01a97696b	1	30654	player	ft2play	Fasttracker (M.K.)	4	8164	e523e013	f969d004	ModArchives/Dalezy/tu_itr16.mod
 adcab9318c6898dbfc8f82b01a97696b	1	30654	player	ft2play	Fasttracker (M.K.)	4	8164	e523e013	f969d004	Modland/Dalezy/intro numma (16).mod
 adcb0e2245e0c3e6fbcba023fdc292f3	1	122677	player	ft2play	MOD2XM 1.0	4	12055	205715a3	05270f11	keygenmusic.org/SUPPLEX/SUPPLEX - Flashback Another World II +2 trn.xm
@@ -20704,7 +20704,7 @@ b6a109513b76c2be1cae1d844d9cccda	1	128726	player	ft2play	FastTracker v2.00	24	24
 b6a109513b76c2be1cae1d844d9cccda	1	128726	player	ft2play	FastTracker v2.00	24	242567	885264ec	2803b9be	Modland/Drax/asymptotic world.xm
 b6a148e1a43f5c1ca235cc7e7e680a1c	1	84436	player	uade	Protracker compatible	0	171500	bf75604d	fa8be370	The Module Collection/ARTIST-C/CLAS/CLAS.MOD
 b6a1a17470016cc5adc17596ba3fdca8	1	252594	player+silence	uade	Soundtracker II (31 instr.)	0	123658	81ffe31e	ba41c96e	The Module Collection/ARTIST-D/DR-DEMTR/STARSCRO.MOD
-b6a20722234dd22d9bd2eadbab20e8cd	0	189386	player+silence	libopenmpt	munch.py	15	43663	9e35994f	dbfa9a63	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59838 blower5 and damifortune - light dinner 6.it
+b6a20722234dd22d9bd2eadbab20e8cd	0	189609	player+silence	libopenmpt	munch.py	15	43663	9e35994f	dbfa9a63	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 59838 blower5 and damifortune - light dinner 6.it
 b6a3e1b92d54fdeb77b0b9f45cb28e25	1	264383	player	ft2play	FastTracker v2.00	16	204525	12c824b9	766db165	Game Mods/- Arranged -/Final Fantasy 4 (SNES, 1991)/FF2FBATL.XM
 b6a6717756cea10af29df31d912a7cad	1	261245	player	uade	Protracker	0	150418	9833e0a5	9ac5cf4f	The Module Collection/MOD-T/TOITEI.MOD
 b6a90baabdc0df2bfe9d3e7dae3a17fe	1	51320	player	uade	Protracker compatible	0	65202	682c834f	a82ad21f	The Module Collection/ARTIST-M/MELLON/MUSKULOS.MOD
@@ -23053,7 +23053,7 @@ cbb7d35fc242fd7f88621957c1392bed	1	58916	player	uade	Protracker compatible	0	653
 cbba1c6b78cee290abe4f2ecf2c56c69	1	179156	player	ft2play	FastTracker v2.00	30	631812	9be0afae	d7986932	Modland/Drax/drunk diving.xm
 cbbc5e25e88641575184db741c32d31e	0	70017	player	libopenmpt	OpenMPT 1.28.06.00	12	154988	88470655	c1914328	Battle of the Bits/s3xm0dit Gauntlet [BotB 4310] (2019)/BotB 32778 Notademoscener - contest.it
 cbc90f8176c782baa87031da93ff80a3	1	212959	player	uade	Protracker	0	79912	345e3788	72070a26	keygenmusic.org/AHCU/AHCU - 1st Privacy Tool for Windows 7.3.2.1 crk.mod
-cbcad335386af98afe4666ca04269b04	0	377919	player+silence	libopenmpt	munch.py	19	9144	d069ecef	c7186e38	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 60011 blower5 and damifortune - a moss-covered statue.it
+cbcad335386af98afe4666ca04269b04	0	377914	player+silence	libopenmpt	munch.py	19	9144	d069ecef	c7186e38	Battle of the Bits/TINYMOD GRANDPRIX [BotB 8063] (2023)/BotB 60011 blower5 and damifortune - a moss-covered statue.it
 cbcaffd20feb8eeb68c2f200e0c37a9e	1	122677	player	ft2play	Fasttracker	6	256686	5f63fd99	e777d1fb	Game Mods/Rebel Runner - Operation – Digital Code (PC∕DOS, 1996)/14-DCAREA14.MOD
 cbcb6c2eeec2424ccb58a6191f31adb3	1	218243	player	uade	Protracker	0	379368	1db467b4	3cdabbf0	The Module Collection/MOD-S/SENSIVIT.MOD
 cbcebd526ef747a7799721d195c2194d	1	88117	player	ft2play	FastTracker v2.00	10	32028	9abaf40d	a98e8bb7	keygenmusic.org/ICU/ICU - UltraEdit-32 12.10 kg.xm
@@ -28195,7 +28195,7 @@ f8fd1004d5c26a76c22061f40c90ae6e	1	207493	player	uade	Protracker	0	437998	d2e0bb
 f8fd9559951b5281a05141a82a946d73	1	242055	player	uade	Protracker	0	173350	a8f01d5c	05e91130	The Module Collection/ARTIST-F/FREDER-M/BOMBTHEB.MOD
 f8fdcf259b566390e8ffd20612d5fce5	0	27387	player	libopenmpt	ModPlug Tracker 1.09 - 1.16	5	35044	5c431893	8d7d3ea0	Game Mods/- Arranged -/My Hero (Arcade, 1985)/myhero.it
 f8fe6249fd03036c8bb4d877a692c43e	1	107645	player	uade	Protracker	0	18114	e30d50ec	68dea320	The Module Collection/ARTIST--/4_MAT/STARWORX.MOD
-f907b218bb4570cd9e97e91517e8c051	0	717177	player+silence	libopenmpt	OpenMPT 1.19.04.00	11	24208	4e078636	cce26c7b	Battle of the Bits/Summer Chip III [BotB 1475] (2013)/BotB 10454 zebra - The Crystal Ball.it
+f907b218bb4570cd9e97e91517e8c051	0	717355	player+silence	libopenmpt	OpenMPT 1.19.04.00	11	24208	4e078636	cce26c7b	Battle of the Bits/Summer Chip III [BotB 1475] (2013)/BotB 10454 zebra - The Crystal Ball.it
 f91b079d741a27c017dd83b1d0e1fa2e	1	343755	player+silence	ft2play	FastTracker v2.00	32	881244	d26eb1ae	801e51ba	Game Mods/- Arranged -/Final Fantasy 7 (Playstation, 1997)/MidgarNights(GwilymWogan).xm
 f92239e09301d4c81cbf191ebca6f48a	1	169756	player	uade	Protracker	0	123576	80092227	bea07fe1	ModArchives/Yannis Brown/freakin-out.mod
 f9246c7e118651dbade5bf66c8c99de4	1	247433	player+silence	uade	Protracker	0	190482	fb74f5f4	b4ed91d9	ModArchives/Random Tunes 1995-1997/undergro.mod

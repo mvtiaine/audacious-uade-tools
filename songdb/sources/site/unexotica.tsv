@@ -603,7 +603,7 @@
 0966a9a7a2cd66baca16870be4494817	5	1929	player
 0966a9a7a2cd66baca16870be4494817	6	3637	player
 0966a9a7a2cd66baca16870be4494817	7	5345	player
-0966a9a7a2cd66baca16870be4494817	8	47653	loop
+0966a9a7a2cd66baca16870be4494817	8	45812	loop
 0973eefd03437b841a08d2f447194c46	1	0	nosound	uade	Startrekker (4ch)	0	99950	3ef48d7d	3bd40c31	Game/Myers_Jolyon/Nam_1965-1975.lha/Nam_1965-1975/mod.viet-sounds
 0973eefd03437b841a08d2f447194c46	10	99403	player+silence
 0973eefd03437b841a08d2f447194c46	11	3304	player+silence
@@ -2007,17 +2007,17 @@
 20ebd2ac67989db498dd7da01f87945d	1	66572	player	uade	Protracker	0	101656	9d1ef2ea	434ac60c	Game/Tankard_Paul/Dennis.lha/Dennis/mod.tittyooooooooooooooo
 20fd0eb52f78898d3670158ad551f8da	0	193789	player	uade	TFMX Pro	0	8760	73215764	8bd41482	Game/Schwiezer_Joerg/Cyberzerk.lha/Cyberzerk/mdat.ingame
 20fd0eb52f78898d3670158ad551f8da	1	31367	player
-20fd0eb52f78898d3670158ad551f8da	10	4602	player+silence
-20fd0eb52f78898d3670158ad551f8da	11	4760	player+silence
+20fd0eb52f78898d3670158ad551f8da	10	4603	player+silence
+20fd0eb52f78898d3670158ad551f8da	11	4761	player+silence
 20fd0eb52f78898d3670158ad551f8da	12	0	nosound
 20fd0eb52f78898d3670158ad551f8da	2	25700	player
 20fd0eb52f78898d3670158ad551f8da	3	7696	player
 20fd0eb52f78898d3670158ad551f8da	4	0	nosound
-20fd0eb52f78898d3670158ad551f8da	5	8049	player+silence
-20fd0eb52f78898d3670158ad551f8da	6	131229	loop
+20fd0eb52f78898d3670158ad551f8da	5	8050	player+silence
+20fd0eb52f78898d3670158ad551f8da	6	131624	loop
 20fd0eb52f78898d3670158ad551f8da	7	138911	player
 20fd0eb52f78898d3670158ad551f8da	8	0	nosound
-20fd0eb52f78898d3670158ad551f8da	9	4654	player+silence
+20fd0eb52f78898d3670158ad551f8da	9	4655	player+silence
 20fe56539ccb431426842c11bc8b11c7	1	76920	player	uade	Protracker	0	111804	88a3c50e	2afc4cfe	Game/Furniss_Matt/Cytron.lha/Cytron/mod.cyhiscore
 21005070e5d2b912fe94c9e75c7f56c6	0	257104	loop	uade	Darius Zendeh Mod - type: >2<	0	126508	7edc23e8	5dd1646d	Game/Zendeh_Darius/Crash_and_Burn.lha/Crash_and_Burn/dz.Crash_and_Burn
 210479b8e8686176ef20ced0678b14b5	1	221559	player	uade	Soundtracker II (31 instr.)	0	109364	088ded24	7efc3629	Game/Martin_Jose/Astro_Marine_Corps.lha/Astro_Marine_Corps/mod.a amc menu
@@ -2880,14 +2880,14 @@
 2cfda6f485d6dc60a2bb3fac7228b90e	1	61568	player	uade	Soundtracker II (15 instr.)	0	24134	2ce789c3	5be00bde	Game/Grignon_Jean-Marc/Explora_2.lha/Explora_2/mod.darta3
 2d003b0c951d502f1a66416ed0e7f4ad	0	196421	player	uade	Sonic Arranger	0	24334	193510c9	42ed8f97	Game/Steinwachs_Matthias/Ambermoon.lha/Ambermoon/Direct_from_Composer/sa.Amber6mod.pc
 2d00921fe84223430b753375ac741a53	1	7736	player	uade	OctaMED MMD0	0	9100	2ff97b08	8b601ced	Game/Parton_Andrew/Civilization.lha/Civilization/med.building
-2d02fc26e346d00217cc79d5608a18a1	0	3056	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	Game/Stember_Rudolf/Software_Manager.lha/Software_Manager/Direct_from_Composer/mdat.Fx
-2d02fc26e346d00217cc79d5608a18a1	1	3112	silence
-2d02fc26e346d00217cc79d5608a18a1	2	3077	silence
+2d02fc26e346d00217cc79d5608a18a1	0	3053	silence	uade	TFMX Pro	0	1060	0ea67fce	2a2de3f0	Game/Stember_Rudolf/Software_Manager.lha/Software_Manager/Direct_from_Composer/mdat.Fx
+2d02fc26e346d00217cc79d5608a18a1	1	3110	silence
+2d02fc26e346d00217cc79d5608a18a1	2	3081	silence
 2d02fc26e346d00217cc79d5608a18a1	3	3821	silence
 2d02fc26e346d00217cc79d5608a18a1	4	3721	silence
-2d02fc26e346d00217cc79d5608a18a1	5	3185	silence
-2d02fc26e346d00217cc79d5608a18a1	6	3638	silence
-2d02fc26e346d00217cc79d5608a18a1	7	3150	silence
+2d02fc26e346d00217cc79d5608a18a1	5	3186	silence
+2d02fc26e346d00217cc79d5608a18a1	6	3639	silence
+2d02fc26e346d00217cc79d5608a18a1	7	3151	silence
 2d02fc26e346d00217cc79d5608a18a1	8	3181	silence
 2d13e1e3a11b6e746fbffd621f6b9b9b	0	91548	loop	uade	UADE	0	83172	74483602	fc115460	Game/Becker_Oliver/Cosmic_Bouncer.lha/Cosmic_Bouncer/Custom_Versions/cust.ingame
 2d13eca957a0f704337902be2179c477	1	0	nosound	uade	Protracker	0	37300	2086d458	7eb5e22f	Game/Furniss_Matt/Out_Run_Europa.lha/Out_Run_Europa/mod.orfrance
@@ -3024,7 +3024,7 @@
 2f1e567198016cf9809fe6e3fb5ccf07	1	86425	player	uade	Jochen Hippel COSO	0	2208	ec2ec208	1e539590	Game/Hippel_Jochen/Amberstar.lha/Amberstar/soc.Ode to Schnism
 2f263411e65e11a694a4ccc29c905816	1	57610	player	uade	Dave Lowe New	0	25857	d4bacdc0	2ea69074	Game/Lowe_Dave/Super_Street_Fighter_2_TNC.lha/Super_Street_Fighter_2_TNC/dln.Blanka
 2f263411e65e11a694a4ccc29c905816	2	0	nosound
-2f376920bf45875fc387586ce0a091d4	0	404717	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	Game/Huelsbeck_Chris/Masterblazer.lha/Masterblazer/mdat.intro
+2f376920bf45875fc387586ce0a091d4	0	405077	player+silence	uade	TFMX Pro	0	15384	759cdc4f	0b3b6444	Game/Huelsbeck_Chris/Masterblazer.lha/Masterblazer/mdat.intro
 2f376920bf45875fc387586ce0a091d4	1	1004	player
 2f376920bf45875fc387586ce0a091d4	2	1004	player
 2f376920bf45875fc387586ce0a091d4	3	1004	player
@@ -3210,7 +3210,7 @@
 327277cfe82d3ee267e0baeee6610020	1	81924	player
 327277cfe82d3ee267e0baeee6610020	2	81924	player
 327277cfe82d3ee267e0baeee6610020	3	5164	player
-327277cfe82d3ee267e0baeee6610020	4	5731	silence
+327277cfe82d3ee267e0baeee6610020	4	5723	silence
 32734c55c07f8bc77d0a843dfecce74e	1	198149	player	uade	Protracker	0	92648	caff97ab	4f261b4c	Game/Speight_Simon/XTreme_Racing.lha/XTreme_Racing/mod.Theme
 32761524cf4003d41fc4d40a14411b83	1	7796	player	uade	Noise Packer 3.0	0	6874	72998918	a2f13996	Game/Iveson_Martin/Dragonstone_CD32.lha/Dragonstone_CD32/np3.ingame_fx_4
 32761524cf4003d41fc4d40a14411b83	1	7796	player	uade	Noise Packer 3.0	0	6874	72998918	a2f13996	Game/Iveson_Martin/Dragonstone.lha/Dragonstone/np3.ingame_fx_4
@@ -3530,7 +3530,7 @@
 37b03442159bc03db708df10ba499254	1	61568	player	uade	Protracker	0	23784	40d87498	77766313	Game/Gaiba_Gian_Luca/Diabolik_08.lha/Diabolik_08/mod.st1
 37b406445ed1eb805f152b8a690092c1	0	107544	player	uade	TFMX Pro	0	11960	38cea76e	a0c3b8f4	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_2
 37b406445ed1eb805f152b8a690092c1	1	46116	player
-37b406445ed1eb805f152b8a690092c1	2	5699	player+silence
+37b406445ed1eb805f152b8a690092c1	2	5701	player+silence
 37b406445ed1eb805f152b8a690092c1	3	1326	player
 37b406445ed1eb805f152b8a690092c1	4	8982	player
 37c90d5a780788aed32b473c1c85cc16	0	122916	player	uade	David Whittaker	0	167808	6e0f8825	a0481c19	Game/Whittaker_David/Total_Recall.lha/Total_Recall/dw.intro
@@ -4532,7 +4532,7 @@
 47e0d7e64f71238d452ac8e63ee39795	1	23168	player	uade	Protracker compatible	0	37292	20348f1c	ec3124bc	Game/Leitch_Barry/Prophecy_-_Viking_Child.lha/Prophecy_-_Viking_Child/mod.monster5
 47e2941560a928a84522fba701283879	0	70430	player	uade	TFMX Pro	0	9600	1bac97fd	f61fda28	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_4
 47e2941560a928a84522fba701283879	1	35868	player
-47e2941560a928a84522fba701283879	2	5699	player+silence
+47e2941560a928a84522fba701283879	2	5701	player+silence
 47e2941560a928a84522fba701283879	3	1326	player
 47e2941560a928a84522fba701283879	4	35868	player
 47e4c1c34b541f86ba23822cf5d40a3a	1	138208	player	uade	Protracker	0	51656	a2e4c65f	b819c107	Game/Lynne_Bjorn/Airline.lha/Airline/Direct_from_Composer/mod.airline.3
@@ -6403,13 +6403,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 657a061b52ac410215b765e0d5aeab31	1	39806	player	uade	Protracker	0	23340	08b8fb74	7f93379e	Game/Furniss_Matt/Soccer_Kid.lha/Soccer_Kid/mod.skpav
@@ -8554,7 +8554,7 @@
 8461ac86c297fd54323996677304924c	4	27930	loop
 8462e1a7306d5cdc311d8b834cfe0f7a	0	470487	loop	uade	UADE	0	52724	84bfd146	ff067bfe	Game/Lowe_Dave/IK_Plus.lha/IK_Plus/Custom_Version/cust.IK+
 846ac0601e640b7dbc6260afefc1416a	0	52707	player	uade	SoundFX	0	28188	2934e349	6d52c2b4	Game/Werner_Roman/Rolling_Ronny.lha/Rolling_Ronny/sfx.intro
-8473e4cd7b0afa6717132cb01d7e22ad	0	188849	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	Game/Stember_Rudolf/Logical.lha/Logical/mdat.Logical-Titelmusic
+8473e4cd7b0afa6717132cb01d7e22ad	0	188650	player+silence	uade	TFMX Pro	0	4728	d4915499	b955aea1	Game/Stember_Rudolf/Logical.lha/Logical/mdat.Logical-Titelmusic
 847a7e078ce817c01820300fc3b7a85d	0	160030	player	uade	TFMX Pro	0	5068	0821d043	2b679be2	Game/Huelsbeck_Chris/Bug_Bomber.lha/Bug_Bomber/mdat.bug bomber
 847d15f0b375c8b216a202663f152f60	0	1165	player	uade	Sonix Music Driver	0	400	ebad7e60	646bc71f	Game/Unknown/Where_Wrld_Carmen_Sandiego.lha/Where_Wrld_Carmen_Sandiego/Alternate_Version/tiny.ingame_08
 847f2b1abcb10dfd064f417ee9705d0e	1	262531	player	uade	Protracker compatible	0	183800	ffb05247	4453749a	Game/Wright_Tim/Agony.lha/Agony/Direct_from_Composer/mod.agony intro
@@ -8695,7 +8695,7 @@
 858dd10a247fc6d089c0b07d87586f9d	0	92172	player	uade	TFMX Pro	0	7876	4c61b493	153ac7de	Game/Huelsbeck_Chris/Adventures_Quik_and_Silva.lha/Adventures_Quik_and_Silva/mdat.ingame
 858dd10a247fc6d089c0b07d87586f9d	1	87068	player
 858dd10a247fc6d089c0b07d87586f9d	2	56344	player
-858dd10a247fc6d089c0b07d87586f9d	3	19117	loop
+858dd10a247fc6d089c0b07d87586f9d	3	171168	loop
 8596f39a3f90d23a23732764367232c4	1	119527	player+silence	uade	Protracker	0	404882	16a4e48c	16f3d6e4	Game/Ravn_Simon/Foundation.lha/Foundation/mod.FoundationIntro
 859a24d1e2a036f2e356f5e7f33a3984	1	94222	player	uade	Protracker compatible	0	70814	acf8a86e	61074aa3	Game/Furniss_Matt/Torvak_the_Warrior.lha/Torvak_the_Warrior/mod.torvakingame
 859a24d1e2a036f2e356f5e7f33a3984	2	99968	player
@@ -9091,7 +9091,7 @@
 8b67e2242755c5f5ccfec377c5ad6ee1	0	3719	player+silence	uade	SoundFX	0	19172	62d6a6f0	76d6f4f1	Game/Abromont_Claude/Bush_Buck.lha/Bush_Buck/sfx.ingame_09
 8b67f5d4c45052626cdfceead74de906	0	81944	player	uade	TFMX Pro	0	10960	c6e48f90	bbfbfa0f	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_3
 8b67f5d4c45052626cdfceead74de906	1	51220	player
-8b67f5d4c45052626cdfceead74de906	2	5699	player+silence
+8b67f5d4c45052626cdfceead74de906	2	5701	player+silence
 8b67f5d4c45052626cdfceead74de906	3	1326	player
 8b6a2f79010c2f978dc0754fa1bf5d17	1	22525	player	uade	P40A - P40B - P41A	0	17244	e9ee59bd	f21dfb88	Game/Brimble_Allister/Zeewolf_2.lha/Zeewolf_2/p4x.mission_briefing
 8b6eba4e1a3efb464ec5f2e19f2d826c	1	159226	player	uade	Protracker compatible	0	78320	ef692288	40e2b73c	Game/Nemecsek_Peter/Hellrun_Machine.lha/Hellrun_Machine/mod.goomy-boot
@@ -9376,7 +9376,7 @@
 8ee0dbec1098184b1dde25e1001f90e9	1	203655	player	uade	Protracker	0	29396	c6f14a9a	daa7e89d	Game/Ford_Ian/Speris_Legacy.lha/Speris_Legacy/mod.gamemap-2
 8ef5adaec15f1a89bbfb2ed9076934ad	0	20496	player	uade	TFMX Pro	0	2616	50b1a286	0c443bed	Game/Schwiezer_Joerg/Subtrade.lha/Subtrade/mdat.ingame_fx
 8ef5adaec15f1a89bbfb2ed9076934ad	1	8138	player
-8ef5adaec15f1a89bbfb2ed9076934ad	2	5177	player+silence
+8ef5adaec15f1a89bbfb2ed9076934ad	2	5181	player+silence
 8ef5adaec15f1a89bbfb2ed9076934ad	3	12498	player
 8ef5adaec15f1a89bbfb2ed9076934ad	4	1125	player
 8ef5adaec15f1a89bbfb2ed9076934ad	5	3134	player
@@ -10606,7 +10606,7 @@ a332d86866bec67a37160567c96b0b4e	1	205008	player+volume	uade	Protracker	0	230942
 a33727f2585e4afcfe4d62d36b9e9b24	0	78729	player	uade	SoundPlayer	0	7719	e9c9e0c0	f7caa28b	Game/Wright_Tim/Lemmings.lha/Lemmings/sjs.tim10
 a33c9b463f291f483afb73f3267669d9	0	76820	player	uade	TFMX Pro	0	11368	7b426dc9	83554b8c	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_1
 a33c9b463f291f483afb73f3267669d9	1	51220	player
-a33c9b463f291f483afb73f3267669d9	2	5699	player+silence
+a33c9b463f291f483afb73f3267669d9	2	5701	player+silence
 a33c9b463f291f483afb73f3267669d9	3	1326	player
 a33c9b463f291f483afb73f3267669d9	4	5144	player
 a342bc099c6521829dd94e8999ae086d	1	17461	player	uade	OctaMED MMD1	0	126120	9833e55d	bbf79f2a	Game/Milas_Anthony/Guardian.lha/Guardian/med.pattern
@@ -10741,7 +10741,7 @@ a5a6070baea048d837097baa001dc44b	1	37728	player+volume	uade	Soundtracker II (15 
 a5bfe384052cbda4bfa84b84a84847df	0	51220	player	uade	TFMX Pro	0	7984	1c34461a	f847854a	Game/Unknown/Crystal_Palace.lha/Crystal_Palace/mdat.ongame
 a5bfe384052cbda4bfa84b84a84847df	1	62272	player
 a5bfe384052cbda4bfa84b84a84847df	2	40972	player
-a5bfe384052cbda4bfa84b84a84847df	3	4743	silence
+a5bfe384052cbda4bfa84b84a84847df	3	4744	silence
 a5c0587621789578fab96cd0f3f957f2	1	69224	player	uade	Protracker	0	81664	08b61f07	d1712605	Game/Gilmore_Adam/Match_Of_The_Day.lha/Match_Of_The_Day/mod.facup
 a5c6a75bdcf4ee3f280139921edc235d	0	96050	player	uade	TFMX	0	8872	ca7614f7	021321b5	Game/Huelsbeck_Chris/Rock_n_Roll.lha/Rock_n_Roll/mdat.beach_party
 a5c6a75bdcf4ee3f280139921edc235d	1	5257	silence
@@ -10980,8 +10980,8 @@ a92712890507c25a34648394e7676ac4	3	18044	player
 a929921760e721a8dcd7cd7d17783a0b	1	268921	player	uade	Protracker	0	58822	4eebc0fb	f371ea71	Game/Knight_Mark/Alfred_Chicken_AGA.lha/Alfred_Chicken_AGA/mod.ingame1
 a942cfc4c74207b84c42d6e0b7b37ba9	0	13885	player	uade	Soundcontrol 3.0/3.2/4.0/	0	43760	65ff72e0	215a29b8	Game/Gehrmann_Holger/Biing.lha/Biing/sct.REFANF11
 a94dac3593adacb20fce55e830132bc5	0	133446	player	uade	SoundFX	0	66824	5744eb0b	5c43815e	Game/McMullan_and_Low/Venus_the_Flytrap.lha/Venus_the_Flytrap/sfx.title
-a94e52f94ca5497738bf7e73d2bc41e5	0	162488	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	Game/Huelsbeck_Chris/X-Out.lha/X-Out/mdat.hiscore
-a94e52f94ca5497738bf7e73d2bc41e5	1	162488	player+silence
+a94e52f94ca5497738bf7e73d2bc41e5	0	162489	player+silence	uade	TFMX Pro	0	4484	81bebf00	fb994087	Game/Huelsbeck_Chris/X-Out.lha/X-Out/mdat.hiscore
+a94e52f94ca5497738bf7e73d2bc41e5	1	162489	player+silence
 a9596be6a352daf50f3172caefbab7a7	1	185168	player	uade	OctaMED MMD0	0	156006	ce8e620f	6b33733a	Game/Howard_Don/Myth.lha/Myth/med.title
 a959de4eb5b3c28c863570b3eb0ff2a0	0	57027	player	uade	musica	0	12684	903e3b9e	ce73e2f3	Game/Joiner_David/Faery_Tale_Adventure.lha/Faery_Tale_Adventure/cust.The_Faery_Tale_Adventure
 a959de4eb5b3c28c863570b3eb0ff2a0	1	24454	player
@@ -11478,7 +11478,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b17022a975f7e8b1cd33f109ded031c3	1	19191	player+silence	uade	Soundtracker II (15 instr.)	0	72694	8210d877	8f3c75d7	Game/Baudlot_Jean/Beach_Volley.lha/Beach_Volley/mod.volley9.d
 b17307d38a77cde6e339f5effccb976e	0	1205	player	uade	Sierra AGI	0	91	3c5520e2	3d4c649b	Game/Elliot_James/Mixed-Up_Mother_Goose.lha/Mixed-Up_Mother_Goose/agi.ingame_49
 b18c1e15d894380bbf467e5299ad5224	1	31387	player	uade	Protracker	0	191932	652aacd6	ee0fee11	Demo/Jail/Skizzo_Demo_2.lha/Skizzo_Demo_2/mod.MD01
@@ -11826,7 +11826,7 @@ b693071b4721ff13b01bcc7413f112a0	1	34682	player	uade	Dave Lowe New	0	29091	6b7fe
 b693071b4721ff13b01bcc7413f112a0	2	0	nosound
 b69cdbd3f2b5809f3fe85004b940d94d	0	81944	player	uade	TFMX Pro	0	10608	768a81de	3a04e0d2	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_6
 b69cdbd3f2b5809f3fe85004b940d94d	1	46116	player
-b69cdbd3f2b5809f3fe85004b940d94d	2	5699	player+silence
+b69cdbd3f2b5809f3fe85004b940d94d	2	5701	player+silence
 b69cdbd3f2b5809f3fe85004b940d94d	3	1326	player
 b69d529ad45477ca687e4427f296a518	0	5566	player	uade	Sierra AGI	0	391	fb4a51b3	88ee101a	Game/Murry_Barry/Man_Hunter_2.lha/Man_Hunter_2/agi.ingame_144
 b69f58164540ca04b4969e962ac1131b	1	115321	player	uade	Noise Packer 3.0	0	52314	924c4a25	0a16dc3d	Game/Iveson_Martin/Bubba_n_Stix.lha/Bubba_n_Stix/np3.level4
@@ -11926,7 +11926,7 @@ b80f29698a6d5367ac76e89ccb9b6195	6	3061	silence
 b80f29698a6d5367ac76e89ccb9b6195	7	3861	silence
 b80f29698a6d5367ac76e89ccb9b6195	8	3381	silence
 b80f29698a6d5367ac76e89ccb9b6195	9	3160	silence
-b80f9cf265782038aba008eb6143a711	0	81924	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	Game/Stember_Rudolf/Oath.lha/Oath/mdat.level_1
+b80f9cf265782038aba008eb6143a711	0	81944	player	uade	TFMX Pro	0	6260	e12b2917	64f65687	Game/Stember_Rudolf/Oath.lha/Oath/mdat.level_1
 b80f9cf265782038aba008eb6143a711	1	65306	player
 b80f9cf265782038aba008eb6143a711	2	2712	player
 b80f9cf265782038aba008eb6143a711	3	1245	player
@@ -12226,9 +12226,9 @@ bc03663161342f13d33ec169a7732921	1	0	nosound	uade	Protracker	0	2108	48b1fb77	2b7
 bc0764386169cc0a7e3a5402b9ad9535	1	167264	player	uade	Protracker	0	302818	8184ebf9	08f7163d	Game/Melzener_Axel/Jaktar_-_Der_Elfenstein.lha/Jaktar_-_Der_Elfenstein/mod.musik
 bc235787332c0ca6387ed2dbee612419	0	315513	loop	uade	UADE	0	119068	7b1d24f5	e3c6e628	Game/Hubbard_Rob/Populous.lha/Populous/Custom_Version/cust.Populous
 bc28a0aeee7d28da50005b03d8b95801	1	222162	player	uade	P50A - P60A - P61A	0	183990	9fe34f9b	4405ffe4	Game/Bjon_Dan/Watch_Tower.lha/Watch_Tower/p60.end
-bc2d22493a61d36e842ee519016efbd3	0	5398	silence	uade	TFMX Pro	0	892	ef1f2f60	a12c8e62	Game/Huelsbeck_Chris/Masterblazer.lha/Masterblazer/Unfixed_Lucasfilm_Logo/mdat.lucasfilm_games_logo
-bc2d22493a61d36e842ee519016efbd3	1	5161	silence
-bc2d22493a61d36e842ee519016efbd3	2	5514	silence
+bc2d22493a61d36e842ee519016efbd3	0	5405	silence	uade	TFMX Pro	0	892	ef1f2f60	a12c8e62	Game/Huelsbeck_Chris/Masterblazer.lha/Masterblazer/Unfixed_Lucasfilm_Logo/mdat.lucasfilm_games_logo
+bc2d22493a61d36e842ee519016efbd3	1	5159	silence
+bc2d22493a61d36e842ee519016efbd3	2	5511	silence
 bc3b6446f0651cfa9c751af0044050d8	1	9725	player	uade	Protracker	0	39856	fcb5310a	e151def5	Game/Haywood_Tim/Burning_Rubber.lha/Burning_Rubber/AGA_Version/mod.introfx
 bc47456dd7633d8500b59072fbf99810	0	3576	player	uade	Sierra AGI	0	106	4f50b65b	0ae9fa97	Game/Elliot_James/Mixed-Up_Mother_Goose.lha/Mixed-Up_Mother_Goose/agi.ingame_40
 bc4b51b124d1c23997fbf9b945297eb9	0	207392	player	uade	Jason Page	0	7452	dd5d18a7	2af82aee	Game/Page_Jason/Empire_Soccer_94.lha/Empire_Soccer_94/jpn.Empire_Soccer_94
@@ -12298,7 +12298,7 @@ bdd7506b5d2b48f21938c7ba468105de	0	321	player	uade	Sierra AGI	0	61	ddc029f4	52f0
 bdecf19a46714c9a602e33214f321d57	0	86345	player	uade	SoundFX	0	53548	7360d43d	65dbca58	Game/Ruttmann_Haiko/Battle_Isle.lha/Battle_Isle/Data_Disk/sfx.WINNER
 bdf778a07f382c751f2eea646cc12e23	0	30724	player	uade	Pierre Adane Packer	0	2152	9731d46c	430b4eb2	Game/Loriaux_Pierre-Eric/Pang.lha/Pang/pap.ingame_04
 bdf8fc4b74e2c8c053bc780102424512	0	7816	player	uade	Amos Music Bank	0	10062	4598fb4a	87833458	Game/Private_Affair/Valhalla_3.lha/Valhalla_3/abk.lev1-atmos
-bdfa5dcb97f513764e401189c39adb12	0	81924	player	uade	TFMX Pro	0	6920	00f4bca9	93943b5e	Game/Stember_Rudolf/Oath.lha/Oath/mdat.level_4
+bdfa5dcb97f513764e401189c39adb12	0	81944	player	uade	TFMX Pro	0	6920	00f4bca9	93943b5e	Game/Stember_Rudolf/Oath.lha/Oath/mdat.level_4
 bdfa5dcb97f513764e401189c39adb12	1	51220	player
 bdfa5dcb97f513764e401189c39adb12	2	2712	player
 bdfa5dcb97f513764e401189c39adb12	3	1245	player
@@ -12364,7 +12364,7 @@ bf79b24cf5a24eaa1db398be8e279998	2	61568	player
 bf7ddb1eaec4ddf23b9f3943fdae74b7	1	20857	player	uade	Protracker	0	100898	cbee5cb9	db25a60a	Demo/Jail/Skizzo_Demo_2.lha/Skizzo_Demo_2/mod.MD19
 bf8a95971b692da3a1a46b626873cf81	0	101777	player	uade	TFMX Pro	0	10420	50c9c08a	7bfd54d9	Game/Stember_Rudolf/Z-Out.lha/Z-Out/mdat.level_5
 bf8a95971b692da3a1a46b626873cf81	1	26906	player
-bf8a95971b692da3a1a46b626873cf81	2	5699	player+silence
+bf8a95971b692da3a1a46b626873cf81	2	5701	player+silence
 bf8a95971b692da3a1a46b626873cf81	3	1326	player
 bfa5a6dfa0b1c2966d93a78ff1f85e8f	1	75634	player	uade	Protracker	0	20930	d34bc231	bc33dce4	Game/Furniss_Matt/Soccer_Kid.lha/Soccer_Kid/mod.skwildw
 bfaa0e06bb663ffe7419cb9940c8ca30	0	4460	player	uade	Mark Cooksey	0	67048	bf718299	3528bff6	Game/Cooksey_Mark/Ghosts_n_Goblins.lha/Ghosts_n_Goblins/mc.Ghosts_n_Goblins
@@ -14523,7 +14523,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e3978cd1af689a4f4ab24a8d1d405634	1	105595	player	uade	Protracker	0	45682	e1a77dfa	ce006212	Game/Unknown/Plan_9_From_Outer_Space.lha/Plan_9_From_Outer_Space/mod.underscore
 e398d35097551fdea9ae2730d86b1fce	1	76920	player	uade	Protracker	0	27632	5f8471a4	03db0872	Game/Furniss_Matt/Soccer_Kid.lha/Soccer_Kid/mod.sktrain
 e39f8807f451ef6b904d632b5d938c72	1	153721	player	uade	Protracker	0	179766	8f3c812f	10969004	Game/Berglund_Ken/Sixth_Sense_Investigations.lha/Sixth_Sense_Investigations/mod.6th.earthbck2
@@ -15533,7 +15533,7 @@ f331a0141863bc0b370a5c997733b226	1	41072	player	uade	Protracker compatible	0	231
 f341276fdf1fce147b8ea1338133f3f6	0	125468	player	uade	TFMX Pro	0	8728	ebe7d888	0a91fbca	Game/Stember_Rudolf/Oath.lha/Oath/mdat.level_3
 f341276fdf1fce147b8ea1338133f3f6	1	51220	player
 f341276fdf1fce147b8ea1338133f3f6	2	2712	player
-f341276fdf1fce147b8ea1338133f3f6	3	4666	silence
+f341276fdf1fce147b8ea1338133f3f6	3	4644	silence
 f35820b6aec42fb14ea82984dac92b15	0	93490	silence	uade	UADE	0	30424	2c373fc7	d62acb2b	Game/Daglish_Ben/Federation_of_Free_Traders.lha/Federation_of_Free_Traders/Custom_Versions/cust.ingame_2
 f35820b6aec42fb14ea82984dac92b15	1	123090	silence
 f36a7e97de669c63be5e7c8342681f2d	0	24394	player	uade	Editeur Musical Sequentie	0	39434	7abdce93	6cd28b09	Game/Pimmel_Thomas/OCB.lha/OCB/ems.options
@@ -15821,7 +15821,7 @@ f837a32337228824444f70eb69371cdc	1	69224	player	uade	Protracker	0	49408	e4b6a37e
 f8457247250a44d985b215a882069d38	1	11654	player	uade	Soundtracker II (15 instr.)	0	18148	d11ce3aa	652f5baf	Game/Ude_Klaus/Magic_Marble.lha/Magic_Marble/mod.himuse
 f849bdf6642f29fd88ce930b6cf972f3	1	6635	player+silence	uade	Soundtracker II (15 instr.)	0	25196	7351342f	362f6be7	Game/Leitch_Barry/Gilbert_-_Escape_from_Drill.lha/Gilbert_-_Escape_from_Drill/mod.g-death
 f870536032cdf9941838ac2e3a135122	1	84616	player	uade	Pha Packer	0	65710	209d64a2	9a56f7b5	Game/Ede_Richard/Brian_The_Lion.lha/Brian_The_Lion/pha.BrianTheLion 40
-f87e025c0b5ef37dc38a2159e23c9d0d	0	21762	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	Game/Stember_Rudolf/Mad_TV.lha/Mad_TV/mdat.ingame_5
+f87e025c0b5ef37dc38a2159e23c9d0d	0	21782	player	uade	TFMX Pro	0	5456	ccc3affb	42587490	Game/Stember_Rudolf/Mad_TV.lha/Mad_TV/mdat.ingame_5
 f87e025c0b5ef37dc38a2159e23c9d0d	1	30744	player
 f87e025c0b5ef37dc38a2159e23c9d0d	2	51220	player
 f87e025c0b5ef37dc38a2159e23c9d0d	3	46096	player

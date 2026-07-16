@@ -1012,7 +1012,7 @@
 0b92364f54ad2f3435a9e558c37f9598	1	179321	player	uade	Protracker compatible	0	142872	51136fdb	4efa4d11	.mod/Amiga Games Modules/P/Powermonger/PowerMonger.MOD
 0b923ebf4faf64becb1611354747940b	1	172408	player	uade	Protracker	0	420006	1c419ddc	67b2c0f3	.mod/Vinnie/Petulant_Frenzy.mod
 0b98235f945e90e50783fa40635e27df	1	302217	player	uade	Protracker compatible	0	89868	59ad3e2e	6db44420	.mod/Amiga Games Modules/B/Blockhead_2/darrylblock21.mod
-0b9b1ab549a1f70d105bd80892f15bad	1	133245	player	uade	Protracker	0	117852	68962f61	efa2a7d6	.mod/Platon42/twin_phreaks.mod
+0b9b1ab549a1f70d105bd80892f15bad	1	133245	player	uade	Protracker	0	117852	68962f61	efa2a7d6	.mod/Platon42/Twin_Phreaks.mod
 0b9e2ec687009189f27df9a9875ca172	1	7796	player	uade	Protracker	0	38542	fe795627	0ecd0a3d	.mod/Amiga Games Modules/S/S.T.U/STU_LEVEL_COMPLETE.MOD
 0b9e2ec687009189f27df9a9875ca172	1	7796	player	uade	Protracker	0	38542	fe795627	0ecd0a3d	.mod/Mindfuck/Stu_Level_Complete.mod
 0b9e545d6ebbeed032b1d1276fa13881	1	251761	player	uade	Protracker compatible	0	80106	9cdb1f47	9c11a7eb	.mod/Amiga Games Modules/G/Guy_Spy/guyspy berlin.mod
@@ -1987,7 +1987,6 @@
 1630f98df9df6e0a5e6f38675d48e355	1	118516	player	uade	Protracker	0	184296	9372e072	51f10d4a	.mod/Xtd/X-Unlimited-1.mod
 1637404e0e6680d54b53442592ace5a3	1	39565	player	uade	Protracker	0	44250	8abf1896	9504ff49	.mod/Misc A-F/Freezers-Wit_Premium-2.mod
 163896acdfe820872b59ca01b3b05a17	1	99968	player	uade	Protracker	0	20488	ae61f072	37fe28c9	.mod/Doh/Bob Le Cintre.mod
-163896acdfe820872b59ca01b3b05a17	1	99968	player	uade	Protracker	0	20488	ae61f072	37fe28c9	.mod/Doh/Bob_Le_Cintrú.mod
 1638b190c34c0199c1c94ed4358985fe	1	23168	player	uade	Protracker	0	2282	921d8110	113c5a73	.mod/Mc Mp/Little_Bit_Tune.mod
 163958394e56ceaab55d2901e9495c9e	1	99747	player	uade	Protracker	0	270592	ca705547	9d0773b3	.mod/Butheadsong.mod
 163958394e56ceaab55d2901e9495c9e	1	99747	player	uade	Protracker	0	270592	ca705547	9d0773b3	.mod/Silents/Buthead-Song.mod
@@ -2598,6 +2597,7 @@
 1cdaa0f823a660950f745dd488718533	1	102520	player	uade	Protracker compatible	0	24094	dc4f0ddc	ea4499c1	.mod/Amiga Games Modules/S/Simon_The_Sorcerer/TREE.mod
 1cdf73bd32e29a4d69d39f6012ee7564	1	160131	player	uade	Protracker	0	40238	7fa45da4	3ba3779c	.mod/4mat/4mat_Vi.mod
 1ce0be43f0b287890bfeb59345230b17	1	146768	player	uade	Protracker	0	293226	5339cafc	7694f301	.mod/Misc A-F/Be_Funky.mod
+1ce37a81743f05da47dca4e2ae36afd4	1	181793	player+silence	uade	Protracker	0	426802	658d8f33	44eaa64f	.mod/Orange/Melon Vibes.mod
 1ce4cd3456efc78cb627834477218cc5	1	233897	player	uade	Protracker	0	160934	4cac7e6b	97ec8a38	.mod/Maestro/Funky_Widdow.mod
 1ce9d73a49206c4e39af1ef3f716f36f	1	115321	player	uade	Protracker	0	85008	b782d020	6afabe36	.mod/Airwalk/Mix En Sabelganger.mod
 1cf381708ada0ee63185331c3dab7957	1	92272	player	uade	Protracker	0	99220	36991eb6	64bd71f0	.mod/Amiga Games Modules/W/Winter_Olympics_Lilehammer_94/titlemusic.mod
@@ -2901,7 +2901,6 @@
 2036e989ef169f048decb3e769ad1494	4	87168	player
 2038fcd87326e6f27e47965d9c2291e0	1	236851	player	uade	Protracker	0	110286	809addc5	844c202f	.mod/Gryzor/World Beyond.mod
 203c08b84faafd0733972fc42c9d30d6	1	142187	player	uade	Protracker	0	145634	e320e1fd	7dd4312a	.mod/Chromag/Moonlight_Dancer.mod
-203c8bd21d645a6112c8c172bebbc866	1	103394	player+volume	uade	Protracker	0	23956	3a322c6b	0fce84a5	.mod/Andershõr.mod
 203cfaf91f1562ae2c31e8a8883f71c8	1	402146	player	uade	Protracker	0	119276	66e5686a	af3d7f05	.mod/Freeman/My Neighbour Totoro.mod
 203d24aac365e3c9ffe433160e4196ac	1	122997	player	uade	Protracker	0	57632	c85af128	5126c074	.mod/Brainstorm/ Loader.mod
 204394f12d8dd51fa42c3a7622ee18f6	1	63765	player+silence	uade	Protracker	0	87802	eb1fa4d6	d015e834	.mod/Stratosphere.mod
@@ -3574,7 +3573,7 @@
 26b155ee190b12f005981f7af074f167	1	139402	player+silence	uade	Protracker compatible	0	608304	6805e39a	09208521	.mod/Misc G-L/Illumination.mod
 26b45349fe1a7814bdbb4a48d332255c	1	267193	player	uade	Protracker	0	152136	7b6d5783	0a252701	.mod/Nhp & Bkh/Stolen-Data-10-Mag.mod
 26c1bbd98997dad323e5998d170e711d	1	13563	player	uade	Protracker	0	3948	c391d9b3	a8dc5c5b	.mod/Strobo/Hippi.mod
-26c70de8d01e87041f7b09c7278c6c55	1	165825	player+silence	uade	Protracker compatible	0	40040	7784024d	f1050b85	.mod/Alex_Menchi/fireworks.mod
+26c70de8d01e87041f7b09c7278c6c55	1	165825	player+silence	uade	Protracker compatible	0	40040	7784024d	f1050b85	.mod/Alex_Menchi/Fireworks.mod
 26ce452288b394a8c06b71fa39c37f39	1	84616	player	uade	Protracker compatible	0	30780	387df503	ed2f9f71	.mod/Amiga Cracktros Modules/T/Trilogy1.mod
 26ced97f1327794fa83df1c2db704326	1	130490	silence	uade	OctaMED MMD1	0	120248	eaf15c70	1729f464	.mod/Amiga Games Modules/C/Captive_2/endgood.med
 26cf8e10a7c5c820bbc7d4863e2937f9	1	307321	player	uade	Protracker	0	53926	4515f800	1586ccdc	.mod/W Copper/In-5.mod
@@ -4301,7 +4300,6 @@
 2ee5cc35e81e4a23a605913438b610f6	1	322955	player	uade	Protracker compatible	0	143696	acd4d088	799496fc	.mod/Dr Awesome/Mission.mod
 2ee807dfb48bd822e3efe45a7e012dba	1	134330	player	uade	Protracker	0	129402	6de42f00	d57444ee	.mod/Subjet/New_Funk.mod
 2ee92b7a60161150519f7a00b91ff62a	1	57730	player	uade	Protracker	0	93024	462f31cc	fce3e4b5	.mod/Elfi/Bateau_0c.mod
-2eeda492f9200f67656e2b797e628421	1	61568	player	uade	Protracker	0	12762	f2a95a7c	393af798	.mod/Chippy N°1503.mod
 2ef0ad261810231c573722d6a56468d0	1	183143	player+silence	uade	Protracker compatible	0	309560	c3da5c62	5d50f726	.mod/Sidewinder/Millennium.mod
 2ef55b02b804b54f0e90c5e574412ca2	1	107645	player	uade	Protracker	0	68546	3e3cda6b	35658885	.mod/Amiga Games Modules/J/Jaktar_-_Der_Elfenstein/beim_koenig.mod
 2ef6a008a796592a53432ae0dc5a88c3	1	130391	player	uade	Protracker	0	475710	d2fd7232	c8e28f1f	.mod/Snoopy/Berlin_1931_Ad.mod
@@ -4437,7 +4435,7 @@
 3062ac25a7f68158837a8b23604c0443	1	153721	player	uade	Protracker	0	173164	b1780136	6af64fba	.mod/Mushies & Sdy/First_Crime-3.mod
 306414c6fdac6b5ed74fc12d832b0b39	1	323176	player	uade	Protracker	0	246838	5dc05925	6307f86b	.mod/Backthefuckup.mod
 3066ce9adedde71520f93c6c12ee617d	1	28915	player	uade	Protracker	0	7674	3701c26b	740fd3b7	.mod/Strobo/Kuninkas.mod
-3068c737175511c0b1098a4de73e9275	0	5653	silence	uade	Soundtracker II - V or compatible	0	108030	63aff0cf	c728fe6b	.mod/Amiga Cracktros Modules/C/Cascade9.mod
+3068c737175511c0b1098a4de73e9275	0	28640	silence	uade	Soundtracker II - V or compatible	0	108030	63aff0cf	c728fe6b	.mod/Amiga Cracktros Modules/C/Cascade9.mod
 306cc4cf62a7e600e8be434b2c18f760	1	92272	player	uade	Protracker compatible	0	33500	6a9ccc64	859e7bd0	.mod/Amiga Games Modules/M/Moochies,_The/moochieslevel8.mod
 3072c1a5428c271b336b1def7499d8e6	1	174197	player	uade	Protracker	0	154448	1f56863b	e51b25f0	.mod/Stephane Picq/Dune_Ecolove.mod
 3072ef25312d864678ad78035765d0c2	1	51320	player	uade	Protracker	0	8758	300b5bbe	34783cd4	.mod/Jimmypack.mod
@@ -6532,6 +6530,7 @@
 4484db64223c100def4965887c8c5615	1	70530	player	uade	Protracker	0	5804	40b783d2	ca825c13	.mod/Ramosa/Turbular_Chips.mod
 448c0a418ff2bcc9368add05cdfaec0d	1	415070	player+silence	uade	Protracker	0	374516	2c16d5e5	bc1164c6	.mod/Misc S-Z/Xenologie_Part-3.mod
 448c302c5f7d02887c2d22ea3704a23e	1	107825	player	uade	OctaMED MMD1	0	40578	f8c70f85	dab99a6d	.mod/Amiga Games Modules/O/One_Step_Beyond/ingame_1.med
+448c4719a74e0b4bafe47f02dee6de47	1	172931	player	uade	Protracker	0	128586	027aee48	24795b0d	.mod/Platon42/Here_We_Go.mod
 448ed42175b0d7ac0777dd7fe8f0f57f	1	100913	player	uade	Protracker	0	43396	37ee56bd	fff5c4f5	.mod/Amiga Games Modules/S/Sleep_Walker/BANIM.MOD
 44909e5bcf424abd7532ec7aeb7c7cc6	1	103867	player+silence	uade	Protracker compatible	0	72562	fdb49a81	7a742213	.mod/Amiga Games Modules/T/Terrorstricken/darrylterror.mod
 4490dbf4b60d2134b0f293d2a32a0d4b	1	44910	player	uade	Protracker	0	34258	6c27810e	bdef7b8d	.mod/Audiomonster/Regg'it.mod
@@ -8780,6 +8779,7 @@
 5cd1c238530aa996ed837569a82002c8	1	130693	player	uade	Protracker compatible	0	50802	4eeae17f	4032c52a	.mod/Lars-Introsound.mod
 5cd5a7706b44695b5d2222c405b70e8a	1	84757	player	uade	Protracker	0	238570	6691acd4	a9c109ce	.mod/Erk/Syldia.mod
 5cd610e42f0b8dc93386d1ff86a7f99e	1	259568	player+silence	uade	Protracker	0	123448	79faf9c7	0a8278df	.mod/Analog/Command-2.mod
+5cd74226ae61d2cc72575f7a40263a62	1	191375	player+silence	uade	Protracker	0	296720	b4a9cf88	8f7e6978	.mod/Steffest/Rubbur.mod
 5cdf30fc8343464ec32b5a178c180f3c	1	244858	player+silence	ft2play	Fasttracker	8	468078	206577b2	6ebab23c	.mod/Fby/A_Star_Near_The_Moon.mod
 5ce16ef0d02cee85d70cd657256c6b59	1	181451	player+silence	uade	Protracker compatible	0	116882	94cf0fe2	a3d9550b	.mod/Misc A-F/First_Shot.mod
 5ce59cedeb55083a77e4a909bc94e1d3	1	57730	player	uade	Protracker compatible	0	25780	53377a11	35186789	.mod/Amiga Games Modules/S/Simon_The_Sorcerer/SORDID2.mod
@@ -9319,7 +9319,6 @@
 62cfb20f178ffd04a55df5c4ae318d0e	1	138369	player	uade	Protracker	0	111410	a97fe4e7	3291e5e2	.mod/Solar/Solar_Song-2.mod
 62d408636158dbba85cc24bb9592df11	1	99968	player	uade	Protracker	0	15902	5f91d95c	401612e8	.mod/Clawz/Little Boy.mod
 62d74f4d91d945ca2d55f8e4024d2f06	1	142267	player	uade	Protracker	0	127146	9848f904	87c0d27d	.mod/Detskanokgaa.mod
-62d74f4d91d945ca2d55f8e4024d2f06	1	142267	player	uade	Protracker	0	127146	9848f904	87c0d27d	.mod/Detskanokgõ.mod
 62dabb264bd808f26331176fc7724b85	1	49572	player	uade	Protracker	0	14054	0ecc1a14	cd1eac44	.mod/Compilation Chiptunes/Bye_Bye_Marmaris!.mod
 62dbff2a9ece58536e6ee82c77bf108b	1	76920	player	uade	Protracker	0	59824	afd5276f	4efd0ba2	.mod/Bruno/Modern_Surf.mod
 62dc0c8711e15596755761dccca74998	1	227828	player	uade	Protracker	0	363560	c08521e2	c36540af	.mod/Dsx/3__2__1__Unknown.mod
@@ -10251,6 +10250,7 @@
 6ccfae468365430c0f881788747d2f18	1	658639	player+silence	uade	Protracker	0	180994	d9ae8e49	1b18f8a6	.mod/Bluesilence/01-Panier De Mazout.mod
 6cd4c236649af264d76c44f98388cb26	1	307155	player+silence	uade	Protracker	0	555914	d38bbe64	d01b3d5b	.mod/Misc A-F/Boost.mod
 6cd59ee48fe711a6ad82bf4873c7dcf5	1	169093	player	uade	Protracker compatible	0	117704	2c99892b	b03569fd	.mod/Amiga Games Modules/I/Invest/invest.mod
+6cd96ed9d0e505e16f79185256d64661	1	112769	player	uade	Protracker	0	119744	422d963f	087aad21	.mod/Maze/the piglet theme.mod
 6cda0c1890980f7e50492f09cc38d754	1	89439	player	uade	Protracker	0	168678	3d33755f	db749782	.mod/Lsd/Joes-07.mod
 6cdb1e4c703c20a497152ad18d3df625	1	179582	player	uade	Protracker	0	121064	b1189904	c668049f	.mod/Titan/Loose_My_Heart.mod
 6cdb8879e6f14fecac49fd0feab9565a	1	149627	player+volume	uade	Protracker	0	290214	9cd5647e	9efcd457	.mod/Groo/N-42.mod
@@ -11585,6 +11585,7 @@
 7a10fbe2a89b05b4b6bdb166b1d13dff	1	215149	player	uade	Soundtracker II (15 instr.)	0	91938	985058d4	320eca53	.mod/Einstein/Einstein-B4-2.mod
 7a12a5ad87633b8ff71007a4faf15ea8	1	76920	player	uade	Protracker	0	26422	2f0f1e45	794a9bb5	.mod/Allister Brimble/Col York Fusiliers.mod
 7a13dc2031ba01890577a037dcf7e74a	1	127518	player	uade	Protracker	0	634602	ab3724ab	74b742b4	.mod/Zoltar/Ilyad-1.mod
+7a1677e78a4d4d4d3db9130d653b5869	1	132901	player	ft2play	Fasttracker II clone	12	148822	63714675	c13fe50b	.xm/Maze/the piglet theme.xm
 7a1687fa545b7718c1d4239461c87387	1	57730	player	uade	Protracker	0	379364	9db38cf8	8f850797	.mod/Erk/Vahiolennce.mod
 7a1db856f5a72afd6161b0e75f5251f0	1	299083	player	uade	Protracker	0	375954	365bbe0a	2654f8a7	.mod/Blue Silence/Clary_The_Pig.mod
 7a1eeee2a9df79672f5ba0496faf4bd1	1	315017	player	uade	Protracker	0	78216	ac31e508	912e2f3e	.mod/Misc A-F/Desert.mod
@@ -17536,6 +17537,7 @@ b9ed07ca83e24f6ef12599664dd7aac6	1	209755	player+silence	uade	Noisetracker 1.x	0
 b9f437bb23ccc5bf6cc71405ed147d23	1	19069	player	uade	Protracker	0	3000	ddbe44a8	037618ea	.mod/Diesel/Assis_Par_Terre.mod
 b9f74c0bb1598263285502de0927b9b6	1	170379	player	uade	Protracker	0	109032	6220dde3	9661d0ee	.mod/Zoon/Rap'n_Moze.mod
 b9f7cf93a9d9e11fde849b92388923cc	1	309757	player+volume	uade	Protracker	0	161610	f512cd4f	d43c316d	.mod/Intense/Imagina.mod
+b9fde09d17bdce4d475a044347313c3e	1	165235	player	uade	Protracker compatible	0	57666	b4c06312	434ccd54	.mod/Alex_Menchi/Galactic Troubles.mod
 ba02cc3a7e41991ac95ab3a0ef6adddd	1	92272	player	uade	Protracker	0	102532	cb79a612	0179dfb0	.mod/Echo/Mythological.mod
 ba02fca827e5cfaee4e38a6f755cd594	1	214747	player	uade	Protracker	0	199784	0e4215c1	e6785287	.mod/Groo/Polynesia.mod
 ba03b8361863fb591bb2539531368dc7	1	46563	player+volume	uade	Protracker	0	171348	4624d1e5	92370659	.mod/Ginseng/Dr F.mod
@@ -18548,6 +18550,7 @@ c57ad359e36660c50804e15b73c6c463	1	63477	player	uade	Protracker	0	10838	6ffd0f62
 c57b402909c0d2a9dcaef2ceb0ff51ee	1	7796	player	uade	Protracker	0	2142	386d5133	91f83e94	.mod/Amiga Games Modules/J/Jaguar_Xj220/ChipTune1.MOD
 c57b402909c0d2a9dcaef2ceb0ff51ee	1	7796	player	uade	Protracker	0	2142	386d5133	91f83e94	.mod/Chiptune1.mod
 c57b402909c0d2a9dcaef2ceb0ff51ee	1	7796	player	uade	Protracker	0	2142	386d5133	91f83e94	.mod/Nuke/Chip_Tune-1.mod
+c57d8dcdaf28f08fe3c08cd732d66cfa	1	174297	player	uade	Protracker	0	203170	4b792581	94ec495c	.mod/Maze/battle for bacon.mod
 c57f77c6f6f5a75b6c79ebe3efc913d6	1	207493	player	uade	Protracker	0	89370	d57bfea8	ccd0138d	.mod/Echo/Expressions.mod
 c581cf4371818c9085cc7214eaaf0c1c	1	289936	player+silence	uade	Protracker	0	247800	1e51e4eb	25263c0f	.mod/Delorean/Facevalue.mod
 c5833b7265091dec630851049f805db2	1	43323	player	uade	Protracker	0	46178	f90b23eb	a764dea6	.mod/Glue/Inpluged.mod
@@ -23383,6 +23386,7 @@ fab46a4e8a1bb088db9428d46eb44daf	2	99968	player
 fab5ced610b6105e142f48e66cec3f5a	1	78608	player	uade	Protracker	0	347164	389eed8f	d523f570	.mod/Misc S-Z/Smooth_Attack.mod
 fab7325a41c7349ad4787c91c1a338be	1	92272	player	uade	Protracker	0	139760	9724fdcf	0aab6279	.mod/Nuance/Giana_Cries!-3.mod
 fab8ce5d756bc2ce7a1c8a106d5671f0	1	71816	player	uade	Protracker compatible	0	52562	745bbb39	b4cf936e	.mod/Amiga Games Modules/S/Switchblade_2/03-hiscore.mod
+fac5784f13017892d6f89d473e0e3940	1	215149	player	uade	Protracker	0	182674	ab63cae4	d73566fb	.mod/Maze/bacon of hope.mod
 fad1022803c1def6f9b92fbe9aa7284a	1	256342	player	uade	Protracker	0	988974	5bd0171d	7dcd31b7	.mod/Misc S-Z/Theme From B&A !.mod
 fad66ece3bccd863b37612fec88a9a2f	1	41072	player	uade	Protracker	0	19586	328f0d0d	12e42f50	.mod/Misc A-F/Boms_Deis_I_Bakken.mod
 fadba98dec3fb3ff733841de3d5767b4	1	102520	player	uade	Protracker compatible	0	40964	20260b60	5083b688	.mod/Amiga Games Modules/M/Master_Axe/ghost.mod
@@ -23634,6 +23638,7 @@ fd9e7b710c8eb221953777194ea1530e	1	128281	player	uade	Protracker	0	244018	4d8eff
 fd9f56bfb3949076418d6d973ce1f722	1	222416	player+volume	uade	Protracker	0	374530	a6dd8491	d03ae1f4	.mod/Electrocution.mod
 fd9f56bfb3949076418d6d973ce1f722	1	222416	player+volume	uade	Protracker	0	374530	a6dd8491	d03ae1f4	.mod/Misc A-F/Electrocution.mod
 fda264cd609e8f6ff4fc0bedcc1c37a3	1	84616	player	uade	Protracker	0	125098	35db544d	12827e5f	.mod/Echo/Immunisation.mod
+fda62f6fcf231ae30bd82d37e7c69895	1	172931	player	uade	Protracker compatible	0	47062	1bf790ff	d893ca90	.mod/Alex_Menchi/Goodbye Stingray.mod
 fda72a09ae724f5736d403d01bf2ebdf	1	316565	player	uade	Protracker compatible	0	410286	424b39d3	d3f7af67	.mod/Amiga Games Modules/S/Shadow_Of_The_3rd_Moon/ruben3rd.mod
 fdac8a3376390a23a818e138f0c1f17b	1	24133	player	uade	Protracker compatible	0	16662	6b5b3d08	493da90b	.mod/Einstein/Ein-Loadertune.mod
 fdad59093b8267f8b68b6b2a689fea9d	1	303704	player	uade	Protracker	0	80766	b2d3d836	8bcf6084	.mod/Gryzor/Equality-3.mod

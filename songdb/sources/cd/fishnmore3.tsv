@@ -13,7 +13,7 @@
 1191c69a526955e73bab4c1cdc3b0fff	0	60182	player	uade	Sonic Arranger	0	5188	aed46024	ff359034	fishdisks/551-575/disk_569/sonicarranger/songs/btd_nucleogenesis
 14826fd64e0743962c9f863062f2dfe7	1	184445	player	uade	Protracker compatible	0	75492	ed90c697	48566113	fishdisks/351-375/disk_372/magnetic_pages/magnetic_pages.lha/Editor/Sounds/mod.evolution
 14a5f0962e63b06bc39b5d17f2b8f0f4	0	0	nosound	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	fishdisks/326-350/disk_349/med/demos/inventio8
-14a5f0962e63b06bc39b5d17f2b8f0f4	0	52418	player+silence	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	fishdisks/476-500/disk_476/med/med.lha/med3_0.lzh/Instruments/AAInventio8
+14a5f0962e63b06bc39b5d17f2b8f0f4	0	0	nosound	libxmp	MED 2.00 MED3	4	1279	75ae1c4f	9000f75a	fishdisks/476-500/disk_476/med/med.lha/med3_0.lzh/Instruments/AAInventio8
 15fd49d0e3057d5d14b24531e4aa1465	1	64120	player	uade	Protracker compatible	0	30362	42d421e5	f4889a1a	fishdisks/401-425/disk_421/zon/zonfile.10
 16663964f620fddf57788acf7a54f0bd	1	161799	player	uade	OctaMED MMD1	0	109676	65be38f0	2ef6cf95	fishdisks/751-775/disk_755/octamed/demomusic/fun-jingle-smus-conversion
 1daee89ef869eb3fb1a923d8c40a7338	1	723	player	uade	OctaMED MMD0	0	6938	3622abf2	f9bf56a7	fishdisks/701-725/disk_702/doublesquares/snd/end
@@ -94,7 +94,7 @@
 99b52f4ca0f7080112819a1789ddf493	1	63517	player	uade	MED4 (4ch)	0	32598	3ad8bfcb	d3205355	fishdisks/476-500/disk_478/med-songs/song1
 99b80259036ba5e48492ac8db755b523	1	280385	player+silence	uade	Protracker	0	69998	72f9e320	6002410a	fishdisks/676-700/disk_687/powerplayer/powerplayer.lha/Modules/MOD.HitSquadII.PMC
 9ab6be870d4e1c6fb8810ffb99df7d55	0	0	nosound	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	fishdisks/326-350/disk_349/med/demos/sunset blues
-9ab6be870d4e1c6fb8810ffb99df7d55	0	118254	player	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	fishdisks/476-500/disk_476/med/med.lha/med3_0.lzh/Instruments/AASunset Blues
+9ab6be870d4e1c6fb8810ffb99df7d55	0	0	nosound	libxmp	MED 2.00 MED3	4	2287	735b571f	39d5470e	fishdisks/476-500/disk_476/med/med.lha/med3_0.lzh/Instruments/AASunset Blues
 9aec4a052c99cc4d2a8f7c2cd2129112	0	145944	player	uade	SIDMon 1.0	0	21644	cd670747	ee60542b	fishdisks/626-650/disk_647/powerplayer/powerplayer.lha/Modules/SID.EnigmaGun
 9c36f0025ca691f98a64d8da7aa9e202	1	7796	player	uade	Noisetracker 1.x	0	21748	eff9c614	34f56a50	fishdisks/401-425/disk_421/zon/zonfile.04
 9e0172649c677a52ca662c70ae9c7673	1	49391	player	uade	MED4 (4ch)	0	29171	d3e47745	022ed9d8	fishdisks/476-500/disk_478/med-songs/chacha

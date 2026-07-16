@@ -596,13 +596,13 @@
 6574f856cd3bb8895ef59b555ab9a999	1	56324	player
 6574f856cd3bb8895ef59b555ab9a999	10	15372	player
 6574f856cd3bb8895ef59b555ab9a999	11	15372	player
-6574f856cd3bb8895ef59b555ab9a999	12	5402	loop
+6574f856cd3bb8895ef59b555ab9a999	12	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	2	20857	player
 6574f856cd3bb8895ef59b555ab9a999	3	0	nosound
 6574f856cd3bb8895ef59b555ab9a999	4	56324	player
 6574f856cd3bb8895ef59b555ab9a999	5	2572	player
 6574f856cd3bb8895ef59b555ab9a999	6	2572	player
-6574f856cd3bb8895ef59b555ab9a999	7	9000	repeat
+6574f856cd3bb8895ef59b555ab9a999	7	3600000	timeout
 6574f856cd3bb8895ef59b555ab9a999	8	15372	player
 6574f856cd3bb8895ef59b555ab9a999	9	15372	player
 6588e7ef643d360adcf8b3603c6aa696	1	30824	player	uade	Protracker	0	19458	d6aebc04	dd66b058	mdls/lotus2.zip/Lotus2_SnowCourse
@@ -1006,7 +1006,7 @@ b16bff47c0355e98c57e159d1f527f5c	4	38420	player
 b16bff47c0355e98c57e159d1f527f5c	5	2572	player
 b16bff47c0355e98c57e159d1f527f5c	6	2572	player
 b16bff47c0355e98c57e159d1f527f5c	7	46116	player
-b16bff47c0355e98c57e159d1f527f5c	8	23635	silence
+b16bff47c0355e98c57e159d1f527f5c	8	23636	silence
 b1e43e0a97b4b7da8b041bb8b5c47c73	1	104871	player	uade	Protracker	0	34518	bab54111	4d85993c	Rips/QuikTheThunderrabbit.tar.gz/QuikTheThunderrabbit/rabbit-level1.jour.mod
 b1e43e0a97b4b7da8b041bb8b5c47c73	2	108649	player
 b212c75ee64477a4d2c110972cfb5338	1	143714	player	uade	OctaMED MMD0	0	67874	18d326ec	bd6700a3	Rips/SoulCrystal.tar.gz/SoulCrystal/Secret Chambers.med
@@ -1277,7 +1277,7 @@ e3910b14ebfa6d564d6a885c757aa03c	1	48266	player
 e3910b14ebfa6d564d6a885c757aa03c	2	143392	player
 e3910b14ebfa6d564d6a885c757aa03c	3	2572	player
 e3910b14ebfa6d564d6a885c757aa03c	4	2572	player
-e3910b14ebfa6d564d6a885c757aa03c	5	12943	silence
+e3910b14ebfa6d564d6a885c757aa03c	5	12945	silence
 e3cb9903210617fd81092008ff9ceb23	1	23783	silence	uade	Protracker compatible	0	34292	6cab3eab	3cff0ee9	Rips/Lotus3.tar.gz/Lotus3/l3_futureworld.mod
 e3d98f406575eb89d5b7f7cd063395f7	1	89077	player	uade	Protracker	0	15950	d8abaeb4	75eacdd2	CrackTunes/2Pac.zip/2Pac/antipasti#06.mod
 e4b103cc2a228be3af9f8c08806896e9	0	116727	player	uade	EMS v6	0	146442	1bd670e0	80c87089	Rips/EMS6.tar.gz/EMS/ems_modules/EMSV6.Perception Test
