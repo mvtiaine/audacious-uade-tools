@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 //> using dep org.scala-lang.modules::scala-xml::2.4.0

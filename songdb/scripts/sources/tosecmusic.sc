@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 // mostly vibe coded with Claude 4.5
 
 // NOTE: currently not used as primary metadata source due to too unreliable metadata

@@ -1,5 +1,5 @@
 -- SPDX-License-Identifier: GPL-2.0-or-later
--- Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+-- Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 CREATE OR REPLACE FUNCTION decode_url(p varchar) RETURNS varchar AS $$
 BEGIN

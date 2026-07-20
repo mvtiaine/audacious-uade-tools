@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2014-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2014-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 def parseModlandAuthorAlbum(format: String, path: String): Option[(Seq[String], String)] = {
   val UNKNOWN = "- unknown"

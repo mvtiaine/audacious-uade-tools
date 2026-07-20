@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 // see below for further copyrights
 
 //> using dep org.scodec::scodec-bits::1.2.4

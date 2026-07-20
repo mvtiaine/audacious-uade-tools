@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 //> using dep net.ruippeixotog::scala-scraper::3.1.0
@@ -286,6 +286,8 @@ def transformAlbum(meta: OldExoticaMeta): String = {
   // XXX
   } else if (album == "Sonolumineszenz") {
     album = ""
+  } else if (album == "Lands Of Valour") {
+    album = "Legends of Valour"
   }
   
   album
