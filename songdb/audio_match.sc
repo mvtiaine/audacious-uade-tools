@@ -1,7 +1,7 @@
 #!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx8G
 
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 // NOTE: some code generated with Claude Sonnet 4
 
 // Does a "brute force" search for matching audio fingerprints, based on chroma similarity scores.

@@ -1,7 +1,7 @@
 #!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx64G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
 
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Copyright (C) 2023-2025 Matti Tiainen <mvtiaine@cc.hut.fi>
+// Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using file scripts/md5.sc
 //> using file scripts/dedup.sc
