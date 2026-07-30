@@ -179,8 +179,12 @@ See [sources.md](sources.md) for sources used for the database.
 
 This database is also used by:
 
+- **DEViLBOX** - https://devilbox.uprough.net/
 - **HippoPlayer** - https://github.com/koobo/HippoPlayer
 - **LMS Game Music / Tracker MOD/MIDI Player** - https://nexus0.net/pub/sw/lmsmodplay/
+- **Modizer** - https://github.com/yoyofr/modizer
+- **rewamp** - https://rewamp.app/
+
 
 ## Contact
 
