@@ -155,7 +155,7 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./record.sh 0                                    # Interactive recording and matching using microphone
 ./record.sh 30                                   # Record and match 30 seconds using microphone
 ./find_dupes.sc                                  # Prints usage
-./find_dupes.sc somefile.mod                     # Identifies dupes
+./find_dupes.sc somefile.mod                     # Identifies dupes in database
 ```
 
 See `songdb/audio_match.sc`, `songdb/record.sh` and `songdb/find_dupes.sc` sources for more details.
@@ -169,13 +169,13 @@ See `songdb/audio_match.sc`, `songdb/record.sh` and `songdb/find_dupes.sc` sourc
 **Output:**
 
 ```
-Score | MD5          | Sub | Format                      | Authors    | Album                 | Publishers                 | Year | Filenames  | Size  | #
+Score | MD5          | Size  | Format                      | Sub | Filenames  | # | Authors    | Album                 | Publishers                 | Year
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-0,943 | fb778dace14a | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 |            | 71206 | 1
-0,943 | cb41fba3043b | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 | mod.dawn   | 71206 | 2
-0,943 | 36a8a32a0314 | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 |            | 71206 | 1
-0,943 | 0489859f3ad9 | 0   | Digital Symphony            |            |                       |                            |      | DAWN       | 52680 | 1
-0,940 | bf2ce1133d7a | 1   | Soundtracker II (31 instr.) | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 | mod.music1 | 71206 | 1
+0,943 | fb778dace14a | 71206 | Protracker                  | 1   |            | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | cb41fba3043b | 71206 | Protracker                  | 1   | mod.dawn   | 2 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | 36a8a32a0314 | 71206 | Protracker                  | 1   |            | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | 0489859f3ad9 | 52680 | Digital Symphony            | 0   | DAWN       | 1 |            |                       |                            |     
+0,940 | bf2ce1133d7a | 71206 | Soundtracker II (31 instr.) | 1   | mod.music1 | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
 ```
 
 List of top matched entries with match score, MD5, subsong and some metadata from songdb (# == number of sources where MD5 is found).
