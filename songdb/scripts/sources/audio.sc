@@ -37,11 +37,11 @@ final case class AudioFingerprint (
   }
 }
 
-def parseAudioTsv(tsv: String, withSimHash: Boolean) = {
+def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.empty, lengths: Set[Int] = Set.empty) = {
   var prevMd5 = ""
   var prevPlayer = ""
   var fixsubsong = false
-  Using(scala.io.Source.fromFile(tsv)(using scala.io.Codec.ISO8859))(_.getLines().toSeq.flatMap(line => {
+  Using(scala.io.Source.fromFile(tsv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.par.flatMap(line => {
     val l = line.split("\t")
     val md5 = l(0).take(12)
     val player = l(1)
@@ -59,7 +59,7 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean) = {
     if (fixsubsong) {
       normalizedSubsong += 1
     }
-    if (audioBytes > 0) {
+    if (audioBytes > 0 && (md5s.isEmpty || md5s.contains(md5)) && (lengths.isEmpty || lengths.exists(len => Math.abs(audioBytes.toDouble / persecondbytes - len.toDouble / persecondbytes) <= 3.0))) {
       val audioMd5 = if (l.length >= 5) l(4) else ""
       val audioChromaprint = if (l.length >= 6) l(5) else ""
       // require at least 9s of audio for simhash comparison to minimize false positives
@@ -85,7 +85,7 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean) = {
         audioTag,
       ))
     } else None
-  }).distinct.toBuffer).get
+  }).distinct.toBuffer).get.seq
 }
 
 /*

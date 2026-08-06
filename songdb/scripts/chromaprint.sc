@@ -2,9 +2,8 @@
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 // see below for further copyrights
 
-//> using dep org.scodec::scodec-bits::1.2.4
-
 import java.util.concurrent.ConcurrentHashMap
+import java.util.Base64
 import scala.collection.mutable
 
 object FpChunker {
@@ -299,58 +298,18 @@ THE SOFTWARE.
 Original Chromaprint algorithm Copyright (c) Lukáš Lalinský.
 */
 
-// Base64.scala
-//package chromaprint
-
-import scodec.bits.{Bases, ByteVector}
-
-object Base64 {
-
-  final class EncoderException(message: String) extends Exception(message)
-
-  val alphabet: Bases.Base64Alphabet = Bases.Alphabets.Base64Url
-
-  def apply(data: Seq[Byte]): String =
-    apply(ByteVector(data))
-
-  def apply(data: ByteVector): String =
-    data.toBase64(alphabet).
-      replaceAll("=+$", "")
-
-  def unapply(str: String): Option[IndexedSeq[Byte]] =
-    decode(str) match {
-      case Left(_) =>
-        None
-      case Right(bytes) =>
-        Some(bytes)
-    }
-
-  def decode(str: String): Either[EncoderException,IndexedSeq[Byte]] =
-    ByteVector.fromBase64Descriptive(str, alphabet) match {
-      case Right(bv) =>
-        Right(bv.toArray.toIndexedSeq)
-      case Left(err) =>
-        Left(new EncoderException(err))
-    }
-
-}
-
 // FingerprintDecompressor.scala
 //package chromaprint
 
 // mvtiaine: vibe optimized with Claude Sonnet 4 / Claude Opus 4
+// mvtiaine: replaced custom/scodec Base64 code with java.util.Base64.Decoder
 
 object FingerprintDecompressor {
 
   final class DecompressorException(message: String) extends Exception(message)
 
   def apply(data: String): Either[DecompressorException,(Int, Array[Int])] =
-    Base64.decode(data) match {
-      case Right(bytes) =>
-        apply(bytes.toArray)
-      case Left(e) =>
-        Left(new DecompressorException("Invalid Base64 string: " + e.getMessage))
-    }
+    apply(Base64.getUrlDecoder.decode(data))
 
   def apply(bytes: IndexedSeq[Byte]): Either[DecompressorException,(Int, Array[Int])] =
     apply(bytes.toArray)

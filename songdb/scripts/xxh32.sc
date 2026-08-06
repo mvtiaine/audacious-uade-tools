@@ -10,7 +10,8 @@ import md5._
 import sources._
 
 lazy val md5ToXxh32 =
-  sources.tsvs.par.flatMap(_._2).map { case (md5, subsongs) =>
+  sources.tsvs.par.flatMap(_._2).map { case (md5, _subsongs) =>
+    val subsongs = _subsongs.sortBy(_.subsong)
     (md5.take(12),
     subsongs.head.xxh32 + f"${subsongs.head.filesize & 0xFFFF}%04x")
   }.seq.toMap
