@@ -32,10 +32,11 @@ def _md5(b: Array[Byte]) = {
 }
 
 val MINSCORE = 0.67
+val MAXRESULTS = 20
 
 if (args.length < 1) {
   Console.err.println("Usage:")
-  Console.err.println(s"  ./find_dupes.sc <input-file> [minscore (=$MINSCORE)]")
+  Console.err.println(s"  ./find_dupes.sc <input-file> [minscore (=$MINSCORE)] [maxresults (=$MAXRESULTS)]")
   Console.err.println()
   sys.exit(1)
 }
@@ -47,6 +48,7 @@ if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv"
 
 val input = args(0) 
 val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
+val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
 val file = Paths.get(input)
 if (!file.toFile.exists) {
@@ -85,7 +87,7 @@ var results = (0 to 15).par.flatMap { i =>
   System.err.print(s".${n.incrementAndGet()}.")
   results
 }.seq
-results = results.sortBy(_.score).reverse.distinct
+results = results.sortBy(_.score).reverse.distinct.take(maxresults)
 val resultMd5s = results.map(_.md5).toSet
 
 System.err.print(" done.\n")
