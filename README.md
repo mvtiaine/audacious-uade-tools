@@ -182,7 +182,7 @@ List of top matched entries with match score, MD5, subsong and some metadata fro
 You can grep the MD5s from TSVs to locate the matching files in sources and all available metadata:
 
 ```bash
-grep MD5 sources/*[b-z]/*.tsv
+grep MD5 sources/[b-z]*/*.tsv
 grep MD5 ../tsv/pretty/md5/*.tsv
 ```
 
