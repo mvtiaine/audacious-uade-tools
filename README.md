@@ -2,9 +2,12 @@
 
 This repo contains Scala CLI scripts for generating songdb TSV files used by [audacious-uade](https://github.com/mvtiaine/audacious-uade).
 
-Also an experimental Shazam like tool is included (see [Audio Matching](#audio-matching)) for identifying music from audio files or via microphone.
-
 The database contains songlengths and module infos for almost 480000 unique MD5s, and metadata (authors/album/publishers/year) for 380000, processed from around 400 [sources](sources.md).
+
+An experimental Shazam-like tool is also included for identifying music from audio files or via microphone (see [Audio Matching](#audio-matching)).
+
+And another tool to help identifying original versions of music files, among modified or corrupted versions (see [Dupe Finder](#dupe-finder)).
+
 
 ## Directories
 
@@ -100,17 +103,27 @@ The TSV files use UTF-8 encoding.
 **Note:** I reserve the right to change the format or location in Github of any of the TSV or other files at any time.
 
 
-## Audio Matching
+## Tools
+
+### Audio Matching
 
 Identify Amiga exotic modules and tracker music from audio files or via microphone.
 
-The tool uses simple brute force approach for chroma similarity matching. On M4 Max it takes about 10 seconds, depending on input length. All CPU cores are utilized.
+The tool uses simple brute force approach for chroma similarity matching. On M4 Max it takes about 5-10 seconds, depending on input length. All CPU cores are utilized.
 
 Proper implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
 
 It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file (like YouTube rip), instead of using microphone.
 
-**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), chromaprint (fpcalc), 8GB+ of memory. For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
+### Dupe Finder
+
+Find dupes of the given music file (e.g. (non-)original, corrupted or modified versions) in various sources, based on audio fingerprints.
+It requires that the file MD5 exists in the database, if not you should use the audio matching tool instead.
+On M4 Max it takes 2-3 seconds to run. All CPU cores are utilized.
+
+### Usage
+
+**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), 8GB+ of memory. For audio matching: chromaprint (fpcalc). For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
 
 **Setup:**
 
@@ -129,6 +142,7 @@ Fetch dependencies:
 ```bash
 cd songdb
 ./audio_match.sc
+./find_dupes.sc
 ```
 
 **Usage:**
@@ -140,9 +154,11 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./record.sh                                      # Prints usage
 ./record.sh 0                                    # Interactive recording and matching using microphone
 ./record.sh 30                                   # Record and match 30 seconds using microphone
+./find_dupes.sc                                  # Prints usage
+./find_dupes.sc somefile.mod                     # Identifies dupes
 ```
 
-See `songdb/audio_match.sc` and `songdb/record.sh` sources for more details.
+See `songdb/audio_match.sc`, `songdb/record.sh` and `songdb/find_dupes.sc` sources for more details.
 
 **Note:**: audio TSV files and git repo must be in sync
 
@@ -153,15 +169,22 @@ See `songdb/audio_match.sc` and `songdb/record.sh` sources for more details.
 **Output:**
 
 ```
-Score | MD5          | Sub | Authors    | Album                 | Publishers                 | Year | Filenames             
-----------------------------------------------------------------------------------------------------------------------------
-0,935 | 98d24339316c | 1   | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 | MOD.dawn, dawn.mod    
-0,787 | a241710e5f1f | 1   |            |                       |                            |      | lords of the boards.xm
-0,781 | d3a158c9db44 | 0   | Slammy     |                       |                            |      | final voyage.it 
+Score | MD5          | Sub | Format                      | Authors    | Album                 | Publishers                 | Year | Filenames  | Size  | #
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+0,943 | fb778dace14a | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 |            | 71206 | 1
+0,943 | cb41fba3043b | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 | mod.dawn   | 71206 | 2
+0,943 | 36a8a32a0314 | 1   | Protracker                  | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 |            | 71206 | 1
+0,943 | 0489859f3ad9 | 0   | Digital Symphony            |            |                       |                            |      | DAWN       | 52680 | 1
+0,940 | bf2ce1133d7a | 1   | Soundtracker II (31 instr.) | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990 | mod.music1 | 71206 | 1
 ```
 
-List of top matched entries with match score, MD5, subsong and some metadata from songdb.
-You can grep the MD5 from `songdb/sources/*/*.tsv` and `tsv/pretty/md5/*.tsv` to locate the matching mod file and all available metadata.
+List of top matched entries with match score, MD5, subsong and some metadata from songdb (# == number of sources where MD5 is found).
+You can grep the MD5s from TSVs to locate the matching files in sources and all available metadata:
+
+```bash
+grep MD5 sources/*[b-z]/*.tsv
+grep MD5 ../tsv/pretty/md5/*.tsv
+```
 
 
 ## License

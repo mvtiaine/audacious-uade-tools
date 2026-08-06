@@ -21,8 +21,6 @@
 //    zstd -d sources/audio/audio_*.zst
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep org.scodec::scodec-bits::1.2.4
-//> using dep org.typelevel::spire::0.18.0
 
 //> using file scripts/chromaprint.sc
 //> using file scripts/convert.sc
@@ -35,11 +33,11 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.concurrent.atomic.AtomicInteger
 import scala.collection.parallel.CollectionConverters._
 import scala.io.StdIn.readLine
 import scala.util.boundary, boundary.break
 import scala.collection.mutable.Buffer
-import spire.math._
 
 import audio._
 import chromaprint._
@@ -87,32 +85,14 @@ if (isSilentFingerprint(fp.data)) {
 
 // XXX ignore SOAMC 001/ entries as it has lots of duplicated/corrupted entries with random filenames
 // and different md5s, polluting the results and slowing down the processing
-val soamc001Md5s = sources.tsvs
-  .filter(_._1 == Source.SOAMC)
-  .flatMap(_._2)
-  .filter { case (md5, entries) => entries.forall(_.path.startsWith("001/")) }
-  .map(_._1.take(12))
-  .toSet
-val otherMd5s = sources.tsvs
-  .flatMap { case (source, entriesByMd5) =>
-    if (source == Source.SOAMC) {
-      entriesByMd5.filter { case (md5, entries) => !entries.forall(_.path.startsWith("001/")) }.keys
-    } else {
-      entriesByMd5.keys
-    }
-  }
-  .map(_.take(12))
-  .toSet
-val soamc001OnlyMd5s = soamc001Md5s.diff(otherMd5s)
 
 System.err.print("Processing (x/16) ")
+
+val n = AtomicInteger(0)
 final case class Result(md5: String, subsong: Int, score: Double)
-var results = Buffer.empty[Result]
-(0 to 15).foreach { i =>
-  System.err.print(s".${i+1}.")
+var results = (0 to 15).par.flatMap { i =>
   val audioFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false)
-    .filterNot(af => soamc001OnlyMd5s.contains(af.md5))
-  results ++= audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
+  val results = audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
     val Right(a,d) = FingerprintDecompressor(af.audioChromaprint) : @unchecked
     assert(a == algo)
     if (isSilentFingerprint(d)) {
@@ -124,8 +104,12 @@ var results = Buffer.empty[Result]
       } else None
     }
   })
-}
+  System.err.print(s".${n.incrementAndGet()}.")
+  results
+}.seq
 results = results.sortBy(_.score).reverse.distinct.take(maxresults)
+val resultMd5s = results.map(_.md5).toSet
+
 System.err.print(" done.\n")
 
 if (results.isEmpty) {
@@ -135,34 +119,44 @@ if (results.isEmpty) {
   val metas = {
     val path = Paths.get("../tsv/pretty/md5/metadata.tsv")
     val tsv = Files.readString(path)
-    parsePrettyMetaTsv(tsv).groupBy(_.hash)
+    parsePrettyMetaTsv(tsv).par.groupBy(_.hash)
   }
-    
-  val filenames = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
-    entriesByMd5.flatMap { case (md5, entries) =>
-      entries
-        .filter(_.path.nonEmpty)
-        .filterNot(entry => source == Source.SOAMC && entry.path.startsWith("001/"))
-        .map(entry => md5.take(12) -> entry.path.split('/').last)
-    }
-  }.groupBy(_._1).mapValues(_.map(_._2).seq.sorted.distinct.mkString(", ")).toMap.seq
 
-  final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, String]) => String)
+  final case class FileInfo(format: String, filesize: Int, filename: String, source: String)
+  val fileinfos = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
+    entriesByMd5.par.filter(e => resultMd5s.contains(e._1.take(12))).flatMap { case (md5, entries) =>
+      entries
+        .filterNot(_.path.isEmpty)
+        .map(entry =>
+          md5.take(12) -> FileInfo(
+            entry.format,
+            entry.filesize,
+            if (source == Source.SOAMC && entry.path.startsWith("001/")) "" else entry.path.split('/').last,
+            source.toString
+          )
+        )
+    }
+  }.groupBy(_._1).mapValues(_.map(_._2).seq.toSeq.distinct).toMap.seq
+  
+  final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, Seq[FileInfo]]) => String)
 
   val columns = Seq(
     Column("Score", 6, (r, _, _) => r.score.formatted("%.3f")),
     Column("MD5", 12, (r, _, _) => r.md5),
-    Column("Sub", 3, (r, _, _) => r.subsong.toString),
+    Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
+    Column("Format", 30, (r, _, fi) => fi(r.md5).map(_.format).sorted.head),
     Column("Authors", 30, (_, m, _) => m.map(_.authors.mkString(" & ")).getOrElse("")),
     Column("Album", 30, (_, m, _) => m.map(_.album).getOrElse("")),
     Column("Publishers", 30, (_, m, _) => m.map(_.publishers.mkString(" & ")).getOrElse("")),
     Column("Year", 4, (_, m, _) => m.map(y => if (y.year > 0) y.year.toString else "").getOrElse("")),
-    Column("Filenames", 90, (r, _, s) => s.getOrElse(r.md5, ""))
+    Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
+    Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
+    Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString)
   )
 
   val rows = results.map { r =>
     val metadata = metas.get(r.md5).map(_.head.asInstanceOf[MetaData])
-    columns.map(_.extract(r, metadata, filenames))
+    columns.map(_.extract(r, metadata, fileinfos))
   }
 
   val widths = columns.zipWithIndex.map { case (col, i) =>

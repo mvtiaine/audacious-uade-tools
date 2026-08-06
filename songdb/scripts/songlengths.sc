@@ -24,7 +24,7 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
   if (!_subsongs.forall(_.player == _subsongs.head.player)) {
     System.err.println("WARN: inconsistent players for " + md5 + ": " + _subsongs)
   }
-  val subsongs = if (_subsongs.exists(_.player == "uade")) _subsongs.filter(_.player == "uade") else _subsongs.filter(_.player == _subsongs.head.player)
+  val subsongs = (if (_subsongs.exists(_.player == "uade")) _subsongs.filter(_.player == "uade") else _subsongs.filter(_.player == _subsongs.head.player)).sortBy(_.subsong)
   val minsubsong = subsongs.minBy(_.subsong).subsong
   val maxsubsong = subsongs.maxBy(_.subsong).subsong
   val songs = subsongs.map(s => Subsong(s.subsong, s.songlength, s.songend)).distinct.toSeq

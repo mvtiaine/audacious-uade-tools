@@ -1681,7 +1681,7 @@ lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(
       TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9), l(10))
     } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "", "")
   ).toBuffer
-).get.sortBy(e => (e.md5, e.subsong)).groupBy(_.md5))).seq
+).get.groupBy(_.md5))).seq
 
 final case class SourceDBEntry (
   md5: String,
@@ -1704,13 +1704,15 @@ def readSourceDB(source: Source) = {
   }).flatten.seq
 }.toSeq
 
-val sourceDB = Source.values.filter(_ != Source.NONE).par.map(s => (s, readSourceDB(s))).seq.toMap
-val by_crc32_filesize = sourceDB.values.flatten.groupBy(e => (e.crc32, e.filesize))
+lazy val sourceDB = Source.values.filter(_ != Source.NONE).par.map(s => (s, readSourceDB(s))).seq.toMap
+lazy val by_crc32_filesize = sourceDB.values.flatten.groupBy(e => (e.crc32, e.filesize))
+/*
 by_crc32_filesize.foreach(group => {
   if (group._2.size > 1 && group._2.exists(_.md5 != group._2.head.md5)) {
     System.err.println("WARN: duplicate files in sourceDB for crc32 " + group._1._1 + " and filesize " + group._1._2 + ": " + group._2)
   }
 })
+*/
 
 val yearPattern1 = """\/(\d{4})\/""".r
 val yearPattern2 = """^(\d{4})[\/|\.]""".r
@@ -1747,7 +1749,7 @@ val blacklist = Map(
   TOSECMusic -> Set(),
   TOSECMusicUnknown -> Set()
 )
-val _sourceYears = tsvs.par.flatMap({case (source, entries) =>
+lazy val _sourceYears = tsvs.par.flatMap({case (source, entries) =>
   if (!blacklist.contains(source) || blacklist(source).nonEmpty) {
     val blacklistedPaths = blacklist.getOrElse(source, Set.empty)
     entries.flatMap({case (md5, subsongs) =>
@@ -1773,7 +1775,7 @@ val _sourceYears = tsvs.par.flatMap({case (source, entries) =>
   } else Seq.empty
 })
 
-val _sourceYears2 = tsvs.par.flatMap({case (source, entries) =>
+lazy val _sourceYears2 = tsvs.par.flatMap({case (source, entries) =>
   if (!blacklist.contains(source) || blacklist(source).nonEmpty) {
     val blacklistedPaths = blacklist.getOrElse(source, Set.empty)
     entries.flatMap({case (md5, subsongs) =>
@@ -1805,7 +1807,7 @@ val _sourceYears2 = tsvs.par.flatMap({case (source, entries) =>
   } else Seq.empty
 })
 
-val sourceYearConstraints = (_sourceYears ++ _sourceYears2).groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).map({case (md5, (year, source, _)) =>
+lazy val sourceYearConstraints = (_sourceYears ++ _sourceYears2).groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).map({case (md5, (year, source, _)) =>
   md5.take(12) -> (year, source)
 }).seq
 
@@ -1813,7 +1815,7 @@ val blacklist2 = Map(
   Funet -> Set("amiga/audio/modules/med/199","amiga/audio/modules/misc/199"),
   Hornet -> Set("music/songs/","tla/songs/","music/disks/")
 )
-val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).flatMap({case (md5, (year, source, path)) =>
+lazy val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).flatMap({case (md5, (year, source, path)) =>
   if (blacklist2.contains(source) && blacklist2(source).exists(path.startsWith)) {
     None
   } else
