@@ -46,8 +46,8 @@ Sources used for the database:
 - **The Hornet Archive** - https://www.hornet.org/
 - **The Mod Archive** - https://modarchive.org/
 - **UnExoticA** - https://www.exotica.org.uk/wiki/UnExoticA
-- **World of Game Mods** - http://www.mirsoft.info/gamemods.php
 - **Wanted Team** - http://wt.exotica.org.uk/
+- **World of Game Mods** - http://www.mirsoft.info/gamemods.php
 - **Zakalwe** - git://zakalwe.fi/chip
 
 #### Archive / Collection / Pack
