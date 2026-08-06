@@ -121,15 +121,15 @@ if (results.isEmpty) {
   val columns = Seq(
     Column("Score", 6, (r, _, _) => r.score.formatted("%.3f")),
     Column("MD5", 12, (r, _, _) => r.md5),
-    Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
+    Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
     Column("Format", 30, (r, _, fi) => fi(r.md5).map(_.format).sorted.head),
+    Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
+    Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
+    Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString),
     Column("Authors", 30, (_, m, _) => m.map(_.authors.mkString(" & ")).getOrElse("")),
     Column("Album", 30, (_, m, _) => m.map(_.album).getOrElse("")),
     Column("Publishers", 30, (_, m, _) => m.map(_.publishers.mkString(" & ")).getOrElse("")),
     Column("Year", 4, (_, m, _) => m.map(y => if (y.year > 0) y.year.toString else "").getOrElse("")),
-    Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
-    Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
-    Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString)
   )
 
   val cmp = {
