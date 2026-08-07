@@ -1,3 +1,6 @@
+2026-08-07
+- Added Docker support for audio matcher and dupe finder tools. See README.md.
+
 2026-08-06
 - Added "Dupe Finder" tool. See README.md.
 
