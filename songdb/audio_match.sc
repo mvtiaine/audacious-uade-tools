@@ -31,6 +31,7 @@
 //> using file scripts/sources/audio.sc
 //> using file scripts/sources/sources.sc
 
+import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.concurrent.atomic.AtomicInteger
@@ -118,7 +119,7 @@ if (results.isEmpty) {
 } else {
   val metas = {
     val path = Paths.get("../tsv/pretty/md5/metadata.tsv")
-    val tsv = Files.readString(path)
+    val tsv = Files.readString(path, StandardCharsets.UTF_8)
     parsePrettyMetaTsv(tsv).par.groupBy(_.hash)
   }
 
