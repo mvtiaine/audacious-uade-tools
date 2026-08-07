@@ -48,16 +48,20 @@ if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv"
 }
 
 val input = args(0) 
-val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
-val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
-
-val file = Paths.get(input)
-if (!file.toFile.exists) {
-  Console.err.println(s"Input file '${input}' does not exist")
-  sys.exit(1)
+val md5 = if (input == "-") {
+  val inputBytes = Stream.continually(System.in.read).takeWhile(_ != -1).map(_.toByte).toArray
+  _md5(inputBytes).map("%02x".format(_)).mkString.take(12)
+} else  {
+  val file = Paths.get(input)
+  if (!file.toFile.exists) {
+    Console.err.println(s"Input file '${input}' does not exist")
+    sys.exit(1)
+  }
+  _md5(Files.readAllBytes(file)).map("%02x".format(_)).mkString.take(12)
 }
 
-val md5 = _md5(Files.readAllBytes(file)).map("%02x".format(_)).mkString.take(12)
+val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
+val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
 val fingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${md5.take(1)}.tsv").toFile.getAbsolutePath, withSimHash = false, md5s = Set(md5))
 
