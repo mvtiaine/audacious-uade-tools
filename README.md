@@ -155,7 +155,7 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./record.sh 0                                    # Interactive recording and matching using microphone
 ./record.sh 30                                   # Record and match 30 seconds using microphone
 ./find_dupes.sc                                  # Prints usage
-./find_dupes.sc somefile.mod                     # Identifies dupes in database
+./find_dupes.sc somefile.mod                     # Finds dupes in database
 ```
 
 See `songdb/audio_match.sc`, `songdb/record.sh` and `songdb/find_dupes.sc` sources for more details.
