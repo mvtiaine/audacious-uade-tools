@@ -123,7 +123,7 @@ On M4 Max it takes 2-3 seconds to run. All CPU cores are utilized.
 
 ### Usage
 
-**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), 8GB+ of memory. For audio matching: chromaprint (fpcalc). For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
+**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), zstd, 8GB+ of memory. For audio matching: chromaprint (fpcalc). For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
 
 **Setup:**
 
@@ -132,8 +132,8 @@ Download and decompress audio fingerprint files:
 ```bash
 mkdir -p songdb/sources/audio
 cd songdb/sources/audio
-rm audio_*.zst
-for i in {0..9} {a..f}; do wget https://github.com/mvtiaine/audacious-uade-tools/releases/download/audio/audio_$i.tsv.zst; done
+rm -f audio_*.zst
+for i in 0 1 2 3 4 5 6 7 8 9 a b c d e f; do wget https://github.com/mvtiaine/audacious-uade-tools/releases/download/audio/audio_$i.tsv.zst; done
 zstd -d -f --rm audio_*.zst
 ```
 
