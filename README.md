@@ -113,7 +113,7 @@ The tool uses simple brute force approach for chroma similarity matching. On M4 
 
 Proper implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
 
-It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file (like YouTube rip), instead of using microphone.
+It's recommended to record at least 30s of audio, but the more the better. Accuracy can depend on many factors, like audio quality and unique audio features available. For best results use `fpcalc`and `audio_match.sc` directly with chromaprint generated from the original audio file (like YouTube rip), instead of using microphone. Also make sure the recording only consists of (part of) the actual music to be matched, no random noises, silence etc. in beginning or end.
 
 ### Dupe Finder
 
@@ -123,7 +123,9 @@ On M4 Max it takes 2-3 seconds to run. All CPU cores are utilized.
 
 ### Usage
 
-**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), zstd, 8GB+ of memory. For audio matching: chromaprint (fpcalc). For microphone support: sox, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
+See [Docker setup](#docker-setup) for docker support.
+
+**Requirements:** scala-cli (https://scala-cli.virtuslab.org/), zstd, 8GB+ of memory. For audio matching: chromaprint (fpcalc). For microphone support: SoX, (macOS) mic permission for terminal. Also make sure mic input volume is high enough.
 
 **Setup:**
 
@@ -184,6 +186,28 @@ You can grep the MD5s from TSVs to locate the matching files in sources and all 
 ```bash
 grep MD5 sources/[b-z]*/*.tsv
 grep MD5 ../tsv/pretty/md5/*.tsv
+```
+
+### Docker setup
+
+```bash
+cd songdb
+# Build image:
+docker build . -t audacious-uade-tools
+# Build image (avoid cache):
+docker build . --no-cache -t audacious-uade-tools
+
+# Example usages:
+# - Match specific chromaprint
+docker run --rm audacious-uade-tools ./audio_match.sc AQAAC1EShUokRcMfoT-OX8RfNKHCG5V6iEue48cdHQAEEgYRCQhA0AAD
+# - Calculate and match chromaprint from audiofile
+cat somefile.wav | docker run -i --rm audacious-uade-tools /bin/bash -c "fpcalc -plain - | ./audio_match.sc -"
+# - Finds dupes in database
+cat somefile.mod | docker run -i --rm audacious-uade-tools ./find_dupes.sc -
+
+# Record and match using microphone:
+# (ctrl-c to stop recording, record at least 30+s, SoX is still needed on the host for rec command)
+rec -r 11025 -c 1 -t wav - | docker run -i --rm audacious-uade-tools /bin/bash -c "fpcalc -plain - | ./audio_match.sc -"
 ```
 
 
