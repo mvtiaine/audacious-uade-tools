@@ -6,7 +6,7 @@ The database contains songlengths and module infos for almost 480000 unique MD5s
 
 An experimental Shazam-like tool is also included for identifying music from audio files or via microphone (see [Audio Matching](#audio-matching)).
 
-And another tool to help identifying original versions of music files, among modified or corrupted versions (see [Dupe Finder](#dupe-finder)).
+And another tool to help finding original versions of music files, among modified or corrupted versions (see [Dupe Finder](#dupe-finder)).
 
 
 ## Directories
