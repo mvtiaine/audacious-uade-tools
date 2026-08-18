@@ -12,6 +12,8 @@ import convert._
 enum Source:
   case
     NONE,
+    Demozoo, // constraints only
+    Kestra, // constraints only
     _17Bit5thDimension,
     _17BitCollection,
     _17BitContinuation,

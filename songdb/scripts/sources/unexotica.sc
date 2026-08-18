@@ -358,7 +358,7 @@ def transformAlbum(meta: UnExoticaMeta, path: String): String = {
   // remove subtitle parts to try avoid overly long titles
   )
   val short = title.split(" - ").head.trim
-  if (!short.toIntOption.isDefined && !title.trim.takeRight(2).toIntOption.isDefined && (short.length > 3 || title.toLowerCase.endsWith(" game"))) title = short
+  if (!short.toIntOption.isDefined && !title.trim.takeRight(2).toIntOption.isDefined && (short.length > 3 || title.toLowerCase.endsWith(" game")) && !title.toLowerCase.startsWith("the games")) title = short
   if (title.isEmpty) if (authorAlbum.size > 1) authorAlbum(1) else ""
   else title
 }

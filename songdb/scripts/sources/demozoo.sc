@@ -5,6 +5,8 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.Collections
+import java.util.HashSet
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.jdk.CollectionConverters._
@@ -61,6 +63,12 @@ final case class DemozooMeta (
 
 // XXX
 def fix(name: String) = name.replace(" - FIXME! This scener is a merge of two sceners!","")
+
+val typeBlacklist = Set(
+  "Pack",
+  // TODO just blacklist specific tools
+  "Tool",
+)
 
 private def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
 
@@ -757,12 +765,9 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
   if (m.hash == "4a17ff0d3fb2" || m.hash == "a9199ea17a17") m.copy(year = 1990)
   else m
 )
-val typeBlacklist = Set(
-  "Pack",
-  "Tool",
-)
+
+private val _yearConstraints = Collections.synchronizedSet(new HashSet[(String, Int)]).asScala
 val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
-  metas.exists(_.prodType.forall(typeBlacklist.contains)) ||
   // XXX
   metas.exists(_.title == "Fading Twilight - Dual Layer DVD Edition") ||
   metas.exists(_.title == "Tracker Hero") ||
@@ -885,7 +890,7 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     val minSoundtrackDate = if (soundtracks.isEmpty) "9999-99-99" else soundtracks.map(s => date(s.modDate, s.modDatePrecision, false)).min
     if ((soundtracks.isEmpty && allAuthors.size <= 2) || ((countAfter >= countBefore || minSoundtrackDate.take(4).toInt >= date(meta.date, meta.datePrecision, false).take(4).toInt - 2) && (allAuthors.size <= 5 || countBefore == 0) && allAuthors.size <= soundtracks.size + 2)) {
       album = meta.title.trim
-      publishers = meta.publishers.filter(_.trim.nonEmpty).sorted.distinct.toBuffer
+      publishers = meta.publishers.map(_.trim).filter(_.nonEmpty).sorted.distinct.toBuffer
       year = meta.date.take(4).toIntOption.getOrElse(0)
       _type = meta.prodType.sorted.headOption.getOrElse("")
       val normPlatforms = meta.platforms.map(normalizePlatform).sorted.distinct
@@ -893,7 +898,13 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     } else {
       //println(s"DEMOZOO EXTRA: skipping album/publisher/year/type/platform for md5 ${md5} meta ${meta} with soundtracks ${soundtracks}, allAuthors ${allAuthors.size}, countBefore ${countBefore}, countAfter ${countAfter}, minSoundtrackDate ${minSoundtrackDate}")
     }
-    if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || (year > 0 && year < 9999)) {
+    if (meta.prodType.forall(typeBlacklist.contains)) {
+      // only use as year constraint
+      if (year > 0 && year < 9999) {
+        _yearConstraints += ((md5.take(12), year + 1))
+      }
+      None
+    } else if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || (year > 0 && year < 9999)) {
       Some((meta.id, MetaData(
         hash = md5.take(12),
         authors = authors,
@@ -929,6 +940,10 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     Some(bestMeta)
   }
 }.seq.toBuffer.distinct
+
+val demozooExtrasYearConstraints = _yearConstraints.groupBy(_._1).mapValues(_.map(_._2)).par.map { case (md5, years) =>
+  (md5, years.min)
+}.seq.toMap
 
 for ((id, meta) <- demozooExtras) {
   println(s"DEMOZOO EXTRA META: $id - ${meta}")

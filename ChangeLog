@@ -1,3 +1,6 @@
+2026-08-19
+- Metadata extraction/heuristics tweaks and fixes
+
 2026-08-07
 - Added Docker support for audio matcher and dupe finder tools. See README.md.
 

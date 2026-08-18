@@ -41,7 +41,7 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
   var prevMd5 = ""
   var prevPlayer = ""
   var fixsubsong = false
-  Using(scala.io.Source.fromFile(tsv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.par.flatMap(line => {
+  Using(scala.io.Source.fromFile(tsv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.flatMap(line => {
     val l = line.split("\t")
     val md5 = l(0).take(12)
     val player = l(1)
@@ -71,8 +71,13 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
         (hex, Seq((h.bitLength+1)/4, (h.bitLength-1)/4).distinct)
       } else ("",Seq.empty[Int])
       val audioHash = Seq(audioSimHash, audioChromaprint, audioMd5).filter(_.nonEmpty).head
-      val audioTags = if (audioHash == audioSimHash) simTags.map(t => player + "-" + t) else Seq(player + "-" + audioHash)
-      //System.err.println(s"AUDIOTAGS: ${md5}:${subsong}:${normalizedSubsong} ${audioTags}")
+      val audioTags =
+        if (withSimHash) {
+          // add tags based on simhash (if available) or audio hash
+          (if (audioHash == audioSimHash) simTags.map(t => player + "-h-" + t) else Seq(player + "-h-" + audioHash)) ++
+          // add tags based on songlength (1s precision)
+          (if (audioBytes > persecondbytes * 9) Seq(player + "-l-" + ((audioBytes + persecondbytes/4) / (persecondbytes)), player + "-l-" + ((audioBytes - persecondbytes/4) / (persecondbytes))).distinct else Seq.empty)
+        } else Seq("")
       audioTags.map(audioTag => AudioFingerprint(
         md5,
         player,
@@ -330,7 +335,7 @@ lazy val (
     val duplicates = scala.collection.mutable.SortedSet[Int]()
     val fingerprints = audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
     if (fingerprints.nonEmpty) {
-      val filtered = fingerprints.filter(_.effectiveAudioBytes > 0).distinctBy(f => (f.subsong, f.audioTag))
+      val filtered = fingerprints.filter(f => f.effectiveAudioBytes > 0 && f.audioTag.contains("-h-")).distinctBy(f => (f.subsong, f.audioTag))
       val grouped = (
         if (filtered.forall(e => filtered.head.effectiveAudioBytes > persecondbytes * 12 && e.effectiveAudioBytes > persecondbytes * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
         else filtered.groupBy(_.audioTag)

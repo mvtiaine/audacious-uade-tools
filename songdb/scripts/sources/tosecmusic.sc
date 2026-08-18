@@ -121,18 +121,6 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   
   // Ignore covers and other unreliable metadata
   val filename = path.split("/").last
-  /* XXX commented out as not used as primary metadata source
-  if (path.startsWith("Games - AON/") ||
-      path.startsWith("Games - BP/") ||
-      path.startsWith("Games - FRED/") ||
-      path.startsWith("Games - MED/") ||
-      path.startsWith("Games - MOD/") ||
-      path.startsWith("Music - Games - ML") ||
-      path.startsWith("Music - Games - OKT/") ||
-      filename.startsWith("ZZZ")) {
-    return None
-  }
-  */
 
   val isSceneMusic = path.startsWith("Music - Scene")
   val isCovers = path.startsWith("Music - Games - Covers")

@@ -124,6 +124,7 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
                   year = Some(1992)
                 } else if (name_source == "Ugh!") year = Some(1992)
                 else if (name_source == "Agony") year = Some(1992)
+                else if (name_source == "X-Out") year = Some(1990)
                 else if (name_source == "Carribean Disaster")  {
                   name_source = "Caribbean Disaster"
                   year = Some(1996)

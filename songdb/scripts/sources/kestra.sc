@@ -8,6 +8,8 @@
 import java.net.URLDecoder
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.Collections
+import java.util.HashSet
 import java.util.regex.Pattern
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
@@ -708,6 +710,9 @@ def _date(d: Option[String]) = d.map(_.length).getOrElse(0) match {
   case _ => "9999-99-99"
 }
 
+val noAuthorInfoMd5s = Collections.synchronizedSet(new HashSet[String]).asScala
+val noAuthorInfoAlbums = Collections.synchronizedSet(new HashSet[(String, Buffer[String], Int)]).asScala // album, publishers, year
+val noAuthorInfoIds = Collections.synchronizedSet(new HashSet[Int]).asScala
 val metas = releases.filter { case (id, meta) =>
   meta.types.contains("Music") &&
   !Set("C64 SID","IFF 8SVX","MPEGA encoded music","WAV").contains(meta.soundFormat.getOrElse(""))
@@ -720,8 +725,13 @@ val metas = releases.filter { case (id, meta) =>
     .replaceAll(" '?[8-9][0-9]$", "")
     .replaceAll(" \\(.*\\)$", "")
     .trim
+  var noAuthorInfo = false
   val authors =
-    if (meta.tags.contains("No author infos")) Buffer.empty[String]
+    if (meta.tags.contains("No author infos") || (meta.authors.isEmpty && meta.connections.nonEmpty && meta.released.nonEmpty)) {
+      noAuthorInfo = true
+      noAuthorInfoIds ++= meta.connections.filter(_.id.isDefined).flatMap(_.id)
+      Buffer.empty[String]
+    }
     else meta.authors.map(a => a.name.trim).toBuffer.sorted.distinct
   var album = ""
   var publishers = Buffer.empty[String]
@@ -736,13 +746,15 @@ val metas = releases.filter { case (id, meta) =>
     .sortBy(c => _date(c._2.released) + (if (preferred.intersect(c._2.types).nonEmpty) "-0" else "-1"))
     .filter(c => _date(c._2.released).take(4).toInt <= _date(meta.released).take(4).toInt + 1)
   val mindate = _date(connections.map(c => _date(c._2.released)).minOption)
-  val featuredIn = connections.filter(_._1.group == "Featured In")
+  val featuredIn = connections.filter(c => c._1.group == "Featured In")
   var release = featuredIn.headOption.orElse(connections.headOption).map(_._2)
   if (_date(release.flatMap(_.released)) > mindate && connections.find(c => _date(c._2.released) <= mindate).isDefined) {
-    val better = connections.find(c => _date(c._2.released) <= mindate).get
-    if (preferred.intersect(better._2.types).nonEmpty) {
-      release = Some(better._2)
-    }
+    release = Some(connections
+      .map(_._2)
+      .find(c => _date(c.released) <= mindate && preferred.intersect(c.types).nonEmpty)
+      .orElse(connections.map(_._2).find(c => _date(c.released).take(4).toInt <= mindate.take(4).toInt && preferred.intersect(c.types).nonEmpty))
+      .orElse(connections.map(_._2).find(c => _date(c.released) <= mindate))
+      .get)
   }
   val origin = meta.origin.flatMap(o => o.id.flatMap(releases.get))
   if (origin.isDefined && (!release.isDefined || _date(origin.get.released) <= _date(release.get.released))) {
@@ -1058,6 +1070,9 @@ val metas = releases.filter { case (id, meta) =>
     _md5s.sorted.distinct
   )
   md5s.map(md5 => {
+    if (noAuthorInfo) {
+      noAuthorInfoMd5s += md5.take(12)
+    }
     (id, MetaData(
       hash = md5.take(12),
       authors = authors.sorted.distinct,
@@ -1108,7 +1123,7 @@ val kestraMetas = releases.filterNot { case (id, meta) =>
   }
   // XXX 
   publishers = publishers.map(_.replace("Zeppelin Platinum / Zeppelin Games", "Zeppelin"))
-  val album = meta.title.trim
+  var album = meta.title.trim
   val year = meta.released.flatMap(r => r.take(4).toIntOption).getOrElse(0)
   val _type = meta.types.filterNot(typeBlacklist.contains).headOption.getOrElse("").trim
   if (authors.nonEmpty) {
@@ -1136,8 +1151,9 @@ val kestraMetas = releases.filterNot { case (id, meta) =>
   }
 }.flatten.seq.toSet
 
+private val _yearConstraints = Collections.synchronizedSet(new HashSet[(String, Int)]).asScala
 val kestraExtras = releases.filterNot { case (id, meta) =>
-  meta.types.forall(typeBlacklist.contains) || meta.types.forall(Set("Packdisk").contains)
+  meta.types.forall(typeBlacklist.contains)
 }.par.map { case (id, meta) =>
   meta.downloads
   .filter(_.group == "Direct Files")
@@ -1149,6 +1165,13 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     if (url.contains("://ftp.amigascne.org/pub/amiga/")) {
       val path = url.replaceAll("http[s]?://ftp.amigascne.org/pub/amiga//?","").replace("//","/")
       val md5s = sources.findArchive(path, sources.amigascne_by_path).map(_._1).sorted.distinct
+      if (noAuthorInfoIds.contains(id)) {
+        println(s"KESTRA EXTRA NO AUTHOR: ${md5s.distinct.map(_.take(12))} - ${id} - ${meta}")
+        noAuthorInfoMd5s ++= md5s.distinct.map(_.take(12))
+        if (meta.title.trim.nonEmpty && meta.authors.nonEmpty && meta.released.nonEmpty) {
+          noAuthorInfoAlbums += ((meta.title.trim, meta.authors.map(_.name.trim).toBuffer.sorted.distinct, meta.released.get.take(4).toInt))
+        }
+      }
       md5s.distinct.map((_, (meta, md5s.distinct)))
     } else Buffer.empty
   )
@@ -1174,12 +1197,23 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     val minMusicFeatureDate = if (musicFeatures.isEmpty) "9999-99-99" else musicFeatures.map(f => _date(f.released)).min
     if ((musicFeatures.isEmpty && allAuthors.size <= 2) || ((countAfter >= countBefore || minMusicFeatureDate.take(4).toInt >= _date(meta.released).take(4).toInt - 2) && (allAuthors.size <= 5 || countBefore == 0) && allAuthors.size <= musicFeatures.size + 2)) {
       album = meta.title.trim
+      publishers = meta.authors.map(_.name.trim).toBuffer.sorted.distinct
       year = meta.released.flatMap(r => r.take(4).toIntOption).getOrElse(0)
       _type = meta.types.filterNot(typeBlacklist.contains).headOption.getOrElse("").trim
     } else {
       //println(s"KESTRA EXTRA: skipping album/publisher/year/type/platform for md5 ${md5} meta ${meta} with music features ${musicFeatures}, allAuthors ${allAuthors.size}, countBefore ${countBefore}, countAfter ${countAfter}, minMusicFeatureDate ${minMusicFeatureDate}")
     }
-    if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || year > 0) {
+    if (meta.types.forall(Set("Packdisk","Utilitydisk").contains)) {
+      // only use as year constraint
+      if (year > 0) {
+        _yearConstraints += ((md5.take(12), year + 1))
+      }
+      None
+    } else if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || year > 0) {
+      // XXX Jurassic Pack 18
+      if (meta.types.contains("Diskmagazine") && meta.authors.size >= 10) {
+        publishers = Buffer.empty
+      }
       //println(s"KESTRA EXTRA: matched Amiga Scene File for MD5 ${md5} meta: ${meta} prodMusicAuthors: ${prodMusicAuthors} musicFeatures: ${musicFeatures} musicFeatureAuthors: ${musicFeatureAuthors} allAuthors: ${allAuthors} authors: ${authors} publishers: ${publishers} album: ${album} year: ${year} type: ${_type}")
       Some((meta.id, MetaData(
         hash = md5.take(12),
@@ -1216,3 +1250,7 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
     Some(bestMeta)
   }
 }.seq.toBuffer.distinct
+
+val kestraExtrasYearConstraints = _yearConstraints.groupBy(_._1).mapValues(_.map(_._2)).par.map { case (md5, years) =>
+  (md5, years.min)
+}.seq.toMap

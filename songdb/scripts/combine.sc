@@ -94,6 +94,9 @@ val unnormalizedAuthors = realNames.par.flatMap(name => {
 
 val realNameVariants = realNames.par.flatMap(n => Seq(n, normalizeName(n)).distinct).flatMap(n => (Seq(n) ++ generateNameVariants(n))).toSet
 
+val noAuthorInfoMd5s = kestra.noAuthorInfoMd5s
+val noAuthorInfoAlbums = kestra.noAuthorInfoAlbums
+
 def isRealName(a: String): Boolean = {
   realNameVariants.contains(a) || unnormalizedAuthors.contains(a)
 }
@@ -224,7 +227,12 @@ val sourceCounts = sources.tsvs.par.flatMap { case (source, metas) =>
 val md5Constraints = sources.tsvs.par.flatMap { case (source, metas) =>
   val sourceConstraints = sources.sourceConstraints.get(source).getOrElse(Seq.empty)
   metas.map { case (md5, entries) => (md5.take(12), (entries.map(_.path), sourceConstraints, source)) }
-}.groupBy(_._1).map { case (md5, values) =>
+}
+// XXX
+// amigascne:Packdisks/Various1988/Prophets-SpaceWriter1.dms/MODULES/mod.axelf (?/1988) vs
+// wantedteam:rips/ST_BeverlyHillsCop.lzx/MOD.datafetch3 (Ron Klaren/1990)
+.filterNot(e => Set("8ed31adcae9d").contains(e._1))
+.groupBy(_._1).map { case (md5, values) =>
   val candidates = values.flatMap { case (_, (paths, constraints, source)) =>
     paths.flatMap { path =>
       constraints.find(c =>
@@ -239,11 +247,15 @@ val md5Constraints = sources.tsvs.par.flatMap { case (source, metas) =>
     }
   }
   val (maxYear0, source0) = sources.sourceYearConstraints.getOrElse(md5, (Int.MaxValue, sources.Source.NONE))
-  val maxYear = if (candidates.nonEmpty) ((candidates.map(e => if (e._1 > 0) e._1 else Int.MaxValue)) ++ Seq(maxYear0)).min else maxYear0
+  val kestraExtrasYear = kestraExtrasYearConstraints.getOrElse(md5, Int.MaxValue)
+  val demozooExtrasYear = demozooExtrasYearConstraints.getOrElse(md5, Int.MaxValue)
+  val maxYear = if (candidates.nonEmpty) ((candidates.map(e => if (e._1 > 0) e._1 else Int.MaxValue)) ++ Seq(maxYear0, kestraExtrasYear, demozooExtrasYear)).min else Seq(maxYear0, kestraExtrasYear, demozooExtrasYear).min
   val typeCounts = candidates.filter(_._2.nonEmpty).groupBy(_._2).mapValues(_.size)
   val platformCounts = candidates.filter(_._3.nonEmpty).groupBy(_._3).mapValues(_.size)
   var sources_ = candidates.filter(e => e._1 == maxYear).map(_._4).toSet ++ candidates.filter(e => e._2.nonEmpty && e._2 == typeCounts.maxBy(_._2)._1).map(_._4).toSet ++ candidates.filter(e => e._3.nonEmpty && e._3 == platformCounts.maxBy(_._2)._1).map(_._4).toSet
   if (maxYear0 == maxYear) sources_ = sources_ ++ Set(source0)
+  if (kestraExtrasYear == maxYear) sources_ = sources_ ++ Set(sources.Source.Kestra)
+  if (demozooExtrasYear == maxYear) sources_ = sources_ ++ Set(sources.Source.Demozoo)
   (md5, ((if (maxYear == 0) Int.MaxValue else maxYear, if (typeCounts.size == 1 && typeCounts.values.head > 1) typeCounts.keys.head else "", if (platformCounts.size == 1 && platformCounts.values.head > 1) platformCounts.keys.head else "", sources_)))
 }
 .filter { case (_, (maxYear, _type, platform, _)) => maxYear > 0 || _type.nonEmpty || platform.nonEmpty }
@@ -863,9 +875,13 @@ def combineMetadata(
     (a, p, y, t, pl)
   }
 
-  extraMetas = extraMetas
+  val _extraMetas = extraMetas
     .par
     .flatMap(expandArticleVariants)
+    .seq
+
+  extraMetas = _extraMetas
+    .par
     .flatMap(m => expandAuthorVariants(m, knownAuthors))
     .seq
 
@@ -2008,7 +2024,7 @@ def combineMetadata(
       .filterNot(_.album.isEmpty)
       .seq
 
-    val metasWithAlbum = allmetas
+    val metasWithAlbum = (finalMetas ++ _extraMetas)
       .par
       .filterNot(_.album.isEmpty)
       .groupBy(m => normalizeAlbum(m))
@@ -2055,10 +2071,11 @@ def combineMetadata(
     finalMetas = finalMetas.par.map(m =>
       var meta = m
       boundary {
-        if (meta.album.isEmpty || (meta.publishers.nonEmpty && meta.year > 0)) {
+        val key = normalizeAlbum(meta)
+        if (meta.album.isEmpty || (meta.publishers.nonEmpty && meta.year > 0) ||
+            Set("games").contains(key)) { // XXX
           break()
         }
-        val key = normalizeAlbum(meta)
         var availableMetas = metasWithAlbum(key)
           .filterNot(_.hash == meta.hash)
           .filter(m => meta._platform.isEmpty || m._platform.isEmpty || m._platform.toLowerCase == meta._platform.toLowerCase)
@@ -2082,8 +2099,8 @@ def combineMetadata(
           metas = metas.filter(m => filterByConstraints(m.copy(authors = Buffer.empty, hash = meta.hash)).isDefined)
         }
 
-        if (meta.year != 0 && metas.filter(m => m.year != 0 && m.year == meta.year).size >= 1) {
-          metas = metas.filter(m => m.year != 0 && m.year == meta.year)
+        if (meta.year != 0 && metas.filter(m => m.year != 0 && (m.year == meta.year || (Math.abs(m.year - meta.year) <= 1 && meta.publishers.nonEmpty))).size >= 1) {
+          metas = metas.filter(m => m.year != 0 && (m.year == meta.year || (Math.abs(m.year - meta.year) <= 1 && meta.publishers.nonEmpty)))
         } else if (meta.year == 0 && metas.filter(_.year != 0).size >= 1) {
           metas = metas.filter(_.year != 0)
         }
@@ -2228,10 +2245,12 @@ def combineMetadata(
       var meta = m
       // fill missing authors based on unique authors + album + publishers + year combination
       boundary {
-        if (meta.album.isEmpty || meta.authors.nonEmpty || meta.publishers.isEmpty || meta.year == 0) {
+        val key = normalizeAlbum(meta)
+        if (meta.album.isEmpty || meta.authors.nonEmpty || meta.publishers.isEmpty || meta.year == 0 ||
+            noAuthorInfoMd5s.contains(m.hash) || noAuthorInfoAlbums.contains((meta.album, meta.publishers, meta.year)) ||
+            Set("games").contains(key)) { // XXX
           break()
         }
-        val key = normalizeAlbum(meta)
         var availableMetas = metasWithAlbum(key)
           .filterNot(_.hash == meta.hash)
           .filter(m => m.authors.nonEmpty && (meta._platform.isEmpty || m._platform.isEmpty || m._platform.toLowerCase == meta._platform.toLowerCase))
@@ -2245,7 +2264,7 @@ def combineMetadata(
         var metas = availableMetas
           .filter(m => (m._type.toLowerCase.startsWith("game") && meta._type.toLowerCase.startsWith("game")) || (!m._type.toLowerCase.startsWith("game") && !meta._type.toLowerCase.startsWith("game")))
           .filter(m => m.publishers.map(normalizePublisher).exists(normPublishers.contains) || normPublishers.exists(p => m.publishers.map(normalizePublisher).contains(p)))
-          .filter(m => m.year == meta.year)
+          .filter(m => Math.abs(m.year - meta.year) <= 1)
 
         if (metas.isEmpty) {
           break()
@@ -2274,8 +2293,7 @@ def combineMetadata(
 
         lazy val normAlbum = normalizeAlbum(meta)
         val metas_ = metas.filter(_.hash.nonEmpty)
-        if (metas_.size > 1 && (normAlbum.contains("megademo") || meta._type.toLowerCase == "musicdisk" || metas_.exists(_._type.toLowerCase == "musicdisk") || meta._type.toLowerCase.contains("pack") || meta._type.toLowerCase.contains("tool") ||
-        !metas_.forall(m => areAuthorsCompatible(m.authors, metas_.head.authors, knownAuthors)))) {
+        if (metas_.size > 1 && !metas.forall(m => areAuthorsCompatible(m.authors, metas_.head.authors, knownAuthors))) {
           val audioHashes = metas_.flatMap(m => audio.audioHashesByMd5.getOrElse(m.hash, Buffer.empty)).toSet
           if (audioHashes.size > 1) {
             break()
@@ -2289,6 +2307,7 @@ def combineMetadata(
             authenticCMPs = withrealnames
           }
         }
+        authenticCMPs = authenticCMPs.sortBy(-_.authors.size)
         val authenticCMPsWithAlbum = authenticCMPs.filter(m => authenticAuthorMetas(m.authors.map(normalizeAuthor).sorted.distinct).filter(a => normalizeAlbum(a) == normAlbum).nonEmpty)
         val authenticCMPsWithPublisher = authenticCMPs.filter(m => authenticAuthorMetas(m.authors.map(normalizeAuthor).sorted.distinct).filter(a => a.publishers.map(normalizePublisher).exists(meta.publishers.map(normalizePublisher).contains)).nonEmpty)
 
