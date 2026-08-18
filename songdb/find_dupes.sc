@@ -33,7 +33,7 @@ def _md5(b: Array[Byte]) = {
 }
 
 val MINSCORE = 0.67
-val MAXRESULTS = 20
+val MAXRESULTS = 30
 
 if (args.length < 1) {
   Console.err.println("Usage:")
@@ -92,6 +92,7 @@ var results = (0 to 15).par.flatMap { i =>
   System.err.print(s".${n.incrementAndGet()}.")
   results
 }.seq
+val moreResults = results.size > maxresults
 results = results.sortBy(_.score).reverse.distinct.take(maxresults)
 val resultMd5s = results.map(_.md5).toSet
 
@@ -170,5 +171,8 @@ if (results.isEmpty) {
   println(formatRow(cmp))
   println("-" * formatRow(columns.map(_.header)).length)
   rows.foreach(row => println(formatRow(row)))
+  if (moreResults) {
+    println("...")
+  }
   println()
 }
