@@ -39,11 +39,43 @@ final case class AudioFingerprint (
   }
 }
 
+val audioTsvSizes = Map(
+  "sources/audio/audio_0.tsv" -> 162244219L,
+  "sources/audio/audio_1.tsv" -> 164567239L,
+  "sources/audio/audio_2.tsv" -> 163394653L,
+  "sources/audio/audio_3.tsv" -> 163523252L,
+  "sources/audio/audio_4.tsv" -> 163229718L,
+  "sources/audio/audio_5.tsv" -> 162149062L,
+  "sources/audio/audio_6.tsv" -> 162768888L,
+  "sources/audio/audio_7.tsv" -> 164877542L,
+  "sources/audio/audio_8.tsv" -> 162623874L,
+  "sources/audio/audio_9.tsv" -> 163775618L,
+  "sources/audio/audio_a.tsv" -> 160023725L,
+  "sources/audio/audio_b.tsv" -> 164023188L,
+  "sources/audio/audio_c.tsv" -> 164255398L,
+  "sources/audio/audio_d.tsv" -> 162465611L,
+  "sources/audio/audio_e.tsv" -> 162917749L,
+  "sources/audio/audio_f.tsv" -> 164257309L
+)
+
 def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.empty, lengths: Set[Int] = Set.empty) = {
   var prevMd5 = ""
   var prevPlayer = ""
   var fixsubsong = false
-  Using(scala.io.Source.fromFile(tsv)(using scala.io.Codec.ISO8859))(_.getLines().toBuffer.flatMap(line => {
+  
+  val f = Paths.get(tsv).toFile
+  val key = tsv.split("/").takeRight(3).mkString("/")
+  if (f.length() != audioTsvSizes(key)) {
+    System.err.println()
+    System.err.println()
+    System.err.println(s"ERROR: audio TSV file ${tsv} has unexpected size ${f.length()} (expected ${audioTsvSizes(key)})")
+    System.err.println()
+    System.err.println(s"Make sure the audio TSV files are decompressed correctly from the zstd archives in 'sources/audio' (e.g. zstd -d sources/audio/audio_*.zst)")
+    System.err.println(s"And that you are using the latest version of the files. The source code and the audio TSV files must be in sync.")
+    System.err.println(s"See README.md for instructions.")
+    System.exit(1)
+  }
+  Using(scala.io.Source.fromFile(f))( _.getLines().toBuffer.flatMap(line => {
     val l = line.split("\t")
     val md5 = l(0).take(12)
     val player = l(1)
