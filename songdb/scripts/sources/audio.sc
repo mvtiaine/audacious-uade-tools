@@ -27,7 +27,9 @@ final case class AudioFingerprint (
   lazy val effectiveAudioBytes: Int = {
     if (audioChromaprint.isEmpty) audioBytes
     else {
-      val fp = decodeChromaprint(audioChromaprint)
+      // only available when the fingerprint was cached (withSimHash=true, songdb.sc path)
+      val fp = fpByHash(audioChromaprint)
+      if (fp == null) throw new IllegalStateException("effectiveAudioBytes requires a cached fingerprint (withSimHash=true)")
       if (fp.length == 0) audioBytes
       else {
         val (s, e) = fp.contentBounds
@@ -60,17 +62,21 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
       normalizedSubsong += 1
     }
     if (audioBytes > 0 && (md5s.isEmpty || md5s.contains(md5)) && (lengths.isEmpty || lengths.exists(len => Math.abs(audioBytes.toDouble / persecondbytes - len.toDouble / persecondbytes) <= 3.0))) {
-      val audioMd5 = if (l.length >= 5) l(4) else ""
+      val audioMd5 = if (l.length >= 5) l(4).take(12) else ""
       val audioChromaprint = if (l.length >= 6) l(5) else ""
+      // withSimHash (songdb.sc): decode + cache the fingerprint under its xxhash64 key, keeping only the compact key
+      // (the full base64 chromaprint string is not retained in memory after this point)
+      // without withSimHash (find_dupes.sc/audio_match.sc): keep the base64 string, no caching needed
+      val audioChromaprintHash = if (withSimHash && audioChromaprint.nonEmpty) cacheChromaprint(audioChromaprint) else audioChromaprint
       // require at least 9s of audio for simhash comparison to minimize false positives
       val (audioSimHash, simTags) = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > persecondbytes * 9) {
-        val fp = decodeChromaprint(audioChromaprint) : @unchecked
+        val fp = fpByHash(audioChromaprintHash) : @unchecked
         val numHashes = Math.max(1, audioBytes / (persecondbytes * 3)) // one hash per 3s of audio
         val h = SimHash(fp.data, numHashes)
         val hex = h.toString(16)
         (hex, Seq((h.bitLength+1)/4, (h.bitLength-1)/4).distinct)
       } else ("",Seq.empty[Int])
-      val audioHash = Seq(audioSimHash, audioChromaprint, audioMd5).filter(_.nonEmpty).head
+      val audioHash = Seq(audioSimHash, audioChromaprintHash, audioMd5).filter(_.nonEmpty).head
       val audioTags =
         if (withSimHash) {
           // add tags based on simhash (if available) or audio hash
@@ -85,7 +91,7 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
         normalizedSubsong,
         audioBytes,
         audioMd5,
-        audioChromaprint,
+        audioChromaprintHash,
         audioHash,
         audioTag,
       ))

@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx8G
+#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J --enable-native-access=ALL-UNNAMED -J -Xmx8G
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -76,7 +76,7 @@ val fingerprint = if (input == "-") {
 val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
 val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
 
-val fp = decodeChromaprint(fingerprint)
+val fp = decodeChromaprintUncached(fingerprint)
 val algo = fp.algo
 
 if (isSilentFingerprint(fp.data)) {
@@ -94,12 +94,12 @@ final case class Result(md5: String, subsong: Int, score: Double)
 var results = (0 to 15).par.flatMap { i =>
   val audioFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false)
   val results = audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
-    val Right(a,d) = FingerprintDecompressor(af.audioChromaprint) : @unchecked
-    assert(a == algo)
-    if (isSilentFingerprint(d)) {
+    val fp2 = decodeChromaprintUncached(af.audioChromaprint)
+    assert(fp2.algo == algo)
+    if (fp2.isSilent) {
       None
     } else {
-      val score = chromaSimilarity(a, d, algo, fp.data, 0.7)
+      val score = chromaSimilarity(fp2.algo, fp2.data, algo, fp.data, 0.7)
       if (score >= minscore) {
         Some(Result(af.md5, af.subsong, score))
       } else None

@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx64G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields
+#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx64G -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -XX:TrustFinalNonStaticFields -J --enable-native-access=ALL-UNNAMED 
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>

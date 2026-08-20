@@ -1,4 +1,4 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -Xmx8G
+#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J --enable-native-access=ALL-UNNAMED  -J -Xmx8G
 
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Copyright (C) 2026 Matti Tiainen <mvtiaine@cc.hut.fi>
@@ -74,6 +74,7 @@ System.err.print("Processing (x/16) ")
 
 val n = AtomicInteger(0)
 final case class Result(md5: String, subsong: Int, score: Double)
+val inputFPs = fingerprints.filter(_.audioChromaprint.nonEmpty).map(f => (f, decodeChromaprintUncached(f.audioChromaprint))).toBuffer
 var results = (0 to 15).par.flatMap { i =>
   val cmpFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false, lengths = fingerprints.map(_.audioBytes).toSet)
     .filterNot(_.md5 == md5)
@@ -81,12 +82,13 @@ var results = (0 to 15).par.flatMap { i =>
     if (fingerprints.exists(f => f.audioHash == af.audioHash)) {
       Some(Result(af.md5, af.subsong, 1.0))
     } else if (af.audioChromaprint.nonEmpty) {
-      fingerprints.filter(_.audioChromaprint.nonEmpty).flatMap(f => {
-        val score = chromaSimilarity(f.audioChromaprint, af.audioChromaprint)
+      val afp = decodeChromaprintUncached(af.audioChromaprint)
+      inputFPs.flatMap { case (f, fp) =>
+        val score = chromaSimilarityFPs(fp, afp)
         if (score >= minscore) {
           Some(Result(af.md5, af.subsong, score))
         } else None
-      })
+      }
     } else None
   })
   System.err.print(s".${n.incrementAndGet()}.")

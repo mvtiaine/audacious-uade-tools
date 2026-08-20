@@ -1153,6 +1153,8 @@ def combineMetadata(
             debug(s"pickYearAlbumWithPublishers: $hash -> ${m.get.year} + ${m.get.album}")
             year = m.get.year
             album = m.get.album
+            _type = m.get._type
+            _platform = m.get._platform
           }
         }
       }
