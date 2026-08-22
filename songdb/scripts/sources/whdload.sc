@@ -5,6 +5,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.collection.immutable.TreeMap
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
@@ -101,7 +102,7 @@ lazy val whdloadMetas = metas.par.map(m =>
   meta
 ).toSet
 
-val retroplay_by_path = sources.sourceDB(Source.RetroPlayWHDLoadPacks).groupBy(_.path.toLowerCase)
+val retroplay_by_path = sources.sourceDB(Source.RetroPlayWHDLoadPacks).groupBy(_.path.toLowerCase).to(TreeMap)
 
 val whdloadExtras = metas.par.map(meta =>
   val path = meta.retroPlayUrl

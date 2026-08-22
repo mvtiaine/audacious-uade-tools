@@ -1144,11 +1144,13 @@ def combineMetadata(
 
       def pickYearAlbumWithPublishers(m: Option[MetaData]) = {
         if (year == 0 && album.isEmpty && m.isDefined && m.get.year != 0 && m.get.album.nonEmpty) {
-          if (publishers.nonEmpty && yearAlbumPublishers.exists(e => e._1 == m.get.year &&
-              e._2 == normalizeAlbum(m.get) &&
-              e._3.exists(normPublishers.contains)) &&
+          if (publishers.nonEmpty &&
+              _type != "Compo" &&
               !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+              yearAlbumPublishers.exists(e => e._1 == m.get.year &&
+                e._2 == normalizeAlbum(m.get) &&
+                e._3.exists(normPublishers.contains)
+              )
           ) {
             debug(s"pickYearAlbumWithPublishers: $hash -> ${m.get.year} + ${m.get.album}")
             year = m.get.year
@@ -1173,8 +1175,8 @@ def combineMetadata(
 
       def pickAlbumPublishersWithYear(m: Option[MetaData]) = {
         if (album.isEmpty && publishers.isEmpty && m.isDefined && m.get.album.nonEmpty && m.get.publishers.nonEmpty) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
-          val mNormAlb = normalizeAlbum(m.get)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormAlb = normalizeAlbum(m.get)
           if (year != 0 && yearAlbumPublishers.exists(e => e._1 == year &&
               e._2 == mNormAlb &&
               e._3.exists(mNormPubs.contains))
@@ -1190,8 +1192,8 @@ def combineMetadata(
 
       def pickAlbumPublishersWithoutYear(m: Option[MetaData]) = {
         if (album.isEmpty && publishers.isEmpty && m.isDefined && m.get.album.nonEmpty && m.get.publishers.nonEmpty) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
-          val mNormAlb = normalizeAlbum(m.get)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormAlb = normalizeAlbum(m.get)
           if (year == 0 && albumPublishers.exists(e => e._1 == mNormAlb &&
               e._2.exists(mNormPubs.contains))
            ) {
@@ -1206,11 +1208,13 @@ def combineMetadata(
 
       def pickAlbumWithPublishersAndYear(m: Option[MetaData]) = {
         if (album.isEmpty && m.isDefined && m.get.album.nonEmpty) {
-          if (year != 0 && publishers.nonEmpty && yearAlbumPublishers.exists(e => e._1 == year &&
-              e._2 == normalizeAlbum(m.get) &&
-              e._3.exists(normPublishers.contains)) &&
+          if (year != 0 && publishers.nonEmpty &&
+              _type != "Compo" &&
               !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+              yearAlbumPublishers.exists(e => e._1 == year &&
+                e._2 == normalizeAlbum(m.get) &&
+                e._3.exists(normPublishers.contains)
+              )
           ) {
             debug(s"pickAlbumWithPublishersAndYear: $hash -> ${m.get.album}")
             album = m.get.album
@@ -1222,11 +1226,13 @@ def combineMetadata(
 
       def pickAlbumWithPublishers(m: Option[MetaData]) = {
         if (album.isEmpty && m.isDefined && m.get.album.nonEmpty) {
-          if (year == 0 && publishers.nonEmpty && albumPublishers.exists(e =>
-              e._1 == normalizeAlbum(m.get) &&
-              e._2.exists(normPublishers.contains)) &&
+          if (year == 0 && publishers.nonEmpty &&
+              _type != "Compo" &&
               !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+              albumPublishers.exists(e =>
+                e._1 == normalizeAlbum(m.get) &&
+                e._2.exists(normPublishers.contains)
+              )
           ) {
             debug(s"pickAlbumWithPublishers: $hash -> ${m.get.album}")
             album = m.get.album
@@ -1256,8 +1262,8 @@ def combineMetadata(
 
       def pickPublishersWithAlbumAndYear(m: Option[MetaData]): Unit = {
         if (publishers.isEmpty && m.isDefined && m.get.publishers.nonEmpty) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
-          val mNormAlbPub = normalizeAlbum(_type, album, m.get.publishers, year)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormAlbPub = normalizeAlbum(_type, album, m.get.publishers, year)
           if (year != 0 && album.nonEmpty && yearAlbumPublishers.exists(e => e._1 == year &&
               e._2 == mNormAlbPub &&
               e._3.exists(mNormPubs.contains))
@@ -1270,8 +1276,8 @@ def combineMetadata(
 
       def pickPublishersWithAlbum(m: Option[MetaData]): Unit = {
         if (publishers.isEmpty && m.isDefined && m.get.publishers.nonEmpty) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
-          val mNormAlbPub = normalizeAlbum(_type, album, m.get.publishers, year)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormAlbPub = normalizeAlbum(_type, album, m.get.publishers, year)
           if (year == 0 && album.nonEmpty && albumPublishers.exists(e =>
               e._1 == mNormAlbPub &&
               e._2.exists(mNormPubs.contains))
@@ -1284,11 +1290,13 @@ def combineMetadata(
 
       def pickYearWithAlbumAndPublishers(m: Option[MetaData]) = {
         if (year == 0 && m.isDefined && m.get.year != 0) {
-          if (album.nonEmpty && publishers.nonEmpty && yearAlbumPublishers.exists(e => e._1 == m.get.year &&
-              e._2 == normalizeAlbum(_type, album, publishers, m.get.year) &&
-              e._3.exists(normPublishers.contains)) &&
+          if (album.nonEmpty && publishers.nonEmpty &&
+              _type != "Compo" &&
               !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+              yearAlbumPublishers.exists(e => e._1 == m.get.year &&
+                e._2 == normalizeAlbum(_type, album, publishers, m.get.year) &&
+                e._3.exists(normPublishers.contains)
+              )
           ) {
             debug(s"pickYearWithAlbumAndPublishers: $hash -> ${m.get.year}")
             year = m.get.year
@@ -1317,22 +1325,22 @@ def combineMetadata(
       def pickAlbumWithAuthorsYearPublishers(m: Option[MetaData]) = {
         if (album.isEmpty && m.isDefined && m.get.album.nonEmpty) {
           if (authors.nonEmpty && year != 0 && publishers.nonEmpty &&
+              _type != "Compo" &&
+              !publishers.head.endsWith(" Party") &&
               authorsYearPublishers.exists(e =>
-                e._1.exists(normAuthors.contains) &&
                 e._2 == year &&
+                e._1.exists(normAuthors.contains) &&
                 e._3.exists(normPublishers.contains)
               ) &&
               authorsAlbumPublishers.exists(e =>
-                e._1.exists(normAuthors.contains) &&
                 e._2 == normalizeAlbum(m.get) &&
-                e._3.exists(publishers.map(normalizePublisher).contains)
+                e._1.exists(normAuthors.contains) &&
+                e._3.exists(normPublishers.contains)
               ) &&
               authorsAlbumYear.exists(e =>
-                e._1.exists(normAuthors.contains) &&
+                e._3 == year &&
                 e._2 == normalizeAlbum(m.get) &&
-                e._3 == year) &&
-              !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+                e._1.exists(normAuthors.contains))
           ) {
             debug(s"pickAlbumWithAuthorsYearPublishers: $hash -> ${m.get.album}")
             album = m.get.album
@@ -1343,11 +1351,11 @@ def combineMetadata(
       }
 
       def pickAlbumWithAuthorsYear(m: Option[MetaData]) = {
-        if (album.isEmpty && publishers.isEmpty && m.isDefined && m.get.album.nonEmpty && m.get.  publishers.isEmpty) {
+        if (album.isEmpty && publishers.isEmpty && m.isDefined && m.get.album.nonEmpty && m.get.publishers.isEmpty) {
           if (authors.nonEmpty && year == m.get.year && authorsAlbumYear.exists(e =>
-              e._1.exists(normAuthors.contains) &&
+              e._3 == year &&
               e._2 == normalizeAlbum(m.get) &&
-              e._3 == year)
+              e._1.exists(normAuthors.contains))
           ) {
             debug(s"pickAlbumWithAuthorsYear: $hash -> ${m.get.album}")
             album = m.get.album
@@ -1359,12 +1367,14 @@ def combineMetadata(
 
       def pickAlbumWithAuthorsPublishers(m: Option[MetaData]) = {
         if (album.isEmpty && m.isDefined && m.get.album.nonEmpty && m.get.year == year) {
-          if (authors.nonEmpty && publishers.nonEmpty && authorsAlbumPublishers.exists(e =>
-              e._1.exists(normAuthors.contains) &&
-              e._2 == normalizeAlbum(m.get) &&
-              e._3.exists(publishers.map(normalizePublisher).contains)) &&
+          if (authors.nonEmpty && publishers.nonEmpty &&
+              _type != "Compo" &&
               !publishers.head.endsWith(" Party") &&
-              _type != "Compo"
+              authorsAlbumPublishers.exists(e =>
+                e._2 == normalizeAlbum(m.get) &&
+                e._1.exists(normAuthors.contains) &&
+                e._3.exists(normPublishers.contains)
+              )
           ) {
             debug(s"pickAlbumWithAuthorsPublishers: $hash -> ${m.get.album}")
             album = m.get.album
@@ -1376,11 +1386,11 @@ def combineMetadata(
 
       def pickYearPublishersWithoutAlbum(m: Option[MetaData]) = {
         if (year == 0 && publishers.isEmpty && album.isEmpty && m.isDefined && m.get.year != 0 && m.get.publishers.nonEmpty) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
           if (authors.nonEmpty && m.get.album.isEmpty &&
               authorsYearPublishers.exists(e =>
-                e._1.exists(normAuthors.contains) &&
                 e._2 == m.get.year &&
+                e._1.exists(normAuthors.contains) &&
                 e._3.exists(mNormPubs.contains)
               )
           ) {
@@ -1395,8 +1405,9 @@ def combineMetadata(
         if (year == 0 && album.isEmpty && m.isDefined && m.get.year != 0) {
           if (authors.nonEmpty && m.get.album.isEmpty &&
               authorsYearNoAlbum.exists(e =>
-                e._1.exists(normAuthors.contains) &&
-                e._2 == m.get.year)
+                e._2 == m.get.year &&
+                e._1.exists(normAuthors.contains)
+              )
           ) {
             debug(s"pickYearWithoutAlbum: $hash -> ${m.get.year}")
             year = m.get.year
@@ -1406,7 +1417,7 @@ def combineMetadata(
 
       def pickPublishersWithoutAlbum(m: Option[MetaData]) = {
         if (publishers.isEmpty && album.isEmpty && m.isDefined && m.get.publishers.nonEmpty && m.get.year == year) {
-          val mNormPubs = m.get.publishers.map(normalizePublisher)
+          lazy val mNormPubs = m.get.publishers.map(normalizePublisher)
           if (authors.nonEmpty && m.get.album.isEmpty &&
               authorsPublishersNoAlbum.exists(e =>
                 e._1.exists(normAuthors.contains) &&
@@ -1803,12 +1814,12 @@ def combineMetadata(
             debug(s"Combining ${duplicateHashes.mkString(", ")} to ${best.hash} with score ${bestscore} (${duplicateMetas.map(e => s"${e}:${score(e)}").mkString(", ")}) duplicate metas: ${duplicateMetas.mkString(" | ")} best: ${best} bestscore: ${bestscore} bests: ${bests.mkString(" | ")} bestmetas: ${bestmetas.mkString(" | ")}")
 
             // build a subsong count map for all candidates using songlengths
-            val subsongCountMap: Map[String, Int] = cachedDups.map { h =>
+            lazy val subsongCountMap: Map[String, Int] = cachedDups.map { h =>
               val entries = songlengths.songlengthsByMd5(h)
               h -> entries.headOption.map(_.subsongs.size).getOrElse(-1)
             }.toMap
             // build an ordered candidate list: try the selected `best` first, then other candidates by score
-            val candidatesGrouped = duplicateMetas.distinct.sortBy(m => (-score(m), m.hash))
+            lazy val candidatesGrouped = duplicateMetas.distinct.sortBy(m => (-score(m), m.hash))
               .groupBy(c => (
                 subsongCountMap.getOrElse(c.hash, -1),
                 c.authors,
@@ -1818,7 +1829,7 @@ def combineMetadata(
                 c._type,
                 c._platform
               ))
-            val candidatesSorted = candidatesGrouped
+            lazy val candidatesSorted = candidatesGrouped
               .values
               .filter(v => v.forall(_filter))
               .map(_.head)
@@ -1842,7 +1853,7 @@ def combineMetadata(
               cand.hash -> authors
             }.toMap
 
-            for (hash <- duplicateHashes) {
+            duplicateHashes.par.foreach { hash =>
               val meta = metasByHash.get(hash)
               lazy val normAuthors = meta.map(_.authors.flatMap(a => getAuthorVariants(a, knownAuthors)).map(normalizeAuthor)).getOrElse(Seq.empty)
               // Try candidates in order until one passes the compatibility checks

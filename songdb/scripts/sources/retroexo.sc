@@ -5,6 +5,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.collection.immutable.TreeMap
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
@@ -212,7 +213,7 @@ lazy val exodosMetas = metas.par.map(m =>
   meta
 ).toSet
 
-val retroexo_by_path = sources.sourceDB(Source.RetroExo).groupBy(_.path.toLowerCase)
+val retroexo_by_path = sources.sourceDB(Source.RetroExo).groupBy(_.path.toLowerCase).to(TreeMap)
 
 // XXX quirks or random unrelated files included (cractro musics etc.)
 val fileBlacklist = Set(

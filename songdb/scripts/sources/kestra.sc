@@ -865,7 +865,8 @@ val metas = releases.filter { case (id, meta) =>
       }
 
       val filename = Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase
-      val by_filename = pathMap.keys.filter(_.matches(s".*/(?:${Pattern.quote(filename)}|[^/]*[^a-z0-9]${Pattern.quote(altFilename)})$$")).flatMap(pathMap)
+      val filenamePattern = Pattern.compile(s".*/(?:${Pattern.quote(filename)}|[^/]*[^a-z0-9]${Pattern.quote(altFilename)})$$")
+      val by_filename = pathMap.keys.filter(k => filenamePattern.matcher(k).matches()).flatMap(pathMap)
       var author_path = path.split("/").dropRight(1).lastOption.getOrElse("___...___")
       var by_author = pathMap.keys.filter(_.contains(s"/${author_path}/")).flatMap(pathMap)
       var by_filename_authors = by_filename.toSeq.intersect(by_author.toSeq).distinct

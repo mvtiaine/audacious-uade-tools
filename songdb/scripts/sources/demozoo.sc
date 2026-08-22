@@ -7,6 +7,7 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.Collections
 import java.util.HashSet
+import scala.collection.immutable.TreeMap
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.jdk.CollectionConverters._
@@ -82,23 +83,23 @@ private def normalizePlatform(platform: String): String = {
 }
 
 val aminet_by_path = sources.sourceDB(Source.Aminet).groupBy(_.path
-  .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx",""))
-val demozoo_music_leftovers_by_path = sources.sourceDB(Source.DemozooMusicLeftovers).groupBy(_.path.toLowerCase)
-val demozoo_prod_leftovers_by_path = sources.sourceDB(Source.DemozooProdLeftovers).groupBy(_.path.toLowerCase)
+  .split("/").take(3).mkString("/").toLowerCase.replace(".lha","").replace(".lzx","")).to(TreeMap)
+val demozoo_music_leftovers_by_path = sources.sourceDB(Source.DemozooMusicLeftovers).groupBy(_.path.toLowerCase).to(TreeMap)
+val demozoo_prod_leftovers_by_path = sources.sourceDB(Source.DemozooProdLeftovers).groupBy(_.path.toLowerCase).to(TreeMap)
 val modarchive_by_id = sources.sourceDB(Source.DemozooMusicLeftovers)
   .filter(_.path.startsWith("api.modarchive.org")).groupBy(_.path.split("/").take(2).last)
-val fujiology_by_path = sources.sourceDB(Source.Fujiology).groupBy(_.path.toLowerCase)
-val sceneorg_by_path = sources.sourceDB(Source.SceneOrg).groupBy(_.path.toLowerCase)
-val sceneorg_lostfound_by_path = sources.sourceDB(Source.SceneOrgLostFound).groupBy(_.path.toLowerCase)
-val demodulate_by_path = sources.sourceDB(Source.Demodulate).groupBy(_.path.toLowerCase)
-val artpacksacidorg_by_path = sources.sourceDB(Source.ArtPacksAcidOrg).groupBy(_.path.toLowerCase)
-val flerp_by_path = sources.sourceDB(Source.Flerp).groupBy(_.path.toLowerCase)
-val hornet_by_path = sources.sourceDB(Source.Hornet).groupBy(_.path.toLowerCase)
-val modsoulbrother_by_path = sources.sourceDB(Source.ModSoulBrother).groupBy(_.path.toLowerCase)
-val scenesporg_by_path = sources.sourceDB(Source.SceneSporg).groupBy(_.path.toLowerCase)
-val blastersoundbbs_by_path = sources.sourceDB(Source.BlasterSoundBBS).groupBy(_.path.toLowerCase)
-val modplanet_by_path = sources.sourceDB(Source.ModPlanet).groupBy(_.path.toLowerCase)
-val jpvscenereleases_by_path = sources.sourceDB(Source.jPVSceneReleases).groupBy(_.path.toLowerCase)
+val fujiology_by_path = sources.sourceDB(Source.Fujiology).groupBy(_.path.toLowerCase).to(TreeMap)
+val sceneorg_by_path = sources.sourceDB(Source.SceneOrg).groupBy(_.path.toLowerCase).to(TreeMap)
+val sceneorg_lostfound_by_path = sources.sourceDB(Source.SceneOrgLostFound).groupBy(_.path.toLowerCase).to(TreeMap)
+val demodulate_by_path = sources.sourceDB(Source.Demodulate).groupBy(_.path.toLowerCase).to(TreeMap)
+val artpacksacidorg_by_path = sources.sourceDB(Source.ArtPacksAcidOrg).groupBy(_.path.toLowerCase).to(TreeMap)
+val flerp_by_path = sources.sourceDB(Source.Flerp).groupBy(_.path.toLowerCase).to(TreeMap)
+val hornet_by_path = sources.sourceDB(Source.Hornet).groupBy(_.path.toLowerCase).to(TreeMap)
+val modsoulbrother_by_path = sources.sourceDB(Source.ModSoulBrother).groupBy(_.path.toLowerCase).to(TreeMap)
+val scenesporg_by_path = sources.sourceDB(Source.SceneSporg).groupBy(_.path.toLowerCase).to(TreeMap)
+val blastersoundbbs_by_path = sources.sourceDB(Source.BlasterSoundBBS).groupBy(_.path.toLowerCase).to(TreeMap)
+val modplanet_by_path = sources.sourceDB(Source.ModPlanet).groupBy(_.path.toLowerCase).to(TreeMap)
+val jpvscenereleases_by_path = sources.sourceDB(Source.jPVSceneReleases).groupBy(_.path.toLowerCase).to(TreeMap)
 
 def trim(s: String) = {
   val trimmed = s.trim
@@ -179,10 +180,10 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     matches
   }
 
-  def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) =
+  def findArchive(archivePath: String, paths: TreeMap[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) =
     sources.findArchive(archivePath, paths)
 
-  def findLeftovers(path: String, paths: Map[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
+  def findLeftovers(path: String, paths: TreeMap[String, Seq[SourceDBEntry]] = demozoo_music_leftovers_by_path) = {
     if (paths.contains(path)) {
       val md5 = paths(path).head.md5
       Buffer((md5, meta))

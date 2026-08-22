@@ -3,6 +3,7 @@
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
+import scala.collection.immutable.TreeMap
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.util.Using
@@ -1824,24 +1825,15 @@ lazy val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2
     Some(MetaData(hash = md5.take(12), authors = Buffer.empty, publishers = Buffer.empty, album = "", year = year))
 }).seq.toBuffer.distinct
 
-lazy val amp_by_path = sourceDB(Source.AMP).groupBy(_.path.toLowerCase)
-lazy val modland_by_path = sourceDB(Source.Modland).groupBy(_.path.toLowerCase)
-lazy val unexotica_by_path = sourceDB(Source.UnExotica).groupBy(_.path.split("/").take(3).mkString("/").toLowerCase)
-lazy val wantedteam_by_path = sourceDB(Source.WantedTeam).groupBy(_.path.split("/").take(2).mkString("/").toLowerCase)
-lazy val amigascne_by_path = sourceDB(Source.AmigaScne).groupBy(_.path.toLowerCase)
+lazy val amp_by_path = sourceDB(Source.AMP).groupBy(_.path.toLowerCase).to(TreeMap)
+lazy val modland_by_path = sourceDB(Source.Modland).groupBy(_.path.toLowerCase).to(TreeMap)
+lazy val unexotica_by_path = sourceDB(Source.UnExotica).groupBy(_.path.split("/").take(3).mkString("/").toLowerCase).to(TreeMap)
+lazy val wantedteam_by_path = sourceDB(Source.WantedTeam).groupBy(_.path.split("/").take(2).mkString("/").toLowerCase).to(TreeMap)
+lazy val amigascne_by_path = sourceDB(Source.AmigaScne).groupBy(_.path.toLowerCase).to(TreeMap)
 
-def findArchive(archivePath: String, paths: Map[String, Seq[SourceDBEntry]]) = {
-  var entries = Buffer.empty[SourceDBEntry]
-  val iter = paths.iterator
-  while (iter.hasNext) {
-    val (k, v) = iter.next()
-    if (k.startsWith(archivePath+"/")) {
-      entries ++= v
-    }
-  }
-  if (entries.isEmpty) {
-    Buffer.empty[(String, String)]
-  } else {
-    entries.map(e => (e.md5, e.path)).distinct
-  }
+// paths are expected to be lowercase
+def findArchive(archivePath: String, paths: TreeMap[String, Seq[SourceDBEntry]]) = {
+  val prefix = archivePath + "/"
+  val entries = paths.range(prefix, prefix + "\uFFFF").values.flatten
+  entries.map(e => (e.md5, e.path)).toBuffer.distinct
 }

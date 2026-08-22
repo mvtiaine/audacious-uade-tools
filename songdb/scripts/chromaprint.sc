@@ -3,7 +3,10 @@
 // see below for further copyrights
 
 //> using dep org.lz4:lz4-java:1.8.0
+//> using dep com.trivago:fastutil-concurrent-wrapper:0.2.3
 
+import com.trivago.fastutilconcurrentwrapper.ConcurrentLongFloatMapBuilder
+import com.trivago.fastutilconcurrentwrapper.LongFloatMap
 import java.util.concurrent.ConcurrentHashMap
 import java.util.Base64
 import net.jpountz.xxhash.XXHashFactory
@@ -64,21 +67,28 @@ final class FP (val algo: Int, val data: Array[Int]) {
     case _ => false
   }
 }
-val fpCache = new ConcurrentHashMap[String, FP]()
+val fpCache = new ConcurrentHashMap[Long, FP](1_000_000)
 
 // xxhash64 of the base64 decoded chromaprint bytes, used as a compact cache key
 // so the full base64 chromaprint string does not need to be retained in memory
 val xxh64 = XXHashFactory.fastestInstance().hash64()
 val xxh64Seed = 0
 
-def chromaprintHash(chromaprint: String): String = {
+def chromaprintHash(chromaprint: String): Long = {
   val bytes = Base64.getUrlDecoder.decode(chromaprint)
-  java.lang.Long.toHexString(xxh64.hash(bytes, 0, bytes.length, xxh64Seed))
+  xxh64.hash(bytes, 0, bytes.length, xxh64Seed)
+}
+
+def initCaches(): Unit = {
+  if (similarityCache == null) {
+    fpCache.clear()
+    similarityCache = _similarityCache()
+  }
 }
 
 def clearCaches(): Unit = {
   fpCache.clear()
-  similarityCache.clear()
+  similarityCache = null
 }
 
 // decode + cache the chromaprint under its xxhash64 key, returning the compact key
@@ -88,11 +98,12 @@ def cacheChromaprint(chromaprint: String): String = {
     val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
     new FP(algo, data)
   })
-  hash
+  hash.toHexString
 }
 
 // lookup a previously cached FP by its xxhash64 key (returns null if not cached)
-def fpByHash(hash: String): FP = fpCache.get(hash)
+def fpByHash(hash: String): FP = fpCache.get(java.lang.Long.parseUnsignedLong(hash, 16))
+def fpByHash(hash: Long): FP = fpCache.get(hash)
 
 /*
 def decodeChromaprint(chromaprint: String): FP = {
@@ -121,34 +132,34 @@ def chromaSimilarityFPs(fp1: FP, fp2: FP, matchSilence: Boolean = false): Double
   if (!matchSilence && (fp1.isSilent || fp2.isSilent)) 0.0 else sim
 }
 
-final class StringPair(val a: String, val b: String) {
-  override val hashCode: Int = a.hashCode * 31 + b.hashCode
-  override def equals(obj: Any): Boolean = obj match {
-    case other: StringPair => a == other.a && b == other.b
-    case _ => false
-  }
-}
-val similarityCache = new ConcurrentHashMap[StringPair, java.lang.Double]()
+def _similarityCache() = ConcurrentLongFloatMapBuilder.newBuilder
+  .withInitialCapacity(500_000)
+  .withBuckets(256)
+  .withDefaultValue(Float.MinValue)
+  .withMode(ConcurrentLongFloatMapBuilder.MapMode.BUSY_WAITING)
+  .build()
 
+var similarityCache: LongFloatMap = null
+
+// the chromaprint1/chromaprint2 parameters are xxhash64 hex strings (see chromaprintHash)
 def chromaSimilarity(chromaprint1: String, chromaprint2: String, matchSilence: Boolean = false): Double = {
-  if (chromaprint1 == chromaprint2) {
-    return 1.0
-  }
-  val isLess = chromaprint1 < chromaprint2
-  val cp1 = if (isLess) chromaprint1 else chromaprint2
-  val cp2 = if (isLess) chromaprint2 else chromaprint1
-  val key = new StringPair(cp1, cp2)
-  val cached = similarityCache.get(key)
-  val sim: Double = if (cached != null) cached.doubleValue else similarityCache.computeIfAbsent(key, _ => {
-    val fp1 = fpByHash(cp1)
-    val fp2 = fpByHash(cp2)
+  val h1 = java.lang.Long.parseUnsignedLong(chromaprint1, 16)
+  val h2 = java.lang.Long.parseUnsignedLong(chromaprint2, 16)
+  if (h1 == h2) return 1.0
+  val lo = if (h1 < h2) h1 else h2
+  val hi = if (h1 < h2) h2 else h1
+  val key = lo ^ hi
+  var sim = similarityCache.get(key)
+  lazy val fp1 = fpByHash(lo)
+  lazy val fp2 = fpByHash(hi)
+  if (sim == Float.MinValue) {
     assert(fp1.algo == fp2.algo)
     val (s1, e1) = fp1.contentBounds
     val (s2, e2) = fp2.contentBounds
-    chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data)
-  })
-
-  if (!matchSilence && (fpByHash(cp1).isSilent || fpByHash(cp2).isSilent)) {
+    sim = chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data).toFloat
+    similarityCache.put(key, sim)
+  }
+  if (!matchSilence && (fp1.isSilent || fp2.isSilent)) {
     0.0
   } else {
     sim

@@ -144,6 +144,7 @@ lazy val (
   duplicatesForTag,
   duplicateSubsongsByPlayerAndMd5
 ) = {
+  chromaprint.initCaches()
   val filteredAudioFingerprints =
     Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv")).par.flatMap(tsv =>
       parseAudioTsv(tsv.getAbsolutePath, withSimHash = true)
@@ -220,28 +221,32 @@ lazy val (
       val subsetsOf = scala.collection.mutable.Map[Int, scala.collection.mutable.Buffer[Int]]()
       val duplicatePairs = scala.collection.mutable.HashSet[(Int, Int)]()
 
+      val validByHash = Array.tabulate(numHashes) { idx =>
+        val valid = entriesArr(idx).filter(_._2.exists(_.effectiveAudioBytes > 0))
+        (valid, valid.map(_._1.toSet))
+      }
+
       var cmpIdx = 0
       while (cmpIdx < numHashes) {
         val cmpHash = hashesArr(cmpIdx)
-        val cmpSubsongs = entriesArr(cmpIdx)
-        val validCmp = cmpSubsongs.filter(_._2.exists(_.effectiveAudioBytes > 0))
+        val (validCmp, validCmpTagSets) = validByHash(cmpIdx)
         val cmpLen = validCmp.length
         
         var j = cmpIdx + 1
         while (j < numHashes) {
           if (find(cmpIdx) != find(j)) {
             val subHash = hashesArr(j)
-            val subsongs = entriesArr(j)
-            val validSub = subsongs.filter(_._2.exists(_.effectiveAudioBytes > 0))
+            val (validSub, validSubTagSets) = validByHash(j)
             val subLen = validSub.length
             
             var duplicate = true
           
             val smaller = if (cmpLen <= subLen) validCmp else validSub
             val larger = if (cmpLen <= subLen) validSub else validCmp
-            
-            val smallerAudioBytes = smaller.map(_._2.head.effectiveAudioBytes).toList
-            var largerAudioBytes = larger.map(_._2.head.effectiveAudioBytes).toList
+            val largerTagSets = if (cmpLen <= subLen) validSubTagSets else validCmpTagSets
+
+            val smallerAudioBytes = smaller.map(_._2.head.effectiveAudioBytes)
+            var largerAudioBytes = larger.map(_._2.head.effectiveAudioBytes)
             val isSubset = smallerAudioBytes.forall(b => {
               val idx = largerAudioBytes.indexOf(b)
               if (idx >= 0) { largerAudioBytes = largerAudioBytes.patch(idx, Nil, 1); true } else false
@@ -259,12 +264,12 @@ lazy val (
               val initialMatchCount = strictMatchCount
               
               while (k < larger.length && strictMatchCount == initialMatchCount) {
-                val (tags, fps) = larger(k)
-                val commonTags = cmpTags.intersect(tags)
-                  
-                if (commonTags.nonEmpty) {
-                  val cmpFp = cmpFps.find(f => f.audioTag == commonTags.head).get
-                  val fp = fps.find(f => f.audioTag == commonTags.head).get
+                val (_, fps) = larger(k)
+                val commonTag = cmpTags.find(largerTagSets(k).contains)
+
+                if (commonTag.isDefined) {
+                  val cmpFp = cmpFps.find(f => f.audioTag == commonTag.get).get
+                  val fp = fps.find(f => f.audioTag == commonTag.get).get
                   val (realCmpFp, realSubFp) = if (cmpLen <= subLen) (cmpFp, fp) else (fp, cmpFp)
                     
                   var isStrictMatch = true

@@ -21,7 +21,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 //val fujiology_xlsx = System.getProperty("user.home") + "/fujiology/fujiology_archive_2_9_7.xlsx"
 // XXX corrupted fujiology excel file?
 org.apache.poi.util.IOUtils.setByteArrayMaxOverride(1_000_000_000);
-val fujiology_xlsx = System.getProperty("user.home") + "/sources/metadata/fujiology/fujiology_archive_2_9_9.xlsx"
+val fujiology_xlsx = System.getProperty("user.home") + "/sources/metadata/fujiology/fujiology_archive_2_9_9_fixed.xlsx"
 lazy val fujiology_by_filename = sources.sourceDB(sources.Source.Fujiology).groupBy(_.path.split("/").last.toLowerCase)
 
 final case class FujiologyMeta (
