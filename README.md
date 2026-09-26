@@ -100,7 +100,7 @@ Format: `[hash]<TAB>[authors]<TAB>[publishers]<TAB>[album]<TAB>[year]`
 
 The TSV files use UTF-8 encoding.
 
-**Note:** I reserve the right to change the format or location in Github of any of the TSV or other files at any time.
+**Note:** I reserve the right to change the format or location in Github of any of the TSV or other files at any time. It's strongly recommended to link to a specific git revision in urls, git submodule references etc. to avoid surprises.
 
 
 ## Tools
