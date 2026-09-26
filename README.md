@@ -109,7 +109,7 @@ The TSV files use UTF-8 encoding.
 
 Identify Amiga exotic modules and tracker music from audio files or via microphone.
 
-The tool uses simple brute force approach for chroma similarity matching. On M4 Max it takes about 5-10 seconds, depending on input length. All CPU cores are utilized.
+The tool uses simple brute force approach for chroma similarity matching. On M4 Max it takes about 4-10 seconds, depending on input length. All CPU cores are utilized.
 
 Proper implementation should use something like https://github.com/acoustid/acoustid-index or https://github.com/acoustid/pg_acoustid
 
@@ -119,7 +119,7 @@ It's recommended to record at least 30s of audio, but the more the better. Accur
 
 Find dupes of the given music file (e.g. (non-)original, corrupted or modified versions) in various sources, based on audio fingerprints.
 It requires that the file MD5 exists in the database, if not you should use the audio matching tool instead.
-On M4 Max it takes 2-3 seconds to run. All CPU cores are utilized.
+On M4 Max it takes about 2 seconds to run. All CPU cores are utilized.
 
 ### Usage
 
@@ -171,13 +171,13 @@ See `songdb/audio_match.sc`, `songdb/record.sh` and `songdb/find_dupes.sc` sourc
 **Output:**
 
 ```
-Score | MD5          | Size  | Format                      | Sub | Filenames  | # | Authors    | Album                 | Publishers                 | Year
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-0,943 | fb778dace14a | 71206 | Protracker                  | 1   |            | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
-0,943 | cb41fba3043b | 71206 | Protracker                  | 1   | mod.dawn   | 2 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
-0,943 | 36a8a32a0314 | 71206 | Protracker                  | 1   |            | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
-0,943 | 0489859f3ad9 | 52680 | Digital Symphony            | 0   | DAWN       | 1 |            |                       |                            |     
-0,940 | bf2ce1133d7a | 71206 | Soundtracker II (31 instr.) | 1   | mod.music1 | 1 | Interphace | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+Score | MD5          | Size    | Format                      | Sub | Len   | Filenames                      | #  | Authors     | Album                 | Publishers                 | Year
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0,943 | fb778dace14a | 71206   | Protracker                  | 1   | 03:58 |                                | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | cb41fba3043b | 71206   | Protracker                  | 1   | 03:58 | mod.dawn                       | 2  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | 36a8a32a0314 | 71206   | Protracker                  | 1   | 03:58 |                                | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | 0489859f3ad9 | 52680   | Digital Symphony            | 0   | 03:57 | DAWN                           | 1  |             |                       |                            |     
+0,940 | bf2ce1133d7a | 71206   | Soundtracker II (31 instr.) | 1   | 03:58 | mod.music1                     | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
 ```
 
 List of top matched entries with match score, MD5, subsong and some metadata from songdb (# == number of sources where MD5 is found).
@@ -217,6 +217,12 @@ The Scala and SQL scripts are licensed under **GPL-2.0-or-later**.
 
 For any applicable sui generis rights or copyrights I may have over the database files, they are provided under **CC BY-NC-SA 4.0** license.
 
+### LLM usage
+
+Parts of the codebase have been edited with help of various LLMs. While the legal and ethical issues are unresolved, I consider those edits public domain since the training material was treated as such anyway.
+So any files that include SPDX-AI-Disclosure: ai-assisted or ai-generated tags are also available under CC-PDM-1.0 at your discretion. Any third party code, modified or unmodified, retain their original copyright and license.
+FWIW I have not paid a cent to any company for the LLM usage.
+
 ### Sources
 
 See [sources.md](sources.md) for sources used for the database.
@@ -226,10 +232,12 @@ See [sources.md](sources.md) for sources used for the database.
 
 This database is also used by:
 
+- **16bit player** - https://nexus0.net/pub/sw/16bitplayer/
 - **DEViLBOX** - https://devilbox.uprough.net/
 - **HippoPlayer** - https://github.com/koobo/HippoPlayer
 - **LMS Game Music / Tracker MOD/MIDI Player** - https://nexus0.net/pub/sw/lmsmodplay/
 - **Modizer** - https://github.com/yoyofr/modizer
+- **Protracktor** - https://github.com/przunk/protracktor
 - **rewamp** - https://rewamp.app/
 
 
