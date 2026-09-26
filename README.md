@@ -220,7 +220,7 @@ For any applicable sui generis rights or copyrights I may have over the database
 ### LLM usage
 
 Parts of the codebase have been edited with help of various LLMs. While the legal and ethical issues are unresolved, I consider those edits public domain since the training material was treated as such anyway.
-So any files that include SPDX-AI-Disclosure: ai-assisted or ai-generated tags are also available under CC-PDM-1.0 at your discretion. Any third party code, modified or unmodified, retain their original copyright and license.
+So any files that include `SPDX-AI-Disclosure: ai-assisted` or `ai-generated` tags are also available under **CC-PDM-1.0** at your discretion. Any third party code, modified or unmodified, retain their original copyright and license.
 FWIW I have not paid a cent to any company for the LLM usage.
 
 ### Sources
