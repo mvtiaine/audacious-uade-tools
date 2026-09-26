@@ -5,6 +5,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.annotation.nowarn
 import scala.collection.immutable.TreeMap
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
@@ -224,6 +225,7 @@ val fileBlacklist = Set(
   "Pinball Illusions (1995).zip",
   "Spaceward Ho! (1992).zip",
 )
+@nowarn("cat=deprecation")
 val exodosExtras = metas
 .par
 .filterNot(m => m.year > 0 && m.year <= 1991)

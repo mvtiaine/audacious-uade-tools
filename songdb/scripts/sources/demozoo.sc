@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
@@ -7,6 +8,8 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.Collections
 import java.util.HashSet
+import java.util.regex.Pattern
+import scala.annotation.nowarn
 import scala.collection.immutable.TreeMap
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
@@ -71,7 +74,8 @@ val typeBlacklist = Set(
   "Tool",
 )
 
-private def normalize(s: String) = s.toLowerCase.replaceAll("[^A-Za-z0-9]","").trim
+private val _normalizeAlnumPattern = Pattern.compile("[^A-Za-z0-9]")
+private def normalize(s: String) = _normalizeAlnumPattern.matcher(s.toLowerCase).replaceAll("").trim
 
 private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Amiga")) "Amiga"
@@ -103,23 +107,49 @@ val jpvscenereleases_by_path = sources.sourceDB(Source.jPVSceneReleases).groupBy
 
 def trim(s: String) = {
   val trimmed = s.trim
-    .replaceFirst("^\\{","").replaceAll("\\}$","")
-    .replaceAll("\\\\","")
+    .stripPrefix("{").stripSuffix("}")
+    .replace("\\","")
     .trim
   val res = if (trimmed.startsWith("\"") && trimmed.endsWith("\"")) {
-    trimmed.replaceFirst("^\"","").replaceAll("\"$","").trim
+    trimmed.stripPrefix("\"").stripSuffix("\"").trim
   } else {
     trimmed
   }
   if (res == "NULL") "" else res
 }
 def split(s: String) = s
-  .replaceFirst("\\{","")
-  .replaceAll("\\}$","")
+  .stripPrefix("{")
+  .stripSuffix("}")
   .replace("Revelation Crew, The", "The Revelation Crew") // XXX
   .split(",")
   .filterNot(s => s == "NULL" || s.isEmpty)
   .toBuffer
+
+private def stripModlandPrefix(url: String) = {
+  val rest = url.drop("/pub/modules/".length)
+  (if (rest.startsWith("/")) rest.drop(1) else rest).replace("//","/")
+}
+private def toSoundtrackerPath(path: String) = "soundtracker/" + path.drop("protracker/".length)
+private def monthToPlaceholder(date: String) =
+  if (date.endsWith("-01")) date.dropRight(3) + "-99" else date
+
+private val _ampModulesPattern = Pattern.compile("http[s]?://amp.dascene.net/modules//?")
+private val _aminetPackagePattern = Pattern.compile("http[s]?://.*aminet.net/package//?")
+private val _aminetPattern = Pattern.compile("http[s]?:/.*aminet.net//?")
+private val _aminetFtpPattern = Pattern.compile("ftp://.*aminet.net//?")
+private val _wtExoticaPattern = Pattern.compile("http[s]?://wt.exotica.org.uk/files//?")
+private val _unexoticaFilesPattern = Pattern.compile("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/unexotica//?")
+private val _unexoticaDownloadPattern = Pattern.compile("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/unexotica//?")
+private val _unexoticaAuthorsPattern = Pattern.compile("http[s]?://www.exotica.org.uk/tunes/archive/authors//?")
+private val _oldexoticaWwwPattern = Pattern.compile("http[s]?://www.exotica.org.uk/tunes/archive//?")
+private val _oldexoticaOldPattern = Pattern.compile("http[s]?://old.exotica.org.uk/tunes/archive//?")
+private val _jpvFilesPattern = Pattern.compile("http[s]?://files.exotica.org.uk/\\?file=jpvs_scene_releases//?")
+private val _jpvMalusPattern = Pattern.compile("http[s]?://malus.exotica.org.uk/pub/jpvs_scene_releases//?")
+private val _defactoDPattern = Pattern.compile("http[s]?://defacto2.net/d//?")
+private val _defactoDownloadPattern = Pattern.compile("http[s]?://defacto2.net/file/download//?")
+private val _defactoFilenamePattern = Pattern.compile("defacto2.net/d/.*\\?filename=")
+
+private def stripScheme(url: String) = url.stripPrefix("https://").stripPrefix("http://").stripPrefix("ftp://")
 def precision(s: String) = s match {
   case "y" => Precision.YEAR
   case "m" => Precision.MONTH
@@ -215,7 +245,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (linkClass == "ModlandFile" && url.startsWith("/pub/modules/")) {
-    val path = url.replaceFirst("/pub/modules//?", "").replace("//","/")
+    val path = stripModlandPrefix(url)
     if (sources.modland_by_path.contains(path)) {
       val md5 = sources.modland_by_path(path).head.md5
       Buffer((md5, meta))
@@ -228,7 +258,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
       } else Buffer.empty
     // XXX /pub/modules/Protracker/Karsten%20Obarski/sleepwalk.mod etc.
     } else if (path.endsWith(".mod") && path.startsWith("protracker/")) {
-      val altPath = path.replaceFirst("protracker/", "soundtracker/")
+      val altPath = toSoundtrackerPath(path)
       if (sources.modland_by_path.contains(altPath)) {
         val md5 = sources.modland_by_path(altPath).head.md5
         Buffer((md5, meta))
@@ -272,25 +302,25 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
     findLeftovers(path, fujiology_by_path)
   } else if (url.contains("://amp.dascene.net/downmod.php?index=") ||
              url.contains("://amp.dascene.net/analyzer2.php?idx=")) {
-    val id = url.replaceAll("&application=amp","").split("=").last.toInt
+    val id = url.replace("&application=amp","").split("=").last.toInt
     if (amp.amp_mods_by_id.contains(id)) {
       val md5 = amp.amp_mods_by_id(id).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (url.contains("://amp.dascene.net/modules/")) {
     // url should have been decoded already
-    val path = url
-      .replaceAll("http[s]?://amp.dascene.net/modules//?","")
+    val path = _ampModulesPattern.matcher(url).replaceAll("")
       .replace("//","/")
     if (sources.amp_by_path.contains(path)) {
       val md5 = sources.amp_by_path(path).head.md5
       Buffer((md5, meta))
     } else Buffer.empty
   } else if (url.contains("://aminet.net/") || url.contains(".aminet.net/")) {
-    val path = url
-      .replaceAll("http[s]?://.*aminet.net/package//?","")
-      .replaceAll("http[s]?:/.*aminet.net//?","")
-      .replaceAll("ftp://.*aminet.net//?","")
+    val path = _aminetFtpPattern.matcher(
+      _aminetPattern.matcher(
+        _aminetPackagePattern.matcher(url).replaceAll(""))
+      .replaceAll(""))
+      .replaceAll("")
       .replace("pub/aminet/", "")
       .replace("aminet/", "")
       .replace("//","/")
@@ -314,8 +344,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
       }
     } else Buffer.empty
   } else if (url.contains("://wt.exotica.org.uk/files/")) {
-    val path = url
-      .replaceAll("http[s]?://wt.exotica.org.uk/files//?","")
+    val path = _wtExoticaPattern.matcher(url).replaceAll("")
       .replace("//","/")
     if (sources.wantedteam_by_path.contains(path)) {
       val md5 = sources.wantedteam_by_path(path).head.md5
@@ -325,10 +354,11 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
              url.contains("://www.exotica.org.uk/download.php?file=media/audio/unexotica/") ||
              url.contains("://www.exotica.org.uk/tunes/archive/authors/")
   ) {
-    val path = url
-      .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/unexotica//?","")
-      .replaceAll("http[s]?://www.exotica.org.uk/download.php\\?file=media/audio/unexotica//?","")
-      .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/authors//?","")
+    val path = _unexoticaAuthorsPattern.matcher(
+      _unexoticaDownloadPattern.matcher(
+        _unexoticaFilesPattern.matcher(url).replaceAll(""))
+      .replaceAll(""))
+      .replaceAll("")
       .replace("//","/")
     if (sources.unexotica_by_path.contains(path)) {
       val entries = sources.unexotica_by_path(path)
@@ -350,9 +380,9 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   } else if (url.contains("://www.exotica.org.uk/tunes/archive/") ||
              url.contains("://old.exotica.org.uk/tunes/archive/")
     ) {
-      val archive = url
-        .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive//?","")
-        .replaceAll("http[s]?://old.exotica.org.uk/tunes/archive//?","")
+      val archive = _oldexoticaOldPattern.matcher(
+        _oldexoticaWwwPattern.matcher(url).replaceAll(""))
+        .replaceAll("")
         .replace("//","/")
       if (oldexotica.oldexotica_by_archive.contains(archive)) {
         val entries = oldexotica.oldexotica_by_archive(archive)
@@ -373,9 +403,7 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
       } else Buffer.empty
   // leftovers
   } else {
-    val path = url
-      .replaceAll("http[s]?://","")
-      .replaceAll("ftp://","")
+    val path = stripScheme(url)
       .replace("//","/")
     findLeftovers(path)
   }
@@ -505,7 +533,7 @@ val soundtracksByProdId = Using(scala.io.Source.fromFile("sources/metadata/demoz
   val prodIds = split(l(5)).flatMap(_.toIntOption)
 
   prodIds.map(prodId => (prodId, DemozooSoundtrack(id, title, modDate, modDatePrecision, authors)))
-)).get.flatten.groupBy(_._1).par.mapValues(_.map(_._2).distinct.seq).seq
+)).get.flatten.groupBy(_._1).par.map { case (k, v) => k -> v.map(_._2).distinct.seq }.seq
 
 final case class DemozooProdMeta (
   id: Int,
@@ -634,6 +662,7 @@ final case class DemozooAuthor (
   nickVariants: Buffer[String]
 )
 
+@nowarn("cat=deprecation")
 val _authors = Using(scala.io.Source.fromFile("sources/metadata/demozoo_authors.tsv"))(_.getLines().toSeq.par.map(line =>
   val l = line.split("\t")
   val id = l(0).toInt
@@ -689,13 +718,13 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
   var useParty = m.party.isDefined && m.partyDate.getOrElse("9999-99-99").take(4) <= cmpDate.take(4)
 
   if (useProd && useParty) {
-    val prodDate = if (m.prodDatePrecision == Precision.YEAR) m.prodDate.replace("-01-01", "-99-99") else if (m.prodDatePrecision == Precision.MONTH) m.prodDate.replaceAll("-01$", "-99") else m.prodDate
+    val prodDate = if (m.prodDatePrecision == Precision.YEAR) m.prodDate.replace("-01-01", "-99-99") else if (m.prodDatePrecision == Precision.MONTH) monthToPlaceholder(m.prodDate) else m.prodDate
     val partyShownDate =
       if (m.partyShownDate.isEmpty) ""
-      else if (m.partyShownDatePrecision.get == Precision.YEAR) m.partyShownDate.get.replace("-01-01", "-99-99") else if (m.partyShownDatePrecision.get == Precision.MONTH) m.partyShownDate.get.replaceAll("-01$", "-99") else m.partyShownDate.get
+      else if (m.partyShownDatePrecision.get == Precision.YEAR) m.partyShownDate.get.replace("-01-01", "-99-99") else if (m.partyShownDatePrecision.get == Precision.MONTH) monthToPlaceholder(m.partyShownDate.get) else m.partyShownDate.get
     val partyStartDate =
       if (m.partyStartDate.isEmpty) ""
-      else if (m.partyStartDatePrecision.get == Precision.YEAR) m.partyStartDate.get.replace("-01-01", "-99-99") else if (m.partyStartDatePrecision.get == Precision.MONTH) m.partyStartDate.get.replaceAll("-01$", "-99") else m.partyStartDate.get
+      else if (m.partyStartDatePrecision.get == Precision.YEAR) m.partyStartDate.get.replace("-01-01", "-99-99") else if (m.partyStartDatePrecision.get == Precision.MONTH) monthToPlaceholder(m.partyStartDate.get) else m.partyStartDate.get
     val digits = Precision.fromOrdinal(Seq(m.partyShownDatePrecision.getOrElse(m.partyStartDatePrecision.get).ordinal, m.partyStartDatePrecision.getOrElse(m.partyShownDatePrecision.get).ordinal).max) match {
       case Precision.YEAR => 4
       case Precision.MONTH => 7
@@ -768,6 +797,7 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
 )
 
 private val _yearConstraints = Collections.synchronizedSet(new HashSet[(String, Int)]).asScala
+@nowarn("cat=deprecation")
 val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
   // XXX
   metas.exists(_.title == "Fading Twilight - Dual Layer DVD Edition") ||
@@ -780,7 +810,7 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     if (meta.linkClass == "AmigascneFile") {
       md5s = sources.findArchive(path, sources.amigascne_by_path).map(_._1).sorted.distinct
     } else if (meta.linkClass == "ModlandFile" && meta.url.startsWith("/pub/modules/")) {
-      val path = meta.url.replaceFirst("/pub/modules//?", "").replace("//","/").toLowerCase
+      val path = stripModlandPrefix(meta.url).toLowerCase
       if (sources.modland_by_path.contains(path)) {
         val md5 = sources.modland_by_path(path).head.md5
         md5s = Buffer(md5)
@@ -813,27 +843,27 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
       md5s = sources.findArchive(path, fujiology_by_path).map(_._1).sorted.distinct
     } else if (meta.url.contains("://amp.dascene.net/downmod.php?index=") ||
                meta.url.contains("://amp.dascene.net/analyzer2.php?idx=")) {
-      val id = meta.url.toLowerCase.replaceAll("&application=amp","").split("=").last.toInt
+      val id = meta.url.toLowerCase.replace("&application=amp","").split("=").last.toInt
       if (amp.amp_mods_by_id.contains(id)) {
         val md5 = amp.amp_mods_by_id(id).head.md5
         md5s = Buffer(md5)
       }
     } else if (meta.url.contains("://amp.dascene.net/modules/")) {
       // url should have been decoded already
-      val path = meta.url
-        .toLowerCase
-        .replaceAll("http[s]?://amp.dascene.net/modules//?","")
+      val path = _ampModulesPattern.matcher(meta.url
+        .toLowerCase).replaceAll("")
         .replace("//","/")
       if (sources.amp_by_path.contains(path)) {
         val md5 = sources.amp_by_path(path).head.md5
         md5s = Buffer(md5)
       }
     } else if (meta.url.contains("://aminet.net/") || meta.url.contains(".aminet.net/")) {
-      val path = meta.url
-        .toLowerCase
-        .replaceAll("http[s]?://.*aminet.net/package//?","")
-        .replaceAll("http[s]?:/.*aminet.net//?","")
-        .replaceAll("ftp://.*aminet.net//?","")
+      val path = _aminetFtpPattern.matcher(
+        _aminetPattern.matcher(
+          _aminetPackagePattern.matcher(meta.url
+            .toLowerCase).replaceAll(""))
+        .replaceAll(""))
+        .replaceAll("")
         .replace("pub/aminet/", "")
         .replace("aminet/", "")
         .replace("//","/")
@@ -843,26 +873,25 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     } else if (meta.url.contains("://files.exotica.org.uk/?file=jpvs_scene_releases/") ||
                meta.url.contains("://malus.exotica.org.uk/pub/jpvs_scene_releases/")
     ) {
-      val path = meta.url
-        .toLowerCase
-        .replaceAll("http[s]?://files.exotica.org.uk/\\?file=jpvs_scene_releases//?","")
-        .replaceAll("http[s]?://malus.exotica.org.uk/pub/jpvs_scene_releases//?","")
+      val path = _jpvMalusPattern.matcher(
+        _jpvFilesPattern.matcher(meta.url
+          .toLowerCase).replaceAll(""))
+        .replaceAll("")
         .replace("//","/")
       md5s = sources.findArchive(path, jpvscenereleases_by_path).map(_._1).sorted.distinct
     } else if (meta.url.contains("://defacto2.net/file/download/") ||
               (meta.url.contains("://defacto2.net/d/") && meta.url.contains("?filename="))) {
-      val path = meta.url
-        .toLowerCase
-        .replaceAll("http[s]?://defacto2.net/d//?","defacto2.net/d/")
-        .replaceAll("http[s]?://defacto2.net/file/download//?","defacto2.net/d/")
-        .replace("//","/")
-        .replaceAll("defacto2.net/d/.*\\?filename=","defacto2.net/d/")
+      val path = _defactoFilenamePattern.matcher(
+        _defactoDownloadPattern.matcher(
+          _defactoDPattern.matcher(meta.url
+            .toLowerCase).replaceAll("defacto2.net/d/"))
+          .replaceAll("defacto2.net/d/")
+          .replace("//","/"))
+        .replaceAll("defacto2.net/d/")
       md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
     } else {
-      val path = meta.url
-        .toLowerCase
-        .replaceAll("http[s]?://","")
-        .replaceAll("ftp://","")
+      val path = stripScheme(meta.url
+        .toLowerCase)
         .replace("//","/")
       md5s = sources.findArchive(path, demozoo_prod_leftovers_by_path).map(_._1).sorted.distinct
     }
@@ -875,7 +904,7 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
     val soundtracks = soundtracksByProdId.getOrElse(meta.id, Seq.empty)
     val prodMusicAuthors = meta.musicAuthors.filter(_.trim.nonEmpty).sorted.distinct
     val soundtrackAuthors = soundtracks.flatMap(_.authors).filter(_.trim.nonEmpty).sorted.distinct
-    val allAuthors = prodMusicAuthors.union(soundtrackAuthors).sorted.distinct.filterNot(a => a.trim.isEmpty || a.trim == "?")
+    val allAuthors = prodMusicAuthors.concat(soundtrackAuthors).sorted.distinct.filterNot(a => a.trim.isEmpty || a.trim == "?")
     if (md5s.size > 1 && md5s.size > soundtracks.size) {
       println(s"DEMOZOO EXTRA: multiple MD5s ${md5s} for meta ${meta} with soundtracks ${soundtracks}, skipping author matching")
     } else if (allAuthors.size <= 2 && (soundtracks.isEmpty || soundtracks.forall(s => s.authors.sorted.distinct == allAuthors))) {
@@ -933,15 +962,16 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
      (if (m._2._type.isEmpty) SEPARATOR else if (m._2._type.toLowerCase == "game") 0 else 1) + SORT +
      (if (m._2._platform.isEmpty) SEPARATOR else if (m._2._platform.toLowerCase == "amiga") 0 else 1) + SORT +
      (if (m._2.year == 0) 9999 else m._2.year) + SORT +
-     (if (m._2.authors.isEmpty) SEPARATOR else (10 - m._2.authors.size) + m._2.authors.mkString(SEPARATOR)) + SORT +
+     (if (m._2.authors.isEmpty) SEPARATOR else s"${10 - m._2.authors.size}${m._2.authors.mkString(SEPARATOR)}") + SORT +
      (if (m._2.album.isEmpty) SEPARATOR else m._2.album) + SORT +
-     (if (m._2.publishers.isEmpty) SEPARATOR else (10 - m._2.publishers.size) + m._2.publishers.mkString(SEPARATOR)) + SORT
+     (if (m._2.publishers.isEmpty) SEPARATOR else s"${10 - m._2.publishers.size}${m._2.publishers.mkString(SEPARATOR)}") + SORT
     )).head
 
     Some(bestMeta)
   }
 }.seq.toBuffer.distinct
 
+@nowarn("cat=deprecation")
 val demozooExtrasYearConstraints = _yearConstraints.groupBy(_._1).mapValues(_.map(_._2)).par.map { case (md5, years) =>
   (md5, years.min)
 }.seq.toMap

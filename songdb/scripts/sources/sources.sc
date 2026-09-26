@@ -1,14 +1,17 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
+import scala.collection.Map
 import scala.collection.immutable.TreeMap
+import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
-import scala.util.Using
 
 import convert._
+import normalization._
 
 enum Source:
   case
@@ -956,6 +959,16 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   Phoenix4 -> Seq(C(year = 1993)),
   Phoenix5 -> Seq(C(year = 1994)),
   PlayItByYear -> Seq(
+    C(path = "1986.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1987.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1988.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1989.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1990.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1991.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1992.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1993.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1994.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
+    C(path = "1995.zip/ADF/_misc/", _type = "Game", _platform = "Amiga"),
     // a bit unreliable years
     C(path = "1985", _type = "Game", _platform = "Amiga", year = 1985+1),
     C(path = "1986", _type = "Game", _platform = "Amiga", year = 1986+1),
@@ -996,12 +1009,12 @@ lazy val sourceConstraints: Map[Source, Seq[C]] = Map(
   RedHotShareware93 -> Seq(C(year = 1993)),
   ResourceLibMultimedia -> Seq(C(year = 1993)),
   RetroExo -> Seq(
-    C(path = "exodemoscene/", _type = "Demo", _platform = "PC", year = 2023),
+    C(path = "exodemoscene/", _type = "Demo", _platform = "PC"),
+    C(path = "exodos/", _type = "Game", _platform = "PC"),
     C(path = "exowin9x/1994/", _type = "Game", _platform = "PC", year = 1994),
     C(path = "exowin9x/1995/", _type = "Game", _platform = "PC", year = 1995),
     C(path = "exowin9x/1996/", _type = "Game", _platform = "PC", year = 1996),
     C(path = "exowin3x/", _type = "Game", _platform = "PC", year = 2001),
-    C(_platform = "PC")
   ),
   RetroPlayWHDLoadPacks -> Seq(
     C(path = "Commodore_Amiga_-_HD_Loaders_-_Games", _type = "Game", _platform = "Amiga"),
@@ -1675,16 +1688,17 @@ final case class TsvEntry (
   path: String,
 )
 
-lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, Using(scala.io.Source.fromFile(s"sources/${tsv._1}")(using scala.io.Codec.UTF8))(tsv =>
+lazy val tsvs = tsvfiles.par.map(tsv => (tsv._2, {
   var player = ""
-  tsv.getLines().map(line =>
-    val l = line.split("\t")
-    if (l.length > 4) {
-      player = l(4)
-      TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, l(5), if (l(6).isEmpty) 0 else l(6).toInt, l(7).toInt, l(8), l(9), l(10))
-    } else TsvEntry(l(0), l(1).toInt, l(2).toInt, l(3), player, "", 0, -1, "", "", "")
-  ).toBuffer
-).get.groupBy(_.md5))).seq
+  val out = Buffer[TsvEntry]()
+  TsvReader.foreach(new java.io.File(s"sources/${tsv._1}")) { line =>
+    if (line.fields > 4) {
+      player = line.field(4)
+      out += TsvEntry(line.field(0), line.int(1), line.int(2), line.field(3), player, line.field(5), if (line.field(6).isEmpty) 0 else line.int(6), line.int(7), line.field(8), line.field(9), line.field(10))
+    } else out += TsvEntry(line.field(0), line.int(1), line.int(2), line.field(3), player, "", 0, -1, "", "", "")
+  }
+  out.groupBy(_.md5)
+})).seq
 
 final case class SourceDBEntry (
   md5: String,
@@ -1816,7 +1830,8 @@ lazy val sourceYearConstraints = (_sourceYears ++ _sourceYears2).groupBy(_._1).m
 
 val blacklist2 = Map(
   Funet -> Set("amiga/audio/modules/med/199","amiga/audio/modules/misc/199"),
-  Hornet -> Set("music/songs/","tla/songs/","music/disks/")
+  Hornet -> Set("music/songs/","tla/songs/","music/disks/"),
+  NetlabelArchive -> Set("complete-catalog-montonik/Monotonik Only 1-100.zip/063 {mtkchip1}", "complete-catalog-montonik/Monotonik 201-300.zip/264 {mtkchip1}")
 )
 lazy val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2, t._3, t._4)).minBy(_._1)).flatMap({case (md5, (year, source, path)) =>
   if (blacklist2.contains(source) && blacklist2(source).exists(path.startsWith)) {
@@ -1827,6 +1842,58 @@ lazy val sourcePathYears = _sourceYears.groupBy(_._1).mapValues(_.map(t => (t._2
 
 lazy val amp_by_path = sourceDB(Source.AMP).groupBy(_.path.toLowerCase).to(TreeMap)
 lazy val modland_by_path = sourceDB(Source.Modland).groupBy(_.path.toLowerCase).to(TreeMap)
+
+def basenameOf(path: String): String = {
+  var end = path.length
+  while (end > 0 && path.charAt(end - 1) == '/') end -= 1
+  val i = path.lastIndexOf('/', end - 1)
+  path.substring(if (i < 0) 0 else i + 1, end)
+}
+
+lazy val modules_by_basename: Map[String, Seq[SourceDBEntry]] =
+  (amp_by_path.toSeq ++ modland_by_path.toSeq)
+    .flatMap { case (key, entries) => entries.map(e => basenameOf(key) -> e) }
+    .groupBy(_._1)
+    .map { case (k, v) => k -> v.map(_._2).toSeq }
+lazy val modules_by_normbasename: Map[String, Seq[SourceDBEntry]] =
+  (amp_by_path.toSeq ++ modland_by_path.toSeq)
+    .flatMap { case (key, entries) => entries.map(e => normalizeFilename(basenameOf(key)) -> e) }
+    .groupBy(_._1)
+    .map { case (k, v) => k -> v.map(_._2).toSeq }
+
+def pathSegments(path: String): Array[String] = {
+  val segs = Buffer.empty[String]
+  var prev = -1
+  var i = 0
+  while (i < path.length) {
+    if (path.charAt(i) == '/') {
+      if (prev >= 0) {
+        val seg = path.substring(prev + 1, i)
+        if (!segs.contains(seg)) segs += seg
+      }
+      prev = i
+    }
+    i += 1
+  }
+  segs.toArray
+}
+
+def buildAuthorIndex(byPath: Map[String, Seq[SourceDBEntry]]): Map[String, Seq[SourceDBEntry]] = {
+  val idx = mutable.HashMap.empty[String, Buffer[SourceDBEntry]]
+  val it = byPath.iterator
+  while (it.hasNext) {
+    val (key, entries) = it.next()
+    val segs = pathSegments(key)
+    var j = 0
+    while (j < segs.length) {
+      idx.getOrElseUpdate(segs(j), Buffer.empty) ++= entries
+      j += 1
+    }
+  }
+  idx.map { case (k, v) => k -> v.toSeq }.toMap
+}
+lazy val amp_by_authorSegment: Map[String, Seq[SourceDBEntry]] = buildAuthorIndex(amp_by_path)
+lazy val modland_by_authorSegment: Map[String, Seq[SourceDBEntry]] = buildAuthorIndex(modland_by_path)
 lazy val unexotica_by_path = sourceDB(Source.UnExotica).groupBy(_.path.split("/").take(3).mkString("/").toLowerCase).to(TreeMap)
 lazy val wantedteam_by_path = sourceDB(Source.WantedTeam).groupBy(_.path.split("/").take(2).mkString("/").toLowerCase).to(TreeMap)
 lazy val amigascne_by_path = sourceDB(Source.AmigaScne).groupBy(_.path.toLowerCase).to(TreeMap)

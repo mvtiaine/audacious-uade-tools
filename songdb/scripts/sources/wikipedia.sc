@@ -1,8 +1,9 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep net.ruippeixotog::scala-scraper::3.1.0
+//> using dep org.jsoup:jsoup:1.23.2
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -14,11 +15,8 @@ import scala.jdk.StreamConverters._
 import scala.util.Using
 import scala.util.boundary, boundary.break
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
-import net.ruippeixotog.scalascraper.model._
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 
 import convert._
 
@@ -47,13 +45,13 @@ final case class WikipediaMeta(
 lazy val dos_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("Index_of_DOS_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
     
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       if (cells.length >= 4) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
 
         val meta = WikipediaMeta(
           title = texts(0),
@@ -71,13 +69,13 @@ lazy val dos_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val windows_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("Index_of_Windows_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
     
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       if (cells.length >= 4) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
 
         val meta = WikipediaMeta(
           title = texts(0),
@@ -95,13 +93,13 @@ lazy val windows_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val windows_3x_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Windows_3.x_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
     
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       if (cells.length >= 3) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
 
         val meta = WikipediaMeta(
           title = texts(0),
@@ -119,14 +117,14 @@ lazy val windows_3x_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer
 lazy val pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_PC_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
       
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       // Name 	Developer 	Publisher 	Genre(s) 	Operating system(s) 	Date released 
       if (cells.length >= 6) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
   
         val meta = WikipediaMeta(
           title = texts(0),
@@ -144,14 +142,14 @@ lazy val pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val free_pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_free_PC_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
       
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       // Name 	Developer 	Publisher 	Genre(s) 	Operating system(s) 	Date released 	Date free 	Free type 	Metacritic
       if (cells.length >= 6) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
   
         val meta = WikipediaMeta(
           title = texts(0),
@@ -169,14 +167,14 @@ lazy val free_pc_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val cd32_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Amiga_CD32_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
       
     rows.drop(1).flatMap { row =>
-      val cells = row >> elementList("td")
+      val cells = row.select("td").asScala
       // Title[9][10][11][12] 	Genre(s) 	Developer(s)[11][12] 	Publisher(s)[9][11][12] 	Release date(s) 	CD32 version 
       if (cells.length >= 5) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
   
         val meta = WikipediaMeta(
           title = texts(0),
@@ -194,15 +192,15 @@ lazy val cd32_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
 lazy val jaguar_metas = Files.list(Paths.get(wikipedia_path)).toScala(Buffer)
   .filter(_.getFileName.toString.startsWith("List_of_Atari_Jaguar_games"))
   .par.flatMap { f =>
-    val doc = JsoupBrowser().parseFile(f.toFile)
-    val rows = doc >> elementList("table.wikitable tbody tr")
+    val doc = Jsoup.parse(f.toFile, "UTF-8")
+    val rows = doc.select("table.wikitable tbody tr").asScala
       
     rows.drop(1).flatMap { row =>
-      val title = row >> text("th")
-      val cells = row >> elementList("td")
+      val title = Option(row.selectFirst("th")).map(_.text()).getOrElse("")
+      val cells = row.select("td").asScala
       // Titles[13] 	Developers[13] 	Publishers[13][14] 	NA[15][16][17] 	EU[18] 	Ref.
       if (cells.length >= 3) {
-        val texts = cells.map(c => (c >> text).trim)
+        val texts = cells.map(c => c.text().trim)
         // Extract years from all release date columns (NA, EU, and possibly more)
         val releaseYears = (2 until (cells.length - 1)).map(i => extractYear(texts(i))).filter(_ > 0)
         val earliestYear = if (releaseYears.nonEmpty) releaseYears.min else 0
@@ -260,4 +258,4 @@ lazy val wikipediaMetas = ((dos_metas ++ windows_metas ++ windows_3x_metas ++ pc
   else m
 )
 .map(m => if (m.publishers == Buffer("Atari Corporation Mumin Corporation (JP)","Imagitec Design")) m.copy(publishers = Buffer("Atari Corporation", "Imagitec Design", "Mumin Corporation (JP)")) else m)
-.toSet.seq
+.toSet

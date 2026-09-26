@@ -1,9 +1,11 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep net.ruippeixotog::scala-scraper::3.1.0
+//> using dep org.jsoup:jsoup:1.23.2
 //> using dep org.apache.commons:commons-lang3:3.20.0
+//> using dep org.apache.commons:commons-text:1.15.0
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -14,11 +16,8 @@ import scala.jdk.CollectionConverters._
 import scala.jdk.StreamConverters._
 import scala.util.Using
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
-import net.ruippeixotog.scalascraper.model._
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 
 import org.apache.commons.text.WordUtils
 
@@ -67,19 +66,18 @@ final case class AMPDetail (
 
 val amp_mods_by_id = amp_mods.groupBy(_.id)
 
-val seenIds = scala.collection.mutable.Set[Int]()
 val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.map(f =>
-  val doc = JsoupBrowser().parseFile(f.toFile)
-  val data = doc >> elementList("#result")
+  val doc = Jsoup.parse(f.toFile, "UTF-8")
+  val data = doc.select("#result").asScala
   if (data.length > 1) {
     val id = f.toString().split("=").last.toInt
-    val foo = data(0) >> elementList("table tbody tr[class^=\"tr\"]")
+    val foo = data(0).select("table tbody tr[class^=\"tr\"]").asScala
     //       <td class="descript">Handle: </td>
     //          <td>1in10      </td>
-    val handle = (foo >> texts("td.descript:containsWholeText(Handle: ) + td")).flatten.filterNot(_.trim.isEmpty).map(_.trim).headOption.getOrElse("")
+    val handle = foo.flatMap(tr => tr.select("td.descript:containsWholeText(Handle: ) + td").asScala.map(_.text())).filterNot(_.trim.isEmpty).map(_.trim).headOption.getOrElse("")
     //       <td class="descript">Real&nbsp;Name: </td>
     //          <td>Jari Pitkänen      </td>
-    var realNames = (foo >> texts("td.descript:contains(Real Name) + td")).flatten.filterNot(_.trim.isEmpty).map(_.trim).headOption.map(_.split(",").map(_.trim).filterNot(n => n.toLowerCase == "n/a" || n.toLowerCase == "currently not public" || n.toLowerCase == "unknown").toBuffer).getOrElse(Buffer.empty)
+    var realNames = foo.flatMap(tr => tr.select("td.descript:contains(Real Name) + td").asScala.map(_.text())).filterNot(_.trim.isEmpty).map(_.trim).headOption.map(_.split(",").map(_.trim).filterNot(n => n.toLowerCase == "n/a" || n.toLowerCase == "currently not public" || n.toLowerCase == "unknown").toBuffer).getOrElse(Buffer.empty)
     // Split Robert Österbergh (ex. Robert Ling) -> Robert Österbergh, Robert Ling etc.
     realNames = realNames.flatMap(name => {
       if (name.contains(" (ex. ")) {
@@ -92,23 +90,22 @@ val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.m
     //       <td class="descript">Lived&nbsp;in: </td>
     //          <td><a href="newresult.php?request=country&amp;search=17"><img src="images/flags5/finland.png" alt="Finland" title="Finland" /> </a>      </td>
     // TODO extract country from title attribute
-    val country = (foo >> attrs("td.descript:contains(Lived in) + td a img")("title")).flatten.filterNot(_.trim.isEmpty).map(_.trim).headOption.getOrElse("")
+    val country = foo.flatMap(tr => tr.select("td.descript:contains(Lived in) + td a img").asScala.map(_.attr("title"))).filterNot(_.trim.isEmpty).map(_.trim).headOption.getOrElse("")
     //       <td class="descript">Ex.Handles: </td>
     //          <td>UNI, Uniko, Bb King, Jari Pitkanen, Varia      </td>
-    val exHandles = (foo >> texts("td.descript:contains(Ex.Handles) + td")).flatten.filterNot(_.trim.isEmpty).map(_.trim).headOption.map(_.split(",").map(_.trim).filterNot(_.toLowerCase == "n/a").toBuffer).getOrElse(Buffer.empty)
+    val exHandles = foo.flatMap(tr => tr.select("td.descript:contains(Ex.Handles) + td").asScala.map(_.text())).filterNot(_.trim.isEmpty).map(_.trim).headOption.map(_.split(",").map(_.trim).filterNot(_.toLowerCase == "n/a").toBuffer).getOrElse(Buffer.empty)
     //       <td class="descript">Was&nbsp;a&nbsp;member&nbsp;of: </td>
     //          <td><a href="newresult.php?request=groupid&amp;search=2704">MFX (FXM - Muleteer Effect)</a>      </td> 
-    val groups = (foo >> texts("td.descript:contains(Was a member of) + td a")).flatten.filterNot(_.trim.isEmpty).map(_.trim).toBuffer
+    val groups = foo.flatMap(tr => tr.select("td.descript:contains(Was a member of) + td a").asScala.map(_.text())).filterNot(_.trim.isEmpty).map(_.trim).toBuffer
 
-    val bar = data(1) >> elementList("table tbody tr[class^=\"tr\"]")
-    val ids = bar >> attrs("href")("td a[href^=\"downmod.php\"]")
-    val author_ids = bar >> attrs("href")("td a[href^=\"detail.php\"]")
-    val author_names = bar >> texts("td a[href^=\"detail.php\"]")
+    val bar = data(1).select("table tbody tr[class^=\"tr\"]").asScala
+    val ids = bar.map(tr => tr.select("td a[href^=\"downmod.php\"]").asScala.map(_.attr("href")).toSeq)
+    val author_ids = bar.map(tr => tr.select("td a[href^=\"detail.php\"]").asScala.map(_.attr("href")).toSeq)
+    val author_names = bar.map(tr => tr.select("td a[href^=\"detail.php\"]").asScala.map(_.text()).toSeq)
     val authors = author_ids.lazyZip(author_names)
     val metas = ids.lazyZip(authors).filterNot(_._1.isEmpty).flatMap({case (idlink, authors) =>
       val id = idlink.head.trim.split("=").last.toInt
-      if (!seenIds.contains(id) && amp_mods_by_id.contains(id)) {
-        seenIds += id
+      if (amp_mods_by_id.contains(id)) {
         val e = amp_mods_by_id(id).head
         val extra_authors = authors._1.zip(authors._2)
           .map(a => (a._1.trim.split("=").last.toInt, a._2.trim))
@@ -238,6 +235,7 @@ val details = _details.par.map(detail =>
     _meta =
       if (!_meta.album.isEmpty && _meta.album.toLowerCase == _meta.album) _meta.copy(album = WordUtils.capitalize(_meta.album))
       else _meta
+    _meta = _meta.copy(extra_authors = _meta.extra_authors.map(a => (a._1, details_by_id.get(a._1).getOrElse(Seq.empty).headOption.map(_.handle).getOrElse(a._2))))
     _meta
   ).distinct)
 ).distinct.seq

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 import scala.collection.mutable.Buffer
@@ -18,6 +19,7 @@ final case class SonglengthEntry (
   player: String,
   format: String,
   channels: Int,
+  filesize: Int,
 )
 
 lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
@@ -32,15 +34,16 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
   val player = e.headOption.map(_.player).getOrElse("")
   val format = e.headOption.map(e => if (e.format != "???") e.format else "").getOrElse("")
   val channels = e.headOption.map(_.channels).getOrElse(0)
+  val filesize = _subsongs.find(_.filesize > 0).map(_.filesize).getOrElse(0)
   if (songs.length > maxsubsong - minsubsong + 1) {
       System.err.println("WARN: inconsistent songlengths for " + md5 + ": " + songs)
       val subsongs = Buffer.empty[Subsong]
       for (subsong <- minsubsong to maxsubsong) {
         subsongs.append(songs.filter(_.subsong == subsong).maxBy(_.songlength))
       }
-      SonglengthEntry(md5, minsubsong, maxsubsong, subsongs.toSeq, player, format, channels)
+      SonglengthEntry(md5, minsubsong, maxsubsong, subsongs.toSeq, player, format, channels, filesize)
   } else {
-    SonglengthEntry(md5, minsubsong, maxsubsong, songs, player, format, channels)
+    SonglengthEntry(md5, minsubsong, maxsubsong, songs, player, format, channels, filesize)
   }
 }}).distinct.groupBy(_.md5).map({case (md5, _entries) =>
   if (!_entries.forall(_.player == _entries.head.player)) {
@@ -57,7 +60,8 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
     val maxsubsongs = entries.maxBy(_.subsongs.size).subsongs.size
     best = entries.filter(_.subsongs.size == maxsubsongs).maxBy(e => e.subsongs.map(_.songlength).sum / e.subsongs.length)
   }
+  if (best.filesize == 0) best = best.copy(filesize = entries.iterator.map(_.filesize).find(_ > 0).getOrElse(0))
   best
 }).toSeq.seq
 
-lazy val songlengthsByMd5 = db.groupBy(_.md5.take(12)).par.mapValues(_.distinct).seq
+lazy val songlengthsByMd5 = db.par.groupBy(_.md5.take(12)).map { case (k, v) => k -> v.seq.distinct }.seq

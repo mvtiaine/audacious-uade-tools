@@ -1,7 +1,9 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 import scala.collection.mutable.Buffer
+import scala.collection.mutable.HashMap
 import scala.collection.mutable.Map
 import scala.collection.parallel.CollectionConverters._
 
@@ -26,7 +28,13 @@ def dedup(entries: Iterable[Buffer[String]], file: String, _check: Map[String,St
 def dedupidx(entries: Iterable[Buffer[String]], file: String, _idx: Map[String,String], strict: Boolean = false) = {
   // keeps original order
   val keys = entries.par.map(_(0)).seq.toSeq.distinct
-  val dedupped = entries.groupBy(_(0)).par.map(e =>
+  val groups = HashMap.empty[String, Buffer[Buffer[String]]]
+  entries.foreach { e =>
+    val k = e(0)
+    val g = groups.get(k)
+    if (g.isDefined) g.get += e else groups(k) = Buffer(e)
+  }
+  val dedupped = groups.par.map(e =>
     if (e._2.size > 1) {
       if (strict) {
         assert(e._2.forall(_ == e._2.head))
@@ -34,9 +42,15 @@ def dedupidx(entries: Iterable[Buffer[String]], file: String, _idx: Map[String,S
         System.err.println(s"WARN: removing duplicate entries in ${file}, hash: ${e._1} entries: ${e._2}")
       }
     }
-    (e._1, e._2.toSeq.sortBy(entries =>
-      entries.tail.mkString(SORT)
-    ).head)
+    val rows = e._2
+    if (rows.size < 2) (e._1, rows.head)
+    else {
+      val keyed = new Array[(String, Buffer[String])](rows.size)
+      var k = 0
+      rows.foreach { r => keyed(k) = (r.tail.mkString(SORT), r); k += 1 }
+      java.util.Arrays.sort(keyed, (a: (String, Buffer[String]), b: (String, Buffer[String])) => a._1.compareTo(b._1))
+      (e._1, keyed(0)._2)
+    }
   ).seq
   val res = Buffer.empty[Buffer[String]]
   var prev = Buffer.empty[String]
@@ -44,28 +58,23 @@ def dedupidx(entries: Iterable[Buffer[String]], file: String, _idx: Map[String,S
     val s = dedupped(k)
     val idx = _idx(s.head)
     assert(base64d24(idx) > 0)
-    if (s.tail.sameElements(prev)) {
+    val tail = s.tail
+    if (tail.sameElements(prev)) {
       res += Buffer(idx)
-    } else if (!prev.isEmpty && prev.length <= s.tail.length) {
-      val same = Buffer.empty[Int]
-      for (i <- prev.indices) {
-        if (prev(i) == s.tail(i) && !s.tail(i).isEmpty) {
-          same += i
-        }
-      }
+    } else if (!prev.isEmpty && prev.length <= tail.length) {
       val tmp = Buffer.empty[String]
-      for (i <- s.tail.indices) {
-        if (same.contains(i)) {
+      for (i <- tail.indices) {
+        if (i < prev.length && prev(i) == tail(i) && !tail(i).isEmpty) {
           tmp += REPEAT
         } else {
-          tmp += s.tail(i)
+          tmp += tail(i)
         }
       }
       res += Buffer(idx) ++ tmp
     } else {
-      res += Buffer(idx) ++ s.tail
+      res += Buffer(idx) ++ tail
     }
-    prev = s.tail
+    prev = tail
   }
   res.toSeq
 }

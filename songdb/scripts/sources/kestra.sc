@@ -1,9 +1,9 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2026 Matti Tiainen <mvtiaine@cc.hut.fi>
-// parsing code generated with help from various LLMs
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep net.ruippeixotog::scala-scraper::3.1.0
+//> using dep org.jsoup:jsoup:1.23.2
 
 import java.net.URLDecoder
 import java.nio.file.Files
@@ -11,6 +11,8 @@ import java.nio.file.Paths
 import java.util.Collections
 import java.util.HashSet
 import java.util.regex.Pattern
+import scala.annotation.nowarn
+import scala.collection.Map
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
 import scala.jdk.CollectionConverters._
@@ -18,11 +20,8 @@ import scala.jdk.StreamConverters._
 import scala.util.Try
 import scala.util.Using
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
-import net.ruippeixotog.scalascraper.model._
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 
 import convert._
 import normalization._
@@ -130,9 +129,28 @@ final case class KestraMeta (
 
 val kestra_path = System.getProperty("user.home") + "/sources/metadata/kestra/"
 
+val playingTimePattern = """(?:(\d+):)?(\d+):(\d+)""".r
+val idPattern = """id=(\d+)""".r
+val authorNameParenPattern = Pattern.compile("""\s*\([^)]+\)""")
+val rankedPattern = """, ranked (\d+) in the (.+)$""".r
+val unselectedPattern = """, unselected in the (.+)$""".r
+val issuePattern = """issue:\s*([^.]+)""".r
+val fileTypePattern = """\(([^)]+)\),\s*[0-9]+\s+bytes""".r
+val bytesPattern = """([0-9]+)\s+bytes""".r
+val crcPattern = """CRC:\s+([A-F0-9]+)""".r
+val md5Pattern = """(?:[?&])md5=([A-Fa-f0-9]{32})""".r
+val notCrunchedPattern = """\((not crunched.*?)\)""".r
+val nonDigitPattern = Pattern.compile("[^0-9]")
+val nameAltNamePattern = """(.*?)(?:\((.*?)\))?$""".r
+val activeRangePattern = """\s*in (\d{4})-(\d{4})\s*""".r
+val activeYearPattern = """\s*in (\d{4})\s*""".r
+val sinceYearPattern = """\s*since (\d{4})\s*""".r
+val untilYearPattern = """\s*until (\d{4})\s*""".r
+val spanKeywordPattern = """\((in|since|until)\s+(\d{4}.*?)\)""".r
+val spanKeywordStripPattern = Pattern.compile("""\((in|since|until)\s+\d{4}.*?\)""")
+
 def parsePlayingTime(t: String): Int = {
-  val timeRegex = """(?:(\d+):)?(\d+):(\d+)""".r
-  timeRegex.findFirstMatchIn(t) match {
+  playingTimePattern.findFirstMatchIn(t) match {
     case Some(m) =>
       val hours = Option(m.group(1)).map(_.toInt).getOrElse(0)
       val minutes = m.group(2).toInt
@@ -144,13 +162,13 @@ def parsePlayingTime(t: String): Int = {
 }
 
 def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
-  val h1Links = elem.select("h1 a")
+  val h1Links = elem.select("h1 a").asScala
   if (h1Links.isEmpty) return None
 
     // First link is title, rest are authors
     val title = h1Links.head.text
     
-    val h1Text = elem.select("h1").head.text
+    val h1Text = Option(elem.selectFirst("h1")).map(_.text).getOrElse("")
     val titleEndIdx = h1Text.indexOf(title) + title.length
     val afterTitle = h1Text.substring(titleEndIdx).trim
     val _typeStr = if (afterTitle.startsWith("(")) {
@@ -165,8 +183,8 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
     h1Links.foreach { link =>
       val href = link.attr("href")
       if (href.contains("author.php")) {
-        val authorName = link.text.replaceAll("\\s*\\([^)]+\\)", "").trim
-        val authorId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt)
+        val authorName = authorNameParenPattern.matcher(link.text).replaceAll("").trim
+        val authorId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt)
         var country: Option[String] = None
         var role = "unknown"
         
@@ -187,27 +205,24 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
     var series: Option[KestraSeries] = None
     val tags = Buffer[String]()
 
-    val rankRegex = """, ranked (\d+) in the (.+)$""".r
-    val unselectedRegex = """, unselected in the (.+)$""".r
-
-    elem.select("ul.nodots li").foreach { li =>
+    elem.select("ul.nodots li").asScala.foreach { li =>
       val text = li.text
       if (text.startsWith("Released:")) {
-        val releasedStr = li.select("em a").headOption.map(_.text).orElse(li.select("em.blacky").headOption.map(_.text)).getOrElse(text.replace("Released: ", "").trim.split("\\s+")(0)).trim
+        val releasedStr = Option(li.selectFirst("em a")).map(_.text).orElse(Option(li.selectFirst("em.blacky")).map(_.text)).getOrElse(text.replace("Released: ", "").trim.split("\\s+")(0)).trim
         released = if (releasedStr.nonEmpty) Some(releasedStr) else None
-        val partyLink = li.select("a[href*='party.php']").headOption
+        val partyLink = Option(li.selectFirst("a[href*='party.php']"))
         if (partyLink.isDefined && !text.contains(" after " + partyLink.get.text)) {
-          val partyId = """id=(\d+)""".r.findFirstMatchIn(partyLink.get.attr("href")).map(_.group(1).toInt)
+          val partyId = idPattern.findFirstMatchIn(partyLink.get.attr("href")).map(_.group(1).toInt)
           val partyName = Some(partyLink.get.text)
           party = Some(KestraParty(partyId.getOrElse(0), partyName.getOrElse("Unknown")))
         }
 
-        rankRegex.findFirstMatchIn(text) match {
+        rankedPattern.findFirstMatchIn(text) match {
           case Some(m) =>
             rank = Some(m.group(1).toInt)
             competition = Some(m.group(2))
           case None =>
-            unselectedRegex.findFirstMatchIn(text) match {
+            unselectedPattern.findFirstMatchIn(text) match {
               case Some(m) => competition = Some(m.group(1))
               case None =>
             }
@@ -215,16 +230,16 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
       } else if (text.startsWith("Made or finished:")) {
         madeOrFinished = Some(text.replace("Made or finished:", "").trim)
       } else if (text.startsWith("In Series:")) {
-        val seriesLink = li.select("a[href*='series.php']").headOption
+        val seriesLink = Option(li.selectFirst("a[href*='series.php']"))
         if (seriesLink.isDefined) {
-          val seriesId = """id=(\d+)""".r.findFirstMatchIn(seriesLink.get.attr("href")).map(_.group(1).toInt)
+          val seriesId = idPattern.findFirstMatchIn(seriesLink.get.attr("href")).map(_.group(1).toInt)
           val seriesName = Some(seriesLink.get.text)
           var seriesIssue: Option[String] = None
-          val issueMatch = """issue:\s*([^.]+)""".r.findFirstMatchIn(text)
+          val issueMatch = issuePattern.findFirstMatchIn(text)
           if (issueMatch.isDefined) {
             seriesIssue = Some(issueMatch.get.group(1).trim)
           } else {
-            val bElems = li.select("b").toSeq
+            val bElems = li.select("b").asScala.toSeq
             if (bElems.size >= 2) seriesIssue = Some(bElems(1).text)
           }
           series = Some(KestraSeries(seriesId.getOrElse(0), seriesName.getOrElse("Unknown"), seriesIssue))
@@ -232,7 +247,7 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
       } else if (text.startsWith("Playing Time:")) {
         playingTime = Some(text.replace("Playing Time: ", "").trim)
       } else if (text.startsWith("Sound Style:")) {
-        val styleLinks = li.select("a").toSeq
+        val styleLinks = li.select("a").asScala.toSeq
         if (styleLinks.nonEmpty) {
           soundStyle = styleLinks.map(_.text)
         } else {
@@ -242,17 +257,17 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
       } else if (text.startsWith("Sound Format:")) {
         soundFormat = Some(text.replace("Sound Format: ", "").trim)
       } else if (text.startsWith("Origin:")) {
-        val originLink = li.select("a").headOption
+        val originLink = Option(li.selectFirst("a"))
         if (originLink.isDefined) {
           val href = originLink.get.attr("href")
-          val originId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt)
+          val originId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt)
           val originText = originLink.get.text
           origin = Some(KestraReleaseRef(originId, originText))
         } else {
           origin = Some(KestraReleaseRef(None, text.replace("Origin: ", "").trim))
         }
       } else if (text.startsWith("Categorized as:")) {
-        val catLinks = li.select("a")
+        val catLinks = li.select("a").asScala
         if (catLinks.nonEmpty) {
           categories = catLinks.map(_.text).toSeq
         } else {
@@ -261,16 +276,16 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
       }
     }
 
-    elem.select("small.tags a").foreach { tag =>
+    elem.select("small.tags a").asScala.foreach { tag =>
       tags += tag.text
     }
 
     // Parse downloads
     val downloads = Buffer[KestraDownload]()
-    elem.select("div#downloads div.group").foreach { group =>
-      val h3Text = group.select("h3").headOption.map(_.text).getOrElse("")
-      group.select("li").foreach { li =>
-        val links = li.select("a").toSeq
+    elem.select("div#downloads div.group").asScala.foreach { group =>
+      val h3Text = Option(group.selectFirst("h3")).map(_.text).getOrElse("")
+      group.select("li").asScala.foreach { li =>
+        val links = li.select("a").asScala.toSeq
         val fileLink = links.find(l => !l.attr("href").contains("file.php") && !l.attr("href").contains("release.php")).getOrElse(links.headOption.orNull)
         if (fileLink != null) {
           val href = fileLink.attr("href")
@@ -282,21 +297,21 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
           var md5: Option[String] = None
           
           val liText = li.text
-          val fileTypeMatch = "\\(([^)]+)\\),\\s*[0-9]+\\s+bytes".r.findFirstMatchIn(liText)
+          val fileTypeMatch = fileTypePattern.findFirstMatchIn(liText)
           if (fileTypeMatch.isDefined) {
             fileType = Some(fileTypeMatch.get.group(1).trim)
           }
 
-          val sizeMatch = "([0-9]+)\\s+bytes".r.findFirstMatchIn(liText)
+          val sizeMatch = bytesPattern.findFirstMatchIn(liText)
           if (sizeMatch.isDefined) {
             filesize = Some(sizeMatch.get.group(1).toInt)
           }
-          val crcMatch = "CRC:\\s+([A-F0-9]+)".r.findFirstMatchIn(liText)
+          val crcMatch = crcPattern.findFirstMatchIn(liText)
           if (crcMatch.isDefined) {
             crc = Some(crcMatch.get.group(1))
           }
 
-          val md5Match = "(?:[?&])md5=([A-Fa-f0-9]{32})".r.findFirstMatchIn(links.map(_.attr("href")).mkString(" "))
+          val md5Match = md5Pattern.findFirstMatchIn(links.map(_.attr("href")).mkString(" "))
           if (md5Match.isDefined) {
             md5 = Some(md5Match.get.group(1).toLowerCase)
           }
@@ -304,10 +319,10 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
           val compLink = links.find(l => l.attr("href").contains("release.php") && liText.contains(s"(${l.text})"))
           if (compLink.isDefined) {
             val l = compLink.get
-            val cId = l.attr("href").replaceAll("[^0-9]", "").toIntOption
+            val cId = nonDigitPattern.matcher(l.attr("href")).replaceAll("").toIntOption
             compressor = Some(KestraReleaseRef(cId, l.text))
           } else {
-            val matchNotCrunched = """\((not crunched.*?)\)""".r.findFirstMatchIn(liText)
+            val matchNotCrunched = notCrunchedPattern.findFirstMatchIn(liText)
             if (matchNotCrunched.isDefined) {
               compressor = Some(KestraReleaseRef(None, matchNotCrunched.get.group(1).trim))
             }
@@ -320,19 +335,19 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
 
     // Parse credits
     val credits = Buffer[KestraAuthor]()
-    elem.select("div#credits div.group").foreach { groupDiv =>
+    elem.select("div#credits div.group").asScala.foreach { groupDiv =>
       var currentGroup = "unknown"
       var currentRole = "unknown"
-      groupDiv.children.foreach { child =>
+      groupDiv.children.asScala.foreach { child =>
         if (child.tagName == "h3") {
            currentGroup = child.text
         } else if (child.tagName == "h4") {
           currentRole = child.text
         } else if (child.tagName == "ul") {
-          child.select("li a[href*='author.php']").foreach { a =>
+          child.select("li a[href*='author.php']").asScala.foreach { a =>
             val href = a.attr("href")
-            val authorId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt)
-            val authorName = a.text.replaceAll("\\s*\\([^)]+\\)", "").trim
+            val authorId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt)
+            val authorName = authorNameParenPattern.matcher(a.text).replaceAll("").trim
             credits += KestraAuthor(authorId, authorName, None, currentRole, currentGroup)
           }
         }
@@ -342,32 +357,33 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
     // Parse featured in / release features
     val features = Buffer[KestraRelease]()
     val featuredIn = Buffer[KestraRelease]()
-    elem.select("div.group:has(table.small_list)").foreach { groupDiv =>
-      val h3Text = groupDiv.select("h3").headOption.map(_.text).getOrElse("")
+    elem.select("div.group:has(table.small_list)").asScala.foreach { groupDiv =>
+      val h3Text = Option(groupDiv.selectFirst("h3")).map(_.text).getOrElse("")
       val table = groupDiv.select("table.small_list tr")
-      table.foreach { tr =>
-        val aLink = tr.select("span.titletags a").headOption
-        val strongTag = tr.select("span.titletags strong").headOption
+      table.asScala.foreach { tr =>
+        val titleTags = Option(tr.selectFirst("span.titletags"))
+        val aLink = titleTags.flatMap(s => Option(s.selectFirst("a")))
+        val strongTag = titleTags.flatMap(s => Option(s.selectFirst("strong")))
         val safeTitleLink = aLink.orElse(strongTag)
         if (safeTitleLink.isDefined) {
           val link = safeTitleLink.get
           val featureTitle = link.text
           val featureHref = if (link.tagName == "a") link.attr("href") else ""
-          val releaseId = if (featureHref.nonEmpty) featureHref.replaceAll("[^0-9]", "").toIntOption else None
-          val typeElem = tr.select("td.cat_td").headOption
+          val releaseId = if (featureHref.nonEmpty) nonDigitPattern.matcher(featureHref).replaceAll("").toIntOption else None
+          val typeElem = Option(tr.selectFirst("td.cat_td"))
           
           var featureType = "unknown"
           var tags = Seq.empty[String]
           
           if (typeElem.isDefined) {
             val te = typeElem.get
-            val span = te.select("> span.nbsp").headOption
+            val span = Option(te.selectFirst("> span.nbsp"))
             if (span.isDefined) {
               featureType = span.get.ownText.trim
             } else {
               featureType = te.ownText.trim
             }
-            val small = te.select("> small").headOption
+            val small = Option(te.selectFirst("> small"))
             if (small.isDefined) {
               tags = small.get.text.split(",").flatMap(_.split(" - ")).map(t => t.stripPrefix("-").trim).filter(_.nonEmpty).toSeq
             }
@@ -375,23 +391,23 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
           if (featureType.isEmpty) featureType = "unknown"
           
           var containedAs: Option[KestraReleaseRef] = None
-          val tds = tr.select("td").toSeq
+          val tds = tr.select("td").asScala.toSeq
           if (tds.length >= 4) {
             val containedTd = tds(3)
-            val cLink = containedTd.select("a").headOption
+            val cLink = Option(containedTd.selectFirst("a"))
             if (cLink.isDefined) {
-              val cId = cLink.get.attr("href").replaceAll("[^0-9]", "").toIntOption
+              val cId = nonDigitPattern.matcher(cLink.get.attr("href")).replaceAll("").toIntOption
               val cTitle = cLink.get.text
               if (cTitle.nonEmpty) containedAs = Some(KestraReleaseRef(cId, cTitle))
             }
           }
 
           var fromRef: Option[KestraReleaseRef] = None
-          tr.select("span.titletags small").foreach { smallElem =>
+          titleTags.toSeq.flatMap(_.select("small").asScala).foreach { smallElem =>
             if (smallElem.text.contains("from ")) {
-              val fLink = smallElem.select("a").headOption
+              val fLink = Option(smallElem.selectFirst("a"))
               if (fLink.isDefined) {
-                val fId = fLink.get.attr("href").replaceAll("[^0-9]", "").toIntOption
+                val fId = nonDigitPattern.matcher(fLink.get.attr("href")).replaceAll("").toIntOption
                 val fTitle = fLink.get.text
                 if (fTitle.nonEmpty) fromRef = Some(KestraReleaseRef(fId, fTitle))
               }
@@ -438,12 +454,12 @@ def parseKestraMeta(id: Int, elem: Element): Option[KestraMeta] = {
     ))
 }
 
+@nowarn("cat=deprecation")
 val releases = Files.list(Paths.get(kestra_path + "release/")).toScala(Buffer).par.flatMap(f =>
-  val doc = JsoupBrowser().parseFile(f.toFile)
-  val data = doc >> elementList("#content")
-  if (data.length > 0) {
+  val data = Option(Jsoup.parse(f.toFile, "UTF-8").selectFirst("#content"))
+  if (data.isDefined) {
     val id = f.toString().split("=").last.toInt
-    val meta = parseKestraMeta(id, data(0))
+    val meta = parseKestraMeta(id, data.get)
     meta.foreach { meta =>
       println(s"""
 === Kestra Release ID: ${meta.id} ===
@@ -485,29 +501,29 @@ Connections: ${meta.connections.length}
 ).seq.groupBy(_.id).mapValues(_.head).toMap
 
 def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
-  val h1 = elem.select("h1").headOption
+  val h1 = Option(elem.selectFirst("h1"))
   if (h1.isEmpty || h1.get.text.contains("Page Not Found")) return None
   
-  val entityType = elem.select("img.great_symbol").headOption.map(_.attr("alt")).getOrElse("Unknown")
+  val entityType = Option(elem.selectFirst("img.great_symbol")).map(_.attr("alt")).getOrElse("Unknown")
 
   val fullText = h1.get.text
-  val subtitleText = h1.get.select("span.subtitle").headOption.map(_.text).getOrElse("")
+  val subtitleText = Option(h1.get.selectFirst("span.subtitle")).map(_.text).getOrElse("")
   val nameRealName = if (subtitleText.nonEmpty) fullText.replace(subtitleText, "").trim else fullText.trim
     
-  val nameMatch = "(.*?)(?:\\((.*?)\\))?$".r.findFirstMatchIn(nameRealName)
+  val nameMatch = nameAltNamePattern.findFirstMatchIn(nameRealName)
   val name = nameMatch.map(_.group(1).trim).getOrElse(nameRealName)
   val altNameFromH1 = nameMatch.flatMap(m => Option(m.group(2)).map(_.trim)).filter(_.nonEmpty)
 
   val roles = subtitleText.split(",").map(_.trim).filter(_.nonEmpty).toSeq
 
   def parseYearSpan(text: String): (Option[Int], Option[Int]) = {
-    val inMatch = """\s*in (\d{4})-(\d{4})\s*""".r.findFirstMatchIn(text)
+    val inMatch = activeRangePattern.findFirstMatchIn(text)
     if (inMatch.isDefined) return (Some(inMatch.get.group(1).toInt), Some(inMatch.get.group(2).toInt))
-    val singleMatch = """\s*in (\d{4})\s*""".r.findFirstMatchIn(text)
+    val singleMatch = activeYearPattern.findFirstMatchIn(text)
     if (singleMatch.isDefined) return (Some(singleMatch.get.group(1).toInt), Some(singleMatch.get.group(1).toInt))
-    val sinceMatch = """\s*since (\d{4})\s*""".r.findFirstMatchIn(text)
+    val sinceMatch = sinceYearPattern.findFirstMatchIn(text)
     if (sinceMatch.isDefined) return (Some(sinceMatch.get.group(1).toInt), None)
-    val untilMatch = """\s*until (\d{4})\s*""".r.findFirstMatchIn(text)
+    val untilMatch = untilYearPattern.findFirstMatchIn(text)
     if (untilMatch.isDefined) return (None, Some(untilMatch.get.group(1).toInt))
     (None, None)
   }
@@ -527,7 +543,7 @@ def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
   var realName: Option[String] = None
   var altName: Option[String] = altNameFromH1
 
-  elem.select("ul.nodots li").foreach { li =>
+  elem.select("ul.nodots li").asScala.foreach { li =>
     val text = li.text
     if (text.startsWith("Known as active ")) {
       val spanInfo = parseYearSpan(text.replace("Known as active ", "in ").trim)
@@ -538,9 +554,9 @@ def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
     } else if (text.startsWith("Known as: ")) {
       val als = text.replace("Known as: ", "").split(",").map(_.trim)
       als.foreach { a =>
-        val spanMatch = """\((in|since|until)\s+(\d{4}.*?)\)""".r.findFirstMatchIn(a)
+        val spanMatch = spanKeywordPattern.findFirstMatchIn(a)
         val spanInfo = spanMatch.map(m => parseYearSpan(s"${m.group(1)} ${m.group(2)}")).getOrElse((None, None))
-        val cleanedAlias = a.replaceAll("""\((in|since|until)\s+\d{4}.*?\)""", "").trim
+        val cleanedAlias = spanKeywordStripPattern.matcher(a).replaceAll("").trim
         if (cleanedAlias.endsWith("(realname)")) {
           val rNameStr = cleanedAlias.replace("(realname)", "").trim
           val rNameParts = rNameStr.split("\\(")
@@ -549,58 +565,58 @@ def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
             aliases ++= rNameParts.tail.map(rp => KestraAlias(rp.replace(")", "").trim, None, None))
           }
         } else {
-          val aliasNameMatch = "(.*?)(?:\\((.*?)\\))?$".r.findFirstMatchIn(cleanedAlias)
+          val aliasNameMatch = nameAltNamePattern.findFirstMatchIn(cleanedAlias)
           val finalAlias = aliasNameMatch.map(_.group(1).trim).getOrElse(cleanedAlias)
           if (finalAlias.nonEmpty) aliases += KestraAlias(finalAlias, spanInfo._1, spanInfo._2)
         }
       }
     } else if (text.startsWith("Known as member of ")) {
-      val parts = li.innerHtml.split("</a>")
-      val aTags = li.select("a").toSeq
+      val parts = li.html().split("</a>")
+      val aTags = li.select("a").asScala.toSeq
       aTags.zipWithIndex.foreach { case (a, idx) =>
         val trailingChunk = if (idx + 1 < parts.length) parts(idx + 1) else ""
         val spanText = trailingChunk.split("<a").headOption.getOrElse("")
         val spanInfo = parseYearSpan(spanText)
           
         val href = a.attr("href")
-        val gId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
+        val gId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
         groups += KestraAuthorRef(gId, a.text, spanInfo._1, spanInfo._2)
       }
     } else if (text.startsWith("Ex System Operator of ")) {
-      val parts = li.innerHtml.split("</a>")
-      val aTags = li.select("a").toSeq
+      val parts = li.html().split("</a>")
+      val aTags = li.select("a").asScala.toSeq
       aTags.zipWithIndex.foreach { case (a, idx) =>
         val trailingChunk = if (idx + 1 < parts.length) parts(idx + 1) else ""
         val spanText = trailingChunk.split("<a").headOption.getOrElse("")
         val spanInfo = parseYearSpan(spanText)
           
         val href = a.attr("href")
-        val gId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
+        val gId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
         exSysop += KestraAuthorRef(gId, a.text, spanInfo._1, spanInfo._2)
       }
     } else if (text.startsWith("Also with this name: ")) {
-      li.select("a").foreach { a =>
+      li.select("a").asScala.foreach { a =>
         val href = a.attr("href")
-        val gId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
+        val gId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
         alsoListed += KestraAuthorRef(gId, a.text)
       }
     } else if (text.startsWith("Ex BBS Phone Number(s): ") || text.startsWith("BBS Phone Number(s): ")) {
       phone = Some(text.replace("Ex BBS Phone Number(s):", "").replace("BBS Phone Number(s):", "").trim)
     } else if (text.startsWith("Members countries: ")) {
-      li.select("img").foreach { img =>
+      li.select("img").asScala.foreach { img =>
         val title = img.attr("title").trim
         if (title.nonEmpty) memberCountries += title
       }
     } else if (text.startsWith("Organized parties: ")) {
-      li.select("a").foreach { a =>
+      li.select("a").asScala.foreach { a =>
         val href = a.attr("href")
-        val gId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
+        val gId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
         organizedParties += KestraAuthorRef(gId, a.text)
       }
     } else if (text.startsWith("Published series: ")) {
-      li.select("a").foreach { a =>
+      li.select("a").asScala.foreach { a =>
         val href = a.attr("href")
-        val gId = """id=(\d+)""".r.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
+        val gId = idPattern.findFirstMatchIn(href).map(_.group(1).toInt).getOrElse(0)
         publishedSeries += KestraAuthorRef(gId, a.text)
       }
     }
@@ -628,11 +644,10 @@ def parseKestraAuthorMeta(id: Int, elem: Element): Option[KestraAuthorMeta] = {
 }
 
 val authors = Files.list(Paths.get(kestra_path + "author/")).toScala(Buffer).par.flatMap(f =>
-  val doc = JsoupBrowser().parseFile(f.toFile)
-  val data = doc >> elementList("#content")
-  if (data.length > 0) {
+  val data = Option(Jsoup.parse(f.toFile, "UTF-8").selectFirst("#content"))
+  if (data.isDefined) {
     val id = f.toString().split("=").last.toInt
-    val meta = parseKestraAuthorMeta(id, data(0))
+    val meta = parseKestraAuthorMeta(id, data.get)
     meta.foreach { meta =>
       val startStr = meta.activeStart.map(_.toString).getOrElse("?")
       val endStr = meta.activeEnd.map(_.toString).getOrElse("?")
@@ -713,18 +728,35 @@ def _date(d: Option[String]) = d.map(_.length).getOrElse(0) match {
 val noAuthorInfoMd5s = Collections.synchronizedSet(new HashSet[String]).asScala
 val noAuthorInfoAlbums = Collections.synchronizedSet(new HashSet[(String, Buffer[String], Int)]).asScala // album, publishers, year
 val noAuthorInfoIds = Collections.synchronizedSet(new HashSet[Int]).asScala
+val ampModulesPattern = Pattern.compile("http[s]?://.*/[Mm]odules//?")
+val modlandModulesPattern = Pattern.compile("(?i)http[s]?://(?:ftp\\.)?modland\\.com/pub/modules//?")
+val wantedteamFilesPattern = Pattern.compile("http[s]?://wt.exotica.org.uk/files//?")
+val unexoticaFilesPattern = Pattern.compile("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/UnExoticA//?")
+val unexoticaAuthorsPattern = Pattern.compile("http[s]?://www.exotica.org.uk/tunes/archive/Authors//?")
+val exoticaArchivePattern = Pattern.compile("http[s]?://www.exotica.org.uk/tunes/archive//?")
+val oldexoticaArchivePattern = Pattern.compile("http[s]?://old.exotica.org.uk/tunes/archive//?")
+val amigascneAmigaPattern = Pattern.compile("http[s]?://ftp.amigascne.org/pub/amiga//?")
+val partOfPattern = Pattern.compile("^Part [0-9] of .*")
+val yearSuffixPattern = Pattern.compile(".*\\d{4}$")
+val ampModulesUrlPattern = Pattern.compile(".*/[Mm]odules/[A-Z]/.*")
+val modlandModulesUrlPattern = Pattern.compile("(?i).*://(?:ftp\\.)?modland\\.com/pub/modules/.*")
+val ampExtensionPattern = Pattern.compile("^[a-z]+\\.")
+
+val partySuffixPatterns = Seq(
+  Pattern.compile(" \\d{4}$"),
+  Pattern.compile(" \\d{4} [Aa]utumn$"),
+  Pattern.compile(" \\d{4} [Ss]pring$"),
+  Pattern.compile(" \\d{4} WE$"),
+  Pattern.compile(" '?[8-9][0-9]$"),
+  Pattern.compile(" \\(.*\\)$"),
+)
+
 val metas = releases.filter { case (id, meta) =>
   meta.types.contains("Music") &&
   !Set("C64 SID","IFF 8SVX","MPEGA encoded music","WAV").contains(meta.soundFormat.getOrElse(""))
 }.par.map { case (id, meta) =>
-  def _party(p: String) = p
-    .replaceAll(" \\d{4}$", "")
-    .replaceAll(" \\d{4} [Aa]utumn$", "")
-    .replaceAll(" \\d{4} [Ss]pring$", "")
-    .replaceAll(" \\d{4} WE$", "")
-    .replaceAll(" '?[8-9][0-9]$", "")
-    .replaceAll(" \\(.*\\)$", "")
-    .trim
+  def _party(p: String) =
+    partySuffixPatterns.foldLeft(p)((acc, pattern) => pattern.matcher(acc).replaceAll("")).trim
   var noAuthorInfo = false
   val authors =
     if (meta.tags.contains("No author infos") || (meta.authors.isEmpty && meta.connections.nonEmpty && meta.released.nonEmpty)) {
@@ -801,7 +833,7 @@ val metas = releases.filter { case (id, meta) =>
   } else if (release.isDefined) {
     val r =
       if (release.get.origin.isDefined) release.get.origin.flatMap(o => o.id.flatMap(releases.get)).getOrElse(release.get)
-      else if (release.get.connections.exists(_.group.matches("^Part [0-9] of .*"))) release.get.connections.find(_.group.matches("^Part [0-9] of .*")).flatMap(r => r.id.flatMap(releases.get)).getOrElse(release.get)
+      else if (release.get.connections.exists(c => partOfPattern.matcher(c.group).matches())) release.get.connections.find(c => partOfPattern.matcher(c.group).matches()).flatMap(r => r.id.flatMap(releases.get)).getOrElse(release.get)
       else release.get
     album = r.title.trim
     publishers = r.authors.map(_.name.trim).toBuffer.sorted.distinct
@@ -811,7 +843,7 @@ val metas = releases.filter { case (id, meta) =>
     }
     year =
       if (r.released.isDefined) r.released.get.take(4).toIntOption.getOrElse(0)
-      else if (r.party.isDefined && r.party.get.name.matches(".*\\d{4}$")) r.party.get.name.takeRight(4).toIntOption.getOrElse(0)
+      else if (r.party.isDefined && yearSuffixPattern.matcher(r.party.get.name).matches()) r.party.get.name.takeRight(4).toIntOption.getOrElse(0)
       else if (meta.released.isDefined) meta.released.get.take(4).toIntOption.getOrElse(0)
       else 0
     _type = r.types.headOption.getOrElse("")
@@ -857,7 +889,7 @@ val metas = releases.filter { case (id, meta) =>
       }
     }
 
-    def matchPath(pathMap: collection.Map[String, Seq[sources.SourceDBEntry]], siteLabel: String, altFilename: String, unknownAuthorIndicator: String, path: String): Seq[String] = {
+    def matchPath(pathMap: Map[String, Seq[sources.SourceDBEntry]], authorIndex: Map[String, Seq[sources.SourceDBEntry]], siteLabel: String, altFilename: String, unknownAuthorIndicator: String, path: String): Seq[String] = {
       val found = Buffer.empty[String]
       if (pathMap.contains(path)) {
         found += pathMap(path).head.md5
@@ -865,16 +897,50 @@ val metas = releases.filter { case (id, meta) =>
       }
 
       val filename = Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase
-      val filenamePattern = Pattern.compile(s".*/(?:${Pattern.quote(filename)}|[^/]*[^a-z0-9]${Pattern.quote(altFilename)})$$")
-      val by_filename = pathMap.keys.filter(k => filenamePattern.matcher(k).matches()).flatMap(pathMap)
+
+      def basenameEq(k: String, needle: String): Boolean = {
+        val n = needle.length
+        // a separator must sit immediately before the basename
+        k.length > n && k.charAt(k.length - n - 1) == '/' && k.endsWith(needle)
+      }
+      def suffixAfterNonAlnum(k: String, needle: String): Boolean = {
+        val n = needle.length
+        if (k.length <= n) false
+        else if (!k.endsWith(needle)) false
+        else {
+          val ci = k.length - n - 1
+          val c = k.charAt(ci)
+          ((c < 'a' || c > 'z') && (c < '0' || c > '9')) && k.lastIndexOf('/', ci - 1) >= 0
+        }
+      }
+
+      def authorHits(needle: String): Seq[sources.SourceDBEntry] =
+        if (needle.indexOf('/') >= 0) {
+          val hit = Buffer.empty[sources.SourceDBEntry]
+          val it = pathMap.iterator
+          while (it.hasNext) {
+            val (k, entries) = it.next()
+            if (k.indexOf(s"/${needle}/") >= 0) hit ++= entries
+          }
+          hit.toSeq
+        } else authorIndex.getOrElse(needle, Nil)
+
+      val by_filename = Buffer.empty[sources.SourceDBEntry]
       var author_path = path.split("/").dropRight(1).lastOption.getOrElse("___...___")
-      var by_author = pathMap.keys.filter(_.contains(s"/${author_path}/")).flatMap(pathMap)
-      var by_filename_authors = by_filename.toSeq.intersect(by_author.toSeq).distinct
+      {
+        val it = pathMap.iterator
+        while (it.hasNext) {
+          val (k, entries) = it.next()
+          if (basenameEq(k, filename) || suffixAfterNonAlnum(k, altFilename)) by_filename ++= entries
+        }
+      }
+      var by_author = authorHits(author_path)
+      var by_filename_authors = by_filename.toSeq.intersect(by_author).distinct
 
       if ((by_author.isEmpty || (by_filename_authors.isEmpty && author_path == unknownAuthorIndicator)) && meta.authors.size >= 1) {
         author_path = meta.authors.head.name.toLowerCase
-        by_author = pathMap.keys.filter(_.contains(s"/${author_path}/")).flatMap(pathMap)
-        by_filename_authors = by_filename.toSeq.intersect(by_author.toSeq).distinct
+        by_author = authorHits(author_path)
+        by_filename_authors = by_filename.toSeq.intersect(by_author).distinct
       }
 
       lazy val by_filename_filesize = by_filename.filter(filesizeOk)
@@ -970,26 +1036,23 @@ val metas = releases.filter { case (id, meta) =>
 
     if (_md5s.isEmpty && (url.contains("://amp.dascene.net/modules/") ||
         url.toLowerCase.contains("/modules/0-9/") ||
-        url.matches(".*/[Mm]odules/[A-Z]/.*")
+        ampModulesUrlPattern.matcher(url).matches()
     )) {
-      val path = url.replaceAll("http[s]?://.*/[Mm]odules//?","").replace("//","/").toLowerCase
+      val path = ampModulesPattern.matcher(url).replaceAll("").replace("//","/").toLowerCase
       if (sources.amp_by_path.contains(path)) {
         _md5s += sources.amp_by_path(path).head.md5
       } else {
-        _md5s ++= matchPath(sources.amp_by_path, "AMP", Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase.replaceFirst("^[a-z]+\\.", ""), "unknowncomposers", path)
+        _md5s ++= matchPath(sources.amp_by_path, sources.amp_by_authorSegment, "AMP", ampExtensionPattern.matcher(Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase).replaceFirst(""), "unknowncomposers", path)
       }
-    } else if (_md5s.isEmpty && url.matches("(?i).*://(?:ftp\\.)?modland\\.com/pub/modules/.*")) {
-      val path = url.replaceAll("(?i)http[s]?://(?:ftp\\.)?modland\\.com/pub/modules//?","").replace("//","/").toLowerCase
+    } else if (_md5s.isEmpty && modlandModulesUrlPattern.matcher(url).matches()) {
+      val path = modlandModulesPattern.matcher(url).replaceAll("").replace("//","/").toLowerCase
       if (sources.modland_by_path.contains(path)) {
         _md5s += sources.modland_by_path(path).head.md5
       } else {
-        _md5s ++= matchPath(sources.modland_by_path, "MODLAND", Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase, "- unknown", path)
+        _md5s ++= matchPath(sources.modland_by_path, sources.modland_by_authorSegment, "MODLAND", Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase, "- unknown", path)
       }
     } else if (_md5s.isEmpty && url.contains("://wt.exotica.org.uk/files/")) {
-      val path = url
-        .replaceAll("http[s]?://wt.exotica.org.uk/files//?","")
-        .replace("//","/")
-        .toLowerCase
+      val path = wantedteamFilesPattern.matcher(url).replaceAll("").replace("//","/").toLowerCase
       if (sources.wantedteam_by_path.contains(path)) {
         val entries = sources.wantedteam_by_path(path)
         if (entries.size > 1) {
@@ -1003,9 +1066,8 @@ val metas = releases.filter { case (id, meta) =>
                url.contains("://files.exotica.org.uk/?file=exotica/media/audio/UnExoticA/") ||
                url.contains("://www.exotica.org.uk/tunes/archive/Authors/")
     )) {
-      val path = url
-        .replaceAll("http[s]?://files.exotica.org.uk/\\?file=exotica/media/audio/UnExoticA//?","")
-        .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive/Authors//?","")
+      val path = unexoticaAuthorsPattern.matcher(
+        unexoticaFilesPattern.matcher(url).replaceAll("")).replaceAll("")
         .replace("//","/")
         .toLowerCase
       if (sources.unexotica_by_path.contains(path)) {
@@ -1021,9 +1083,8 @@ val metas = releases.filter { case (id, meta) =>
       url.contains("://www.exotica.org.uk/tunes/archive/") ||
       url.contains("://old.exotica.org.uk/tunes/archive/")
     )) {
-      val archive = url
-        .replaceAll("http[s]?://www.exotica.org.uk/tunes/archive//?","")
-        .replaceAll("http[s]?://old.exotica.org.uk/tunes/archive//?","")
+      val archive = oldexoticaArchivePattern.matcher(
+        exoticaArchivePattern.matcher(url).replaceAll("")).replaceAll("")
         .replace("//","/")
         .toLowerCase
       if (oldexotica.oldexotica_by_archive.contains(archive)) {
@@ -1046,14 +1107,14 @@ val metas = releases.filter { case (id, meta) =>
 
     if (_md5s.isEmpty) {
       val filename = Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase
-      val candidates = sources.amp_by_path.keys.filter(_.split("/").last == filename).flatMap(sources.amp_by_path) ++ sources.modland_by_path.keys.filter(_.split("/").last == filename).flatMap(sources.modland_by_path)
+      val candidates = sources.modules_by_basename.getOrElse(filename, Nil)
       if (candidates.size >= 1 && candidates.forall(_.md5 == candidates.head.md5)) {
          _md5s += candidates.head.md5
       }
     }
     if (_md5s.isEmpty) {
       val filename = normalizeFilename(Try(URLDecoder.decode(d.filename, "UTF-8")).getOrElse(d.filename).toLowerCase)
-      val candidates = sources.amp_by_path.keys.filter(k => normalizeFilename(k.split("/").last) == filename).flatMap(sources.amp_by_path) ++ sources.modland_by_path.keys.filter(k => normalizeFilename(k.split("/").last) == filename).flatMap(sources.modland_by_path)
+      val candidates = sources.modules_by_normbasename.getOrElse(filename, Nil)
       if (candidates.size >= 1 && candidates.forall(_.md5 == candidates.head.md5)) {
          _md5s += candidates.head.md5
       }
@@ -1106,7 +1167,7 @@ val kestraMetas = releases.filterNot { case (id, meta) =>
   val prodMusicAuthors = meta.credits.filter(_.role == "Music").map(a => a.name.trim)
   val musicFeatures = meta.features.filter(_._type == "Music").map(f => releases(f.id.get))
   val musicConnections = meta.connections.filter(_._type == "Music").map(c => releases(c.id.get))
-  val musicAuthors = musicFeatures.union(musicConnections).distinct
+  val musicAuthors = musicFeatures.concat(musicConnections).distinct
   if (musicAuthors.nonEmpty) {
     authors = musicAuthors.map(_.authors.map(_.name.trim)).filter(_.nonEmpty).distinct
   }
@@ -1153,6 +1214,7 @@ val kestraMetas = releases.filterNot { case (id, meta) =>
 }.flatten.seq.toSet
 
 private val _yearConstraints = Collections.synchronizedSet(new HashSet[(String, Int)]).asScala
+@nowarn("cat=deprecation")
 val kestraExtras = releases.filterNot { case (id, meta) =>
   meta.types.forall(typeBlacklist.contains)
 }.par.map { case (id, meta) =>
@@ -1164,7 +1226,7 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
       "UTF-8"
     ).toLowerCase
     if (url.contains("://ftp.amigascne.org/pub/amiga/")) {
-      val path = url.replaceAll("http[s]?://ftp.amigascne.org/pub/amiga//?","").replace("//","/")
+      val path = amigascneAmigaPattern.matcher(url).replaceAll("").replace("//","/")
       val md5s = sources.findArchive(path, sources.amigascne_by_path).map(_._1).sorted.distinct
       if (noAuthorInfoIds.contains(id)) {
         println(s"KESTRA EXTRA NO AUTHOR: ${md5s.distinct.map(_.take(12))} - ${id} - ${meta}")
@@ -1180,9 +1242,9 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
   val mindate = _metas.map(m => _date(m._1.released)).min
   val metas = _metas.filter(m => _date(m._1.released) <= mindate).flatMap { case (meta, md5s) =>
     val prodMusicAuthors = meta.credits.filter(_.role == "Music").map(a => a.name.trim).sorted.distinct
-    val musicFeatures = meta.features.filter(_._type == "Music").map(f => releases(f.id.get)).union(meta.connections.filter(_._type == "Music").map(c => releases(c.id.get))).distinct
+    val musicFeatures = meta.features.filter(_._type == "Music").map(f => releases(f.id.get)).concat(meta.connections.filter(_._type == "Music").map(c => releases(c.id.get))).distinct
     val musicFeatureAuthors = musicFeatures.flatMap(_.authors.map(_.name.trim)).sorted.distinct
-    val allAuthors = prodMusicAuthors.union(musicFeatureAuthors).sorted.distinct
+    val allAuthors = prodMusicAuthors.concat(musicFeatureAuthors).sorted.distinct
     var authors = Buffer.empty[String]
     if (md5s.size > 1 && md5s.size > musicFeatures.size) {
       println(s"KESTRA EXTRA: multiple MD5s ${md5s} for meta ${meta} with music features ${musicFeatures}, skipping author matching")
@@ -1243,15 +1305,16 @@ val kestraExtras = releases.filterNot { case (id, meta) =>
      (if (m._2._type.isEmpty) SEPARATOR else if (m._2._type.toLowerCase == "game") 0 else 1) + SORT +
      (if (m._2._platform.isEmpty) SEPARATOR else if (m._2._platform.toLowerCase == "amiga") 0 else 1) + SORT +
      (if (m._2.year == 0) 9999 else m._2.year) + SORT +
-     (if (m._2.authors.isEmpty) SEPARATOR else (10 - m._2.authors.size) + m._2.authors.mkString(SEPARATOR)) + SORT +
+     (if (m._2.authors.isEmpty) SEPARATOR else s"${10 - m._2.authors.size}${m._2.authors.mkString(SEPARATOR)}") + SORT +
      (if (m._2.album.isEmpty) SEPARATOR else m._2.album) + SORT +
-     (if (m._2.publishers.isEmpty) SEPARATOR else (10 - m._2.publishers.size) + m._2.publishers.mkString(SEPARATOR)) + SORT
+     (if (m._2.publishers.isEmpty) SEPARATOR else s"${10 - m._2.publishers.size}${m._2.publishers.mkString(SEPARATOR)}") + SORT
     )).head
 
     Some(bestMeta)
   }
 }.seq.toBuffer.distinct
 
+@nowarn("cat=deprecation")
 val kestraExtrasYearConstraints = _yearConstraints.groupBy(_._1).mapValues(_.map(_._2)).par.map { case (md5, years) =>
   (md5, years.min)
 }.seq.toMap

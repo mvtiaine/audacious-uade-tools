@@ -1,6 +1,6 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
-// mostly vibe coded with Claude 4.5
 
 // NOTE: currently not used as primary metadata source due to too unreliable metadata
 
@@ -78,7 +78,7 @@ def splitPublishers(publisherString: String): Seq[String] = {
     return Seq("Share and Enjoy")
   }
   // Split on "and", "&", or " - " with spaces
-  publisherString.split("\\s+(?:and|&)\\s+|\\s+-\\s+").map(_.trim).filter(_.nonEmpty)
+  publisherString.split("\\s+(?:and|&)\\s+|\\s+-\\s+").map(_.trim).filter(_.nonEmpty).toSeq
 }
 
 def normalizeAlbumName(name: String): String = {

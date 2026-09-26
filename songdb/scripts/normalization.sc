@@ -1,7 +1,8 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
-//> using dep com.ibm.icu:icu4j:78.1
+//> using dep com.ibm.icu:icu4j:78.3
 
 import scala.collection.mutable.Buffer
 
@@ -30,9 +31,11 @@ def generateNameVariants(name: String): Seq[String] = {
   res
 }
 
+val transliteratorID = "NFD; [:Nonspacing Mark:] Remove; NFC; Any-Latin; Latin-ASCII"
+
 val transliteratorThreadLocal = new ThreadLocal[Transliterator] {
   override def initialValue(): Transliterator = 
-    Transliterator.getInstance("NFD; [:Nonspacing Mark:] Remove; NFC; Any-Latin; Latin-ASCII")
+    Transliterator.getInstance(transliteratorID)
 }
 
 val normalizeAuthorPatterns = Seq(
@@ -193,11 +196,27 @@ val normalizeAlbumPatterns = Seq(
   (" \\+\\+$",""),
 ).map { case (pattern, replacement) => (Pattern.compile(pattern), replacement) }
 val normalizePattern2 = Pattern.compile("[^A-Za-z0-9\\.]")
-val normalizeAlbumCache = new ConcurrentHashMap[(String, String, Buffer[String], Int), String]()
-def normalizeAlbum(m: MetaData): String = normalizeAlbum(m._type, m.album, m.publishers, m.year)
-def normalizeAlbum(_type: String, album: String, publishers: Buffer[String], year: Int): String = {
+
+inline def truncateAtSeparator(s: String, sep: String): String =
+  val i = s.indexOf(sep)
+  if (i >= 0) s.substring(0, i) else s
+
+val normalizeAlbumQualifierKeywords = Seq("playable", "demo", "preview", "beta", "version")
+
+def stripQualifier(a: String, lca: String): String =
+  val open = lca.lastIndexOf(" (")
+  if (open < 0 || !lca.endsWith(")")) a else
+    val group = lca.substring(open + 2, lca.length - 1)
+    if (normalizeAlbumQualifierKeywords.exists(group.contains))
+      a.substring(0, open).trim
+    else a
+
+inline def normalizeAlbumKey(_type: String, album: String, year: Int) = (_type, album, year)
+val normalizeAlbumCache = new ConcurrentHashMap[(String, String, Int), String]()
+def normalizeAlbum(m: MetaData): String = normalizeAlbum(m._type, m.album, m.year)
+def normalizeAlbum(_type: String, album: String, year: Int): String = {
   if (album.isEmpty) return ""
-  val key = (_type, album, publishers, year)
+  val key = normalizeAlbumKey(_type, album, year)
   val cached = normalizeAlbumCache.get(key)
   if (cached != null) cached else {
     var a = album
@@ -224,22 +243,11 @@ def normalizeAlbum(_type: String, album: String, publishers: Buffer[String], yea
         a = a.substring(0, a.length - 5).trim
       else if (lca.endsWith(" beta"))
         a = a.substring(0, a.length - 5).trim
-      else if (lca.matches(" \\(.*playable.*\\)$"))
-        a = a.replaceAll(" \\(.*playable.*\\)$", "").trim
-      else if (lca.matches(" \\(.*demo.*\\)$"))
-        a = a.replaceAll(" \\(.*demo.*\\)$", "").trim
-      else if (lca.matches(" \\(.*preview.*\\)$"))
-        a = a.replaceAll(" \\(.*preview.*\\)$", "").trim
-      else if (lca.matches(" \\(.*beta.*\\)$"))
-        a = a.replaceAll(" \\(.*beta.*\\)$", "").trim
-      else if (lca.matches(" \\(.*version.*\\)$"))
-        a = a.replaceAll(" \\(.*version.*\\)$", "").trim
+      else
+        a = stripQualifier(a, lca)
     }
-    publishers.foreach(p =>
-      a = a.replaceAll(s"^(?i)${Pattern.quote(p.toLowerCase)} ", "")
-    )
-    a = a.replaceAll(" - .*", "")
-         .replaceAll(": .*", "")
+    // TODO more explicit
+    a = truncateAtSeparator(truncateAtSeparator(a, " - "), ": ")
     //.replaceAll("- .*","")
     //.replaceAll("/ .*","")
     //.replaceAll(": .*","")
@@ -257,10 +265,12 @@ def normalizeAlbum(_type: String, album: String, publishers: Buffer[String], yea
     res
   }
 }
-def _normalizeAlbum(s: String) =
-  s.toLowerCase
-    .replaceAll("\\(.*\\)", "")
-    .replaceAll("[^a-z0-9]", "")
+
+val _normalizeAlbumParenPattern = Pattern.compile("\\(.*\\)")
+val _normalizeAlbumAlnumPattern = Pattern.compile("[^a-z0-9]")
+def _normalizeAlbum(s: String): String = if (s.isEmpty) s else
+  _normalizeAlbumAlnumPattern.matcher(
+    _normalizeAlbumParenPattern.matcher(s.toLowerCase).replaceAll("")).replaceAll("")
 
 def normalizeRealName(realName: String, handle: String): Option[String] = {
   val handleparts = handle.split(" ").map(_.toLowerCase)
@@ -282,7 +292,10 @@ def normalizeRealName(realName: String, handle: String): Option[String] = {
 def isPreview(lcalbum: String): Boolean =
   !lcalbum.startsWith("game ") && (lcalbum.endsWith(" preview") || lcalbum.endsWith(" prev") || lcalbum.endsWith(" demo") || lcalbum.endsWith(" beta") || lcalbum.endsWith(" (preview)") || lcalbum.endsWith(" (demo)") || lcalbum.endsWith(" (beta)") || lcalbum.endsWith(" version)"))
 
-def isCracktro(_type: String): Boolean = _type.toLowerCase == "cracktro" || _type.toLowerCase == "crack intro" || _type.toLowerCase == "import intro" || _type.toLowerCase == "fix/patch Intro" || _type.toLowerCase == "trainer"
+def isCracktro(_type: String): Boolean = {
+  val lctype = _type.toLowerCase
+  lctype == "cracktro" || lctype == "crack intro" || lctype == "import intro" || lctype == "fix/patch Intro" || lctype == "trainer"
+}
 
 def normalizeType(s: String): String = s.toLowerCase match {
   case "" => ""
@@ -292,4 +305,6 @@ def normalizeType(s: String): String = s.toLowerCase match {
   case _ => "Other"
 }
 
-def normalizeFilename(filename: String): String = filename.toLowerCase.replaceAll("[^a-z0-9/]", "")
+val normalizeFilenamePattern = Pattern.compile("[^a-z0-9/]")
+def normalizeFilename(filename: String): String =
+  normalizeFilenamePattern.matcher(filename.toLowerCase).replaceAll("")

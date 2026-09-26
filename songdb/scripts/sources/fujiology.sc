@@ -1,15 +1,13 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep org.apache.poi:poi-ooxml:5.5.0
+//> using dep org.apache.poi:poi-ooxml:5.5.1
 
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
-import scala.concurrent.{Future, Await}
-import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.Using
 import java.io.File
 import java.io.FileInputStream
@@ -122,6 +120,7 @@ lazy val music_metas = {
       val system = getCellString(row, 5)
       val prod = getCellString(row, 6)
       val crew = getCellString(row, 7)
+      val prodlink = getCellString(row, 8)
       val info = getCellString(row, 9)
       var foldername = getCellString(row, 10)
       if (!foldername.isEmpty) {
@@ -202,6 +201,7 @@ lazy val music_metas = {
             System.err.println(s"WARN: Fujiology multiple MUSIC matches for '${filename}' composer '${composer}' folder '${foldername}': ${origEntries}")
           }
         }
+        val infolc = info.toLowerCase
         if (entries.size == 1) {
           val entry = entries.head
           val meta = FujiologyMeta(
@@ -211,10 +211,16 @@ lazy val music_metas = {
             album = prod,
             year = None,
             system,
-            if (info.toLowerCase.contains("converted") || info.toLowerCase.contains("conversion") ||
-                info.toLowerCase.contains("remix") || info.toLowerCase.contains("remake") ||
-                info.toLowerCase.contains("original")
-            ) "" else prodType,
+            if (infolc.contains("converted") || infolc.contains("conversion") ||
+                infolc.contains("remix") || infolc.contains("remake") ||
+                infolc.contains("original")
+            ) ""
+            else if (prod.nonEmpty && (
+                prodlink.startsWith("https://hol.abime.net/") ||
+                prodlink.startsWith("https://www.atarimania.com/game-") ||
+                prodlink.startsWith("https://www.mobygames.com/game/")
+            )) "Game"
+            else prodType,
           )
           if (metas.exists(m => m.md5 == entry.md5)) {
             System.err.println(s"WARN: Fujiology duplicates: ${meta} vs ${metas.filter(_.md5 == entry.md5)}")
@@ -419,17 +425,11 @@ lazy val party_metas = sources.sourceDB(sources.Source.Fujiology).filter(_.path.
 }
 
 lazy val metas = {
-  val musicFuture = Future { music_metas }
-  val prodsFuture = Future { prods_metas }
-  val partyFuture = Future { party_metas }
-  val magsFuture = Future { mags_metas }
-  
-  val combined = for {
-    m <- musicFuture
-    p <- prodsFuture
-    pa <- partyFuture
-    ma <- magsFuture
-  } yield m ++ p ++ pa ++ ma
-  
-  Await.result(combined, Duration.Inf)
+  val parts = Seq[() => IterableOnce[FujiologyMeta]](
+    () => music_metas,
+    () => prods_metas,
+    () => party_metas,
+    () => mags_metas
+  ).par.map(_())
+  parts.seq.foldLeft(Buffer[FujiologyMeta]())(_ ++= _)
 }

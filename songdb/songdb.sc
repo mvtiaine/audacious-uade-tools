@@ -1,14 +1,30 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 -J -Xmx64G --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J -XX:+UseStringDeduplication -J -XX:+UseCompactObjectHeaders -J --enable-native-access=ALL-UNNAMED
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
 
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
+//> using jvm 27
+//> using scala 3.9
+//> using option -opt
+//> using option -opt-inline:<sources>
+//> using javaOpt -Xmx48G
+//> using javaOpt --sun-misc-unsafe-memory-access=allow
+//> using javaOpt --enable-native-access=ALL-UNNAMED
+//> using javaOpt -XX:+UseStringDeduplication
+//> using javaOpt -XX:+UseCompactObjectHeaders
+//> using javaOpt -XX:MetaspaceSize=256m
+//> using javaOpt -XX:MaxGCPauseMillis=500
+//> using file scripts/Jfr.scala
+//> using file scripts/threadpools.sc
 //> using file scripts/md5.sc
 //> using file scripts/dedup.sc
 //> using file scripts/convert.sc
 //> using file scripts/pretty.sc
 //> using file scripts/combine.sc
 //> using file scripts/xxh32.sc
+//> using file scripts/LockFreeMaps.scala
+//> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
 //> using file scripts/normalization.sc
 
@@ -41,6 +57,7 @@ import scala.concurrent.Future
 import scala.jdk.CollectionConverters._
 import scala.util.Success
 import scala.util.Failure
+import scala.util.Try
 
 import md5._
 import dedup._
@@ -54,7 +71,7 @@ import tosecmusic._
 import fujiology._
 import demozoo._
 
-implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
+implicit val ec: scala.concurrent.ExecutionContext = threadpools.workerEc
 
 val DEST = "/tmp/songdb/"
 
@@ -62,7 +79,9 @@ val DEST = "/tmp/songdb/"
 System.setProperty("log4j.provider", "org.apache.logging.log4j.simple.internal.SimpleProvider")
 
 // init audio fingerprints eagerly to reduce memory usage
+Jfr.mark("audioInitStart")
 audio.duplicateSubsongsByPlayerAndMd5
+Jfr.mark("audioInitEnd")
 
 // 0 entry is special
 lazy val idx2md5 = Buffer("0" * 12) ++ songlengths.db.sortBy(_.md5).map(_.md5.take(12)).distinct
@@ -80,6 +99,14 @@ var tosecmusicdata: Buffer[MetaData] = Buffer.empty
 var fujiologydata: Buffer[MetaData] = Buffer.empty
 
 val globalLeftovers = new java.util.concurrent.ConcurrentLinkedQueue[MetaData]()
+
+val verifyTasks = new java.util.concurrent.ConcurrentLinkedQueue[() => Unit]()
+def verify(cond: => Boolean): Unit = verifyTasks.add(() => assert(cond))
+def runVerifyTasks(): Unit = {
+  Jfr.mark("verifyStart")
+  verifyTasks.asScala.toBuffer.par.foreach(_())
+  Jfr.mark("verifyEnd")
+}
 
 def dedupMeta(entries: Buffer[MetaData], name: String): Buffer[MetaData] = {
   val allMetas = entries.groupBy(_.hash).par.flatMap { case (hash, metas) =>
@@ -100,9 +127,9 @@ def dedupMeta(entries: Buffer[MetaData], name: String): Buffer[MetaData] = {
      (if (m._type.isEmpty) SEPARATOR else if (m._type.toLowerCase == "game") 0 else 1) + SORT +
      (if (m._platform.isEmpty) SEPARATOR else if (m._platform.toLowerCase == "amiga" || m._type == "Compo") 0 else 1) + SORT +
      (if (m.year == 0) 9999 else m.year) + SORT +
-     (if (m.authors.isEmpty) SEPARATOR else (10 - m.authors.size) + m.authors.mkString(SEPARATOR)) + SORT +
+     (if (m.authors.isEmpty) SEPARATOR else s"${10 - m.authors.size}${m.authors.mkString(SEPARATOR)}") + SORT +
      (if (m.album.isEmpty) SEPARATOR else m.album) + SORT +
-     (if (m.publishers.isEmpty) SEPARATOR else (10 - m.publishers.size) + m.publishers.mkString(SEPARATOR)) + SORT
+     (if (m.publishers.isEmpty) SEPARATOR else s"${10 - m.publishers.size}${m.publishers.mkString(SEPARATOR)}") + SORT
     )).head
 
     val leftovers = metas.filter(_ != bestMeta)
@@ -120,6 +147,7 @@ def dedupMeta(entries: Buffer[MetaData], name: String): Buffer[MetaData] = {
 }
 
 def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean = false): Buffer[MetaData] = {
+  Jfr.mark("processMetaTsvsStart", if (allTsvs) 1 else 0)
   val dedupped = dedupMeta(_entries, name)
   // encoding does also deduplication
   val encoded = encodeMetaTsv(dedupped, name, _md5idx)
@@ -128,8 +156,8 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
 
   Files.write(Paths.get(s"$DEST/pretty/md5/${name}"), pretty.getBytes("UTF-8"))
 
-  assert(decoded == parsePrettyMetaTsv(pretty))
-  assert(encoded == encodeMetaTsv(decoded, name, _md5idx))
+  verify(decoded == parsePrettyMetaTsv(pretty))
+  verify(encoded == encodeMetaTsv(decoded, name, _md5idx))
 
   if (allTsvs) {
     val xxh32 = metasToXxh32(decoded)
@@ -140,8 +168,8 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     Files.write(Paths.get(s"$DEST/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
     Files.write(Paths.get(s"$DEST/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
 
-    assert(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
-    assert(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
+    verify(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
+    verify(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
   }
 
   dedupped
@@ -213,10 +241,10 @@ lazy val songlengthsTsvs = Future(_try {
   Files.write(Paths.get(s"$DEST/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get(s"$DEST/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
-  assert(decoded == parsePrettySonglengthsTsv(pretty))
-  assert(encoded == encodeSonglengthsTsv(decoded, _md5check))
-  assert(xxh32Decoded == parsePrettySonglengthsTsv(xxh32Pretty))
-  assert(xxh32Encoded == encodeSonglengthsTsv(xxh32, _xxh32check))
+  verify(decoded == parsePrettySonglengthsTsv(pretty))
+  verify(encoded == encodeSonglengthsTsv(decoded, _md5check))
+  verify(xxh32Decoded == parsePrettySonglengthsTsv(xxh32Pretty))
+  verify(xxh32Encoded == encodeSonglengthsTsv(xxh32, _xxh32check))
 })
 
 lazy val modinfosTsvs = Future(_try {
@@ -242,10 +270,10 @@ lazy val modinfosTsvs = Future(_try {
   Files.write(Paths.get(s"$DEST/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get(s"$DEST/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
-  assert(decoded == parsePrettyModInfosTsv(pretty))
-  assert(encoded == encodeModInfosTsv(decoded, _md5idx))
-  assert(xxh32Decoded == parsePrettyModInfosTsv(xxh32Pretty))
-  assert(xxh32Encoded == encodeModInfosTsv(xxh32, _xxh32idx))
+  verify(decoded == parsePrettyModInfosTsv(pretty))
+  verify(encoded == encodeModInfosTsv(decoded, _md5idx))
+  verify(xxh32Decoded == parsePrettyModInfosTsv(xxh32Pretty))
+  verify(xxh32Encoded == encodeModInfosTsv(xxh32, _xxh32idx))
 })
 
 lazy val ampTsvs = Future(_try {
@@ -455,7 +483,7 @@ Seq(
 // needs to be processed first
 Await.ready(Future.sequence(Seq(md5idx,xxh32idxTsv)), Duration.Inf)
 
-val future = Future.sequence(
+val sourcesDone = Future.sequence(
   Seq(md5idx,
       xxh32idxTsv,
       songlengthsTsvs,
@@ -471,31 +499,38 @@ val future = Future.sequence(
       fujiologyTsvs,
       tosecmusicTsvs,
   )
+)
 
-) andThen {
-  case _ =>
-    val combined = combineMetadata(
-      ampdata,
-      modlanddata,
-      unexoticadata,
-      demozoodata,
-      kestradata,
-      oldexoticadata,
-      wantedteamdata,
-      modsanthologydata,
-      fujiologydata,
-      tosecmusicdata,
-      globalLeftovers.asScala.toBuffer
-    )
-    processMetaTsvs(combined, "metadata.tsv", true)
+val result = Try {
+  Await.ready(sourcesDone, Duration.Inf)
+  Jfr.mark("sourcesDone")
+  Jfr.mark("combineStart")
+  val combined = combineMetadata(
+    ampdata,
+    modlanddata,
+    unexoticadata,
+    demozoodata,
+    kestradata,
+    oldexoticadata,
+    wantedteamdata,
+    modsanthologydata,
+    fujiologydata,
+    tosecmusicdata,
+    globalLeftovers.asScala.toBuffer
+  )
+  Jfr.mark("combineEnd")
+  processMetaTsvs(combined, "metadata.tsv", true)
+  Jfr.mark("tsvsWritten")
+  runVerifyTasks()
+  Await.result(sourcesDone, Duration.Inf)
 }
 
-future onComplete {
+result match {
   case Failure(e) =>
     e.printStackTrace()
     System.exit(1)
-  case Success(value) =>
+  case Success(_) =>
     System.out.println(s"Songdb files created to $DEST/")
 }
 
-Await.ready(future, Duration.Inf)
+threadpools.shutdownPools()

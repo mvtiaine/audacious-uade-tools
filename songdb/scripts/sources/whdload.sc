@@ -5,6 +5,7 @@
 
 import java.nio.file.Files
 import java.nio.file.Paths
+import scala.annotation.nowarn
 import scala.collection.immutable.TreeMap
 import scala.collection.mutable
 import scala.collection.mutable.Buffer
@@ -104,6 +105,7 @@ lazy val whdloadMetas = metas.par.map(m =>
 
 val retroplay_by_path = sources.sourceDB(Source.RetroPlayWHDLoadPacks).groupBy(_.path.toLowerCase).to(TreeMap)
 
+@nowarn("cat=deprecation")
 val whdloadExtras = metas.par.map(meta =>
   val path = meta.retroPlayUrl
     .replace("https://ftp2.grandis.nu/turran/FTP/Retroplay%20WHDLoad%20Packs/","")

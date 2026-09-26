@@ -1,16 +1,31 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 -J -Xmx8G --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J --enable-native-access=ALL-UNNAMED
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
 
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
+//> using jvm 27
+//> using scala 3.9
+//> using option -opt
+//> using option -opt-inline:<sources>
+//> using javaOpt -Xmx8G
+//> using javaOpt --sun-misc-unsafe-memory-access=allow
+//> using javaOpt --enable-native-access=ALL-UNNAMED
+//> using javaOpt -XX:+UseCompactObjectHeaders
+//> using javaOpt -XX:+UseCompressedOops
+//> using javaOpt -XX:MetaspaceSize=256m
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
+//> using file scripts/LockFreeMaps.scala
+//> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
 //> using file scripts/convert.sc
 //> using file scripts/dedup.sc
 //> using file scripts/md5.sc
+//> using file scripts/normalization.sc
 //> using file scripts/pretty.sc
 //> using file scripts/songlengths.sc
+//> using file scripts/threadpools.sc
 //> using file scripts/sources/audio.sc
 //> using file scripts/sources/sources.sc
 
@@ -49,7 +64,7 @@ if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv"
 
 val input = args(0) 
 val md5 = if (input == "-") {
-  val inputBytes = Stream.continually(System.in.read).takeWhile(_ != -1).map(_.toByte).toArray
+  val inputBytes = LazyList.continually(System.in.read).takeWhile(_ != -1).map(_.toByte).toArray
   _md5(inputBytes).map("%02x".format(_)).mkString.take(12)
 } else  {
   val file = Paths.get(input)
@@ -73,20 +88,20 @@ if (fingerprints.isEmpty) {
 System.err.print("Processing (x/16) ")
 
 val n = AtomicInteger(0)
-final case class Result(md5: String, subsong: Int, score: Double)
+final case class Result(md5: String, subsong: Int, score: Double, audioBytes: Int)
 val inputFPs = fingerprints.filter(_.audioChromaprint.nonEmpty).map(f => (f, decodeChromaprintUncached(f.audioChromaprint))).toBuffer
 var results = (0 to 15).par.flatMap { i =>
   val cmpFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false, lengths = fingerprints.map(_.audioBytes).toSet)
     .filterNot(_.md5 == md5)
   val results = cmpFingerprints.flatMap(af => {
     if (fingerprints.exists(f => f.audioHash == af.audioHash)) {
-      Some(Result(af.md5, af.subsong, 1.0))
+      Some(Result(af.md5, af.subsong, 1.0, af.audioBytes))
     } else if (af.audioChromaprint.nonEmpty) {
       val afp = decodeChromaprintUncached(af.audioChromaprint)
       inputFPs.flatMap { case (f, fp) =>
         val score = chromaSimilarityFPs(fp, afp)
         if (score >= minscore) {
-          Some(Result(af.md5, af.subsong, score))
+          Some(Result(af.md5, af.subsong, score, af.audioBytes))
         } else None
       }
     } else None
@@ -128,12 +143,16 @@ if (results.isEmpty) {
   
   final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, Seq[FileInfo]]) => String)
 
+  def lenStr(audioBytes: Int): String =
+    if (audioBytes <= 0) "" else "%02d:%02d".format(audioBytes / persecondbytes / 60, audioBytes / persecondbytes % 60)
+
   val columns = Seq(
-    Column("Score", 6, (r, _, _) => r.score.formatted("%.3f")),
+    Column("Score", 6, (r, _, _) => "%.3f".format(r.score)),
     Column("MD5", 12, (r, _, _) => r.md5),
     Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
     Column("Format", 30, (r, _, fi) => fi(r.md5).map(_.format).sorted.head),
     Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
+    Column("Len", 6, (r, _, _) => lenStr(r.audioBytes)),
     Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
     Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString),
     Column("Authors", 30, (_, m, _) => m.map(_.authors.mkString(" & ")).getOrElse("")),
@@ -144,7 +163,7 @@ if (results.isEmpty) {
 
   val cmp = {
     val metadata = metas.get(md5).map(_.head.asInstanceOf[MetaData])
-    columns.map(_.extract(Result(md5, -1, 1.0), metadata, fileinfos))
+    columns.map(_.extract(Result(md5, -1, 1.0, fingerprints.map(_.audioBytes).max), metadata, fileinfos))
   }
 
   val rows = results.map { r =>

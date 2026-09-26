@@ -1,38 +1,49 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-2.0-or-later AND MIT AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 // see below for further copyrights
 
-//> using dep org.lz4:lz4-java:1.8.0
-//> using dep com.trivago:fastutil-concurrent-wrapper:0.2.3
+//> using dep org.lz4:lz4-java:1.8.1
 
-import com.trivago.fastutilconcurrentwrapper.ConcurrentLongFloatMapBuilder
-import com.trivago.fastutilconcurrentwrapper.LongFloatMap
-import java.util.concurrent.ConcurrentHashMap
+import java.util.Arrays
 import java.util.Base64
+import java.util.concurrent.ConcurrentHashMap
 import net.jpountz.xxhash.XXHashFactory
-import scala.collection.mutable
 
-// number of 32-bit words per silence/content scan window (was the FpChunker chunk size)
+// number of 32-bit words per silence/content scan window
 val chunkSize = 64
 
 def isSilentChunk(data: Array[Int], len: Int, offset: Int = 0): Boolean = {
+  if (len <= 0) return true
+  val zeroTrue  = (9 * len) / 10          // zeroCount  >  zeroTrue  <=> zeroRatio   >  0.9
+  val bitsDead1 = (32 * len + 199) / 200 // totalBits >= bitsDead1 <=> setBitRatio  >= 0.005
+  val bitsDead3 = (32 * len + 49) / 50   // totalBits >= bitsDead3 <=> setBitRatio  >= 0.02
+  val uniqDead  = (len + 19) / 20        // uniq      >= uniqDead  <=> repetitionRatio >= 0.05
   var totalBits = 0
   var zeroCount = 0
-  val uniqueValuesSet = scala.collection.mutable.HashSet[Int]()
+  // the first four distinct values seen; uniq saturates at 4 == ">= 4"
+  var u0 = 0
+  var u1 = 0
+  var u2 = 0
+  var uniq = 0
   var i = 0
   while (i < len) {
     val v = data(offset + i)
     totalBits += Integer.bitCount(v)
     if (v == 0) zeroCount += 1
-    uniqueValuesSet += v
+    if (uniq == 0) { u0 = v; uniq = 1 }
+    else if (uniq == 1) { if (v != u0) { u1 = v; uniq = 2 } }
+    else if (uniq == 2) { if (v != u0 && v != u1) { u2 = v; uniq = 3 } }
+    else if (uniq == 3) { if (v != u0 && v != u1 && v != u2) uniq = 4 }
+    if (zeroCount > zeroTrue) return true
+    if (totalBits >= bitsDead1 && uniq >= 3 && (totalBits >= bitsDead3 || uniq >= uniqDead)
+        && zeroCount + len - i - 1 <= zeroTrue) return false
     i += 1
   }
-  val totalPossibleBits = len * 32
-  val setBitRatio = totalBits.toDouble / totalPossibleBits
-  val uniqueValues = uniqueValuesSet.size
-  val repetitionRatio = uniqueValues.toDouble / len
-  val zeroRatio = zeroCount.toDouble / len
-  setBitRatio < 0.005 || zeroRatio > 0.9 || (setBitRatio < 0.02 && repetitionRatio < 0.05) || uniqueValues <= 2
+  if (totalBits < bitsDead1) return true
+  if (uniq <= 2) return true
+  if (totalBits < bitsDead3 && uniq < uniqDead) return true
+  false
 }
 
 def isSilentFingerprint(data: Array[Int]): Boolean = {
@@ -46,7 +57,7 @@ def isSilentFingerprint(data: Array[Int]): Boolean = {
   true
 }
 
-final class FP (val algo: Int, val data: Array[Int]) {
+final class FP (val algo: Int, val data: Array[Int], val key: Long = 0L) {
   val length: Int = data.length
   lazy val isSilent: Boolean = isSilentFingerprint(data)
 
@@ -61,61 +72,38 @@ final class FP (val algo: Int, val data: Array[Int]) {
 
   // hashCode and equals omit deep array checks as they're not used in deduplication anymore
   // but kept valid for exact matching if needed
-  override val hashCode: Int = algo * 31 + java.util.Arrays.hashCode(data)
+  override lazy val hashCode: Int = algo * 31 + Arrays.hashCode(data)
   override def equals(obj: Any): Boolean = obj match {
-    case other: FP => algo == other.algo && length == other.length && java.util.Arrays.equals(data, other.data)
+    case other: FP => algo == other.algo && length == other.length && Arrays.equals(data, other.data)
     case _ => false
   }
 }
-val fpCache = new ConcurrentHashMap[Long, FP](1_000_000)
+val fpCache = new ConcurrentHashMap[Long, FP](500_000)
 
 // xxhash64 of the base64 decoded chromaprint bytes, used as a compact cache key
 // so the full base64 chromaprint string does not need to be retained in memory
 val xxh64 = XXHashFactory.fastestInstance().hash64()
 val xxh64Seed = 0
 
-def chromaprintHash(chromaprint: String): Long = {
-  val bytes = Base64.getUrlDecoder.decode(chromaprint)
+def chromaprintHash(bytes: Array[Byte]): Long =
   xxh64.hash(bytes, 0, bytes.length, xxh64Seed)
-}
 
-def initCaches(): Unit = {
-  if (similarityCache == null) {
-    fpCache.clear()
-    similarityCache = _similarityCache()
-  }
-}
+def chromaprintHash(chromaprint: String): Long =
+  chromaprintHash(Base64.getUrlDecoder.decode(chromaprint))
 
 def clearCaches(): Unit = {
   fpCache.clear()
-  similarityCache = null
 }
 
-// decode + cache the chromaprint under its xxhash64 key, returning the compact key
-def cacheChromaprint(chromaprint: String): String = {
-  val hash = chromaprintHash(chromaprint)
-  fpCache.computeIfAbsent(hash, _ => {
-    val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
-    new FP(algo, data)
+def cacheChromaprint(chromaprint: String): (Long, FP) = {
+  val bytes = Base64.getUrlDecoder.decode(chromaprint)
+  val hash = chromaprintHash(bytes)
+  val fp = fpCache.computeIfAbsent(hash, _ => {
+    val Right(algo, data) = FingerprintDecompressor(bytes) : @unchecked
+    new FP(algo, data, hash)
   })
-  hash.toHexString
+  (hash, fp)
 }
-
-// lookup a previously cached FP by its xxhash64 key (returns null if not cached)
-def fpByHash(hash: String): FP = fpCache.get(java.lang.Long.parseUnsignedLong(hash, 16))
-def fpByHash(hash: Long): FP = fpCache.get(hash)
-
-/*
-def decodeChromaprint(chromaprint: String): FP = {
-  val hash = chromaprintHash(chromaprint)
-  val cached = fpCache.get(hash)
-  if (cached != null) return cached
-  fpCache.computeIfAbsent(hash, _ => {
-    val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
-    new FP(algo, data)
-  })
-}
-*/
 
 // decode without caching (for one-off comparisons in find_dupes.sc/audio_match.sc)
 def decodeChromaprintUncached(chromaprint: String): FP = {
@@ -123,47 +111,12 @@ def decodeChromaprintUncached(chromaprint: String): FP = {
   new FP(algo, data)
 }
 
-// similarity between two already-decoded FPs, without caching
-def chromaSimilarityFPs(fp1: FP, fp2: FP, matchSilence: Boolean = false): Double = {
+// similarity between two already-decoded FPs.
+def chromaSimilarityFPs(fp1: FP, fp2: FP): Double = {
   assert(fp1.algo == fp2.algo)
   val (s1, e1) = fp1.contentBounds
   val (s2, e2) = fp2.contentBounds
-  val sim = chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data)
-  if (!matchSilence && (fp1.isSilent || fp2.isSilent)) 0.0 else sim
-}
-
-def _similarityCache() = ConcurrentLongFloatMapBuilder.newBuilder
-  .withInitialCapacity(500_000)
-  .withBuckets(256)
-  .withDefaultValue(Float.MinValue)
-  .withMode(ConcurrentLongFloatMapBuilder.MapMode.BUSY_WAITING)
-  .build()
-
-var similarityCache: LongFloatMap = null
-
-// the chromaprint1/chromaprint2 parameters are xxhash64 hex strings (see chromaprintHash)
-def chromaSimilarity(chromaprint1: String, chromaprint2: String, matchSilence: Boolean = false): Double = {
-  val h1 = java.lang.Long.parseUnsignedLong(chromaprint1, 16)
-  val h2 = java.lang.Long.parseUnsignedLong(chromaprint2, 16)
-  if (h1 == h2) return 1.0
-  val lo = if (h1 < h2) h1 else h2
-  val hi = if (h1 < h2) h2 else h1
-  val key = lo ^ hi
-  var sim = similarityCache.get(key)
-  lazy val fp1 = fpByHash(lo)
-  lazy val fp2 = fpByHash(hi)
-  if (sim == Float.MinValue) {
-    assert(fp1.algo == fp2.algo)
-    val (s1, e1) = fp1.contentBounds
-    val (s2, e2) = fp2.contentBounds
-    sim = chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data).toFloat
-    similarityCache.put(key, sim)
-  }
-  if (!matchSilence && (fp1.isSilent || fp2.isSilent)) {
-    0.0
-  } else {
-    sim
-  }
+  chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data)
 }
 
 def chromaSimilarityFast(
@@ -181,6 +134,7 @@ def chromaSimilarityFast(
     return 0.0
   }
 
+  val minOverlap = math.min(8, math.min(end1 - start1, end2 - start2) / 2)
   var maxSimilarity = 0.0
   var zeroSimilarity = -1.0
 
@@ -205,7 +159,6 @@ def chromaSimilarityFast(
         i += 1
       }
 
-      val minOverlap = math.min(8, math.min(end1 - start1, end2 - start2) / 2)
       if (overlap >= minOverlap && overlap > 0) {
         val similarity = totalScore.toDouble / (overlap * 32.0)
         if (similarity < prevSimilarity) {
@@ -268,10 +221,11 @@ def chromaSimilarity(
 
   maxSimilarity
 }
-
 */
-// Chromaprint decoding and SimHash code, with some modifications, from:
+
+// Chromaprint decoding and SimHash code, with some modifications, originally from:
 // https://github.com/mgdigital/Chromaprint.scala
+
 /*
 Copyright (c) 2019 Mike Gibson, https://github.com/mgdigital
 
@@ -294,13 +248,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 Original Chromaprint algorithm Copyright (c) Lukáš Lalinský.
+
+// mvtiaine: note that the code has been vibe optimized with various LLM models, so the current code differs quite a bit from the original implementation
 */
 
 // FingerprintDecompressor.scala
 //package chromaprint
-
-// mvtiaine: vibe optimized with Claude Sonnet 4 / Claude Opus 4
-// mvtiaine: replaced custom/scodec Base64 code with java.util.Base64.Decoder
 
 object FingerprintDecompressor {
 
@@ -338,7 +291,7 @@ object FingerprintDecompressor {
     var tripletsUsed = 0
     var exceptionCount = 0
     while (groups < length && tripletsUsed < triplets.length) {
-      val v = triplets(tripletsUsed)
+      val v = triplets(tripletsUsed).toInt
       if (v == 0) groups += 1
       else if (v == 7) exceptionCount += 1
       tripletsUsed += 1
@@ -363,7 +316,7 @@ object FingerprintDecompressor {
     var quintetIdx = 0
     var ti = 0
     while (ti < tripletsUsed) {
-      val v = triplets(ti)
+      val v = triplets(ti).toInt
       if (v == 0) {
         val finalValue = if (resultIdx == 0) value else value ^ previousValue
         result(resultIdx) = finalValue
@@ -372,7 +325,7 @@ object FingerprintDecompressor {
         value = 0
         lastBit = 0
       } else {
-        val actual = if (v == 7) { val q = quintets(quintetIdx); quintetIdx += 1; v + q } else v
+        val actual = if (v == 7) { val q = quintets(quintetIdx).toInt; quintetIdx += 1; v + q } else v
         lastBit += actual
         value |= (1 << (lastBit - 1))
       }
@@ -385,64 +338,64 @@ object FingerprintDecompressor {
   private def packedTripletSize(size: Int): Int =
     (size * 3 + 7) >> 3
 
-  private def bytesToTriplets(bytes: Array[Byte], start: Int, end: Int): Array[Int] = {
-    val maxTriplets = ((end - start) * 8 + 2) / 3
-    val result = new Array[Int](maxTriplets)
+  private def bytesToTriplets(bytes: Array[Byte], start: Int, end: Int): Array[Byte] = {
+    val result = new Array[Byte]((end - start) * 8 / 3)
     var ri = 0
     var i = start
 
+    // every stored value is <= 0x1f, so the narrowing is lossless and the read-back needs no mask
     while (i < end) {
       val b0 = bytes(i) & 0xff
-      result(ri) = b0 & 0x07; ri += 1
-      result(ri) = (b0 >> 3) & 0x07; ri += 1
+      result(ri) = (b0 & 0x07).toByte; ri += 1
+      result(ri) = ((b0 >> 3) & 0x07).toByte; ri += 1
 
       if (i + 1 < end) {
         val b1 = bytes(i + 1) & 0xff
-        result(ri) = ((b0 >> 6) & 0x03) | ((b1 & 0x01) << 2); ri += 1
-        result(ri) = (b1 >> 1) & 0x07; ri += 1
-        result(ri) = (b1 >> 4) & 0x07; ri += 1
+        result(ri) = ((((b0 >> 6) & 0x03) | ((b1 & 0x01) << 2))).toByte; ri += 1
+        result(ri) = ((b1 >> 1) & 0x07).toByte; ri += 1
+        result(ri) = ((b1 >> 4) & 0x07).toByte; ri += 1
 
         if (i + 2 < end) {
           val b2 = bytes(i + 2) & 0xff
-          result(ri) = ((b1 >> 7) & 0x01) | ((b2 & 0x03) << 1); ri += 1
-          result(ri) = (b2 >> 2) & 0x07; ri += 1
-          result(ri) = (b2 >> 5) & 0x07; ri += 1
+          result(ri) = ((((b1 >> 7) & 0x01) | ((b2 & 0x03) << 1))).toByte; ri += 1
+          result(ri) = ((b2 >> 2) & 0x07).toByte; ri += 1
+          result(ri) = ((b2 >> 5) & 0x07).toByte; ri += 1
         }
       }
       i += 3
     }
 
-    if (ri < result.length) java.util.Arrays.copyOf(result, ri) else result
+    result
   }
 
-  private def bytesToQuintets(bytes: Array[Byte], start: Int, end: Int): Array[Int] = {
-    val maxQuintets = ((end - start) * 8 + 4) / 5
-    val result = new Array[Int](maxQuintets)
+  private def bytesToQuintets(bytes: Array[Byte], start: Int, end: Int): Array[Byte] = {
+    val result = new Array[Byte]((end - start) * 8 / 5)
     var ri = 0
     var i = start
 
+    // every stored value is <= 0x1f, so the narrowing is lossless (see bytesToTriplets)
     while (i < end) {
       val q0 = bytes(i) & 0xff
-      result(ri) = q0 & 0x1f; ri += 1
+      result(ri) = (q0 & 0x1f).toByte; ri += 1
 
       if (i + 1 < end) {
         val q1 = bytes(i + 1) & 0xff
-        result(ri) = ((q0 >> 5) & 0x07) | ((q1 & 0x03) << 3); ri += 1
-        result(ri) = (q1 >> 2) & 0x1f; ri += 1
+        result(ri) = ((((q0 >> 5) & 0x07) | ((q1 & 0x03) << 3))).toByte; ri += 1
+        result(ri) = ((q1 >> 2) & 0x1f).toByte; ri += 1
 
         if (i + 2 < end) {
           val q2 = bytes(i + 2) & 0xff
-          result(ri) = ((q1 >> 7) & 0x01) | ((q2 & 0x0f) << 1); ri += 1
+          result(ri) = ((((q1 >> 7) & 0x01) | ((q2 & 0x0f) << 1))).toByte; ri += 1
 
           if (i + 3 < end) {
             val q3 = bytes(i + 3) & 0xff
-            result(ri) = ((q2 >> 4) & 0x0f) | ((q3 & 0x01) << 4); ri += 1
-            result(ri) = (q3 >> 1) & 0x1f; ri += 1
+            result(ri) = ((((q2 >> 4) & 0x0f) | ((q3 & 0x01) << 4))).toByte; ri += 1
+            result(ri) = ((q3 >> 1) & 0x1f).toByte; ri += 1
 
             if (i + 4 < end) {
               val q4 = bytes(i + 4) & 0xff
-              result(ri) = ((q3 >> 6) & 0x03) | ((q4 & 0x07) << 2); ri += 1
-              result(ri) = (q4 >> 3) & 0x1f; ri += 1
+              result(ri) = ((((q3 >> 6) & 0x03) | ((q4 & 0x07) << 2))).toByte; ri += 1
+              result(ri) = ((q4 >> 3) & 0x1f).toByte; ri += 1
             }
           }
         }
@@ -450,7 +403,7 @@ object FingerprintDecompressor {
       i += 5
     }
 
-    if (ri < result.length) java.util.Arrays.copyOf(result, ri) else result
+    result
   }
 }
 
@@ -461,32 +414,53 @@ object SimHash {
 
   val length: Int = 32
 
-  // mvtiaine: modified to support generating multiple/longer hashes as BigInt,
-  // instead of single UInt from small part of the data
-  // also IndexedSeq[UInt] to Array[Int] to reduce overhead and optimized loop
   def apply(data: Array[Int], hashes: Int = 1): BigInt = {
-    if (data.isEmpty) {
-      return BigInt(0)
-    }
-    val groupSize = (data.length + hashes - 1) / hashes
-    val groups = if (groupSize > 0) data.grouped(groupSize).toSeq else Seq(data)
-
-    groups.map { group =>
-      val counts = new Array[Int](length)
-      for (el <- group) {
-        var i = 0
-        while (i < length) {
-          if ((el & (1 << i)) == 0) counts(i) -= 1 else counts(i) += 1
-          i += 1
+    val n = data.length
+    if (n == 0) return BigInt(0)
+    val nh = math.max(1, hashes)
+    val groupSize = math.max(1, (n + nh - 1) / nh)
+    val groups = (n + groupSize - 1) / groupSize
+    // bits needed to count up to groupSize (the last group may be shorter, so this is an upper bound)
+    val b = 32 - Integer.numberOfLeadingZeros(groupSize)
+    val planes = new Array[Int](b)
+    val mag = new Array[Byte](groups * 4)
+    var g = 0
+    while (g < groups) {
+      val start = g * groupSize
+      val end = math.min(start + groupSize, n)
+      val k = end - start
+      Arrays.fill(planes, 0)
+      var i = start
+      while (i < end) {
+        var carry = data(i)
+        var j = 0
+        while (carry != 0 && j < b) {
+          val p = planes(j)
+          planes(j) = p ^ carry
+          carry = p & carry
+          j += 1
         }
-      }
-      var result = 0
-      var i = 0
-      while (i < length) {
-        if (counts(i) > 0) result |= (1 << i)
         i += 1
       }
-      result
-    }.foldLeft(BigInt(0))((acc, hash) => (acc << 32) | BigInt(hash.toLong & 0xFFFFFFFFL))
+      // bit set iff count > k/2 (counts = 2*pop - k, so counts > 0 <=> pop > floor(k/2))
+      val t = k / 2
+      var gt = 0
+      var eq = -1
+      var j = b - 1
+      while (j >= 0) {
+        val cj = planes(j)
+        val tj = if (((t >>> j) & 1) != 0) -1 else 0
+        gt |= eq & (cj & ~tj)
+        eq &= ~(cj ^ tj)
+        j -= 1
+      }
+      val o = g * 4
+      mag(o) = (gt >>> 24).toByte
+      mag(o + 1) = (gt >>> 16).toByte
+      mag(o + 2) = (gt >>> 8).toByte
+      mag(o + 3) = gt.toByte
+      g += 1
+    }
+    BigInt(new java.math.BigInteger(1, mag))
   }
 }

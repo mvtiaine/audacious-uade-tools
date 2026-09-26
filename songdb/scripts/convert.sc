@@ -1,19 +1,70 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
+import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.Buffer
 import scala.collection.mutable.Map
 import scala.collection.parallel.CollectionConverters._
 import scala.reflect.ClassTag
 import scala.util.Using
+import scala.util.hashing.MurmurHash3
 
 import md5._
 import dedup._
 
 val SEPARATOR = "\u007E" // ~
 val SORT = "\u0001"
+
+def sortByKeyOnce[A](xs: Buffer[A], key: A => String): Buffer[A] = {
+  val n = xs.size
+  if (n < 2) return xs
+  val pairs = new Array[(String, A)](n)
+  var i = 0
+  while (i < n) {
+    val e = xs(i)
+    pairs(i) = (key(e), e)
+    i += 1
+  }
+  java.util.Arrays.sort(pairs, (a: (String, A), b: (String, A)) => a._1.compareTo(b._1))
+  val out = new ArrayBuffer[A](n)
+  i = 0
+  while (i < n) {
+    out.addOne(pairs(i)._2)
+    i += 1
+  }
+  out
+}
+
+def joinTsv(rows: Iterable[Buffer[String]], trim: Boolean): String = {
+  def blank(s: String): Boolean = { var i = 0; while (i < s.length && s.charAt(i) <= ' ') i += 1; i == s.length }
+  def lead(s: String): String = { var i = 0; while (i < s.length && s.charAt(i) <= ' ') i += 1; if (i == 0) s else s.substring(i) }
+  def trail(s: String): String = { var i = s.length; while (i > 0 && s.charAt(i - 1) <= ' ') i -= 1; if (i == s.length) s else s.substring(0, i) }
+  val sb = new java.lang.StringBuilder
+  rows.foreach { r =>
+    var first = 0
+    var last = r.length - 1
+    if (trim) {
+      while (first <= last && blank(r(first))) first += 1
+      while (last >= first && blank(r(last))) last -= 1
+    }
+    var i = first
+    while (i <= last) {
+      if (i > first) sb.append('\t')
+      val c = r(i)
+      if (!trim) sb.append(c)
+      else if (i == first && i == last) sb.append(trail(lead(c)))
+      else if (i == first) sb.append(lead(c))
+      else if (i == last) sb.append(trail(c))
+      else sb.append(c)
+      i += 1
+    }
+    sb.append('\n')
+  }
+  sb.toString
+}
 
 final case class SubsongInfo (
   songlength: Int, // in ms
@@ -55,6 +106,38 @@ final case class MetaData (
   override def copyWithHash(newHash: String) = copy(hash = newHash)
   override def toString =
     s"MetaData(${hash},${authors.mkString(",")},${publishers.mkString(",")},${album},${year},${_type},${_platform})"
+
+  private val authorsHash: Int = MurmurHash3.orderedHash(authors)
+  private val publishersHash: Int = MurmurHash3.orderedHash(publishers)
+
+  def authorsEqual(that: MetaData): Boolean =
+    this.authorsHash == that.authorsHash && this.authors == that.authors
+  def publishersEqual(that: MetaData): Boolean =
+    this.publishersHash == that.publishersHash && this.publishers == that.publishers
+
+  override def equals(obj: Any): Boolean = obj match {
+    case that: MetaData =>
+      this.hash == that.hash &&
+      this.year == that.year &&
+      this._type == that._type &&
+      this._platform == that._platform &&
+      this.album == that.album &&
+      this.authorsHash == that.authorsHash &&
+      this.publishersHash == that.publishersHash &&
+      this.authors == that.authors &&
+      this.publishers == that.publishers
+    case _ => false
+  }
+
+  override val hashCode: Int = {
+    var h = MurmurHash3.stringHash(hash)
+    h = MurmurHash3.mix(h, year)
+    h = MurmurHash3.mix(h, MurmurHash3.stringHash(_type))
+    h = MurmurHash3.mix(h, MurmurHash3.stringHash(_platform))
+    h = MurmurHash3.mix(h, MurmurHash3.stringHash(album))
+    h = MurmurHash3.mix(h, authorsHash)
+    MurmurHash3.mixLast(h, publishersHash)
+  }
 }
 
 def hashidxdiff(entries: Iterable[Buffer[String]]) = {
@@ -197,7 +280,7 @@ def encodeSonglengthsTsv(songlengths: Buffer[SongInfo], _check: Map[String, Stri
   val dedupped = dedup(entries, "songlengths.tsv", _check)
   validate(dedupped, "songlengths.tsv")
   // drop hash as line # == hashidx
-  dedupped.map(b => b.tail.mkString("\t")).mkString("\n").concat("\n")
+  joinTsv(dedupped.map(_.tail), trim = false)
 }
 
 def decodeTsv[T <: BaseInfo : ClassTag] (
@@ -250,7 +333,7 @@ def decodeModInfosTsv(tsv: String, idx2hash: Buffer[String]) = {
 def encodeModInfosTsv(modinfos: Buffer[ModInfo], _idx: Map[String, String]) = {
   assert(modinfos.map(_.hash).distinct.size == modinfos.size)
   def sorter = (e: ModInfo) => e.format + SORT + e.channels + SORT + e.hash
-  val infos = modinfos.sortBy(sorter).par.map(m =>
+  val infos = sortByKeyOnce(modinfos, sorter).par.map(m =>
     Buffer(
       m.hash.take(12),
       m.format,
@@ -259,7 +342,7 @@ def encodeModInfosTsv(modinfos: Buffer[ModInfo], _idx: Map[String, String]) = {
   ).seq
   val dedupped = dedupidx(infos, "modinfos.tsv", _idx, strict=true)
   validate(dedupped, "modinfos.tsv")
-  hashidxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
+  joinTsv(hashidxdiff(dedupped), trim = true)
 }
 
 def decodeMetaTsv(tsv: String, idx2hash: Buffer[String]) = {
@@ -298,7 +381,7 @@ def encodeMetaTsv(meta: Buffer[MetaData], name: String, _idx: Map[String, String
     e.album + SORT + 
     e.year + SORT +
     e.hash
-  val infos = meta.sortBy(sorter).par.map(i =>
+  val infos = sortByKeyOnce(meta, sorter).par.map(i =>
     Buffer(
       i.hash.take(12),
       i.authors.mkString(SEPARATOR),
@@ -309,5 +392,5 @@ def encodeMetaTsv(meta: Buffer[MetaData], name: String, _idx: Map[String, String
   ).seq
   val dedupped = dedupidx(infos, name, _idx)
   validate(dedupped, name)
-  hashidxdiff(dedupped).map(_.mkString("\t").trim).mkString("\n").concat("\n")
+  joinTsv(hashidxdiff(dedupped), trim = true)
 }

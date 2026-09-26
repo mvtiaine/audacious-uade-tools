@@ -1,8 +1,9 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep net.ruippeixotog::scala-scraper::3.1.0
+//> using dep org.jsoup:jsoup:1.23.2
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -11,11 +12,8 @@ import scala.collection.parallel.CollectionConverters._
 import scala.jdk.CollectionConverters._
 import scala.jdk.StreamConverters._
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
-import net.ruippeixotog.scalascraper.model._
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 
 val oldexotica_path = System.getProperty("user.home") + "/sources/metadata/oldexotica/"
 
@@ -40,24 +38,24 @@ lazy val oldexotica_mods_by_dir = sources.sourceDB(sources.Source.OldExotica)
   .groupBy(_.path.trim.split("/").takeRight(3).take(2).mkString("/"))
 
 lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).toScala(Buffer).par.flatMap(f =>
-  val doc = JsoupBrowser().parseFile(f.toFile, "cp1252")
-  val rows = doc >> elementList("center table tr[bgcolor=\"#333355\"]")
+  val doc = Jsoup.parse(f.toFile, "cp1252")
+  val rows = doc.select("center table tr[bgcolor=\"#333355\"]").asScala
   val metas = Buffer[OldExoticaMeta]()
   var meta = OldExoticaMeta("", "", "", 0, "", "", "", None)
   var skip = 0
   var n = 1
   rows.foreach(e =>
-    val cols = e >> elementList("td")
+    val cols = e.select("td").asScala
     cols.foreach(col =>
-      if ((col >> elementList("font a")).size > 0) {
-        val a = col >> elementList("font a")
-        val href = a(0).attr("href")
+      val fontA = Option(col.selectFirst("font a"))
+      val anchorA = Option(col.selectFirst("a"))
+      if (fontA.isDefined) {
+        val href = fontA.get.attr("href")
         val archive = href.trim.split("/").takeRight(2).mkString("/")
         meta = meta.copy(archive = archive)
         skip = 2
-      } else if ((col >> elementList("a")).size > 0) {
-        val a = col >> elementList("a")
-        val href = a(0).attr("href")
+      } else if (anchorA.isDefined) {
+        val href = anchorA.get.attr("href")
         val archive = href.trim.split("/").takeRight(2).mkString("/")
         val file = archive.split("/").last.replace(".lha", "")
         if (file == "Info.txt") {
@@ -68,10 +66,10 @@ lazy val metas = Files.list(Paths.get(oldexotica_path + "tunes/pages-full/")).to
         }
       } else if (skip > 0) {
         skip -= 1
-      } else if (col >> text("font") == "Info.txt") {
+      } else if (Option(col.selectFirst("font")).map(_.text()).getOrElse("") == "Info.txt") {
         skip = 2
       } else {
-        val txt = col >> text("font")
+        val txt = Option(col.selectFirst("font")).map(_.text()).getOrElse("")
         n match {
           case 1 => meta = meta.copy(path = meta.archive.split("/").last.replace(".lha", "") + "/" + txt.trim)
           case 2 => meta = meta.copy(filesize = txt.trim.toIntOption.getOrElse(0))

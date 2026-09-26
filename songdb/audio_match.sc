@@ -1,8 +1,19 @@
-#!/usr/bin/env -S scala-cli shebang --jvm 25 -S 3.8 -J -Xmx8G --suppress-warning-directives-in-multiple-files -q -J --sun-misc-unsafe-memory-access=allow -J --enable-native-access=ALL-UNNAMED
+#!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
 
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
-// NOTE: some code generated with Claude Sonnet 4
+
+//> using jvm 27
+//> using scala 3.9
+//> using option -opt
+//> using option -opt-inline:<sources>
+//> using javaOpt -Xmx8G
+//> using javaOpt --sun-misc-unsafe-memory-access=allow
+//> using javaOpt --enable-native-access=ALL-UNNAMED
+//> using javaOpt -XX:+UseCompactObjectHeaders
+//> using javaOpt -XX:+UseCompressedOops
+//> using javaOpt -XX:MetaspaceSize=256m
 
 // Does a "brute force" search for matching audio fingerprints, based on chroma similarity scores.
 
@@ -22,12 +33,16 @@
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 
+//> using file scripts/LockFreeMaps.scala
+//> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
 //> using file scripts/convert.sc
 //> using file scripts/dedup.sc
 //> using file scripts/md5.sc
+//> using file scripts/normalization.sc
 //> using file scripts/pretty.sc
 //> using file scripts/songlengths.sc
+//> using file scripts/threadpools.sc
 //> using file scripts/sources/audio.sc
 //> using file scripts/sources/sources.sc
 
@@ -90,7 +105,7 @@ if (isSilentFingerprint(fp.data)) {
 System.err.print("Processing (x/16) ")
 
 val n = AtomicInteger(0)
-final case class Result(md5: String, subsong: Int, score: Double)
+final case class Result(md5: String, subsong: Int, score: Double, audioBytes: Int)
 var results = (0 to 15).par.flatMap { i =>
   val audioFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false)
   val results = audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
@@ -101,7 +116,7 @@ var results = (0 to 15).par.flatMap { i =>
     } else {
       val score = chromaSimilarity(fp2.algo, fp2.data, algo, fp.data, 0.7)
       if (score >= minscore) {
-        Some(Result(af.md5, af.subsong, score))
+        Some(Result(af.md5, af.subsong, score, af.audioBytes))
       } else None
     }
   })
@@ -142,12 +157,16 @@ if (results.isEmpty) {
   
   final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, Seq[FileInfo]]) => String)
 
+  def lenStr(audioBytes: Int): String =
+    if (audioBytes <= 0) "" else "%02d:%02d".format(audioBytes / persecondbytes / 60, audioBytes / persecondbytes % 60)
+
   val columns = Seq(
-    Column("Score", 6, (r, _, _) => r.score.formatted("%.3f")),
+    Column("Score", 6, (r, _, _) => "%.3f".format(r.score)),
     Column("MD5", 12, (r, _, _) => r.md5),
     Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
     Column("Format", 30, (r, _, fi) => fi(r.md5).map(_.format).sorted.head),
     Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
+    Column("Len", 6, (r, _, _) => lenStr(r.audioBytes)),
     Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
     Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString),
     Column("Authors", 30, (_, m, _) => m.map(_.authors.mkString(" & ")).getOrElse("")),

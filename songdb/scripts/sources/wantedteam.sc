@@ -1,7 +1,9 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-assisted
 // Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
+//> using dep org.jsoup:jsoup:1.23.2
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -11,11 +13,8 @@ import scala.jdk.CollectionConverters._
 import scala.jdk.StreamConverters._
 import scala.util.Using
 
-import net.ruippeixotog.scalascraper.browser.JsoupBrowser
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
-import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
-import net.ruippeixotog.scalascraper.model._
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
 
 val wantedteam_path = System.getProperty("user.home") + "/sources/metadata/wantedteam/"
 
@@ -38,10 +37,10 @@ lazy val wantedteam_customs_by_path =
 lazy val customshtml = Paths.get(wantedteam_path + "customs.html").toFile
 lazy val customstxt = Paths.get(wantedteam_path + "customs/OnePlayControl.lha/WT_Customs.txt").toFile
 lazy val customs = Using(scala.io.Source.fromFile(customstxt)(using scala.io.Codec.ISO8859))(f => {
-  val doc = JsoupBrowser().parseFile(customshtml)
-  val rows = doc >> elementList("li")
+  val doc = Jsoup.parse(customshtml, "UTF-8")
+  val rows = doc.select("li").asScala.toList
   val pathToType = rows.par.flatMap(r =>
-    var txt = r.text.trim
+    var txt = r.text().trim
     val path = txt.split(" ").head
     val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
     txt = (txt.split(" - ").tail.mkString(" - ").trim).toLowerCase
@@ -110,10 +109,10 @@ lazy val wantedteam_examples_by_path =
 
 lazy val exampleshtml = Paths.get(wantedteam_path + "examples.html").toFile
 lazy val examples = {
-  val doc = JsoupBrowser().parseFile(exampleshtml)
-  val rows = doc >> elementList("li")
+  val doc = Jsoup.parse(exampleshtml, "UTF-8")
+  val rows = doc.select("li").asScala.toList
   rows.par.flatMap(r =>
-    var txt = r.text.trim
+    var txt = r.text().trim
     val path = txt.split(" ").head
     val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
     txt = txt.split(" - ").tail.mkString(" - ").trim
@@ -329,10 +328,10 @@ lazy val wantedteam_rips_by_path =
 
 lazy val ripshtml = Paths.get(wantedteam_path + "rips.html").toFile
 lazy val rips = {
-  val doc = JsoupBrowser().parseFile(ripshtml)
-  val rows = doc >> elementList("li")
+  val doc = Jsoup.parse(ripshtml, "UTF-8")
+  val rows = doc.select("li").asScala.toList
   rows.par.flatMap(r =>
-    var txt = r.text.trim
+    var txt = r.text().trim
     val path = txt.split(" ").head
     val filesize = txt.split(" ").drop(1).head.replace("(","").replace(" bytes)","").toIntOption.getOrElse(0)
     txt = txt.split(" - ").tail.mkString(" - ").trim

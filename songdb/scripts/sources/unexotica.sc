@@ -2,10 +2,11 @@
 // Copyright (C) 2023-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
-//> using dep io.circe::circe-generic::0.14.6
+//> using dep io.circe::circe-generic::0.14.16
 //> using dep io.circe::circe-yaml::1.15.0
 //> using dep net.seeseekey:mediawikixml:1.0.3
 
+import java.io.FileInputStream
 import java.nio.file.Files
 import java.nio.file.Paths
 import scala.collection.mutable.Buffer
@@ -71,9 +72,9 @@ val metas = sources.sourceDB(sources.Source.UnExotica).par.flatMap(e =>
   if (metas.size > 1) {
     System.err.println(s"WARN: removing duplicate UnExotica entries for md5: ${md5} entries: ${metas}")
   }
-  val year = metas.map(m => if (m._4.year.fold(_.toString, _.toString) == "Unknown") 9999 else m._4.year.left.get).min
+  val year = metas.map(m => if (m._4.year.isLeft) m._4.year.swap.getOrElse(9999) else 9999).min
   metas.filter(m => {
-    val cmp = if (m._4.year.fold(_.toString, _.toString) == "Unknown") 9999 else m._4.year.left.get
+    val cmp = if (m._4.year.isLeft) m._4.year.swap.getOrElse(9999) else 9999
     year == cmp
   }).seq.sortBy(_._2).head // secondarily sort by path for consistency
 })
@@ -191,12 +192,12 @@ xmldump_parser.setPageCallback(page => {
               else if (composers_ == "Stefan Jaworski - Nightlight")
                 composers_ = "Nightlight"
               val composers = if (composers_.endsWith(" & Co."))
-                Array(composers_)
+                Array(composers_).toSeq
               else
-                composers_.split("&|,|/| or | and ").map(_.trim).filter(c => c.nonEmpty && c != "-").sorted.distinct
+                composers_.split("&|,|/| or | and ").map(_.trim).filter(c => c.nonEmpty && c != "-").sorted.distinct.toSeq
               val game = if (cols(3) == "-") "" else cols(3)
               val year = cols(4).toIntOption.getOrElse(0)
-              val publishers = cols(5).split("/").map(_.trim).filter(p => p.nonEmpty && p != "-").sorted.distinct
+              val publishers = cols(5).split("/").map(_.trim).filter(p => p.nonEmpty && p != "-").sorted.distinct.toSeq
               val path = pathStack.take(depth + 1).filter(_.nonEmpty).mkString("/").trim
               entries.append(WikiFileEntry(path, size, composers, game, year, publishers))
             }
@@ -230,7 +231,7 @@ val composerfiles3 = Files.list(Paths.get(unexotica_path + "/Game/Composers/")).
   .filter(_.isFile)
   .filter(f => f.getName.endsWith(".txt"))
 
-val composer_handles = (composerfiles1 ++ composerfiles2 ++ composerfiles3)
+val composer_handles = ((composerfiles1 ++ composerfiles2 ++ composerfiles3)
   .par
   .flatMap(file => {
     try {
@@ -262,7 +263,14 @@ val composer_handles = (composerfiles1 ++ composerfiles2 ++ composerfiles3)
         System.exit(1)
         None
     }
-  }).groupBy(_.name).map({case (name, metas) =>
+  })
+  ++ Seq(
+  // XXX
+    ComposerHandle("Jan Reinert Karlsen", Some(Left("Interphace"))),
+    ComposerHandle("Niko Nyman", Some(Left("Strobo"))),
+    ComposerHandle("Pål Granum", Some(Left("Vinnie"))),
+  )
+  ).groupBy(_.name).map({case (name, metas) =>
     name -> metas.head.handle.get.fold(_.toString, _.toString)
   }).seq.toMap
 
@@ -316,7 +324,8 @@ def transformAuthors(meta: UnExoticaMeta, path: String): Seq[String] = {
     normalized = fixes.get(normalized).getOrElse(normalized)
     normalized = if (path.startsWith("Demo/") && !handleBlackList.contains(normalized)) {
       if (composer_handles.contains(normalized)) composer_handles(normalized)
-      else if (amp.composer_handles.contains(normalized)) amp.composer_handles(normalized)
+      // will deadlock
+      //else if (amp.composer_handles.contains(normalized)) amp.composer_handles(normalized)
       else normalized
     } else normalized
     // XXX

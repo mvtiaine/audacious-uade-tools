@@ -1814,6 +1814,8 @@ def applyQuirks(_authors: Buffer[String], _album: String, _publishers: Buffer[St
     album = "Toothbrush Part 3"
   if (album.startsWith("pHluid MD #"))
     album = album.replace("pHluid MD #", "pHluid Music Disk #")
+  if (publishers.contains("pHluid") && album.startsWith("Music Disk #"))
+    album = album.replace("Music Disk #", "pHluid Music Disk #")
   if (album == "Temple of Dicease") {
     album = "Temple of Decease"
     year = Some(1995)
