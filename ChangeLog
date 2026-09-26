@@ -1,3 +1,8 @@
+2026-09-26
+- Metadata extraction/heuristics tweaks and fixes
+- Optimizations to audio fingerprint matching and songdb generation
+- Misc fixes and updates
+
 2026-08-19
 - Metadata extraction/heuristics tweaks and fixes
 
