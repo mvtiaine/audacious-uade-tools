@@ -17,13 +17,11 @@ COPY (
                 name NOT LIKE 'ANSI%' AND
                 name NOT LIKE 'ASCII%' AND
                 name NOT LIKE '%Graphics' AND
-                name NOT LIKE '%Door' AND
                 name NOT LIKE '%Model' AND
                 name NOT LIKE '%Music' AND
                 name NOT LIKE '%Papermag' AND
                 name NOT LIKE '%Performance' AND
-                name NOT LIKE '%Photo' AND
-                name NOT LIKE '%Textmag'
+                name NOT LIKE '%Photo'
         )
 ) TO '/tmp/demozoo_defacto2.tsv' WITH NULL AS '';
 
@@ -43,13 +41,11 @@ COPY (
                 name NOT LIKE 'ANSI%' AND
                 name NOT LIKE 'ASCII%' AND
                 name NOT LIKE '%Graphics' AND
-                name NOT LIKE '%Door' AND
                 name NOT LIKE '%Model' AND
                 name NOT LIKE '%Music' AND
                 name NOT LIKE '%Papermag' AND
                 name NOT LIKE '%Performance' AND
-                name NOT LIKE '%Photo' AND
-                name NOT LIKE '%Textmag'
+                name NOT LIKE '%Photo'
         )
 ) TO '/tmp/demozoo_padua.tsv' WITH NULL AS '';
 
@@ -69,13 +65,11 @@ COPY (
                 name NOT LIKE 'ANSI%' AND
                 name NOT LIKE 'ASCII%' AND
                 name NOT LIKE '%Graphics' AND
-                name NOT LIKE '%Door' AND
                 name NOT LIKE '%Model' AND
                 name NOT LIKE '%Music' AND
                 name NOT LIKE '%Papermag' AND
                 name NOT LIKE '%Performance' AND
-                name NOT LIKE '%Photo' AND
-                name NOT LIKE '%Textmag'
+                name NOT LIKE '%Photo'
         )
 ) TO '/tmp/demozoo_untergrund.tsv' WITH NULL AS '';
 
@@ -95,13 +89,11 @@ COPY (
                 name NOT LIKE 'ANSI%' AND
                 name NOT LIKE 'ASCII%' AND
                 name NOT LIKE '%Graphics' AND
-                name NOT LIKE '%Door' AND
                 name NOT LIKE '%Model' AND
                 name NOT LIKE '%Music' AND
                 name NOT LIKE '%Papermag' AND
                 name NOT LIKE '%Performance' AND
-                name NOT LIKE '%Photo' AND
-                name NOT LIKE '%Textmag'
+                name NOT LIKE '%Photo'
         )
 ) TO '/tmp/demozoo_waybackmachine.tsv' WITH NULL AS '';
 
@@ -128,12 +120,10 @@ COPY (
                 name NOT LIKE 'ANSI%' AND
                 name NOT LIKE 'ASCII%' AND
                 name NOT LIKE '%Graphics' AND
-                name NOT LIKE '%Door' AND
                 name NOT LIKE '%Model' AND
                 name NOT LIKE '%Music' AND
                 name NOT LIKE '%Papermag' AND
                 name NOT LIKE '%Performance' AND
-                name NOT LIKE '%Photo' AND
-                name NOT LIKE '%Textmag'
+                name NOT LIKE '%Photo'
         )
 ) TO '/tmp/demozoo_leftovers.tsv' WITH NULL AS '';

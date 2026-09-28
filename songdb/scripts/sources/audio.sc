@@ -186,12 +186,6 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
     }
   }
 
-/*
-lazy val audioFingerprints =
-  Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv")).par.flatMap(tsv =>
-    parseAudioTsv(tsv.getAbsolutePath, withSimHash = true)
-  ).seq.distinct.toBuffer
-*/
   out.distinct
 }
 
@@ -759,7 +753,6 @@ lazy val (
         audioTags.values.forall(_ == audioTags.head._2) && filtered.forall(_.audioBytes == filtered.head.audioBytes)
       )
       val baseThreshold = if (audioTagsIdentical) 0.9 else 0.99
-      assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
       try {
         assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
       } catch {

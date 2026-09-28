@@ -32,9 +32,9 @@ SELECT DISTINCT
         decode_url(o.parameter) AS path
     FROM
         productions_production a
-    INNER JOIN productions_production_types b
+    LEFT JOIN productions_production_types b
         ON b.production_id = a.id
-    INNER JOIN productions_productiontype k
+    LEFT JOIN productions_productiontype k
         ON k.id = b.productiontype_id
     LEFT JOIN productions_production_platforms d
         ON d.production_id = a.id
@@ -63,17 +63,16 @@ SELECT DISTINCT
     LEFT JOIN productions_productionlink o
         ON o.production_id = a.id
     WHERE
+        k.name IS NULL OR (
         k.name NOT LIKE 'ANSI%' AND
         k.name NOT LIKE 'ASCII%' AND
         k.name NOT LIKE '%Graphics' AND
-        k.name NOT LIKE '%Door' AND
         k.name NOT LIKE '%Model' AND
         k.name NOT LIKE '%Music' AND
         k.name NOT LIKE '%Papermag' AND
         k.name NOT LIKE '%Performance' AND
-        k.name NOT LIKE '%Photo' AND
-        k.name NOT LIKE '%Textmag' AND
-        o.is_download_link IS TRUE
+        k.name NOT LIKE '%Photo'
+    )
     GROUP BY
         a.id,
         a.release_date_date,

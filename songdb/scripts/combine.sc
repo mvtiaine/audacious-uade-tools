@@ -2431,9 +2431,6 @@ def combineMetadata(
             debug(_ => s"Filling year for ${meta} -  year ${meta.year} -> ${cmp.year} source: ${cmp}")
             meta = meta.copy(year = cmp.year)
           }
-        } else if (!cmpOk) {
-          debug(_ => s"Removing metadata due to cmp mismatch for key: " + key + " META: " + meta + " CMP: " + cmp + " METAS: " + _metas.mkString(" | ") + " cmpOk: " + cmpOk)
-          meta = meta.copy(album = "", publishers = Buffer.empty, year = 0, _type = "", _platform = "")
         }
       }
       meta
@@ -2502,7 +2499,8 @@ def combineMetadata(
           }
         }
 
-        var authenticCMPs = metas.filter(m => authenticAuthorMetas.contains(m.authors.map(normalizeAuthor).sorted.distinct))
+        var authenticCMPs = metas
+          .filter(m => m._type.toLowerCase != "tool" && authenticAuthorMetas.contains(m.authors.map(normalizeAuthor).sorted.distinct))
         if (m._type.toLowerCase == "game") {
           val withrealnames = authenticCMPs.filter(m => hasRealNames(m.authors))
           if (withrealnames.nonEmpty) {

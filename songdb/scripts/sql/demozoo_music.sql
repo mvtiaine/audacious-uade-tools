@@ -39,7 +39,7 @@ SELECT DISTINCT
         productions_productionlink a
     INNER JOIN productions_production b
         ON a.production_id = b.id
-    INNER JOIN productions_production_types c
+    LEFT JOIN productions_production_types c
         ON c.production_id = b.id
     LEFT JOIN productions_production_platforms d
         ON d.production_id = b.id
@@ -79,25 +79,7 @@ SELECT DISTINCT
         ON u.production_id = i.id
     LEFT JOIN productions_productiontype v
         ON v.id = u.productiontype_id
-    WHERE
-        (
-            (a.is_download_link = true AND a.link_class = 'BaseUrl')
-            OR a.link_class = 'AmigascneFile'
-            OR a.link_class = 'FujiologyFile'
-            OR a.link_class = 'ModarchiveModule'
-            OR a.link_class = 'ModlandFile'
-            OR a.link_class = 'PaduaOrgFile'
-            OR a.link_class = 'SceneOrgFile'
-            OR a.link_class = 'UntergrundFile'
-            OR a.link_class = 'WaybackMachinePage'
-            OR a.parameter LIKE 'http%://amp.dascene.net/%'
-            OR a.parameter LIKE 'http%://aminet.net/%'
-            OR a.parameter LIKE 'http%://wt.exotica.org.uk/files/%'
-            OR a.parameter LIKE 'http%://files.exotica.org.uk/?file=exotica/media/audio/UnExoticA/%'
-            OR a.parameter LIKE 'http%://www.exotica.org.uk/download.php?file=media/audio/UnExoticA/%'
-            OR a.parameter LIKE 'http%://media.demozoo.org/%'
-        )
-        AND c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name LIKE '%Music')
+    WHERE c.productiontype_id IN (SELECT id FROM productions_productiontype WHERE name LIKE '%Music')
     GROUP BY
         a.production_id,
         b.title,

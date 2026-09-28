@@ -79,10 +79,27 @@ private def normalize(s: String) = _normalizeAlnumPattern.matcher(s.toLowerCase)
 
 private def normalizePlatform(platform: String): String = {
   if (platform.startsWith("Amiga")) "Amiga"
+  else if (platform.startsWith("Commodore")) "8bit"
+  else if (platform.startsWith("ZX Spectrum")) "8bit"
+  else if (platform.startsWith("Atari 2600")) "8bit"
+  else if (platform.startsWith("Atari 8 bit")) "8bit"
   else if (platform.startsWith("Atari")) "Atari"
   else if (platform.startsWith("Windows")) "PC"
   else if (platform.startsWith("Linux")) "PC"
   else if (platform.startsWith("MS-Dos")) "PC"
+  else if (platform.startsWith("Nintendo")) "Console"
+  else if (platform.startsWith("Sony")) "Console"
+  else if (platform.startsWith("Sega")) "Console"
+  else if (platform.startsWith("Gamepark")) "Console"
+  else if (platform.startsWith("Wonderswan")) "Console"
+  else if (platform.startsWith("Console")) "Console"
+  else if (platform.startsWith("Browser")) "Browser"
+  else if (platform.startsWith("Flash")) "Browser"
+  else if (platform.startsWith("Java")) "Java"
+  else if (platform.startsWith("Fantasy")) "Fantasy"
+  else if (platform.startsWith("PICO-8")) "Fantasy"
+  else if (platform.startsWith("Mobile")) "Mobile"
+  else if (platform.nonEmpty) "Other"
   else ""
 }
 
@@ -180,8 +197,8 @@ lazy val metas = Using(scala.io.Source.fromFile("sources/metadata/demozoo_music.
   val modPlatform = l(7)
   val prodPlatforms = split(l(8)) map trim
   val prod = l(9)
-  val linkClass = l(10)
-  val url = l(11).toLowerCase
+  val linkClass = maybe(l(10)).getOrElse("")
+  val url = maybe(l(11)).getOrElse("").toLowerCase
   val authors = split(l(12)) map trim map fix
   val modPublishers = split(l(13)) map trim map fix
   val prodPublishers = split(l(14)) map trim map fix
@@ -585,10 +602,13 @@ private lazy val demozooProdMetas = Using(scala.io.Source.fromFile("sources/meta
   val partyStartDatePrecision = maybe(l(11)).map(precision)
   val prodType = split(l(12)).map(trim)
   val soundtrackIds = split(l(13)).flatMap(_.toIntOption)
-  val linkClass = l(14)
-  val url = l(15).toLowerCase
-
-  if (platforms.exists(p => p.startsWith("Amiga") || p.startsWith("MS-Dos") || p.startsWith("Windows") || p.startsWith("Atari Falcon") || p.startsWith("Atari Jaguar") || p.startsWith("Atari ST/E")) || (platforms.isEmpty && !url.contains("/demos/compilations/lost_found_and_more/chip_module_collection_no1"))) {
+  var linkClass = ""
+  var url = ""
+  if (l.length >= 15) {
+    linkClass = maybe(l(14)).getOrElse("")
+    url = maybe(l(15)).getOrElse("").toLowerCase
+  }
+  if (platforms.nonEmpty || (platforms.isEmpty && !url.contains("/demos/compilations/lost_found_and_more/chip_module_collection_no1"))) {
     Some(DemozooProdMeta(id, date, datePrecision, title, platforms.toBuffer, publishers.toBuffer, musicAuthors, party, partyShownDate, partyShownDatePrecision, partyStartDate, partyStartDatePrecision, prodType.toSeq, soundtrackIds.toSeq, linkClass, url))
   } else {
     None
@@ -639,7 +659,7 @@ lazy val demozooMetas = demozooProdMetas.values.par.map(_.map(prod => {
   metas.map(meta => {
     var metas = Buffer.empty[(Int, MetaData)]
     for (t <- _types) {
-      for (p <- normPlatforms) {
+      for (p <- normPlatforms if p != "8bit") {
         metas = metas :+ (meta._1, meta._2.copy(_type = t, _platform = p))
       }
     }
@@ -705,7 +725,16 @@ val all_aliases = _authors.values.par.flatMap(author => {
 }).seq.groupBy(_._1).view.mapValues(_.flatMap(_._2).toBuffer.distinct).toMap
 
 def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int): Option[MetaData] = {
-  val dates = Seq(m.modDate, m.prodDate, Seq(m.partyShownDate.getOrElse(""), m.partyStartDate.getOrElse("")).max).filterNot(_.isEmpty)
+  val (prodDate, prodDatePrecision) = if (m.prodId.nonEmpty && (m.prodType.isEmpty || (m.prodType.head != "Performance" && !m.prodType.head.endsWith("Music")))) {
+    val prod = demozooProdMetas(m.prodId.get).head
+    val prodPartyDate = prod.partyDate.getOrElse("")
+    if (prodPartyDate.isEmpty && m.prodDate.isEmpty) ("", Precision.UNKNOWN)
+    else if (prodPartyDate.nonEmpty && m.prodDate.isEmpty) (prodPartyDate, prod.partyDatePrecision.get)
+    else if (m.prodDate.nonEmpty && prodPartyDate.isEmpty) (m.prodDate, m.prodDatePrecision)
+    else if (prodPartyDate <= m.prodDate) (prodPartyDate, prod.partyDatePrecision.get)
+    else (m.prodDate, m.prodDatePrecision)
+  } else ("", Precision.UNKNOWN)
+  val dates = Seq(m.modDate, prodDate, Seq(m.partyShownDate.getOrElse(""), m.partyStartDate.getOrElse("")).max).filterNot(_.isEmpty)
   val digits =
     if (m.modDatePrecision == Precision.YEAR) 4
     else if (m.modDatePrecision == Precision.MONTH) 7
@@ -714,11 +743,11 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
   val earliestDate = if (dates.isEmpty) "" else dates.min
   val cmpDate = if (earliestDate.isEmpty) "9999-99-99" else earliestDate
   val authors = m.authors.filterNot(_ == "?").sorted.toBuffer
-  var useProd = !m.prod.isEmpty && (m.prodDate.take(digits) <= cmpDate.take(digits))
+  var useProd = m.prod.nonEmpty && prodDate.nonEmpty && (prodDate.take(digits) <= cmpDate.take(digits))
   var useParty = m.party.isDefined && m.partyDate.getOrElse("9999-99-99").take(4) <= cmpDate.take(4)
 
   if (useProd && useParty) {
-    val prodDate = if (m.prodDatePrecision == Precision.YEAR) m.prodDate.replace("-01-01", "-99-99") else if (m.prodDatePrecision == Precision.MONTH) monthToPlaceholder(m.prodDate) else m.prodDate
+    val _prodDate = if (prodDatePrecision == Precision.YEAR) prodDate.replace("-01-01", "-99-99") else if (prodDatePrecision == Precision.MONTH) monthToPlaceholder(prodDate) else prodDate
     val partyShownDate =
       if (m.partyShownDate.isEmpty) ""
       else if (m.partyShownDatePrecision.get == Precision.YEAR) m.partyShownDate.get.replace("-01-01", "-99-99") else if (m.partyShownDatePrecision.get == Precision.MONTH) monthToPlaceholder(m.partyShownDate.get) else m.partyShownDate.get
@@ -730,24 +759,24 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
       case Precision.MONTH => 7
       case _ => 10
     }
-    useProd = prodDate.take(digits) <= (if (partyShownDate.nonEmpty) partyShownDate.take(digits) else partyStartDate.take(digits)) ||
-              prodDate.take(digits) <= (if (partyStartDate.nonEmpty) partyStartDate.take(digits) else partyShownDate.take(digits))
+    useProd = _prodDate.nonEmpty && _prodDate.take(digits) <= (if (partyShownDate.nonEmpty) partyShownDate.take(digits) else partyStartDate.take(digits)) ||
+              _prodDate.take(digits) <= (if (partyStartDate.nonEmpty) partyStartDate.take(digits) else partyShownDate.take(digits))
     useParty = !useProd
   }
-  if (!useParty && !useProd && m.party.isDefined && m.partyDate.isDefined && m.partyDate.get.take(4).toInt <= cmpDate.take(4).toInt + 1 && (m.prodDate.isEmpty || m.prodDate.take(4).toInt >= m.partyDate.get.take(4).toInt)) {
+  if (!useParty && !useProd && m.party.isDefined && m.partyDate.isDefined && m.partyDate.get.take(4).toInt <= cmpDate.take(4).toInt + 1 && (prodDate.isEmpty || prodDate.take(4).toInt >= m.partyDate.get.take(4).toInt)) {
     useParty = true
   }
-  if (!useParty && !useProd && m.party.isDefined && m.partyDate.isDefined && m.prodDate.nonEmpty && m.prodDate.take(4).toInt <= cmpDate.take(4).toInt + 1) {
+  if (!useParty && !useProd && m.party.isDefined && m.partyDate.isDefined && prodDate.nonEmpty && prodDate.take(4).toInt <= cmpDate.take(4).toInt + 1) {
     useProd = true
   }
-  val monthDiff = if (m.prodDate.nonEmpty) {
-    val prodYear = m.prodDate.take(4).toInt
-    val prodMonth = m.prodDate.drop(5).take(2).toInt
+  val monthDiff = if (prodDate.nonEmpty) {
+    val prodYear = prodDate.take(4).toInt
+    val prodMonth = prodDate.drop(5).take(2).toInt
     val cmpYear = cmpDate.take(4).toInt
     val cmpMonth = cmpDate.drop(5).take(2).toInt
     Math.abs(prodYear - cmpYear) * 12 + Math.min(prodMonth - cmpMonth, 11)
   } else 0
-  if (!useParty && !useProd && !m.party.isDefined && !m.partyDate.isDefined && m.prodDate.nonEmpty && monthDiff <= maxMonthDiff && monthDiff <= 12) {
+  if (!useParty && !useProd && !m.party.isDefined && !m.partyDate.isDefined && prodDate.nonEmpty && monthDiff <= maxMonthDiff && monthDiff <= 12) {
     useProd = true
   }
   if (!useParty && !useProd && m.prodId.nonEmpty && prodCount == 1 && monthDiff <= 36 &&
@@ -760,9 +789,12 @@ def transformMeta(md5: String, m: DemozooMeta, prodCount: Int, maxMonthDiff: Int
   if (!useParty && !useProd && m.prodId.nonEmpty && prodCount == 1 && monthDiff <= 12) {
     useProd = true
   }
+  if (m.prodType.nonEmpty && (m.prodType.head == "Performance" || m.prodType.head.endsWith("Music"))) {
+    useProd = false
+  }
   val publishDate =
     if (useProd) {
-      if (m.prodDate.nonEmpty) m.prodDate else earliestDate
+      if (prodDate.nonEmpty) prodDate else earliestDate
     } else if (useParty) {
       m.partyDate.getOrElse(earliestDate)
     } else {
@@ -933,6 +965,8 @@ val demozooExtras = demozooProdMetas.filterNot { case (prodId, metas) =>
       if (year > 0 && year < 9999) {
         _yearConstraints += ((md5.take(12), year + 1))
       }
+      None
+    } else if (_platform == "8bit") {
       None
     } else if (authors.nonEmpty || publishers.nonEmpty || album.nonEmpty || (year > 0 && year < 9999)) {
       Some((meta.id, MetaData(
