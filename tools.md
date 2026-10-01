@@ -67,13 +67,13 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./source_metas.sc --unique --tsv Deck > deck.tsv # Show unique MD5s in Deck module collection as TSV
 
 # Use audacious-uade CLI player to play an unknown file and match the chromaprint
-PROBE=1 ~/audacious-uade/src/plugin/cli/player/player 11025 ~/somefile.mod | sox -t raw -b 16 -e signed -c 2 -r 11025 - -t raw -b 16 -e signed -c 1 -r 11025 -D - remix 1-2 | fpcalc -length 9999 -rate 11025 -channels 1 -format s16le -plain - | ./audio_match.sc -
+PROBE=1 ~/audacious-uade/src/plugin/cli/player/player 11025 ~/somefile.mod | fpcalc -length 9999 -rate 11025 -channels 2 -format s16le -plain - | ./audio_match.sc -
 
 # or with uade123
-uade123 -1 -p 1 --filter=NONE --resampler=none -e raw --frequency=11025 -c ~/somefile.mod | sox -t raw -b 16 -e signed -c 2 -r 11025 - -t raw -b 16 -e signed -c 1 -r 11025 -D - remix 1-2 | fpcalc -length 9999 -rate 11025 -channels 1 -format s16le -plain - | ./audio_match.sc -
+uade123 -1 -p 1 --filter=NONE --resampler=none -e raw --frequency=11025 -c ~/somefile.mod | fpcalc -length 9999 -rate 11025 -channels 2 -format s16le -plain - | ./audio_match.sc -
 
 # or with xmp
-xmp -i nearest -f 11025 -c ~/somefile.mod | sox -t raw -b 16 -e signed -c 2 -r 11025 - -t raw -b 16 -e signed -c 1 -r 11025 -D - remix 1-2 | fpcalc -length 9999 -rate 11025 -channels 1 -format s16le -plain - | ./audio_match.sc -
+xmp -i nearest -f 11025 -c ~/somefile.mod | fpcalc -length 9999 -rate 11025 -channels 2 -format s16le -plain - | ./audio_match.sc -
 ```
 
 See `songdb/audio_match.sc`, `songdb/record.sh`, `songdb/find_dupes.sc` and `songdb/source_metas.sc` sources for more details.
