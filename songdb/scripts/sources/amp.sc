@@ -4,7 +4,7 @@
 
 //> using dep org.scala-lang.modules::scala-parallel-collections::1.2.0
 //> using dep org.jsoup:jsoup:1.23.2
-//> using dep org.apache.commons:commons-lang3:3.20.0
+//> using dep org.apache.commons:commons-lang3:3.21.0
 //> using dep org.apache.commons:commons-text:1.15.0
 
 import java.nio.file.Files

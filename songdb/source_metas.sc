@@ -218,27 +218,27 @@ for (target <- targets) {
       entries.toSeq.par.flatMap { case (md5, subsongs) =>
         if (unique && !isUnique(md5.take(12), source)) Seq.empty
         else {
-        val sorted = subsongs.sortBy(_.subsong)
-        val first = sorted.find(_.path.nonEmpty).getOrElse(sorted.head)
-        val meta = metas.get(md5.take(12)).map(_.head)
-        sorted.map { entry =>
-          val filesize = filli(entry.filesize, first.filesize)
-          val channels = filli(entry.channels, first.channels)
-          (sourceName, fills(entry.path, first.path), entry.subsong, Seq(
-            md5.take(12),
-            fills(entry.path, first.path),
-            if (filesize >= 0) filesize.toString else "",
-            fills(entry.format, first.format),
-            fills(entry.player, first.player),
-            if (entry.subsong >= 0) entry.subsong.toString else "",
-            lenStr(entry.songlength),
-            if (channels > 0) channels.toString else "",
-            meta.map(_.authors.mkString(" & ")).getOrElse(""),
-            meta.map(_.album).getOrElse(""),
-            meta.map(_.publishers.mkString(" & ")).getOrElse(""),
-            meta.map(m => if (m.year > 0) m.year.toString else "").getOrElse(""),
-          ))
-        }.seq
+          val sorted = subsongs.sortBy(_.subsong)
+          val first = sorted.find(_.path.nonEmpty).getOrElse(sorted.head)
+          val meta = metas.get(md5.take(12)).map(_.head)
+          sorted.map { entry =>
+            val filesize = filli(entry.filesize, first.filesize)
+            val channels = filli(entry.channels, first.channels)
+            (sourceName, fills(entry.path, first.path), entry.subsong, Seq(
+              md5.take(12),
+              fills(entry.path, first.path),
+              if (filesize >= 0) filesize.toString else "",
+              fills(entry.format, first.format),
+              fills(entry.player, first.player),
+              if (entry.subsong >= 0) entry.subsong.toString else "",
+              lenStr(entry.songlength),
+              if (channels > 0) channels.toString else "",
+              meta.map(_.authors.mkString(" & ")).getOrElse(""),
+              meta.map(_.album).getOrElse(""),
+              meta.map(_.publishers.mkString(" & ")).getOrElse(""),
+              meta.map(m => if (m.year > 0) m.year.toString else "").getOrElse(""),
+            ))
+          }
         }
       }.seq.foreach(r => rows += r)
   }
