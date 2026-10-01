@@ -37,7 +37,7 @@ Hashes are calculated from decompressed files, even if the original source files
 The module infos and songlength TSVs are generated using the precalc binary+script from [audacious-uade](https://github.com/mvtiaine/audacious-uade/blob/master/src/plugin/cli/precalc/) from my local copy/mirror/snapshot of the various sites/sources.
 
 **Note:** Audio fingerprint files must be separately downloaded from https://github.com/mvtiaine/audacious-uade-tools/releases/tag/audio
-See [Audio Matching](#audio-matching) for setup.
+See [tools.md](tools.md#usage) for setup.
 
 **Note:** Some additional required files not included in Github, specifically local mirror of some of source web pages and/or database files are needed to actually run the Scala `songdb.sc` script.
 
