@@ -25,7 +25,8 @@ RUN cd audacious-uade-tools && \
     zstd -d -f --rm audio_*.zst && \
     cd ../.. && \
     $(./audio_match.sc || true) && \
-    $(./find_dupes.sc || true)
+    $(./find_dupes.sc || true) && \
+    $(./source_metas.sc || true)
 
 WORKDIR /audacious-uade-tools/songdb
 

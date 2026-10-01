@@ -64,9 +64,12 @@ import sources._
 val MINSCORE = 0.67
 val MAXRESULTS = 30
 
-if (args.length < 1) {
+val tsv = args.contains("--tsv")
+val positional = args.filterNot(_ == "--tsv")
+
+if (positional.length < 1) {
   Console.err.println("Usage:")
-  Console.err.println(s"  ./audio_match.sc <input-chromaprint|-> [minscore (=$MINSCORE)] [maxresults (=$MAXRESULTS)]")
+  Console.err.println(s"  ./audio_match.sc [--tsv] <input-chromaprint|-> [minscore (=$MINSCORE)] [maxresults (=$MAXRESULTS)]")
   Console.err.println()
   Console.err.println("Examples:")
   Console.err.println("  ./audio_match.sc AQAAC1EShUokRcMfoT-OX8RfNKHCG5V6iEue48cdHQAEEgYRCQhA0AAD")
@@ -79,7 +82,7 @@ if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv"
   sys.exit(1)
 }
 
-val input = args(0) 
+val input = positional(0)
 val fingerprint = if (input == "-") {
   val line = readLine()
   if (line == null || line.isBlank()) {
@@ -88,8 +91,8 @@ val fingerprint = if (input == "-") {
   }
   line.trim()
 } else input
-val minscore = if (args.length >= 2) args(1).toDouble else MINSCORE
-val maxresults = if (args.length >= 3) args(2).toInt else MAXRESULTS
+val minscore = if (positional.length >= 2) positional(1).toDouble else MINSCORE
+val maxresults = if (positional.length >= 3) positional(2).toInt else MAXRESULTS
 
 val fp = decodeChromaprintUncached(fingerprint)
 val algo = fp.algo
@@ -123,8 +126,9 @@ var results = (0 to 15).par.flatMap { i =>
   System.err.print(s".${n.incrementAndGet()}.")
   results
 }.seq
-val moreResults = results.size > maxresults
-results = results.sortBy(_.score).reverse.distinct.take(maxresults)
+results = results.sortBy(_.score).reverse.distinct
+val moreResults = results.size - maxresults
+results = results.take(maxresults)
 val resultMd5s = results.map(_.md5).toSet
 
 System.err.print(" done.\n")
@@ -139,7 +143,7 @@ if (results.isEmpty) {
     parsePrettyMetaTsv(tsv).par.groupBy(_.hash)
   }
 
-  final case class FileInfo(format: String, filesize: Int, filename: String, source: String)
+  final case class FileInfo(format: String, player: String, filesize: Int, filename: String, channels: Int, source: String)
   val fileinfos = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
     entriesByMd5.par.filter(e => resultMd5s.contains(e._1.take(12))).flatMap { case (md5, entries) =>
       entries
@@ -147,8 +151,10 @@ if (results.isEmpty) {
         .map(entry =>
           md5.take(12) -> FileInfo(
             entry.format,
+            entry.player,
             entry.filesize,
             if (source == Source.SOAMC && entry.path.startsWith("001/")) "" else entry.path.split('/').last,
+            entry.channels,
             source.toString
           )
         )
@@ -165,8 +171,10 @@ if (results.isEmpty) {
     Column("MD5", 12, (r, _, _) => r.md5),
     Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
     Column("Format", 30, (r, _, fi) => fi(r.md5).map(_.format).sorted.head),
+    Column("Player", 12, (r, _, fi) => fi(r.md5).map(_.player).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
     Column("Sub", 3, (r, _, _) => (if (r.subsong >= 0) r.subsong.toString else "*")),
     Column("Len", 6, (r, _, _) => lenStr(r.audioBytes)),
+    Column("Ch", 2, (r, _, fi) => fi(r.md5).map(_.channels).filter(_ > 0).distinct.sorted.mkString(", ")),
     Column("Filenames", 30, (r, _, fi) => fi(r.md5).map(_.filename).filterNot(_.isEmpty).sorted.distinct.mkString(", ")),
     Column("#", 3, (r, _, fi) => fi(r.md5).map(_.source).sorted.distinct.length.toString),
     Column("Authors", 30, (_, m, _) => m.map(_.authors.mkString(" & ")).getOrElse("")),
@@ -180,29 +188,34 @@ if (results.isEmpty) {
     columns.map(_.extract(r, metadata, fileinfos))
   }
 
-  val widths = columns.zipWithIndex.map { case (col, i) =>
-    val dataWidth = rows.map(_(i).length).maxOption.getOrElse(0)
-    math.min(col.maxWidth, math.max(col.header.length, dataWidth))
-  }
+  if (tsv) {
+    println(columns.map(_.header).mkString("\t"))
+    rows.foreach(row => println(row.mkString("\t")))
+  } else {
+    val widths = columns.zipWithIndex.map { case (col, i) =>
+      val dataWidth = rows.map(_(i).length).maxOption.getOrElse(0)
+      math.min(col.maxWidth, math.max(col.header.length, dataWidth))
+    }
 
-  def truncate(text: String, width: Int): String = {
-    if (text.length <= width) text else text.take(width - 1) + "…"
-  }
+    def truncate(text: String, width: Int): String = {
+      if (text.length <= width) text else text.take(width - 1) + "…"
+    }
 
-  def formatRow(values: Seq[String]): String = {
-    values.zip(widths).map { case (value, width) =>
-      truncate(value, width).padTo(width, ' ')
-    }.mkString(" | ")
-  }
+    def formatRow(values: Seq[String]): String = {
+      values.zip(widths).map { case (value, width) =>
+        truncate(value, width).padTo(width, ' ')
+      }.mkString(" | ")
+    }
 
-  println()
-  println(formatRow(columns.map(_.header)))
-  println("-" * formatRow(columns.map(_.header)).length)
-  rows.foreach(row => println(formatRow(row)))
-  if (moreResults) {
-    println("...")
+    println()
+    println(formatRow(columns.map(_.header)))
+    println("-" * formatRow(columns.map(_.header)).length)
+    rows.foreach(row => println(formatRow(row)))
+    if (moreResults > 0) {
+      println(s"... $moreResults more")
+    }
+    println()
   }
-  println()
 }
 
 def chromaSimilarity(

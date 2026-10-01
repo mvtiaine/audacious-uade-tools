@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Record audio from microphone and find matching in the database,
+# Record audio from microphone and find matching songs in the database,
 # e.g. a poor man's Shazam for Amiga and tracker music
 
 # Requires at least scala-cli, sox and chromaprint (fpcalc)
