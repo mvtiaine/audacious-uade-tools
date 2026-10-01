@@ -209,9 +209,12 @@ if (all) {
       if (text.length <= width) text else text.take(width - 1) + "…"
     }
 
-    // paths show the tail of the path, keeping the filename's end visible
+    // paths keep both ends, eliding the middle
     def truncatePath(text: String, width: Int): String =
-      if (text.length <= width) text else "…" + text.takeRight(width - 1)
+      if (text.length <= width) text
+      else
+        val head = (width - 3) / 2
+        text.take(head) + " ⋯ " + text.takeRight(width - 3 - head)
 
     val pathIndex = headers.indexOf("Path")
 
