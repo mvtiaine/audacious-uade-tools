@@ -99,7 +99,7 @@ val audioTsvSizes = Map(
   "sources/audio/audio_f.tsv" -> 164257309L
 )
 
-def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.empty, lengths: Set[Int] = Set.empty) = {
+def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.empty, lengths: Set[Int] = Set.empty, lengthTolerance: Double = 6.66) = {
   var prevMd5 = ""
   var prevPlayer = ""
   var fixsubsong = false
@@ -136,7 +136,7 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
     if (fixsubsong) {
       normalizedSubsong += 1
     }
-    if (audioBytes > 0 && (md5s.isEmpty || md5s.contains(md5)) && (lengths.isEmpty || lengths.exists(len => Math.abs(audioBytes.toDouble / persecondbytes - len.toDouble / persecondbytes) <= 6.66))) {
+    if (audioBytes > 0 && (md5s.isEmpty || md5s.contains(md5)) && (lengths.isEmpty || lengths.exists(len => Math.abs(audioBytes.toDouble / persecondbytes - len.toDouble / persecondbytes) <= lengthTolerance))) {
       val audioMd5 = line.fieldPrefixOrElse(4, 12, "")
       val audioChromaprint = line.fieldOpt(5)
       val (audioChromaprintKey, audioChromaprintFP) =
