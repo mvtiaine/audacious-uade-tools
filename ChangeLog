@@ -1,3 +1,9 @@
+2026-10-01
+- Added source_metas.sc tool
+- Added --tsv parameter to audio_match.sc
+- Added --tsv and --all parameters to find_fupes.sc
+- Split songdb.md and tools.md from README.md
+
 2026-09-26
 - Metadata extraction/heuristics tweaks and fixes
 - Optimizations to audio fingerprint matching and songdb generation
