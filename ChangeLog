@@ -3,7 +3,7 @@
 --  in songlengths.tsv bad subsongs are marked with '#'
 - Updated source_metas.sc tool:
 --  Added --duplicate, --suspicious and --bad options
---  Added --unique-fingerprint, --duplicate-fingerprint and --missing fingerprint options
+--  Added --unique-fingerprint, --duplicate-fingerprint, --missing-fingerprint and --rare-fingerprint options
 - Metadata extraction/heuristics tweaks and fixes
 - Misc fixes and updates
 
