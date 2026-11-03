@@ -26,12 +26,15 @@
 //> using file scripts/LockFreeMaps.scala
 //> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
+//> using file scripts/chromaanalysis.sc
+//> using file scripts/chromasimilarity.sc
 //> using file scripts/convert.sc
 //> using file scripts/dedup.sc
 //> using file scripts/md5.sc
 //> using file scripts/normalization.sc
 //> using file scripts/pretty.sc
 //> using file scripts/songlengths.sc
+//> using file scripts/tools.sc
 //> using file scripts/threadpools.sc
 //> using file scripts/sources/audio.sc
 //> using file scripts/sources/sources.sc
@@ -46,9 +49,12 @@ import scala.collection.parallel.CollectionConverters._
 
 import audio._
 import chromaprint._
+import chromaanalysis._
+import chromasimilarity._
 import convert._
 import pretty._
 import sources._
+import tools._
 
 def _md5(b: Array[Byte]) = {
     MessageDigest.getInstance("MD5").digest(b)
@@ -56,7 +62,8 @@ def _md5(b: Array[Byte]) = {
 
 val MINSCORE = 0.67
 val MAXRESULTS = 30
-val MAXLENDIFF = 10.0
+val MAXLENDIFF = 11.0
+val MINCOMPAREWORDS = 90
 
 val tsv = args.contains("--tsv")
 val all = args.contains("--all")
@@ -70,7 +77,7 @@ if (positional.length < 1) {
   Console.err.println("  --all  one row per matching file path (with its source) instead of")
   Console.err.println("         an aggregated filename list and source count")
   Console.err.println("  --tsv/--all default to unlimited results unless maxresults is given")
-  Console.err.println("  maxlen-diff  maximum length difference in seconds when searching candidates")
+  Console.err.println("  maxlen-diff  maximum length difference in seconds between compared subsongs")
   Console.err.println()
   Console.err.println("Examples:")
   Console.err.println("  ./find_dupes.sc somefile.mod")
@@ -78,10 +85,7 @@ if (positional.length < 1) {
   sys.exit(1)
 }
 
-if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv")).isEmpty) {
-  Console.err.println("Decompress the files in 'sources/audio' first with e.g.\nzstd -d sources/audio/audio_*.zst")
-  sys.exit(1)
-}
+audioShardFiles()
 
 val input = positional(0)
 val md5 = if (input == "-") {
@@ -99,36 +103,40 @@ val md5 = if (input == "-") {
 val hash = md5.take(12)
 
 val minscore = if (positional.length >= 2) positional(1).toDouble else MINSCORE
-// unlimited results unless explicitly given with --all or --tsv
 val maxresults = if (positional.length >= 3) positional(2).toInt else if (all || tsv) Int.MaxValue else MAXRESULTS
 val maxlenDiff = if (positional.length >= 4) positional(3).toDouble else MAXLENDIFF
 
 val fingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${hash.take(1)}.tsv").toFile.getAbsolutePath, withSimHash = false, md5s = Set(hash))
 
 val n = AtomicInteger(0)
-final case class Result(md5: String, subsong: Int, score: Double, audioBytes: Int)
-val inputFPs = fingerprints.filter(_.audioChromaprint.nonEmpty).map(f => (f, decodeChromaprintUncached(f.audioChromaprint))).toBuffer
+val inputFPs = fingerprints.filter(_.audioChromaprint.nonEmpty)
+  .map(f => (f, decodeChromaprintUncached(f.audioChromaprint))).toBuffer
+def chromaComparable(fp: FP): Boolean = fp.length >= MINCOMPAREWORDS
+val inputComparable = inputFPs.map { case (f, fp) => (f, fp, chromaComparable(fp) && !fp.isBad) }
 if (fingerprints.nonEmpty) System.err.print("Processing (x/16) ")
 var results = if (fingerprints.isEmpty) Seq.empty[Result] else (0 to 15).par.flatMap { i =>
   val cmpFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false, lengths = fingerprints.map(_.audioBytes).toSet, lengthTolerance = maxlenDiff)
     .filterNot(_.md5 == hash)
   val results = cmpFingerprints.flatMap(af => {
-    if (fingerprints.exists(f => f.audioHash == af.audioHash)) {
+    if (af.audioHash.nonEmpty && fingerprints.exists(_.audioHash == af.audioHash) ||
+        af.audioMd5.nonEmpty && fingerprints.exists(_.audioMd5 == af.audioMd5)) {
       Some(Result(af.md5, af.subsong, 1.0, af.audioBytes))
     } else if (af.audioChromaprint.nonEmpty) {
       val afp = decodeChromaprintUncached(af.audioChromaprint)
-      inputFPs.flatMap { case (f, fp) =>
-        val score = chromaSimilarityFPs(fp, afp)
-        if (score >= minscore) {
-          Some(Result(af.md5, af.subsong, score, af.audioBytes))
-        } else None
+      if (!chromaComparable(afp)) None
+      else inputComparable.flatMap { case (f, fp, comparableIn) =>
+        if (!comparableIn || math.abs(f.audioBytes.toDouble / persecondbytes - af.audioBytes.toDouble / persecondbytes) > maxlenDiff) None
+        else {
+          val score = chromaSimilarityFPs(fp, afp)
+          if (score >= minscore && !afp.isBad) Some(Result(af.md5, af.subsong, score, af.audioBytes)) else None
+        }
       }
     } else None
   })
   System.err.print(s".${n.incrementAndGet()}.")
   results
 }.seq
-results = results.sortBy(_.score).reverse.distinct
+results = results.groupBy(r => (r.md5, r.subsong)).valuesIterator.map(_.maxBy(_.score)).toSeq.sortBy(_.score).reverse
 val moreResults = results.size - maxresults
 results = results.take(maxresults)
 val resultMd5s = results.map(_.md5).toSet
@@ -146,7 +154,13 @@ if (results.isEmpty) {
 val metas = parsePrettyMetaTsv(Files.readString(Paths.get("../tsv/pretty/md5/metadata.tsv"), StandardCharsets.UTF_8)).par.groupBy(_.hash).seq
 
 def lenStr(audioBytes: Int): String =
-  if (audioBytes <= 0) "" else "%02d:%02d".format(audioBytes / persecondbytes / 60, audioBytes / persecondbytes % 60)
+  if (audioBytes < 0) "*"
+  else if (audioBytes <= 0) ""
+  else "%02d:%02d".format(audioBytes / persecondbytes / 60, audioBytes / persecondbytes % 60)
+
+val inputAmbiguous = fingerprints.map(f => (f.subsong, f.audioBytes)).distinct.size > 1
+val inputSubsong: Int = if (inputAmbiguous || fingerprints.isEmpty) -1 else fingerprints.head.subsong
+val inputAudioBytes: Int = if (inputAmbiguous || fingerprints.isEmpty) -1 else fingerprints.head.audioBytes
 
 if (all) {
   // every file path of each matching hash, with its source name, size, format, player and channels
@@ -160,11 +174,10 @@ if (all) {
     def meta: Option[MetaData] = metas.get(hash).map(_.head)
   }
 
-  val inputAudioBytes = fingerprints.map(_.audioBytes).maxOption.getOrElse(0)
   // input first, then matches by descending score; one row per source+path
   val rows = Buffer[Row]()
   fileinfos.getOrElse(hash, Seq(("", "", -1, "", "", 0))).foreach { case (source, path, filesize, format, player, channels) =>
-    rows += Row(1.0, hash, filesize, format, player, -1, inputAudioBytes, channels, source, path)
+    rows += Row(1.0, hash, filesize, format, player, inputSubsong, inputAudioBytes, channels, source, path)
   }
   results.sortBy(r => (-r.score, r.md5)).foreach { r =>
     fileinfos.getOrElse(r.md5, Seq(("", "", -1, "", "", 0))).foreach { case (source, path, filesize, format, player, channels) =>
@@ -189,80 +202,27 @@ if (all) {
     r.meta.map(m => if (m.year > 0) m.year.toString else "").getOrElse(""),
   )
 
-  val headers = Seq(
-    "Score", "MD5", "Size", "Format", "Player", "Sub", "Len", "Ch", "Source", "Path",
-    "Authors", "Album", "Publishers", "Year",
+  val allColumns = Seq(
+    Col("Score", 6), Col("MD5", 12), Col("Size", 8), Col("Format", 23), Col("Player", 10), Col("Sub", 3),
+    Col("Len", 6), Col("Ch", 2), Col("Source", 20), Col("Path", 46, middle = true), Col("Authors", 23),
+    Col("Album", 23), Col("Publishers", 23), Col("Year", 4),
   )
 
   if (tsv) {
-    println(headers.mkString("\t"))
+    println(allColumns.map(_.header).mkString("\t"))
     rows.foreach(r => println(cols(r).mkString("\t")))
   } else {
-    val maxwidths = Seq(6, 12, 9, 25, 12, 3, 6, 2, 20, 55, 25, 25, 25, 4)
-
-    val widths = headers.zip(maxwidths).zipWithIndex.map { case ((header, maxWidth), i) =>
-      val dataWidth = rows.map(r => cols(r)(i).length).maxOption.getOrElse(0)
-      math.min(maxWidth, math.max(header.length, dataWidth))
-    }
-
-    def truncate(text: String, width: Int): String = {
-      if (text.length <= width) text else text.take(width - 1) + "…"
-    }
-
-    // paths keep both ends, eliding the middle
-    def truncatePath(text: String, width: Int): String =
-      if (text.length <= width) text
-      else
-        val head = (width - 3) / 2
-        text.take(head) + " ⋯ " + text.takeRight(width - 3 - head)
-
-    val pathIndex = headers.indexOf("Path")
-
-    def formatRow(values: Seq[String]): String = {
-      values.zip(widths).zipWithIndex.map { case ((value, width), i) =>
-        val truncated = if (i == pathIndex) truncatePath(value, width) else truncate(value, width)
-        truncated.padTo(width, ' ')
-      }.mkString(" | ")
-    }
-
-    println()
-    println(formatRow(headers))
-    println("-" * formatRow(headers).length)
-    val separator = "-" * formatRow(headers).length
-    val inputRows = rows.indexWhere(_.hash != hash)
-    rows.zipWithIndex.foreach { case (r, i) =>
-      if (i == inputRows) println(separator)
-      println(formatRow(cols(r)))
-    }
-    if (moreResults > 0) {
-      println(s"... $moreResults more")
-    }
-    println()
+    val table = new Table(allColumns, rows.iterator.map(r => cols(r)).toList)
+    table.print(Set(rows.indexWhere(_.hash != hash)), if (moreResults > 0) s"... $moreResults more" else "")
   }
 }
 
 if (!all) {
-  final case class FileInfo(format: String, player: String, filesize: Int, filename: String, channels: Int, source: String)
-  val fileinfos = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
-    entriesByMd5.par.filter(e => resultMd5s.contains(e._1.take(12)) || e._1.take(12) == hash).flatMap { case (md5, entries) =>
-      entries
-        .filterNot(_.path.isEmpty)
-        .map(entry =>
-          md5.take(12) -> FileInfo(
-            entry.format,
-            entry.player,
-            entry.filesize,
-            if (source == Source.SOAMC && entry.path.startsWith("001/")) "" else entry.path.split('/').last,
-            entry.channels,
-            source.toString
-          )
-        )
-    }
-  }.groupBy(_._1).mapValues(_.map(_._2).seq.toSeq.distinct).toMap.seq
+  val fileinfos = fileInfosFor(resultMd5s + hash)
 
   final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, Seq[FileInfo]]) => String)
 
-  val columns = Seq(
+  val aggColumns = Seq(
     Column("Score", 6, (r, _, _) => "%.3f".format(r.score)),
     Column("MD5", 12, (r, _, _) => r.md5),
     Column("Size", 9, (r, _, fi) => fi(r.md5).head.filesize.toString),
@@ -281,40 +241,26 @@ if (!all) {
 
   val cmp = {
     val metadata = metas.get(hash).map(_.head.asInstanceOf[MetaData])
-    columns.map(_.extract(Result(hash, -1, 1.0, fingerprints.map(_.audioBytes).max), metadata, fileinfos))
+    aggColumns.map(_.extract(Result(hash, inputSubsong, 1.0, inputAudioBytes), metadata, fileinfos))
   }
 
   val rows = results.map { r =>
     val metadata = metas.get(r.md5).map(_.head.asInstanceOf[MetaData])
-    columns.map(_.extract(r, metadata, fileinfos))
+    aggColumns.map(_.extract(r, metadata, fileinfos))
   }
 
   if (tsv) {
-    println(columns.map(_.header).mkString("\t"))
+    println(aggColumns.map(_.header).mkString("\t"))
     println(cmp.mkString("\t"))
     rows.foreach(row => println(row.mkString("\t")))
   } else {
-    val widths = columns.zipWithIndex.map { case (col, i) =>
-      val dataWidth = (cmp +: rows).map(_(i).length).maxOption.getOrElse(0)
-      math.min(col.maxWidth, math.max(col.header.length, dataWidth))
-    }
-
-    def truncate(text: String, width: Int): String = {
-      if (text.length <= width) text else text.take(width - 1) + "…"
-    }
-
-    def formatRow(values: Seq[String]): String = {
-      values.zip(widths).map { case (value, width) =>
-        truncate(value, width).padTo(width, ' ')
-      }.mkString(" | ")
-    }
-
+    val table = new Table(aggColumns.map(c => Col(c.header, c.maxWidth)), (cmp +: rows).toList)
     println()
-    println(formatRow(columns.map(_.header)))
-    println("-" * formatRow(columns.map(_.header)).length)
-    println(formatRow(cmp))
-    println("-" * formatRow(columns.map(_.header)).length)
-    rows.foreach(row => println(formatRow(row)))
+    println(table.formatRow(aggColumns.map(_.header)))
+    println(table.rule)
+    println(table.formatRow(cmp))
+    println(table.rule)
+    rows.foreach(row => println(table.formatRow(row)))
     if (moreResults > 0) {
       println(s"... $moreResults more")
     }

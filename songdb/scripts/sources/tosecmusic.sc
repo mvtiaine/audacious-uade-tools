@@ -154,7 +154,7 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
       value.startsWith("cmp ")  // Filter out composer entries
     }
     
-    // Check if we have a publisher already from parentheses (simple name, not "X of Y" pattern)
+    // publisher from parentheses: simple name, not "X of Y"
     hasParenthesesPublisher = nonYearMatches.exists { value =>
       value != "-" && !authorOfGroupPattern.matches(value) && !multiAuthorOfGroupPattern.matches(value) && !platformPattern.matches(value)
     }
@@ -189,8 +189,7 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
     val composerStr = m.group(1).trim
     val sequencerStr = m.group(2).trim
     
-    // Remove "of [group]" suffix from composer names when we already have a publisher
-    // For covers, never strip the suffix since we don't process publishers
+    // strip "of [group]" only when a publisher is already known; never for covers
     val cleanedComposer = if (!isCovers && hasParenthesesPublisher) {
       composerStr.replaceFirst("\\s+of\\s+.+$", "")
     } else {
@@ -198,7 +197,6 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
     }
     composers ++= splitAuthors(cleanedComposer)
     
-    // Remove "of [group]" suffix from sequencer names when we already have a publisher
     val cleanedSequencer = if (!isCovers && hasParenthesesPublisher) {
       sequencerStr.replaceFirst("\\s+of\\s+.+$", "")
     } else {
@@ -210,11 +208,9 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   // Extract composers and split multiple names (only if not already processed by combined pattern)
   if (composers.isEmpty) {
     composerPattern.findAllMatchIn(path).foreach { m =>
-      // Try group(1) first (square brackets), then group(2) (round brackets)
+      // group(1) = square brackets, group(2) = round brackets
       val composerStr = Option(m.group(1)).orElse(Option(m.group(2))).getOrElse("")
         .stripPrefix("cmp ").trim
-      // Remove "of [group]" suffix from composer names when we already have a publisher
-      // For covers, never strip the suffix since we don't process publishers
       val cleanedComposer = if (!isCovers && hasParenthesesPublisher) {
         composerStr.replaceFirst("\\s+of\\s+.+$", "")
       } else {
@@ -228,8 +224,6 @@ def parseTosecMeta(hash: String, path: String): Option[TosecMeta] = {
   if (authors.isEmpty) {
     sequencerPattern.findFirstMatchIn(path).foreach { m =>
       val sequencerStr = m.group(1)
-      // Remove "of [group]" suffix from sequencer names when we already have a publisher
-      // For covers, never strip the suffix since we don't process publishers
       val cleanedSequencer = if (!isCovers && hasParenthesesPublisher) {
         sequencerStr.replaceFirst("\\s+of\\s+.+$", "")
       } else {

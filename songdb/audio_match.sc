@@ -36,12 +36,15 @@
 //> using file scripts/LockFreeMaps.scala
 //> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
+//> using file scripts/chromaanalysis.sc
+//> using file scripts/chromasimilarity.sc
 //> using file scripts/convert.sc
 //> using file scripts/dedup.sc
 //> using file scripts/md5.sc
 //> using file scripts/normalization.sc
 //> using file scripts/pretty.sc
 //> using file scripts/songlengths.sc
+//> using file scripts/tools.sc
 //> using file scripts/threadpools.sc
 //> using file scripts/sources/audio.sc
 //> using file scripts/sources/sources.sc
@@ -56,10 +59,13 @@ import scala.util.boundary, boundary.break
 import scala.collection.mutable.Buffer
 
 import audio._
+import chromaanalysis._
 import chromaprint._
+import chromasimilarity._
 import convert._
 import pretty._
 import sources._
+import tools._
 
 val MINSCORE = 0.67
 val MAXRESULTS = 30
@@ -77,10 +83,7 @@ if (positional.length < 1) {
   sys.exit(1)
 }
 
-if (Paths.get("sources/audio").toFile.listFiles.filter(_.getName.endsWith(".tsv")).isEmpty) {
-  Console.err.println("Decompress the files in 'sources/audio' first with e.g.\nzstd -d sources/audio/audio_*.zst")
-  sys.exit(1)
-}
+audioShardFiles()
 
 val input = positional(0)
 val fingerprint = if (input == "-") {
@@ -97,8 +100,8 @@ val maxresults = if (positional.length >= 3) positional(2).toInt else MAXRESULTS
 val fp = decodeChromaprintUncached(fingerprint)
 val algo = fp.algo
 
-if (isSilentFingerprint(fp.data)) {
-  System.err.println("Input fingerprint appears to be from silence/very quiet audio - check your audio source")
+if (fp.isBad) {
+  System.err.println(s"Input fingerprint appears to be ${if (fp.isSilent) "silence/very quiet audio" else if (fp.isRepetitive) "repetitive" else if (fp.isNoisy) "noisy" else "bad"} - check your audio source")
   sys.exit(1)
 }
 
@@ -108,25 +111,23 @@ if (isSilentFingerprint(fp.data)) {
 System.err.print("Processing (x/16) ")
 
 val n = AtomicInteger(0)
-final case class Result(md5: String, subsong: Int, score: Double, audioBytes: Int)
 var results = (0 to 15).par.flatMap { i =>
   val audioFingerprints = parseAudioTsv(Paths.get(s"sources/audio/audio_${i.toHexString}.tsv").toFile.getAbsolutePath, withSimHash = false)
   val results = audioFingerprints.par.filter(_.audioChromaprint.nonEmpty).flatMap(af => {
     val fp2 = decodeChromaprintUncached(af.audioChromaprint)
     assert(fp2.algo == algo)
-    if (fp2.isSilent) {
-      None
-    } else {
-      val score = chromaSimilarity(fp2.algo, fp2.data, algo, fp.data, 0.7)
-      if (score >= minscore) {
-        Some(Result(af.md5, af.subsong, score, af.audioBytes))
-      } else None
-    }
+    val raw = chromaSimilarity(fp2.algo, fp2.data, algo, fp.data, 0.7)
+    val score =
+      if (raw < minscore) raw
+      else chromaSimilarity(fp2.algo, fp2.data, algo, fp.data, 0.7, fp2.silentChunks, fp.silentChunks, fp.liveWords)
+    if (score >= minscore && !fp2.isBad) {
+      Some(Result(af.md5, af.subsong, score, af.audioBytes))
+    } else None
   })
   System.err.print(s".${n.incrementAndGet()}.")
   results
 }.seq
-results = results.sortBy(_.score).reverse.distinct
+results = results.groupBy(r => (r.md5, r.subsong)).valuesIterator.map(_.maxBy(_.score)).toSeq.sortBy(_.score).reverse
 val moreResults = results.size - maxresults
 results = results.take(maxresults)
 val resultMd5s = results.map(_.md5).toSet
@@ -143,24 +144,8 @@ if (results.isEmpty) {
     parsePrettyMetaTsv(tsv).par.groupBy(_.hash)
   }
 
-  final case class FileInfo(format: String, player: String, filesize: Int, filename: String, channels: Int, source: String)
-  val fileinfos = sources.tsvs.par.flatMap { case (source, entriesByMd5) =>
-    entriesByMd5.par.filter(e => resultMd5s.contains(e._1.take(12))).flatMap { case (md5, entries) =>
-      entries
-        .filterNot(_.path.isEmpty)
-        .map(entry =>
-          md5.take(12) -> FileInfo(
-            entry.format,
-            entry.player,
-            entry.filesize,
-            if (source == Source.SOAMC && entry.path.startsWith("001/")) "" else entry.path.split('/').last,
-            entry.channels,
-            source.toString
-          )
-        )
-    }
-  }.groupBy(_._1).mapValues(_.map(_._2).seq.toSeq.distinct).toMap.seq
-  
+  val fileinfos = fileInfosFor(resultMd5s)
+
   final case class Column(header: String, maxWidth: Int, extract: (Result, Option[MetaData], Map[String, Seq[FileInfo]]) => String)
 
   def lenStr(audioBytes: Int): String =
@@ -192,29 +177,8 @@ if (results.isEmpty) {
     println(columns.map(_.header).mkString("\t"))
     rows.foreach(row => println(row.mkString("\t")))
   } else {
-    val widths = columns.zipWithIndex.map { case (col, i) =>
-      val dataWidth = rows.map(_(i).length).maxOption.getOrElse(0)
-      math.min(col.maxWidth, math.max(col.header.length, dataWidth))
-    }
-
-    def truncate(text: String, width: Int): String = {
-      if (text.length <= width) text else text.take(width - 1) + "…"
-    }
-
-    def formatRow(values: Seq[String]): String = {
-      values.zip(widths).map { case (value, width) =>
-        truncate(value, width).padTo(width, ' ')
-      }.mkString(" | ")
-    }
-
-    println()
-    println(formatRow(columns.map(_.header)))
-    println("-" * formatRow(columns.map(_.header)).length)
-    rows.foreach(row => println(formatRow(row)))
-    if (moreResults > 0) {
-      println(s"... $moreResults more")
-    }
-    println()
+    val table = new Table(columns.map(c => Col(c.header, c.maxWidth)), rows)
+    table.print(footer = if (moreResults > 0) s"... $moreResults more" else "")
   }
 }
 
@@ -223,7 +187,10 @@ def chromaSimilarity(
   knownFullData: Array[Int],
   algo2: Int,
   unknownData: Array[Int],
-  minMatchRatio: Double = 0.7
+  minMatchRatio: Double = 0.7,
+  knownSilent: Array[Boolean] = null,
+  unknownSilent: Array[Boolean] = null,
+  unknownLive: Int = 0
 ): Double = {
   if (algo1 != algo2) {
     return 0.0
@@ -238,8 +205,10 @@ def chromaSimilarity(
 
   val unknownLength = unknownData.length
   val knownLength = knownFullData.length
-  
-  val minRequiredOverlap = math.max(math.min(unknownLength, 15), (unknownLength * minMatchRatio).toInt)
+  val masked = unknownSilent != null && knownSilent != null
+  val judgeable = if (masked) math.max(unknownLive, 1) else unknownLength
+
+  val minRequiredOverlap = math.max(math.min(judgeable, 15), (judgeable * minMatchRatio).toInt)
   
   var maxSimilarity = 0.0
   var bestOverlap = 0
@@ -247,7 +216,6 @@ def chromaSimilarity(
 
   val maxSearchOffset = knownLength - (unknownLength / 2)
   
-  var maxPossibleScore = 0.0
   var offset = 0
   while (offset <= maxSearchOffset) {
     var currentScore = 0
@@ -259,15 +227,17 @@ def chromaSimilarity(
     while (i < endIdx) {
       val v1 = unknownData(i)
       val v2 = knownFullData(i + offset)
-      currentScore += (32 - Integer.bitCount(v1 ^ v2))
-      overlap += 1
+      if (!masked || !(unknownSilent(i / chunkSize) && knownSilent((i + offset) / chunkSize))) {
+        currentScore += (32 - Integer.bitCount(v1 ^ v2))
+        overlap += 1
+      }
       i += 1
     }
   
     if (overlap >= minRequiredOverlap) {
       val currentSimilarity = currentScore.toDouble / (overlap * 32.0)
       
-      val coverageRatio = overlap.toDouble / unknownLength
+      val coverageRatio = overlap.toDouble / judgeable
       val coverageWeight = math.min(1.0, coverageRatio / minMatchRatio)
       val adjustedSimilarity = currentSimilarity * (0.7 + 0.3 * coverageWeight)
       
@@ -283,13 +253,13 @@ def chromaSimilarity(
   }
 
   val positionRatio = bestOffset.toDouble / knownLength
-  val coverageRatio = bestOverlap.toDouble / unknownLength
+  val coverageRatio = bestOverlap.toDouble / judgeable
   
   if (coverageRatio < minMatchRatio) {
     maxSimilarity *= (coverageRatio / minMatchRatio)
   }
   
-  if (positionRatio > 0.95 && bestOverlap < unknownLength * 0.8) {
+  if (positionRatio > 0.95 && bestOverlap < judgeable * 0.8) {
     maxSimilarity *= 0.95
   }
 

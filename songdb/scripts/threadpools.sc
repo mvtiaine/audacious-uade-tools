@@ -11,11 +11,11 @@
 //
 // No I/O pool: I/O is interleaved with CPU in the same task.
 //
-// `.par` stays on the global ForkJoinPool -- scala.collection.parallel binds defaultTaskSupport
-// at collection creation and ignores an implicit EC in scope. A workerPool task may block on the
-// FJP (FJP threads never submit back to workerPool). A call site that must keep its parallel
-// work off the FJP assigns workerEc through ExecutionContextTaskSupport, and may then block only
-// from outside workerPool -- sources/audio.sc does this.
+// `.par` stays on the global ForkJoinPool — scala.collection.parallel binds defaultTaskSupport
+// at collection creation and ignores an implicit EC in scope. A workerPool task may block on
+// the FJP (FJP threads never submit back to workerPool). To keep parallel work off the FJP,
+// assign workerEc via ExecutionContextTaskSupport and then block only from outside workerPool
+// — sources/audio.sc does this.
 //
 // shutdownPools() is called once from songdb.sc; call sites must not shut these down.
 

@@ -15,9 +15,15 @@ import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.ExecutionContextTaskSupport
 
 import chromaprint._
+import chromasimilarity._
+import normalization._
 import songlengths._
 
 val persecondbytes = 2 * 11025
+
+def _effectiveAudioBytes(fp: FP, audioBytes: Int): Int = 
+  if (fp == null || fp.length == 0) audioBytes
+  else (audioBytes.toLong * fp.liveWords / fp.length).toInt
 
 final case class AudioFingerprint (
   md5: String,
@@ -64,12 +70,10 @@ final case class AudioFingerprint (
     else {
       if (fp == null) throw new IllegalStateException("effectiveAudioBytes requires a cached fingerprint (withSimHash=true)")
       if (fp.length == 0) audioBytes
-      else {
-        val (s, e) = fp.contentBounds
-        (audioBytes.toLong * (e - s) / fp.length).toInt
-      }
+      else _effectiveAudioBytes(fp, audioBytes)
     }
   }
+  lazy val isBad = fp != null && fp.isBad
 }
 
 final class SubsongTags(
@@ -142,33 +146,42 @@ def parseAudioTsv(tsv: String, withSimHash: Boolean, md5s: Set[String] = Set.emp
       val (audioChromaprintKey, audioChromaprintFP) =
         if (withSimHash && audioChromaprint.nonEmpty) cacheChromaprint(audioChromaprint) else (0L, null)
       val audioChromaprintHash = if (audioChromaprintKey != 0L) audioChromaprintKey.toHexString else audioChromaprint
-      // require at least 9s of audio for simhash comparison to minimize false positives
-      val audioSimHash = if (withSimHash && audioChromaprint.nonEmpty && audioBytes > persecondbytes * 9) {
+      // require at least 6s of audio for simhash comparison to minimize false positives
+      val effectiveAudioBytes = _effectiveAudioBytes(audioChromaprintFP, audioBytes)
+      lazy val isBad = audioChromaprintFP != null && audioChromaprintFP.isBad
+      lazy val isUnusable = audioChromaprintFP != null && audioChromaprintFP.isUnusable
+      val audioSimHash = if (withSimHash && audioChromaprint.nonEmpty && effectiveAudioBytes > persecondbytes * 6 && !isBad) {
         val fp = audioChromaprintFP
         val numHashes = Math.max(1, audioBytes / (persecondbytes * 3)) // one hash per 3s of audio
-        SimHash(fp.data, numHashes).toString(16)
+        simHashHash(SimHash(fp.data, numHashes)).toHexString
       } else ""
       val audioHash = Seq(audioSimHash, audioChromaprintHash, audioMd5).filter(_.nonEmpty).head
       val audioTags =
         if (withSimHash) {
           val lBuckets =
-            if (audioBytes > persecondbytes * 9) Seq(((audioBytes + persecondbytes*3) / (persecondbytes*6)), ((audioBytes - persecondbytes*3) / (persecondbytes*6))).distinct
+            if (effectiveAudioBytes > persecondbytes * 12 && !isBad && !isUnusable) Seq(((audioBytes + persecondbytes*3) / (persecondbytes*6)), ((audioBytes - persecondbytes*3) / (persecondbytes*6))).distinct
             else Seq.empty[Int]
           val sl = songlengths.songlengthsByMd5(md5)
           val format = if (withSimHash) sl.head.format else ""
-          val atari =
-            format.endsWith("ST") ||
-            format.contains(" ST ") ||
-            format.contains("YM2149") ||
-            format.contains(" PSG") ||
-            format.contains("POKEYNoise")
-          val prefix =
-            if (atari) "atari"
-            else player
-          if (audioHash == audioSimHash)
-            for { l <- lBuckets }
+          val atari = isAtariFormat(format)
+          val amiga =
+            (player == "uade" && !isAtariFormat(format)) ||
+            isAmigaFormat(format) ||
+            isAmigaTrackerFormat(format) ||
+            (isAtariTrackerFormat(format) && sl.head.channels <= 4) ||
+            (player != "uade" && sl.head.channels <= 4)
+          val other = player != "uade" || sl.head.channels > 4
+          val prefixes = Seq(
+            if (atari) "atari" else "",
+            if (amiga) "amiga" else "",
+            if (other) "other" else ""
+          ).filter(_.nonEmpty)
+          if (audioHash == audioSimHash && !lBuckets.isEmpty)
+            for { l <- lBuckets; prefix <- prefixes }
               yield prefix + "-l-" + l
-          else Seq(prefix + "-h-" + audioHash)
+          else
+            for { prefix <- prefixes }
+              yield prefix + "-h-" + audioHash
         } else Seq("")
       audioTags.sorted.map(audioTag => out += AudioFingerprint(
         md5,
@@ -193,7 +206,8 @@ lazy val (
   audioHashesByMd5,
   components,
   duplicatesForTag,
-  duplicateSubsongsByPlayerAndMd5
+  duplicateSubsongsByPlayerAndMd5,
+  badSubsongsByPlayerAndMd5
 ) = {
   val parseTasks = Paths.get("sources/audio").toFile.listFiles
     .filter(_.getName.endsWith(".tsv"))
@@ -213,7 +227,7 @@ lazy val (
       } else fps.seq
     }.seq.toBuffer
 
-  chromaprint.clearCaches()
+  chromasimilarity.clearCaches()
 
   def audioFingerPrintComponents(): Iterable[Seq[(String, List[String])]] = {
     // precompute per-audioTag data that doesn't change across passes
@@ -235,7 +249,6 @@ lazy val (
       r
     }
     def union(a: String, b: String): Unit = { parent(find(a)) = find(b) }
-    // build mapping: md5 -> first audioTag that uses it, then union subsequent audioTags
     val md5FirstTag = mutable.Map[String, String]()
     for ((audioTag, hashes) <- audioTagData; h <- hashes) {
       md5FirstTag.get(h) match {
@@ -586,41 +599,42 @@ lazy val (
 
                   if (commonId >= 0) {
                     val commonTag = idToTag(commonId)
-                    var ci = 0
-                    var cmpFp: AudioFingerprint = null
-                    while (ci < cmpFps.length && cmpFp == null) {
-                      val f = cmpFps(ci)
-                      if (f.audioTag == commonTag) cmpFp = f
-                      ci += 1
-                    }
-                    var fi = 0
-                    var fp: AudioFingerprint = null
-                    while (fi < fps.length && fp == null) {
-                      val f = fps(fi)
-                      if (f.audioTag == commonTag) fp = f
-                      fi += 1
-                    }
+                    val cmpTagFps = cmpFps.iterator.filter(_.audioTag == commonTag).toArray
+                    val largerTagFps = fps.iterator.filter(_.audioTag == commonTag).toArray
 
-                    if (cmpFp != null && fp != null) {
-                      var isStrictMatch = true
-                      if (cmpFp.audioMd5 == fp.audioMd5 && cmpFp.audioMd5.nonEmpty) {
-                        // duplicate = true
-                      } else if (cmpFp.audioChromaprintKey != 0L && fp.audioChromaprintKey != 0L && cmpFp.audioChromaprintKey != fp.audioChromaprintKey) {
-                        val cmpseconds = cmpFp.effectiveAudioBytes.toDouble / persecondbytes
-                        val fpseconds = fp.effectiveAudioBytes.toDouble / persecondbytes
-                        val threshold = if (cmpseconds >= 10 && fpseconds >= 10) Math.max(0.999 - 0.01 * Math.min(cmpseconds - 10, fpseconds - 10), 0.82) else 0.999
-                        val similarity = chromaSimilarityFPs(cmpFp.fp, fp.fp)
-                        if (similarity < threshold) {
-                          isStrictMatch = false
+                    if (cmpTagFps.nonEmpty && largerTagFps.nonEmpty) {
+                      // Compare every fingerprint with the common tag on both sides; one match
+                      // is enough. A first-match lookup can pick a different player/subsong
+                      // rendering and miss the duplicate on platform-normalized tags.
+                      var isStrictMatch = false
+                      var ci = 0
+                      while (ci < cmpTagFps.length && !isStrictMatch) {
+                        val cmpFp = cmpTagFps(ci)
+                        var fi = 0
+                        while (fi < largerTagFps.length && !isStrictMatch) {
+                          val fp = largerTagFps(fi)
+                          if (cmpFp.audioMd5 == fp.audioMd5 && cmpFp.audioMd5.nonEmpty) {
+                            isStrictMatch = true
+                          } else if (cmpFp.audioChromaprintKey != 0L && fp.audioChromaprintKey != 0L && cmpFp.audioChromaprintKey != fp.audioChromaprintKey) {
+                            val cmpseconds = cmpFp.effectiveAudioBytes.toDouble / persecondbytes
+                            val fpseconds = fp.effectiveAudioBytes.toDouble / persecondbytes
+                            val threshold = fpThreshold(cmpseconds, fpseconds)
+                            val similarity = chromaSimilarityFPs(cmpFp.fp, fp.fp)
+                            if (similarity >= threshold) {
+                              isStrictMatch = true
+                            }
+                          } else if (cmpFp.audioHash == fp.audioHash) {
+                            isStrictMatch = true
+                          }
+                          fi += 1
                         }
-                      } else if (cmpFp.audioHash != fp.audioHash) {
-                        isStrictMatch = false
+                        ci += 1
                       }
                       if (isStrictMatch && !matchedLarger(k)) {
                         strictMatchCount += 1
                         matchedLarger(k) = true
                       }
-                    } // end cmpFp != null && fp != null
+                    } // end cmpTagFps.nonEmpty && largerTagFps.nonEmpty
                   }
                   k += 1
                   while (k < larger.length && matchedLarger(k)) k += 1
@@ -734,33 +748,40 @@ lazy val (
   val audioByPlayerAndMd5 = filteredAudioFingerprints.par.groupBy(e => (e.player, e.md5))
     .map { case (k, fps) => k -> fps.seq.sortBy(_.normalizedSubsong).distinct }.seq
   
-  val _duplicateSubsongsByPlayerAndMd5 = songlengths.db.sortBy(_.md5).par.flatMap(e => {
+  val dupAndBadByPlayerAndMd5 = songlengths.db.sortBy(_.md5).par.flatMap(e => {
     val md5 = e.md5.take(12)
     val duplicates = mutable.SortedSet[Int]()
+    val bad = mutable.SortedSet[Int]()
     val fingerprints = audioByPlayerAndMd5.get((e.player, md5)).getOrElse(Buffer.empty)
     if (fingerprints.nonEmpty) {
       val filtered = fingerprints.filter(f => f.effectiveAudioBytes > 0).distinctBy(f => (f.subsong, f.audioTag))
-      val grouped = (
-        if (filtered.forall(e => filtered.head.effectiveAudioBytes > persecondbytes * 12 && e.effectiveAudioBytes > persecondbytes * 12 && e.audioBytes == filtered.head.audioBytes)) filtered.groupBy(_.audioBytes)
-        else filtered.groupBy(_.audioTag)
-      ).view.mapValues(_.distinct).toMap
+      // Short subsongs have no length bucket tag, so they group by both rendered length
+      // and audio hash. Partitions group separately so one short subsong does not force
+      // the long ones to group by length. Long subsongs also group by byte count — an
+      // unusable fingerprint shares no tag with its equal-length duplicates.
+      val (longFps, shortFps) = filtered.partition(_.effectiveAudioBytes > persecondbytes * 9)
+      val grouped = longFps.groupBy(_.audioTag).values.map(_.distinct).toSeq ++
+        longFps.groupBy(_.audioBytes).values.map(_.distinctBy(_.subsong)).filter(_.map(_.audioTag).distinct.length > 1).toSeq ++
+        shortFps.groupBy(_.audioBytes).values.map(_.distinct).toSeq ++
+        shortFps.groupBy(_.audioHash).values.map(_.distinct).toSeq
       val audioTags = filtered.map(f => (f.subsong, f.audioTag)).distinct.groupBy(_._1).view.mapValues(_.map(_._2).sorted.distinct).toMap
       if (!audioTags.values.forall(_.size <= 2)) {
         System.err.println(s"WARN: inconsistent audio tags for md5: $md5 player: ${e.player} format: ${e.format} audioTags: ${audioTags}")
       }
-      val audioTagsIdentical = filtered.forall(_.effectiveAudioBytes > persecondbytes * 12) && (
+      // identical rendered bytes count as identical evidence even when tags differ
+      val audioTagsIdentical = filtered.forall(_.effectiveAudioBytes > persecondbytes * 9) && (
         (audioTags.values.forall(_ == audioTags.head._2) && e.subsongs.size > 2) ||
-        audioTags.values.forall(_ == audioTags.head._2) && filtered.forall(_.audioBytes == filtered.head.audioBytes)
+        filtered.forall(_.audioBytes == filtered.head.audioBytes)
       )
       val baseThreshold = if (audioTagsIdentical) 0.9 else 0.99
       try {
-        assert(grouped.values.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
+        assert(grouped.forall(group => group.map(_.subsong).sorted == group.map(_.subsong)))
       } catch {
         case ex: Throwable =>
-          System.err.println(s"ERROR: md5: ${md5} player: ${e.player} format: ${e.format} filtered: ${filtered} grouped: ${grouped.values.map(_.map(_.subsong).mkString(",")).mkString(";")}")
+          System.err.println(s"ERROR: md5: ${md5} player: ${e.player} format: ${e.format} filtered: ${filtered} grouped: ${grouped.map(_.map(_.subsong).mkString(",")).mkString(";")}")
           throw ex
       }
-      for ((_, group) <- grouped) {
+      for (group <- grouped) {
         var remaining = group
         while (remaining.nonEmpty) {
           val cmp = remaining.head
@@ -768,10 +789,15 @@ lazy val (
           for (se <- remaining) {
             var duplicate = true
             // XXX audioChromaprint may differ even if md5 is same
-            if (cmp.audioMd5 == se.audioMd5) {
+            if (cmp.audioMd5 == se.audioMd5 || (cmp.audioChromaprint.nonEmpty && cmp.audioChromaprint == se.audioChromaprint)) {
               duplicate = true
             } else if (se.audioChromaprintKey != 0L && cmp.audioChromaprintKey != 0L && se.audioChromaprintKey != cmp.audioChromaprintKey) {
-              val threshold = (if (audioTags(se.subsong) != audioTags(cmp.subsong)) 0.995 else baseThreshold)
+              // the differing-tag penalty is waived only for the long byte-count
+              // grouping above; short pairs keep it
+              val bytesMatch = se.audioBytes == cmp.audioBytes && se.effectiveAudioBytes > persecondbytes * 9 && cmp.effectiveAudioBytes > persecondbytes * 9
+              val threshold = (if (audioTags(se.subsong) != audioTags(cmp.subsong) && !bytesMatch) 0.995 else baseThreshold)
+              // A silent pair scores 0.0 out of chromaSimilarityFast, so it fails the
+              // threshold below without a special case.
               val similarity = chromaSimilarityFPs(cmp.fp, se.fp)
               if (similarity < threshold) {
                 duplicate = false
@@ -786,12 +812,19 @@ lazy val (
           remaining = remaining.filterNot(se => duplicates.contains(se.subsong))
         }
       }
-      if (duplicates.nonEmpty && e.subsongs.size > duplicates.size) {
-        System.err.println(s"INFO: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} player: ${e.player} format: ${e.format}")
+      // bad fingerprints are not duplicates of anything — the pairwise loop only sees
+      // subsongs sharing a group, and a bad fingerprint usually has a tag of its own
+      for (f <- filtered if f.isBad) {
+        bad += f.subsong
+      }
+      if (duplicates.nonEmpty || bad.nonEmpty) {
+        System.err.println(s"INFO: md5: $md5 has duplicate subsongs: ${duplicates.mkString(",")} bad subsongs: ${bad.mkString(",")} player: ${e.player} format: ${e.format}")
       }
     }
-    if (duplicates.nonEmpty) Some((e.player, md5) -> duplicates) else None
-  }).seq.toMap
+    if (duplicates.nonEmpty || bad.nonEmpty) Some((e.player, md5) -> (duplicates, bad)) else None
+  }).seq
+  val _duplicateSubsongsByPlayerAndMd5 = dupAndBadByPlayerAndMd5.collect { case (k, (d, _)) if d.nonEmpty => k -> d }.toMap
+  val _badSubsongsByPlayerAndMd5 = dupAndBadByPlayerAndMd5.collect { case (k, (_, b)) if b.nonEmpty => k -> b }.toMap
 
   val _audioHashesByMd5 = fpsByMd5.map { case (md5, fps) =>
     md5 -> fps.seq.sortBy(_.normalizedSubsong).map(_.audioHash).distinct
@@ -807,5 +840,5 @@ lazy val (
     (audioTag, groupedHashes)
   }}.seq
 
-  (_audioHashesByMd5, _components, _duplicatesForTag, _duplicateSubsongsByPlayerAndMd5)
+  (_audioHashesByMd5, _components, _duplicatesForTag, _duplicateSubsongsByPlayerAndMd5, _badSubsongsByPlayerAndMd5)
 }

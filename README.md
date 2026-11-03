@@ -58,6 +58,7 @@ This database is also used by:
 - **Modizer** - https://github.com/yoyofr/modizer
 - **Protracktor** - https://github.com/przunk/protracktor
 - **rewamp** - https://rewamp.app/
+- **Selecta** - https://github.com/spotUP/selecta
 - **SoniqBoom** - https://github.com/SFCyris/SoniqBoom
 
 

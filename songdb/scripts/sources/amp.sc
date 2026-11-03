@@ -123,6 +123,7 @@ val _details = Files.list(Paths.get(amp_path + "detail/")).toScala(Buffer).par.m
               .replaceAll(" DFC$","") // ???
               // XXX
               .replace("Roat Riot 4WD", "Road Riot 4WD")
+              .replace("Megatron", "Magnatron")
               .trim
           else ""
         val format = filename.split("\\.").head
