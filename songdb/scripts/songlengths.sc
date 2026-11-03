@@ -49,7 +49,10 @@ lazy val db = sources.tsvs.par.flatMap(_._2).map({case (md5,_subsongs) => {
   if (!_entries.forall(_.player == _entries.head.player)) {
     System.err.println("WARN: inconsistent players for " + md5 + ": " + _entries)
   }
-  val entries = if (_entries.exists(_.player == "uade")) _entries.filter(_.player == "uade") else _entries.filter(_.player == _entries.head.player)
+  val entries = {
+    val filtered = if (_entries.filter(_.subsongs.exists(_.songlength > 0)).nonEmpty) _entries.filter(_.subsongs.exists(_.songlength > 0)) else _entries
+    if (filtered.exists(_.player == "uade")) filtered.filter(_.player == "uade") else filtered.filter(_.player == filtered.head.player)
+  }
   var best = entries.head
   if (entries.length > 1) {
     val totallens = entries.map(_.subsongs.map(_.songlength).sum)

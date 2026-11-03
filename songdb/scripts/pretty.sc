@@ -20,18 +20,9 @@ def songlengthLine(s: SongInfo): String = {
     s.hash.take(12),
     s.minsubsong.toString,
     s.subsongs.map(ss =>
-      (if (ss.duplicate)
-        Buffer(
-          ss.songlength.toString,
-          shorten(ss.songend),
-          "!",
-        )
-      else
-        Buffer(
-          ss.songlength.toString,
-          shorten(ss.songend)
-        )
-      ).mkString(",")
+      // `#` (bad) wins over `!` (duplicate)
+      val flag = if (ss.bad) "#" else if (ss.duplicate) "!" else ""
+      ss.songlength.toString + "," + shorten(ss.songend) + (if (flag.isEmpty) "" else "," + flag)
     ).mkString(" ")
   ).mkString("\t")
 }
@@ -63,10 +54,12 @@ def parsePrettySonglengthsTsv(tsv: String) = {
     val minsubsong = cols(1).toInt
     val subsongs = cols(2).split(' ').map { ss =>
       val e = ss.split(',')
+      // `#` overrides `!`: a bad subsong is not reported as a duplicate
       SubsongInfo(
         songlength = e(0).toInt,
         songend = decodeSongend(e(1)),
-        duplicate = e.length > 2 && e(2) == "!"
+        duplicate = e.length > 2 && e(2) == "!",
+        bad = e.length > 2 && e(2) == "#"
       )
     }
     SongInfo(hash, minsubsong, subsongs.toBuffer)

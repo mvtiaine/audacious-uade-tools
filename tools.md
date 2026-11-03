@@ -12,13 +12,13 @@ It's recommended to record at least 30s of audio, but the more the better. Accur
 
 ## Dupe Finder
 
-Find dupes of the given music file (e.g. (non-)original, corrupted or modified versions) in various sources, based on audio fingerprints.
+Find dupes of the given music file (e.g. (non-)original, corrupted or modified versions) in various songdb sources, based on audio fingerprints.
 It requires that the file MD5 exists in the database, if not you should use the audio matching tool instead.
 On M4 Max it takes about 2 seconds to run. All CPU cores are utilized.
 
 ## Source Metas
 
-Print metadatas for files in specific source or directory, or detect unique files/md5s not found in songdb or other sources. Does not use/require audio fingerprint files.
+Show metadatas for various songdb sources or files in local directories. Find duplicate, bad, rare or unique files and audio fingerprints in songdb sources and local directories.
 
 
 ## Usage
@@ -65,6 +65,8 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./source_metas.sc                                # Prints usage
 ./source_metas.sc ~/mods                         # Show metadata for files in ~/mods
 ./source_metas.sc --unique --tsv Deck > deck.tsv # Show unique MD5s in Deck module collection as TSV
+./source_metas.sc --unique-fingerprint Deck      # Show unique fingerprints in Deck module collection
+./source_metas.sc --bad Modland AMP Modarchive   # Show unplayable or silent files in various sources
 
 # Use audacious-uade CLI player to play an unknown file and match the chromaprint
 PROBE=1 ~/audacious-uade/src/plugin/cli/player/player 11025 ~/somefile.mod | fpcalc -length 9999 -rate 11025 -channels 2 -format s16le -plain - | ./audio_match.sc -
@@ -92,9 +94,9 @@ Note that output depends on tool used, for `audio_match.sc` default output looks
 Score | MD5          | Size    | Format                      | Player     | Sub | Len   | Ch | Filenames                      | #  | Authors     | Album                 | Publishers                 | Year
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 0,943 | fb778dace14a | 71206   | Protracker                  | uade       | 1   | 03:58 |    |                                | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
+0,943 | 0489859f3ad9 | 52680   | Digital Symphony            | libopenmpt | 0   | 03:57 | 4  | DAWN                           | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
 0,943 | cb41fba3043b | 71206   | Protracker                  | uade       | 1   | 03:58 |    | mod.dawn                       | 2  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
 0,943 | 36a8a32a0314 | 71206   | Protracker                  | uade       | 1   | 03:58 |    |                                | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
-0,943 | 0489859f3ad9 | 52680   | Digital Symphony            | libopenmpt | 0   | 03:57 | 4  | DAWN                           | 1  |             |                       |                            |     
 0,940 | bf2ce1133d7a | 71206   | Soundtracker II (31 instr.) | uade       | 1   | 03:58 |    | mod.music1                     | 1  | Interphace  | The Co-Operation Demo | Andromeda & Infernal Minds | 1990
 ```
 

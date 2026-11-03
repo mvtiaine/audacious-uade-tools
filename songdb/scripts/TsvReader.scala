@@ -2,17 +2,11 @@
 // SPDX-AI-Disclosure: ai-generated
 
 // Generic TSV reader: one FileInputStream read straight into a reusable scan buffer, fields
-// sliced out of that buffer. No charset decoder over the whole file, no per-line String, no
-// split array, no BufferedInputStream second copy.
-//
-// ~2x `scala.io.Source.fromFile` + `split("\t")` (measured on a 162 MB / 34637-line TSV:
-// 55 vs 108 ms per file, best-of-5, output byte-identical). mmap is within noise of this and
-// costs a FileChannel/MapMode lifecycle plus the rule that the mapped buffer must outlive any
-// slice taken from it. BufferedInputStream is ~5% slower (it copies into its own buffer, then
-// again into ours). Buffer size is flat from 256 KiB to 4 MiB on a cached file.
-//
-// `String.split("\t")` is JDK fast-pathed, so hand-rolling indexOf over a decoded String is
-// ~2x SLOWER than this -- the win comes from never building the line String at all.
+// sliced out of that buffer. No charset decoder over the whole file, no per-line String,
+// no split array, no BufferedInputStream second copy — the win comes from never building the
+// line String at all (`String.split("\t")` is JDK fast-pathed, so hand-rolling indexOf over a
+// decoded String is slower). mmap is within noise and costs a FileChannel/MapMode lifecycle
+// plus the rule that the mapped buffer must outlive any slice taken from it.
 
 import java.io.{File, FileInputStream}
 import java.nio.charset.{Charset, StandardCharsets}

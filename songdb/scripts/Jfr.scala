@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: CC-PDM-1.0
 // SPDX-AI-Disclosure: ai-generated
 
-// JFR phase markers. Committed events make phase boundaries facts in the recording; boundaries
-// mined afterwards out of ExecutionSample stacks drift between runs on an identical dataset.
+// JFR phase markers: committed phase boundaries in the recording, which sampling stacks
+// afterwards cannot give reliably.
 //
 // PLATFORM NOTES (macOS arm64, Temurin JDK 25)
 //   - No built-in jdk.Marker here, and profile.jfc does not record it -- hence a custom

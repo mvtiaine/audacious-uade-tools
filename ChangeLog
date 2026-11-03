@@ -1,3 +1,12 @@
+2026-11-03
+- Added bad subsong detection based on audio fingerprint
+--  in songlengths.tsv bad subsongs are marked with '#'
+- Updated source_metas.sc tool:
+--  Added --duplicate, --suspicious and --bad options
+--  Added --unique-fingerprint, --duplicate-fingerprint and --missing fingerprint options
+- Metadata extraction/heuristics tweaks and fixes
+- Misc fixes and updates
+
 2026-10-01
 - Added source_metas.sc tool
 - Added --tsv parameter to audio_match.sc

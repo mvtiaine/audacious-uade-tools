@@ -28,18 +28,16 @@
 // GROWTH TRIGGER -- 83 %, never 100 %. An unsuccessful linear probe costs
 // 0.5*(1+1/(1-alpha)^2) searches, so a table ridden to alpha 1.0 is thousands of probes.
 //
-// NO CEILING -- a bucket doubles forever. Memory is already bounded by the trigger alone:
-// len <= 2 * live / 0.83, so the footprint tracks live entries and cannot run away from the
-// data. A ceiling added no protection, only two costs: it silently dropped entries once a
-// bucket reached it, and a full bucket made every miss a full-table scan. Footprint is
-// observable instead -- `onGrowBytes` publishes every allocation and `tailStats()` reports
-// the bucket-length histogram.
+// NO CEILING -- a bucket doubles forever. The trigger alone bounds memory:
+// len <= 2 * live / 0.83. A ceiling would silently drop entries and turn every miss in a full
+// bucket into a full-table scan. Footprint is observable instead -- `onGrowBytes` publishes
+// every allocation, `tailStats()` the bucket-length histogram.
 //
-// THE LIVE COUNT IS A PLAIN INT, AND IT IS ALLOWED TO BE WRONG. An atomic counter per insert
-// hands the cache line to whoever inserted last; `@volatile` pays coherence and is still
-// inaccurate. `size()` is approximate and diagnostics-only -- `put` grows anyway when the probe
-// loop exhausts the table. Do not re-add: sampling the counter, or forcing a grow from a long
-// probe (it fires exactly when the bucket is dense, discarding live inserters).
+// THE LIVE COUNT IS A PLAIN INT AND MAY BE WRONG. An atomic counter per insert hands the cache
+// line to whoever inserted last; `@volatile` pays coherence and is still inaccurate. `size()`
+// is approximate and diagnostics-only -- `put` grows anyway when the probe loop exhausts the
+// table. Do not re-add: sampling the counter, or forcing a grow from a long probe (it fires
+// exactly when the bucket is dense, discarding live inserters).
 
 import java.util.concurrent.atomic.AtomicLongArray
 import java.util.concurrent.atomic.AtomicReferenceArray

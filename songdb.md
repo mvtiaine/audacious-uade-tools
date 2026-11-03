@@ -56,9 +56,10 @@ fffd7a7d8547	1	250840,p+s
 fffdc1d765c3	0	40880,l 117860,l 8780,s 79340,l 8080,s 19000,s
 ```
 
-Format: `[hash]<TAB>[minsubsong]<TAB>[[songlength(ms),songend[,!]]<SPACE>[songlength(ms),songend[,!]]<SPACE>[...]]`
+Format: `[hash]<TAB>[minsubsong]<TAB>[[songlength(ms),songend[,!#]]<SPACE>[songlength(ms),songend[,!#]]<SPACE>[...]]`
 
-- Duplicate subsongs are denoted by `!`
+- Duplicate subsongs are denoted by `!`, broken subsongs are denoted by `#`. Only one of `!` or `#` is set, never both.
+
 
 ### modinfos.tsv
 

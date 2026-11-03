@@ -1,231 +1,12 @@
-// SPDX-License-Identifier: GPL-2.0-or-later AND MIT AND CC-PDM-1.0
+// SPDX-License-Identifier: MIT
 // SPDX-AI-Disclosure: ai-assisted
-// Copyright (C) 2025-2026 Matti Tiainen <mvtiaine@cc.hut.fi>
-// see below for further copyrights
 
-//> using dep org.lz4:lz4-java:1.8.1
-
-import java.util.Arrays
-import java.util.Base64
-import java.util.concurrent.ConcurrentHashMap
-import net.jpountz.xxhash.XXHashFactory
-
-// number of 32-bit words per silence/content scan window
-val chunkSize = 64
-
-def isSilentChunk(data: Array[Int], len: Int, offset: Int = 0): Boolean = {
-  if (len <= 0) return true
-  val zeroTrue  = (9 * len) / 10          // zeroCount  >  zeroTrue  <=> zeroRatio   >  0.9
-  val bitsDead1 = (32 * len + 199) / 200 // totalBits >= bitsDead1 <=> setBitRatio  >= 0.005
-  val bitsDead3 = (32 * len + 49) / 50   // totalBits >= bitsDead3 <=> setBitRatio  >= 0.02
-  val uniqDead  = (len + 19) / 20        // uniq      >= uniqDead  <=> repetitionRatio >= 0.05
-  var totalBits = 0
-  var zeroCount = 0
-  // the first four distinct values seen; uniq saturates at 4 == ">= 4"
-  var u0 = 0
-  var u1 = 0
-  var u2 = 0
-  var uniq = 0
-  var i = 0
-  while (i < len) {
-    val v = data(offset + i)
-    totalBits += Integer.bitCount(v)
-    if (v == 0) zeroCount += 1
-    if (uniq == 0) { u0 = v; uniq = 1 }
-    else if (uniq == 1) { if (v != u0) { u1 = v; uniq = 2 } }
-    else if (uniq == 2) { if (v != u0 && v != u1) { u2 = v; uniq = 3 } }
-    else if (uniq == 3) { if (v != u0 && v != u1 && v != u2) uniq = 4 }
-    if (zeroCount > zeroTrue) return true
-    if (totalBits >= bitsDead1 && uniq >= 3 && (totalBits >= bitsDead3 || uniq >= uniqDead)
-        && zeroCount + len - i - 1 <= zeroTrue) return false
-    i += 1
-  }
-  if (totalBits < bitsDead1) return true
-  if (uniq <= 2) return true
-  if (totalBits < bitsDead3 && uniq < uniqDead) return true
-  false
-}
-
-def isSilentFingerprint(data: Array[Int]): Boolean = {
-  if (data.isEmpty) return true
-  var start = 0
-  while (start < data.length) {
-    val len = math.min(chunkSize, data.length - start)
-    if (!isSilentChunk(data, len, start)) return false
-    start += chunkSize
-  }
-  true
-}
-
-final class FP (val algo: Int, val data: Array[Int], val key: Long = 0L) {
-  val length: Int = data.length
-  lazy val isSilent: Boolean = isSilentFingerprint(data)
-
-  lazy val contentBounds: (Int, Int) = {
-    val numChunks = (length + chunkSize - 1) / chunkSize
-    var s = 0
-    while (s < numChunks && isSilentChunk(data, if (s == numChunks - 1) length - s * chunkSize else chunkSize, s * chunkSize)) s += 1
-    var e = numChunks - 1
-    while (e >= s && isSilentChunk(data, if (e == numChunks - 1) length - e * chunkSize else chunkSize, e * chunkSize)) e -= 1
-    if (s > e) (0, 0) else (s * chunkSize, math.min(length, (e + 1) * chunkSize))
-  }
-
-  // hashCode and equals omit deep array checks as they're not used in deduplication anymore
-  // but kept valid for exact matching if needed
-  override lazy val hashCode: Int = algo * 31 + Arrays.hashCode(data)
-  override def equals(obj: Any): Boolean = obj match {
-    case other: FP => algo == other.algo && length == other.length && Arrays.equals(data, other.data)
-    case _ => false
-  }
-}
-val fpCache = new ConcurrentHashMap[Long, FP](500_000)
-
-// xxhash64 of the base64 decoded chromaprint bytes, used as a compact cache key
-// so the full base64 chromaprint string does not need to be retained in memory
-val xxh64 = XXHashFactory.fastestInstance().hash64()
-val xxh64Seed = 0
-
-def chromaprintHash(bytes: Array[Byte]): Long =
-  xxh64.hash(bytes, 0, bytes.length, xxh64Seed)
-
-def chromaprintHash(chromaprint: String): Long =
-  chromaprintHash(Base64.getUrlDecoder.decode(chromaprint))
-
-def clearCaches(): Unit = {
-  fpCache.clear()
-}
-
-def cacheChromaprint(chromaprint: String): (Long, FP) = {
-  val bytes = Base64.getUrlDecoder.decode(chromaprint)
-  val hash = chromaprintHash(bytes)
-  val fp = fpCache.computeIfAbsent(hash, _ => {
-    val Right(algo, data) = FingerprintDecompressor(bytes) : @unchecked
-    new FP(algo, data, hash)
-  })
-  (hash, fp)
-}
-
-// decode without caching (for one-off comparisons in find_dupes.sc/audio_match.sc)
-def decodeChromaprintUncached(chromaprint: String): FP = {
-  val Right(algo, data) = FingerprintDecompressor(chromaprint) : @unchecked
-  new FP(algo, data)
-}
-
-// similarity between two already-decoded FPs.
-def chromaSimilarityFPs(fp1: FP, fp2: FP): Double = {
-  assert(fp1.algo == fp2.algo)
-  val (s1, e1) = fp1.contentBounds
-  val (s2, e2) = fp2.contentBounds
-  chromaSimilarityFast(fp1.algo, s1, e1, fp1.data, fp2.algo, s2, e2, fp2.data)
-}
-
-def chromaSimilarityFast(
-  algo1: Int,
-  start1: Int,
-  end1: Int,
-  data1: Array[Int],
-  algo2: Int,
-  start2: Int,
-  end2: Int,
-  data2: Array[Int],
-  fuzziness: Int = 3
-): Double = {
-  if (algo1 != algo2) {
-    return 0.0
-  }
-
-  val minOverlap = math.min(8, math.min(end1 - start1, end2 - start2) / 2)
-  var maxSimilarity = 0.0
-  var zeroSimilarity = -1.0
-
-  var pass = 0
-  while (pass < 2 && (maxSimilarity <= 0.0 || (maxSimilarity > 0.6 && maxSimilarity < 0.99))) {
-    var oi = if (pass == 0) 0 else 1
-    var prevSimilarity = zeroSimilarity
-    while (oi <= fuzziness && (maxSimilarity <= 0.0 || (maxSimilarity > 0.6 && maxSimilarity < 0.99))) {
-      val offset = if (pass == 0) oi else -oi
-      val iStart = Math.max(start1, start2 - offset)
-      val iEnd = Math.min(end1, end2 - offset)
-      var totalScore = 0
-      var overlap = 0
-      var i = iStart
-
-      while (i < iEnd) {
-        val v1 = data1(i)
-        val j = i + offset
-        val v2 = data2(j)
-        totalScore += (32 - Integer.bitCount(v1 ^ v2))
-        overlap += 1
-        i += 1
-      }
-
-      if (overlap >= minOverlap && overlap > 0) {
-        val similarity = totalScore.toDouble / (overlap * 32.0)
-        if (similarity < prevSimilarity) {
-          oi = fuzziness // break early
-        } else {
-          prevSimilarity = similarity
-          if (similarity > maxSimilarity) {
-            maxSimilarity = similarity
-          }
-        }
-      }
-      if (oi == 0) {
-        zeroSimilarity = maxSimilarity
-      }
-      oi += 1
-    }
-    pass += 1
-  }
-
-  maxSimilarity
-}
-/*
-def chromaSimilarity(
-  algo1: Int,
-  data1: IndexedSeq[spire.math.UInt],
-  algo2: Int,
-  data2: IndexedSeq[spire.math.UInt]
-): Double = {
-  if (algo1 != algo2) {
-    return 0.0
-  }
-
-  val (shorter, longer) = if (data1.length < data2.length) (data1, data2) else (data2, data1)
-
-  if (shorter.isEmpty) {
-    return if (longer.isEmpty) 1.0 else 0.0
-  }
-
-  val maxOffset = longer.length - 1
-  var maxSimilarity = 0.0
-
-  for (offset <- -(shorter.length - 1) to maxOffset) {
-    var currentScore = 0
-    var overlap = 0
-    for (i <- shorter.indices) {
-      val j = i + offset
-      if (j >= 0 && j < longer.length) {
-        val xorValue = shorter(i) ^ longer(j)
-        currentScore += (32 - Integer.bitCount(xorValue.toInt))
-        overlap += 1
-      }
-    }
-    if (overlap > 0) {
-      val currentSimilarity = currentScore.toDouble / (overlap * 32.0)
-      if (currentSimilarity > maxSimilarity) {
-        maxSimilarity = currentSimilarity
-      }
-    }
-  }
-
-  maxSimilarity
-}
-*/
-
-// Chromaprint decoding and SimHash code, with some modifications, originally from:
+// Chromaprint decoding and SimHash code, with lots of modifications, originally from:
 // https://github.com/mgdigital/Chromaprint.scala
+// Note that the code has been vibe optimized with various LLM models,
+// so the current code differs quite a bit from the original implementation
 
+// Original copyright notice:
 /*
 Copyright (c) 2019 Mike Gibson, https://github.com/mgdigital
 
@@ -248,12 +29,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 Original Chromaprint algorithm Copyright (c) Lukáš Lalinský.
-
-// mvtiaine: note that the code has been vibe optimized with various LLM models, so the current code differs quite a bit from the original implementation
 */
 
 // FingerprintDecompressor.scala
 //package chromaprint
+import java.util.Arrays
+import java.util.Base64
 
 object FingerprintDecompressor {
 

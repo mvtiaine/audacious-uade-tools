@@ -51,8 +51,7 @@ def removeArticle(s: String): String = {
   else s
 }
 def expandArticleVariants(m: MetaData): Set[MetaData] = {
-  // Generate all combinations of article variants
-  // For authors/publishers: if any item has an article, create versions with original and without
+  // all combinations: for authors/publishers with an article, versions with and without
   val authorsLists = if (m.authors.isEmpty) {
     Seq(m.authors)
   } else {
@@ -777,60 +776,14 @@ def combineMetadata(
     lazy val gameType = normType == "Game" && (p.isEmpty || !p.forall(sceneGroups.contains))
     if (pl.isEmpty && (processAgain || gameType)) {
       val entries = songlengths.songlengthsByMd5(hash)
-      if (entries.exists(e =>
-        e.format.endsWith("ST") ||
-        e.format.contains(" ST ") ||
-        e.format.contains("TCB Tracker") ||
-        e.format.contains("YM2149") ||
-        e.format.contains(" PSG") ||
-        e.format.contains("Octalyser") ||
-        e.format.contains("Graoumf") ||
-        e.format.contains("Digital Tracker") ||
-        e.format.contains("Megatracker")
-      )) {
+      // TODO SoundSmith
+      if (entries.exists(e => isAtariFormat(e.format))) {
         pl = "Atari"
-      } else if (entries.exists(e =>
-        e.format.contains("DigiBooster") ||
-        e.format.contains("DIGI Booster") ||
-        e.format.contains("OctaMED") ||
-        e.format.contains("MED ") ||
-        e.format.contains("Future Composer") ||
-        e.format.contains("Face The Music") ||
-        e.format.contains("Symphonie") ||
-        e.format.contains("UNIC Tracker") ||
-        e.format.contains("SoundFX") ||
-        e.format.toLowerCase.contains("chiptracker") ||
-        e.format.contains("Images Music System") ||
-        e.format.contains("Ice Tracker") ||
-        e.format.contains("Game Music Creator") ||
-        e.format.contains("Startrekker") ||
-        e.format.contains("IFFMODL") ||
-        e.format.contains("Slamtilt") ||
-        e.format.contains("Magnetic Fields Packer") ||
-        e.format.contains("His Master's Noise") ||
-        e.format.contains("AMOS Music Bank") ||
-        e.format.contains("Prorunner") ||
-        e.format.contains("The Player") ||
-        e.format.contains("ProPacker") ||
-        e.format.contains("NoisePacker") ||
-        e.format.contains("Kefrens") ||
-        e.format.contains("Titanics") ||
-        e.format.contains("Pha Packer") ||
-        e.format.contains("Wanton Packer") ||
-        e.format.contains("Fuchs Tracker") ||
-        e.format.contains("Eureka Packer") ||
-        e.format.contains("Promizer") ||
-        e.format.contains("AC1D Packer") ||
-        e.format.contains("The Dark Demon")
-      )) {
+      } else if (entries.exists(e => isAmigaFormat(e.format))) {
         pl = "Amiga"
       } else if (!entries.exists(e =>
-        e.format.toLowerCase.contains("soundtracker") ||
-        e.format.toLowerCase.contains("noisetracker") ||
-        e.format.toLowerCase.contains("protracker") ||
-        e.format.toLowerCase.contains("oktalyzer") ||
+        isAmigaTrackerFormat(e.format) ||
         e.format.endsWith("SID") ||
-        e.format.contains("POKEYNoise") ||
         e.format.contains("Archimedes Tracker") ||
         e.format.contains("Coconizer") ||
         e.format.contains("Blade Packer") ||
@@ -1922,16 +1875,31 @@ def combineMetadata(
             }.collectFirst { case Some(x) => x }
           }
 
+          def typePref(m: MetaData, pool: Iterable[MetaData]): Int =
+            if (m._type.toLowerCase == "game") -1
+            else if ((m._type.toLowerCase == "demo" || m._type.toLowerCase == "intro" || m._type.toLowerCase == "compo") &&
+                     !pool.exists(_._type.toLowerCase == "game")) -1
+            else 0
+
+          // type preference first, majority vote as secondary tie-breaker
+          def filterByType(metas: Iterable[MetaData]): Seq[MetaData] = {
+            if (metas.isEmpty) return Seq.empty
+            val pref = metas.map(m => typePref(m, metas)).min
+            val filtered = metas.filter(m => typePref(m, metas) == pref)
+            if (filtered.nonEmpty) filtered.toSeq else metas.toSeq
+          }
+
           var best = if (bests.nonEmpty) {
+            val typeFiltered = filterByType(bests)
             val grouped = {
-              val grouped = bests.filter(m => m.publishers.nonEmpty && m.album.nonEmpty).groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
+              val grouped = typeFiltered.filter(m => m.publishers.nonEmpty && m.album.nonEmpty).groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
               if (grouped.isEmpty) {
-                 bests.groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
+                 typeFiltered.groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
               } else grouped
             }
             val maxCount = grouped.values.map(_.size).max
             val tiedGroups = grouped.filter(_._2.size == maxCount)
-            val candidates = tiedGroups.values.flatten.toSeq.sortBy(_.hash)
+            val candidates = tiedGroups.values.flatten.toSeq.sortBy(m => (typePref(m, bestmetas), m.hash))
             val best = if (candidates.size > 1) {
               pickBySourcePriority(candidates).getOrElse(candidates.maxBy(_.authors.size))
             } else {
@@ -1941,16 +1909,17 @@ def combineMetadata(
             best
           } else {
             // fallback: use majority voting on publisher/album for all bestmetas
+            val typeFiltered = filterByType(bestmetas)
             val grouped = {
-              val grouped = bestmetas.filter(m => m.publishers.nonEmpty && m.album.nonEmpty).groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
+              val grouped = typeFiltered.filter(m => m.publishers.nonEmpty && m.album.nonEmpty).groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
               if (grouped.isEmpty) {
-                 bestmetas.groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
+                 typeFiltered.groupBy(m => (m.publishers.map(normalizePublisher).sorted, normalizeAlbum(m)))
               } else grouped
             }
             if (grouped.nonEmpty) {
               val maxCount = grouped.values.map(_.size).max
               val tiedGroups = grouped.filter(_._2.size == maxCount)
-              val candidates = tiedGroups.values.flatten.toSeq.sortBy(_.hash)
+              val candidates = tiedGroups.values.flatten.toSeq.sortBy(m => (typePref(m, bestmetas), m.hash))
               val best = if (candidates.size > 1) {
                 pickBySourcePriority(candidates).getOrElse(candidates.maxBy(_.authors.size))
               } else {
@@ -1961,15 +1930,15 @@ def combineMetadata(
             } else {
               // fallback: use majority voting on authors for all bestmetas
               val grouped = {
-                val grouped = bestmetas.filter(_.authors.nonEmpty).groupBy(m => m.authors.map(normalizeAuthor).sorted)
+                val grouped = typeFiltered.filter(_.authors.nonEmpty).groupBy(m => m.authors.map(normalizeAuthor).sorted)
                 if (grouped.isEmpty) {
-                   bestmetas.groupBy(m => m.authors.map(normalizeAuthor).sorted)
+                   typeFiltered.groupBy(m => m.authors.map(normalizeAuthor).sorted)
                 } else grouped
               }
               val best = if (grouped.nonEmpty) {
                 val maxCount = grouped.values.map(_.size).max
                 val tiedGroups = grouped.filter(_._2.size == maxCount)
-                val candidates = tiedGroups.values.flatten.toSeq.sortBy(_.hash)
+                val candidates = tiedGroups.values.flatten.toSeq.sortBy(m => (typePref(m, bestmetas), m.hash))
                 if (candidates.size > 1) {
                   pickBySourcePriority(candidates).getOrElse(candidates.head)
                 } else {
@@ -2067,11 +2036,11 @@ def combineMetadata(
                 val subsongMatch = if (hashSubsongCount > 0 && candSubsongCount > 0) if (hashSubsongCount == candSubsongCount) -1 else 0 else 0
                 val platformMatch = if (hashPlatform.nonEmpty && cand._platform.nonEmpty) if (hashPlatform.toLowerCase == cand._platform.toLowerCase) -1 else 0 else 0
                 val typeMatch = if (hashType.nonEmpty && cand._type.nonEmpty) (if (normalizeType(hashType) == normalizeType(cand._type)) -1 else 0) else 0
-                val gamePreference = if (cand._type.toLowerCase == "game") -1 else 0
+                val typePreference = typePref(cand, dedupedCands.map(_._1))
                 val sourcePrio = authorSources.indexWhere(_.contains(cand.hash))
                 val sourceCount = sourceCounts.getOrElse(cand.hash, 0)
                 val year = if (yearMissing) constraintYear(cand) else if (cand.year > 0) cand.year else 9999
-                (cand, passesFilter, ((subsongMatch, platformMatch, typeMatch), if (sameMetaExceptHash(cand, best)) -1 else 0, (-score(cand), -formatScore(cand)), (gamePreference, sourcePrio, -sourceCount), (year, if (cand.album.isEmpty) "ZZZZZ" else normalizeAlbum(cand), cand.hash)))
+                (cand, passesFilter, ((subsongMatch, platformMatch, typeMatch), if (sameMetaExceptHash(cand, best)) -1 else 0, (-score(cand), -formatScore(cand)), (typePreference, sourcePrio, -sourceCount), (year, if (cand.album.isEmpty) "ZZZZZ" else normalizeAlbum(cand), cand.hash)))
               }
               .sortBy(_._3)
               .map(t => (t._1, t._2))
@@ -2118,7 +2087,8 @@ def combineMetadata(
                       else candAuthors
                     } else if (typeChange && compatibleAuthors && differentNames && (candAuthors.size >= old.authors.size || old.authors.exists(isRealName) != candAuthors.exists(isRealName))) candAuthors
                     else old.authors
-                  if (passesFilter && (!meta.isDefined || processAgain || compatibleAuthors || meta.get.authors.isEmpty)) {
+                  lazy val candSubsongCount = subsongCount(cand.hash)
+                  if (passesFilter && (!meta.isDefined || processAgain || compatibleAuthors || meta.get.authors.isEmpty) && (!meta.isDefined || !processAgain || hashSubsongCount == candSubsongCount || meta.get.authors.isEmpty || candAuthors.nonEmpty)) {
                     val different = meta.isEmpty || !sameMetaExceptHash(meta.get, cand)
                     val authorsUpdated = meta.isEmpty || authors != meta.get.authors
                     if (different || authorsUpdated) {

@@ -308,3 +308,78 @@ def normalizeType(s: String): String = s.toLowerCase match {
 val normalizeFilenamePattern = Pattern.compile("[^a-z0-9/]")
 def normalizeFilename(filename: String): String =
   normalizeFilenamePattern.matcher(filename.toLowerCase).replaceAll("")
+
+def isAtariFormat(format: String): Boolean =
+  format.endsWith("ST") ||
+  format.contains(" ST ") ||
+  format.contains("Graoumf") ||
+  format.contains("Digital Tracker") ||
+  format.contains("Flextrax") ||
+  format.contains("Octalyser") ||
+  format.contains("TCB Tracker") ||
+  format.contains("Megatracker") ||
+  format.contains("YM2149") ||
+  format.contains(" PSG") ||
+  format.contains("POKEYNoise")
+
+def isAmigaFormat(format: String): Boolean =
+  format.contains("AC1D Packer") ||
+  format.contains("AMOS Music Bank") ||
+  format.toLowerCase.contains("chiptracker") ||
+  format.contains("DIGI Booster") ||
+  format.contains("Eureka Packer") ||
+  format.contains("Face The Music") ||
+  format.contains("FC-M Packer") ||
+  format.contains("Fuchs Tracker") ||
+  format.contains("Future Composer") ||
+  format.contains("Game Music Creator") ||
+  format.contains("Heatseeker") ||
+  format.contains("His Master's Noise") ||
+  format.contains("Hornet Packer") ||
+  format.contains("IFFMODL") ||
+  format.contains("Ice Tracker") ||
+  format.contains("Images Music System") ||
+  format.contains("Kefrens") ||
+  format.contains("Magnetic Fields Packer") ||
+  format.contains("MED ") ||
+  format.contains("Module Protector") ||
+  format.contains("NoisePacker") ||
+  format.contains("Noiserunner") ||
+  format.contains("Novotrade Packer") ||
+  format.contains("OctaMED") ||
+  format.contains("Pha Packer") ||
+  format.contains("Power Music") ||
+  format.contains("Promizer") ||
+  format.contains("ProPacker") ||
+  format.contains("Prorunner") ||
+  format.contains("Quadra Composer") ||
+  format.contains("SKYT Packer") ||
+  format.contains("Slamtilt") ||
+  format.contains("SoundFX") ||
+  format.contains("Startrekker Packer") ||
+  format.contains("Symphonie") ||
+  format.contains("The Dark Demon") ||
+  format.contains("The Player") ||
+  format.contains("Titanics") ||
+  format.contains("Tracker Packer") ||
+  format.contains("UNIC Tracker") ||
+  format.contains("Wanton Packer") ||
+  format.contains("XANN Packer") ||
+  format.contains("Zen Packer")
+
+def isAmigaTrackerFormat(format: String): Boolean =
+  format.toLowerCase.contains("soundtracker") ||
+  format.toLowerCase.contains("noisetracker") ||
+  format.toLowerCase.contains("protracker") ||
+  format.toLowerCase.contains("oktalyzer") ||
+  format.toLowerCase.contains("startrekker") ||
+  format.toLowerCase.contains("mod-compatible") ||
+  format.contains("ST 2.6")
+
+def isAtariTrackerFormat(format: String): Boolean =
+  format.contains("Graoumf") ||
+  format.contains("Digital Tracker") ||
+  format.contains("Flextrax") ||
+  format.contains("Octalyser") ||
+  format.contains("TCB Tracker") ||
+  format.contains("Megatracker")

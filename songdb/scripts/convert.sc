@@ -69,7 +69,10 @@ def joinTsv(rows: Iterable[Buffer[String]], trim: Boolean): String = {
 final case class SubsongInfo (
   songlength: Int, // in ms
   songend: String,
+  // `!` in songlengths.tsv. A subsong that is both duplicate and bad is marked `#`.
   duplicate: Boolean,
+  // `#` in songlengths.tsv
+  bad: Boolean,
 )
 
 trait BaseInfo {
@@ -209,28 +212,28 @@ def decodeSonglengthsTsv(tsv: String, idx2hash: Buffer[String]) = {
     val subsongs = Buffer.empty[SubsongInfo]
     val minsubsong = if (cols.length == 1 || cols(1).isEmpty) 1 else cols(1).toInt
 
-    var prev = SubsongInfo(0, "error", false)
+    var prev = SubsongInfo(0, "error", false, false)
     cols(0).split(" ", -1).foreach(ss =>
       if (ss.isEmpty()) {
         assert(prev != null)
-        prev = prev.copy(duplicate = false)
-      } else if (ss == "!") {
+        prev = prev.copy(duplicate = false, bad = false)
+      } else if (ss == "!" || ss == "#") {
         assert(prev != null)
-        prev = prev.copy(duplicate = true)
+        prev = prev.copy(duplicate = ss == "!", bad = ss == "#")
       } else {
         val e = ss.split(',')
         val songlength =
           if (e(0).isEmpty) 0
           else base64d24(e(0)) * 20 // 20ms accuracy in encoded tsv
+        val flag =
+          if (e.length > 2) e(2)
+          else if (e.length == 2 && (e(1) == "!" || e(1) == "#")) e(1)
+          else ""
         val songend =
-          if (e.length == 1 || e(1).isEmpty || e(1) == "!") "player"
+          if (e.length == 1 || e(1).isEmpty || e(1) == "!" || e(1) == "#") "player"
           else decodeSongend(e(1))
-        val duplicate =
-          if (e.length == 1 && e(0) == "!") true
-          else if (e.length == 2 && e(1) == "!") true
-          else if (e.length > 2 && e(2) == "!") true
-          else false
-        val subsong = SubsongInfo(songlength, songend, duplicate)
+        // `#` overrides `!`: a bad subsong is not reported as a duplicate
+        val subsong = SubsongInfo(songlength, songend, flag == "!", flag == "#")
         prev = subsong
       }
       subsongs += prev
@@ -261,13 +264,14 @@ def encodeSonglengthsTsv(songlengths: Buffer[SongInfo], _check: Map[String, Stri
       val sl = if (s.songlength > 0 && s.songlength < 20) 20 else s.songlength
       val _songlength = ""+base64e24((sl + 10) / 20) // 20ms accuracy in songlengths
       var next = if (_songend.isEmpty) _songlength else _songlength + "," + _songend
+      // `#` (bad) wins over `!` (duplicate). Both are outside the base64 range (45..108),
+      // so a flag can never be mistaken for a length token.
+      val flag = if (s.bad) "#" else if (s.duplicate) "!" else ""
       if (prev == next) {
-        if (s.duplicate) "!"
-        else ""
+        flag
       } else {
         prev = next
-        if (s.duplicate) next + ",!"
-        else next
+        if (flag.isEmpty) next else next + "," + flag
       }
     )
     val minsubsong = if (e.minsubsong != 1) e.minsubsong.toString else ""

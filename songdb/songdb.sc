@@ -26,6 +26,8 @@
 //> using file scripts/LockFreeMaps.scala
 //> using file scripts/TsvReader.scala
 //> using file scripts/chromaprint.sc
+//> using file scripts/chromaanalysis.sc
+//> using file scripts/chromasimilarity.sc
 //> using file scripts/normalization.sc
 
 //> using file scripts/songlengths.sc
@@ -101,7 +103,7 @@ var fujiologydata: Buffer[MetaData] = Buffer.empty
 val globalLeftovers = new java.util.concurrent.ConcurrentLinkedQueue[MetaData]()
 
 val verifyTasks = new java.util.concurrent.ConcurrentLinkedQueue[() => Unit]()
-def verify(cond: => Boolean): Unit = verifyTasks.add(() => assert(cond))
+def verify(cond: => Boolean, msg: String): Unit = verifyTasks.add(() => assert(cond, msg))
 def runVerifyTasks(): Unit = {
   Jfr.mark("verifyStart")
   verifyTasks.asScala.toBuffer.par.foreach(_())
@@ -156,8 +158,8 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
 
   Files.write(Paths.get(s"$DEST/pretty/md5/${name}"), pretty.getBytes("UTF-8"))
 
-  verify(decoded == parsePrettyMetaTsv(pretty))
-  verify(encoded == encodeMetaTsv(decoded, name, _md5idx))
+  verify(decoded == parsePrettyMetaTsv(pretty), s"decoded != parsePrettyMetaTsv(pretty) for ${name}")
+  verify(encoded == encodeMetaTsv(decoded, name, _md5idx), s"encoded != encodeMetaTsv(decoded, name, _md5idx) for ${name}")
 
   if (allTsvs) {
     val xxh32 = metasToXxh32(decoded)
@@ -168,8 +170,8 @@ def processMetaTsvs(_entries: Buffer[MetaData], name: String, allTsvs: Boolean =
     Files.write(Paths.get(s"$DEST/pretty/xxh32/${name}"), xxh32Pretty.getBytes("UTF-8"))
     Files.write(Paths.get(s"$DEST/encoded/xxh32/${name}"), xxh32Encoded.getBytes("UTF-8"))
 
-    verify(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty))
-    verify(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx))
+    verify(xxh32Decoded == parsePrettyMetaTsv(xxh32Pretty), s"xxh32Decoded != parsePrettyMetaTsv(xxh32Pretty) for ${name}")
+    verify(xxh32Encoded == encodeMetaTsv(xxh32, name + ".xxh32", _xxh32idx), s"xxh32Encoded != encodeMetaTsv(xxh32, name + \".xxh32\", _xxh32idx) for ${name}")
   }
 
   dedupped
@@ -214,14 +216,18 @@ lazy val songlengthsTsvs = Future(_try {
   val entries = songlengths.db.sortBy(_.md5).par.map(e => {
     val md5 = e.md5.take(12)
     val duplicates = audio.duplicateSubsongsByPlayerAndMd5.getOrElse((e.player, md5), scala.collection.mutable.SortedSet[Int]())
+    val bad = audio.badSubsongsByPlayerAndMd5.getOrElse((e.player, md5), scala.collection.mutable.SortedSet[Int]())
     SongInfo(
       md5,
       e.minsubsong,
       e.subsongs.sortBy(_.subsong).map(s =>
+        // `#` overrides `!`: a bad subsong is not reported as a duplicate
         SubsongInfo(
           s.songlength,
           s.songend,
-          e.subsongs.size > duplicates.size && duplicates.contains(s.subsong),
+          duplicate = e.subsongs.size >= duplicates.size && duplicates.contains(s.subsong) &&
+            !(e.subsongs.size >= bad.size && bad.contains(s.subsong)),
+          bad = e.subsongs.size >= bad.size && bad.contains(s.subsong),
         )
       ).toBuffer
     )
@@ -241,10 +247,10 @@ lazy val songlengthsTsvs = Future(_try {
   Files.write(Paths.get(s"$DEST/pretty/md5/songlengths.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get(s"$DEST/pretty/xxh32/songlengths.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
-  verify(decoded == parsePrettySonglengthsTsv(pretty))
-  verify(encoded == encodeSonglengthsTsv(decoded, _md5check))
-  verify(xxh32Decoded == parsePrettySonglengthsTsv(xxh32Pretty))
-  verify(xxh32Encoded == encodeSonglengthsTsv(xxh32, _xxh32check))
+  verify(decoded == parsePrettySonglengthsTsv(pretty), "decoded != parsePrettySonglengthsTsv(pretty)")
+  verify(encoded == encodeSonglengthsTsv(decoded, _md5check), "encoded != encodeSonglengthsTsv(decoded, _md5check)")
+  verify(xxh32Decoded == parsePrettySonglengthsTsv(xxh32Pretty), "xxh32Decoded != parsePrettySonglengthsTsv(xxh32Pretty)")
+  verify(xxh32Encoded == encodeSonglengthsTsv(xxh32, _xxh32check), "xxh32Encoded != encodeSonglengthsTsv(xxh32, _xxh32check)")
 })
 
 lazy val modinfosTsvs = Future(_try {
@@ -270,10 +276,10 @@ lazy val modinfosTsvs = Future(_try {
   Files.write(Paths.get(s"$DEST/pretty/md5/modinfos.tsv"), pretty.getBytes("UTF-8"))
   Files.write(Paths.get(s"$DEST/pretty/xxh32/modinfos.tsv"), xxh32Pretty.getBytes("UTF-8"))
 
-  verify(decoded == parsePrettyModInfosTsv(pretty))
-  verify(encoded == encodeModInfosTsv(decoded, _md5idx))
-  verify(xxh32Decoded == parsePrettyModInfosTsv(xxh32Pretty))
-  verify(xxh32Encoded == encodeModInfosTsv(xxh32, _xxh32idx))
+  verify(decoded == parsePrettyModInfosTsv(pretty), "decoded != parsePrettyModInfosTsv(pretty)")
+  verify(encoded == encodeModInfosTsv(decoded, _md5idx), "encoded != encodeModInfosTsv(decoded, _md5idx)")
+  verify(xxh32Decoded == parsePrettyModInfosTsv(xxh32Pretty), "xxh32Decoded != parsePrettyModInfosTsv(xxh32Pretty)")
+  verify(xxh32Encoded == encodeModInfosTsv(xxh32, _xxh32idx), "xxh32Encoded != encodeModInfosTsv(xxh32, _xxh32idx)")
 })
 
 lazy val ampTsvs = Future(_try {
