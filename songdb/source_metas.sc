@@ -1,8 +1,7 @@
 #!/usr/bin/env -S scala-cli shebang --suppress-warning-directives-in-multiple-files -q
 
-// SPDX-License-Identifier: GPL-2.0-or-later AND CC-PDM-1.0
-// SPDX-AI-Disclosure: ai-assisted
-// Copyright (C) 2026 Matti Tiainen <mvtiaine@cc.hut.fi>
+// SPDX-License-Identifier: CC-PDM-1.0
+// SPDX-AI-Disclosure: ai-generated
 
 //> using jvm 27
 //> using scala 3.9
@@ -17,9 +16,9 @@
 
 // MD5 based metadata and infos from songdb for one (or more) source(s) or directory(s).
 // Human readable table to stdout by default, TSV with --tsv.
-// --unique-fingerprint, --duplicate-fingerprint, --missing-fingerprint and
-// --rare-fingerprint are the exceptions: they compare audio fingerprints and need
-// the decompressed sources/audio tsvs.
+// --unique-fingerprint, --duplicate-fingerprint, --missing-fingerprint,
+// --rare-fingerprint and --top-fingerprint are the exceptions: they compare audio
+// fingerprints and need the decompressed sources/audio tsvs.
 
 // NOTE: running this first time will fetch/install dependencies etc. which may take a while.
 
@@ -50,6 +49,7 @@ import java.util.concurrent.{Callable, ExecutorService, Executors}
 import java.util.concurrent.atomic.AtomicInteger
 import scala.collection.mutable.Buffer
 import scala.collection.parallel.CollectionConverters._
+import scala.math.Ordering.Implicits.infixOrderingOps
 
 import audio._
 import chromaprint._
@@ -72,27 +72,33 @@ val uniqueFingerprint = args.contains("--unique-fingerprint")
 val duplicateFingerprint = args.contains("--duplicate-fingerprint")
 val missingFingerprint = args.contains("--missing-fingerprint")
 val rareFingerprint = args.contains("--rare-fingerprint")
-val rareFlagIdx = args.indexOf("--rare-fingerprint")
-val rareMaxSources =
-  if (!rareFingerprint) 0
-  else args.lift(rareFlagIdx + 1).flatMap(_.toIntOption).filter(_ >= 1).getOrElse {
-    Console.err.println("--rare-fingerprint needs a source count: --rare-fingerprint 1")
+val top = args.contains("--top")
+val topFingerprint = args.contains("--top-fingerprint")
+
+// the count-taking options: the count is the argument following the flag
+def intParam(flag: String, usage: String): Int =
+  args.lift(args.indexOf(flag) + 1).flatMap(_.toIntOption).filter(_ >= 1).getOrElse {
+    Console.err.println(usage)
     sys.exit(1)
   }
+val rareMaxSources = if (rareFingerprint) intParam("--rare-fingerprint", "--rare-fingerprint needs a source count: --rare-fingerprint 1") else 0
+val topCount = if (top) intParam("--top", "--top needs a count: --top 10") else 0
+val topFpCount = if (topFingerprint) intParam("--top-fingerprint", "--top-fingerprint needs a count: --top-fingerprint 10") else 0
+val countFlags = Seq("--rare-fingerprint", "--top", "--top-fingerprint")
 val positional = args.zipWithIndex.filterNot { case (a, i) =>
   a == "--tsv" || a == "--unique" || a == "--suspicious" || a == "--bad" || a == "--duplicate" ||
     a == "--unique-fingerprint" || a == "--duplicate-fingerprint" || a == "--missing-fingerprint" ||
-    a == "--rare-fingerprint" || (rareFlagIdx >= 0 && i == rareFlagIdx + 1)
+    countFlags.contains(a) || countFlags.exists(f => args.indexOf(f) == i - 1)
 }.map(_._1)
 
-if (Seq(unique, suspicious, broken, duplicate, uniqueFingerprint, duplicateFingerprint, missingFingerprint, rareFingerprint).count(identity) > 1) {
-  Console.err.println("at most one of --unique, --unique-fingerprint, --duplicate, --duplicate-fingerprint, --missing-fingerprint, --rare-fingerprint, --suspicious and --bad can be given")
+if (Seq(unique, suspicious, broken, duplicate, uniqueFingerprint, duplicateFingerprint, missingFingerprint, rareFingerprint, top, topFingerprint).count(identity) > 1) {
+  Console.err.println("at most one of --unique, --unique-fingerprint, --duplicate, --duplicate-fingerprint, --missing-fingerprint, --rare-fingerprint, --top, --top-fingerprint, --suspicious and --bad can be given")
   sys.exit(1)
 }
 
-if (positional.length < 1 && !rareFingerprint) {
+if (positional.length < 1 && !rareFingerprint && !top && !topFingerprint) {
   Console.err.println("Usage:")
-  Console.err.println("  ./source_metas.sc [--tsv] [--suspicious | --bad | --unique[-fingerprint] | --duplicate[-fingerprint] | --missing-fingerprint | --rare-fingerprint <N>] <source|all|directory>...")
+  Console.err.println("  ./source_metas.sc [--tsv] [--suspicious | --bad | --unique[-fingerprint] | --duplicate[-fingerprint] | --missing-fingerprint | --rare-fingerprint <N> | --top[-fingerprints] <N>] <source|all|directory>...")
   Console.err.println()
   Console.err.println("  --tsv                   tab separated output instead of a human readable table")
   Console.err.println("  --suspicious            only suspicious subsongs; ? column: e=error n=nosound t=timeout z=zero length #=bad fingerprint !=duplicate subsong")
@@ -103,6 +109,8 @@ if (positional.length < 1 && !rareFingerprint) {
   Console.err.println("  --duplicate-fingerprint duplicate audio fingerprints in given sources/directories")
   Console.err.println("  --missing-fingerprint   audio fingerprints that are missing from the given sources/directories")
   Console.err.println("  --rare-fingerprint <N>  audio fingerprints that are found at most N sources")
+  Console.err.println("  --top <N>               top N md5s across all sources")
+  Console.err.println("  --top-fingerprint <N>   top N audio fingerprints across all sources")
   Console.err.println("  all                     all sources; sources may also be given comma separated")
   Console.err.println()
   Console.err.println("  NOTE: the fingerprint options are heavy")
@@ -110,6 +118,7 @@ if (positional.length < 1 && !rareFingerprint) {
   Console.err.println("  ./source_metas.sc --tsv Deck > deck.tsv")
   Console.err.println("  ./source_metas.sc --unique ~/mods")
   Console.err.println("  ./source_metas.sc --rare-fingerprint 2 --tsv > rare.tsv")
+  Console.err.println("  ./source_metas.sc --top-fingerprint 20")
   Console.err.println("  ./source_metas.sc Modland NetlabelArchive")
   Console.err.println()
   Console.err.println(s"Sources: ${tsvfiles.map(_._2).distinct.filter(_ != Source.NONE).map(_.toString).sorted.mkString(", ")}")
@@ -149,8 +158,8 @@ if (uniqueFingerprint && targets.exists(_.isInstanceOf[DirTarget])) {
   sys.exit(1)
 }
 
-if (rareFingerprint && positional.nonEmpty) {
-  Console.err.println("--rare-fingerprint scans the whole corpus and takes no sources")
+if ((rareFingerprint || top || topFingerprint) && positional.nonEmpty) {
+  Console.err.println("--rare-fingerprint, --top and --top-fingerprint scan the whole corpus and take no sources")
   sys.exit(1)
 }
 
@@ -607,21 +616,29 @@ lazy val fpMissingGroups: Map[(String, Int), Int] = fpMissingData._2
 lazy val fpMissingNoFp: Map[String, Int] =
   fpMissingMd5s.toSeq.sorted.zipWithIndex.map { case (m, i) => m -> -(i + 1) }.toMap
 
-// md5 -> sources containing it; the --rare-fingerprint rarity count
+// md5 -> sources containing it; the --rare-fingerprint/--top rarity counts
 lazy val md5SourceSets: Map[String, Set[Source]] =
   sources.tsvs.toSeq.par
     .flatMap { case (source, entries) => entries.keysIterator.map(_.take(12)).toSeq.map(_ -> source) }
     .seq
     .groupMap(_._1)(_._2).view.mapValues(_.toSet).toMap
 
-// --rare-fingerprint: (md5, subsong) whose fingerprint cluster occurs in at most
-// rareMaxSources distinct sources. Exact clusters (file md5 — always audio equality
-// even when the renders differ —, audioMd5 and chromaprint key) form first and
-// merging only ever adds sources, so only clusters within the limit need the chroma
-// scan against the whole corpus. One exhaustive round suffices: every row of a final
-// rare cluster starts in an exact cluster within the limit, and dupPartnerKeys
-// collects all of its partners. Bad fingerprints match nothing, as in the other modes.
-lazy val fpRareData: (Set[(String, Int)], Map[(String, Int), Int], Map[String, Int]) = {
+// --top: the topCount md5s found in the most sources, all md5s tied with the Nth
+// included; md5s only, no fingerprints, so no audio tsvs are read
+lazy val fpTopData: (Set[String], Map[String, Int]) = {
+  val ranked = md5SourceSets.toSeq.map { case (m, s) => (-s.size, m) }.sorted
+  val sel =
+    if (ranked.length <= topCount) ranked
+    else ranked.takeWhile(_._1 <= ranked(topCount - 1)._1)
+  (sel.map(_._2).toSet, sel.map(_._2).zipWithIndex.map { case (m, i) => m -> (i + 1) }.toMap)
+}
+lazy val fpTopMd5s: Set[String] = fpTopData._1
+lazy val fpTopMd5Groups: Map[String, Int] = fpTopData._2
+
+// exact-key clusters over the non-bad corpus rows, shared by --rare-fingerprint and
+// --top-fingerprint: file md5 (always audio equality even when the renders differ),
+// audioMd5 and chromaprint key. Bad fingerprints match nothing, as in the other modes.
+lazy val fpExact: (Seq[CorpusRow], Set[(String, Int)], Seq[((String, Int), (String, Int))], Map[(String, Int), Int]) = {
   val rows = fpCorpusRows.iterator.filterNot(_.fp.isBad).toSeq
   val nodes = rows.iterator.map(r => (r.md5, r.subsong)).toSet
   // star edges within each exact-key group: connectivity without O(k^2) edges
@@ -639,9 +656,19 @@ lazy val fpRareData: (Set[(String, Int)], Map[(String, Int), Int], Map[String, I
     if (r.audioMd5.nonEmpty) audioMd5Groups.getOrElseUpdate(r.audioMd5, Buffer[CorpusRow]()) += r
   }
   val exactEdges = starEdges(md5Groups.valuesIterator) ++ starEdges(keyGroups.valuesIterator) ++ starEdges(audioMd5Groups.valuesIterator)
-  def srcCount(ns: Iterable[(String, Int)]): Int =
-    ns.iterator.map(_._1).toSeq.distinct.iterator.flatMap(m => md5SourceSets.getOrElse(m, Set.empty[Source])).toSet.size
-  val initGroups = components(nodes, exactEdges)
+  (rows, nodes, exactEdges, components(nodes, exactEdges))
+}
+
+def srcCount(ns: Iterable[(String, Int)]): Int =
+  ns.iterator.map(_._1).toSeq.distinct.iterator.flatMap(m => md5SourceSets.getOrElse(m, Set.empty[Source])).toSet.size
+
+// --rare-fingerprint: (md5, subsong) whose fingerprint cluster occurs in at most
+// rareMaxSources distinct sources. Merging exact clusters only ever adds sources, so
+// only clusters within the limit need the chroma scan against the whole corpus. One
+// exhaustive round suffices: every row of a final rare cluster starts in an exact
+// cluster within the limit, and dupPartnerKeys collects all of its partners.
+lazy val fpRareData: (Set[(String, Int)], Map[(String, Int), Int], Map[String, Int]) = {
+  val (rows, nodes, exactEdges, initGroups) = fpExact
   val rareInit = initGroups.groupBy(_._2).collect { case (g, ns) if srcCount(ns.keys) <= rareMaxSources => g }.toSet
   val rareRows = rows.filter(r => rareInit.contains(initGroups((r.md5, r.subsong))))
   val allSorted = fpCorpusRows.sortBy(_.audioBytes)
@@ -664,6 +691,57 @@ lazy val fpRareSubsongs: Set[(String, Int)] = fpRareData._1
 lazy val fpRareGroups: Map[(String, Int), Int] = fpRareData._2
 lazy val fpRareMd5Groups: Map[String, Int] = fpRareData._3
 lazy val fpRareMd5s: Set[String] = fpRareSubsongs.map(_._1)
+// --top-fingerprint: the topFpCount most popular fingerprint clusters, ranked by
+// distinct sources with distinct md5s as the tiebreaker, all clusters tied with the
+// Nth included. Unlike --rare-fingerprint a low exact-cluster count does not exclude
+// a cluster (merging can lift it), so rounds verify the rows of the clusters at or
+// above half the Nth source count and merge what they find, until nothing new is
+// verified. A missed top cluster then needs >= 3 separate renderings each below half
+// the cutoff. The rounds run in descending popularity, so the first one already
+// covers the corpus-wide giants.
+lazy val fpTopFpData: (Set[(String, Int)], Map[(String, Int), Int]) = {
+  val (rows, nodes, exactEdges, _) = fpExact
+  val allSorted = fpCorpusRows.sortBy(_.audioBytes)
+  val allBytes = allSorted.map(_.audioBytes)
+  // (-sources, -md5s) so the natural ordering is descending popularity, the group's
+  // smallest node breaking rank ties
+  def rank(ns: Set[(String, Int)]): (Int, Int) =
+    (-srcCount(ns), -ns.iterator.map(_._1).toSeq.distinct.size)
+  val pool = fpPool()
+  try {
+    var edges = exactEdges
+    var verified = Set.empty[(String, Int)]
+    var ranked = Seq.empty[((Int, Int), (String, Int), Int)]
+    var byGroup = Map.empty[Int, Set[(String, Int)]]
+    var done = false
+    while (!done) {
+      byGroup = components(nodes, edges).groupBy(_._2).view.mapValues(_.keys.toSet).toMap
+      ranked = byGroup.toSeq.map { case (g, ns) => (rank(ns), ns.min, g) }.sortBy(r => (r._1, r._2, r._3))
+      val cutoff = if (ranked.length <= topFpCount) (Int.MinValue, Int.MinValue) else ranked(topFpCount - 1)._1
+      val verifySrcs = if (cutoff._1 == Int.MinValue) Int.MaxValue else (-cutoff._1 + 1) / 2
+      val verifyNodes = byGroup.collect { case (g, ns) if srcCount(ns) >= verifySrcs => ns }.flatten.toSet
+      val toVerify = rows.filter(r => verifyNodes.contains((r.md5, r.subsong)) && !verified.contains((r.md5, r.subsong)))
+      if (toVerify.isEmpty) done = true
+      else {
+        verified ++= toVerify.iterator.map(r => (r.md5, r.subsong)).toSet
+        edges ++= fpMapChunks(pool, toVerify.toSeq, chunks = fpThreads * 8, progress = true) { q =>
+          dupPartnerKeys(q, allSorted, allBytes).map(((q.md5, q.subsong), _))
+        }
+      }
+    }
+    // the Nth rank with ties included, numbered in rank order for the output; the
+    // rank number is the group, so no md5-level coarse map is needed
+    val sel =
+      if (ranked.length <= topFpCount) ranked
+      else ranked.takeWhile(_._1 <= ranked(topFpCount - 1)._1)
+    val selNodes = sel.flatMap { case (_, _, g) => byGroup(g) }.toSet
+    val fine = sel.zipWithIndex.flatMap { case ((_, _, g), i) => byGroup(g).map(_ -> (i + 1)) }.toMap
+    (selNodes, fine)
+  } finally pool.shutdown()
+}
+lazy val fpTopFpSubsongs: Set[(String, Int)] = fpTopFpData._1
+lazy val fpTopFpGroups: Map[(String, Int), Int] = fpTopFpData._2
+lazy val fpTopFpMd5s: Set[String] = fpTopFpSubsongs.map(_._1)
 
 def printDir(sourceName: String, dir: File): Unit = {
   dirFiles(dir).foreach { case (md5, path, size) =>
@@ -735,6 +813,8 @@ def emitSourceRows(sourceName: String, entries: Map[String, Buffer[TsvEntry]]): 
     else if (missingFingerprint && !fpMissingMd5s.contains(md5.take(12))) Seq.empty
     else if (duplicateFingerprint && !fpDupGroups.contains(md5.take(12))) Seq.empty
     else if (rareFingerprint && !fpRareMd5s.contains(md5.take(12))) Seq.empty
+    else if (top && !fpTopMd5s.contains(md5.take(12))) Seq.empty
+    else if (topFingerprint && !fpTopFpMd5s.contains(md5.take(12))) Seq.empty
     else {
       val sorted = subsongs.sortBy(_.subsong)
       val first = sorted.find(_.path.nonEmpty).getOrElse(sorted.head)
@@ -754,7 +834,7 @@ def emitSourceRows(sourceName: String, entries: Map[String, Buffer[TsvEntry]]): 
         val channels = filli(entry.channels, first.channels)
         val sl = if (entry.subsong >= 0) slSubsong(md5.take(12), entry.subsong) else None
         val reason = badReason(entry.songend, entry.songlength, sl)
-        if ((suspicious && reason.isEmpty) || (uniqueFingerprint && !fpUniqueSubsongs.contains((md5.take(12), entry.subsong))) || (duplicateFingerprint && !fpDupMatchSubsongs.contains((md5.take(12), entry.subsong))) || (rareFingerprint && !fpRareSubsongs.contains((md5.take(12), entry.subsong)))) None
+        if ((suspicious && reason.isEmpty) || (uniqueFingerprint && !fpUniqueSubsongs.contains((md5.take(12), entry.subsong))) || (duplicateFingerprint && !fpDupMatchSubsongs.contains((md5.take(12), entry.subsong))) || (rareFingerprint && !fpRareSubsongs.contains((md5.take(12), entry.subsong))) || (topFingerprint && !fpTopFpSubsongs.contains((md5.take(12), entry.subsong)))) None
         else Some((sourceName, fills(entry.path, first.path), entry.subsong, Seq(
           md5.take(12),
           fills(entry.path, first.path),
@@ -774,14 +854,26 @@ def emitSourceRows(sourceName: String, entries: Map[String, Buffer[TsvEntry]]): 
     }
   }.seq.foreach(r => rows += r)
 
-// --missing-fingerprint and --rare-fingerprint report from every source having the
-// md5s, the other modes only from the given targets. Sequential: the rows Buffer is
-// shared and emitSourceRows parallelizes internally.
-if (rareFingerprint) {
-  fpProgressStart(fpShards.length + fpThreads * 8 + sources.tsvs.length)
-  // force the corpus load, clustering and chroma round inside the progress line
-  fpRareSubsongs.size
-  fpRareGroups.size
+// --missing-fingerprint, --rare-fingerprint and the top modes report from every
+// source having the md5s, the other modes only from the given targets. Sequential:
+// the rows Buffer is shared and emitSourceRows parallelizes internally.
+if (top) {
+  fpProgressStart(sources.tsvs.length)
+  fpTopMd5s.size
+  sources.tsvs.foreach { case (source, entries) =>
+    emitSourceRows(source.toString, entries)
+    fpProgressStep()
+  }
+  fpProgressDone()
+}
+else if (rareFingerprint || topFingerprint) {
+  // corpus load and emission are known; rare runs exactly one chroma round, top
+  // converges in a few — each round is fpThreads * 8 chunks, so the top total is
+  // approximate and the counter may end below it
+  fpProgressStart(fpShards.length + (if (rareFingerprint) 1 else 3) * fpThreads * 8 + sources.tsvs.length)
+  // force the corpus load, clustering and chroma rounds inside the progress line
+  if (rareFingerprint) { fpRareSubsongs.size; fpRareGroups.size }
+  else fpTopFpSubsongs.size
   sources.tsvs.foreach { case (source, entries) =>
     emitSourceRows(source.toString, entries)
     fpProgressStep()
@@ -817,8 +909,9 @@ else {
 // target order + Path + Sub; md5 blocks sort where their first target has them. The
 // fingerprint modes sort by coarse md5 group then fine match group and separate the
 // match groups; --unique/--duplicate keep the md5 grouping but need no separator.
-// The first value below is the separator group (fine group / empty)
-val separated = duplicateFingerprint || missingFingerprint || uniqueFingerprint || rareFingerprint
+// The top modes keep the group numbering order = popularity order. The first value
+// below is the separator group (fine group / empty)
+val separated = duplicateFingerprint || missingFingerprint || uniqueFingerprint || rareFingerprint || top || topFingerprint
 val targetNames = targets.map(targetName)
 val targetOrder = (targetNames ++ Source.values.map(_.toString).distinct
   .filterNot(targetNames.toSet).sorted).zipWithIndex.toMap
@@ -829,11 +922,16 @@ def fpGroup(r: (String, String, Int, Seq[String])) =
   if (duplicateFingerprint) fpDupMatchGroups((r._4.head, r._3))
   else if (uniqueFingerprint) fpUniqueGroups((r._4.head, r._3))
   else if (rareFingerprint) fpRareGroups((r._4.head, r._3))
+  else if (topFingerprint) fpTopFpGroups((r._4.head, r._3))
+  else if (top) fpTopMd5Groups(r._4.head)
   else fpMissingGroups.getOrElse((r._4.head, r._3), fpMissingNoFp(r._4.head))
+// the top modes number the groups by rank, so the fine group orders them; an md5 with
+// subsongs in two top clusters would break an md5-level map
 def fpCoarse(r: (String, String, Int, Seq[String])) =
   if (duplicateFingerprint) fpDupGroups(r._4.head)
   else if (uniqueFingerprint) fpUniqueMd5Groups(r._4.head)
   else if (rareFingerprint) fpRareMd5Groups(r._4.head)
+  else if (top || topFingerprint) fpGroup(r)
   else fpMissingMd5Groups(r._4.head)
 val coarseFirst =
   if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint)
@@ -843,7 +941,12 @@ val fineFirst =
   if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint)
     rows.groupBy(fpGroup).view.mapValues(_.map(rowKey).min).toMap
   else Map.empty[Int, (Int, String, Int)]
-val outRows = (if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint)
+val outRows = (if (top || topFingerprint)
+    // group number = popularity rank: no rowKey-based group ordering; within a
+    // --top-fingerprint cluster the md5s in the most sources come first (--top has
+    // one md5 per group so the key is a no-op there)
+    rows.sortBy(r => (fpCoarse(r), fpGroup(r), -md5SourceSets.getOrElse(r._4.head, Set.empty[Source]).size, md5First(r._4.head), r._4.head, rowKey(r)))
+  else if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint)
     rows.sortBy(r =>
       (coarseFirst(fpCoarse(r)), fpCoarse(r), fineFirst(fpGroup(r)), fpGroup(r), md5First(r._4.head), r._4.head, rowKey(r)))
   else rows.sortBy { r =>
@@ -852,7 +955,7 @@ val outRows = (if (duplicateFingerprint || uniqueFingerprint || missingFingerpri
   }
 ).map { case (source, _, subsong, cols) =>
   val group =
-    if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint) fpGroup((source, "", subsong, cols)).toString
+    if (duplicateFingerprint || uniqueFingerprint || missingFingerprint || rareFingerprint || top || topFingerprint) fpGroup((source, "", subsong, cols)).toString
     else if (separated) cols.head
     else ""
   (group, cols.patch(1, Seq(source), 0))

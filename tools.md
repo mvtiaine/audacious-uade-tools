@@ -18,7 +18,7 @@ On M4 Max it takes about 2 seconds to run. All CPU cores are utilized.
 
 ## Source Metas
 
-Show metadatas for various songdb sources or files in local directories. Find duplicate, bad, rare or unique files and audio fingerprints in songdb sources and local directories.
+Show metadatas for various songdb sources or files in local directories. Find duplicate, bad, rare, popular or unique files and audio fingerprints in songdb sources and local directories.
 
 
 ## Usage
@@ -68,6 +68,7 @@ fpcalc -plain somefile.wav | ./audio_match.sc -  # Calculate and match chromapri
 ./source_metas.sc --unique-fingerprint Deck      # Show unique fingerprints in Deck module collection
 ./source_metas.sc --bad Modland AMP Modarchive   # Show unplayable or silent files in various sources
 ./source_metas.sc --rare-fingerprint 2           # Show rare gems that only appear in at most 2 sources
+./source_metas.sc --top 10                       # Show 10 most common md5s
 
 # Use audacious-uade CLI player to play an unknown file and match the chromaprint
 PROBE=1 ~/audacious-uade/src/plugin/cli/player/player 11025 ~/somefile.mod | fpcalc -length 9999 -rate 11025 -channels 2 -format s16le -plain - | ./audio_match.sc -
