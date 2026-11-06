@@ -60,6 +60,7 @@ This database is also used by:
 - **rewamp** - https://rewamp.app/
 - **Selecta** - https://github.com/spotUP/selecta
 - **SoniqBoom** - https://github.com/SFCyris/SoniqBoom
+- **UADE input for foobar2000** - https://github.com/M3MEMonster/foo_input_uade
 
 
 ## Contact
